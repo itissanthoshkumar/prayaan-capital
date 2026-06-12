@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "slug": "privacy-policy",
+    "updatedAt": "2026-03-01"
+  },
+  "hero": {
+    "eyebrow": "Legal",
+    "icon": "Shield",
+    "title": "Privacy Policy",
+    "subtitle": "Last updated: March 1, 2026"
+  },
+  "sections": [
+    {
+      "type": "legal",
+      "items": [
+        {
+          "title": "1. Information We Collect",
+          "content": "We collect personal information including name, email, phone number, PAN, Aadhaar (with consent), business registration details, financial statements, bank statements, property documents, and other KYC documents as required by RBI guidelines."
+        },
+        {
+          "title": "2. How We Use Your Information",
+          "content": "Your information is used for: loan application processing and credit assessment, KYC verification and compliance with RBI norms, AI-powered underwriting and risk assessment, communication regarding your loan application and account, improving our products and services."
+        },
+        {
+          "title": "3. AI and Automated Decision Making",
+          "content": "Prayaan Capital uses artificial intelligence and machine learning models for credit assessment and underwriting. Our AI systems analyse 200+ data points to evaluate creditworthiness. While AI assists in decision-making, final credit decisions involve human oversight."
+        },
+        {
+          "title": "4. Data Sharing and Disclosure",
+          "content": "We may share your information with: Credit Information Companies (CIBIL, Equifax, etc.) as required by RBI, regulatory authorities including RBI, government agencies upon valid legal requests, and our technology partners under strict confidentiality agreements. We do NOT sell your personal data."
+        },
+        {
+          "title": "5. Data Security",
+          "content": "We implement industry-standard security measures including AES-256 encryption for data at rest, TLS 1.3 for data in transit, SOC 2 Type II compliant infrastructure, regular penetration testing and vulnerability assessments."
+        },
+        {
+          "title": "6. Data Retention",
+          "content": "We retain your personal data for the duration of your loan relationship and for a minimum of 8 years post-closure as required by RBI Master Directions on NBFC."
+        },
+        {
+          "title": "7. Your Rights",
+          "content": "You have the right to: access your personal data held by us, request correction of inaccurate data, withdraw consent (subject to regulatory requirements), request deletion of data, and receive your data in a portable format."
+        },
+        {
+          "title": "8. Cookies and Tracking",
+          "content": "We use essential cookies for website functionality, analytics cookies to understand usage patterns, and marketing cookies (with your consent) for relevant communications."
+        },
+        {
+          "title": "9. Changes to This Policy",
+          "content": "We may update this policy periodically. Material changes will be notified via email or prominent notice on our website."
+        },
+        {
+          "title": "10. Contact Us",
+          "content": "For privacy-related queries: Data Protection Officer, Prayaan Capital Pvt. Ltd., No. 40/97, Minerva Building, 2nd Floor, Santhome High Road, Chennai 600028. Email: customercare@prayaancapital.com."
+        }
+      ]
+    }
+  ]
+}

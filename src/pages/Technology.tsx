@@ -1,0 +1,137 @@
+import HeroIllustration from "@/components/HeroIllustration";
+import Layout from "@/components/Layout";
+import AIFloatingElements, { AIPulse } from "@/components/AIFloatingElements";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import {
+  Brain, Database, Workflow, Plug, Lock, Users2, Sparkles, ArrowRight,
+} from "lucide-react";
+
+const pillars = [
+  {
+    icon: Brain,
+    title: "AI-native platform",
+    desc: "Decisioning models trained on Indian MSME data combining bureau, banking, GST, and alternate signals.",
+    tint: "bg-gradient-coral",
+  },
+  {
+    icon: Database,
+    title: "Modern data stack",
+    desc: "Cloud-native data infrastructure powering risk, portfolio analytics and real-time monitoring.",
+    tint: "bg-gradient-mint",
+  },
+  {
+    icon: Workflow,
+    title: "Digital origination",
+    desc: "End-to-end workflow from lead capture and KYC to sanction, e-agreement and disbursal.",
+    tint: "bg-gradient-lavender",
+  },
+  {
+    icon: Plug,
+    title: "Partner integrations",
+    desc: "APIs for co-lending partners, DSAs, and data providers. Programmable integrations on roadmap.",
+    tint: "bg-gradient-sunset",
+  },
+  {
+    icon: Lock,
+    title: "Security & compliance",
+    desc: "RBI-aligned controls, ISO-grade information security practices, and data-residency in India.",
+    tint: "bg-gradient-coral",
+  },
+  {
+    icon: Users2,
+    title: "Tech team culture",
+    desc: "Small, senior engineering team shipping weekly. Hiring across platform, ML and data engineering.",
+    tint: "bg-gradient-mint",
+  },
+];
+
+const container = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } };
+const cardAnim = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as const } },
+};
+
+const Technology = () => {
+  return (
+    <Layout>
+      <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-hero relative overflow-hidden">
+        <AIFloatingElements />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid lg:grid-cols-[1fr_340px] gap-8 items-center">
+            <div>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-4">
+              <Sparkles size={12} /> Technology
+            </span>
+            <h1 className="font-display text-3xl md:text-6xl font-bold text-foreground mt-3 mb-5 leading-tight">
+              An <span className="text-gradient-coral">AI-first</span> lending platform built in-house
+            </h1>
+            <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
+              Our technology stack is purpose-built for secured MSME lending — from origination and underwriting
+              to collections and partner integrations.
+            </p>
+          </motion.div>
+            </div>
+            <HeroIllustration variant="tech" />
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-24 bg-background relative overflow-hidden">
+        <AIFloatingElements />
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            {pillars.map((item) => (
+              <motion.div key={item.title} variants={cardAnim} className="clay-surface p-6 md:p-8 clay-press group">
+                <div className={`w-12 h-12 rounded-2xl ${item.tint} shadow-clay-sm flex items-center justify-center mb-5`}>
+                  <item.icon size={22} className="text-white" />
+                </div>
+                <div className="flex items-center gap-2 mb-3">
+                  <AIPulse />
+                  <h3 className="font-display text-base font-bold text-foreground">{item.title}</h3>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-24 bg-hero relative overflow-hidden">
+        <AIFloatingElements />
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="clay-surface p-8 md:p-14 text-center max-w-2xl mx-auto"
+          >
+            <h2 className="font-display text-2xl md:text-4xl font-bold text-foreground mb-4">
+              Join the <span className="text-gradient-coral">tech team</span>
+            </h2>
+            <p className="text-sm md:text-base text-muted-foreground mb-8 font-body">
+              We're hiring engineers who want to build consequential fintech from the ground up.
+              Small team, big impact, weekly shipping.
+            </p>
+            <Link to="/careers">
+              <Button size="lg" className="rounded-full px-8 font-body">
+                View Open Roles <ArrowRight size={15} />
+              </Button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+    </Layout>
+  );
+};
+
+export default Technology;

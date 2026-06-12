@@ -1,0 +1,11 @@
+import LegalPageTemplate from "@/components/templates/LegalPageTemplate";
+const Page = () => (
+  <LegalPageTemplate title="Whistleblower Policy" sections={[
+    { title: "1. Purpose", content: "To provide a secure, confidential channel for employees, vendors and customers to report unethical conduct, fraud or violation of policies." },
+    { title: "2. Coverage", content: "Covers fraud, corruption, harassment, conflict of interest, misuse of authority and breach of code of conduct." },
+    { title: "3. Reporting channel", content: "Email whistleblower@prayaancapital.com or write confidentially to the Chairperson – Audit Committee, Prayaan Capital." },
+    { title: "4. Protection", content: "No adverse action will be taken against a bona-fide whistleblower. Identity is kept strictly confidential." },
+    { title: "5. Investigation", content: "All reports are investigated by the Audit Committee within 60 days." },
+  ]} />
+);
+export default Page;

@@ -1,0 +1,286 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "@fontsource/montserrat/400.css";
+@import "@fontsource/montserrat/500.css";
+@import "@fontsource/montserrat/600.css";
+@import "@fontsource/montserrat/700.css";
+@import "@fontsource/montserrat/800.css";
+@import "@fontsource/montserrat/900.css";
+@import "@fontsource/overpass/400.css";
+@import "@fontsource/overpass/500.css";
+@import "@fontsource/overpass/600.css";
+@import "@fontsource/overpass/700.css";
+
+/* ============================================
+   CLAYMORPHISM DESIGN SYSTEM
+   Soft pastels · puffy 3D surfaces · chunky shadows · big radii
+   ============================================ */
+
+@layer base {
+  :root {
+    /* Soft warm pastel canvas */
+    --background: 30 45% 95%;
+    --foreground: 250 25% 18%;
+
+    /* Clay surfaces — slightly lifted off the canvas */
+    --card: 30 50% 97%;
+    --card-foreground: 250 25% 18%;
+
+    --popover: 30 50% 98%;
+    --popover-foreground: 250 25% 18%;
+
+    /* Playful coral primary (clay-friendly) */
+    --primary: 14 88% 66%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 24 95% 72%;
+
+    /* Soft lavender secondary */
+    --secondary: 260 60% 92%;
+    --secondary-foreground: 260 30% 25%;
+
+    --muted: 30 30% 92%;
+    --muted-foreground: 250 12% 45%;
+
+    /* Mint accent */
+    --accent: 165 60% 70%;
+    --accent-foreground: 165 50% 18%;
+
+    --destructive: 358 80% 68%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 30% 88%;
+    --input: 30 30% 90%;
+    --ring: 14 88% 66%;
+
+    /* Big, clay-style radius */
+    --radius: 1.5rem;
+
+    --sidebar-background: 30 45% 96%;
+    --sidebar-foreground: 250 25% 22%;
+    --sidebar-primary: 14 88% 66%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 260 60% 92%;
+    --sidebar-accent-foreground: 260 30% 25%;
+    --sidebar-border: 30 30% 88%;
+    --sidebar-ring: 14 88% 66%;
+
+    /* Clay palette — pastel, candy-like */
+    --clay-coral: 14 88% 72%;
+    --clay-peach: 24 95% 78%;
+    --clay-yellow: 45 95% 75%;
+    --clay-mint: 160 65% 75%;
+    --clay-sky: 200 80% 78%;
+    --clay-lavender: 260 70% 80%;
+    --clay-pink: 335 80% 82%;
+
+    /* Aliases used by template/legacy pages */
+    --color-lavender: 260 70% 78%;
+    --color-coral: 14 88% 70%;
+    --color-indigo: 250 60% 60%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(160deg, hsl(30 60% 94%) 0%, hsl(20 70% 92%) 40%, hsl(340 60% 93%) 100%);
+    --gradient-coral: linear-gradient(135deg, hsl(14 88% 70%), hsl(24 95% 72%));
+    --gradient-mint: linear-gradient(135deg, hsl(160 65% 70%), hsl(190 70% 75%));
+    --gradient-lavender: linear-gradient(135deg, hsl(260 70% 78%), hsl(290 60% 80%));
+    --gradient-sunset: linear-gradient(135deg, hsl(14 88% 70%), hsl(335 80% 78%));
+    --gradient-card: linear-gradient(180deg, hsl(30 60% 99%) 0%, hsl(30 40% 95%) 100%);
+    --gradient-section: linear-gradient(180deg, hsl(30 45% 95%) 0%, hsl(30 50% 97%) 100%);
+
+    /* CLAY SHADOWS — the heart of claymorphism
+       Combines: outer drop shadow + inner top highlight + inner bottom darken
+       Creates a 3D extruded, puffy plasticine look. */
+    --shadow-clay:
+      6px 6px 16px hsl(20 30% 70% / 0.30),
+      -6px -6px 16px hsl(0 0% 100% / 0.85),
+      inset 2px 2px 4px hsl(0 0% 100% / 0.6),
+      inset -2px -2px 6px hsl(20 30% 70% / 0.18);
+
+    --shadow-clay-sm:
+      4px 4px 10px hsl(20 30% 70% / 0.25),
+      -3px -3px 8px hsl(0 0% 100% / 0.8),
+      inset 1px 1px 2px hsl(0 0% 100% / 0.6),
+      inset -1px -1px 3px hsl(20 30% 70% / 0.15);
+
+    --shadow-clay-lg:
+      12px 12px 28px hsl(20 30% 65% / 0.32),
+      -10px -10px 24px hsl(0 0% 100% / 0.9),
+      inset 3px 3px 6px hsl(0 0% 100% / 0.7),
+      inset -3px -3px 8px hsl(20 30% 70% / 0.2);
+
+    --shadow-clay-inset:
+      inset 4px 4px 10px hsl(20 30% 65% / 0.25),
+      inset -4px -4px 10px hsl(0 0% 100% / 0.8);
+
+    --shadow-clay-primary:
+      6px 6px 16px hsl(14 70% 55% / 0.35),
+      -4px -4px 12px hsl(24 100% 85% / 0.6),
+      inset 2px 2px 4px hsl(24 100% 85% / 0.5),
+      inset -2px -2px 6px hsl(14 70% 50% / 0.25);
+
+    --shadow-clay-accent:
+      6px 6px 16px hsl(165 50% 45% / 0.3),
+      -4px -4px 12px hsl(165 80% 90% / 0.7),
+      inset 2px 2px 4px hsl(165 80% 90% / 0.6),
+      inset -2px -2px 6px hsl(165 50% 40% / 0.2);
+  }
+
+  .dark {
+    --background: 250 25% 12%;
+    --foreground: 30 30% 94%;
+    --card: 250 22% 16%;
+    --card-foreground: 30 30% 94%;
+    --popover: 250 22% 16%;
+    --popover-foreground: 30 30% 94%;
+    --primary: 14 88% 66%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 260 30% 22%;
+    --secondary-foreground: 30 30% 94%;
+    --muted: 250 18% 20%;
+    --muted-foreground: 250 10% 65%;
+    --accent: 165 55% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 358 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 250 18% 22%;
+    --input: 250 18% 22%;
+    --ring: 14 88% 66%;
+
+    --gradient-hero: linear-gradient(160deg, hsl(250 30% 14%) 0%, hsl(260 28% 16%) 50%, hsl(280 25% 18%) 100%);
+
+    --shadow-clay:
+      6px 6px 16px hsl(250 40% 4% / 0.6),
+      -6px -6px 16px hsl(250 20% 22% / 0.5),
+      inset 2px 2px 4px hsl(250 20% 28% / 0.4),
+      inset -2px -2px 6px hsl(250 40% 4% / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Overpass", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.011em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Montserrat", -apple-system, system-ui, sans-serif;
+    letter-spacing: -0.03em;
+  }
+}
+
+@layer utilities {
+  /* Text gradients */
+  .text-gradient-saffron,
+  .text-gradient-coral {
+    background: var(--gradient-coral);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-warm,
+  .text-gradient-sunset {
+    background: var(--gradient-sunset);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-cool,
+  .text-gradient-mint {
+    background: var(--gradient-mint);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-lavender {
+    background: var(--gradient-lavender);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Backgrounds */
+  .bg-hero { background: var(--gradient-hero); }
+  .bg-section { background: var(--gradient-section); }
+  .bg-clay-card { background: var(--gradient-card); }
+  .bg-gradient-coral { background: var(--gradient-coral); }
+  .bg-gradient-mint { background: var(--gradient-mint); }
+  .bg-gradient-lavender { background: var(--gradient-lavender); }
+  .bg-gradient-sunset { background: var(--gradient-sunset); }
+
+  /* CLAY shadows — puffy 3D surfaces */
+  .shadow-clay { box-shadow: var(--shadow-clay); }
+  .shadow-clay-sm { box-shadow: var(--shadow-clay-sm); }
+  .shadow-clay-lg { box-shadow: var(--shadow-clay-lg); }
+  .shadow-clay-inset { box-shadow: var(--shadow-clay-inset); }
+  .shadow-clay-primary { box-shadow: var(--shadow-clay-primary); }
+  .shadow-clay-accent { box-shadow: var(--shadow-clay-accent); }
+
+  /* Legacy aliases (so existing sections still look good) */
+  .shadow-card { box-shadow: var(--shadow-clay-sm); }
+  .shadow-elevated { box-shadow: var(--shadow-clay); }
+  .shadow-glow { box-shadow: var(--shadow-clay-primary); }
+  .glow-saffron { box-shadow: var(--shadow-clay-primary); }
+  .glow-teal { box-shadow: var(--shadow-clay-accent); }
+
+  /* Clay surface helper — bg + radius + shadow in one */
+  .clay-surface {
+    background: var(--gradient-card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-clay);
+  }
+
+  .clay-surface-sm {
+    background: var(--gradient-card);
+    border-radius: 1rem;
+    box-shadow: var(--shadow-clay-sm);
+  }
+
+  /* Clay-styled input — soft inset look */
+  .clay-input {
+    background: hsl(var(--card)) !important;
+    border: none !important;
+    border-radius: 0.85rem !important;
+    box-shadow: var(--shadow-clay-inset) !important;
+    height: 2.75rem !important;
+    transition: box-shadow 0.2s ease;
+  }
+  .clay-input:focus,
+  .clay-input:focus-visible {
+    outline: none !important;
+    box-shadow:
+      var(--shadow-clay-inset),
+      0 0 0 3px hsl(var(--ring) / 0.25) !important;
+  }
+
+  /* Interactive press effect */
+  .clay-press {
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
+  }
+  .clay-press:hover { transform: translateY(-2px); }
+  .clay-press:active {
+    transform: translateY(1px);
+    box-shadow: var(--shadow-clay-inset);
+  }
+}
+
+/* Branch card tile — surveyor ring animation */
+@keyframes surveyor-spin {
+  to { transform: rotate(360deg); }
+}
+.animate-surveyor { animation: surveyor-spin 9s linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-surveyor { animation: none; }
+}

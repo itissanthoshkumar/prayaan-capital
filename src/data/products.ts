@@ -1,0 +1,245 @@
+import { Building2, Landmark, Factory, Wallet, Sparkles, Truck, HeartHandshake } from "lucide-react";
+import type { ProductPageData } from "@/components/templates/ProductPageTemplate";
+
+const baseRates = [
+  { label: "Interest Rate", value: "From 14% p.a." },
+  { label: "Processing Fee", value: "Up to 2% + GST" },
+  { label: "Foreclosure Charges", value: "Nil after 6 months" },
+  { label: "Late Payment", value: "2% per month on overdue" },
+  { label: "Documentation", value: "₹1,500 + GST" },
+];
+
+const baseDocs = [
+  "PAN & Aadhaar of proprietor / directors",
+  "Business proof (GST, Udyam, Shop Act)",
+  "Bank statements – last 12 months",
+  "ITR & financials – last 2 years",
+  "Address proof of business premises",
+];
+
+const commonFaqs = [
+  { q: "How fast is loan disbursal?", a: "Our AI underwriting completes most evaluations within 24 hours, with funds typically credited within 48 hours of approval." },
+  { q: "Are there any hidden charges?", a: "No. Prayaan Capital follows full rate-card transparency under the RBI Fair Practice Code. All charges are listed in your sanction letter." },
+  { q: "Can I prepay or foreclose?", a: "Yes, foreclosure is free after 6 months. Part-payments are allowed once per quarter without charges." },
+  { q: "What if my CIBIL is below 700?", a: "Our AI model evaluates 200+ data points beyond CIBIL — cash flow, GST filings, and sector resilience also count toward eligibility." },
+];
+
+export const productData: Record<string, ProductPageData> = {
+  "business-loan": {
+    eyebrow: "Business Loan",
+    title: "MSME Business Term Loan",
+    tagline: "Unsecured-feel pricing for secured MSME term loans up to ₹50L. AI underwriting completes in 24 hours.",
+    icon: Building2,
+    range: "₹5L – ₹50L",
+    tenure: "12 – 60 months",
+    rate: "From 14% p.a.",
+    highlights: [
+      { label: "Loan Amount", value: "₹5L – ₹50L" },
+      { label: "Tenure", value: "12–60 months" },
+      { label: "Interest", value: "From 14%" },
+      { label: "Approval", value: "24 hours" },
+    ],
+    features: [
+      "AI-driven decisioning in under 24 hours",
+      "Flexible EMIs aligned to cash-flow seasonality",
+      "Zero foreclosure after 6 months",
+      "Doorstep documentation across 80+ cities",
+      "Top-up loan for repeat borrowers",
+    ],
+    eligibility: [
+      "Indian MSME (proprietor, partnership, LLP, Pvt Ltd)",
+      "Business vintage of 2+ years",
+      "Annual turnover ₹40L+",
+      "Owner age 23–65 years",
+      "Valid Udyam / GST registration",
+    ],
+    documents: baseDocs,
+    rates: baseRates,
+    faqs: commonFaqs,
+  },
+  "loan-against-property": {
+    eyebrow: "Loan Against Property",
+    title: "Loan Against Property (LAP)",
+    tagline: "Unlock up to 60% of your property's value to fund expansion, with tenures up to 7 years.",
+    icon: Landmark,
+    range: "₹10L – ₹50L",
+    tenure: "12 – 84 months",
+    rate: "From 12% p.a.",
+    highlights: [
+      { label: "Loan Amount", value: "₹10L – ₹50L" },
+      { label: "LTV", value: "Up to 60%" },
+      { label: "Tenure", value: "Up to 84 mo" },
+      { label: "Interest", value: "From 12%" },
+    ],
+    features: [
+      "Residential, commercial & industrial property accepted",
+      "Higher loan amount, longer tenure, lower EMI",
+      "Quick legal & technical valuation",
+      "Balance transfer + top-up available",
+      "Multipurpose end-use",
+    ],
+    eligibility: [
+      "Self-occupied or rented property in your name",
+      "Clear, marketable title",
+      "Business vintage 3+ years",
+      "Stable income proof",
+    ],
+    documents: [...baseDocs, "Original title deed & chain documents", "Property tax receipt & approved plan"],
+    rates: [{ label: "Interest Rate", value: "From 12% p.a." }, ...baseRates.slice(1)],
+    faqs: commonFaqs,
+  },
+  "working-capital": {
+    eyebrow: "Working Capital",
+    title: "Working Capital Loan",
+    tagline: "Plug cash-flow gaps and fund seasonal demand with revolving working-capital lines.",
+    icon: Wallet,
+    range: "₹5L – ₹30L",
+    tenure: "12 – 36 months",
+    rate: "From 15% p.a.",
+    highlights: [
+      { label: "Loan Amount", value: "₹5L – ₹30L" },
+      { label: "Tenure", value: "12–36 mo" },
+      { label: "Interest", value: "From 15%" },
+      { label: "Top-up", value: "After 6 EMIs" },
+    ],
+    features: [
+      "Pay interest only on the amount used",
+      "Auto top-up after 6 on-time EMIs",
+      "Linked to GST + bank-flow analytics",
+      "No collateral for amounts up to ₹15L*",
+      "Quick repeat loan benefit",
+    ],
+    eligibility: [
+      "Operating business with 2+ years vintage",
+      "GST-registered turnover ₹40L+",
+      "Active current account for last 12 months",
+    ],
+    documents: baseDocs,
+    rates: baseRates,
+    faqs: commonFaqs,
+  },
+  "machinery-finance": {
+    eyebrow: "Machinery Finance",
+    title: "Machinery & Equipment Finance",
+    tagline: "Upgrade plant, machinery and tools without straining working capital. Equipment serves as collateral.",
+    icon: Factory,
+    range: "₹5L – ₹40L",
+    tenure: "12 – 48 months",
+    rate: "From 13% p.a.",
+    highlights: [
+      { label: "Loan Amount", value: "₹5L – ₹40L" },
+      { label: "Funding", value: "Up to 80%" },
+      { label: "Tenure", value: "Up to 48 mo" },
+      { label: "Interest", value: "From 13%" },
+    ],
+    features: [
+      "New & used equipment financing",
+      "Sector-agnostic – manufacturing to printing",
+      "Quick OEM-led valuation",
+      "Step-up EMIs for capacity ramp-up",
+      "Linked AMC & insurance support",
+    ],
+    eligibility: [
+      "Manufacturing or service MSME",
+      "Business vintage 2+ years",
+      "Quotation from approved OEM/dealer",
+    ],
+    documents: [...baseDocs, "OEM/dealer quotation for the asset"],
+    rates: [{ label: "Interest Rate", value: "From 13% p.a." }, ...baseRates.slice(1)],
+    faqs: commonFaqs,
+  },
+  "msme-loan": {
+    eyebrow: "MSME Loan",
+    title: "MSME Loan",
+    tagline: "Purpose-built credit for India's micro, small & medium enterprises. Backed by AI underwriting.",
+    icon: Sparkles,
+    range: "₹3L – ₹50L",
+    tenure: "12 – 60 months",
+    rate: "From 14% p.a.",
+    highlights: [
+      { label: "Loan Amount", value: "₹3L – ₹50L" },
+      { label: "Tenure", value: "Up to 60 mo" },
+      { label: "Interest", value: "From 14%" },
+      { label: "Decision", value: "Same day" },
+    ],
+    features: [
+      "Loans tailored to Udyam-registered businesses",
+      "Special pricing under priority-sector norms",
+      "Co-lending tie-ups with banks",
+      "End-use flexibility – capex, opex, marketing",
+    ],
+    eligibility: [
+      "Valid Udyam / MSME registration",
+      "Operating business for 2+ years",
+      "Annual turnover ₹25L+",
+    ],
+    documents: baseDocs,
+    rates: baseRates,
+    faqs: commonFaqs,
+  },
+  "supply-chain-finance": {
+    eyebrow: "Supply Chain Finance",
+    title: "Supply Chain & Invoice Finance",
+    tagline: "Get paid today on tomorrow's invoices. Anchor-led financing for vendors and dealers.",
+    icon: Truck,
+    range: "₹1L – ₹25L",
+    tenure: "30 – 180 days",
+    rate: "From 13.5% p.a.",
+    highlights: [
+      { label: "Per Invoice", value: "Up to ₹25L" },
+      { label: "Tenure", value: "30–180 days" },
+      { label: "Discount", value: "From 13.5%" },
+      { label: "Onboarding", value: "48 hours" },
+    ],
+    features: [
+      "Vendor financing & dealer financing",
+      "Anchor-corporate-led credit limits",
+      "TReDS-integrated invoice discounting",
+      "Auto-debit on invoice maturity",
+      "Real-time digital ledger",
+    ],
+    eligibility: [
+      "Registered MSME vendor/dealer",
+      "Tagged with an approved anchor corporate",
+      "GST-registered with valid e-invoices",
+    ],
+    documents: ["GST registration", "Anchor corporate PO/invoice", "Bank statements – 6 months", "PAN & KYC documents"],
+    rates: baseRates,
+    faqs: commonFaqs,
+  },
+  "women-entrepreneur-loan": {
+    eyebrow: "Women Entrepreneurs",
+    title: "Loan for Women Entrepreneurs",
+    tagline: "Concessional pricing and dedicated relationship support for women-led businesses.",
+    icon: HeartHandshake,
+    range: "₹2L – ₹30L",
+    tenure: "12 – 60 months",
+    rate: "From 13% p.a.",
+    highlights: [
+      { label: "Concession", value: "0.50% off" },
+      { label: "Loan Amount", value: "₹2L – ₹30L" },
+      { label: "Tenure", value: "Up to 60 mo" },
+      { label: "Interest", value: "From 13%" },
+    ],
+    features: [
+      "0.50% rate concession for women-owned MSMEs",
+      "Dedicated women relationship manager",
+      "Free business-mentoring sessions",
+      "Eligible for PMMY / Stand-Up India linkage",
+    ],
+    eligibility: [
+      "Sole-proprietor or majority-women-owned business",
+      "Business vintage 1+ years",
+      "Valid Udyam / GST registration",
+    ],
+    documents: baseDocs,
+    rates: [{ label: "Interest Rate", value: "From 13% p.a." }, ...baseRates.slice(1)],
+    faqs: commonFaqs,
+  },
+};
+
+// Spec URL aliases → same data as canonical slugs
+productData["secured-business-loans"] = productData["business-loan"];
+productData["lap-financing"] = productData["loan-against-property"];
+
+export const productSlugs = Object.keys(productData);

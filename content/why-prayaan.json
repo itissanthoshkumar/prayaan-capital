@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "slug": "why-prayaan",
+    "updatedAt": "2026-06-11"
+  },
+  "hero": {
+    "eyebrow": "Why Prayaan Capital",
+    "icon": "Sparkles",
+    "title": "Built for the missing middle of Indian MSMEs",
+    "highlight": "missing middle",
+    "subtitle": "We combine deep MSME understanding with AI-led underwriting to serve micro and small businesses overlooked by microfinance and banks."
+  },
+  "sections": [
+    {
+      "type": "cards",
+      "columns": 4,
+      "layout": "vertical",
+      "items": [
+        {
+          "icon": "Users",
+          "tint": "coral",
+          "title": "MSME-first understanding",
+          "desc": "Decades of relationship lending experience with manufacturers, traders and service providers across Tier 2 and Tier 3 India."
+        },
+        {
+          "icon": "MapPin",
+          "tint": "mint",
+          "title": "Semi-urban expertise",
+          "desc": "On-ground presence across Tamil Nadu, Andhra Pradesh and Telangana with branch-led origination and servicing."
+        },
+        {
+          "icon": "HeartHandshake",
+          "tint": "lavender",
+          "title": "Personalised support",
+          "desc": "Dedicated relationship managers from sourcing through repayment — not call-centre handoffs."
+        },
+        {
+          "icon": "FileCheck",
+          "tint": "sunset",
+          "title": "Simple documentation",
+          "desc": "Minimal paperwork. Digital-first KYC and document collection with branch assistance where required."
+        },
+        {
+          "icon": "RefreshCw",
+          "tint": "coral",
+          "title": "Relationship-first",
+          "desc": "We invest in long-term customer relationships and repeat business, not transactional lending."
+        },
+        {
+          "icon": "ShieldCheck",
+          "tint": "mint",
+          "title": "Reliable lender",
+          "desc": "RBI-registered, well-capitalised NBFC with transparent disclosures and a published Fair Practice Code."
+        },
+        {
+          "icon": "BadgeDollarSign",
+          "tint": "lavender",
+          "title": "Reasonable cost",
+          "desc": "Risk-based pricing that reflects collateral and cashflow, not blanket high-cost rates."
+        },
+        {
+          "icon": "Brain",
+          "tint": "sunset",
+          "title": "Tech-enabled underwriting",
+          "desc": "AI-native credit decisioning combining bureau, banking, GST and alternate data for fast, fair decisions."
+        }
+      ]
+    },
+    {
+      "type": "ctaSection"
+    }
+  ]
+}

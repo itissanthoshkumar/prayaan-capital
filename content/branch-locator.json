@@ -1,0 +1,78 @@
+{
+  "meta": {
+    "slug": "branch-locator",
+    "updatedAt": "2026-06-11"
+  },
+  "hero": {
+    "variant": "locator",
+    "breadcrumb": ["Home", "Branches"],
+    "title": "Locate a Branch",
+    "highlight": "Branch",
+    "subtitle": "Step into your nearest Prayaan Capital branch. Want to skip the branch visit? Apply online and our doorstep team comes to you.",
+    "statsLine": "33 branches · 3 states · 27 districts",
+    "cta": { "label": "Apply Online", "to": "/eligibility", "icon": "ArrowRight" },
+    "illustration": "map-pin"
+  },
+  "sections": [
+    {
+      "type": "branches",
+      "variant": "locator",
+      "breadcrumb": true,
+      "filters": ["state", "district", "search"],
+      "searchPlaceholder": "Search area, road or PIN…",
+      "stateQuickLinks": true,
+      "cardTile": "surveyor-ring",
+      "infiniteScroll": { "batchSize": 8 },
+      "searchBar": "prominent",
+      "cardActions": ["directions"],
+      "addressIncludes": ["district", "state", "pin"],
+      "helpNumber": "+91-6380589898",
+      "hours": { "days": "Mon–Fri", "open": "9:30 AM", "close": "6:30 PM" },
+      "helpText": "Can't find a branch near you? Our doorstep service covers surrounding districts.",
+      "stateTints": {
+        "Tamil Nadu": "coral",
+        "Andhra Pradesh": "mint",
+        "Telangana": "lavender"
+      },
+      "emptyState": {
+        "title": "No branches found",
+        "subtitle": "Try a different branch, district or PIN code."
+      },
+      "items": [
+        { "name": "Sivagangai", "address": "New No.6, Old No.73, UCO Bank, 2nd Floor, VOC Street", "district": "Sivagangai", "state": "Tamil Nadu", "pin": "630561" },
+        { "name": "Salem", "address": "No.5-F, Sachin Plaza, 2nd Floor, Sri Ram Nagar, Alagapuram", "district": "Salem", "state": "Tamil Nadu", "pin": "636016" },
+        { "name": "Erode", "address": "No.9/15, 2nd Floor, Perundurai Road, Opp. Sudha Hospital", "district": "Erode", "state": "Tamil Nadu", "pin": "638011" },
+        { "name": "Krishnagiri", "address": "Door No.1/375/12, Rajaji Nagar, 1st Cross, Krishnagiri", "district": "Krishnagiri", "state": "Tamil Nadu", "pin": "635001" },
+        { "name": "Dharmapuri", "address": "31C, 1st Floor, South Railway Line Road, Vanniyar Thirumana Mandapam", "district": "Dharmapuri", "state": "Tamil Nadu", "pin": "636701" },
+        { "name": "Gobichettipalayam", "address": "No.4/986, Kayalvizhi Complex, 1st Floor, Erode Main Road, Karattur", "district": "Erode", "state": "Tamil Nadu", "pin": "638476" },
+        { "name": "Paramakudi", "address": "1/161-P5, Apollo Pharmacy, 1st Floor, Mani Nagar, 1st Street", "district": "Paramakudi", "state": "Tamil Nadu", "pin": "623707" },
+        { "name": "Aruppukottai", "address": "1/508-B3, 1st Floor, RK Nagar, J.J Rani Complex, Gandhi Nagar, Aruppukottai", "district": "Virudhunagar", "state": "Tamil Nadu", "pin": "626101" },
+        { "name": "Kangeyam", "address": "No.295-A, 1st Floor, Kovai Main Road, Near Indian Oil Bunk, Kangeyam", "district": "Tiruppur", "state": "Tamil Nadu", "pin": "638701" },
+        { "name": "Kallakurichi", "address": "No.21, 2nd Floor, Opp. Head Post Office, Gandhi Salai, Kallakurichi", "district": "Kallakurichi", "state": "Tamil Nadu", "pin": "606202" },
+        { "name": "Sivakasi", "address": "1/6/726-A, Thangamani Complex, Srivilliputhur Main Road, Near PK Hotel, Satchiyapuram, Sivakasi", "district": "Virudhunagar", "state": "Tamil Nadu", "pin": "626124" },
+        { "name": "Tirupattur", "address": "No.283/A, 2nd Floor, Oli Puram, Asiriyar Nagar, Tirupattur", "district": "Tirupattur", "state": "Tamil Nadu", "pin": "635602" },
+        { "name": "Arani", "address": "No.1162Y, 1st Floor, P K Complex, ACS Garden, EB Nagar, Sevoor, Arani to Vellore Road", "district": "Tiruvannamalai", "state": "Tamil Nadu", "pin": "632316" },
+        { "name": "Gudiyatham", "address": "No.5, 1st Floor, R S Road, Polytechnic Koot Road, Vinayagapuram", "district": "Gudiyatham", "state": "Tamil Nadu", "pin": "632602" },
+        { "name": "Polur", "address": "No.80/1, 1st Floor, CC Road, Near Reliance Petrol Bunk, Polur, Polur Taluk", "district": "Tiruvannamalai", "state": "Tamil Nadu", "pin": "606803" },
+        { "name": "Dindigul", "address": "No.75/1, Ground Floor, Rama Meena Building, Thadicombu Road, Dindigul", "district": "Dindigul", "state": "Tamil Nadu", "pin": "624001" },
+        { "name": "Ramachandrapuram", "address": "D.No.28-2-2, 1st Floor, Vaibhav Complex, Draksharamam Road, Ramachandrapuram", "district": "Konaseema", "state": "Andhra Pradesh", "pin": "533255" },
+        { "name": "Rajahmundry", "address": "E & S Reddy Complex, Tilak Road, Opp. Sai Baba Temple", "district": "East Godavari", "state": "Andhra Pradesh", "pin": "533103" },
+        { "name": "Kakinada", "address": "D.No.3-18/1A, 2nd Floor, Shop No.3, Benda Complex, Sarpavaram Junction, Ramanayyapeta, Kakinada", "district": "Kakinada", "state": "Andhra Pradesh", "pin": "533005" },
+        { "name": "Srungavarapukota", "address": "No.12-177, 1st Floor, Visakha Road, Near Punyagiri Degree College, Srungavarapukota", "district": "Vizianagaram", "state": "Andhra Pradesh", "pin": "535145" },
+        { "name": "Pendurthi", "address": "No.3-64, Revenue Ward 70, Sujatha Nagar Main Road, Near Muntaj Hotel, Pendurthi, Visakhapatnam", "district": "Visakhapatnam", "state": "Andhra Pradesh", "pin": "530051" },
+        { "name": "Nellore", "address": "No.24/6/2/1, Near ACN Office, 4th Floor, SAP Towers, Saraswathi Nagar", "district": "Nellore", "state": "Andhra Pradesh", "pin": "524004" },
+        { "name": "Anantapur", "address": "No.6-378, 1st Floor, Opp. Sunray Hospital, Azad Nagar, Ballary Road", "district": "Anantapur", "state": "Andhra Pradesh", "pin": "515001" },
+        { "name": "Kurnool", "address": "D.No.40/39-3-1A, 4th Floor, Ucon Legend Complex, Bangaru Peta, Ballary Road", "district": "Kurnool", "state": "Andhra Pradesh", "pin": "518001" },
+        { "name": "Hindupur", "address": "D.No.6-4-32, 1st Floor, Opp. ADCC Bank, RS Road, Kolimi Appa Swamy Veedhi, Revenue Ward No.6, Hindupur", "district": "Sri Sathya Sai", "state": "Andhra Pradesh", "pin": "515201" },
+        { "name": "Kavali", "address": "No.19-6-54, 2nd Floor, Ram Nagar, Musunuru Mani Road, J.D. Complex, Kavali", "district": "Nellore", "state": "Andhra Pradesh", "pin": "507306" },
+        { "name": "Nandyal", "address": "D.No.25/419-5B-1, 1st Floor, Padmavathi Nagar Main Road, Saleem Nagar, Nandyal", "district": "Nandyal", "state": "Andhra Pradesh", "pin": "518501" },
+        { "name": "Dhone", "address": "Plot No.3, 1st Floor, BVR Complex, KVS Colony, Beside Mahalakshmi Hospital, Dhone", "district": "Nandyal", "state": "Andhra Pradesh", "pin": "518222" },
+        { "name": "Guntakal", "address": "D.No.20/51 ABC, 1st Floor, Opp. Vijeytha Hospital Main Road, Guntakal", "district": "Anantapur", "state": "Andhra Pradesh", "pin": "515801" },
+        { "name": "Peddapalli", "address": "No.4-5-122, 1st Floor, Subash Nagar, Peddapalli", "district": "Peddapalli", "state": "Telangana", "pin": "505172" },
+        { "name": "Jagtial", "address": "No.1-5-KA0011, 3rd Floor, Karimnagar Main Road, Near Hero Showroom, Jagtial", "district": "Jagtial", "state": "Telangana", "pin": "505327" },
+        { "name": "Karimnagar", "address": "No.334, 1st Floor, Ganesh Nagar, Karimnagar", "district": "Karimnagar", "state": "Telangana", "pin": "505001" },
+        { "name": "Kothagudem", "address": "D.No.6-8-98, 2nd Floor, Ganesh Basthi, Kothagudem", "district": "Bhadradri Kothagudem", "state": "Telangana", "pin": "507101" }
+      ]
+    }
+  ]
+}

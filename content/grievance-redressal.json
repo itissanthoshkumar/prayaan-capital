@@ -1,0 +1,119 @@
+{
+  "meta": {
+    "slug": "grievance-redressal",
+    "updatedAt": "2026-06-11"
+  },
+  "hero": {
+    "eyebrow": "Grievance Redressal",
+    "icon": "Shield",
+    "title": "Customer Grievance Redressal",
+    "highlight": "Redressal",
+    "subtitle": "As per RBI Master Direction – NBFC Customer Protection Directions. All complaints are addressed through a structured four-level escalation process."
+  },
+  "sections": [
+    {
+      "type": "stats",
+      "variant": "clay-cards",
+      "items": [
+        {
+          "num": "7",
+          "unit": "working days",
+          "label": "First response",
+          "sub": "Level 1 resolution target",
+          "tint": "coral"
+        },
+        {
+          "num": "4",
+          "unit": "escalation levels",
+          "label": "Structured path",
+          "sub": "Customer → GRO → PNO → RBI",
+          "tint": "mint"
+        },
+        {
+          "num": "RBI",
+          "unit": "compliant",
+          "label": "Fair Practice Code",
+          "sub": "Per Master Direction NBFC-CPD",
+          "tint": "lavender"
+        }
+      ]
+    },
+    {
+      "type": "escalation",
+      "levels": [
+        {
+          "level": "Level 1",
+          "label": "Customer Support",
+          "heading": "Customer Support",
+          "intro": "For any query or issue, first reach out to our customer care team. We are committed to resolving your queries within 7 working days. If your query remains unaddressed, please escalate to the Grievance Redressal Officer.",
+          "officer": null,
+          "contacts": [
+            { "icon": "Phone", "label": "Customer Care Number", "value": "+91-6380589898", "href": "tel:+916380589898" },
+            { "icon": "Mail", "label": "Customer Care Email", "value": "customercare@prayaancapital.com", "href": "mailto:customercare@prayaancapital.com" }
+          ],
+          "hours": "Monday – Friday, 9:30 AM – 6:30 PM (except on holidays)"
+        },
+        {
+          "level": "Level 2",
+          "label": "Grievance Redressal Officer",
+          "heading": "Grievance Redressal Officer",
+          "intro": "If you are not satisfied with the resolution provided at Level 1, or if your query remains unaddressed for over 7 days, you can write to our Grievance Redressal Officer.",
+          "officer": "Harish Kumar E",
+          "contacts": [
+            { "icon": "Mail", "label": "Email", "value": "gro@prayaancapital.com", "href": "mailto:gro@prayaancapital.com" },
+            { "icon": "Phone", "label": "Landline", "value": "044-49939225", "href": "tel:04449939225" },
+            { "icon": "Phone", "label": "Mobile", "value": "+91-9600133756", "href": "tel:+919600133756" }
+          ],
+          "hours": "Monday – Friday, 9:30 AM – 6:30 PM (except on holidays)"
+        },
+        {
+          "level": "Level 3",
+          "label": "Principal Nodal Officer",
+          "heading": "Principal Nodal Officer",
+          "intro": "If you are not satisfied with the resolution provided by the Grievance Redressal Officer, or if your query remains unaddressed for over 15 days, you can contact the Principal Nodal Officer.",
+          "officer": "Akash S Chelvam",
+          "contacts": [
+            { "icon": "Mail", "label": "Email", "value": "pno@prayaancapital.com", "href": "mailto:pno@prayaancapital.com" },
+            { "icon": "Phone", "label": "Mobile", "value": "+91-9820186402", "href": "tel:+919820186402" }
+          ],
+          "hours": "Monday – Friday, 9:30 AM – 6:30 PM"
+        },
+        {
+          "level": "Level 4",
+          "label": "RBI Officer-In-Charge",
+          "heading": "RBI Officer-In-Charge",
+          "intro": "If the issue is not resolved within 30 days or you are dissatisfied with the resolution, you may appeal to the Regional Office of the Reserve Bank of India under whose jurisdiction the registered office of the Company falls.",
+          "officer": null,
+          "contacts": [
+            { "icon": "Phone", "label": "Tel", "value": "044 2539 3406", "href": "tel:04425393406" }
+          ],
+          "hours": null,
+          "extra": {
+            "address": [
+              "Regional Office of Department of Supervision",
+              "Reserve Bank of India, Fort Glacis, Rajaji Salai",
+              "Chennai – 600001, Tamil Nadu"
+            ],
+            "channels": [
+              {
+                "label": "(i) Online",
+                "detail": "Through RBI's CMS portal",
+                "link": { "text": "https://cms.rbi.org.in", "href": "https://cms.rbi.org.in" }
+              },
+              {
+                "label": "(ii) Email",
+                "detail": null,
+                "link": { "text": "crpc@rbi.org.in", "href": "mailto:crpc@rbi.org.in" }
+              },
+              {
+                "label": "(iii) Physical",
+                "detail": "Centralised Receipt and Processing Centre (CRPC), 4th Floor, Reserve Bank of India, Sector 17, Central Vista, Chandigarh – 160017",
+                "link": null
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

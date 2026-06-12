@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "slug": "partner-with-us",
+    "updatedAt": "2026-06-11"
+  },
+  "hero": {
+    "eyebrow": "DSA / Channel Partner",
+    "icon": "Handshake",
+    "title": "Partner with Prayaan Capital",
+    "highlight": "Prayaan Capital",
+    "subtitle": "Join 500+ DSAs, connectors and fintech partners who earn with us every month — backed by the fastest-paying NBFC on the block."
+  },
+  "sections": [
+    {
+      "type": "stats",
+      "variant": "dark-strip",
+      "items": [
+        { "num": "500+", "label": "Active Partners", "tint": "coral" },
+        { "num": "₹500Cr+", "label": "Total Disbursed", "tint": "mint" },
+        { "num": "1.5%", "label": "Commission Rate", "tint": "lavender" },
+        { "num": "48hr", "label": "Payout Cycle", "tint": "sunset" }
+      ]
+    },
+    {
+      "type": "splitLayout",
+      "left": [
+        {
+          "type": "sectionHeading",
+          "eyebrow": "🤝 Why Partner with Us",
+          "title": "Everything you need to close deals faster",
+          "highlight": "close deals faster"
+        },
+        {
+          "type": "cards",
+          "columns": 2,
+          "layout": "horizontal",
+          "items": [
+            {
+              "icon": "IndianRupee",
+              "tint": "coral",
+              "title": "Industry-best payouts",
+              "desc": "Earn up to 1.5% commission on every disbursed loan amount — paid within 48 hours of disbursal."
+            },
+            {
+              "icon": "LayoutDashboard",
+              "tint": "mint",
+              "title": "Real-time partner portal",
+              "desc": "Track every lead, sanction and payout live. Full transparency, no chasing your RM for updates."
+            },
+            {
+              "icon": "Shield",
+              "tint": "lavender",
+              "title": "RBI-registered NBFC",
+              "desc": "A regulated, trusted brand your customers can verify — builds confidence at the first meeting."
+            },
+            {
+              "icon": "Handshake",
+              "tint": "sunset",
+              "title": "Dedicated Relationship Manager",
+              "desc": "A personal RM who handles your escalations, product queries and payout questions."
+            }
+          ]
+        },
+        {
+          "type": "quote",
+          "text": "I referred my first LAP client in week 2 and my commission hit my account the same week of disbursal. No delays, no follow-ups.",
+          "attribution": "— DSA Partner, Coimbatore"
+        }
+      ],
+      "right": [
+        {
+          "type": "form",
+          "formId": "partner-apply",
+          "sticky": true,
+          "icon": "Zap",
+          "tint": "coral",
+          "eyebrow": "Get started",
+          "title": "Apply to partner",
+          "fields": [
+            { "name": "fullName", "placeholder": "Full name", "kind": "text" },
+            { "name": "mobile", "placeholder": "Mobile number", "kind": "tel" },
+            { "name": "city", "placeholder": "City", "kind": "text" },
+            { "name": "firmName", "placeholder": "Firm name (optional)", "kind": "text" },
+            { "name": "channel", "placeholder": "Tell us about your channel — DSA, connector, fintech, broker...", "kind": "textarea", "rows": 3 }
+          ],
+          "submit": { "label": "Submit Application", "icon": "ArrowRight" },
+          "footnote": "We review all applications within 1–2 business days"
+        }
+      ]
+    }
+  ]
+}

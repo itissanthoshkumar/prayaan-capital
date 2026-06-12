@@ -1,0 +1,113 @@
+{
+  "meta": {
+    "slug": "faqs",
+    "updatedAt": "2026-06-11"
+  },
+  "hero": {
+    "eyebrow": "FAQs",
+    "icon": "HelpCircle",
+    "title": "Frequently Asked Questions",
+    "highlight": "Questions",
+    "subtitle": "Everything you need to know about our mortgage and housing loans — answered honestly.",
+    "quickStats": [
+      { "num": "12 answers", "label": "across", "tint": "coral" },
+      { "num": "4 topics", "label": "organised by", "tint": "mint" },
+      { "num": "< 2 min", "label": "average read", "tint": "lavender" }
+    ]
+  },
+  "sections": [
+    {
+      "type": "faqGroups",
+      "defaultOpen": "about",
+      "groups": [
+        {
+          "id": "about",
+          "title": "About Prayaan Capital",
+          "emoji": "🏦",
+          "items": [
+            {
+              "q": "Who is Prayaan Capital?",
+              "a": "Prayaan Capital is an RBI-registered NBFC focused on AI-powered mortgage and housing loans for property owners across India, with a focus on Tier 3–6 cities."
+            },
+            {
+              "q": "Are you regulated by the RBI?",
+              "a": "Yes. Prayaan Capital is registered as an NBFC under the Reserve Bank of India. Our certificate of registration is publicly disclosed under RBI Disclosures."
+            }
+          ]
+        },
+        {
+          "id": "loans",
+          "title": "Loans & Eligibility",
+          "emoji": "🏠",
+          "items": [
+            {
+              "q": "What loan amounts can I get?",
+              "a": "We offer Loan Against Property and housing loans from ₹10L to ₹1Cr, depending on the property value and your repayment capacity."
+            },
+            {
+              "q": "Do I need to mortgage my property?",
+              "a": "Yes — our loans are secured against your property. This is what allows us to offer you lower interest rates starting from 12% p.a."
+            },
+            {
+              "q": "What is the minimum CIBIL score?",
+              "a": "We look beyond CIBIL. Our AI model evaluates property value, bank flow, and repayment history — a score of 680+ improves your pricing."
+            },
+            {
+              "q": "What types of property are accepted?",
+              "a": "Residential, commercial and industrial properties with clear, marketable title. The property should be self-occupied or rented and registered in your name."
+            }
+          ]
+        },
+        {
+          "id": "application",
+          "title": "Application & Disbursal",
+          "emoji": "⚡",
+          "items": [
+            {
+              "q": "How long does approval take?",
+              "a": "Most decisions are issued within 24–48 hours of complete documentation. Property verification adds 1–2 days."
+            },
+            {
+              "q": "Do I need to visit a branch?",
+              "a": "No. Everything — application, document upload, and signing — is done digitally. Our field team visits you for property verification."
+            },
+            {
+              "q": "Where are funds disbursed?",
+              "a": "Directly to your registered bank account within 2 working days of signing the loan agreement."
+            }
+          ]
+        },
+        {
+          "id": "repayment",
+          "title": "Repayment & Charges",
+          "emoji": "📋",
+          "items": [
+            {
+              "q": "Are there foreclosure charges?",
+              "a": "Foreclosure is free after 6 months. Earlier closures attract up to 4% on outstanding principal."
+            },
+            {
+              "q": "Can I prepay partially?",
+              "a": "Yes — one part-payment per quarter is free of charge."
+            },
+            {
+              "q": "Are there any hidden fees?",
+              "a": "No. We follow full rate-card transparency under the RBI Fair Practice Code. All charges are listed in your sanction letter before you sign."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "icon": "MessageSquare",
+      "tint": "coral",
+      "title": "Didn't find your answer?",
+      "subtitle": "Our team responds within one business day. Or call us for a faster answer.",
+      "buttons": [
+        { "label": "Write to us", "variant": "default", "icon": "Link", "to": "/contact" },
+        { "label": "Call us", "variant": "outline", "icon": "Phone", "href": "tel:+916380589898" }
+      ]
+    }
+  ]
+}

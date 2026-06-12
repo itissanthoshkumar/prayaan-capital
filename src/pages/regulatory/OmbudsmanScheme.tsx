@@ -1,0 +1,10 @@
+import LegalPageTemplate from "@/components/templates/LegalPageTemplate";
+const Page = () => (
+  <LegalPageTemplate title="RBI Integrated Ombudsman Scheme" subtitle="Reserve Bank – Integrated Ombudsman Scheme, 2021" sections={[
+    { title: "When can you approach the Ombudsman?", content: "If your complaint is not resolved within 30 days by Prayaan Capital, or you are unsatisfied with the resolution." },
+    { title: "How to file a complaint", content: "Online at https://cms.rbi.org.in, by email to crpc@rbi.org.in, or by calling 14448 (toll free)." },
+    { title: "Salient features", content: "One nation, one ombudsman; no fees; jurisdiction-neutral; covers all NBFCs accepting deposits and select non-deposit-taking NBFCs." },
+    { title: "Documents to keep ready", content: "Loan account number, copies of correspondence with Prayaan Capital, and a brief description of your grievance." },
+  ]} />
+);
+export default Page;

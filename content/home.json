@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "slug": "home",
+    "updatedAt": "2026-06-11"
+  },
+  "hero": {
+    "eyebrow": "RBI Registered NBFC",
+    "eyebrowSecondary": "Mortgage & Housing Finance",
+    "title": "Your property has more to give.",
+    "highlight": "more to give.",
+    "tagline": "Own.  Unlock.  Grow.",
+    "subtitle": "Loan Against Property and housing loans from ₹10L to ₹1Cr. Tenures up to 20 years. AI-backed decisions in 48 hours, with doorstep service across India.",
+    "image": {
+      "src": "hero-store-owner.jpg",
+      "alt": "Property owner unlocking capital with Prayaan Capital",
+      "badges": [
+        {
+          "position": "bottom-left",
+          "label": "Recent disbursement",
+          "value": "₹35 Lakhs",
+          "sub": "Loan Against Property · Chennai"
+        },
+        {
+          "position": "top-right",
+          "icon": "CheckCircle",
+          "text": "Prayaan ✓",
+          "tint": "mint"
+        }
+      ]
+    },
+    "buttons": [
+      { "label": "Apply for a Loan", "variant": "hero", "to": "/eligibility", "icon": "ArrowRight" },
+      { "label": "Calculate My EMI", "variant": "hero-outline", "href": "/#emi-calculator" }
+    ],
+    "trustPills": [
+      { "icon": "IndianRupee", "label": "From 12% p.a.", "tint": "mint" },
+      { "icon": "Shield", "label": "RBI Registered NBFC", "tint": "coral" },
+      { "icon": "Home", "label": "Up to 60% LTV", "tint": "lavender" },
+      { "icon": "Zap", "label": "48-hr AI Decisions", "tint": "sunset" }
+    ]
+  },
+  "sections": []
+}

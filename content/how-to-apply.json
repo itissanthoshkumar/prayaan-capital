@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "slug": "how-to-apply",
+    "updatedAt": "2026-06-11"
+  },
+  "hero": {
+    "eyebrow": "⚡ 48-Hour Process",
+    "title": "How to Apply for a Mortgage Loan",
+    "highlight": "Mortgage Loan",
+    "subtitle": "From first click to funded account — our 4-step process is designed to be fast, digital, and doorstep-friendly.",
+    "buttons": [
+      { "label": "Start My Application", "variant": "default", "icon": "ArrowRight", "to": "/eligibility" },
+      { "label": "Call Us First", "variant": "outline", "icon": "Phone", "href": "tel:+916380589898" }
+    ]
+  },
+  "sections": [
+    {
+      "type": "steps",
+      "items": [
+        {
+          "num": "01",
+          "icon": "FileText",
+          "title": "Share Your Details",
+          "desc": "Fill our digital form with KYC, property information and bank statements. No branch visit required — takes under 15 minutes.",
+          "badge": "15 Min",
+          "tint": "coral"
+        },
+        {
+          "num": "02",
+          "icon": "CheckCircle",
+          "title": "AI Evaluation",
+          "desc": "Our underwriting model evaluates 200+ data points — property value, bank flow, GST filings — and issues a sanction letter, often same day.",
+          "badge": "Same Day",
+          "tint": "mint"
+        },
+        {
+          "num": "03",
+          "icon": "FileCheck",
+          "title": "Property Verification",
+          "desc": "Submit your title deed and property documents. Our field team handles legal and technical valuation within 24–48 hours.",
+          "badge": "Day 1–2",
+          "tint": "lavender"
+        },
+        {
+          "num": "04",
+          "icon": "Banknote",
+          "title": "Get Your Loan",
+          "desc": "Sign digitally via Aadhaar e-sign. Funds are credited directly to your bank account. Own. Unlock. Grow.",
+          "badge": "Day 2",
+          "tint": "sunset"
+        }
+      ]
+    },
+    {
+      "type": "checklists",
+      "eyebrow": "📋 Documents Needed",
+      "title": "Keep these ready before you start",
+      "columns": 2,
+      "groups": [
+        {
+          "category": "KYC",
+          "items": ["PAN & Aadhaar of owner / directors", "Address proof"]
+        },
+        {
+          "category": "Property",
+          "items": ["Original title deed & chain documents", "Property tax receipt & approved plan", "Encumbrance certificate"]
+        },
+        {
+          "category": "Financial",
+          "items": ["Bank statements – last 12 months", "ITR & financials – last 2 years"]
+        },
+        {
+          "category": "Business",
+          "items": ["GST or Udyam registration", "Business proof (Shop Act / licence)"]
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "align": "center",
+      "buttons": [
+        { "label": "Check My Eligibility", "variant": "default", "icon": "ArrowRight", "to": "/eligibility" }
+      ],
+      "footnote": "Takes 2 minutes · No credit score impact · 100% confidential"
+    }
+  ]
+}

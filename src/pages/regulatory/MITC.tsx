@@ -1,0 +1,13 @@
+import LegalPageTemplate from "@/components/templates/LegalPageTemplate";
+const Page = () => (
+  <LegalPageTemplate title="Most Important Terms & Conditions (MITC)" subtitle="Summary of key loan terms — read alongside your sanction letter" sections={[
+    { title: "1. Loan amount, tenure & rate", content: "As specified in the sanction letter and Key Fact Statement (KFS)." },
+    { title: "2. EMI & due date", content: "Equated Monthly Installment computed on reducing balance. EMI debit dates are typically the 5th of each month." },
+    { title: "3. Security", content: "As detailed in the loan agreement — property mortgage / hypothecation of asset / personal guarantee." },
+    { title: "4. Insurance", content: "Property and asset insurance must be maintained throughout the loan tenure." },
+    { title: "5. Fees & charges", content: "Processing, documentation, stamp duty, valuation, legal, foreclosure and bounce charges as per the Schedule of Charges." },
+    { title: "6. Penal & default consequences", content: "Penal interest of 2% per month on overdues. Default may trigger SARFAESI proceedings." },
+    { title: "7. Customer service contact", content: "customercare@prayaancapital.com | +91-6380589898" },
+  ]} />
+);
+export default Page;
