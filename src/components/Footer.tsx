@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Sparkles, Mail, Phone, MapPin } from "lucide-react";
+import BrandLogo from "@/components/BrandLogo";
 
 type FooterLink = { label: string; href: string };
 
@@ -74,13 +75,8 @@ const Footer = () => {
           {/* Brand strip */}
           <div className="grid lg:grid-cols-[1.4fr_1fr] gap-8 md:gap-10 mb-10 pb-10 border-b border-border/40">
             <div>
-              <Link to="/" className="flex items-center gap-2 mb-4">
-                <div className="w-9 h-9 rounded-2xl bg-gradient-coral shadow-clay-sm flex items-center justify-center">
-                  <span className="text-white font-display font-bold text-base">P</span>
-                </div>
-                <span className="font-display font-bold text-lg text-foreground tracking-tight">
-                  Prayaan Capital
-                </span>
+              <Link to="/" className="inline-flex items-center mb-4">
+                <BrandLogo size={36} />
               </Link>
               <p className="text-xs text-muted-foreground leading-relaxed max-w-md font-body">
                 Prayaan Capital Private Limited is a non-deposit taking NBFC, providing affordable secured business loans to MSMEs across India.

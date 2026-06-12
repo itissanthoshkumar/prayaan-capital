@@ -1,0 +1,130 @@
+{
+  "meta": {
+    "slug": "contact",
+    "updatedAt": "2026-06-12"
+  },
+  "hero": {
+    "eyebrow": "Get in Touch",
+    "icon": "MessageSquare",
+    "title": "Let's Talk Business",
+    "highlight": "Business",
+    "subtitle": "Business owner needing capital? Question about your account? Want to partner with us? Choose how we can help below.",
+    "illustration": "contact"
+  },
+  "sections": [
+    {
+      "type": "cards",
+      "columns": 3,
+      "layout": "vertical",
+      "items": [
+        {
+          "icon": "CheckCircle",
+          "tint": "coral",
+          "title": "Apply for a Loan",
+          "desc": "Secured business loans from ₹5L to ₹50L, underwritten by AI. Decisions typically within 24 hours of complete documentation.",
+          "cta": { "label": "Check Eligibility", "to": "/eligibility", "variant": "default", "icon": "ArrowRight" }
+        },
+        {
+          "icon": "Phone",
+          "tint": "mint",
+          "title": "Talk to Us",
+          "desc": "Reach our customer care team for queries on products, accounts and repayments. Monday – Friday, 9:30 AM – 6:30 PM.",
+          "cta": { "label": "+91-6380589898", "href": "tel:+916380589898", "variant": "secondary" },
+          "secondaryLink": { "label": "customercare@prayaancapital.com", "href": "mailto:customercare@prayaancapital.com" }
+        },
+        {
+          "icon": "Users",
+          "tint": "lavender",
+          "title": "Raise a Complaint",
+          "desc": "Every grievance is resolved fairly and on time, per the RBI Fair Practice Code. Four-level escalation path available.",
+          "cta": { "label": "View Escalation Path", "to": "/grievance-redressal", "variant": "secondary", "icon": "ArrowRight" }
+        }
+      ]
+    },
+    {
+      "type": "splitLayout",
+      "heading": {
+        "eyebrow": "✉ Send a Message",
+        "title": "Or write to us directly",
+        "subtitle": "For partnerships, investor enquiries, media or anything else — we respond within one business day."
+      },
+      "left": [
+        {
+          "type": "form",
+          "formId": "contact-message",
+          "nudge": {
+            "icon": "CheckCircle",
+            "tint": "coral",
+            "title": "Looking for a business loan?",
+            "subtitle": "Use our eligibility check — get a decision faster",
+            "to": "/eligibility"
+          },
+          "fields": [
+            { "name": "fullName", "label": "Full Name", "placeholder": "Your name", "kind": "text" },
+            { "name": "phone", "label": "Phone Number", "placeholder": "+91 XXXXX XXXXX", "kind": "tel" },
+            {
+              "name": "reason",
+              "label": "Reason for Contact",
+              "kind": "select",
+              "placeholder": "Select a topic",
+              "options": ["Partnership / Co-lending", "Investor Enquiry", "General Question", "Media / Press", "Other"]
+            },
+            { "name": "message", "label": "Message", "placeholder": "Tell us what you'd like to discuss...", "kind": "textarea", "rows": 5 }
+          ],
+          "submit": { "label": "Send Message" },
+          "footnote": "100% confidential · RBI-registered NBFC · No spam, ever"
+        }
+      ],
+      "right": [
+        {
+          "type": "mapEmbed",
+          "title": "Prayaan Capital — Minerva Building, Santhome High Road, Chennai",
+          "query": "Minerva Building, Santhome High Road, Chennai 600028, Tamil Nadu, India",
+          "zoom": 16,
+          "height": 270
+        },
+        {
+          "type": "contactDetails",
+          "items": [
+            {
+              "icon": "MapPin",
+              "tint": "lavender",
+              "label": "Corporate Office",
+              "primary": "No. 40/97, Minerva Building, 2nd Floor",
+              "secondary": "Santhome High Road, Chennai – 600028",
+              "action": {
+                "label": "Get directions →",
+                "href": "https://maps.google.com/?q=Minerva+Building,+Santhome+High+Road,+Chennai+600028",
+                "external": true
+              }
+            },
+            {
+              "icon": "Mail",
+              "tint": "coral",
+              "label": "Email",
+              "primary": "customercare@prayaancapital.com",
+              "secondary": "info@prayaancapital.com",
+              "action": { "label": "Send email →", "href": "mailto:customercare@prayaancapital.com", "external": false }
+            },
+            {
+              "icon": "Clock",
+              "tint": "sunset",
+              "label": "Office Hours",
+              "primary": "Monday – Friday",
+              "secondary": "9:30 AM – 6:30 PM IST"
+            }
+          ],
+          "officer": {
+            "icon": "Users",
+            "tint": "lavender",
+            "label": "Grievance Redressal Officer",
+            "name": "Mr. Harish Kumar E, AVP – HR",
+            "email": "gro@prayaancapital.com",
+            "phone": "+91-9600133756",
+            "link": { "label": "Full escalation path", "to": "/grievance-redressal" }
+          }
+        }
+      ]
+    }
+  ]
+}

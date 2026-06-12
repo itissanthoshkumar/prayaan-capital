@@ -314,7 +314,7 @@ const BranchLocator = () => {
                     />
                   </svg>
                   <div className="absolute top-[16px] left-1/2 -translate-x-1/2 w-[38px] h-[38px] rounded-full bg-white shadow-clay-sm flex items-center justify-center">
-                    <span className="font-display text-base font-black text-primary">P</span>
+                    <img src="/prayaan-mark.png" alt="" width={28} height={28} />
                   </div>
                 </div>
               </motion.div>
