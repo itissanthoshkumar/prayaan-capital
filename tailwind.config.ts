@@ -14,6 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
+        sans: ['"Overpass"', "-apple-system", "BlinkMacSystemFont", "system-ui", "sans-serif"],
         display: ['"Montserrat"', "-apple-system", "system-ui", "sans-serif"],
         body: ['"Overpass"', "-apple-system", "BlinkMacSystemFont", "system-ui", "sans-serif"],
       },
