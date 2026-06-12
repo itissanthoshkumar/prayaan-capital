@@ -1,0 +1,123 @@
+{
+  "meta": {
+    "slug": "about",
+    "updatedAt": "2026-06-12"
+  },
+  "hero": {
+    "eyebrow": "About Prayaan Capital",
+    "icon": "Sparkles",
+    "title": "The power on your side for India's MSMEs",
+    "highlight": "power on your side",
+    "subtitle": "Prayaan Capital Private Limited was incorporated on 10 December 2018 and granted the NBFC Certificate of Registration by RBI on 6 June 2019, with our Registered and Corporate Office in Chennai, Tamil Nadu. The word Prayaan, meaning \"Journey\", was conceptualised by the founders to reflect our intent of co-travelling with our customers on their entrepreneurial journey.",
+    "illustration": "about"
+  },
+  "sections": [
+    {
+      "type": "cards",
+      "columns": 2,
+      "layout": "feature",
+      "items": [
+        {
+          "eyebrow": "Our Mission",
+          "tint": "coral",
+          "title": "Where we want to be",
+          "desc": "To meet the vast unmet needs of micro & small businesses through highly digitized channels of sourcing, accepting and deeper engagement."
+        },
+        {
+          "eyebrow": "Our Focus",
+          "tint": "mint",
+          "title": "The missing middle of MSME credit",
+          "desc": "We serve MSMEs in manufacturing, trading and services — small to medium-sized stores, traders and manufacturing units in the segment that microfinance companies cannot fund and banks find too small. A combination of collateral value and our credit tools is used to decide the ideal loan amount for your business."
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "heading": {
+        "eyebrow": "Our Values",
+        "icon": "Brain",
+        "title": "What Drives Us"
+      },
+      "columns": 3,
+      "layout": "vertical",
+      "items": [
+        {
+          "icon": "Users",
+          "tint": "coral",
+          "title": "Customer First",
+          "desc": "Door-step service with the right mix of products designed around the borrower's needs."
+        },
+        {
+          "icon": "Brain",
+          "tint": "mint",
+          "title": "Technology Driven",
+          "desc": "User-friendly app-based solutions backed by a strong technology-enabled backend for our customers."
+        },
+        {
+          "icon": "Target",
+          "tint": "lavender",
+          "title": "Financial Inclusion",
+          "desc": "We service small business customers, enabling them to grow and become more actively involved in the mainstream banking system."
+        },
+        {
+          "icon": "Zap",
+          "tint": "sunset",
+          "title": "Quick Turn-around",
+          "desc": "Fast credit decisions and minimal paperwork so businesses can focus on what they do best."
+        },
+        {
+          "icon": "Eye",
+          "tint": "coral",
+          "title": "Fair Credit Analysis",
+          "desc": "Transparent assessment combining ground-level understanding of MSMEs with modern credit tools."
+        },
+        {
+          "icon": "Shield",
+          "tint": "mint",
+          "title": "Regulatory Excellence",
+          "desc": "RBI-registered NBFC committed to compliance, sound governance and customer protection."
+        }
+      ]
+    },
+    {
+      "type": "timeline",
+      "heading": {
+        "eyebrow": "⚡ Our Journey",
+        "title": "Building the Future of MSME Lending",
+        "highlight": "MSME Lending"
+      },
+      "items": [
+        {
+          "year": "2018",
+          "tint": "coral",
+          "event": "Prayaan Capital Private Limited incorporated on 10 December 2018 in Chennai"
+        },
+        {
+          "year": "2019",
+          "tint": "mint",
+          "event": "Granted NBFC Certificate of Registration by RBI on 6 June 2019 (non-deposit taking)"
+        },
+        {
+          "year": "2020",
+          "tint": "lavender",
+          "event": "Began extending secured business loans to micro & small self-employed enterprises"
+        },
+        {
+          "year": "2022",
+          "tint": "sunset",
+          "event": "Mr. Rangarajan Krishnan joined as Promoter & Managing Director, infusing fresh capital and expertise"
+        },
+        {
+          "year": "2024",
+          "tint": "coral",
+          "event": "Expanded product suite with housing loans and machinery financing for MSMEs"
+        },
+        {
+          "year": "2026",
+          "tint": "mint",
+          "event": "Co-travelling with thousands of MSME customers on their entrepreneurial journey"
+        }
+      ]
+    }
+  ]
+}

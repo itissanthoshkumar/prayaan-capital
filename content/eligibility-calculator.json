@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "slug": "eligibility-calculator",
+    "updatedAt": "2026-06-12"
+  },
+  "hero": {
+    "eyebrow": "Eligibility Check",
+    "title": "Loan Eligibility Calculator",
+    "subtitle": "AI-driven instant eligibility — no impact on your credit score.",
+    "illustration": "calculator"
+  },
+  "sections": [
+    {
+      "type": "eligibilityCalculator",
+      "inputs": [
+        {
+          "name": "turnover",
+          "label": "Annual Turnover",
+          "unit": "₹L",
+          "min": 10,
+          "max": 500,
+          "step": 10,
+          "default": 60
+        },
+        {
+          "name": "vintage",
+          "label": "Business Vintage",
+          "unit": "yrs",
+          "min": 1,
+          "max": 20,
+          "step": 1,
+          "default": 3
+        },
+        {
+          "name": "cibil",
+          "label": "CIBIL Score",
+          "min": 550,
+          "max": 850,
+          "step": 5,
+          "default": 720
+        }
+      ]
+    }
+  ]
+}

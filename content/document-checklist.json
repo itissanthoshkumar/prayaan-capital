@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "slug": "document-checklist",
+    "updatedAt": "2026-06-12"
+  },
+  "hero": {
+    "eyebrow": "Documents",
+    "icon": "FileText",
+    "title": "Document Checklist",
+    "subtitle": "Keep these ready for a smooth, paperless application",
+    "illustration": "legal"
+  },
+  "sections": [
+    {
+      "type": "checklists",
+      "groups": [
+        {
+          "category": "KYC documents",
+          "items": [
+            "PAN card of proprietor / directors / partners",
+            "Aadhaar card linked to active mobile",
+            "Passport-size photographs",
+            "Address proof (utility bill / passport / voter ID)"
+          ]
+        },
+        {
+          "category": "Business proof",
+          "items": [
+            "GST registration certificate",
+            "Udyam / MSME registration",
+            "Shop & Establishment certificate",
+            "Partnership deed / MoA & AoA / LLP agreement"
+          ]
+        },
+        {
+          "category": "Financial documents",
+          "items": [
+            "Bank statements – last 12 months",
+            "Income Tax Returns – last 2 years with computation",
+            "Audited financials – last 2 years",
+            "GST returns – last 12 months"
+          ]
+        },
+        {
+          "category": "Collateral / property documents",
+          "items": [
+            "Original title deed & chain of title",
+            "Approved sanctioned plan",
+            "Latest property tax receipt",
+            "Encumbrance certificate (last 13 years)",
+            "OEM quotation for machinery loans"
+          ]
+        }
+      ]
+    }
+  ]
+}

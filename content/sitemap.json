@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "slug": "sitemap",
+    "updatedAt": "2026-06-12"
+  },
+  "hero": {
+    "eyebrow": "Navigation",
+    "title": "Sitemap",
+    "subtitle": "Every page on the Prayaan Capital website."
+  },
+  "sections": [
+    {
+      "type": "sitemapIndex"
+    }
+  ]
+}

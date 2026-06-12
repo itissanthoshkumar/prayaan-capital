@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "slug": "blog",
+    "updatedAt": "2026-06-12"
+  },
+  "hero": {
+    "eyebrow": "Insights",
+    "title": "Prayaan Insights",
+    "subtitle": "Practical credit, AI and MSME know-how from our team.",
+    "illustration": "news"
+  },
+  "sections": [
+    {
+      "type": "articleGrid",
+      "columns": 3,
+      "readMoreLabel": "Read article →",
+      "items": [
+        {
+          "slug": "ai-underwriting-msme",
+          "title": "How AI underwriting is rewriting MSME credit",
+          "read": "6 min",
+          "tag": "AI"
+        },
+        {
+          "slug": "lap-vs-business-loan",
+          "title": "LAP vs Business Loan: which fits your MSME?",
+          "read": "5 min",
+          "tag": "Guides"
+        },
+        {
+          "slug": "gst-cash-flow",
+          "title": "Reading GST returns to predict cash-flow stress",
+          "read": "7 min",
+          "tag": "Insights"
+        },
+        {
+          "slug": "women-entrepreneurs-india",
+          "title": "Women entrepreneurs and the credit gap in India",
+          "read": "8 min",
+          "tag": "MSME"
+        },
+        {
+          "slug": "rbi-fair-practice",
+          "title": "Decoding RBI Fair Practice Code for borrowers",
+          "read": "5 min",
+          "tag": "Regulatory"
+        },
+        {
+          "slug": "supply-chain-finance",
+          "title": "Supply chain finance 101 for vendors & dealers",
+          "read": "6 min",
+          "tag": "Working capital"
+        }
+      ]
+    }
+  ]
+}

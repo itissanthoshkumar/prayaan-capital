@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "slug": "careers",
+    "updatedAt": "2026-06-12"
+  },
+  "hero": {
+    "eyebrow": "We're Hiring",
+    "icon": "Zap",
+    "title": "Build the Future of MSME Finance",
+    "highlight": "MSME Finance",
+    "subtitle": "Join a team of fintech veterans and AI researchers reimagining how 63 million Indian MSMEs access capital.",
+    "illustration": "careers"
+  },
+  "sections": [
+    {
+      "type": "cards",
+      "heading": {
+        "eyebrow": "Why Prayaan",
+        "icon": "Brain",
+        "title": "Perks & Culture"
+      },
+      "columns": 4,
+      "layout": "vertical",
+      "items": [
+        {
+          "icon": "Sparkles",
+          "tint": "coral",
+          "title": "Cutting-Edge AI",
+          "desc": "Work on production ML systems processing millions of data points daily."
+        },
+        {
+          "icon": "Heart",
+          "tint": "mint",
+          "title": "Health & Wellness",
+          "desc": "Comprehensive health insurance, mental wellness programs, and fitness benefits."
+        },
+        {
+          "icon": "TrendingUp",
+          "tint": "lavender",
+          "title": "Growth Path",
+          "desc": "ESOPs, learning budgets, conference sponsorships, and rapid career progression."
+        },
+        {
+          "icon": "Code",
+          "tint": "sunset",
+          "title": "Engineering Culture",
+          "desc": "Ship fast, iterate often. Modern stack, open-source contributions, and tech talks."
+        }
+      ]
+    },
+    {
+      "type": "jobList",
+      "heading": {
+        "eyebrow": "Open Positions",
+        "icon": "Sparkles",
+        "title": "Join the Team"
+      },
+      "applyCta": {
+        "label": "Apply",
+        "icon": "ArrowRight"
+      },
+      "items": [
+        {
+          "title": "Senior ML Engineer",
+          "team": "AI/ML",
+          "location": "Mumbai / Remote",
+          "kind": "Full-time",
+          "hot": true
+        },
+        {
+          "title": "Backend Engineer (Rust/Go)",
+          "team": "Platform",
+          "location": "Mumbai / Remote",
+          "kind": "Full-time",
+          "hot": false
+        },
+        {
+          "title": "Product Designer",
+          "team": "Product",
+          "location": "Mumbai",
+          "kind": "Full-time",
+          "hot": false
+        },
+        {
+          "title": "Credit Analyst",
+          "team": "Risk",
+          "location": "Mumbai",
+          "kind": "Full-time",
+          "hot": false
+        },
+        {
+          "title": "DevOps Engineer",
+          "team": "Infrastructure",
+          "location": "Remote",
+          "kind": "Full-time",
+          "hot": true
+        },
+        {
+          "title": "Growth Marketing Manager",
+          "team": "Marketing",
+          "location": "Mumbai",
+          "kind": "Full-time",
+          "hot": false
+        }
+      ]
+    }
+  ]
+}

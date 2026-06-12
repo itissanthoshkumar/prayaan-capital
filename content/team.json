@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "slug": "team",
+    "updatedAt": "2026-06-12"
+  },
+  "hero": {
+    "eyebrow": "Our Team",
+    "icon": "Brain",
+    "title": "Board of Directors",
+    "highlight": "Directors",
+    "subtitle": "Decades of NBFC, banking and technology leadership — co-travelling with India's MSMEs on their entrepreneurial journey.",
+    "illustration": "team"
+  },
+  "sections": [
+    {
+      "type": "people",
+      "heading": {
+        "title": "Leadership"
+      },
+      "items": [
+        {
+          "name": "Rangarajan Krishnan",
+          "role": "Promoter & Managing Director",
+          "tint": "coral",
+          "linkedin": "#",
+          "bio": "Finance professional with over 20 years of experience across Five Star Business Finance (Joint MD & CEO), Standard Chartered Bank, HDFC Bank, International Finance Corporation and Spark Capital. Expertise spans business, collections, technology, operations, credit and legal — having managed portfolios across corporate banking, mid-market, South-East Asia infrastructure financing and investment banking."
+        },
+        {
+          "name": "Jayalakshmi Rangarajan",
+          "role": "Director",
+          "tint": "mint",
+          "linkedin": "#",
+          "bio": "Technology professional with wide-ranging experience across software development and consultancy, including Wipro Technologies and Ahaguru Education Technology. Brings key insights into technology models that enhance productivity and build robust systems."
+        },
+        {
+          "name": "G. Madhan Mohan",
+          "role": "Chief Credit Officer",
+          "tint": "lavender",
+          "linkedin": "#",
+          "bio": "21+ years of work in MSME markets across Credit Policy, Underwriting, Collections, Fraud Control, Operations, Sales and Strategy. Helped set up the MSME vertical at RBL Bank and built the Business Correspondent model at Swadhaar Finserve. Earlier at Fullerton India, Sahayata Microfinance and Vistaar Financial Services."
+        },
+        {
+          "name": "Akash S. Chelvam",
+          "role": "Chief Human Resources Officer",
+          "tint": "sunset",
+          "linkedin": "#",
+          "bio": "Co-founder and core team member at Prayaan Capital, leading the human resources function and helping shape the company's culture as it scales across India."
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "heading": {
+        "eyebrow": "At a Glance",
+        "icon": "Sparkles",
+        "title": "Why Prayaan"
+      },
+      "columns": 3,
+      "layout": "centered",
+      "items": [
+        {
+          "tint": "mint",
+          "title": "RBI Registered NBFC",
+          "desc": "Certificate of Registration granted 6 June 2019"
+        },
+        {
+          "tint": "mint",
+          "title": "Headquartered in Chennai",
+          "desc": "Santhome High Road, Tamil Nadu"
+        },
+        {
+          "tint": "mint",
+          "title": "MSME Focus",
+          "desc": "Manufacturing, Trading & Services"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "slug": "thank-you",
+    "updatedAt": "2026-06-12"
+  },
+  "hero": {
+    "title": "Your application is submitted!",
+    "highlight": "submitted!"
+  },
+  "sections": [
+    {
+      "type": "confirmation",
+      "next": [
+        "Our credit team reviews your application",
+        "A relationship manager calls you within 1 business day",
+        "Sanction and disbursal after document verification"
+      ]
+    }
+  ]
+}

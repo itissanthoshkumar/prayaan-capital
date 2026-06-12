@@ -1,0 +1,131 @@
+{
+  "meta": {
+    "slug": "rbi-disclosures",
+    "updatedAt": "2026-06-12"
+  },
+  "hero": {
+    "eyebrow": "Regulatory",
+    "icon": "ShieldCheck",
+    "title": "RBI Disclosures",
+    "subtitle": "Mandatory disclosures as required under RBI directions for Non-Banking Financial Companies.",
+    "illustration": "legal"
+  },
+  "sections": [
+    {
+      "type": "legal",
+      "intro": {
+        "facts": [
+          {
+            "label": "Company",
+            "value": "Prayaan Capital Private Limited"
+          },
+          {
+            "label": "CIN",
+            "value": "U65900TN2018PTC126232"
+          },
+          {
+            "label": "RBI Certificate of Registration",
+            "value": "Granted on 6 June 2019 (Non-deposit taking NBFC-ICC)"
+          },
+          {
+            "label": "Registered & Corporate Office",
+            "value": "No. 40/97, Minerva Building, 2nd Floor, Santhome High Road, Chennai – 600028, Tamil Nadu"
+          }
+        ],
+        "note": "Prayaan Capital is registered with the Reserve Bank of India as a Non-Banking Financial Company – Investment and Credit Company (NBFC-ICC) and is authorised to carry on the business of non-banking financial institution without accepting public deposits."
+      },
+      "items": [
+        {
+          "title": "Certificate of Registration",
+          "content": "Prayaan Capital Private Limited holds a valid Certificate of Registration (CoR) issued by the Reserve Bank of India under Section 45-IA of the Reserve Bank of India Act, 1934. The CoR was granted on 6 June 2019. The company is classified as an NBFC-ICC (Non-deposit taking)."
+        },
+        {
+          "title": "Policies & Regulatory Documents",
+          "links": [
+            {
+              "label": "Interest Rate Policy",
+              "to": "/interest-rate-policy"
+            },
+            {
+              "label": "Fair Practice Code",
+              "to": "/fair-practice-code"
+            },
+            {
+              "label": "Grievance Redressal Policy",
+              "to": "/grievance-redressal"
+            },
+            {
+              "label": "KYC / AML Policy",
+              "to": "/kyc-aml-policy"
+            },
+            {
+              "label": "Code of Conduct for Recovery",
+              "to": "/code-of-conduct-recovery"
+            },
+            {
+              "label": "Whistleblower Policy",
+              "to": "/whistleblower-policy"
+            },
+            {
+              "label": "CSR Policy",
+              "to": "/csr-policy"
+            },
+            {
+              "label": "Citizens Charter",
+              "to": "/citizens-charter"
+            },
+            {
+              "label": "Most Important Terms & Conditions (MITC)",
+              "to": "/most-important-terms"
+            },
+            {
+              "label": "Notices & Disclosures",
+              "to": "/notices-disclosures"
+            },
+            {
+              "label": "Ombudsman Scheme",
+              "to": "/ombudsman-scheme"
+            },
+            {
+              "label": "Cookie Policy",
+              "to": "/cookie-policy"
+            },
+            {
+              "label": "Disclaimer",
+              "to": "/disclaimer"
+            }
+          ]
+        },
+        {
+          "title": "Non-Deposit Taking Status",
+          "content": "Prayaan Capital Private Limited does not accept public deposits. All lending is funded through equity capital and borrowings from regulated financial institutions. The company is not authorised to accept deposits from the general public."
+        },
+        {
+          "title": "Systemically Important Status",
+          "content": "Prayaan Capital Private Limited is not classified as a Systemically Important NBFC (NBFC-SI) under applicable RBI guidelines. The company complies with all applicable prudential norms including capital adequacy, provisioning, and exposure norms."
+        },
+        {
+          "title": "Contact for Regulatory Queries",
+          "facts": [
+            {
+              "label": "Email",
+              "value": "customercare@prayaancapital.com"
+            },
+            {
+              "label": "Phone",
+              "value": "+91-6380589898"
+            },
+            {
+              "label": "Address",
+              "value": "No. 40/97, Minerva Building, 2nd Floor, Santhome High Road, Chennai – 600028"
+            },
+            {
+              "label": "Hours",
+              "value": "Mon – Sat, 9:00 AM – 7:00 PM IST"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

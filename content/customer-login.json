@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "slug": "customer-login",
+    "updatedAt": "2026-06-12"
+  },
+  "hero": {
+    "eyebrow": "Customer Portal",
+    "title": "Customer Login",
+    "subtitle": "Manage EMIs, download statements and raise service requests."
+  },
+  "sections": [
+    {
+      "type": "loginForm"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "slug": "emi-calculator",
+    "updatedAt": "2026-06-12"
+  },
+  "hero": {
+    "eyebrow": "EMI Calculator",
+    "title": "EMI Calculator",
+    "subtitle": "Estimate monthly EMIs for any Prayaan Capital loan in seconds.",
+    "illustration": "calculator"
+  },
+  "sections": [
+    {
+      "type": "emiCalculator"
+    }
+  ]
+}

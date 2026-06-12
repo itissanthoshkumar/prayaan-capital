@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "slug": "news",
+    "updatedAt": "2026-06-12"
+  },
+  "hero": {
+    "eyebrow": "Newsroom",
+    "icon": "Sparkles",
+    "title": "News & Updates",
+    "highlight": "Updates",
+    "subtitle": "Product launches, partnerships, engineering insights, and company milestones.",
+    "illustration": "news"
+  },
+  "sections": [
+    {
+      "type": "newsFeatured",
+      "tag": "Press Release",
+      "title": "Prayaan Capital Crosses ₹500Cr in MSME Loan Disbursals",
+      "excerpt": "Prayaan Capital, an AI-native NBFC, announced today that it has crossed ₹500 crore in cumulative loan disbursals to MSMEs across 10 Indian states, powered by its proprietary AI underwriting engine.",
+      "date": "March 10, 2026"
+    },
+    {
+      "type": "newsGrid",
+      "columns": 3,
+      "items": [
+        {
+          "tag": "Product Update",
+          "tint": "coral",
+          "title": "Launching Instant Pre-Approved Loans for Repeat Borrowers",
+          "excerpt": "Our AI now pre-scores existing borrowers, enabling instant top-up loans with zero additional documentation.",
+          "date": "Feb 28, 2026"
+        },
+        {
+          "tag": "Partnership",
+          "tint": "mint",
+          "title": "Prayaan Capital Partners with SIDBI for MSME Credit Guarantee",
+          "excerpt": "Strategic partnership with SIDBI to offer credit guarantee-backed loans, reducing collateral requirements.",
+          "date": "Feb 15, 2026"
+        },
+        {
+          "tag": "Engineering",
+          "tint": "lavender",
+          "title": "How Our AI Processes 200+ Data Points in Under 30 Seconds",
+          "excerpt": "A deep dive into the machine learning pipeline that powers our real-time credit decisioning engine.",
+          "date": "Jan 30, 2026"
+        },
+        {
+          "tag": "Industry",
+          "tint": "sunset",
+          "title": "RBI's Digital Lending Guidelines: What It Means for MSMEs",
+          "excerpt": "Our take on the latest regulatory framework and how compliant AI-native NBFCs are better positioned.",
+          "date": "Jan 15, 2026"
+        },
+        {
+          "tag": "Company",
+          "tint": "coral",
+          "title": "Named in India's Top 10 AI-Native Fintech Startups",
+          "excerpt": "Recognized by FinTech Global for our innovative approach to AI-driven secured lending.",
+          "date": "Dec 20, 2025"
+        },
+        {
+          "tag": "Milestone",
+          "tint": "mint",
+          "title": "10,000 MSMEs Funded — Here's What We Learned",
+          "excerpt": "Reflections from our founding team on reaching this milestone and our roadmap ahead.",
+          "date": "Nov 10, 2025"
+        }
+      ]
+    }
+  ]
+}

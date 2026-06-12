@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "slug": "case-studies",
+    "updatedAt": "2026-06-12"
+  },
+  "hero": {
+    "eyebrow": "Case Studies",
+    "title": "Customer Success Stories",
+    "subtitle": "Real MSMEs that grew with Prayaan Capital.",
+    "illustration": "stories"
+  },
+  "sections": [
+    {
+      "type": "caseList",
+      "columns": [
+        "Business",
+        "Loan",
+        "Outcome"
+      ],
+      "items": [
+        {
+          "name": "Rajesh Auto Components",
+          "city": "Pune",
+          "loan": "₹35L Machinery Finance",
+          "result": "Doubled monthly output in 9 months"
+        },
+        {
+          "name": "Meera Spice Exports",
+          "city": "Kochi",
+          "loan": "₹22L Working Capital",
+          "result": "Entered 3 new export markets"
+        },
+        {
+          "name": "Suresh Textiles",
+          "city": "Surat",
+          "loan": "₹40L LAP",
+          "result": "Hired 28 new weavers, 45% revenue growth"
+        },
+        {
+          "name": "Fatima Handicrafts",
+          "city": "Jaipur",
+          "loan": "₹12L Women Entrepreneur Loan",
+          "result": "Onboarded 60+ artisan partners"
+        },
+        {
+          "name": "Amit Agro Industries",
+          "city": "Indore",
+          "loan": "₹28L Supply Chain Finance",
+          "result": "Cleared invoice backlog in 30 days"
+        }
+      ]
+    }
+  ]
+}

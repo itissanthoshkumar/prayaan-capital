@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "slug": "technology",
+    "updatedAt": "2026-06-12"
+  },
+  "hero": {
+    "eyebrow": "Technology",
+    "icon": "Sparkles",
+    "title": "An AI-first lending platform built in-house",
+    "highlight": "AI-first",
+    "subtitle": "Our technology stack is purpose-built for secured MSME lending — from origination and underwriting to collections and partner integrations.",
+    "illustration": "tech"
+  },
+  "sections": [
+    {
+      "type": "cards",
+      "columns": 3,
+      "layout": "vertical",
+      "items": [
+        {
+          "icon": "Brain",
+          "tint": "coral",
+          "title": "AI-native platform",
+          "desc": "Decisioning models trained on Indian MSME data combining bureau, banking, GST, and alternate signals."
+        },
+        {
+          "icon": "Database",
+          "tint": "mint",
+          "title": "Modern data stack",
+          "desc": "Cloud-native data infrastructure powering risk, portfolio analytics and real-time monitoring."
+        },
+        {
+          "icon": "Workflow",
+          "tint": "lavender",
+          "title": "Digital origination",
+          "desc": "End-to-end workflow from lead capture and KYC to sanction, e-agreement and disbursal."
+        },
+        {
+          "icon": "Plug",
+          "tint": "sunset",
+          "title": "Partner integrations",
+          "desc": "APIs for co-lending partners, DSAs, and data providers. Programmable integrations on roadmap."
+        },
+        {
+          "icon": "Lock",
+          "tint": "coral",
+          "title": "Security & compliance",
+          "desc": "RBI-aligned controls, ISO-grade information security practices, and data-residency in India."
+        },
+        {
+          "icon": "Users2",
+          "tint": "mint",
+          "title": "Tech team culture",
+          "desc": "Small, senior engineering team shipping weekly. Hiring across platform, ML and data engineering."
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Join the tech team",
+      "highlight": "tech team",
+      "subtitle": "We're hiring engineers who want to build consequential fintech from the ground up. Small team, big impact, weekly shipping.",
+      "buttons": [
+        {
+          "label": "View Open Roles",
+          "to": "/careers",
+          "icon": "ArrowRight"
+        }
+      ]
+    }
+  ]
+}

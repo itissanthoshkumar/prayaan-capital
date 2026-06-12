@@ -1,0 +1,96 @@
+{
+  "meta": {
+    "slug": "customer-payments",
+    "updatedAt": "2026-06-12"
+  },
+  "hero": {
+    "eyebrow": "Payments",
+    "icon": "Sparkles",
+    "title": "Pay your EMI your way",
+    "highlight": "EMI",
+    "subtitle": "Multiple convenient options to repay your loan — online, bank transfer, or automatic debit.",
+    "illustration": "payments"
+  },
+  "sections": [
+    {
+      "type": "cards",
+      "columns": 3,
+      "layout": "vertical",
+      "items": [
+        {
+          "icon": "CreditCard",
+          "tint": "coral",
+          "title": "Online Payment Portal",
+          "desc": "Pay securely using debit/credit card, UPI, or net banking on our customer portal.",
+          "cta": {
+            "label": "Pay Now",
+            "to": "/customer-login"
+          }
+        },
+        {
+          "icon": "Banknote",
+          "tint": "mint",
+          "title": "NEFT / RTGS",
+          "desc": "Transfer directly from your bank to Prayaan Capital using the account details below."
+        },
+        {
+          "icon": "RefreshCw",
+          "tint": "lavender",
+          "title": "Auto-Debit (NACH)",
+          "desc": "Set up a NACH mandate for automatic EMI deduction on your due date — never miss a payment.",
+          "cta": {
+            "label": "NACH Instructions",
+            "to": "/nach-instructions"
+          }
+        }
+      ]
+    },
+    {
+      "type": "factsTable",
+      "title": "Bank Transfer Details",
+      "note": "Always quote your loan account number in the payment reference to ensure correct allocation.",
+      "items": [
+        {
+          "label": "Beneficiary Name",
+          "value": "Prayaan Capital Private Limited"
+        },
+        {
+          "label": "Bank Name",
+          "value": "HDFC Bank"
+        },
+        {
+          "label": "Account Type",
+          "value": "Current Account"
+        },
+        {
+          "label": "Account Number",
+          "value": "XXXXXXXXXXXXXXXX (contact us for account details)"
+        },
+        {
+          "label": "IFSC Code",
+          "value": "Contact customercare@prayaancapital.com"
+        },
+        {
+          "label": "Reference",
+          "value": "Your Loan Account Number"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Need payment support?",
+      "buttons": [
+        {
+          "label": "+91-6380589898",
+          "href": "tel:+916380589898",
+          "icon": "Phone"
+        },
+        {
+          "label": "customercare@prayaancapital.com",
+          "href": "mailto:customercare@prayaancapital.com",
+          "icon": "Mail"
+        }
+      ]
+    }
+  ]
+}

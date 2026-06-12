@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "slug": "downloads",
+    "updatedAt": "2026-06-12"
+  },
+  "hero": {
+    "eyebrow": "Downloads",
+    "icon": "Download",
+    "title": "Download Center",
+    "subtitle": "Forms, policies and customer templates",
+    "illustration": "legal"
+  },
+  "sections": [
+    {
+      "type": "downloads",
+      "items": [
+        {
+          "name": "Loan Application Form",
+          "meta": "PDF, 220 KB",
+          "href": "#"
+        },
+        {
+          "name": "KYC Declaration Form",
+          "meta": "PDF, 110 KB",
+          "href": "#"
+        },
+        {
+          "name": "Statement of Account Request",
+          "meta": "PDF, 90 KB",
+          "href": "#"
+        },
+        {
+          "name": "NOC Request Form",
+          "meta": "PDF, 85 KB",
+          "href": "#"
+        },
+        {
+          "name": "Foreclosure Request Form",
+          "meta": "PDF, 95 KB",
+          "href": "#"
+        },
+        {
+          "name": "Most Important Terms & Conditions (MITC)",
+          "meta": "PDF, 180 KB",
+          "href": "#"
+        },
+        {
+          "name": "Sample Sanction Letter",
+          "meta": "PDF, 140 KB",
+          "href": "#"
+        }
+      ]
+    }
+  ]
+}

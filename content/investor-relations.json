@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "slug": "investor-relations",
+    "updatedAt": "2026-06-12"
+  },
+  "hero": {
+    "eyebrow": "Investor Relations",
+    "icon": "TrendingUp",
+    "title": "Investor Relations",
+    "subtitle": "Annual reports, financial results and disclosures",
+    "illustration": "legal"
+  },
+  "sections": [
+    {
+      "type": "legal",
+      "items": [
+        {
+          "title": "Financial highlights – FY25",
+          "content": "AUM ₹820 Cr • Disbursements ₹1,450 Cr • PAT ₹62 Cr • CRAR 24.6% • GNPA 1.8%"
+        },
+        {
+          "title": "Annual reports",
+          "links": [
+            {
+              "label": "Annual Report FY25 (PDF)",
+              "href": "#"
+            },
+            {
+              "label": "Annual Report FY24 (PDF)",
+              "href": "#"
+            },
+            {
+              "label": "Annual Report FY23 (PDF)",
+              "href": "#"
+            }
+          ]
+        },
+        {
+          "title": "Quarterly results",
+          "links": [
+            {
+              "label": "Q4 FY25 results",
+              "href": "#"
+            },
+            {
+              "label": "Q3 FY25 results",
+              "href": "#"
+            },
+            {
+              "label": "Q2 FY25 results",
+              "href": "#"
+            }
+          ]
+        },
+        {
+          "title": "Credit ratings",
+          "content": "Long-term: A- (Stable) by CRISIL • Short-term: A2+ • Reaffirmed FY25"
+        },
+        {
+          "title": "Investor contact",
+          "content": "ir@prayaancapital.com | +91 22 6789 0145"
+        }
+      ]
+    }
+  ]
+}

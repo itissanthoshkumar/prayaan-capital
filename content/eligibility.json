@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "slug": "eligibility",
+    "updatedAt": "2026-06-12"
+  },
+  "hero": {
+    "eyebrow": "Apply",
+    "title": "Check your loan eligibility",
+    "subtitle": "Multi-step application flow — AI pre-qualification with no credit score impact."
+  },
+  "sections": [
+    {
+      "type": "applicationFlow",
+      "formId": "eligibility"
+    }
+  ]
+}

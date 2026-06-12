@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "slug": "nach-instructions",
+    "updatedAt": "2026-06-12"
+  },
+  "hero": {
+    "eyebrow": "Customer Education",
+    "icon": "FileText",
+    "title": "NACH Instructions",
+    "subtitle": "Guidelines for setting up and managing your e-mandate with Prayaan Capital.",
+    "illustration": "payments"
+  },
+  "sections": [
+    {
+      "type": "legal",
+      "items": [
+        {
+          "title": "1. Mandate Registration",
+          "content": "Customers are required to register a NACH (National Automated Clearing House) e-mandate with their bank to authorise Prayaan Capital to debit EMIs on the due date each month."
+        },
+        {
+          "title": "2. Bank Account Details",
+          "content": "Provide accurate bank account number, IFSC, account type and account holder name. Mismatch in any of these may lead to mandate rejection by the sponsor bank."
+        },
+        {
+          "title": "3. Maximum Amount",
+          "content": "The mandate amount should be equal to or higher than your monthly EMI. The buffer protects you against bounce charges in case of any future restructuring of the EMI."
+        },
+        {
+          "title": "4. Mandate Validity",
+          "content": "The validity of the mandate must cover the entire loan tenure including a margin of 30 days post the scheduled last EMI date."
+        },
+        {
+          "title": "5. Sufficient Balance",
+          "content": "Customers must ensure adequate balance is maintained in the bank account at least 1 working day before the EMI due date to avoid dishonour and applicable charges."
+        },
+        {
+          "title": "6. Cancellation",
+          "content": "NACH mandates can only be cancelled with prior written approval from Prayaan Capital, after the loan account is fully closed and a No-Dues Certificate is issued."
+        },
+        {
+          "title": "7. Dishonour Charges",
+          "content": "In case the NACH presentation is returned by your bank for any reason (insufficient funds, signature mismatch, account closed, etc.), bounce charges as per the rate-card will be applicable in addition to penal interest."
+        }
+      ]
+    }
+  ]
+}

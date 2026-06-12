@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "slug": "foreclosure-calculator",
+    "updatedAt": "2026-06-12"
+  },
+  "hero": {
+    "eyebrow": "Foreclosure",
+    "title": "Foreclosure Calculator",
+    "subtitle": "See how much you save by closing your loan early.",
+    "illustration": "calculator"
+  },
+  "sections": [
+    {
+      "type": "foreclosureCalculator",
+      "inputs": [
+        {
+          "name": "outstanding",
+          "label": "Outstanding Principal",
+          "unit": "₹L",
+          "min": 1,
+          "max": 50,
+          "step": 1,
+          "default": 15
+        },
+        {
+          "name": "paid",
+          "label": "EMIs Already Paid",
+          "min": 1,
+          "max": 36,
+          "step": 1,
+          "default": 12
+        },
+        {
+          "name": "rate",
+          "label": "Interest Rate",
+          "unit": "%",
+          "min": 12,
+          "max": 20,
+          "step": 0.5,
+          "default": 14
+        }
+      ],
+      "rules": {
+        "freeAfterMonths": 6,
+        "earlyClosureChargePct": 4
+      }
+    }
+  ]
+}

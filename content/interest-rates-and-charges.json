@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "slug": "interest-rates-and-charges",
+    "updatedAt": "2026-06-12"
+  },
+  "hero": {
+    "eyebrow": "Rate Card",
+    "title": "Interest Rates & Charges",
+    "subtitle": "Transparent, RBI-compliant pricing. Final rate depends on AI risk grade.",
+    "illustration": "calculator"
+  },
+  "sections": [
+    {
+      "type": "rateTable",
+      "headers": [
+        "Product",
+        "Interest Rate",
+        "Processing Fee",
+        "Foreclosure"
+      ],
+      "rows": [
+        [
+          "Business Term Loan",
+          "14% – 22% p.a.",
+          "Up to 2% + GST",
+          "Nil after 6 months"
+        ],
+        [
+          "Loan Against Property",
+          "12% – 18% p.a.",
+          "Up to 1.5% + GST",
+          "Nil after 12 months"
+        ],
+        [
+          "Working Capital",
+          "15% – 22% p.a.",
+          "Up to 2% + GST",
+          "Nil after 6 months"
+        ],
+        [
+          "Machinery Finance",
+          "13% – 20% p.a.",
+          "Up to 2% + GST",
+          "Nil after 6 months"
+        ],
+        [
+          "Supply Chain Finance",
+          "13.5% – 18% p.a.",
+          "0.5% – 1.5% + GST",
+          "Not applicable"
+        ]
+      ]
+    },
+    {
+      "type": "factsTable",
+      "title": "Other Charges",
+      "items": [
+        {
+          "label": "Late EMI charge",
+          "value": "2% per month on overdue"
+        },
+        {
+          "label": "Bounce charge",
+          "value": "₹500 per bounce + GST"
+        },
+        {
+          "label": "Loan rescheduling",
+          "value": "₹1,000 + GST"
+        },
+        {
+          "label": "Duplicate statement",
+          "value": "₹250 + GST"
+        },
+        {
+          "label": "Documentation charge",
+          "value": "₹1,500 + GST"
+        },
+        {
+          "label": "Stamp duty",
+          "value": "As per applicable state law"
+        }
+      ]
+    }
+  ]
+}
