@@ -141,7 +141,7 @@ const GrievanceRedressal = () => {
             {guarantees.map((g) => (
               <div key={g.label} className="clay-surface p-5 flex items-center gap-4">
                 <div className={`w-14 h-14 rounded-2xl ${g.tint} shadow-clay flex flex-col items-center justify-center shrink-0`}>
-                  <span className="font-display text-base font-black text-white leading-none">{g.num}</span>
+                  <span className="font-mono text-base font-bold text-white leading-none">{g.num}</span>
                   <span className="font-body text-[8px] font-bold text-white/80 uppercase tracking-wide leading-tight text-center px-0.5">{g.unit}</span>
                 </div>
                 <div>

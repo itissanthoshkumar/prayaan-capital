@@ -14,9 +14,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['"Overpass"', "-apple-system", "BlinkMacSystemFont", "system-ui", "sans-serif"],
-        display: ['"Montserrat"', "-apple-system", "system-ui", "sans-serif"],
-        body: ['"Overpass"', "-apple-system", "BlinkMacSystemFont", "system-ui", "sans-serif"],
+        sans: ['"Poppins"', "-apple-system", "BlinkMacSystemFont", "system-ui", "sans-serif"],
+        display: ['"Fraunces"', "Georgia", "serif"],
+        body: ['"Poppins"', "-apple-system", "BlinkMacSystemFont", "system-ui", "sans-serif"],
+        mono: ['"Overpass Mono"', "ui-monospace", "SFMono-Regular", "monospace"],
       },
       colors: {
         border: "hsl(var(--border))",

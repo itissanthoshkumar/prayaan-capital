@@ -308,7 +308,7 @@ const EMICalculator = () => {
                       initial={{ opacity: 0.4, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3, ease: "easeOut" }}
-                      className="font-display text-5xl md:text-6xl font-extrabold text-gradient-coral leading-none"
+                      className="font-mono text-5xl md:text-6xl font-bold text-gradient-coral leading-none tracking-tight"
                     >
                       {fmtHero(emi)}
                     </motion.span>

@@ -77,7 +77,7 @@ const PartnerWithUs = () => (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden">
           {stats.map((s) => (
             <div key={s.label} className="bg-foreground px-6 py-5 text-center">
-              <p className="font-display text-2xl md:text-3xl font-extrabold text-white mb-0.5">{s.num}</p>
+              <p className="font-mono text-2xl md:text-3xl font-bold text-white mb-0.5">{s.num}</p>
               <p className="font-body text-xs text-white/50 uppercase tracking-[0.12em]">{s.label}</p>
             </div>
           ))}
