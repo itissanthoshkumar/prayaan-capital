@@ -29,6 +29,7 @@ const policiesGuidelines: FooterLink[] = [
 ];
 
 const compliances: FooterLink[] = [
+  { label: "RBI Disclosures", href: "/rbi-disclosures" },
   { label: "Citizens Charter", href: "/citizens-charter" },
   { label: "Most Important Terms & Conditions", href: "/most-important-terms" },
   { label: "Notices & Disclosures", href: "/notices-disclosures" },
@@ -111,13 +112,25 @@ const Footer = () => {
             <Column title="Customer Education" links={customerEducation} />
           </div>
 
+          {/* RBI grievance / ombudsman compliance strip */}
+          <div className="border-t border-border/40 pt-6 mb-5">
+            <p className="text-[10px] md:text-[11px] text-muted-foreground font-body leading-relaxed">
+              <span className="font-semibold text-foreground">Grievance Redressal:</span> Mr. Harish Kumar E (Grievance Redressal Officer) ·{" "}
+              <a href="mailto:gro@prayaancapital.com" className="hover:text-primary transition-colors">gro@prayaancapital.com</a> ·{" "}
+              <a href="tel:+919600133756" className="hover:text-primary transition-colors">+91-9600133756</a>.{" "}
+              If unresolved within 30 days, escalate to the RBI Ombudsman via{" "}
+              <a href="https://cms.rbi.org.in" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">cms.rbi.org.in</a>{" "}
+              or toll-free 14448. Prayaan Capital does not accept public deposits.
+            </p>
+          </div>
+
           <div className="border-t border-border/40 pt-6">
             <div className="flex flex-col md:flex-row justify-between items-center gap-3">
               <p className="text-[10px] md:text-[11px] text-muted-foreground font-body">
                 © {new Date().getFullYear()} Prayaan Capital Pvt. Ltd. All rights reserved. CIN: U65900TN2018PTC126232
               </p>
               <p className="text-[10px] md:text-[11px] text-muted-foreground text-center md:text-right font-body">
-                NBFC Certificate of Registration granted by RBI on 6 June 2019
+                NBFC-ICC · Certificate of Registration granted by RBI on 6 June 2019
               </p>
             </div>
           </div>

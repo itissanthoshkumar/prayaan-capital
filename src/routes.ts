@@ -45,6 +45,7 @@ import Customer from "./pages/Customer";
 import CustomerPayments from "./pages/CustomerPayments";
 import RBIDisclosures from "./pages/RBIDisclosures";
 import ThankYou from "./pages/ThankYou";
+import NotFound from "./pages/NotFound";
 import { productData } from "./data/products";
 
 export interface AppRoute {
@@ -119,6 +120,7 @@ export const appRoutes: AppRoute[] = [
   { path: "/success-stories", component: CaseStudies },
   { path: "/partnerships", component: PartnerWithUs },
   { path: "/faq", component: FAQs },
+  { path: "/404", component: NotFound },
 ];
 
 /** Set of all concrete (non-parameterised) route paths in the app, suitable for navigation. */

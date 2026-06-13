@@ -45,7 +45,7 @@ const ProductPageTemplate = ({ data }: { data: ProductPageData }) => {
                 <Icon className="text-primary" size={24} />
               </div>
               <div>
-                <h1 className="font-display text-3xl md:text-5xl font-extrabold text-foreground tracking-tight leading-[1.1]">{data.title}</h1>
+                <h1 className="font-display text-3xl md:text-5xl font-bold text-foreground tracking-tight leading-[1.1]">{data.title}</h1>
                 <p className="text-sm md:text-base text-muted-foreground mt-3 max-w-xl font-body">{data.tagline}</p>
               </div>
             </div>
@@ -60,7 +60,7 @@ const ProductPageTemplate = ({ data }: { data: ProductPageData }) => {
               <motion.div key={h.label} variants={itemAnim} className="bg-card/80 backdrop-blur rounded-2xl border border-border/60 p-4 md:p-5 relative overflow-hidden">
                 <div className={`absolute top-0 left-4 right-4 h-[2px] bg-gradient-to-r ${i % 2 === 0 ? "from-primary to-accent" : "from-accent to-[hsl(var(--color-lavender))]"} opacity-40 rounded-full`} />
                 <p className="text-[10px] uppercase tracking-wider text-muted-foreground font-body mb-1">{h.label}</p>
-                <p className="font-display font-bold text-base md:text-lg text-foreground">{h.value}</p>
+                <p className="font-mono font-bold text-base md:text-lg text-foreground">{h.value}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -108,10 +108,19 @@ const ProductPageTemplate = ({ data }: { data: ProductPageData }) => {
               {data.rates.map((r) => (
                 <div key={r.label} className="flex justify-between py-2.5 text-xs md:text-sm">
                   <span className="text-muted-foreground">{r.label}</span>
-                  <span className="font-semibold text-foreground">{r.value}</span>
+                  <span className="font-mono font-semibold text-foreground">{r.value}</span>
                 </div>
               ))}
             </div>
+            {/* RBI transparency note */}
+            <p className="text-[11px] text-muted-foreground leading-relaxed mt-5 pt-4 border-t border-border/50">
+              Final interest rate depends on your risk grade and property. The annualised rate and all
+              charges are disclosed in your sanction letter and Key Fact Statement (KFS) before disbursal, per RBI guidelines.
+              See our{" "}
+              <Link to="/interest-rate-policy" className="text-primary hover:underline">Interest Rate Policy</Link>,{" "}
+              <Link to="/fair-practice-code" className="text-primary hover:underline">Fair Practice Code</Link> and{" "}
+              <Link to="/grievance-redressal" className="text-primary hover:underline">Grievance Redressal</Link>.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -125,7 +134,7 @@ const ProductPageTemplate = ({ data }: { data: ProductPageData }) => {
           </motion.h2>
           <Accordion type="single" collapsible className="space-y-3">
             {data.faqs.map((f, i) => (
-              <AccordionItem key={i} value={`q-${i}`} className="bg-card rounded-2xl border border-border/60 px-5 shadow-card">
+              <AccordionItem key={i} value={`q-${i}`} className="clay-surface border-0 px-5">
                 <AccordionTrigger className="text-sm md:text-base font-semibold text-foreground text-left">{f.q}</AccordionTrigger>
                 <AccordionContent className="text-xs md:text-sm text-muted-foreground leading-relaxed">{f.a}</AccordionContent>
               </AccordionItem>
