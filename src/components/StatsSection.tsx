@@ -34,7 +34,7 @@ const StatsSection = () => {
               variants={item}
               className="text-center"
             >
-              <div className={`font-display text-3xl md:text-5xl font-extrabold mb-1 tracking-tight bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
+              <div className={`font-mono text-3xl md:text-5xl font-bold mb-1 tracking-tight bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
                 {stat.value}
               </div>
               <div className="text-xs md:text-sm text-muted-foreground font-body">{stat.label}</div>

@@ -49,11 +49,11 @@ const AIFloatingElements = () => {
 
 /** Small AI badge for section headers */
 export const AIBadge = ({ label = "AI-Powered" }: { label?: string }) => (
-  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/8 border border-primary/12 text-[10px] font-semibold text-primary uppercase tracking-[0.12em] font-body">
+  <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body">
     <motion.span
       animate={{ rotate: [0, 360] }}
       transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-      className="inline-block"
+      className="inline-block text-[11px]"
     >
       ✦
     </motion.span>

@@ -41,7 +41,7 @@ const NACHInstructions = () => {
         </div>
       </section>
 
-      <section className="py-12 md:py-20 bg-background">
+      <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true }} className="max-w-3xl mx-auto space-y-6">
             {steps.map((s) => (

@@ -58,7 +58,7 @@ const HowToApply = () => (
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-4">
               ⚡ 48-Hour Process
             </span>
-            <h1 className="font-display text-3xl md:text-5xl font-extrabold text-foreground mt-3 mb-4 leading-tight max-w-2xl">
+            <h1 className="font-display text-3xl md:text-6xl font-bold text-foreground mt-3 mb-4 leading-tight max-w-2xl">
               How to Apply for a{" "}
               <span className="text-gradient-coral">Mortgage Loan</span>
             </h1>
@@ -91,7 +91,7 @@ const HowToApply = () => (
     />
 
     {/* What you need section */}
-    <section className="py-12 md:py-20 bg-section">
+    <section className="py-16 md:py-24 bg-section">
       <div className="container mx-auto px-5 max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

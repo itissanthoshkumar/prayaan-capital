@@ -70,7 +70,7 @@ const AISection = () => {
                   <f.icon size={22} className="text-white" strokeWidth={1.8} />
                 </div>
                 <div className="text-right">
-                  <div className="text-lg font-display font-bold text-foreground leading-none">{f.stat}</div>
+                  <div className="text-lg font-mono font-bold text-foreground leading-none">{f.stat}</div>
                   <div className="text-[10px] text-muted-foreground font-body uppercase tracking-wider mt-1">{f.statLabel}</div>
                 </div>
               </div>

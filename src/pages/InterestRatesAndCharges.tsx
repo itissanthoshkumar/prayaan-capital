@@ -29,7 +29,7 @@ const InterestRatesAndCharges = () => (
           <div>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
           <AIBadge label="Rate Card" />
-          <h1 className="font-display text-3xl md:text-5xl font-extrabold text-foreground mt-4 mb-3">Interest Rates & Charges</h1>
+          <h1 className="font-display text-3xl md:text-6xl font-bold text-foreground mt-4 mb-3">Interest Rates & Charges</h1>
           <p className="text-sm md:text-base text-muted-foreground max-w-xl">Transparent, RBI-compliant pricing. Final rate depends on AI risk grade.</p>
         </motion.div>
           </div>
@@ -37,9 +37,9 @@ const InterestRatesAndCharges = () => (
         </div>
       </div>
     </section>
-    <section className="py-12 md:py-20 bg-background">
+    <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-5 max-w-5xl space-y-8">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-card rounded-3xl border border-border/60 shadow-card overflow-hidden">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="clay-surface overflow-hidden">
           <div className="h-[3px] bg-gradient-to-r from-primary to-accent" />
           <div className="overflow-x-auto">
             <table className="w-full text-xs md:text-sm">
@@ -56,7 +56,7 @@ const InterestRatesAndCharges = () => (
             </table>
           </div>
         </motion.div>
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-card rounded-3xl border border-border/60 shadow-card overflow-hidden">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="clay-surface overflow-hidden">
           <div className="h-[3px] bg-gradient-to-r from-accent to-[hsl(var(--color-coral))]" />
           <div className="p-6 md:p-8">
             <h2 className="font-display text-lg md:text-xl font-bold text-foreground mb-4">Other Charges</h2>

@@ -69,7 +69,7 @@ const ProductPageTemplate = ({ data }: { data: ProductPageData }) => {
 
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-5 grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl">
-          <motion.div variants={itemAnim} initial="hidden" whileInView="visible" viewport={{ once: true }} className="bg-card rounded-3xl border border-border/60 p-6 md:p-8 shadow-card relative">
+          <motion.div variants={itemAnim} initial="hidden" whileInView="visible" viewport={{ once: true }} className="clay-surface p-6 md:p-8 relative">
             <div className="absolute top-0 left-6 right-6 h-[2px] bg-gradient-to-r from-primary to-accent opacity-40 rounded-full" />
             <div className="flex items-center gap-2 mb-5"><Sparkles className="text-primary" size={16} /><h2 className="font-display text-lg md:text-xl font-bold text-foreground">Key Features</h2></div>
             <ul className="space-y-3">
@@ -78,7 +78,7 @@ const ProductPageTemplate = ({ data }: { data: ProductPageData }) => {
               ))}
             </ul>
           </motion.div>
-          <motion.div variants={itemAnim} initial="hidden" whileInView="visible" viewport={{ once: true }} className="bg-card rounded-3xl border border-border/60 p-6 md:p-8 shadow-card relative">
+          <motion.div variants={itemAnim} initial="hidden" whileInView="visible" viewport={{ once: true }} className="clay-surface p-6 md:p-8 relative">
             <div className="absolute top-0 left-6 right-6 h-[2px] bg-gradient-to-r from-accent to-[hsl(var(--color-lavender))] opacity-40 rounded-full" />
             <div className="flex items-center gap-2 mb-5"><CheckCircle2 className="text-accent" size={16} /><h2 className="font-display text-lg md:text-xl font-bold text-foreground">Eligibility</h2></div>
             <ul className="space-y-3">
@@ -92,7 +92,7 @@ const ProductPageTemplate = ({ data }: { data: ProductPageData }) => {
 
       <section className="py-12 md:py-20 bg-section">
         <div className="container mx-auto px-5 grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl">
-          <motion.div variants={itemAnim} initial="hidden" whileInView="visible" viewport={{ once: true }} className="bg-card rounded-3xl border border-border/60 p-6 md:p-8 shadow-card relative">
+          <motion.div variants={itemAnim} initial="hidden" whileInView="visible" viewport={{ once: true }} className="clay-surface p-6 md:p-8 relative">
             <div className="absolute top-0 left-6 right-6 h-[2px] bg-gradient-to-r from-[hsl(var(--color-lavender))] to-[hsl(var(--color-indigo))] opacity-40 rounded-full" />
             <div className="flex items-center gap-2 mb-5"><FileText className="text-[hsl(var(--color-lavender))]" size={16} /><h2 className="font-display text-lg md:text-xl font-bold text-foreground">Documents Needed</h2></div>
             <ul className="space-y-2.5">
@@ -101,7 +101,7 @@ const ProductPageTemplate = ({ data }: { data: ProductPageData }) => {
               ))}
             </ul>
           </motion.div>
-          <motion.div variants={itemAnim} initial="hidden" whileInView="visible" viewport={{ once: true }} className="bg-card rounded-3xl border border-border/60 p-6 md:p-8 shadow-card relative">
+          <motion.div variants={itemAnim} initial="hidden" whileInView="visible" viewport={{ once: true }} className="clay-surface p-6 md:p-8 relative">
             <div className="absolute top-0 left-6 right-6 h-[2px] bg-gradient-to-r from-[hsl(var(--color-coral))] to-primary opacity-40 rounded-full" />
             <div className="flex items-center gap-2 mb-5"><Sparkles className="text-[hsl(var(--color-coral))]" size={16} /><h2 className="font-display text-lg md:text-xl font-bold text-foreground">Rates & Charges</h2></div>
             <div className="divide-y divide-border/50">

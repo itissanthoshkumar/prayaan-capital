@@ -198,6 +198,7 @@ const EMICalculator = () => {
                     </div>
                   </div>
                   <Slider
+                    aria-label="Loan amount in lakhs"
                     value={[loanAmount]} onValueChange={(v) => setLoanAmount(v[0])}
                     min={5} max={100} step={1} className="w-full"
                   />
@@ -233,6 +234,7 @@ const EMICalculator = () => {
                     </div>
                   </div>
                   <Slider
+                    aria-label="Interest rate percent"
                     value={[rate]} onValueChange={(v) => setRate(v[0])}
                     min={12} max={30} step={0.5} className="w-full"
                   />
@@ -267,6 +269,7 @@ const EMICalculator = () => {
                     </div>
                   </div>
                   <Slider
+                    aria-label="Loan tenure in months"
                     value={[tenure]} onValueChange={(v) => setTenure(v[0])}
                     min={12} max={240} step={6} className="w-full"
                   />

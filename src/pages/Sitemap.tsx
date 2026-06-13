@@ -107,7 +107,7 @@ const Sitemap = () => (
       <AIFloatingElements />
       <div className="container mx-auto px-5 relative z-10">
         <AIBadge label="Sitemap" />
-        <h1 className="font-display text-3xl md:text-5xl font-extrabold text-foreground mt-4 mb-3">
+        <h1 className="font-display text-3xl md:text-6xl font-bold text-foreground mt-4 mb-3">
           Sitemap
         </h1>
         <p className="text-sm md:text-base text-muted-foreground max-w-xl">
@@ -115,7 +115,7 @@ const Sitemap = () => (
         </p>
       </div>
     </section>
-    <section className="py-12 md:py-20 bg-background">
+    <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-5 max-w-6xl grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {groups.map((g) => (
           <div key={g.title} className="clay-surface p-6">

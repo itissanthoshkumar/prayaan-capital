@@ -155,7 +155,7 @@ const HeroSection = () => {
           className="absolute bottom-10 left-8 clay-surface p-3.5 rounded-2xl shadow-clay max-w-[190px]"
         >
           <p className="font-body text-[10px] text-muted-foreground mb-0.5">Recent disbursement</p>
-          <p className="font-display text-sm font-bold text-foreground">₹35 Lakhs</p>
+          <p className="font-mono text-sm font-bold text-foreground">₹35 Lakhs</p>
           <p className="font-body text-[11px] text-muted-foreground">Loan Against Property · Chennai</p>
         </motion.div>
 

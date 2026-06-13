@@ -21,17 +21,17 @@ const Blog = () => (
         <div className="grid lg:grid-cols-[1fr_340px] gap-8 items-center">
           <div>
         <AIBadge label="Insights" />
-        <h1 className="font-display text-3xl md:text-5xl font-extrabold text-foreground mt-4 mb-3">Prayaan Insights</h1>
+        <h1 className="font-display text-3xl md:text-6xl font-bold text-foreground mt-4 mb-3">Prayaan Insights</h1>
         <p className="text-sm md:text-base text-muted-foreground max-w-xl">Practical know-how on property loans, credit and money from our team.</p>
           </div>
           <HeroIllustration variant="news" />
         </div>
       </div>
     </section>
-    <section className="py-12 md:py-20 bg-background">
+    <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-5 max-w-6xl grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {posts.map((p, i) => (
-          <motion.article key={p.slug} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="bg-card rounded-3xl border border-border/60 p-6 shadow-card relative hover:shadow-clay-lg transition">
+          <motion.article key={p.slug} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="clay-surface p-6 relative hover:shadow-clay-lg transition">
             <div className={`absolute top-0 left-6 right-6 h-[2px] bg-gradient-to-r ${i % 3 === 0 ? "from-primary to-accent" : i % 3 === 1 ? "from-accent to-[hsl(var(--color-lavender))]" : "from-[hsl(var(--color-coral))] to-primary"} opacity-40 rounded-full`} />
             <span className="text-[10px] uppercase tracking-wider font-semibold text-primary">{p.tag}</span>
             <h2 className="font-display text-base md:text-lg font-bold text-foreground mt-2 mb-3 leading-snug">{p.title}</h2>

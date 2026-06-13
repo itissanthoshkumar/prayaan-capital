@@ -13,7 +13,7 @@ const EMICalc = () => (
           <div>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
           <AIBadge label="EMI Calculator" />
-          <h1 className="font-display text-3xl md:text-5xl font-extrabold text-foreground mt-4 mb-3">EMI Calculator</h1>
+          <h1 className="font-display text-3xl md:text-6xl font-bold text-foreground mt-4 mb-3">EMI Calculator</h1>
           <p className="text-sm md:text-base text-muted-foreground max-w-xl">Estimate monthly EMIs for any Prayaan Capital loan in seconds.</p>
         </motion.div>
           </div>
