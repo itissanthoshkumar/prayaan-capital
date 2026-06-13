@@ -6,21 +6,21 @@ import { Link } from "react-router-dom";
 const products = [
   {
     icon: Landmark,
-    title: "Secured Business Loans",
-    range: "Up to ₹50L",
-    tenure: "Up to 72 months",
-    desc: "A long-term loan secured by mortgage of commercial or residential property. Designed to help your business grow with easy repayment schedules and competitive interest rates.",
-    features: ["Mortgage backed", "Flexi tenure", "Capital investment"],
+    title: "Loan Against Property",
+    range: "₹10L – ₹1Cr",
+    tenure: "Up to 20 years",
+    desc: "Unlock the value of your residential, commercial or industrial property. Use the funds for any need — with long tenures and rates starting from 12% p.a.",
+    features: ["Up to 60% LTV", "Any end-use", "Flexi tenure"],
     tint: "bg-gradient-coral",
     href: "/products/loan-against-property",
   },
   {
     icon: Home,
     title: "Housing Loans",
-    range: "Working capital",
-    tenure: "Up to 48 months",
-    desc: "Loans up to 48 months tailored for working capital needs of small businesses and self-employed customers, with simple paperwork and quick processing.",
-    features: ["Less paperwork", "Quick turn-around", "Door-step service"],
+    range: "₹10L – ₹1Cr",
+    tenure: "Up to 20 years",
+    desc: "Buy, build or renovate your home with affordable EMIs, minimal paperwork and doorstep service across Tier 3–6 India.",
+    features: ["From 12% p.a.", "Long tenure", "Doorstep service"],
     tint: "bg-gradient-mint",
     href: "/products/business-loan",
   },
@@ -47,10 +47,10 @@ const ProductsSection = () => {
             Our Products
           </span>
           <h2 className="font-display text-2xl md:text-5xl font-extrabold text-foreground mt-3 mb-3 md:mb-4 tracking-tight">
-            Tailor-made loans for <span className="text-gradient-coral">your business</span>
+            Lending against the <span className="text-gradient-coral">property you own</span>
           </h2>
           <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto font-body">
-            Because "one size doesn't fit all" — Prayaan Capital focuses on MSMEs in manufacturing, trading and services with the right mix of products.
+            Prayaan Capital is a mortgage-first NBFC — Loan Against Property and housing finance, built for property owners across Tier 3–6 India.
           </p>
         </motion.div>
 

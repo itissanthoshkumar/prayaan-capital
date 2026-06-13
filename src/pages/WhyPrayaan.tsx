@@ -11,8 +11,8 @@ import {
 const differentiators = [
   {
     icon: Users,
-    title: "MSME-first understanding",
-    desc: "Decades of relationship lending experience with manufacturers, traders and service providers across Tier 2 and Tier 3 India.",
+    title: "Property-owner first",
+    desc: "Decades of secured-lending experience with homeowners, shopkeepers and small landlords across Tier 2 and Tier 3 India.",
     tint: "bg-gradient-coral",
   },
   {
@@ -54,7 +54,7 @@ const differentiators = [
   {
     icon: Brain,
     title: "Tech-enabled underwriting",
-    desc: "AI-native credit decisioning combining bureau, banking, GST and alternate data for fast, fair decisions.",
+    desc: "AI-assisted credit decisioning combining property value, bureau and banking data for fast, fair decisions.",
     tint: "bg-gradient-sunset",
   },
 ];
@@ -77,11 +77,11 @@ const WhyPrayaan = () => {
                 <Sparkles size={12} /> Why Prayaan Capital
               </span>
               <h1 className="font-display text-3xl md:text-6xl font-bold text-foreground mt-3 mb-5 leading-tight">
-                Built for the <span className="text-gradient-coral">missing middle</span> of Indian MSMEs
+                Built for <span className="text-gradient-coral">property owners</span> in Tier 3–6 India
               </h1>
               <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-                We combine deep MSME understanding with AI-led underwriting to serve micro and small businesses
-                overlooked by microfinance and banks.
+                We combine deep local understanding with AI-led underwriting to help property owners unlock
+                the value of what they already own — fairly, and fast.
               </p>
             </motion.div>
 

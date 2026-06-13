@@ -7,19 +7,19 @@ import AIFloatingElements, { AIPulse } from "@/components/AIFloatingElements";
 const values = [
   { icon: Users, title: "Customer First", desc: "Door-step service with the right mix of products designed around the borrower's needs.", tint: "bg-gradient-coral" },
   { icon: Brain, title: "Technology Driven", desc: "User-friendly app-based solutions backed by a strong technology-enabled backend for our customers.", tint: "bg-gradient-mint" },
-  { icon: Target, title: "Financial Inclusion", desc: "We service small business customers, enabling them to grow and become more actively involved in the mainstream banking system.", tint: "bg-gradient-lavender" },
-  { icon: Zap, title: "Quick Turn-around", desc: "Fast credit decisions and minimal paperwork so businesses can focus on what they do best.", tint: "bg-gradient-sunset" },
-  { icon: Eye, title: "Fair Credit Analysis", desc: "Transparent assessment combining ground-level understanding of MSMEs with modern credit tools.", tint: "bg-gradient-coral" },
+  { icon: Target, title: "Financial Inclusion", desc: "We bring fair, transparent credit to property owners often overlooked by mainstream banks.", tint: "bg-gradient-lavender" },
+  { icon: Zap, title: "Quick Turn-around", desc: "Fast credit decisions and minimal paperwork so you can get to your funds sooner.", tint: "bg-gradient-sunset" },
+  { icon: Eye, title: "Fair Credit Analysis", desc: "Transparent assessment combining ground-level understanding of local property markets with modern credit tools.", tint: "bg-gradient-coral" },
   { icon: Shield, title: "Regulatory Excellence", desc: "RBI-registered NBFC committed to compliance, sound governance and customer protection.", tint: "bg-gradient-mint" },
 ];
 
 const timeline = [
   { year: "2018", event: "Prayaan Capital Private Limited incorporated on 10 December 2018 in Chennai", tint: "bg-gradient-coral" },
   { year: "2019", event: "Granted NBFC Certificate of Registration by RBI on 6 June 2019 (non-deposit taking)", tint: "bg-gradient-mint" },
-  { year: "2020", event: "Began extending secured business loans to micro & small self-employed enterprises", tint: "bg-gradient-lavender" },
+  { year: "2020", event: "Began extending Loan Against Property to self-employed and salaried property owners", tint: "bg-gradient-lavender" },
   { year: "2022", event: "Mr. Rangarajan Krishnan joined as Promoter & Managing Director, infusing fresh capital and expertise", tint: "bg-gradient-sunset" },
-  { year: "2024", event: "Expanded product suite with housing loans and machinery financing for MSMEs", tint: "bg-gradient-coral" },
-  { year: "2026", event: "Co-travelling with thousands of MSME customers on their entrepreneurial journey", tint: "bg-gradient-mint" },
+  { year: "2024", event: "Expanded the mortgage suite with housing and construction loans across Tier 3–6 India", tint: "bg-gradient-coral" },
+  { year: "2026", event: "Co-travelling with thousands of families as they unlock the value of their property", tint: "bg-gradient-mint" },
 ];
 
 const container = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } };
@@ -41,10 +41,10 @@ const About = () => {
               <Sparkles size={12} /> About Prayaan Capital
             </span>
             <h1 className="font-display text-3xl md:text-6xl font-bold text-foreground mt-3 mb-5 leading-tight">
-              The <span className="text-gradient-coral">power on your side</span> for India's MSMEs
+              The <span className="text-gradient-coral">power on your side</span> for India's property owners
             </h1>
             <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              Prayaan Capital Private Limited was incorporated on 10 December 2018 and granted the NBFC Certificate of Registration by RBI on 6 June 2019, with our Registered and Corporate Office in Chennai, Tamil Nadu. The word <em>Prayaan</em>, meaning "Journey", was conceptualised by the founders to reflect our intent of co-travelling with our customers on their entrepreneurial journey.
+              Prayaan Capital Private Limited was incorporated on 10 December 2018 and granted the NBFC Certificate of Registration by RBI on 6 June 2019, with our Registered and Corporate Office in Chennai, Tamil Nadu. The word <em>Prayaan</em>, meaning "Journey", was conceptualised by the founders to reflect our intent of co-travelling with our customers on their journey.
             </p>
           </motion.div>
             </div>
@@ -59,8 +59,8 @@ const About = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-2 gap-5 md:gap-8">
             {[
-              { label: "Our Mission", title: "Where we want to be", desc: "To meet the vast unmet needs of micro & small businesses through highly digitized channels of sourcing, accepting and deeper engagement.", tint: "bg-gradient-coral" },
-              { label: "Our Focus", title: "The missing middle of MSME credit", desc: "We serve MSMEs in manufacturing, trading and services — small to medium-sized stores, traders and manufacturing units in the segment that microfinance companies cannot fund and banks find too small. A combination of collateral value and our credit tools is used to decide the ideal loan amount for your business.", tint: "bg-gradient-mint" },
+              { label: "Our Mission", title: "Where we want to be", desc: "To help India's property owners unlock the value of what they already own — through highly digitized sourcing, fair underwriting and deeper, long-term relationships.", tint: "bg-gradient-coral" },
+              { label: "Our Focus", title: "Property-backed lending, done fairly", desc: "We serve homeowners, shopkeepers and small landlords across Tier 3–6 India — people with valuable property but limited access to fair, transparent credit. A combination of property value and our credit tools decides the ideal loan amount for you.", tint: "bg-gradient-mint" },
             ].map((item, i) => (
               <motion.div
                 key={item.label}
@@ -120,7 +120,7 @@ const About = () => {
               ⚡ Our Journey
             </span>
             <h2 className="font-display text-2xl md:text-5xl font-bold text-foreground mt-3">
-              Building the Future of <span className="text-gradient-coral">MSME Lending</span>
+              Building the Future of <span className="text-gradient-coral">Mortgage Lending</span>
             </h2>
           </motion.div>
           <div className="max-w-2xl mx-auto relative">

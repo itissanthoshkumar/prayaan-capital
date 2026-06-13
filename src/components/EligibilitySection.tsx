@@ -2,19 +2,19 @@ import { motion } from "framer-motion";
 import { CheckCircle, FileStack, Sparkles, ArrowUpRight } from "lucide-react";
 
 const eligibility = [
-  "Indian resident with a registered MSME / business",
-  "Minimum 2 years of business vintage",
-  "Annual turnover of ₹10 Lakhs or more",
-  "Collateral: residential/commercial property, machinery, or fixed assets",
+  "Indian resident who owns the property to be mortgaged",
+  "Property with clear, marketable title in your name",
+  "Age 21–65 years at loan maturity",
+  "Residential, commercial or industrial property accepted",
   "Valid KYC: PAN, Aadhaar, and address proof",
-  "Bank statements of last 6 months",
+  "Income proof — salaried, self-employed or business",
 ];
 
 const documents = [
   { category: "Identity & KYC", items: ["PAN Card (mandatory)", "Aadhaar Card", "Passport / Voter ID"], accent: "from-primary to-[hsl(36_90%_58%)]", dot: "bg-primary" },
-  { category: "Business Proof", items: ["Udyam / MSME Certificate", "GST Registration", "Shop Establishment Certificate"], accent: "from-accent to-[hsl(200_55%_50%)]", dot: "bg-accent" },
-  { category: "Financial Documents", items: ["Bank statements (6 months)", "IT Returns (2 years)", "P&L and Balance Sheet"], accent: "from-[hsl(var(--color-lavender))] to-[hsl(var(--color-indigo))]", dot: "bg-[hsl(var(--color-lavender))]" },
-  { category: "Collateral Documents", items: ["Property title deeds", "Encumbrance certificate", "Valuation report"], accent: "from-[hsl(var(--color-coral))] to-primary", dot: "bg-[hsl(var(--color-coral))]" },
+  { category: "Property Documents", items: ["Title deed & chain of title", "Encumbrance certificate", "Approved building plan", "Property tax receipt"], accent: "from-accent to-[hsl(200_55%_50%)]", dot: "bg-accent" },
+  { category: "Income Documents", items: ["Bank statements (6 months)", "IT Returns (2 years)", "Salary slips / business proof"], accent: "from-[hsl(var(--color-lavender))] to-[hsl(var(--color-indigo))]", dot: "bg-[hsl(var(--color-lavender))]" },
+  { category: "For Self-Employed", items: ["GST / Udyam (if applicable)", "P&L and Balance Sheet", "Business continuity proof"], accent: "from-[hsl(var(--color-coral))] to-primary", dot: "bg-[hsl(var(--color-coral))]" },
 ];
 
 const container = {
@@ -34,7 +34,7 @@ const listAnim = {
 
 const EligibilitySection = () => {
   return (
-    <section className="py-20 md:py-32 bg-section relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-section relative overflow-hidden">
       {/* Pastel blobs */}
       <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-gradient-lavender opacity-15 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-20 left-0 w-[400px] h-[400px] bg-gradient-mint opacity-15 rounded-full blur-3xl pointer-events-none" />
@@ -56,7 +56,7 @@ const EligibilitySection = () => {
             <span className="text-gradient-mint">Minimal Paperwork</span>
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-lg mx-auto font-body leading-relaxed">
-            Spend less time on paperwork and more time growing your business.
+            Spend less time on paperwork and get to your funds faster.
           </p>
         </motion.div>
 

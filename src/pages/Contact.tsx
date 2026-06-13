@@ -26,7 +26,7 @@ const channels = [
     icon: CheckCircle,
     tint: "bg-gradient-coral",
     label: "Apply for a Loan",
-    body: "Secured business loans from ₹5L to ₹50L, underwritten by AI. Decisions typically within 24 hours of complete documentation.",
+    body: "Loan Against Property and housing loans from ₹10L to ₹1Cr, underwritten by AI. Decisions typically within 48 hours of complete documentation.",
     ctaLabel: "Check Eligibility",
     ctaTo: "/eligibility",
     ctaHref: undefined as string | undefined,
@@ -112,11 +112,11 @@ const Contact = () => (
             <MessageSquare size={12} /> Get in Touch
           </span>
           <h1 className="font-display text-3xl md:text-6xl font-bold text-foreground mt-3 mb-5 leading-tight">
-            Let's Talk{" "}
-            <span className="text-gradient-coral">Business</span>
+            Let's{" "}
+            <span className="text-gradient-coral">talk</span>
           </h1>
           <p className="font-body text-sm md:text-lg text-muted-foreground leading-relaxed">
-            Business owner needing capital? Question about your account?
+            Looking to borrow against your property? Question about your loan?
             Want to partner with us? Choose how we can help below.
           </p>
         </motion.div>
@@ -235,7 +235,7 @@ const Contact = () => (
               </div>
               <div className="flex-1 min-w-0">
                 <p className="font-body text-xs font-semibold text-foreground">
-                  Looking for a business loan?
+                  Looking for a property loan?
                 </p>
                 <p className="font-body text-[11px] text-muted-foreground">
                   Use our eligibility check — get a decision faster

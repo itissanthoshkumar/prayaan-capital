@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import BrandLogo from "@/components/BrandLogo";
@@ -34,12 +34,24 @@ const navLinks = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
   const isActive = (href: string) => location.pathname === href;
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/70 backdrop-blur-xl">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl transition-shadow duration-300 ${
+        scrolled ? "border-b border-border/60 shadow-clay-sm" : "border-b border-transparent"
+      }`}
+    >
       <div className="container mx-auto flex items-center justify-between h-14 md:h-16 px-5">
         <Link to="/" className="flex items-center">
           <BrandLogo size={36} />
@@ -54,7 +66,7 @@ const Navbar = () => {
                 onMouseEnter={() => setOpenDropdown(link.label)}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                <button className="flex items-center gap-1 text-[13px] font-medium text-muted-foreground hover:text-foreground transition-colors px-3 py-2 rounded-md font-body">
+                <button className="flex items-center gap-1 text-[13px] font-medium text-foreground/75 hover:text-foreground transition-colors px-3 py-2 rounded-md font-body">
                   {link.label}
                   <ChevronDown size={12} className={`transition-transform ${openDropdown === link.label ? "rotate-180" : ""}`} />
                 </button>
@@ -91,7 +103,7 @@ const Navbar = () => {
                 className={`text-[13px] font-medium px-3 py-2 rounded-md transition-colors font-body ${
                   isActive(link.href)
                     ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground"
+                    : "text-foreground/75 hover:text-foreground"
                 }`}
               >
                 {link.label}

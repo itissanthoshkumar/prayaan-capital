@@ -20,7 +20,7 @@ const CaseStudies = () => (
           <div>
         <AIBadge label="Case Studies" />
         <h1 className="font-display text-3xl md:text-5xl font-extrabold text-foreground mt-4 mb-3">Customer Success Stories</h1>
-        <p className="text-sm md:text-base text-muted-foreground max-w-xl">Real MSMEs that grew with Prayaan Capital.</p>
+        <p className="text-sm md:text-base text-muted-foreground max-w-xl">Real owners who unlocked the value of their property with Prayaan Capital.</p>
           </div>
           <HeroIllustration variant="stories" />
         </div>

@@ -29,7 +29,7 @@ const steps = [
   {
     icon: Banknote,
     title: "Get Your Loan",
-    desc: "Funds disbursed directly to your bank account. Start growing your business immediately.",
+    desc: "Funds disbursed directly to your bank account. Own. Unlock. Grow.",
     time: "Day 2",
     accent: "from-[hsl(var(--color-coral))] to-primary",
     num: "04",
@@ -50,7 +50,7 @@ const ICON_SIZE = 112; // px — keep in sync with w-28 h-28
 
 const HowItWorks = () => {
   return (
-    <section id="how-it-works" className="py-20 md:py-32 bg-background relative overflow-hidden">
+    <section id="how-it-works" className="py-16 md:py-24 bg-background relative overflow-hidden">
       {/* Ambient blobs */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-gradient-coral opacity-[0.07] rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-gradient-mint opacity-[0.07] rounded-full blur-3xl pointer-events-none" />

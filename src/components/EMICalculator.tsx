@@ -130,7 +130,7 @@ const EMICalculator = () => {
     "w-12 bg-transparent font-display text-sm font-bold outline-none text-right [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none";
 
   return (
-    <section id="emi-calculator" className="py-20 md:py-32 bg-background relative overflow-hidden">
+    <section id="emi-calculator" className="py-16 md:py-24 bg-background relative overflow-hidden">
       {/* Ambient blobs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute -top-24 left-1/3 w-[600px] h-[500px] bg-gradient-coral opacity-[0.06] rounded-full blur-3xl" />

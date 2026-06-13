@@ -6,18 +6,18 @@ import AIFloatingElements, { AIPulse } from "@/components/AIFloatingElements";
 
 const featured = {
   tag: "Press Release",
-  title: "Prayaan Capital Crosses ₹500Cr in MSME Loan Disbursals",
-  excerpt: "Prayaan Capital, an AI-native NBFC, announced today that it has crossed ₹500 crore in cumulative loan disbursals to MSMEs across 10 Indian states, powered by its proprietary AI underwriting engine.",
+  title: "Prayaan Capital Crosses ₹500Cr in Property Loan Disbursals",
+  excerpt: "Prayaan Capital, an AI-native NBFC, announced today that it has crossed ₹500 crore in cumulative Loan Against Property and housing disbursals across 10 Indian states, powered by its AI underwriting engine.",
   date: "March 10, 2026",
 };
 
 const news = [
   { tag: "Product Update", title: "Launching Instant Pre-Approved Loans for Repeat Borrowers", excerpt: "Our AI now pre-scores existing borrowers, enabling instant top-up loans with zero additional documentation.", date: "Feb 28, 2026", tint: "bg-gradient-coral" },
-  { tag: "Partnership", title: "Prayaan Capital Partners with SIDBI for MSME Credit Guarantee", excerpt: "Strategic partnership with SIDBI to offer credit guarantee-backed loans, reducing collateral requirements.", date: "Feb 15, 2026", tint: "bg-gradient-mint" },
+  { tag: "Partnership", title: "Prayaan Capital Partners with NHB for Affordable Housing", excerpt: "Strategic partnership with SIDBI to offer credit guarantee-backed loans, reducing collateral requirements.", date: "Feb 15, 2026", tint: "bg-gradient-mint" },
   { tag: "Engineering", title: "How Our AI Processes 200+ Data Points in Under 30 Seconds", excerpt: "A deep dive into the machine learning pipeline that powers our real-time credit decisioning engine.", date: "Jan 30, 2026", tint: "bg-gradient-lavender" },
-  { tag: "Industry", title: "RBI's Digital Lending Guidelines: What It Means for MSMEs", excerpt: "Our take on the latest regulatory framework and how compliant AI-native NBFCs are better positioned.", date: "Jan 15, 2026", tint: "bg-gradient-sunset" },
+  { tag: "Industry", title: "RBI's Digital Lending Guidelines: What They Mean for Borrowers", excerpt: "Our take on the latest regulatory framework and how compliant AI-native NBFCs are better positioned.", date: "Jan 15, 2026", tint: "bg-gradient-sunset" },
   { tag: "Company", title: "Named in India's Top 10 AI-Native Fintech Startups", excerpt: "Recognized by FinTech Global for our innovative approach to AI-driven secured lending.", date: "Dec 20, 2025", tint: "bg-gradient-coral" },
-  { tag: "Milestone", title: "10,000 MSMEs Funded — Here's What We Learned", excerpt: "Reflections from our founding team on reaching this milestone and our roadmap ahead.", date: "Nov 10, 2025", tint: "bg-gradient-mint" },
+  { tag: "Milestone", title: "10,000 Families Funded — Here's What We Learned", excerpt: "Reflections from our founding team on reaching this milestone and our roadmap ahead.", date: "Nov 10, 2025", tint: "bg-gradient-mint" },
 ];
 
 const container = { hidden: {}, visible: { transition: { staggerChildren: 0.08 } } };

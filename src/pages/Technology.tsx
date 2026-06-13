@@ -12,7 +12,7 @@ const pillars = [
   {
     icon: Brain,
     title: "AI-native platform",
-    desc: "Decisioning models trained on Indian MSME data combining bureau, banking, GST, and alternate signals.",
+    desc: "Decisioning models trained on Indian property and credit data combining bureau, banking and valuation signals.",
     tint: "bg-gradient-coral",
   },
   {
@@ -69,7 +69,7 @@ const Technology = () => {
               An <span className="text-gradient-coral">AI-first</span> lending platform built in-house
             </h1>
             <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              Our technology stack is purpose-built for secured MSME lending — from origination and underwriting
+              Our technology stack is purpose-built for secured property lending — from origination and underwriting
               to collections and partner integrations.
             </p>
           </motion.div>

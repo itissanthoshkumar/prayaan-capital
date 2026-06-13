@@ -32,10 +32,10 @@
     --popover: 30 50% 98%;
     --popover-foreground: 250 25% 18%;
 
-    /* Playful coral primary (clay-friendly) */
-    --primary: 14 88% 66%;
+    /* Confident coral primary — darkened for AA contrast on white text */
+    --primary: 14 80% 54%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 24 95% 72%;
+    --primary-glow: 24 90% 58%;
 
     /* Soft lavender secondary */
     --secondary: 260 60% 92%;
@@ -82,8 +82,8 @@
     --color-indigo: 250 60% 60%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(160deg, hsl(30 60% 94%) 0%, hsl(20 70% 92%) 40%, hsl(340 60% 93%) 100%);
-    --gradient-coral: linear-gradient(135deg, hsl(14 88% 70%), hsl(24 95% 72%));
+    --gradient-hero: linear-gradient(160deg, hsl(30 40% 96%) 0%, hsl(24 38% 94%) 45%, hsl(280 22% 95%) 100%);
+    --gradient-coral: linear-gradient(135deg, hsl(14 82% 52%), hsl(24 88% 56%));
     --gradient-mint: linear-gradient(135deg, hsl(160 65% 70%), hsl(190 70% 75%));
     --gradient-lavender: linear-gradient(135deg, hsl(260 70% 78%), hsl(290 60% 80%));
     --gradient-sunset: linear-gradient(135deg, hsl(14 88% 70%), hsl(335 80% 78%));

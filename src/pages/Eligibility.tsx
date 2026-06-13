@@ -401,7 +401,7 @@ const Eligibility = () => {
                   <li className="flex gap-2"><span className="text-primary">•</span> Business vintage 1+ years</li>
                   <li className="flex gap-2"><span className="text-primary">•</span> Monthly revenue ≥ ₹50,000</li>
                   <li className="flex gap-2"><span className="text-primary">•</span> Loan range ₹5L – ₹50L</li>
-                  <li className="flex gap-2"><span className="text-primary">•</span> Indian MSME with valid GST/PAN</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Property owner with valid KYC</li>
                 </ul>
               </div>
             </motion.aside>

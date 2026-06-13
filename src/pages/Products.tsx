@@ -1,7 +1,7 @@
 import HeroIllustration from "@/components/HeroIllustration";
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
-import { Building2, Landmark, Factory, Wallet, CheckCircle, ArrowRight, Brain } from "lucide-react";
+import { Building2, Landmark, Home, Wallet, CheckCircle, ArrowRight, Brain } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import AIFloatingElements, { AIPulse } from "@/components/AIFloatingElements";
@@ -9,52 +9,52 @@ import EMICalculator from "@/components/EMICalculator";
 
 const products = [
   {
-    icon: Building2,
-    title: "MSME Business Term Loan",
-    range: "₹5L – ₹50L",
-    tenure: "12–60 months",
-    rate: "From 14% p.a.",
-    desc: "Purpose-built financing for MSMEs — expand operations, purchase inventory, or fund working capital. Flexible EMIs tailored to your cash flow.",
-    features: ["No prepayment penalty", "Flexible EMI options", "Doorstep service", "Digital documentation", "Same-day sanction"],
-    ideal: "Manufacturers, traders, and service businesses looking for growth capital with predictable repayment schedules.",
-    tint: "bg-gradient-coral",
-    aiTag: "AI-scored in 15 min",
-  },
-  {
     icon: Landmark,
     title: "Loan Against Property",
-    range: "₹10L – ₹50L",
-    tenure: "12–84 months",
+    range: "₹10L – ₹1Cr",
+    tenure: "Up to 20 years",
     rate: "From 12% p.a.",
-    desc: "Unlock property value to fuel business growth. Higher amounts, longer tenures, and competitive rates in the MSME lending space.",
-    features: ["Up to 60% LTV", "Residential & commercial", "Quick title verification", "No end-use restriction", "Balance transfer available"],
-    ideal: "Business owners with residential or commercial property who need larger loan amounts with longer repayment periods.",
-    tint: "bg-gradient-mint",
+    desc: "Unlock the value of your residential, commercial or industrial property for any need — without selling it. Higher amounts, longer tenures, competitive rates.",
+    features: ["Up to 60% LTV", "Any end-use", "Residential & commercial", "Long tenure", "No prepayment penalty after 6 months"],
+    ideal: "Property owners who need a larger, longer-tenure loan against an asset they already own.",
+    tint: "bg-gradient-coral",
     aiTag: "AI valuation assist",
   },
   {
-    icon: Factory,
-    title: "Machinery & Equipment Finance",
-    range: "₹5L – ₹40L",
-    tenure: "12–48 months",
-    rate: "From 13% p.a.",
-    desc: "Upgrade manufacturing setup without straining working capital. Equipment itself serves as collateral for streamlined processing.",
-    features: ["New & used equipment", "Quick valuation", "Sector-agnostic", "Equipment as collateral", "Fast processing"],
-    ideal: "Manufacturing MSMEs looking to upgrade, replace, or add machinery without depleting working capital reserves.",
+    icon: Home,
+    title: "Housing Loan",
+    range: "₹10L – ₹1Cr",
+    tenure: "Up to 20 years",
+    rate: "From 12% p.a.",
+    desc: "Buy a ready home, or fund construction on land you own. Affordable EMIs, minimal paperwork and doorstep service across Tier 3–6 India.",
+    features: ["Up to 80% funding", "Salaried & self-employed", "Doorstep service", "Digital documentation", "48-hour decisions"],
+    ideal: "Families buying or building their own home, including first-time buyers in smaller towns.",
+    tint: "bg-gradient-mint",
+    aiTag: "AI-scored in 48 hrs",
+  },
+  {
+    icon: Building2,
+    title: "Property Construction Loan",
+    range: "₹10L – ₹1Cr",
+    tenure: "Up to 20 years",
+    rate: "From 12.5% p.a.",
+    desc: "Finance the construction, extension or renovation of a residential or commercial property on a plot you already own, with staged disbursal.",
+    features: ["Staged disbursal", "Renovation & extension", "Plot-owner friendly", "Flexible EMIs", "Quick valuation"],
+    ideal: "Owners building or improving property on land already in their name.",
     tint: "bg-gradient-lavender",
-    aiTag: "Smart asset matching",
+    aiTag: "Stage-linked underwriting",
   },
   {
     icon: Wallet,
-    title: "Working Capital Loan",
-    range: "₹5L – ₹30L",
-    tenure: "12–36 months",
-    rate: "From 15% p.a.",
-    desc: "Bridge cash flow gaps, manage seasonal demand, or cover operational expenses for growing MSMEs.",
-    features: ["Fast top-up", "Minimal docs", "Repeat loan benefit", "Seasonal flexibility", "Quick disbursal"],
-    ideal: "Businesses facing seasonal demand fluctuations or needing to bridge receivable gaps to maintain operations.",
+    title: "Balance Transfer & Top-up",
+    range: "₹10L – ₹1Cr",
+    tenure: "Up to 20 years",
+    rate: "From 11.9% p.a.",
+    desc: "Move your existing property loan to Prayaan for a lower rate, and unlock an additional top-up against the same property in one go.",
+    features: ["Lower your EMI", "Extra top-up", "Minimal docs", "Fast switch", "Transparent charges"],
+    ideal: "Borrowers paying a high rate elsewhere who want to save and borrow a little more.",
     tint: "bg-gradient-sunset",
-    aiTag: "Cash flow AI analysis",
+    aiTag: "Instant savings estimate",
   },
 ];
 
@@ -77,10 +77,10 @@ const Products = () => {
               <Brain size={12} /> AI-Underwritten Products
             </span>
             <h1 className="font-display text-3xl md:text-6xl font-bold text-foreground mt-3 mb-5 leading-tight">
-              Secured Loans for Every <span className="text-gradient-coral">MSME Need</span>
+              Loans secured by the <span className="text-gradient-coral">property you own</span>
             </h1>
             <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              AI-underwritten business loans from ₹5L to ₹50L. Transparent pricing, 2-day disbursal, and terms designed for how MSMEs actually operate.
+              Loan Against Property and housing finance from ₹10L to ₹1Cr. Transparent pricing, 48-hour decisions, and tenures up to 20 years — with doorstep service across India.
             </p>
           </motion.div>
             </div>

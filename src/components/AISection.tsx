@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { Brain, TrendingUp, ShieldCheck, Clock, Eye, Fingerprint, Zap } from "lucide-react";
 
 const features = [
-  { icon: Brain, title: "Smart Underwriting", desc: "ML models analyse 200+ data points — GST filings, bank statements, bureau scores — to assess risk in minutes.", tint: "bg-gradient-coral", stat: "200+", statLabel: "Data points" },
-  { icon: TrendingUp, title: "Dynamic Pricing", desc: "AI-driven rates tailored to your business health. Better financials mean better rates — transparent and fair.", tint: "bg-gradient-mint", stat: "Real-time", statLabel: "Optimization" },
+  { icon: Brain, title: "Smart Underwriting", desc: "ML models analyse 200+ data points — property value, bank statements, bureau scores — to assess risk in minutes.", tint: "bg-gradient-coral", stat: "200+", statLabel: "Data points" },
+  { icon: TrendingUp, title: "Dynamic Pricing", desc: "AI-driven rates tailored to your property value and profile. Stronger collateral means better rates — transparent and fair.", tint: "bg-gradient-mint", stat: "Real-time", statLabel: "Optimization" },
   { icon: ShieldCheck, title: "Fraud Detection", desc: "Real-time anomaly detection powered by deep learning protects every transaction and document submission.", tint: "bg-gradient-lavender", stat: "99.9%", statLabel: "Accuracy" },
   { icon: Clock, title: "Instant Decisioning", desc: "Automated workflows cut processing from weeks to hours. Get your sanction letter the same day.", tint: "bg-gradient-sunset", stat: "<24h", statLabel: "Decision time" },
   { icon: Eye, title: "Document Intelligence", desc: "OCR and NLP-powered processing extracts and verifies KYC, financials, and property documents automatically.", tint: "bg-gradient-mint", stat: "Auto", statLabel: "Extraction" },
@@ -22,7 +22,7 @@ const cardAnim = {
 
 const AISection = () => {
   return (
-    <section id="about" className="py-20 md:py-32 relative overflow-hidden bg-section">
+    <section id="about" className="py-16 md:py-24 relative overflow-hidden bg-section">
       {/* Soft pastel ambient blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-gradient-coral opacity-20 blur-[150px]" />

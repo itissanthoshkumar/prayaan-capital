@@ -9,41 +9,41 @@ import testimonialAmit from "@/assets/testimonial-amit.jpg";
 const testimonials = [
   {
     name: "Perumal",
-    business: "Sri Vaari Auto Spares",
+    business: "Self-employed",
     location: "Salem, Tamil Nadu",
-    amount: "Secured Loan",
-    product: "Business Loan",
-    quote: "I am happy with the response from Prayaan Capital. The loan helped me in expanding my shop and increasing business.",
+    amount: "₹28 Lakhs",
+    product: "Loan Against Property",
+    quote: "I mortgaged my shop and got the funds in two days. The process was simple and the team explained every charge upfront. I used it to expand my family business.",
     rating: 5,
     accent: "from-primary to-[hsl(36_90%_58%)]",
     borderAccent: "border-l-primary",
-    growth: "Shop expansion",
+    growth: "Funds in 2 days",
     image: testimonialRajesh,
   },
   {
     name: "Kannan",
-    business: "K R Thoppu",
+    business: "Home owner",
     location: "Salem, Tamil Nadu",
-    amount: "Machinery",
-    product: "Machinery Loan",
-    quote: "Our family has been into the weaving business for the last 22 years and we were running with 5 powerlooms. With the help of Prayaan we added one more loom. We thank them for their effort to help us with our livelihood.",
+    amount: "₹18 Lakhs",
+    product: "Housing Loan",
+    quote: "We had been saving to build our own house for 22 years. Prayaan's housing loan made it happen with an EMI we could comfortably manage. We thank them for helping us.",
     rating: 5,
     accent: "from-accent to-[hsl(200_55%_50%)]",
     borderAccent: "border-l-accent",
-    growth: "+1 powerloom",
+    growth: "Built their home",
     image: testimonialAmit,
   },
   {
     name: "Meera Krishnan",
-    business: "Spice Route Traders",
+    business: "Property owner",
     location: "Kochi, Kerala",
-    amount: "Working Capital",
-    product: "Business Loan",
-    quote: "Seasonal demand spikes used to disrupt our cash flow. Prayaan understood our business cycle and structured the right repayment plan with door-step service.",
+    amount: "₹45 Lakhs",
+    product: "Loan Against Property",
+    quote: "I unlocked the value of my commercial property without selling it. Prayaan understood my needs and structured the right repayment plan with door-step service.",
     rating: 5,
     accent: "from-[hsl(var(--color-lavender))] to-[hsl(var(--color-indigo))]",
     borderAccent: "border-l-[hsl(var(--color-lavender))]",
-    growth: "Stable cash flow",
+    growth: "Kept her property",
     image: testimonialMeera,
   },
 ];
@@ -76,7 +76,7 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="py-20 md:py-32 bg-section relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-section relative overflow-hidden">
       {/* Soft pastel blobs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-10 left-10 w-[400px] h-[400px] bg-gradient-coral opacity-15 rounded-full blur-[120px]" />
@@ -92,15 +92,15 @@ const TestimonialsSection = () => {
           className="text-center mb-14 md:mb-20"
         >
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-5">
-            <Brain size={12} /> AI-Powered Success Stories
+            <Brain size={12} /> Customer Stories
           </span>
           <h2 className="font-display text-3xl md:text-5xl lg:text-[3.5rem] font-extrabold text-foreground tracking-tight leading-[1.1] mb-4">
-            MSMEs Growing with
+            Families who unlocked
             <br />
-            <span className="text-gradient-coral">Prayaan Capital</span>
+            their <span className="text-gradient-coral">property</span>
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-lg mx-auto font-body leading-relaxed">
-            Real businesses, real growth — powered by Prayaan Capital's AI-driven lending.
+            Real owners, real outcomes — powered by Prayaan Capital's AI-driven mortgage lending.
           </p>
         </motion.div>
 
@@ -210,7 +210,7 @@ const TestimonialsSection = () => {
           </div>
         </div>
 
-        {/* Floating MSME faces collage */}
+        {/* Floating customer faces collage */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -230,7 +230,7 @@ const TestimonialsSection = () => {
             ))}
           </div>
           <div className="ml-2">
-            <p className="text-xs font-display font-bold text-foreground">10,000+ MSMEs</p>
+            <p className="text-xs font-display font-bold text-foreground">10,000+ families</p>
             <p className="text-[10px] text-muted-foreground font-body">trust Prayaan Capital</p>
           </div>
         </motion.div>

@@ -38,7 +38,7 @@ const leadership = [
 const advisors = [
   { name: "RBI Registered NBFC", title: "Certificate of Registration granted 6 June 2019" },
   { name: "Headquartered in Chennai", title: "Santhome High Road, Tamil Nadu" },
-  { name: "MSME Focus", title: "Manufacturing, Trading & Services" },
+  { name: "Mortgage Focus", title: "Loan Against Property & Housing" },
 ];
 
 const container = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } };
@@ -63,7 +63,7 @@ const Team = () => {
               Board of <span className="text-gradient-coral">Directors</span>
             </h1>
             <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              Decades of NBFC, banking and technology leadership — co-travelling with India's MSMEs on their entrepreneurial journey.
+              Decades of NBFC, banking and technology leadership — co-travelling with India's property owners on their journey.
             </p>
           </motion.div>
             </div>

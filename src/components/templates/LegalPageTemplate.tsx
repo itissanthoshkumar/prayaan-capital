@@ -54,22 +54,22 @@ const LegalPageTemplate = ({ eyebrow = "Regulatory", title, subtitle, icon: Icon
       <section className="py-16 md:py-24 bg-background relative overflow-hidden">
         <AIFloatingElements />
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true }} className="max-w-3xl mx-auto space-y-6">
+          <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true }} className="max-w-3xl space-y-5">
             {intro && (
-              <motion.div variants={itemAnim} className="clay-surface p-5 md:p-7 relative">
+              <motion.div variants={itemAnim} className="clay-surface p-6 md:p-8 relative">
                 <div className="absolute top-0 left-6 right-6 h-[2px] bg-gradient-to-r from-accent to-primary opacity-30 rounded-full" />
-                <div className="text-xs md:text-sm text-muted-foreground leading-relaxed">{intro}</div>
+                <div className="text-sm md:text-base text-muted-foreground leading-relaxed">{intro}</div>
               </motion.div>
             )}
             {sections.map((section, i) => (
               <motion.div
                 key={section.title}
                 variants={itemAnim}
-                className="clay-surface p-5 md:p-7 relative"
+                className="clay-surface p-6 md:p-8 relative"
               >
                 <div className={`absolute top-0 left-6 right-6 h-[2px] bg-gradient-to-r ${accents[i % accents.length]} opacity-30 rounded-full`} />
-                <h2 className="font-display text-base md:text-xl font-semibold text-foreground mb-3">{section.title}</h2>
-                <div className="text-xs md:text-sm text-muted-foreground leading-relaxed space-y-2">{section.content}</div>
+                <h2 className="font-display text-lg md:text-xl font-semibold text-foreground mb-3">{section.title}</h2>
+                <div className="text-sm md:text-base text-muted-foreground leading-relaxed space-y-2">{section.content}</div>
               </motion.div>
             ))}
           </motion.div>

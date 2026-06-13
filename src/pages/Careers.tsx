@@ -40,10 +40,10 @@ const Careers = () => {
               <Zap size={12} /> We're Hiring
             </span>
             <h1 className="font-display text-3xl md:text-6xl font-bold text-foreground mt-3 mb-5 leading-tight">
-              Build the Future of <span className="text-gradient-coral">MSME Finance</span>
+              Build the Future of <span className="text-gradient-coral">Property Finance</span>
             </h1>
             <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              Join a team of fintech veterans and AI researchers reimagining how 63 million Indian MSMEs access capital.
+              Join a team of fintech veterans and AI researchers reimagining how millions of Indian property owners access fair credit.
             </p>
           </motion.div>
             </div>

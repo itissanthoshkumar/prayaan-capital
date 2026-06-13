@@ -4,7 +4,7 @@ import { ArrowRight, Phone } from "lucide-react";
 
 const CTASection = () => {
   return (
-    <section id="contact" className="py-20 md:py-32 bg-background relative overflow-hidden">
+    <section id="contact" className="py-16 md:py-24 bg-background relative overflow-hidden">
       {/* Soft pastel orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-coral opacity-15 blur-[120px]" />
@@ -22,14 +22,14 @@ const CTASection = () => {
         >
           <div className="clay-surface p-8 md:p-14 text-center">
             <h2 className="font-display text-2xl md:text-5xl font-extrabold text-foreground mb-4 tracking-tight">
-              Ready to Grow Your{" "}
-              <span className="text-gradient-coral">Business</span>?
+              Ready to unlock your{" "}
+              <span className="text-gradient-coral">property</span>?
             </h2>
             <p className="text-sm md:text-lg text-muted-foreground mb-3 font-body">
-              Join 10,000+ MSMEs who trust Prayaan Capital for fast, transparent business financing.
+              Join 10,000+ families who trust Prayaan Capital for fast, transparent property-backed finance.
             </p>
             <p className="text-xs md:text-sm text-muted-foreground mb-8 md:mb-10 max-w-lg mx-auto font-body">
-              Manufacturer, trader, or service provider — we're here to back your ambition with smart capital.
+              Own a home, shop or land? Put it to work — Loan Against Property and housing loans from ₹10L to ₹1Cr.
             </p>
             <motion.div
               initial={{ opacity: 0, y: 15 }}
