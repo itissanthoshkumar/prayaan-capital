@@ -164,6 +164,7 @@ const HowItWorks = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
+          aria-hidden="true"
           className="md:hidden relative"
         >
           <div className="absolute left-[1.75rem] top-4 bottom-4 w-[2px] bg-gradient-to-b from-primary/25 via-accent/25 to-[hsl(var(--color-lavender)/0.25)]" />

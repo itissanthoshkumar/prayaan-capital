@@ -6,7 +6,7 @@ const Page = () => (
     { title: "3. Security", content: "As detailed in the loan agreement — property mortgage / hypothecation of asset / personal guarantee." },
     { title: "4. Insurance", content: "Property and asset insurance must be maintained throughout the loan tenure." },
     { title: "5. Fees & charges", content: "Processing, documentation, stamp duty, valuation, legal, foreclosure and bounce charges as per the Schedule of Charges." },
-    { title: "6. Penal & default consequences", content: "Penal interest of 2% per month on overdues. Default may trigger SARFAESI proceedings." },
+    { title: "6. Penal & default consequences", content: "A flat penal charge (not penal interest, not capitalised) applies on overdue instalments, per RBI's penal-charges directive effective 1 April 2024. Continued default may trigger SARFAESI proceedings." },
     { title: "7. Customer service contact", content: "customercare@prayaancapital.com | +91-6380589898" },
   ]} />
 );

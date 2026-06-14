@@ -11,7 +11,7 @@ const steps = [
   { title: "4. Mandate Validity", content: "The validity of the mandate must cover the entire loan tenure including a margin of 30 days post the scheduled last EMI date." },
   { title: "5. Sufficient Balance", content: "Customers must ensure adequate balance is maintained in the bank account at least 1 working day before the EMI due date to avoid dishonour and applicable charges." },
   { title: "6. Cancellation", content: "NACH mandates can only be cancelled with prior written approval from Prayaan Capital, after the loan account is fully closed and a No-Dues Certificate is issued." },
-  { title: "7. Dishonour Charges", content: "In case the NACH presentation is returned by your bank for any reason (insufficient funds, signature mismatch, account closed, etc.), bounce charges as per the rate-card will be applicable in addition to penal interest." },
+  { title: "7. Dishonour Charges", content: "In case the NACH presentation is returned by your bank for any reason (insufficient funds, signature mismatch, account closed, etc.), bounce charges as per the rate-card will be applicable in addition to applicable penal charges (a flat, non-capitalised amount)." },
 ];
 
 const container = { hidden: {}, visible: { transition: { staggerChildren: 0.05 } } };

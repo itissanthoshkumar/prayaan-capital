@@ -5,7 +5,7 @@ const baseRates = [
   { label: "Interest Rate", value: "From 14% p.a." },
   { label: "Processing Fee", value: "Up to 2% + GST" },
   { label: "Foreclosure Charges", value: "Nil after 6 months" },
-  { label: "Late Payment", value: "2% per month on overdue" },
+  { label: "Penal Charges", value: "Flat ₹500 per missed EMI (not capitalised)" },
   { label: "Documentation", value: "₹1,500 + GST" },
 ];
 
@@ -234,6 +234,37 @@ export const productData: Record<string, ProductPageData> = {
     ],
     documents: baseDocs,
     rates: [{ label: "Interest Rate", value: "From 13% p.a." }, ...baseRates.slice(1)],
+    faqs: commonFaqs,
+  },
+  "housing-loan": {
+    eyebrow: "Housing Loan",
+    title: "Housing Loan",
+    tagline: "Buy, build or improve your home with affordable EMIs and doorstep service across Tier 2–6 India.",
+    icon: Building2,
+    range: "₹10L – ₹1Cr",
+    tenure: "Up to 20 years",
+    rate: "From 12% p.a.",
+    highlights: [
+      { label: "Loan Amount", value: "₹10L – ₹1Cr" },
+      { label: "Funding", value: "Up to 80%" },
+      { label: "Tenure", value: "Up to 20 yrs" },
+      { label: "Interest", value: "From 12%" },
+    ],
+    features: [
+      "Purchase, construction, extension or renovation",
+      "Salaried and self-employed welcome",
+      "Long tenure for comfortable EMIs",
+      "Doorstep documentation across 80+ cities",
+      "Transparent, RBI Fair-Practice-Code pricing",
+    ],
+    eligibility: [
+      "Indian resident, age 21–65 at maturity",
+      "Clear, marketable title to the property",
+      "Stable income — salaried or self-employed",
+      "Valid KYC: PAN, Aadhaar, address proof",
+    ],
+    documents: [...baseDocs, "Sale agreement / approved building plan", "Property tax receipt & title documents"],
+    rates: [{ label: "Interest Rate", value: "From 12% p.a." }, ...baseRates.slice(1)],
     faqs: commonFaqs,
   },
 };

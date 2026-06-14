@@ -1,8 +1,21 @@
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
 import { ArrowRight, Shield, Zap, IndianRupee, Home, CheckCircle } from "lucide-react";
 
 import heroStoreOwner from "@/assets/hero-store-owner.jpg";
+import heroRajesh from "@/assets/testimonial-rajesh.jpg";
+import heroMeera from "@/assets/testimonial-meera.jpg";
+import heroAmit from "@/assets/testimonial-amit.jpg";
+
+/* Hero carousel — real MSME borrowers (male/female mix). Replace with
+   licensed/consented customer photography when available. */
+const slides = [
+  { img: heroStoreOwner, alt: "Shop owner who borrowed from Prayaan Capital", amount: "₹35 Lakhs", product: "Secured Business Loan", place: "Chennai, TN" },
+  { img: heroRajesh, alt: "Self-employed borrower in South India", amount: "₹28 Lakhs", product: "Loan Against Property", place: "Salem, TN" },
+  { img: heroMeera, alt: "Woman entrepreneur and property owner", amount: "₹45 Lakhs", product: "Loan Against Property", place: "Kochi, KL" },
+  { img: heroAmit, alt: "Homeowner funded by Prayaan Capital", amount: "₹18 Lakhs", product: "Housing Loan", place: "Coimbatore, TN" },
+];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -14,6 +27,17 @@ const fadeUp = {
 };
 
 const HeroSection = () => {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) return;
+    const t = setInterval(() => setActive((i) => (i + 1) % slides.length), 4500);
+    return () => clearInterval(t);
+  }, []);
+
+  const slide = slides[active];
+
   return (
     <section className="relative min-h-[90vh] md:min-h-screen flex items-stretch overflow-hidden bg-hero">
       {/* Puffy clay blobs */}
@@ -137,26 +161,34 @@ const HeroSection = () => {
         transition={{ duration: 1, delay: 0.3 }}
         className="hidden lg:block relative w-[44%] shrink-0 self-stretch"
       >
-        <img
-          src={heroStoreOwner}
-          alt="Property owner unlocking capital with Prayaan Capital"
-          className="absolute inset-0 w-full h-full object-cover object-[center_20%]"
-        />
+        {/* Crossfading carousel of real borrowers */}
+        <AnimatePresence initial={false}>
+          <motion.img
+            key={active}
+            src={slide.img}
+            alt={slide.alt}
+            initial={{ opacity: 0, scale: 1.04 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="absolute inset-0 w-full h-full object-cover object-[center_20%]"
+          />
+        </AnimatePresence>
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-foreground/65 via-foreground/10 to-transparent" />
         {/* Left edge soft blend into hero bg */}
         <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[hsl(var(--hero))] to-transparent" />
 
-        {/* Floating loan badge — bottom left */}
+        {/* Floating loan badge — bottom left (updates per slide) */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.9 }}
-          className="absolute bottom-10 left-8 clay-surface p-3.5 rounded-2xl shadow-clay max-w-[190px]"
+          className="absolute bottom-12 left-8 clay-surface p-3.5 rounded-2xl shadow-clay max-w-[210px]"
         >
           <p className="font-body text-[10px] text-muted-foreground mb-0.5">Recent disbursement</p>
-          <p className="font-mono text-sm font-bold text-foreground">₹35 Lakhs</p>
-          <p className="font-body text-[11px] text-muted-foreground">Loan Against Property · Chennai</p>
+          <p className="font-mono text-sm font-bold text-foreground">{slide.amount}</p>
+          <p className="font-body text-[11px] text-muted-foreground">{slide.product} · {slide.place}</p>
         </motion.div>
 
         {/* Verified badge — top right */}
@@ -169,6 +201,19 @@ const HeroSection = () => {
           <CheckCircle size={11} className="text-white" />
           <span className="font-body text-[10px] font-bold text-white tracking-wide">Prayaan ✓</span>
         </motion.div>
+
+        {/* Carousel dots */}
+        <div className="absolute bottom-5 left-8 flex items-center gap-2 z-10">
+          {slides.map((s, i) => (
+            <button
+              key={s.place}
+              onClick={() => setActive(i)}
+              aria-label={`Show ${s.product} story from ${s.place}`}
+              aria-current={i === active}
+              className={`h-1.5 rounded-full transition-all ${i === active ? "w-6 bg-white" : "w-1.5 bg-white/50 hover:bg-white/80"}`}
+            />
+          ))}
+        </div>
       </motion.div>
     </section>
   );

@@ -22,7 +22,7 @@ const products = [
     desc: "Buy, build or renovate your home with affordable EMIs, minimal paperwork and doorstep service across Tier 3–6 India.",
     features: ["From 12% p.a.", "Long tenure", "Doorstep service"],
     tint: "bg-gradient-mint",
-    href: "/products/business-loan",
+    href: "/products/housing-loan",
   },
 ];
 

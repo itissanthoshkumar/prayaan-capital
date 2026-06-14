@@ -41,6 +41,9 @@ const StatsSection = () => {
             </motion.div>
           ))}
         </motion.div>
+        <p className="text-center text-[10px] md:text-[11px] text-muted-foreground/70 font-body mt-6">
+          Figures are cumulative and indicative, as on 31 March 2026. Past performance does not guarantee future outcomes.
+        </p>
       </div>
     </section>
   );

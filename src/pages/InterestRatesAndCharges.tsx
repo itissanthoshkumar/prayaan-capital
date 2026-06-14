@@ -12,7 +12,7 @@ const rows = [
 ];
 
 const charges = [
-  ["Late EMI charge", "2% per month on overdue"],
+  ["Penal charge (late EMI)", "Flat ₹500 per missed EMI · not capitalised"],
   ["Bounce charge", "₹500 per bounce + GST"],
   ["Loan rescheduling", "₹1,000 + GST"],
   ["Duplicate statement", "₹250 + GST"],

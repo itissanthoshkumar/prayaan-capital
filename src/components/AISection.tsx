@@ -84,6 +84,10 @@ const AISection = () => {
             </motion.div>
           ))}
         </motion.div>
+        <p className="text-center text-[11px] md:text-xs text-muted-foreground/80 font-body mt-8 max-w-2xl mx-auto leading-relaxed">
+          AI assists our underwriting; every credit decision is subject to human review and final approval by an authorised
+          officer, in line with RBI's Digital Lending Guidelines. We do not make fully automated lending decisions without human oversight.
+        </p>
       </div>
     </section>
   );

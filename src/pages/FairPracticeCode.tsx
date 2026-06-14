@@ -2,7 +2,7 @@ import LegalPageTemplate from "@/components/templates/LegalPageTemplate";
 
 const sections = [
   { title: "1. Applications for Loans", content: "All loan application forms include necessary information that affects the interest of the borrower. We provide acknowledgement for receipt of all loan applications and indicate expected timeline for disposal." },
-  { title: "2. Loan Appraisal and Terms", content: "We convey in writing to the borrower the amount of loan sanctioned along with terms and conditions including annualised rate of interest. The sanction letter clearly states the penal interest charged for late repayment." },
+  { title: "2. Loan Appraisal and Terms", content: "We convey in writing to the borrower the amount of loan sanctioned along with terms and conditions including annualised rate of interest. The sanction letter clearly states the penal charges (a flat, non-capitalised amount — not penal interest) applicable for late repayment, per RBI's penal-charges directive effective 1 April 2024." },
   { title: "3. Disbursement of Loans", content: "We disburse loans within the timeline mentioned in the sanction letter. All disbursements are made directly to the borrower's bank account. Any changes in terms are communicated before disbursement." },
   { title: "4. Post-Disbursement Supervision", content: "We do not interfere in the affairs of the borrower except for the purposes provided in the loan agreement. We do not engage in any form of harassment for recovery of loans." },
   { title: "5. Interest Rate and Charges", content: "The rate of interest and the approach for gradation of risks is made available on our website. We do not charge interest for periods when the loan amount has not been disbursed." },
