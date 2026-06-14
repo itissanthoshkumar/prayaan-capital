@@ -14,6 +14,8 @@ const navLinks = [
       { label: "About Us", href: "/about" },
       { label: "Leadership", href: "/leadership" },
       { label: "Technology", href: "/technology" },
+      { label: "Investors", href: "/investors" },
+      { label: "Partnerships", href: "/partnerships" },
       { label: "Careers", href: "/careers" },
       { label: "News", href: "/news" },
     ],

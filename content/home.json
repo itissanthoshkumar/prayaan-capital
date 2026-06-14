@@ -39,5 +39,16 @@
       { "icon": "Zap", "label": "48-hr AI Decisions", "tint": "sunset" }
     ]
   },
-  "sections": []
+  "sections": [
+    {
+      "type": "audiencePathways",
+      "heading": { "eyebrow": "Who are you here for?", "title": "One platform, every journey", "highlight": "every journey", "subtitle": "Whether you want to borrow, invest, partner or build with us — start in the right place." },
+      "items": [
+        { "icon": "Home", "tint": "coral", "label": "For Borrowers", "title": "Unlock your property", "desc": "Loan Against Property and housing finance from ₹10L to ₹1Cr, with AI-backed decisions in 48 hours.", "cta": "Apply for a Loan", "to": "/apply" },
+        { "icon": "TrendingUp", "tint": "mint", "label": "For Investors & Lenders", "title": "Partner with a growing NBFC", "desc": "Reports, governance and RBI disclosures for investors and co-lenders backing our journey.", "cta": "Investor Relations", "to": "/investors" },
+        { "icon": "Plug", "tint": "lavender", "label": "For Tech & Biz Partners", "title": "Build & co-lend with us", "desc": "Integrate with our AI-native platform or partner on origination, data and co-lending.", "cta": "Explore Partnerships", "to": "/partnerships" },
+        { "icon": "Users", "tint": "sunset", "label": "For Job Seekers", "title": "Grow your career here", "desc": "NBFC and technology roles for people who want to build consequential fintech for Bharat.", "cta": "View Openings", "to": "/careers" }
+      ]
+    }
+  ]
 }

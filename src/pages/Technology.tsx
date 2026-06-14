@@ -116,17 +116,24 @@ const Technology = () => {
             className="clay-surface p-8 md:p-14 text-center max-w-2xl mx-auto"
           >
             <h2 className="font-display text-2xl md:text-4xl font-bold text-foreground mb-4">
-              Join the <span className="text-gradient-coral">tech team</span>
+              Build <span className="text-gradient-coral">with us</span>
             </h2>
             <p className="text-sm md:text-base text-muted-foreground mb-8 font-body">
-              We're hiring engineers who want to build consequential fintech from the ground up.
+              Partner on integrations, data and co-lending — or join the team building it.
               Small team, big impact, weekly shipping.
             </p>
-            <Link to="/careers">
-              <Button size="lg" className="rounded-full px-8 font-body">
-                View Open Roles <ArrowRight size={15} />
-              </Button>
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Link to="/partnerships">
+                <Button size="lg" className="rounded-full px-8 font-body">
+                  Partner With Us <ArrowRight size={15} />
+                </Button>
+              </Link>
+              <Link to="/careers">
+                <Button size="lg" variant="outline" className="rounded-full px-8 font-body">
+                  View Open Roles
+                </Button>
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>

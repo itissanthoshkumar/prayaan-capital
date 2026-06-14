@@ -7,6 +7,7 @@ import EligibilitySection from "@/components/EligibilitySection";
 import EMICalculator from "@/components/EMICalculator";
 import AISection from "@/components/AISection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import AudienceSection from "@/components/AudienceSection";
 import CTASection from "@/components/CTASection";
 
 const Index = () => {
@@ -20,6 +21,7 @@ const Index = () => {
       <EMICalculator />
       <AISection />
       <TestimonialsSection />
+      <AudienceSection />
       <CTASection />
     </Layout>
   );
