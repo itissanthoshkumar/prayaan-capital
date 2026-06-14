@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FileText, CheckCircle, FileCheck, Banknote } from "lucide-react";
+import { FileText, CheckCircle, FileCheck, Banknote, Zap } from "lucide-react";
 
 const steps = [
   {
@@ -66,7 +66,7 @@ const HowItWorks = () => {
           className="text-center mb-16 md:mb-24"
         >
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-6">
-            ⚡ 48-Hour Process
+<Zap size={12} /> 48-Hour Process
           </span>
           <h2 className="font-display text-3xl md:text-5xl lg:text-[3.5rem] font-extrabold text-foreground tracking-tight leading-[1.1] mb-5">
             Application to Disbursal

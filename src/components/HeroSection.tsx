@@ -122,7 +122,7 @@ const HeroSection = () => {
             Apply for a Loan <ArrowRight size={15} />
           </Button>
           <Button variant="hero-outline" size="lg" className="text-sm" asChild>
-            <a href="/#emi-calculator">Calculate My EMI</a>
+            <a href="/#emi-calculator">Calculate EMI</a>
           </Button>
         </motion.div>
 

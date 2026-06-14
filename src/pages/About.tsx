@@ -44,7 +44,7 @@ const About = () => {
               The <span className="text-gradient-coral">power on your side</span> for India's property owners
             </h1>
             <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              Prayaan Capital Private Limited was incorporated on 10 December 2018 and granted the NBFC Certificate of Registration by RBI on 6 June 2019, with our Registered and Corporate Office in Chennai, Tamil Nadu. The word <em>Prayaan</em>, meaning "Journey", was conceptualised by the founders to reflect our intent of co-travelling with our customers on their journey.
+              Prayaan Capital Private Limited was incorporated on 10 December 2018 and granted the NBFC Certificate of Registration by RBI on 6 June 2019, with our Registered and Corporate Office in Chennai, Tamil Nadu. The word <em>Prayaan</em>, meaning “Journey”, was conceptualised by the founders to reflect our intent of co-travelling with our customers on their journey.
             </p>
           </motion.div>
             </div>
@@ -117,7 +117,7 @@ const About = () => {
         <div className="container mx-auto px-4 relative z-10">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14 md:mb-20">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-5">
-              ⚡ Our Journey
+<Zap size={12} /> Our Journey
             </span>
             <h2 className="font-display text-2xl md:text-5xl font-bold text-foreground mt-3">
               Building the Future of <span className="text-gradient-coral">Mortgage Lending</span>

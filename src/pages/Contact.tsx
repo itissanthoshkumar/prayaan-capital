@@ -205,7 +205,7 @@ const Contact = () => (
           className="text-center mb-12"
         >
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-4">
-            ✉ Send a Message
+<Mail size={12} /> Send a Message
           </span>
           <h2 className="font-display text-2xl md:text-4xl font-bold text-foreground">
             Or write to us directly
@@ -287,6 +287,21 @@ const Contact = () => (
                   placeholder="Tell us what you'd like to discuss..."
                 />
               </div>
+
+              {/* DPDP Act 2023 — explicit, purpose-specific consent */}
+              <label className="flex items-start gap-2.5 cursor-pointer">
+                <input
+                  type="checkbox"
+                  required
+                  className="mt-0.5 h-4 w-4 shrink-0 rounded border-border accent-primary"
+                />
+                <span className="font-body text-[11px] text-muted-foreground leading-relaxed">
+                  I consent to Prayaan Capital collecting and processing the personal details I've shared
+                  to respond to my enquiry, in line with its{" "}
+                  <Link to="/privacy-policy" className="text-primary hover:underline">Privacy Policy</Link>{" "}
+                  and the Digital Personal Data Protection Act, 2023.
+                </span>
+              </label>
 
               <Button variant="default" size="lg" className="w-full font-body">
                 Send Message

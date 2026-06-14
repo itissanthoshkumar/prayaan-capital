@@ -4,7 +4,7 @@ import HeroIllustration from "@/components/HeroIllustration";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { FileText, CheckCircle, FileCheck, Banknote, Phone, ArrowRight } from "lucide-react";
+import { FileText, CheckCircle, FileCheck, Banknote, Phone, ArrowRight, Zap, ClipboardList } from "lucide-react";
 import ProcessSteps from "@/components/ProcessSteps";
 import type { ProcessStep } from "@/components/ProcessSteps";
 
@@ -56,7 +56,7 @@ const HowToApply = () => (
             transition={{ duration: 0.6 }}
           >
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-4">
-              ⚡ 48-Hour Process
+<Zap size={12} /> 48-Hour Process
             </span>
             <h1 className="font-display text-3xl md:text-6xl font-bold text-foreground mt-3 mb-4 leading-tight max-w-2xl">
               How to Apply for a{" "}
@@ -101,7 +101,7 @@ const HowToApply = () => (
           className="text-center mb-10"
         >
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-4">
-            📋 Documents Needed
+<ClipboardList size={12} /> Documents Needed
           </span>
           <h2 className="font-display text-2xl md:text-3xl font-extrabold text-foreground">
             Keep these ready before you start

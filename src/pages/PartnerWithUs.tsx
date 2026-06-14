@@ -99,7 +99,7 @@ const PartnerWithUs = () => (
           >
             <motion.div variants={fadeUp} className="mb-8">
               <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-4">
-                🤝 Why Partner with Us
+<Handshake size={12} /> Why Partner with Us
               </span>
               <h2 className="font-display text-2xl md:text-3xl font-extrabold text-foreground leading-tight">
                 Everything you need to <span className="text-gradient-coral">close deals faster</span>

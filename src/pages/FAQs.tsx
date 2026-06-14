@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import AIFloatingElements from "@/components/AIFloatingElements";
 import HeroIllustration from "@/components/HeroIllustration";
-import { HelpCircle } from "lucide-react";
+import { HelpCircle, Landmark, Home, Zap, ClipboardList, type LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -13,7 +13,7 @@ const groups = [
   {
     id: "about",
     title: "About Prayaan Capital",
-    emoji: "🏦",
+    icon: Landmark as LucideIcon,
     items: [
       { q: "Who is Prayaan Capital?", a: "Prayaan Capital is an RBI-registered NBFC focused on AI-powered mortgage and housing loans for property owners across India, with a focus on Tier 3–6 cities." },
       { q: "Are you regulated by the RBI?", a: "Yes. Prayaan Capital is registered as an NBFC under the Reserve Bank of India. Our certificate of registration is publicly disclosed under RBI Disclosures." },
@@ -22,7 +22,7 @@ const groups = [
   {
     id: "loans",
     title: "Loans & Eligibility",
-    emoji: "🏠",
+    icon: Home as LucideIcon,
     items: [
       { q: "What loan amounts can I get?", a: "We offer Loan Against Property and housing loans from ₹10L to ₹1Cr, depending on the property value and your repayment capacity." },
       { q: "Do I need to mortgage my property?", a: "Yes — our loans are secured against your property. This is what allows us to offer you lower interest rates starting from 12% p.a." },
@@ -33,7 +33,7 @@ const groups = [
   {
     id: "application",
     title: "Application & Disbursal",
-    emoji: "⚡",
+    icon: Zap as LucideIcon,
     items: [
       { q: "How long does approval take?", a: "Most decisions are issued within 24–48 hours of complete documentation. Property verification adds 1–2 days." },
       { q: "Do I need to visit a branch?", a: "No. Everything — application, document upload, and signing — is done digitally. Our field team visits you for property verification." },
@@ -43,7 +43,7 @@ const groups = [
   {
     id: "repayment",
     title: "Repayment & Charges",
-    emoji: "📋",
+    icon: ClipboardList as LucideIcon,
     items: [
       { q: "Are there foreclosure charges?", a: "Foreclosure is free after 6 months. Earlier closures attract up to 4% on outstanding principal." },
       { q: "Can I prepay partially?", a: "Yes — one part-payment per quarter is free of charge." },
@@ -131,7 +131,7 @@ const FAQs = () => {
                     : "bg-card text-foreground hover:shadow-clay"
                 }`}
               >
-                <span>{g.emoji}</span>
+                <g.icon size={15} />
                 {g.title}
                 <span className={`text-[11px] font-bold px-1.5 py-0.5 rounded-full ${
                   active === g.id ? "bg-white/20 text-white" : "bg-muted text-muted-foreground"
@@ -150,7 +150,9 @@ const FAQs = () => {
             transition={{ duration: 0.35 }}
           >
             <div className="flex items-center gap-3 mb-6">
-              <span className="text-2xl">{current.emoji}</span>
+              <span className="w-10 h-10 rounded-2xl bg-gradient-coral shadow-clay-sm flex items-center justify-center shrink-0">
+                <current.icon size={18} className="text-white" />
+              </span>
               <h2 className="font-display text-xl md:text-2xl font-bold text-foreground">{current.title}</h2>
             </div>
             <Accordion type="single" collapsible className="space-y-3">

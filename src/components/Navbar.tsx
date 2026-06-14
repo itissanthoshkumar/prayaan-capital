@@ -112,8 +112,8 @@ const Navbar = () => {
               </Link>
             )
           )}
-          <Link to="/contact">
-            <Button size="sm" className="ml-4 rounded-full text-xs px-5 font-body">
+          <Link to="/apply">
+            <Button size="sm" variant="outline" className="ml-4 rounded-full text-xs px-5 font-body">
               Apply Now
             </Button>
           </Link>
