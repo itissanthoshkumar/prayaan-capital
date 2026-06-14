@@ -14,9 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['"Poppins"', "-apple-system", "BlinkMacSystemFont", "system-ui", "sans-serif"],
-        display: ['"Fraunces"', "Georgia", "serif"],
-        body: ['"Poppins"', "-apple-system", "BlinkMacSystemFont", "system-ui", "sans-serif"],
+        sans: ['"Inter"', "-apple-system", "BlinkMacSystemFont", "system-ui", "sans-serif"],
+        display: ['"Bricolage Grotesque"', "-apple-system", "system-ui", "sans-serif"],
+        body: ['"Inter"', "-apple-system", "BlinkMacSystemFont", "system-ui", "sans-serif"],
         mono: ['"Overpass Mono"', "ui-monospace", "SFMono-Regular", "monospace"],
       },
       colors: {

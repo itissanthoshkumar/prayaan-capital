@@ -2,14 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "@fontsource/fraunces/500.css";
-@import "@fontsource/fraunces/600.css";
-@import "@fontsource/fraunces/700.css";
-@import "@fontsource/fraunces/900.css";
-@import "@fontsource/poppins/400.css";
-@import "@fontsource/poppins/500.css";
-@import "@fontsource/poppins/600.css";
-@import "@fontsource/poppins/700.css";
+@import "@fontsource/bricolage-grotesque/500.css";
+@import "@fontsource/bricolage-grotesque/600.css";
+@import "@fontsource/bricolage-grotesque/700.css";
+@import "@fontsource/bricolage-grotesque/800.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
 @import "@fontsource/overpass-mono/400.css";
 @import "@fontsource/overpass-mono/600.css";
 @import "@fontsource/overpass-mono/700.css";
@@ -166,14 +166,14 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: "Poppins", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     letter-spacing: -0.011em;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: "Fraunces", "Georgia", serif;
+    font-family: "Bricolage Grotesque", -apple-system, system-ui, sans-serif;
     letter-spacing: -0.03em;
   }
 }
