@@ -130,7 +130,8 @@ const Footer = () => {
                 © {new Date().getFullYear()} Prayaan Capital Pvt. Ltd. All rights reserved. CIN: U65900TN2018PTC126232
               </p>
               <p className="text-[10px] md:text-[11px] text-muted-foreground text-center md:text-right font-body">
-                NBFC-ICC · Certificate of Registration granted by RBI on 6 June 2019
+                NBFC-ICC · Certificate of Registration granted by RBI on 6 June 2019 ·{" "}
+                <a href="/credits.txt" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors underline-offset-2 hover:underline">Image credits</a>
               </p>
             </div>
           </div>

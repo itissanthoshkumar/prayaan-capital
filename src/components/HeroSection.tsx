@@ -3,18 +3,18 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { ArrowRight, Shield, Zap, IndianRupee, Home, CheckCircle } from "lucide-react";
 
-import heroStoreOwner from "@/assets/hero-store-owner.jpg";
-import heroRajesh from "@/assets/testimonial-rajesh.jpg";
-import heroMeera from "@/assets/testimonial-meera.jpg";
-import heroAmit from "@/assets/testimonial-amit.jpg";
+import heroFruitLady from "@/assets/hero-fruit-lady.jpg";
+import heroMarketMen from "@/assets/hero-market-men.jpg";
+import heroSalemLady from "@/assets/hero-salem-lady.jpg";
+import heroVesselShop from "@/assets/hero-vessel-shop.jpg";
 
-/* Hero carousel — real MSME borrowers (male/female mix). Replace with
-   licensed/consented customer photography when available. */
+/* Hero carousel — real South-Indian MSME shop owners (male/female mix).
+   Photos: Wikimedia Commons, CC BY / CC BY-SA — see CREDITS.md & /credits.txt. */
 const slides = [
-  { img: heroStoreOwner, alt: "Shop owner who borrowed from Prayaan Capital", amount: "₹35 Lakhs", product: "Secured Business Loan", place: "Chennai, TN" },
-  { img: heroRajesh, alt: "Self-employed borrower in South India", amount: "₹28 Lakhs", product: "Loan Against Property", place: "Salem, TN" },
-  { img: heroMeera, alt: "Woman entrepreneur and property owner", amount: "₹45 Lakhs", product: "Loan Against Property", place: "Kochi, KL" },
-  { img: heroAmit, alt: "Homeowner funded by Prayaan Capital", amount: "₹18 Lakhs", product: "Housing Loan", place: "Coimbatore, TN" },
+  { img: heroFruitLady, alt: "Woman fruit-shop owner at her stall in Tamil Nadu", amount: "₹35 Lakhs", product: "Secured Business Loan", place: "Chennai, TN" },
+  { img: heroMarketMen, alt: "Traders at Koyambedu wholesale market, Chennai", amount: "₹28 Lakhs", product: "Loan Against Property", place: "Koyambedu, Chennai" },
+  { img: heroSalemLady, alt: "Woman vendor running her shop in Salem, Tamil Nadu", amount: "₹18 Lakhs", product: "Housing Loan", place: "Salem, TN" },
+  { img: heroVesselShop, alt: "Vessel and utensils shop owner in Tamil Nadu", amount: "₹45 Lakhs", product: "Loan Against Property", place: "Madurai, TN" },
 ];
 
 const fadeUp = {
