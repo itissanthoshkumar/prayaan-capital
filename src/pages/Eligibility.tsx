@@ -207,7 +207,7 @@ const Eligibility = () => {
                         id="city"
                         value={form.city}
                         onChange={(e) => update("city", e.target.value)}
-                        placeholder="Bengaluru"
+                        placeholder="Salem"
                         maxLength={80}
                         className="clay-input"
                       />
