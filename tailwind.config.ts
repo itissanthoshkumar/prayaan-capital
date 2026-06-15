@@ -14,9 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['"Inter"', "-apple-system", "BlinkMacSystemFont", "system-ui", "sans-serif"],
+        sans: ['"Plus Jakarta Sans"', "-apple-system", "BlinkMacSystemFont", "system-ui", "sans-serif"],
         display: ['"Bricolage Grotesque"', "-apple-system", "system-ui", "sans-serif"],
-        body: ['"Inter"', "-apple-system", "BlinkMacSystemFont", "system-ui", "sans-serif"],
+        body: ['"Plus Jakarta Sans"', "-apple-system", "BlinkMacSystemFont", "system-ui", "sans-serif"],
         mono: ['"Overpass Mono"', "ui-monospace", "SFMono-Regular", "monospace"],
       },
       colors: {

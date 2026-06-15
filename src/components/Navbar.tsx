@@ -113,7 +113,7 @@ const Navbar = () => {
             )
           )}
           <Link to="/apply">
-            <Button size="sm" variant="outline" className="ml-4 rounded-full text-xs px-5 font-body">
+            <Button size="sm" variant="hero" className="ml-4 rounded-full text-xs px-5 font-body animate-cta-glow">
               Apply Now
             </Button>
           </Link>
@@ -180,8 +180,8 @@ const Navbar = () => {
                   </Link>
                 )
               )}
-              <Link to="/contact" onClick={() => setIsOpen(false)}>
-                <Button size="sm" className="w-full mt-3 rounded-full text-xs font-body">
+              <Link to="/apply" onClick={() => setIsOpen(false)}>
+                <Button size="sm" variant="hero" className="w-full mt-3 rounded-full text-xs font-body">
                   Apply Now
                 </Button>
               </Link>
