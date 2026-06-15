@@ -92,7 +92,7 @@ const HeroSection = () => {
   const featured = pool[slots[0]];
 
   return (
-    <section className="relative min-h-[88vh] flex items-stretch overflow-hidden bg-hero">
+    <section className="relative lg:min-h-[88vh] flex items-stretch overflow-hidden bg-hero">
       {/* Soft blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-24 -left-24 w-[420px] h-[420px] rounded-full bg-gradient-coral opacity-30 blur-3xl" />
@@ -100,7 +100,7 @@ const HeroSection = () => {
       </div>
 
       {/* ── Left content (tightened) ── */}
-      <div className="flex-1 pl-5 md:pl-[max(1.25rem,calc((100vw-1280px)/2+1.25rem))] pr-5 md:pr-12 py-20 md:py-32 flex flex-col justify-center relative z-10">
+      <div className="flex-1 pl-5 md:pl-[max(1.25rem,calc((100vw-1280px)/2+1.25rem))] pr-5 md:pr-12 pt-28 pb-16 md:py-32 flex flex-col lg:justify-center relative z-10">
         <motion.div custom={0} initial="hidden" animate="visible" variants={fadeUp} className="mb-8">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-card shadow-clay-sm">
             <span className="relative flex h-1.5 w-1.5">

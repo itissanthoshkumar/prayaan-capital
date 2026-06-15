@@ -113,7 +113,7 @@ const Footer = () => {
           </div>
 
           {/* RBI grievance / ombudsman compliance strip */}
-          <div className="border-t border-border/40 pt-6 mb-5">
+          <div className="border-t border-border/40 pt-6 mb-5 space-y-2.5">
             <p className="text-[10px] md:text-[11px] text-muted-foreground font-body leading-relaxed">
               <span className="font-semibold text-foreground">Grievance Redressal:</span> Mr. Harish Kumar E (Grievance Redressal Officer) ·{" "}
               <a href="mailto:gro@prayaancapital.com" className="hover:text-primary transition-colors">gro@prayaancapital.com</a> ·{" "}
@@ -121,6 +121,9 @@ const Footer = () => {
               If unresolved within 30 days, escalate to the RBI Ombudsman via{" "}
               <a href="https://cms.rbi.org.in" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">cms.rbi.org.in</a>{" "}
               or toll-free 14448. Prayaan Capital does not accept public deposits.
+            </p>
+            <p className="text-[10px] md:text-[11px] text-muted-foreground font-body leading-relaxed">
+              <span className="font-semibold text-foreground">Beware of fraud:</span> Prayaan Capital never asks for any advance fee, processing payment, OTP or password to sanction or release a loan. Deal only through our official website and verified numbers, and report suspicious calls to our Grievance Redressal Officer.
             </p>
           </div>
 

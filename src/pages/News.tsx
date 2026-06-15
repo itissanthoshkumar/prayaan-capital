@@ -13,7 +13,7 @@ const featured = {
 
 const news = [
   { tag: "Product Update", title: "Launching Instant Pre-Approved Loans for Repeat Borrowers", excerpt: "Our AI now pre-scores existing borrowers, enabling instant top-up loans with zero additional documentation.", date: "Feb 28, 2026", tint: "bg-gradient-coral" },
-  { tag: "Partnership", title: "Prayaan Capital Partners with NHB for Affordable Housing", excerpt: "Strategic partnership with SIDBI to offer credit guarantee-backed loans, reducing collateral requirements.", date: "Feb 15, 2026", tint: "bg-gradient-mint" },
+  { tag: "Partnership", title: "Prayaan Capital Partners with NHB for Affordable Housing", excerpt: "Strategic partnership with NHB to offer credit guarantee-backed housing loans, reducing collateral requirements.", date: "Feb 15, 2026", tint: "bg-gradient-mint" },
   { tag: "Engineering", title: "How Our AI Processes 200+ Data Points in Under 30 Seconds", excerpt: "A deep dive into the machine learning pipeline that powers our real-time credit decisioning engine.", date: "Jan 30, 2026", tint: "bg-gradient-lavender" },
   { tag: "Industry", title: "RBI's Digital Lending Guidelines: What They Mean for Borrowers", excerpt: "Our take on the latest regulatory framework and how compliant AI-native NBFCs are better positioned.", date: "Jan 15, 2026", tint: "bg-gradient-sunset" },
   { tag: "Company", title: "Named in India's Top 10 AI-Native Fintech Startups", excerpt: "Recognized by FinTech Global for our innovative approach to AI-driven secured lending.", date: "Dec 20, 2025", tint: "bg-gradient-coral" },
