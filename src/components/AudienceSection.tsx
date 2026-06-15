@@ -14,7 +14,7 @@ const audiences = [
     title: "Unlock your property",
     desc: "Loan Against Property and housing finance from ₹5L to ₹50L, with AI-backed decisions in 48 hours.",
     cta: "Apply for a Loan",
-    to: "/apply",
+    to: "/eligibility",
   },
   {
     icon: TrendingUp,
@@ -32,7 +32,7 @@ const audiences = [
     title: "Build & co-lend with us",
     desc: "Integrate with our AI-native platform or partner on origination, data and co-lending.",
     cta: "Explore Partnerships",
-    to: "/partnerships",
+    to: "/partner-with-us",
   },
   {
     icon: Users,

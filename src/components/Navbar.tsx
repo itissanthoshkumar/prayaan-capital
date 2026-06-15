@@ -15,7 +15,7 @@ const navLinks = [
       { label: "Leadership", href: "/leadership" },
       { label: "Technology", href: "/technology" },
       { label: "Investors", href: "/investors" },
-      { label: "Partnerships", href: "/partnerships" },
+      { label: "Partnerships", href: "/partner-with-us" },
       { label: "Careers", href: "/careers" },
       { label: "News", href: "/news" },
     ],
@@ -25,7 +25,7 @@ const navLinks = [
     children: [
       { label: "How It Works", href: "/#how-it-works" },
       { label: "Check Eligibility", href: "/eligibility" },
-      { label: "Calculators", href: "/customer/calculators" },
+      { label: "Calculators", href: "/calculators/emi" },
       { label: "Fair Practice Code", href: "/fair-practice-code" },
     ],
   },
@@ -112,7 +112,7 @@ const Navbar = () => {
               </Link>
             )
           )}
-          <Link to="/apply">
+          <Link to="/eligibility">
             <Button size="sm" variant="hero" className="ml-4 rounded-full text-xs px-5 font-body animate-cta-glow">
               Apply Now
             </Button>
@@ -180,7 +180,7 @@ const Navbar = () => {
                   </Link>
                 )
               )}
-              <Link to="/apply" onClick={() => setIsOpen(false)}>
+              <Link to="/eligibility" onClick={() => setIsOpen(false)}>
                 <Button size="sm" variant="hero" className="w-full mt-3 rounded-full text-xs font-body">
                   Apply Now
                 </Button>

@@ -17,27 +17,27 @@ const services = [
     icon: MessageCircle,
     title: "Grievance Redressal",
     desc: "Submit a complaint, track its status, and escalate if needed. We resolve in 30 days.",
-    href: "/customer/grievance",
+    href: "/grievance-redressal",
     tint: "bg-gradient-mint",
   },
   {
     icon: Calculator,
     title: "Calculators",
     desc: "Estimate your EMI, check eligibility, or calculate foreclosure amounts before you call.",
-    href: "/customer/calculators",
+    href: "/calculators/emi",
     tint: "bg-gradient-lavender",
   },
   {
     icon: ClipboardList,
     title: "Apply Now",
     desc: "Start a new loan application in minutes. AI pre-qualification with no credit score impact.",
-    href: "/apply",
+    href: "/eligibility",
     tint: "bg-gradient-sunset",
   },
 ];
 
 const quickLinks = [
-  { label: "FAQ", href: "/faq", icon: HelpCircle },
+  { label: "FAQ", href: "/faqs", icon: HelpCircle },
   { label: "Contact Support", href: "/contact", icon: Phone },
   { label: "Downloads", href: "/downloads", icon: ClipboardList },
   { label: "NACH Instructions", href: "/nach-instructions", icon: CreditCard },

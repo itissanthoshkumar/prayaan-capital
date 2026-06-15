@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Shield, Zap, IndianRupee, Home, CheckCircle } from "lucide-react";
 
@@ -118,8 +119,8 @@ const HeroSection = () => {
           variants={fadeUp}
           className="flex flex-col sm:flex-row gap-4 mb-12 md:mb-14"
         >
-          <Button variant="hero" size="lg" className="text-sm">
-            Apply for a Loan <ArrowRight size={15} />
+          <Button variant="hero" size="lg" className="text-sm" asChild>
+            <Link to="/eligibility">Apply for a Loan <ArrowRight size={15} /></Link>
           </Button>
           <Button variant="hero-outline" size="lg" className="text-sm" asChild>
             <a href="/#emi-calculator">Calculate EMI</a>

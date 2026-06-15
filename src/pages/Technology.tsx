@@ -123,7 +123,7 @@ const Technology = () => {
               Small team, big impact, weekly shipping.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link to="/partnerships">
+              <Link to="/partner-with-us">
                 <Button size="lg" className="rounded-full px-8 font-body">
                   Partner With Us <ArrowRight size={15} />
                 </Button>

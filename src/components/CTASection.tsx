@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone } from "lucide-react";
 
@@ -38,11 +39,11 @@ const CTASection = () => {
               transition={{ delay: 0.2, duration: 0.5 }}
               className="flex flex-col sm:flex-row gap-3 justify-center"
             >
-              <Button size="lg" variant="default" className="text-sm px-8 font-body">
-                Apply for a Loan <ArrowRight size={15} />
+              <Button size="lg" variant="default" className="text-sm px-8 font-body" asChild>
+                <Link to="/eligibility">Apply for a Loan <ArrowRight size={15} /></Link>
               </Button>
-              <Button variant="secondary" size="lg" className="text-sm px-8 font-body">
-                <Phone size={15} /> Talk to an Advisor
+              <Button variant="secondary" size="lg" className="text-sm px-8 font-body" asChild>
+                <Link to="/contact"><Phone size={15} /> Talk to an Advisor</Link>
               </Button>
             </motion.div>
             <motion.p
