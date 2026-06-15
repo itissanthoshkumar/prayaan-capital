@@ -12,7 +12,7 @@ const differentiators = [
   {
     icon: Users,
     title: "Property-owner first",
-    desc: "Decades of secured-lending experience with homeowners, shopkeepers and small landlords across Tier 2 and Tier 3 India.",
+    desc: "Deep expertise with homeowners, shopkeepers and small landlords across Tier 3–6 India — underserved by mainstream banks.",
     tint: "bg-gradient-coral",
   },
   {

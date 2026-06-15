@@ -40,11 +40,11 @@ const About = () => {
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-4">
               <Sparkles size={12} /> About Prayaan Capital
             </span>
-            <h1 className="font-display text-3xl md:text-6xl font-bold text-foreground mt-3 mb-5 leading-tight">
-              The <span className="text-gradient-coral">power on your side</span> for India's property owners
+            <h1 className=”font-display text-3xl md:text-6xl font-bold text-foreground mt-3 mb-5 leading-tight”>
+              The <span className=”text-gradient-coral”>power on your side</span> for India's property owners in Tier 3–6 India
             </h1>
-            <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              Prayaan Capital Private Limited was incorporated on 10 December 2018 and granted the NBFC Certificate of Registration by RBI on 6 June 2019, with our Registered and Corporate Office in Chennai, Tamil Nadu. The word <em>Prayaan</em>, meaning “Journey”, was conceptualised by the founders to reflect our intent of co-travelling with our customers on their journey.
+            <p className=”text-sm md:text-lg text-muted-foreground leading-relaxed max-w-2xl”>
+              Prayaan Capital Private Limited was incorporated on 10 December 2018 and granted the NBFC Certificate of Registration by RBI on 6 June 2019, with our Registered and Corporate Office in Chennai, Tamil Nadu. We serve homeowners, shopkeepers, and small landlords across Tier 3–6 India — communities often overlooked by mainstream banks. The word <em>Prayaan</em>, meaning “Journey”, was conceptualised by the founders to reflect our intent of co-travelling with our customers on their journey.
             </p>
           </motion.div>
             </div>

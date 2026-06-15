@@ -80,7 +80,7 @@ const Products = () => {
               Loans secured by the <span className="text-gradient-coral">property you own</span>
             </h1>
             <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              Loan Against Property and housing finance from ₹5L to ₹50L. Transparent pricing, 48-hour decisions, and tenures up to 10 years — with doorstep service across India.
+              Property-secured loans from ₹5L to ₹50L. Transparent pricing, 48-hour decisions, and tenures up to 10 years — with doorstep service across Tier 3–6 India. We also offer MSME loans (from ₹3L) and supply-chain finance (from ₹1L) for specific business needs.
             </p>
           </motion.div>
             </div>
