@@ -1,25 +1,24 @@
 import HeroIllustration from "@/components/HeroIllustration";
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
-import { Brain, Target, Eye, Shield, Users, Zap, Sparkles } from "lucide-react";
+import { Brain, Eye, Shield, Users, Zap, Sparkles, HeartHandshake, TrendingUp } from "lucide-react";
 import AIFloatingElements, { AIPulse } from "@/components/AIFloatingElements";
 
 const values = [
-  { icon: Users, title: "Customer First", desc: "Door-step service with the right mix of products designed around the borrower's needs.", tint: "bg-gradient-coral" },
-  { icon: Brain, title: "Technology Driven", desc: "User-friendly app-based solutions backed by a strong technology-enabled backend for our customers.", tint: "bg-gradient-mint" },
-  { icon: Target, title: "Financial Inclusion", desc: "We bring fair, transparent credit to property owners often overlooked by mainstream banks.", tint: "bg-gradient-lavender" },
-  { icon: Zap, title: "Quick Turn-around", desc: "Fast credit decisions and minimal paperwork so you can get to your funds sooner.", tint: "bg-gradient-sunset" },
-  { icon: Eye, title: "Fair Credit Analysis", desc: "Transparent assessment combining ground-level understanding of local property markets with modern credit tools.", tint: "bg-gradient-coral" },
-  { icon: Shield, title: "Regulatory Excellence", desc: "RBI-registered NBFC committed to compliance, sound governance and customer protection.", tint: "bg-gradient-mint" },
+  { icon: Users, title: "MSME First", desc: "Secured business loans purpose-built for the manufacturers, traders and service providers who form the backbone of India's economy.", tint: "bg-gradient-coral" },
+  { icon: HeartHandshake, title: "Serving the Underserved", desc: "Fewer than 1 in 5 small businesses get the formal credit they need. We back the entrepreneurs mainstream banks routinely overlook.", tint: "bg-gradient-mint" },
+  { icon: Brain, title: "Technology Driven", desc: "AI-assisted underwriting blends property value, banking and bureau data to deliver fast, fair credit decisions.", tint: "bg-gradient-lavender" },
+  { icon: Zap, title: "Quick Turn-around", desc: "Minimal paperwork, doorstep service and decisions in 48 hours so businesses reach their funds sooner.", tint: "bg-gradient-sunset" },
+  { icon: Eye, title: "Fair & Transparent", desc: "Ground-level market understanding plus modern credit tools — full rate-card clarity and no hidden charges.", tint: "bg-gradient-coral" },
+  { icon: Shield, title: "Regulatory Excellence", desc: "An RBI-registered NBFC committed to compliance, sound governance and customer protection.", tint: "bg-gradient-mint" },
 ];
 
 const timeline = [
-  { year: "2018", event: "Prayaan Capital Private Limited incorporated on 10 December 2018 in Chennai", tint: "bg-gradient-coral" },
-  { year: "2019", event: "Granted NBFC Certificate of Registration by RBI on 6 June 2019 (non-deposit taking)", tint: "bg-gradient-mint" },
-  { year: "2020", event: "Began extending Loan Against Property to self-employed and salaried property owners", tint: "bg-gradient-lavender" },
-  { year: "2022", event: "Mr. Rangarajan Krishnan joined as Promoter & Managing Director, infusing fresh capital and expertise", tint: "bg-gradient-sunset" },
-  { year: "2024", event: "Expanded the mortgage suite with housing and construction loans across Tier 3–6 India", tint: "bg-gradient-coral" },
-  { year: "2026", event: "Co-travelling with thousands of families as they unlock the value of their property", tint: "bg-gradient-mint" },
+  { year: "2018", event: "Prayaan Capital Private Limited incorporated on 10 December 2018 in Chennai, with a mission to fund India's underserved small businesses.", tint: "bg-gradient-coral" },
+  { year: "2019", event: "Granted the NBFC Certificate of Registration by RBI on 6 June 2019 (non-deposit taking).", tint: "bg-gradient-mint" },
+  { year: "2020", event: "Raised a US$1.2M seed round led by Accion Venture Lab and scaled secured lending to micro and small enterprises.", tint: "bg-gradient-lavender" },
+  { year: "2023", event: "Deepened property-backed business lending to manufacturing, trading and services MSMEs across Tamil Nadu, Andhra Pradesh and Telangana.", tint: "bg-gradient-sunset" },
+  { year: "2026", event: "Rangarajan Krishnan, former MD & CEO of Five Star Business Finance, acquired a controlling stake and became Managing Director; raised a ₹110 Cr Series A led by Peak XV Partners to deepen MSME lending.", tint: "bg-gradient-coral" },
 ];
 
 const container = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } };
@@ -36,31 +35,31 @@ const About = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-[1fr_340px] gap-8 items-center">
             <div>
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-4">
-              <Sparkles size={12} /> About Prayaan Capital
-            </span>
-            <h1 className="font-display text-3xl md:text-6xl font-bold text-foreground mt-3 mb-5 leading-tight">
-              The <span className="text-gradient-coral">power on your side</span> for India's property owners
-            </h1>
-            <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              Prayaan Capital Private Limited was incorporated on 10 December 2018 and granted the NBFC Certificate of Registration by RBI on 6 June 2019, with our Registered and Corporate Office in Chennai, Tamil Nadu. We serve homeowners, shopkeepers, and small landlords across Tier 3–6 India — communities often overlooked by mainstream banks. The word <em>Prayaan</em>, meaning "Journey", was conceptualised by the founders to reflect our intent of co-travelling with our customers on their journey.
-            </p>
-          </motion.div>
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-4">
+                  <Sparkles size={12} /> About Prayaan Capital
+                </span>
+                <h1 className="font-display text-3xl md:text-6xl font-bold text-foreground mt-3 mb-5 leading-tight">
+                  Capital for the small businesses that <span className="text-gradient-coral">power India's growth</span>
+                </h1>
+                <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
+                  Prayaan Capital Private Limited is an RBI-registered NBFC incorporated in Chennai in December 2018. We provide secured business loans to India's micro, small and medium enterprises — the manufacturers, traders and service providers who create jobs and drive growth, yet remain underserved by mainstream banks. The word <em>Prayaan</em>, meaning "Journey", reflects our intent to co-travel with every entrepreneur on their growth journey.
+                </p>
+              </motion.div>
             </div>
             <HeroIllustration variant="about" />
           </div>
         </div>
       </section>
 
-      {/* Mission & Vision */}
+      {/* Mission & Focus */}
       <section className="py-16 md:py-24 bg-background relative overflow-hidden">
         <AIFloatingElements />
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-2 gap-5 md:gap-8">
             {[
-              { label: "Our Mission", title: "Where we want to be", desc: "To help India's property owners unlock the value of what they already own — through highly digitized sourcing, fair underwriting and deeper, long-term relationships.", tint: "bg-gradient-coral" },
-              { label: "Our Focus", title: "Property-backed lending, done fairly", desc: "We serve homeowners, shopkeepers and small landlords across Tier 3–6 India — people with valuable property but limited access to fair, transparent credit. A combination of property value and our credit tools decides the ideal loan amount for you.", tint: "bg-gradient-mint" },
+              { label: "Why We Exist", title: "Closing India's MSME credit gap", desc: "Small businesses power our economy, yet most cannot access the formal credit they need to grow. We help underserved entrepreneurs unlock the value of the property they own to fund their business — fairly, transparently, and on terms that respect their cashflow.", tint: "bg-gradient-coral" },
+              { label: "What We Do", title: "Secured business loans, done fairly", desc: "We lend to manufacturing, trading and services MSMEs, backed by commercial or residential property. A blend of ground-level property valuation and modern credit tools decides the right loan for each enterprise — with doorstep service across South India.", tint: "bg-gradient-mint" },
             ].map((item, i) => (
               <motion.div
                 key={item.label}
@@ -83,8 +82,38 @@ const About = () => {
         </div>
       </section>
 
+      {/* MSME impact strip */}
+      <section className="py-12 md:py-16 bg-section relative overflow-hidden">
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto"
+          >
+            {[
+              { stat: "63M+", label: "MSMEs in India", sub: "the engine of jobs and GDP", icon: TrendingUp, tint: "bg-gradient-coral" },
+              { stat: "~19%", label: "credit demand formally met", sub: "the gap we exist to close", icon: HeartHandshake, tint: "bg-gradient-mint" },
+              { stat: "100%", label: "secured & transparent", sub: "property-backed, fair pricing", icon: Shield, tint: "bg-gradient-lavender" },
+            ].map((s) => (
+              <div key={s.label} className="clay-surface p-6 flex items-start gap-4">
+                <div className={`w-12 h-12 rounded-2xl ${s.tint} shadow-clay-sm flex items-center justify-center shrink-0`}>
+                  <s.icon size={20} className="text-white" />
+                </div>
+                <div>
+                  <p className="font-display text-2xl font-extrabold text-foreground leading-none">{s.stat}</p>
+                  <p className="font-body text-sm font-semibold text-foreground mt-1.5">{s.label}</p>
+                  <p className="font-body text-xs text-muted-foreground mt-0.5">{s.sub}</p>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
       {/* Values */}
-      <section className="py-16 md:py-24 bg-section relative overflow-hidden">
+      <section className="py-16 md:py-24 bg-background relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14 md:mb-20">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-accent-foreground uppercase tracking-[0.12em] font-body mb-5">
@@ -112,15 +141,15 @@ const About = () => {
       </section>
 
       {/* Timeline */}
-      <section className="py-16 md:py-24 bg-background relative overflow-hidden">
+      <section className="py-16 md:py-24 bg-section relative overflow-hidden">
         <AIFloatingElements />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14 md:mb-20">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-5">
-<Zap size={12} /> Our Journey
+              <Zap size={12} /> Our Journey
             </span>
             <h2 className="font-display text-2xl md:text-5xl font-bold text-foreground mt-3">
-              Building the Future of <span className="text-gradient-coral">Mortgage Lending</span>
+              Funding India's <span className="text-gradient-coral">MSME backbone</span>
             </h2>
           </motion.div>
           <div className="max-w-2xl mx-auto relative">
