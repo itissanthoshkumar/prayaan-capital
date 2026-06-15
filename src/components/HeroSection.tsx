@@ -6,15 +6,18 @@ import { ArrowRight, Shield, Zap, IndianRupee, Home, CheckCircle } from "lucide-
 import heroFruitLady from "@/assets/hero-fruit-lady.jpg";
 import heroMarketMen from "@/assets/hero-market-men.jpg";
 import heroSalemLady from "@/assets/hero-salem-lady.jpg";
-import heroVesselShop from "@/assets/hero-vessel-shop.jpg";
+import heroTailor from "@/assets/hero-tailor.jpg";
+import heroFarmers from "@/assets/hero-farmers.jpg";
 
-/* Hero carousel — real South-Indian MSME shop owners (male/female mix).
-   Photos: Wikimedia Commons, CC BY / CC BY-SA — see CREDITS.md & /credits.txt. */
+/* Hero carousel — real South-Indian self-employed customers across TN / AP / TG
+   (shopkeepers, tailors, farmers, traders; male/female mix). Amounts reflect our
+   ~₹7L average ticket. Photos: Wikimedia Commons, CC BY/BY-SA — see /credits.txt. */
 const slides = [
-  { img: heroFruitLady, alt: "Woman fruit-shop owner at her stall in Tamil Nadu", amount: "₹35 Lakhs", product: "Secured Business Loan", place: "Chennai, TN" },
-  { img: heroMarketMen, alt: "Traders at Koyambedu wholesale market, Chennai", amount: "₹28 Lakhs", product: "Loan Against Property", place: "Koyambedu, Chennai" },
-  { img: heroSalemLady, alt: "Woman vendor running her shop in Salem, Tamil Nadu", amount: "₹18 Lakhs", product: "Housing Loan", place: "Salem, TN" },
-  { img: heroVesselShop, alt: "Vessel and utensils shop owner in Tamil Nadu", amount: "₹45 Lakhs", product: "Loan Against Property", place: "Madurai, TN" },
+  { img: heroSalemLady, alt: "Woman fruit vendor running her shop in Salem, Tamil Nadu", amount: "₹6 Lakhs", product: "Secured Business Loan", place: "Salem, TN" },
+  { img: heroTailor, alt: "Tailor at his sewing machine in Ooty, Tamil Nadu", amount: "₹4 Lakhs", product: "Secured Business Loan", place: "Ooty, TN" },
+  { img: heroFarmers, alt: "Farmers in a village near Eluru, Andhra Pradesh", amount: "₹8 Lakhs", product: "Loan Against Property", place: "Eluru, AP" },
+  { img: heroFruitLady, alt: "Woman fruit-shop owner at her stall in Tamil Nadu", amount: "₹7 Lakhs", product: "Secured Business Loan", place: "Madurai, TN" },
+  { img: heroMarketMen, alt: "Traders at Koyambedu wholesale market, Chennai", amount: "₹9 Lakhs", product: "Loan Against Property", place: "Chennai, TN" },
 ];
 
 const fadeUp = {
@@ -154,65 +157,62 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      {/* ── Right — full-bleed image (desktop only) ── */}
+      {/* ── Right — framed carousel (desktop only) ── */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.3 }}
-        className="hidden lg:block relative w-[44%] shrink-0 self-stretch"
+        className="hidden lg:flex items-center justify-center w-[46%] shrink-0 self-stretch pl-4 pr-10 xl:pr-16 py-24 relative z-10"
       >
-        {/* Crossfading carousel of real borrowers */}
-        <AnimatePresence initial={false}>
-          <motion.img
-            key={active}
-            src={slide.img}
-            alt={slide.alt}
-            initial={{ opacity: 0, scale: 1.04 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="absolute inset-0 w-full h-full object-cover object-[center_20%]"
-          />
-        </AnimatePresence>
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-foreground/65 via-foreground/10 to-transparent" />
-        {/* Left edge soft blend into hero bg */}
-        <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[hsl(var(--hero))] to-transparent" />
-
-        {/* Floating loan badge — bottom left (updates per slide) */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.9 }}
-          className="absolute bottom-12 left-8 clay-surface p-3.5 rounded-2xl shadow-clay max-w-[210px]"
-        >
-          <p className="font-body text-[10px] text-muted-foreground mb-0.5">Recent disbursement</p>
-          <p className="font-mono text-sm font-bold text-foreground">{slide.amount}</p>
-          <p className="font-body text-[11px] text-muted-foreground">{slide.product} · {slide.place}</p>
-        </motion.div>
-
-        {/* Verified badge — top right */}
-        <motion.div
-          initial={{ opacity: 0, y: -12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.0 }}
-          className="absolute top-8 right-6 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-mint shadow-clay-sm"
-        >
-          <CheckCircle size={11} className="text-white" />
-          <span className="font-body text-[10px] font-bold text-white tracking-wide">Prayaan ✓</span>
-        </motion.div>
-
-        {/* Carousel dots */}
-        <div className="absolute bottom-5 left-8 flex items-center gap-2 z-10">
-          {slides.map((s, i) => (
-            <button
-              key={s.place}
-              onClick={() => setActive(i)}
-              aria-label={`Show ${s.product} story from ${s.place}`}
-              aria-current={i === active}
-              className={`h-1.5 rounded-full transition-all ${i === active ? "w-6 bg-white" : "w-1.5 bg-white/50 hover:bg-white/80"}`}
+        <div className="relative w-full max-w-[440px] aspect-[4/5] rounded-[2rem] overflow-hidden shadow-clay-lg ring-1 ring-foreground/5 bg-card">
+          {/* Crossfading carousel of real customers — contained within the frame */}
+          <AnimatePresence initial={false}>
+            <motion.img
+              key={active}
+              src={slide.img}
+              alt={slide.alt}
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="absolute inset-0 w-full h-full object-cover"
             />
-          ))}
+          </AnimatePresence>
+
+          {/* Bottom gradient for badge legibility */}
+          <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-foreground/75 to-transparent" />
+
+          {/* Verified badge — top right, inside frame */}
+          <div className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-mint shadow-clay-sm">
+            <CheckCircle size={11} className="text-white" />
+            <span className="font-body text-[10px] font-bold text-white tracking-wide">Prayaan ✓</span>
+          </div>
+
+          {/* Disbursement badge — bottom left, inside frame */}
+          <motion.div
+            key={`badge-${active}`}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="absolute bottom-12 left-4 clay-surface p-3 rounded-2xl shadow-clay max-w-[200px]"
+          >
+            <p className="font-body text-[10px] text-muted-foreground mb-0.5">Recent disbursement</p>
+            <p className="font-mono tabular-nums text-sm font-bold text-foreground">{slide.amount}</p>
+            <p className="font-body text-[11px] text-muted-foreground">{slide.product} · {slide.place}</p>
+          </motion.div>
+
+          {/* Carousel dots — inside frame */}
+          <div className="absolute bottom-4 left-4 flex items-center gap-2 z-10">
+            {slides.map((s, i) => (
+              <button
+                key={s.place}
+                onClick={() => setActive(i)}
+                aria-label={`Show ${s.product} story from ${s.place}`}
+                aria-current={i === active}
+                className={`h-1.5 rounded-full transition-all ${i === active ? "w-6 bg-white" : "w-1.5 bg-white/50 hover:bg-white/80"}`}
+              />
+            ))}
+          </div>
         </div>
       </motion.div>
     </section>
