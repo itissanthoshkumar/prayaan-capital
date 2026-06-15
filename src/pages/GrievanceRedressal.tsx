@@ -5,29 +5,6 @@ import HeroIllustration from "@/components/HeroIllustration";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Mail, MapPin, ExternalLink, Shield, Clock } from "lucide-react";
 
-const guarantees = [
-  {
-    num: "7",
-    unit: "working days",
-    label: "First response",
-    sub: "Level 1 resolution target",
-    tint: "bg-gradient-coral",
-  },
-  {
-    num: "4",
-    unit: "escalation levels",
-    label: "Structured path",
-    sub: "Customer → GRO → PNO → RBI",
-    tint: "bg-gradient-mint",
-  },
-  {
-    num: "RBI",
-    unit: "compliant",
-    label: "Fair Practice Code",
-    sub: "Per Master Direction NBFC-CPD",
-    tint: "bg-gradient-lavender",
-  },
-];
 
 const levels = [
   {
@@ -125,32 +102,6 @@ const GrievanceRedressal = () => {
 
             <HeroIllustration variant="grievance" />
           </div>
-        </div>
-      </section>
-
-      {/* Resolution guarantee strip */}
-      <section className="py-8 bg-section">
-        <div className="container mx-auto px-5">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto"
-          >
-            {guarantees.map((g) => (
-              <div key={g.label} className="clay-surface p-5 flex items-center gap-4">
-                <div className={`w-14 h-14 rounded-2xl ${g.tint} shadow-clay flex flex-col items-center justify-center shrink-0`}>
-                  <span className="font-mono text-base font-bold text-white leading-none">{g.num}</span>
-                  <span className="font-body text-[8px] font-bold text-white/80 uppercase tracking-wide leading-tight text-center px-0.5">{g.unit}</span>
-                </div>
-                <div>
-                  <p className="font-display text-sm font-bold text-foreground">{g.label}</p>
-                  <p className="font-body text-xs text-muted-foreground mt-0.5">{g.sub}</p>
-                </div>
-              </div>
-            ))}
-          </motion.div>
         </div>
       </section>
 
