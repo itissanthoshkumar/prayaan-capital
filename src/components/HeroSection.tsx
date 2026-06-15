@@ -111,7 +111,7 @@ const HeroSection = () => {
           variants={fadeUp}
           className="text-[15px] md:text-lg text-muted-foreground max-w-md mb-10 md:mb-12 font-body leading-[1.7]"
         >
-          Loan Against Property and housing loans from ₹10L to ₹1Cr. Tenures up to 20 years. AI-backed decisions in 48 hours, with doorstep service across India.
+          Loan Against Property and housing loans from ₹5L to ₹50L. Tenures up to 10 years. AI-backed decisions in 48 hours, with doorstep service across India.
         </motion.p>
 
         <motion.div

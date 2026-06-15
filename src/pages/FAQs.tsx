@@ -24,7 +24,7 @@ const groups = [
     title: "Loans & Eligibility",
     icon: Home as LucideIcon,
     items: [
-      { q: "What loan amounts can I get?", a: "We offer Loan Against Property and housing loans from ₹10L to ₹1Cr, depending on the property value and your repayment capacity." },
+      { q: "What loan amounts can I get?", a: "We offer Loan Against Property and housing loans from ₹5L to ₹50L, depending on the property value and your repayment capacity." },
       { q: "Do I need to mortgage my property?", a: "Yes — our loans are secured against your property. This is what allows us to offer you lower interest rates starting from 12% p.a." },
       { q: "What is the minimum CIBIL score?", a: "We look beyond CIBIL. Our AI model evaluates property value, bank flow, and repayment history — a score of 680+ improves your pricing." },
       { q: "What types of property are accepted?", a: "Residential, commercial and industrial properties with clear, marketable title. The property should be self-occupied or rented and registered in your name." },

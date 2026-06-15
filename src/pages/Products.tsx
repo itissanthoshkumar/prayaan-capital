@@ -11,8 +11,8 @@ const products = [
   {
     icon: Landmark,
     title: "Loan Against Property",
-    range: "₹10L – ₹1Cr",
-    tenure: "Up to 20 years",
+    range: "₹5L – ₹50L",
+    tenure: "Up to 10 years",
     rate: "From 12% p.a.",
     desc: "Unlock the value of your residential, commercial or industrial property for any need — without selling it. Higher amounts, longer tenures, competitive rates.",
     features: ["Up to 60% LTV", "Any end-use", "Residential & commercial", "Long tenure", "No prepayment penalty after 6 months"],
@@ -23,8 +23,8 @@ const products = [
   {
     icon: Home,
     title: "Housing Loan",
-    range: "₹10L – ₹1Cr",
-    tenure: "Up to 20 years",
+    range: "₹5L – ₹50L",
+    tenure: "Up to 10 years",
     rate: "From 12% p.a.",
     desc: "Buy a ready home, or fund construction on land you own. Affordable EMIs, minimal paperwork and doorstep service across Tier 3–6 India.",
     features: ["Up to 80% funding", "Salaried & self-employed", "Doorstep service", "Digital documentation", "48-hour decisions"],
@@ -35,8 +35,8 @@ const products = [
   {
     icon: Building2,
     title: "Property Construction Loan",
-    range: "₹10L – ₹1Cr",
-    tenure: "Up to 20 years",
+    range: "₹5L – ₹50L",
+    tenure: "Up to 10 years",
     rate: "From 12.5% p.a.",
     desc: "Finance the construction, extension or renovation of a residential or commercial property on a plot you already own, with staged disbursal.",
     features: ["Staged disbursal", "Renovation & extension", "Plot-owner friendly", "Flexible EMIs", "Quick valuation"],
@@ -47,8 +47,8 @@ const products = [
   {
     icon: Wallet,
     title: "Balance Transfer & Top-up",
-    range: "₹10L – ₹1Cr",
-    tenure: "Up to 20 years",
+    range: "₹5L – ₹50L",
+    tenure: "Up to 10 years",
     rate: "From 11.9% p.a.",
     desc: "Move your existing property loan to Prayaan for a lower rate, and unlock an additional top-up against the same property in one go.",
     features: ["Lower your EMI", "Extra top-up", "Minimal docs", "Fast switch", "Transparent charges"],
@@ -80,7 +80,7 @@ const Products = () => {
               Loans secured by the <span className="text-gradient-coral">property you own</span>
             </h1>
             <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              Loan Against Property and housing finance from ₹10L to ₹1Cr. Transparent pricing, 48-hour decisions, and tenures up to 20 years — with doorstep service across India.
+              Loan Against Property and housing finance from ₹5L to ₹50L. Transparent pricing, 48-hour decisions, and tenures up to 10 years — with doorstep service across India.
             </p>
           </motion.div>
             </div>

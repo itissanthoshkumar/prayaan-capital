@@ -67,9 +67,9 @@ const ChartTooltip = ({ active, payload }: { active?: boolean; payload?: Array<{
    MAIN COMPONENT
    ════════════════════════════════════════════════════════ */
 const EMICalculator = () => {
-  const [loanAmount, setLoanAmount] = useState(25);  // Lakhs (5–100)
+  const [loanAmount, setLoanAmount] = useState(15);  // Lakhs (3–50)
   const [rate,       setRate]       = useState(14);  // % p.a. (12–30)
-  const [tenure,     setTenure]     = useState(36);  // months (12–240, step 6)
+  const [tenure,     setTenure]     = useState(36);  // months (12–120, step 6)
   const [showTable,  setShowTable]  = useState(false);
 
   /* ── Core maths ── */
@@ -200,11 +200,11 @@ const EMICalculator = () => {
                   <Slider
                     aria-label="Loan amount in lakhs"
                     value={[loanAmount]} onValueChange={(v) => setLoanAmount(v[0])}
-                    min={5} max={100} step={1} className="w-full"
+                    min={3} max={50} step={1} className="w-full"
                   />
                   <div className="flex justify-between">
-                    <span className="font-body text-[10px] text-muted-foreground">₹5L</span>
-                    <span className="font-body text-[10px] text-muted-foreground">₹1Cr</span>
+                    <span className="font-body text-[10px] text-muted-foreground">₹3L</span>
+                    <span className="font-body text-[10px] text-muted-foreground">₹50L</span>
                   </div>
                 </div>
 
@@ -271,11 +271,11 @@ const EMICalculator = () => {
                   <Slider
                     aria-label="Loan tenure in months"
                     value={[tenure]} onValueChange={(v) => setTenure(v[0])}
-                    min={12} max={240} step={6} className="w-full"
+                    min={12} max={120} step={6} className="w-full"
                   />
                   <div className="flex justify-between">
                     <span className="font-body text-[10px] text-muted-foreground">1 Yr</span>
-                    <span className="font-body text-[10px] text-muted-foreground">20 Yrs</span>
+                    <span className="font-body text-[10px] text-muted-foreground">10 Yrs</span>
                   </div>
                 </div>
 

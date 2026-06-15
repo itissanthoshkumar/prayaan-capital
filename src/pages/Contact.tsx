@@ -26,7 +26,7 @@ const channels = [
     icon: CheckCircle,
     tint: "bg-gradient-coral",
     label: "Apply for a Loan",
-    body: "Loan Against Property and housing loans from ₹10L to ₹1Cr, underwritten by AI. Decisions typically within 48 hours of complete documentation.",
+    body: "Loan Against Property and housing loans from ₹5L to ₹50L, underwritten by AI. Decisions typically within 48 hours of complete documentation.",
     ctaLabel: "Check Eligibility",
     ctaTo: "/eligibility",
     ctaHref: undefined as string | undefined,

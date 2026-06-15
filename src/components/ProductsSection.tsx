@@ -7,8 +7,8 @@ const products = [
   {
     icon: Landmark,
     title: "Loan Against Property",
-    range: "₹10L – ₹1Cr",
-    tenure: "Up to 20 years",
+    range: "₹5L – ₹50L",
+    tenure: "Up to 10 years",
     desc: "Unlock the value of your residential, commercial or industrial property. Use the funds for any need — with long tenures and rates starting from 12% p.a.",
     features: ["Up to 60% LTV", "Any end-use", "Flexi tenure"],
     tint: "bg-gradient-coral",
@@ -17,8 +17,8 @@ const products = [
   {
     icon: Home,
     title: "Housing Loans",
-    range: "₹10L – ₹1Cr",
-    tenure: "Up to 20 years",
+    range: "₹5L – ₹50L",
+    tenure: "Up to 10 years",
     desc: "Buy, build or renovate your home with affordable EMIs, minimal paperwork and doorstep service across Tier 3–6 India.",
     features: ["From 12% p.a.", "Long tenure", "Doorstep service"],
     tint: "bg-gradient-mint",

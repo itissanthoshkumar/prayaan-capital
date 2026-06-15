@@ -60,15 +60,15 @@ export const productData: Record<string, ProductPageData> = {
   "loan-against-property": {
     eyebrow: "Loan Against Property",
     title: "Loan Against Property (LAP)",
-    tagline: "Unlock up to 60% of your property's value for any need, with tenures up to 20 years.",
+    tagline: "Unlock up to 60% of your property's value for any need, with tenures up to 10 years.",
     icon: Landmark,
-    range: "₹10L – ₹1Cr",
-    tenure: "Up to 20 years",
+    range: "₹5L – ₹50L",
+    tenure: "Up to 10 years",
     rate: "From 12% p.a.",
     highlights: [
-      { label: "Loan Amount", value: "₹10L – ₹1Cr" },
+      { label: "Loan Amount", value: "₹5L – ₹50L" },
       { label: "LTV", value: "Up to 60%" },
-      { label: "Tenure", value: "Up to 20 yrs" },
+      { label: "Tenure", value: "Up to 10 yrs" },
       { label: "Interest", value: "From 12%" },
     ],
     features: [
@@ -241,13 +241,13 @@ export const productData: Record<string, ProductPageData> = {
     title: "Housing Loan",
     tagline: "Buy, build or improve your home with affordable EMIs and doorstep service across Tier 2–6 India.",
     icon: Building2,
-    range: "₹10L – ₹1Cr",
-    tenure: "Up to 20 years",
+    range: "₹5L – ₹50L",
+    tenure: "Up to 10 years",
     rate: "From 12% p.a.",
     highlights: [
-      { label: "Loan Amount", value: "₹10L – ₹1Cr" },
+      { label: "Loan Amount", value: "₹5L – ₹50L" },
       { label: "Funding", value: "Up to 80%" },
-      { label: "Tenure", value: "Up to 20 yrs" },
+      { label: "Tenure", value: "Up to 10 yrs" },
       { label: "Interest", value: "From 12%" },
     ],
     features: [
