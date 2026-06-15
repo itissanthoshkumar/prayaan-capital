@@ -45,6 +45,7 @@ import Customer from "./pages/Customer";
 import CustomerPayments from "./pages/CustomerPayments";
 import RBIDisclosures from "./pages/RBIDisclosures";
 import ThankYou from "./pages/ThankYou";
+import IndexV2 from "./pages/IndexV2";
 import { productData } from "./data/products";
 
 export interface AppRoute {
@@ -56,6 +57,7 @@ export interface AppRoute {
 
 export const appRoutes: AppRoute[] = [
   { path: "/", component: Index },
+  { path: "/home-v2", component: IndexV2 },
   { path: "/about", component: About },
   { path: "/team", component: Team },
   { path: "/careers", component: Careers },
