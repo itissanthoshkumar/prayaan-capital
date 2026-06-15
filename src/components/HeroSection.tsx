@@ -100,14 +100,14 @@ const HeroSection = () => {
       </div>
 
       {/* ── Left content (tightened) ── */}
-      <div className="flex-1 pl-5 md:pl-[max(1.25rem,calc((100vw-1280px)/2+1.25rem))] pr-5 md:pr-12 py-20 md:py-24 flex flex-col justify-center relative z-10">
-        <motion.div custom={0} initial="hidden" animate="visible" variants={fadeUp} className="mb-6">
+      <div className="flex-1 pl-5 md:pl-[max(1.25rem,calc((100vw-1280px)/2+1.25rem))] pr-5 md:pr-12 py-20 md:py-32 flex flex-col justify-center relative z-10">
+        <motion.div custom={0} initial="hidden" animate="visible" variants={fadeUp} className="mb-8">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-card shadow-clay-sm">
             <span className="relative flex h-1.5 w-1.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-60" />
               <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-primary" />
             </span>
-            <span className="text-[10px] md:text-[11px] font-semibold text-primary tracking-[0.14em] uppercase font-body">RBI Registered NBFC · Mortgage &amp; Housing Finance</span>
+            <span className="text-[10px] md:text-[11px] font-semibold text-muted-foreground tracking-[0.14em] uppercase font-body">RBI REGISTERED NBFC · EST. 2015</span>
           </div>
         </motion.div>
 
@@ -116,16 +116,15 @@ const HeroSection = () => {
           initial="hidden"
           animate="visible"
           variants={fadeUp}
-          className="font-display text-[2.5rem] leading-[1.05] md:text-[4rem] font-extrabold text-foreground mb-4 max-w-xl"
+          className="font-display text-4xl md:text-6xl leading-[1.15] font-extrabold text-foreground mb-6 max-w-2xl"
         >
-          Your property has{" "}
-          <span className="text-gradient-coral">more to give.</span>
+          Capital that respects the <span className="text-gradient-coral italic">hands</span> that{" "}
+          <span className="text-gradient-coral">built India.</span>
         </motion.h1>
 
         <motion.p custom={2} initial="hidden" animate="visible" variants={fadeUp}
-          className="text-base md:text-lg text-muted-foreground max-w-md mb-8 font-body leading-[1.7]">
-          <span className="font-display font-bold text-foreground/80">Own. Unlock. Grow.</span>{" "}
-          Loan Against Property &amp; housing loans up to ₹50L, decisions in 48 hours, doorstep service across South India.
+          className="text-base md:text-lg text-muted-foreground max-w-xl mb-10 font-body leading-[1.8]">
+          Tailored financial support for the micro-entrepreneurs and artisans who form the backbone of our economy. Decisions in 48 hours.
         </motion.p>
 
         <motion.div custom={3} initial="hidden" animate="visible" variants={fadeUp}
@@ -145,11 +144,11 @@ const HeroSection = () => {
             { icon: Shield, label: "RBI Registered NBFC", tint: "bg-gradient-coral" },
             { icon: Zap, label: "48-hr decisions", tint: "bg-gradient-sunset" },
           ].map((item) => (
-            <div key={item.label} className="flex items-center gap-2 px-3 py-2 rounded-full bg-card shadow-clay-sm">
-              <span className={`flex items-center justify-center w-6 h-6 rounded-full ${item.tint} text-white shadow-clay-sm`}>
-                <item.icon size={12} />
+            <div key={item.label} className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-full bg-card/80 shadow-clay border border-foreground/5">
+              <span className={`flex items-center justify-center w-5 h-5 rounded-full ${item.tint} text-white shadow-sm`}>
+                <item.icon size={11} />
               </span>
-              <span className="text-[11px] md:text-xs font-semibold text-foreground font-body tracking-wide">{item.label}</span>
+              <span className="text-xs font-semibold text-foreground font-body">{item.label}</span>
             </div>
           ))}
         </motion.div>
@@ -168,16 +167,27 @@ const HeroSection = () => {
           <motion.div
             initial={{ opacity: 0, y: 20, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.7, delay: 1.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="absolute -bottom-6 -left-6 clay-surface p-4 rounded-2xl shadow-2xl max-w-[220px] border border-foreground/5"
+            transition={{ duration: 0.7, delay: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="absolute -bottom-8 left-0 clay-surface p-4.5 rounded-2xl shadow-2xl max-w-sm border border-foreground/5"
           >
-            <p className="font-body text-[9px] text-muted-foreground mb-1.5 uppercase tracking-wide">Recent disbursement · indicative</p>
+            <p className="font-body text-[8px] text-muted-foreground mb-1 uppercase tracking-widest font-semibold">Live Disbursement</p>
             <AnimatePresence mode="wait">
               <motion.div key={slots[0]} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} transition={{ duration: 0.5 }}>
-                <p className="font-mono tabular-nums text-base font-bold text-foreground">{featured.amount}</p>
-                <p className="font-body text-[10px] text-muted-foreground mt-1">{featured.product} · {featured.place}</p>
+                <p className="font-mono tabular-nums text-lg font-bold text-foreground">{featured.amount}</p>
+                <p className="font-body text-[10px] text-muted-foreground mt-0.5">{featured.product} · {featured.place}</p>
               </motion.div>
             </AnimatePresence>
+          </motion.div>
+
+          {/* Safety Rating badge */}
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.3 }}
+            className="absolute -bottom-8 right-0 flex flex-col items-center gap-1 px-3 py-3 rounded-2xl bg-card shadow-clay border border-foreground/5"
+          >
+            <p className="font-body text-[8px] text-muted-foreground uppercase tracking-widest font-semibold">Safety Rating</p>
+            <p className="font-display text-sm font-bold text-primary">Crisil Grade A+</p>
           </motion.div>
 
           {/* Verified badge */}
