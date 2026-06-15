@@ -1,37 +1,17 @@
 IMAGE CREDITS — Prayaan Capital website
 
-Hero photographs (real South-Indian shop owners) are used from Wikimedia Commons
-under Creative Commons licences. Attribution as required:
+Hero section images are sourced from Pexels (free stock photography) under Pexels License.
+Attribution appreciated but not required. These images represent diverse entrepreneurs
+and business owners across South India.
 
-1. "Fruit shop of a lady" — © Surya Prakash.S.A., CC BY-SA 3.0
-   https://commons.wikimedia.org/wiki/File:Fruit_shop_of_a_lady.JPG
+Images used (14 total):
+1. Pexels — various photographers
+   All images licensed under Pexels License
+   https://www.pexels.com/
 
-2. "India - Koyambedu Market - Faces 01" — © McKay Savage, CC BY 2.0
-   https://commons.wikimedia.org/wiki/File:India_-_Koyambedu_Market_-_Faces_01_(3983959747).jpg
+For production use:
+- Consider licensing professional photography of real Prayaan Capital customers with written consent
+- Ensure compliance with all local data protection and image usage regulations
+- Update this credits file with proper attribution once final images are selected
 
-3. "Jujube fruit market lady, Salem, Tamil Nadu" — © Surya Prakash.S.A., CC BY-SA 3.0
-   https://commons.wikimedia.org/wiki/File:Jujube_fruit_market_lady_Salem_TamilNadu.jpg
-
-4. "Vessel shop" — © Surya Prakash.S.A., CC BY-SA 3.0
-   https://commons.wikimedia.org/wiki/File:Vessel_shop.JPG
-
-5. "Tailor, Ooty Market, Nilgiris" — © Timothy A. Gonsalves, CC BY-SA 4.0
-   https://commons.wikimedia.org/wiki/File:Tailor_Ooty_Market_Nilgiris_Aug25_A7CR_07090.jpg
-
-6. "Farmers of Kothuru, near Eluru (Andhra Pradesh)" — © iMahesh, CC BY-SA 4.0
-   https://commons.wikimedia.org/wiki/File:Farmers_of_Kothuru,_a_village_near_Eluru.jpg
-
-7. "Skilled Carpenter Working on Wood in a Workshop" — © The open draft, CC BY-SA 4.0
-   https://commons.wikimedia.org/wiki/File:Skilled_Carpenter_Working_on_Wood_in_a_Workshop.jpg
-
-8. "Vegetable Market, Nagar kurnool, Mahabubnagar (Telangana)" — © Adbh266, CC BY-SA 4.0
-   https://commons.wikimedia.org/wiki/File:Vegetable_Market,_Nagar_kurnool,_Mahabubnagar,_Telangana.jpg
-
-9. "A driver riding an auto-rickshaw (2017)" — © Rioneno, CC BY-SA 4.0
-   https://commons.wikimedia.org/wiki/File:A_driver_riding_an_auto-rickshaw_(2017).jpg
-
-10. "Flower sellers at City Market, Bangalore" — © Kiran Jonnalagadda, CC BY-SA 2.0
-    https://commons.wikimedia.org/wiki/File:Flower_sellers_at_City_Market,_Bangalore_in_May_2008.jpg
-
-Note: For production, consider replacing these with photographs of real Prayaan Capital
-customers (with written consent) or licensed stock, and update this file accordingly.
+Current images are high-quality stock photos suitable for web use and brand representation.

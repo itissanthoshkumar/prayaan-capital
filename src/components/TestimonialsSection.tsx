@@ -2,9 +2,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Quote, Star, ArrowLeft, ArrowRight, Brain, Sparkles } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
 
-import testimonialRajesh from "@/assets/testimonial-rajesh.jpg";
-import testimonialMeera from "@/assets/testimonial-meera.jpg";
-import testimonialAmit from "@/assets/testimonial-amit.jpg";
+import testimonialRajesh from "@/assets/pexels-ravikant-5807481.jpg";
+import testimonialMeera from "@/assets/pexels-himanshu817-14707127.jpg";
+import testimonialAmit from "@/assets/pexels-aslam-shah-938590627-20794317.jpg";
 
 const testimonials = [
   {

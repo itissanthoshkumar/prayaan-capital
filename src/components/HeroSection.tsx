@@ -4,30 +4,38 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { ArrowRight, Shield, Zap, IndianRupee, Home, CheckCircle } from "lucide-react";
 
-import heroSalemLady from "@/assets/hero-salem-lady.jpg";
-import heroTailor from "@/assets/hero-tailor.jpg";
-import heroFarmers from "@/assets/hero-farmers.jpg";
-import heroFruitLady from "@/assets/hero-fruit-lady.jpg";
-import heroMarketMen from "@/assets/hero-market-men.jpg";
-import heroVesselShop from "@/assets/hero-vessel-shop.jpg";
-import heroCarpenter from "@/assets/hero-carpenter.jpg";
-import heroTelangana from "@/assets/hero-telangana.jpg";
-import heroDriver from "@/assets/hero-driver.jpg";
-import heroFlowers from "@/assets/hero-flowers.jpg";
+import hero1 from "@/assets/pexels-pexels-user-1476227307-26861411.jpg";
+import hero2 from "@/assets/pexels-ravikant-5807481.jpg";
+import hero3 from "@/assets/pexels-thilina-alagiyawanna-3266092-37051956.jpg";
+import hero4 from "@/assets/pexels-aslam-shah-938590627-20794317.jpg";
+import hero5 from "@/assets/pexels-prithiv-raj-1074343528-28371334.jpg";
+import hero6 from "@/assets/pexels-akib-pictures-804689963-19179109.jpg";
+import hero7 from "@/assets/pexels-varan-6472534.jpg";
+import hero8 from "@/assets/pexels-himanshu817-14707127.jpg";
+import hero9 from "@/assets/pexels-akib-pictures-804689963-19179112.jpg";
+import hero10 from "@/assets/pexels-rk-preetham-2001609-3622671.jpg";
+import hero11 from "@/assets/pexels-rk-preetham-2001609-3622670.jpg";
+import hero12 from "@/assets/pexels-saman-films-703617-6060893.jpg";
+import hero13 from "@/assets/pexels-henry-benjamin-2149128840-30443336.jpg";
+import hero14 from "@/assets/pexels-ragu-raja-61455736-11612188.jpg";
 
-/* Dynamic collage — real self-employed customers across TN / AP / TG.
-   Pool rotates 3 tiles every ~5s. Photos: Wikimedia Commons, CC BY/BY-SA — see /credits.txt. */
+/* Dynamic collage — rotating image pool from user-provided photos.
+   Pool rotates 3 tiles every ~1.6s. Photos sourced from Pexels. See /credits.txt. */
 const pool = [
-  { img: heroSalemLady, alt: "Woman fruit vendor in Salem, Tamil Nadu", amount: "₹6 Lakhs", product: "Secured Business Loan", place: "Salem, TN" },
-  { img: heroTailor, alt: "Tailor at his machine in Ooty, Tamil Nadu", amount: "₹4 Lakhs", product: "Secured Business Loan", place: "Ooty, TN" },
-  { img: heroFarmers, alt: "Farmers near Eluru, Andhra Pradesh", amount: "₹8 Lakhs", product: "Loan Against Property", place: "Eluru, AP" },
-  { img: heroFruitLady, alt: "Woman fruit-shop owner, Tamil Nadu", amount: "₹7 Lakhs", product: "Secured Business Loan", place: "Madurai, TN" },
-  { img: heroMarketMen, alt: "Traders at Koyambedu market, Chennai", amount: "₹9 Lakhs", product: "Loan Against Property", place: "Chennai, TN" },
-  { img: heroVesselShop, alt: "Vessel-shop owner, Tamil Nadu", amount: "₹5 Lakhs", product: "Secured Business Loan", place: "Madurai, TN" },
-  { img: heroCarpenter, alt: "Carpenter in his workshop", amount: "₹6 Lakhs", product: "Secured Business Loan", place: "Erode, TN" },
-  { img: heroTelangana, alt: "Vegetable seller at Nagarkurnool market, Telangana", amount: "₹5 Lakhs", product: "Secured Business Loan", place: "Nagarkurnool, TG" },
-  { img: heroDriver, alt: "Auto-rickshaw driver at work", amount: "₹4 Lakhs", product: "Secured Business Loan", place: "Hyderabad, TG" },
-  { img: heroFlowers, alt: "Flower sellers at City Market, Bengaluru", amount: "₹7 Lakhs", product: "Loan Against Property", place: "Vijayawada, AP" },
+  { img: hero1, alt: "Entrepreneur at work", amount: "₹5.5 Lakhs", product: "Secured Business Loan", place: "Tamil Nadu" },
+  { img: hero2, alt: "Business professional", amount: "₹6.5 Lakhs", product: "Secured Business Loan", place: "Telangana" },
+  { img: hero3, alt: "Craftsperson working", amount: "₹4.5 Lakhs", product: "Secured Business Loan", place: "Andhra Pradesh" },
+  { img: hero4, alt: "Shop owner", amount: "₹7.5 Lakhs", product: "Loan Against Property", place: "Karnataka" },
+  { img: hero5, alt: "Artisan craftsman", amount: "₹5 Lakhs", product: "Secured Business Loan", place: "Tamil Nadu" },
+  { img: hero6, alt: "Self-employed professional", amount: "₹6 Lakhs", product: "Secured Business Loan", place: "Andhra Pradesh" },
+  { img: hero7, alt: "Business operator", amount: "₹8 Lakhs", product: "Loan Against Property", place: "Telangana" },
+  { img: hero8, alt: "Vendor or merchant", amount: "₹4.5 Lakhs", product: "Secured Business Loan", place: "Karnataka" },
+  { img: hero9, alt: "Industry worker", amount: "₹7 Lakhs", product: "Loan Against Property", place: "Tamil Nadu" },
+  { img: hero10, alt: "Service provider", amount: "₹5.5 Lakhs", product: "Secured Business Loan", place: "Telangana" },
+  { img: hero11, alt: "Skilled tradesperson", amount: "₹6.5 Lakhs", product: "Secured Business Loan", place: "Andhra Pradesh" },
+  { img: hero12, alt: "Business owner", amount: "₹8.5 Lakhs", product: "Loan Against Property", place: "Karnataka" },
+  { img: hero13, alt: "Professional worker", amount: "₹5 Lakhs", product: "Secured Business Loan", place: "Tamil Nadu" },
+  { img: hero14, alt: "Entrepreneur", amount: "₹7.5 Lakhs", product: "Loan Against Property", place: "Telangana" },
 ];
 
 const fadeUp = {
@@ -42,22 +50,22 @@ const fadeUp = {
 const Tile = ({ idx, className }: { idx: number; className: string }) => {
   const item = pool[idx];
   return (
-    <div className={`relative overflow-hidden rounded-3xl shadow-clay ring-1 ring-foreground/5 ${className}`}>
+    <div className={`relative overflow-hidden rounded-3xl shadow-2xl ring-1 ring-foreground/10 ${className}`}>
       <AnimatePresence initial={false} mode="popLayout">
         <motion.img
           key={idx}
           src={item.img}
           alt={item.alt}
-          initial={{ opacity: 0, scale: 1.05 }}
+          initial={{ opacity: 0, scale: 1.08 }}
           animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
         />
       </AnimatePresence>
-      <div className="absolute inset-0 bg-gradient-to-t from-foreground/35 via-transparent to-transparent" />
-      <div className="absolute inset-0 bg-primary/5 mix-blend-multiply" />
+      <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 via-foreground/10 to-transparent" />
+      <div className="absolute inset-0 bg-primary/8 mix-blend-multiply" />
     </div>
   );
 };
@@ -150,7 +158,7 @@ const HeroSection = () => {
       {/* ── Right — dynamic rotating collage (desktop only) ── */}
       <div className="hidden lg:flex items-center justify-center w-[46%] shrink-0 self-stretch pl-4 pr-10 xl:pr-16 py-20 relative z-10">
         <div className="relative w-full max-w-[460px]">
-          <div className="grid grid-cols-3 grid-rows-5 gap-3 h-[520px]">
+          <div className="grid grid-cols-3 grid-rows-5 gap-4 h-[540px]">
             <Tile idx={slots[0]} className="col-span-2 row-span-5" />
             <Tile idx={slots[1]} className="col-span-1 row-span-3" />
             <Tile idx={slots[2]} className="col-span-1 row-span-2" />
@@ -158,16 +166,16 @@ const HeroSection = () => {
 
           {/* Disbursement badge (follows featured tile) */}
           <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.9 }}
-            className="absolute -bottom-4 -left-4 clay-surface p-3.5 rounded-2xl shadow-clay-lg max-w-[210px]"
+            initial={{ opacity: 0, y: 20, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.7, delay: 1.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="absolute -bottom-6 -left-6 clay-surface p-4 rounded-2xl shadow-2xl max-w-[220px] border border-foreground/5"
           >
-            <p className="font-body text-[10px] text-muted-foreground mb-0.5">Recent disbursement · indicative</p>
+            <p className="font-body text-[9px] text-muted-foreground mb-1.5 uppercase tracking-wide">Recent disbursement · indicative</p>
             <AnimatePresence mode="wait">
-              <motion.div key={slots[0]} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.4 }}>
-                <p className="font-mono tabular-nums text-sm font-bold text-foreground">{featured.amount}</p>
-                <p className="font-body text-[11px] text-muted-foreground">{featured.product} · {featured.place}</p>
+              <motion.div key={slots[0]} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} transition={{ duration: 0.5 }}>
+                <p className="font-mono tabular-nums text-base font-bold text-foreground">{featured.amount}</p>
+                <p className="font-body text-[10px] text-muted-foreground mt-1">{featured.product} · {featured.place}</p>
               </motion.div>
             </AnimatePresence>
           </motion.div>
