@@ -12,7 +12,7 @@ const differentiators = [
   {
     icon: Users,
     title: "Property-owner first",
-    desc: "Deep expertise with homeowners, shopkeepers and small landlords across Tier 3–6 India — underserved by mainstream banks.",
+    desc: "Deep expertise with homeowners, shopkeepers and small business owners who are underserved by mainstream banks.",
     tint: "bg-gradient-coral",
   },
   {
@@ -77,7 +77,7 @@ const WhyPrayaan = () => {
                 <Sparkles size={12} /> Why Prayaan Capital
               </span>
               <h1 className="font-display text-3xl md:text-6xl font-bold text-foreground mt-3 mb-5 leading-tight">
-                Built for <span className="text-gradient-coral">property owners</span> in Tier 3–6 India
+                Built for the <span className="text-gradient-coral">borrowers banks overlook</span>
               </h1>
               <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
                 We combine deep local understanding with AI-led underwriting to help property owners unlock

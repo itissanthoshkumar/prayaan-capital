@@ -19,7 +19,7 @@ const products = [
     title: "Housing Loans",
     range: "₹5L – ₹50L",
     tenure: "Up to 10 years",
-    desc: "Buy, build or renovate your home with affordable EMIs, minimal paperwork and doorstep service across Tier 3–6 India.",
+    desc: "Buy, build or renovate your home with affordable EMIs, minimal paperwork and doorstep service in the communities that need it most.",
     features: ["From 12% p.a.", "Long tenure", "Doorstep service"],
     tint: "bg-gradient-mint",
     href: "/products/housing-loan",
@@ -50,7 +50,7 @@ const ProductsSection = () => {
             Lending against the <span className="text-gradient-coral">property you own</span>
           </h2>
           <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto font-body">
-            Prayaan Capital is a mortgage-first NBFC — Loan Against Property and housing finance, built for property owners across Tier 3–6 India.
+            Prayaan Capital is a mortgage-first NBFC — Loan Against Property and housing finance, built for the property owners and small businesses banks overlook.
           </p>
         </motion.div>
 

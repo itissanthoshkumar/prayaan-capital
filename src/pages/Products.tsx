@@ -26,7 +26,7 @@ const products = [
     range: "₹5L – ₹50L",
     tenure: "Up to 10 years",
     rate: "From 12% p.a.",
-    desc: "Buy a ready home, or fund construction on land you own. Affordable EMIs, minimal paperwork and doorstep service across Tier 3–6 India.",
+    desc: "Buy a ready home, or fund construction on land you own. Affordable EMIs, minimal paperwork and doorstep service in the communities that need it most.",
     features: ["Up to 80% funding", "Salaried & self-employed", "Doorstep service", "Digital documentation", "48-hour decisions"],
     ideal: "Families buying or building their own home, including first-time buyers in smaller towns.",
     tint: "bg-gradient-mint",
@@ -80,7 +80,7 @@ const Products = () => {
               Loans secured by the <span className="text-gradient-coral">property you own</span>
             </h1>
             <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              Property-secured loans from ₹5L to ₹50L. Transparent pricing, 48-hour decisions, and tenures up to 10 years — with doorstep service across Tier 3–6 India. We also offer MSME loans (from ₹3L) and supply-chain finance (from ₹1L) for specific business needs.
+              Property-secured loans from ₹5L to ₹50L. Transparent pricing, 48-hour decisions, and tenures up to 10 years — with doorstep service for the borrowers who need it most. We also offer MSME loans (from ₹3L) and supply-chain finance (from ₹1L) for specific business needs.
             </p>
           </motion.div>
             </div>

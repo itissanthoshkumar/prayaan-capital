@@ -239,7 +239,7 @@ export const productData: Record<string, ProductPageData> = {
   "housing-loan": {
     eyebrow: "Housing Loan",
     title: "Housing Loan",
-    tagline: "Buy, build or improve your home with affordable EMIs and doorstep service across Tier 2–6 India.",
+    tagline: "Buy, build or improve your home with affordable EMIs and doorstep service in the communities that need it most.",
     icon: Building2,
     range: "₹5L – ₹50L",
     tenure: "Up to 10 years",
