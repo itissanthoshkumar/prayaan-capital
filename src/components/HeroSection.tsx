@@ -71,21 +71,21 @@ const Tile = ({ idx, className }: { idx: number; className: string }) => {
 };
 
 const HeroSection = () => {
-  const [slots, setSlots] = useState([0, 1, 2]);
+  const [slots, setSlots] = useState([0, 1, 2, 3, 4, 5]);
 
   useEffect(() => {
     const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
     if (reduce) return;
     let tick = 0;
     const t = setInterval(() => {
-      const slot = tick % 3;
+      const slot = tick % 6;
       setSlots((prev) => {
         const next = [...prev];
-        next[slot] = (next[slot] + 3) % pool.length;
+        next[slot] = (next[slot] + 6) % pool.length;
         return next;
       });
       tick++;
-    }, 1600);
+    }, 1800);
     return () => clearInterval(t);
   }, []);
 
@@ -107,7 +107,7 @@ const HeroSection = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-60" />
               <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-primary" />
             </span>
-            <span className="text-[10px] md:text-[11px] font-semibold text-muted-foreground tracking-[0.14em] uppercase font-body">RBI REGISTERED NBFC · EST. 2015</span>
+            <span className="text-[10px] md:text-[11px] font-semibold text-muted-foreground tracking-[0.14em] uppercase font-body">RBI REGISTERED NBFC · EST. 2018</span>
           </div>
         </motion.div>
 
@@ -155,20 +155,22 @@ const HeroSection = () => {
       </div>
 
       {/* ── Right — dynamic rotating collage (desktop only) ── */}
-      <div className="hidden lg:flex items-center justify-center w-[46%] shrink-0 self-stretch pl-4 pr-10 xl:pr-16 py-20 relative z-10">
-        <div className="relative w-full max-w-[460px]">
-          <div className="grid grid-cols-3 grid-rows-5 gap-4 h-[540px]">
-            <Tile idx={slots[0]} className="col-span-2 row-span-5" />
+      <div className="hidden lg:flex items-center justify-center w-[48%] shrink-0 self-stretch pl-4 pr-10 xl:pr-16 py-20 relative z-10">
+        <div className="relative w-full max-w-[520px]">
+          <div className="grid grid-cols-4 grid-rows-5 gap-3.5 h-[580px]">
+            <Tile idx={slots[0]} className="col-span-2 row-span-3" />
             <Tile idx={slots[1]} className="col-span-1 row-span-3" />
-            <Tile idx={slots[2]} className="col-span-1 row-span-2" />
+            <Tile idx={slots[2]} className="col-span-1 row-span-3" />
+            <Tile idx={slots[3]} className="col-span-2 row-span-2" />
+            <Tile idx={slots[4]} className="col-span-2 row-span-2" />
           </div>
 
-          {/* Disbursement badge (follows featured tile) */}
+          {/* Disbursement badge */}
           <motion.div
             initial={{ opacity: 0, y: 20, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.7, delay: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="absolute -bottom-8 left-0 clay-surface p-4.5 rounded-2xl shadow-2xl max-w-sm border border-foreground/5"
+            className="absolute -bottom-12 -left-8 clay-surface p-4.5 rounded-2xl shadow-2xl max-w-sm border border-foreground/5"
           >
             <p className="font-body text-[8px] text-muted-foreground mb-1 uppercase tracking-widest font-semibold">Live Disbursement</p>
             <AnimatePresence mode="wait">
@@ -184,7 +186,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.3 }}
-            className="absolute -bottom-8 right-0 flex flex-col items-center gap-1 px-3 py-3 rounded-2xl bg-card shadow-clay border border-foreground/5"
+            className="absolute -top-12 -right-8 flex flex-col items-center gap-1 px-3 py-3 rounded-2xl bg-card shadow-clay border border-foreground/5"
           >
             <p className="font-body text-[8px] text-muted-foreground uppercase tracking-widest font-semibold">Safety Rating</p>
             <p className="font-display text-sm font-bold text-primary">Crisil Grade A+</p>
