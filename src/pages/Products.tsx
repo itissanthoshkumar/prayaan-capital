@@ -89,6 +89,31 @@ const Products = () => {
         </div>
       </section>
 
+      {/* At a glance */}
+      <section className="py-8 md:py-10 bg-section relative">
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="clay-surface max-w-5xl mx-auto px-6 md:px-10 py-6 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x divide-border/50"
+          >
+            {[
+              { v: "₹5L – ₹50L", l: "Loan amount" },
+              { v: "From 16% p.a.", l: "Interest rate" },
+              { v: "48 hours", l: "Decisions" },
+              { v: "Up to 10 yrs", l: "Tenure" },
+            ].map((s) => (
+              <div key={s.l} className="text-center px-2 md:px-4">
+                <p className="font-display text-lg md:text-2xl font-extrabold text-foreground leading-none">{s.v}</p>
+                <p className="font-body text-[11px] text-muted-foreground mt-2 uppercase tracking-wider">{s.l}</p>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
       <section className="py-16 md:py-24 bg-background relative">
         <AIFloatingElements />
         <div className="container mx-auto px-4 relative z-10">
