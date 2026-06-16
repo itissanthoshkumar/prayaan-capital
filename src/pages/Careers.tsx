@@ -13,12 +13,12 @@ const perks = [
 ];
 
 const openings = [
-  { title: "Senior ML Engineer", team: "AI/ML", location: "Mumbai / Remote", type: "Full-time", hot: true },
-  { title: "Backend Engineer (Rust/Go)", team: "Platform", location: "Mumbai / Remote", type: "Full-time", hot: false },
-  { title: "Product Designer", team: "Product", location: "Mumbai", type: "Full-time", hot: false },
-  { title: "Credit Analyst", team: "Risk", location: "Mumbai", type: "Full-time", hot: false },
+  { title: "Senior ML Engineer", team: "AI/ML", location: "Bangalore / Remote", type: "Full-time", hot: true },
+  { title: "Backend Engineer (Rust/Go)", team: "Platform", location: "Bangalore / Remote", type: "Full-time", hot: false },
+  { title: "Product Designer", team: "Product", location: "Bangalore", type: "Full-time", hot: false },
+  { title: "Credit Analyst", team: "Risk", location: "Chennai", type: "Full-time", hot: false },
   { title: "DevOps Engineer", team: "Infrastructure", location: "Remote", type: "Full-time", hot: true },
-  { title: "Growth Marketing Manager", team: "Marketing", location: "Mumbai", type: "Full-time", hot: false },
+  { title: "Growth Marketing Manager", team: "Marketing", location: "Bangalore", type: "Full-time", hot: false },
 ];
 
 const container = { hidden: {}, visible: { transition: { staggerChildren: 0.08 } } };
