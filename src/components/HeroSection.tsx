@@ -181,17 +181,6 @@ const HeroSection = () => {
             </AnimatePresence>
           </motion.div>
 
-          {/* Safety Rating badge */}
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.3 }}
-            className="absolute -top-12 -right-8 flex flex-col items-center gap-1 px-3 py-3 rounded-2xl bg-card shadow-clay border border-foreground/5"
-          >
-            <p className="font-body text-[8px] text-muted-foreground uppercase tracking-widest font-semibold">Safety Rating</p>
-            <p className="font-display text-sm font-bold text-primary">Crisil Grade A+</p>
-          </motion.div>
-
           {/* Verified badge */}
           <div className="absolute -top-3 -right-2 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-mint shadow-clay-sm">
             <CheckCircle size={11} className="text-white" />
