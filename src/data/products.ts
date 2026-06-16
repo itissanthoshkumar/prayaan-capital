@@ -2,7 +2,7 @@ import { Building2, Landmark, Factory, Wallet, Sparkles, Truck, HeartHandshake }
 import type { ProductPageData } from "@/components/templates/ProductPageTemplate";
 
 const baseRates = [
-  { label: "Interest Rate", value: "From 14% p.a." },
+  { label: "Interest Rate", value: "From 16% p.a." },
   { label: "Processing Fee", value: "Up to 2% + GST" },
   { label: "Foreclosure Charges", value: "Nil after 6 months" },
   { label: "Penal Charges", value: "Flat ₹500 per missed EMI (not capitalised)" },
@@ -32,11 +32,11 @@ export const productData: Record<string, ProductPageData> = {
     icon: Building2,
     range: "₹5L – ₹50L",
     tenure: "12 – 60 months",
-    rate: "From 14% p.a.",
+    rate: "From 16% p.a.",
     highlights: [
       { label: "Loan Amount", value: "₹5L – ₹50L" },
       { label: "Tenure", value: "12–60 months" },
-      { label: "Interest", value: "From 14%" },
+      { label: "Interest", value: "From 16%" },
       { label: "Approval", value: "24 hours" },
     ],
     features: [
@@ -64,12 +64,12 @@ export const productData: Record<string, ProductPageData> = {
     icon: Landmark,
     range: "₹5L – ₹50L",
     tenure: "Up to 10 years",
-    rate: "From 12% p.a.",
+    rate: "From 16% p.a.",
     highlights: [
       { label: "Loan Amount", value: "₹5L – ₹50L" },
       { label: "LTV", value: "Up to 60%" },
       { label: "Tenure", value: "Up to 10 yrs" },
-      { label: "Interest", value: "From 12%" },
+      { label: "Interest", value: "From 16%" },
     ],
     features: [
       "Residential, commercial & industrial property accepted",
@@ -85,7 +85,7 @@ export const productData: Record<string, ProductPageData> = {
       "Stable income proof",
     ],
     documents: [...baseDocs, "Original title deed & chain documents", "Property tax receipt & approved plan"],
-    rates: [{ label: "Interest Rate", value: "From 12% p.a." }, ...baseRates.slice(1)],
+    rates: [{ label: "Interest Rate", value: "From 16% p.a." }, ...baseRates.slice(1)],
     faqs: commonFaqs,
   },
   "working-capital": {
@@ -95,11 +95,11 @@ export const productData: Record<string, ProductPageData> = {
     icon: Wallet,
     range: "₹5L – ₹30L",
     tenure: "12 – 36 months",
-    rate: "From 15% p.a.",
+    rate: "From 16% p.a.",
     highlights: [
       { label: "Loan Amount", value: "₹5L – ₹30L" },
       { label: "Tenure", value: "12–36 mo" },
-      { label: "Interest", value: "From 15%" },
+      { label: "Interest", value: "From 16%" },
       { label: "Top-up", value: "After 6 EMIs" },
     ],
     features: [
@@ -125,12 +125,12 @@ export const productData: Record<string, ProductPageData> = {
     icon: Factory,
     range: "₹5L – ₹40L",
     tenure: "12 – 48 months",
-    rate: "From 13% p.a.",
+    rate: "From 16% p.a.",
     highlights: [
       { label: "Loan Amount", value: "₹5L – ₹40L" },
       { label: "Funding", value: "Up to 80%" },
       { label: "Tenure", value: "Up to 48 mo" },
-      { label: "Interest", value: "From 13%" },
+      { label: "Interest", value: "From 16%" },
     ],
     features: [
       "New & used equipment financing",
@@ -145,7 +145,7 @@ export const productData: Record<string, ProductPageData> = {
       "Quotation from approved OEM/dealer",
     ],
     documents: [...baseDocs, "OEM/dealer quotation for the asset"],
-    rates: [{ label: "Interest Rate", value: "From 13% p.a." }, ...baseRates.slice(1)],
+    rates: [{ label: "Interest Rate", value: "From 16% p.a." }, ...baseRates.slice(1)],
     faqs: commonFaqs,
   },
   "msme-loan": {
@@ -155,11 +155,11 @@ export const productData: Record<string, ProductPageData> = {
     icon: Sparkles,
     range: "₹3L – ₹50L",
     tenure: "12 – 60 months",
-    rate: "From 14% p.a.",
+    rate: "From 16% p.a.",
     highlights: [
       { label: "Loan Amount", value: "₹3L – ₹50L" },
       { label: "Tenure", value: "Up to 60 mo" },
-      { label: "Interest", value: "From 14%" },
+      { label: "Interest", value: "From 16%" },
       { label: "Decision", value: "Same day" },
     ],
     features: [
@@ -184,11 +184,11 @@ export const productData: Record<string, ProductPageData> = {
     icon: Truck,
     range: "₹1L – ₹25L",
     tenure: "30 – 180 days",
-    rate: "From 13.5% p.a.",
+    rate: "From 16% p.a.",
     highlights: [
       { label: "Per Invoice", value: "Up to ₹25L" },
       { label: "Tenure", value: "30–180 days" },
-      { label: "Discount", value: "From 13.5%" },
+      { label: "Discount", value: "From 16%" },
       { label: "Onboarding", value: "48 hours" },
     ],
     features: [
@@ -214,12 +214,12 @@ export const productData: Record<string, ProductPageData> = {
     icon: HeartHandshake,
     range: "₹2L – ₹30L",
     tenure: "12 – 60 months",
-    rate: "From 13% p.a.",
+    rate: "From 16% p.a.",
     highlights: [
       { label: "Concession", value: "0.50% off" },
       { label: "Loan Amount", value: "₹2L – ₹30L" },
       { label: "Tenure", value: "Up to 60 mo" },
-      { label: "Interest", value: "From 13%" },
+      { label: "Interest", value: "From 16%" },
     ],
     features: [
       "0.50% rate concession for women-owned MSMEs",
@@ -233,7 +233,7 @@ export const productData: Record<string, ProductPageData> = {
       "Valid Udyam / GST registration",
     ],
     documents: baseDocs,
-    rates: [{ label: "Interest Rate", value: "From 13% p.a." }, ...baseRates.slice(1)],
+    rates: [{ label: "Interest Rate", value: "From 16% p.a." }, ...baseRates.slice(1)],
     faqs: commonFaqs,
   },
   "housing-loan": {
@@ -243,12 +243,12 @@ export const productData: Record<string, ProductPageData> = {
     icon: Building2,
     range: "₹5L – ₹50L",
     tenure: "Up to 10 years",
-    rate: "From 12% p.a.",
+    rate: "From 16% p.a.",
     highlights: [
       { label: "Loan Amount", value: "₹5L – ₹50L" },
       { label: "Funding", value: "Up to 80%" },
       { label: "Tenure", value: "Up to 10 yrs" },
-      { label: "Interest", value: "From 12%" },
+      { label: "Interest", value: "From 16%" },
     ],
     features: [
       "Purchase, construction, extension or renovation",
@@ -264,7 +264,7 @@ export const productData: Record<string, ProductPageData> = {
       "Valid KYC: PAN, Aadhaar, address proof",
     ],
     documents: [...baseDocs, "Sale agreement / approved building plan", "Property tax receipt & title documents"],
-    rates: [{ label: "Interest Rate", value: "From 12% p.a." }, ...baseRates.slice(1)],
+    rates: [{ label: "Interest Rate", value: "From 16% p.a." }, ...baseRates.slice(1)],
     faqs: commonFaqs,
   },
 };

@@ -68,7 +68,7 @@ const ChartTooltip = ({ active, payload }: { active?: boolean; payload?: Array<{
    ════════════════════════════════════════════════════════ */
 const EMICalculator = () => {
   const [loanAmount, setLoanAmount] = useState(15);  // Lakhs (3–50)
-  const [rate,       setRate]       = useState(14);  // % p.a. (12–30)
+  const [rate,       setRate]       = useState(16);  // % p.a. (16–30)
   const [tenure,     setTenure]     = useState(36);  // months (12–120, step 6)
   const [showTable,  setShowTable]  = useState(false);
 
@@ -218,11 +218,11 @@ const EMICalculator = () => {
                     <div className="flex items-center gap-0.5 px-3 py-1.5 rounded-2xl shadow-clay-sm min-w-[88px] justify-end"
                       style={{ background: `${C_INTEREST}18` }}>
                       <input
-                        type="number" min={12} max={30} step={0.5}
+                        type="number" min={16} max={30} step={0.5}
                         value={rate}
                         onChange={(e) => {
                           const v = Number(e.target.value);
-                          if (v >= 12 && v <= 30) setRate(v);
+                          if (v >= 16 && v <= 30) setRate(v);
                         }}
                         className={numInputCls}
                         style={{ color: C_INTEREST }}
@@ -236,10 +236,10 @@ const EMICalculator = () => {
                   <Slider
                     aria-label="Interest rate percent"
                     value={[rate]} onValueChange={(v) => setRate(v[0])}
-                    min={12} max={30} step={0.5} className="w-full"
+                    min={16} max={30} step={0.5} className="w-full"
                   />
                   <div className="flex justify-between">
-                    <span className="font-body text-[10px] text-muted-foreground">12%</span>
+                    <span className="font-body text-[10px] text-muted-foreground">16%</span>
                     <span className="font-body text-[10px] text-muted-foreground">30%</span>
                   </div>
                 </div>
@@ -527,7 +527,7 @@ const EMICalculator = () => {
               </Link>
             </Button>
             <p className="font-body text-xs text-muted-foreground mt-3 max-w-lg mx-auto">
-              Indicative figures only · Subject to credit assessment · Rates starting from 12% p.a. · RBI-registered NBFC
+              Indicative figures only · Subject to credit assessment · Rates starting from 16% p.a. · RBI-registered NBFC
             </p>
           </motion.div>
 

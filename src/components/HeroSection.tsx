@@ -146,7 +146,7 @@ const HeroSection = () => {
         <motion.div custom={4} initial="hidden" animate="visible" variants={fadeUp}
           className="flex flex-wrap gap-3">
           {[
-            { icon: IndianRupee, label: "From 12% p.a.", tint: "bg-gradient-mint" },
+            { icon: IndianRupee, label: "From 16% p.a.", tint: "bg-gradient-mint" },
             { icon: Shield, label: "RBI Registered NBFC", tint: "bg-gradient-coral" },
             { icon: Zap, label: "48-hr decisions", tint: "bg-gradient-sunset" },
           ].map((item) => (

@@ -4,11 +4,11 @@ import AIFloatingElements, { AIBadge } from "@/components/AIFloatingElements";
 import { motion } from "framer-motion";
 
 const rows = [
-  ["Business Term Loan", "14% – 22% p.a.", "Up to 2% + GST", "Nil after 6 months"],
-  ["Loan Against Property", "12% – 18% p.a.", "Up to 1.5% + GST", "Nil after 12 months"],
-  ["Working Capital", "15% – 22% p.a.", "Up to 2% + GST", "Nil after 6 months"],
-  ["Machinery Finance", "13% – 20% p.a.", "Up to 2% + GST", "Nil after 6 months"],
-  ["Supply Chain Finance", "13.5% – 18% p.a.", "0.5% – 1.5% + GST", "Not applicable"],
+  ["Business Term Loan", "16% – 22% p.a.", "Up to 2% + GST", "Nil after 6 months"],
+  ["Loan Against Property", "16% – 18% p.a.", "Up to 1.5% + GST", "Nil after 12 months"],
+  ["Working Capital", "16% – 22% p.a.", "Up to 2% + GST", "Nil after 6 months"],
+  ["Machinery Finance", "16% – 20% p.a.", "Up to 2% + GST", "Nil after 6 months"],
+  ["Supply Chain Finance", "16% – 18% p.a.", "0.5% – 1.5% + GST", "Not applicable"],
 ];
 
 const charges = [

@@ -8,7 +8,7 @@ import { Slider } from "@/components/ui/slider";
 const ForeclosureCalc = () => {
   const [outstanding, setOutstanding] = useState(15);
   const [paid, setPaid] = useState(12);
-  const [rate, setRate] = useState(14);
+  const [rate, setRate] = useState(16);
 
   const { savings, charges, payable } = useMemo(() => {
     const principal = outstanding * 100000;
@@ -54,7 +54,7 @@ const ForeclosureCalc = () => {
                 </div>
                 <div>
                   <div className="flex justify-between mb-3"><label className="text-sm font-semibold">Interest Rate</label><span className="font-mono font-bold text-[hsl(var(--color-lavender))]">{rate}%</span></div>
-                  <Slider aria-label="Interest rate percent" value={[rate]} onValueChange={(v) => setRate(v[0])} min={12} max={20} step={0.5} />
+                  <Slider aria-label="Interest rate percent" value={[rate]} onValueChange={(v) => setRate(v[0])} min={16} max={30} step={0.5} />
                 </div>
               </div>
               <div className="p-6 md:p-10 bg-muted/20 space-y-5">
