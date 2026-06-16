@@ -107,7 +107,10 @@ const HeroSection = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-60" />
               <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-primary" />
             </span>
-            <span className="text-[10px] md:text-[11px] font-semibold text-muted-foreground tracking-[0.14em] uppercase font-body">RBI REGISTERED NBFC · EST. 2018</span>
+            <span className="text-[10px] md:text-[11px] font-semibold tracking-[0.14em] uppercase font-body">
+              <span className="text-gold-glitter font-bold">PRAYAAN CAPITAL</span>
+              <span className="text-muted-foreground"> · RBI REGISTERED NBFC · EST. 2018</span>
+            </span>
           </div>
         </motion.div>
 
@@ -129,8 +132,11 @@ const HeroSection = () => {
 
         <motion.div custom={3} initial="hidden" animate="visible" variants={fadeUp}
           className="flex items-center gap-5 mb-10">
-          <Button variant="hero" size="lg" className="text-sm animate-cta-glow" asChild>
-            <Link to="/eligibility">Apply for a Loan <ArrowRight size={15} /></Link>
+          <Button variant="hero" size="lg" className="text-sm animate-cta-glow relative overflow-hidden" asChild>
+            <Link to="/eligibility">
+              <span className="animate-cta-shimmer absolute inset-0 rounded-[inherit]" />
+              <span className="relative z-10 flex items-center gap-2">Apply for a Loan <ArrowRight size={15} /></span>
+            </Link>
           </Button>
           <a href="/#emi-calculator" className="font-body text-sm font-semibold text-foreground/80 hover:text-primary transition-colors inline-flex items-center gap-1.5">
             Calculate EMI <ArrowRight size={14} />
