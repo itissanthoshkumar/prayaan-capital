@@ -22,9 +22,20 @@ const Blog = () => (
           <div>
         <AIBadge label="Insights" />
         <h1 className="font-display text-3xl md:text-6xl font-bold text-foreground mt-4 mb-3">Prayaan Insights</h1>
-        <p className="text-sm md:text-base text-muted-foreground max-w-xl">Practical know-how on property loans, credit and money from our team.</p>
+        <p className="text-sm md:text-base text-muted-foreground max-w-xl">Practical know-how on business loans, credit and cash flow from our team.</p>
           </div>
           <HeroIllustration variant="news" />
+        </div>
+      </div>
+    </section>
+
+    {/* topic chips */}
+    <section className="py-6 bg-section">
+      <div className="container mx-auto px-5">
+        <div className="flex flex-wrap items-center justify-center gap-2 max-w-3xl mx-auto">
+          {[...new Set(posts.map((p) => p.tag))].map((t) => (
+            <span key={t} className="px-4 py-1.5 rounded-full clay-surface-sm text-xs font-medium text-foreground font-body">{t}</span>
+          ))}
         </div>
       </div>
     </section>

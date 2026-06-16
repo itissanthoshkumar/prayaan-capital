@@ -155,6 +155,19 @@ const Eligibility = () => {
             </p>
           </motion.div>
 
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="flex flex-wrap items-center justify-center gap-3 mb-10"
+          >
+            {["48-hour decisions", "No credit-score impact", "100% confidential"].map((t) => (
+              <span key={t} className="inline-flex items-center gap-2 px-4 py-2 rounded-full clay-surface-sm text-xs font-semibold text-foreground font-body">
+                <CheckCircle2 size={13} className="text-primary" /> {t}
+              </span>
+            ))}
+          </motion.div>
+
           <div className="grid lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {/* Form */}
             <motion.div

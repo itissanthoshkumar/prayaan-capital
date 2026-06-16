@@ -84,6 +84,19 @@ const HowToApply = () => (
       </div>
     </section>
 
+    {/* quick facts */}
+    <section className="py-6 md:py-8 bg-section">
+      <div className="container mx-auto px-5">
+        <div className="clay-surface max-w-3xl mx-auto px-6 py-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-center">
+          <span className="font-body text-xs md:text-sm font-semibold text-foreground">15-min application</span>
+          <span className="hidden sm:block w-px h-4 bg-border" />
+          <span className="font-body text-xs md:text-sm font-semibold text-foreground">Same-day sanction</span>
+          <span className="hidden sm:block w-px h-4 bg-border" />
+          <span className="font-body text-xs md:text-sm font-semibold text-foreground">48-hour funding</span>
+        </div>
+      </div>
+    </section>
+
     {/* Step Flow */}
     <ProcessSteps
       steps={steps}
