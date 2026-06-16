@@ -4,15 +4,15 @@
     "updatedAt": "2026-06-11"
   },
   "hero": {
-    "eyebrow": "RBI Registered NBFC",
-    "eyebrowSecondary": "Mortgage & Housing Finance",
-    "title": "Your property has more to give.",
-    "highlight": "more to give.",
+    "eyebrow": "PRAYAAN CAPITAL",
+    "eyebrowSecondary": "RBI Registered NBFC · Est. 2018",
+    "title": "Capital that respects the hands that built India.",
+    "highlight": "hands that built India.",
     "tagline": "Own.  Unlock.  Grow.",
-    "subtitle": "Loan Against Property and housing loans from ₹5L to ₹50L. Tenures up to 10 years. AI-backed decisions in 48 hours, with doorstep service across India.",
+    "subtitle": "Secured business loans for the small and medium enterprises — the manufacturers, traders and shopkeepers — who form the backbone of our economy. Decisions in 48 hours.",
     "image": {
       "src": "hero-store-owner.jpg",
-      "alt": "Property owner unlocking capital with Prayaan Capital",
+      "alt": "Small business owner with Prayaan Capital",
       "badges": [
         {
           "position": "bottom-left",
@@ -33,7 +33,7 @@
       { "label": "Calculate My EMI", "variant": "hero-outline", "href": "/#emi-calculator" }
     ],
     "trustPills": [
-      { "icon": "IndianRupee", "label": "From 12% p.a.", "tint": "mint" },
+      { "icon": "IndianRupee", "label": "From 16% p.a.", "tint": "mint" },
       { "icon": "Shield", "label": "RBI Registered NBFC", "tint": "coral" },
       { "icon": "Home", "label": "Up to 60% LTV", "tint": "lavender" },
       { "icon": "Zap", "label": "48-hr AI Decisions", "tint": "sunset" }
@@ -44,7 +44,7 @@
       "type": "audiencePathways",
       "heading": { "eyebrow": "Who are you here for?", "title": "One platform, every journey", "highlight": "every journey", "subtitle": "Whether you want to borrow, invest, partner or build with us — start in the right place." },
       "items": [
-        { "icon": "Home", "tint": "coral", "label": "For Borrowers", "title": "Unlock your property", "desc": "Loan Against Property and housing finance from ₹5L to ₹50L, with AI-backed decisions in 48 hours.", "cta": "Apply for a Loan", "to": "/apply" },
+        { "icon": "Home", "tint": "coral", "label": "For Borrowers", "title": "Unlock your property", "desc": "secured business loans finance from ₹5L to ₹50L, with AI-backed decisions in 48 hours.", "cta": "Apply for a Loan", "to": "/apply" },
         { "icon": "TrendingUp", "tint": "mint", "label": "For Investors & Lenders", "title": "Partner with a growing NBFC", "desc": "Reports, governance and RBI disclosures for investors and co-lenders backing our journey.", "cta": "Investor Relations", "to": "/investors" },
         { "icon": "Plug", "tint": "lavender", "label": "For Tech & Biz Partners", "title": "Build & co-lend with us", "desc": "Integrate with our AI-native platform or partner on origination, data and co-lending.", "cta": "Explore Partnerships", "to": "/partnerships" },
         { "icon": "Users", "tint": "sunset", "label": "For Job Seekers", "title": "Grow your career here", "desc": "NBFC and technology roles for people who want to build consequential fintech for Bharat.", "cta": "View Openings", "to": "/careers" }

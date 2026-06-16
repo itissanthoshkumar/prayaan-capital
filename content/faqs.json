@@ -8,7 +8,7 @@
     "icon": "HelpCircle",
     "title": "Frequently Asked Questions",
     "highlight": "Questions",
-    "subtitle": "Everything you need to know about our mortgage and housing loans — answered honestly.",
+    "subtitle": "Everything you need to know about our secured business loans — answered honestly.",
     "quickStats": [
       { "num": "12 answers", "label": "across", "tint": "coral" },
       { "num": "4 topics", "label": "organised by", "tint": "mint" },
@@ -27,7 +27,7 @@
           "items": [
             {
               "q": "Who is Prayaan Capital?",
-              "a": "Prayaan Capital is an RBI-registered NBFC focused on AI-powered mortgage and housing loans for property owners across India, with a focus on Tier 3–6 cities."
+              "a": "Prayaan Capital is an RBI-registered NBFC focused on AI-powered secured business loans for small business owners across India, with a focus on Tier 3–6 cities."
             },
             {
               "q": "Are you regulated by the RBI?",
@@ -42,11 +42,11 @@
           "items": [
             {
               "q": "What loan amounts can I get?",
-              "a": "We offer Loan Against Property and housing loans from ₹5L to ₹50L, depending on the property value and your repayment capacity."
+              "a": "We offer secured business loans from ₹5L to ₹50L, depending on the property value and your repayment capacity."
             },
             {
               "q": "Do I need to mortgage my property?",
-              "a": "Yes — our loans are secured against your property. This is what allows us to offer you lower interest rates starting from 12% p.a."
+              "a": "Yes — our loans are secured against your property. This is what allows us to offer you lower interest rates starting from 16% p.a."
             },
             {
               "q": "What is the minimum CIBIL score?",

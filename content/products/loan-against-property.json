@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "slug": "products/loan-against-property",
+    "route": "/products/loan-against-property",
+    "updatedAt": "2026-06-16",
+    "template": "product"
+  },
+  "hero": {
+    "eyebrow": "Loan Against Property",
+    "title": "Loan Against Property (LAP)",
+    "tagline": "Unlock up to 60% of your property's value for any business need, with tenures up to 10 years.",
+    "icon": "Landmark",
+    "range": "₹5L – ₹50L",
+    "tenure": "Up to 10 years",
+    "rate": "From 16% p.a."
+  },
+  "highlights": [
+    {
+      "label": "Loan Amount",
+      "value": "₹5L – ₹50L"
+    },
+    {
+      "label": "LTV",
+      "value": "Up to 60%"
+    },
+    {
+      "label": "Tenure",
+      "value": "Up to 10 yrs"
+    },
+    {
+      "label": "Interest",
+      "value": "From 16%"
+    }
+  ],
+  "features": [
+    "Residential, commercial & industrial property accepted",
+    "Higher loan amount, longer tenure, lower EMI",
+    "Quick legal & technical valuation",
+    "Balance transfer + top-up available",
+    "Any end-use — no restriction"
+  ],
+  "eligibility": [
+    "Self-occupied or rented property in your name",
+    "Clear, marketable title",
+    "Salaried or self-employed, age 21–65",
+    "Stable income proof"
+  ],
+  "documents": [
+    "PAN & Aadhaar of proprietor / directors",
+    "Business proof (GST, Udyam, Shop Act)",
+    "Bank statements – last 12 months",
+    "ITR & financials – last 2 years",
+    "Address proof of business premises",
+    "Original title deed & chain documents",
+    "Property tax receipt & approved plan"
+  ],
+  "rates": [
+    {
+      "label": "Interest Rate",
+      "value": "From 16% p.a."
+    },
+    {
+      "label": "Processing Fee",
+      "value": "Up to 2% + GST"
+    },
+    {
+      "label": "Foreclosure Charges",
+      "value": "Nil after 6 months"
+    },
+    {
+      "label": "Penal Charges",
+      "value": "Flat ₹500 per missed EMI (not capitalised)"
+    },
+    {
+      "label": "Documentation",
+      "value": "₹1,500 + GST"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How fast is loan disbursal?",
+      "a": "Our AI underwriting completes most evaluations within 24 hours, with funds typically credited within 48 hours of approval."
+    },
+    {
+      "q": "Are there any hidden charges?",
+      "a": "No. Prayaan Capital follows full rate-card transparency under the RBI Fair Practice Code. All charges are listed in your sanction letter."
+    },
+    {
+      "q": "Can I prepay or foreclose?",
+      "a": "Yes, foreclosure is free after 6 months. Part-payments are allowed once per quarter without charges."
+    },
+    {
+      "q": "What if my CIBIL is below 700?",
+      "a": "Our AI model evaluates 200+ data points beyond CIBIL — cash flow, GST filings, and sector resilience also count toward eligibility."
+    }
+  ]
+}

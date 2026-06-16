@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "slug": "products/housing-loan",
+    "route": "/products/housing-loan",
+    "updatedAt": "2026-06-16",
+    "template": "product"
+  },
+  "hero": {
+    "eyebrow": "Housing Loan",
+    "title": "Housing Loan",
+    "tagline": "Buy, build or improve premises with affordable EMIs and doorstep service in the communities that need it most.",
+    "icon": "Building2",
+    "range": "₹5L – ₹50L",
+    "tenure": "Up to 10 years",
+    "rate": "From 16% p.a."
+  },
+  "highlights": [
+    {
+      "label": "Loan Amount",
+      "value": "₹5L – ₹50L"
+    },
+    {
+      "label": "Funding",
+      "value": "Up to 80%"
+    },
+    {
+      "label": "Tenure",
+      "value": "Up to 10 yrs"
+    },
+    {
+      "label": "Interest",
+      "value": "From 16%"
+    }
+  ],
+  "features": [
+    "Purchase, construction, extension or renovation",
+    "Salaried and self-employed welcome",
+    "Long tenure for comfortable EMIs",
+    "Doorstep documentation across 80+ cities",
+    "Transparent, RBI Fair-Practice-Code pricing"
+  ],
+  "eligibility": [
+    "Indian resident, age 21–65 at maturity",
+    "Clear, marketable title to the property",
+    "Stable income — salaried or self-employed",
+    "Valid KYC: PAN, Aadhaar, address proof"
+  ],
+  "documents": [
+    "PAN & Aadhaar of proprietor / directors",
+    "Business proof (GST, Udyam, Shop Act)",
+    "Bank statements – last 12 months",
+    "ITR & financials – last 2 years",
+    "Address proof of business premises",
+    "Sale agreement / approved building plan",
+    "Property tax receipt & title documents"
+  ],
+  "rates": [
+    {
+      "label": "Interest Rate",
+      "value": "From 16% p.a."
+    },
+    {
+      "label": "Processing Fee",
+      "value": "Up to 2% + GST"
+    },
+    {
+      "label": "Foreclosure Charges",
+      "value": "Nil after 6 months"
+    },
+    {
+      "label": "Penal Charges",
+      "value": "Flat ₹500 per missed EMI (not capitalised)"
+    },
+    {
+      "label": "Documentation",
+      "value": "₹1,500 + GST"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How fast is loan disbursal?",
+      "a": "Our AI underwriting completes most evaluations within 24 hours, with funds typically credited within 48 hours of approval."
+    },
+    {
+      "q": "Are there any hidden charges?",
+      "a": "No. Prayaan Capital follows full rate-card transparency under the RBI Fair Practice Code. All charges are listed in your sanction letter."
+    },
+    {
+      "q": "Can I prepay or foreclose?",
+      "a": "Yes, foreclosure is free after 6 months. Part-payments are allowed once per quarter without charges."
+    },
+    {
+      "q": "What if my CIBIL is below 700?",
+      "a": "Our AI model evaluates 200+ data points beyond CIBIL — cash flow, GST filings, and sector resilience also count toward eligibility."
+    }
+  ]
+}

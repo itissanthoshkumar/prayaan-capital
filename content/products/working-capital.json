@@ -1,0 +1,94 @@
+{
+  "meta": {
+    "slug": "products/working-capital",
+    "route": "/products/working-capital",
+    "updatedAt": "2026-06-16",
+    "template": "product"
+  },
+  "hero": {
+    "eyebrow": "Working Capital",
+    "title": "Working Capital Loan",
+    "tagline": "Plug cash-flow gaps and fund seasonal demand with revolving working-capital lines.",
+    "icon": "Wallet",
+    "range": "₹5L – ₹30L",
+    "tenure": "12 – 36 months",
+    "rate": "From 16% p.a."
+  },
+  "highlights": [
+    {
+      "label": "Loan Amount",
+      "value": "₹5L – ₹30L"
+    },
+    {
+      "label": "Tenure",
+      "value": "12–36 mo"
+    },
+    {
+      "label": "Interest",
+      "value": "From 16%"
+    },
+    {
+      "label": "Top-up",
+      "value": "After 6 EMIs"
+    }
+  ],
+  "features": [
+    "Pay interest only on the amount used",
+    "Auto top-up after 6 on-time EMIs",
+    "Linked to GST + bank-flow analytics",
+    "No collateral for amounts up to ₹15L*",
+    "Quick repeat loan benefit"
+  ],
+  "eligibility": [
+    "Operating business with 2+ years vintage",
+    "GST-registered turnover ₹40L+",
+    "Active current account for last 12 months"
+  ],
+  "documents": [
+    "PAN & Aadhaar of proprietor / directors",
+    "Business proof (GST, Udyam, Shop Act)",
+    "Bank statements – last 12 months",
+    "ITR & financials – last 2 years",
+    "Address proof of business premises"
+  ],
+  "rates": [
+    {
+      "label": "Interest Rate",
+      "value": "From 16% p.a."
+    },
+    {
+      "label": "Processing Fee",
+      "value": "Up to 2% + GST"
+    },
+    {
+      "label": "Foreclosure Charges",
+      "value": "Nil after 6 months"
+    },
+    {
+      "label": "Penal Charges",
+      "value": "Flat ₹500 per missed EMI (not capitalised)"
+    },
+    {
+      "label": "Documentation",
+      "value": "₹1,500 + GST"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How fast is loan disbursal?",
+      "a": "Our AI underwriting completes most evaluations within 24 hours, with funds typically credited within 48 hours of approval."
+    },
+    {
+      "q": "Are there any hidden charges?",
+      "a": "No. Prayaan Capital follows full rate-card transparency under the RBI Fair Practice Code. All charges are listed in your sanction letter."
+    },
+    {
+      "q": "Can I prepay or foreclose?",
+      "a": "Yes, foreclosure is free after 6 months. Part-payments are allowed once per quarter without charges."
+    },
+    {
+      "q": "What if my CIBIL is below 700?",
+      "a": "Our AI model evaluates 200+ data points beyond CIBIL — cash flow, GST filings, and sector resilience also count toward eligibility."
+    }
+  ]
+}

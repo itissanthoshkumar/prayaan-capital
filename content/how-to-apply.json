@@ -5,8 +5,8 @@
   },
   "hero": {
     "eyebrow": "⚡ 48-Hour Process",
-    "title": "How to Apply for a Mortgage Loan",
-    "highlight": "Mortgage Loan",
+    "title": "How to Apply for a Business Loan",
+    "highlight": "Business Loan",
     "subtitle": "From first click to funded account — our 4-step process is designed to be fast, digital, and doorstep-friendly.",
     "buttons": [
       { "label": "Start My Application", "variant": "default", "icon": "ArrowRight", "to": "/eligibility" },

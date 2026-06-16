@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "slug": "products/supply-chain-finance",
+    "route": "/products/supply-chain-finance",
+    "updatedAt": "2026-06-16",
+    "template": "product"
+  },
+  "hero": {
+    "eyebrow": "Supply Chain Finance",
+    "title": "Supply Chain & Invoice Finance",
+    "tagline": "Get paid today on tomorrow's invoices. Anchor-led financing for vendors and dealers.",
+    "icon": "Truck",
+    "range": "₹1L – ₹25L",
+    "tenure": "30 – 180 days",
+    "rate": "From 16% p.a."
+  },
+  "highlights": [
+    {
+      "label": "Per Invoice",
+      "value": "Up to ₹25L"
+    },
+    {
+      "label": "Tenure",
+      "value": "30–180 days"
+    },
+    {
+      "label": "Discount",
+      "value": "From 16%"
+    },
+    {
+      "label": "Onboarding",
+      "value": "48 hours"
+    }
+  ],
+  "features": [
+    "Vendor financing & dealer financing",
+    "Anchor-corporate-led credit limits",
+    "TReDS-integrated invoice discounting",
+    "Auto-debit on invoice maturity",
+    "Real-time digital ledger"
+  ],
+  "eligibility": [
+    "Registered MSME vendor/dealer",
+    "Tagged with an approved anchor corporate",
+    "GST-registered with valid e-invoices"
+  ],
+  "documents": [
+    "GST registration",
+    "Anchor corporate PO/invoice",
+    "Bank statements – 6 months",
+    "PAN & KYC documents"
+  ],
+  "rates": [
+    {
+      "label": "Interest Rate",
+      "value": "From 16% p.a."
+    },
+    {
+      "label": "Processing Fee",
+      "value": "Up to 2% + GST"
+    },
+    {
+      "label": "Foreclosure Charges",
+      "value": "Nil after 6 months"
+    },
+    {
+      "label": "Penal Charges",
+      "value": "Flat ₹500 per missed EMI (not capitalised)"
+    },
+    {
+      "label": "Documentation",
+      "value": "₹1,500 + GST"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How fast is loan disbursal?",
+      "a": "Our AI underwriting completes most evaluations within 24 hours, with funds typically credited within 48 hours of approval."
+    },
+    {
+      "q": "Are there any hidden charges?",
+      "a": "No. Prayaan Capital follows full rate-card transparency under the RBI Fair Practice Code. All charges are listed in your sanction letter."
+    },
+    {
+      "q": "Can I prepay or foreclose?",
+      "a": "Yes, foreclosure is free after 6 months. Part-payments are allowed once per quarter without charges."
+    },
+    {
+      "q": "What if my CIBIL is below 700?",
+      "a": "Our AI model evaluates 200+ data points beyond CIBIL — cash flow, GST filings, and sector resilience also count toward eligibility."
+    }
+  ]
+}
