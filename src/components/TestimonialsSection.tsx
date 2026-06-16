@@ -95,12 +95,12 @@ const TestimonialsSection = () => {
             <Brain size={12} /> Customer Stories
           </span>
           <h2 className="font-display text-3xl md:text-5xl lg:text-[3.5rem] font-extrabold text-foreground tracking-tight leading-[1.1] mb-4">
-            Families who unlocked
+            Businesses we helped
             <br />
-            their <span className="text-gradient-coral">property</span>
+            <span className="text-gradient-coral">grow</span>
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-lg mx-auto font-body leading-relaxed">
-            Real owners, real outcomes — powered by Prayaan Capital's AI-driven mortgage lending.
+            Real entrepreneurs, real outcomes — powered by Prayaan Capital's AI-driven SME lending.
           </p>
         </motion.div>
 

@@ -12,7 +12,7 @@ const audiences = [
     tint: "bg-gradient-coral",
     label: "For Borrowers",
     title: "Unlock your property",
-    desc: "Loan Against Property and housing finance from ₹5L to ₹50L, with AI-backed decisions in 48 hours.",
+    desc: "Secured business loans from ₹5L to ₹50L, with AI-assisted decisions in 48 hours.",
     cta: "Apply for a Loan",
     to: "/eligibility",
   },

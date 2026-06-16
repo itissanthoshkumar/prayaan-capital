@@ -1,6 +1,6 @@
 import HeroIllustration from "@/components/HeroIllustration";
 import Layout from "@/components/Layout";
-import AIFloatingElements, { AIPulse } from "@/components/AIFloatingElements";
+import AIFloatingElements from "@/components/AIFloatingElements";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -87,18 +87,21 @@ const Technology = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid sm:grid-cols-2 gap-x-10 lg:gap-x-16 max-w-4xl mx-auto"
           >
-            {pillars.map((item) => (
-              <motion.div key={item.title} variants={cardAnim} className="clay-surface p-6 md:p-8 clay-press group">
-                <div className={`w-12 h-12 rounded-2xl ${item.tint} shadow-clay-sm flex items-center justify-center mb-5`}>
-                  <item.icon size={22} className="text-white" />
+            {pillars.map((item, i) => (
+              <motion.div
+                key={item.title}
+                variants={cardAnim}
+                className={`flex gap-4 py-5 ${i < pillars.length - 2 ? "border-b border-border/40" : "border-b border-border/40 sm:border-b-0"}`}
+              >
+                <span className={`w-11 h-11 rounded-xl ${item.tint} shadow-clay-sm flex items-center justify-center shrink-0`}>
+                  <item.icon size={20} className="text-white" />
+                </span>
+                <div>
+                  <h3 className="font-display text-base font-semibold text-foreground mb-1">{item.title}</h3>
+                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                 </div>
-                <div className="flex items-center gap-2 mb-3">
-                  <AIPulse />
-                  <h3 className="font-display text-base font-bold text-foreground">{item.title}</h3>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </motion.div>

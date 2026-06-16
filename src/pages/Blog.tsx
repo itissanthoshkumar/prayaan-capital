@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const posts = [
-  { slug: "ai-underwriting-msme", title: "How AI underwriting is rewriting property loans", read: "6 min", tag: "AI" },
-  { slug: "lap-vs-business-loan", title: "LAP vs Housing Loan: which one fits you?", read: "5 min", tag: "Guides" },
+  { slug: "ai-underwriting-msme", title: "How AI underwriting is rewriting MSME lending", read: "6 min", tag: "AI" },
+  { slug: "lap-vs-business-loan", title: "LAP vs unsecured business loan: which fits your firm?", read: "5 min", tag: "Guides" },
   { slug: "gst-cash-flow", title: "Reading GST returns to predict cash-flow stress", read: "7 min", tag: "Insights" },
-  { slug: "women-entrepreneurs-india", title: "Women property owners and the credit gap in India", read: "8 min", tag: "Inclusion" },
+  { slug: "women-entrepreneurs-india", title: "Women entrepreneurs and the credit gap in India", read: "8 min", tag: "Inclusion" },
   { slug: "rbi-fair-practice", title: "Decoding RBI Fair Practice Code for borrowers", read: "5 min", tag: "Regulatory" },
   { slug: "supply-chain-finance", title: "Supply chain finance 101 for vendors & dealers", read: "6 min", tag: "Working capital" },
 ];

@@ -15,7 +15,7 @@ const groups = [
     title: "About Prayaan Capital",
     icon: Landmark as LucideIcon,
     items: [
-      { q: "Who is Prayaan Capital?", a: "Prayaan Capital is an RBI-registered NBFC focused on AI-powered mortgage and housing loans for property owners and small businesses across India, with a focus on the borrowers underserved by mainstream banks." },
+      { q: "Who is Prayaan Capital?", a: "Prayaan Capital is an RBI-registered NBFC focused on AI-assisted secured business loans for India's small and medium enterprises, with a focus on the entrepreneurs underserved by mainstream banks." },
       { q: "Are you regulated by the RBI?", a: "Yes. Prayaan Capital is registered as an NBFC under the Reserve Bank of India. Our certificate of registration is publicly disclosed under RBI Disclosures." },
     ],
   },
@@ -78,7 +78,7 @@ const FAQs = () => {
                   Frequently Asked <span className="text-gradient-coral">Questions</span>
                 </h1>
                 <p className="text-sm md:text-lg text-muted-foreground max-w-lg">
-                  Everything you need to know about our mortgage and housing loans — answered honestly.
+                  Everything you need to know about our secured business loans — answered honestly.
                 </p>
               </motion.div>
 

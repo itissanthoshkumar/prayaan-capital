@@ -63,7 +63,7 @@ const Team = () => {
               Board of <span className="text-gradient-coral">Directors</span>
             </h1>
             <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              Decades of NBFC, banking and technology leadership — co-travelling with India's property owners on their journey.
+              Decades of NBFC, banking and technology leadership — co-travelling with India's small businesses on their journey.
             </p>
           </motion.div>
             </div>
@@ -111,18 +111,16 @@ const Team = () => {
             </span>
             <h2 className="font-display text-xl md:text-3xl font-bold text-foreground">Why Prayaan</h2>
           </motion.div>
-          <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid sm:grid-cols-3 gap-5 md:gap-6 max-w-3xl mx-auto">
+          <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true }} className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center justify-center gap-x-12 gap-y-6 max-w-3xl mx-auto">
             {advisors.map((advisor) => (
-              <motion.div
-                key={advisor.name}
-                variants={cardAnim}
-                className="group relative clay-surface p-6 md:p-7 clay-press text-center"
-              >
-                <div className="w-14 h-14 rounded-2xl bg-gradient-mint shadow-clay-sm flex items-center justify-center mx-auto mb-4">
+              <motion.div key={advisor.name} variants={cardAnim} className="flex items-center gap-3.5">
+                <span className="w-11 h-11 rounded-2xl bg-gradient-mint shadow-clay-sm flex items-center justify-center shrink-0">
                   <AIPulse />
+                </span>
+                <div className="text-left">
+                  <h3 className="font-display text-sm font-semibold text-foreground leading-tight">{advisor.name}</h3>
+                  <p className="text-xs text-muted-foreground mt-0.5">{advisor.title}</p>
                 </div>
-                <h3 className="font-display text-base font-semibold text-foreground">{advisor.name}</h3>
-                <p className="text-xs text-muted-foreground mt-1">{advisor.title}</p>
               </motion.div>
             ))}
           </motion.div>

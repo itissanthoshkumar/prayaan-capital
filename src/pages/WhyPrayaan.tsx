@@ -3,10 +3,29 @@ import CTASection from "@/components/CTASection";
 import AIFloatingElements, { AIPulse } from "@/components/AIFloatingElements";
 import HeroIllustration from "@/components/HeroIllustration";
 import { motion } from "framer-motion";
+import { Fragment } from "react";
 import {
   Users, MapPin, HeartHandshake, FileCheck, RefreshCw,
-  ShieldCheck, BadgeDollarSign, Brain, Sparkles, CheckCircle2,
+  ShieldCheck, BadgeDollarSign, Brain, Sparkles, CheckCircle2, Check, X, Scale,
+  Landmark, Banknote,
 } from "lucide-react";
+
+const compCols = [
+  { name: "Prayaan Capital", sub: "That's us", icon: ShieldCheck, highlight: true },
+  { name: "Traditional Banks", sub: "Slow & selective", icon: Landmark, highlight: false },
+  { name: "Informal Lenders", sub: "Costly & risky", icon: Banknote, highlight: false },
+];
+
+const comparison = {
+  rows: [
+    { feature: "Credit decision in 48 hours", values: [true, false, true] },
+    { feature: "Serves thin-file & underserved borrowers", values: [true, false, true] },
+    { feature: "Transparent, regulated pricing", values: [true, true, false] },
+    { feature: "Doorstep service in local language", values: [true, false, true] },
+    { feature: "Dedicated relationship manager", values: [true, false, false] },
+    { feature: "RBI-regulated & fair recovery", values: [true, true, false] },
+  ],
+};
 
 const approach = [
   {
@@ -104,8 +123,8 @@ const WhyPrayaan = () => {
                 Built for the <span className="text-gradient-coral">borrowers banks overlook</span>
               </h1>
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mb-8">
-                We combine deep local understanding with AI-led underwriting to help property owners unlock
-                the value of what they already own — fairly, transparently, and fast.
+                We combine deep local understanding with AI-led underwriting to help small business owners unlock
+                the value of the property they already own — fairly, transparently, and fast.
               </p>
 
               {/* Problem-Solution callout */}
@@ -205,8 +224,84 @@ const WhyPrayaan = () => {
         </div>
       </section>
 
+      {/* How we compare */}
+      <section className="py-16 md:py-24 bg-section relative overflow-hidden">
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12 md:mb-16">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-accent-foreground uppercase tracking-[0.12em] font-body mb-4">
+              <Scale size={12} /> How We Compare
+            </span>
+            <h2 className="font-display text-2xl md:text-4xl font-bold text-foreground">The fair middle ground</h2>
+            <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">Banks are too slow for the underserved. Informal lenders are too costly and unregulated. We bring the best of both — fast and fair.</p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="overflow-x-auto -mx-4 px-4 pb-2"
+          >
+            <div className="relative min-w-[660px] max-w-4xl mx-auto">
+              <div
+                className="grid grid-cols-[1.7fr_1fr_1fr_1fr] clay-surface px-3 md:px-6 py-3 md:py-4"
+                style={{ gridTemplateRows: `auto repeat(${comparison.rows.length}, auto)` }}
+              >
+                {/* Elevated highlight behind the Prayaan column */}
+                <div style={{ gridColumn: 2, gridRow: "1 / -1" }} className="-my-3 md:-my-4 rounded-3xl bg-gradient-to-b from-[hsl(var(--primary)/0.12)] to-[hsl(var(--primary)/0.02)] ring-1 ring-primary/25 shadow-clay z-0" />
+
+                {/* Header row */}
+                <div style={{ gridColumn: 1, gridRow: 1 }} className="relative z-10" />
+                {compCols.map((c, i) => (
+                  <div key={c.name} style={{ gridColumn: 2 + i, gridRow: 1 }} className="relative z-10 flex flex-col items-center text-center gap-2 px-1 pt-4 md:pt-5 pb-5">
+                    <span className={`w-10 h-10 md:w-12 md:h-12 rounded-2xl flex items-center justify-center shadow-clay-sm ${c.highlight ? "bg-gradient-coral" : "bg-card"}`}>
+                      <c.icon size={18} className={c.highlight ? "text-white" : "text-muted-foreground"} />
+                    </span>
+                    <span className={`font-display text-xs md:text-sm font-bold ${c.highlight ? "text-primary" : "text-foreground"}`}>{c.name}</span>
+                    <span className="font-body text-[9px] md:text-[10px] uppercase tracking-wider text-muted-foreground/70">{c.sub}</span>
+                  </div>
+                ))}
+
+                {/* Feature rows */}
+                {comparison.rows.map((row, ri) => (
+                  <Fragment key={row.feature}>
+                    <div style={{ gridColumn: 1, gridRow: ri + 2 }} className="relative z-10 flex items-center font-body text-xs md:text-sm font-medium text-foreground py-3.5 md:py-4 pr-3 border-t border-border/50">
+                      {row.feature}
+                    </div>
+                    {row.values.map((v, ci) => (
+                      <div key={ci} style={{ gridColumn: 2 + ci, gridRow: ri + 2 }} className="relative z-10 flex items-center justify-center py-3.5 md:py-4 border-t border-border/50">
+                        {v ? (
+                          <span className="flex items-center justify-center w-6 h-6 md:w-7 md:h-7 rounded-full bg-gradient-mint shadow-sm">
+                            <Check size={14} className="text-white" strokeWidth={3} />
+                          </span>
+                        ) : (
+                          <span className="flex items-center justify-center w-6 h-6 md:w-7 md:h-7 rounded-full bg-muted">
+                            <X size={13} className="text-muted-foreground/45" strokeWidth={3} />
+                          </span>
+                        )}
+                      </div>
+                    ))}
+                  </Fragment>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Takeaway */}
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-center text-sm md:text-base text-muted-foreground mt-8 max-w-2xl mx-auto"
+          >
+            <span className="font-semibold text-foreground">The result:</span> bank-grade trust and regulation, with the speed, reach and empathy of a local lender.
+          </motion.p>
+        </div>
+      </section>
+
       {/* Trust indicators */}
-      <section className="py-12 md:py-16 bg-section relative overflow-hidden">
+      <section className="py-12 md:py-16 bg-background relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 16 }}

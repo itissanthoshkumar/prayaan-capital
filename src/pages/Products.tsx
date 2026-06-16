@@ -16,7 +16,7 @@ const products = [
     rate: "From 12% p.a.",
     desc: "Unlock the value of your residential, commercial or industrial property for any need — without selling it. Higher amounts, longer tenures, competitive rates.",
     features: ["Up to 60% LTV", "Any end-use", "Residential & commercial", "Long tenure", "No prepayment penalty after 6 months"],
-    ideal: "Property owners who need a larger, longer-tenure loan against an asset they already own.",
+    ideal: "Businesses that need a larger, longer-tenure loan against property they already own.",
     tint: "bg-gradient-coral",
     aiTag: "AI valuation assist",
   },
@@ -77,10 +77,10 @@ const Products = () => {
               <Brain size={12} /> AI-Underwritten Products
             </span>
             <h1 className="font-display text-3xl md:text-6xl font-bold text-foreground mt-3 mb-5 leading-tight">
-              Loans secured by the <span className="text-gradient-coral">property you own</span>
+              Secured business loans for <span className="text-gradient-coral">India's SMEs</span>
             </h1>
             <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              Property-secured loans from ₹5L to ₹50L. Transparent pricing, 48-hour decisions, and tenures up to 10 years — with doorstep service for the borrowers who need it most. We also offer MSME loans (from ₹3L) and supply-chain finance (from ₹1L) for specific business needs.
+              Secured business loans from ₹5L to ₹50L, backed by the property you own — for working capital, expansion, machinery or any business need. Transparent pricing, 48-hour decisions, tenures up to 10 years, and doorstep service. Specialised lines include MSME term loans (from ₹3L) and supply-chain finance (from ₹1L).
             </p>
           </motion.div>
             </div>

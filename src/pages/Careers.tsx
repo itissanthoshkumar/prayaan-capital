@@ -43,7 +43,7 @@ const Careers = () => {
               Build the Future of <span className="text-gradient-coral">Property Finance</span>
             </h1>
             <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              Join a team of fintech veterans and AI researchers reimagining how millions of Indian property owners access fair credit.
+              Join a team of fintech veterans and AI researchers reimagining how millions of Indian small businesses access fair credit.
             </p>
           </motion.div>
             </div>
@@ -61,19 +61,20 @@ const Careers = () => {
             </span>
             <h2 className="font-display text-2xl md:text-4xl font-bold text-foreground">Perks & Culture</h2>
           </motion.div>
-          <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
-            {perks.map((perk) => (
+          <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid sm:grid-cols-2 gap-x-10 lg:gap-x-16 max-w-4xl mx-auto">
+            {perks.map((perk, i) => (
               <motion.div
                 key={perk.title}
                 variants={cardAnim}
-                whileHover={{ y: -4, transition: { duration: 0.25 } }}
-                className="group relative clay-surface p-6 md:p-7 clay-press"
+                className={`flex gap-4 py-5 ${i < perks.length - 2 ? "border-b border-border/40" : "border-b border-border/40 sm:border-b-0"}`}
               >
-                <div className={`w-12 h-12 rounded-2xl ${perk.tint} shadow-clay-sm flex items-center justify-center mb-4`}>
-                  <perk.icon size={22} className="text-white" />
+                <span className={`w-11 h-11 rounded-xl ${perk.tint} shadow-clay-sm flex items-center justify-center shrink-0`}>
+                  <perk.icon size={20} className="text-white" />
+                </span>
+                <div>
+                  <h3 className="font-display text-base font-semibold text-foreground mb-1">{perk.title}</h3>
+                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{perk.desc}</p>
                 </div>
-                <h3 className="font-display text-sm md:text-base font-semibold text-foreground mb-1.5">{perk.title}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">{perk.desc}</p>
               </motion.div>
             ))}
           </motion.div>

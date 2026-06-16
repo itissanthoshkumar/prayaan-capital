@@ -80,7 +80,7 @@ const Footer = () => {
                 <BrandLogo size={36} />
               </Link>
               <p className="text-xs text-muted-foreground leading-relaxed max-w-md font-body">
-                Prayaan Capital Private Limited is a non-deposit taking NBFC, providing affordable Loan Against Property and housing finance to property owners across India.
+                Prayaan Capital Private Limited is a non-deposit taking NBFC providing secured business loans to India's micro, small and medium enterprises — backed by the property they own.
               </p>
               <div className="mt-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-card shadow-clay-sm">
                 <Sparkles size={10} className="text-primary" />

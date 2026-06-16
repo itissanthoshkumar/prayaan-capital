@@ -47,10 +47,10 @@ const ProductsSection = () => {
             Our Products
           </span>
           <h2 className="font-display text-2xl md:text-5xl font-extrabold text-foreground mt-3 mb-3 md:mb-4 tracking-tight">
-            Lending against the <span className="text-gradient-coral">property you own</span>
+            Secured business loans for <span className="text-gradient-coral">India's SMEs</span>
           </h2>
           <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto font-body">
-            Prayaan Capital is a mortgage-first NBFC — Loan Against Property and housing finance, built for the property owners and small businesses banks overlook.
+            Prayaan Capital is an SME-first NBFC — secured business loans backed by the property you own, built for the entrepreneurs banks overlook.
           </p>
         </motion.div>
 

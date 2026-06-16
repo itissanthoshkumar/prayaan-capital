@@ -60,7 +60,7 @@ const HowToApply = () => (
             </span>
             <h1 className="font-display text-3xl md:text-6xl font-bold text-foreground mt-3 mb-4 leading-tight max-w-2xl">
               How to Apply for a{" "}
-              <span className="text-gradient-coral">Mortgage Loan</span>
+              <span className="text-gradient-coral">Business Loan</span>
             </h1>
             <p className="text-sm md:text-lg text-muted-foreground max-w-xl font-body leading-relaxed mb-8">
               From first click to funded account — our 4-step process is designed to be fast, digital, and doorstep-friendly.

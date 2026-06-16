@@ -127,7 +127,7 @@ const HeroSection = () => {
 
         <motion.p custom={2} initial="hidden" animate="visible" variants={fadeUp}
           className="text-base md:text-lg text-muted-foreground max-w-xl mb-10 font-body leading-[1.8]">
-          Tailored financial support for the micro-entrepreneurs and artisans who form the backbone of our economy. Decisions in 48 hours.
+          Secured business loans for the small and medium enterprises — the manufacturers, traders and shopkeepers — who form the backbone of our economy. Decisions in 48 hours.
         </motion.p>
 
         <motion.div custom={3} initial="hidden" animate="visible" variants={fadeUp}
