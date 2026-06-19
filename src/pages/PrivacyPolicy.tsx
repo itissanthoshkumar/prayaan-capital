@@ -153,7 +153,6 @@ const PrivacyPolicy = () => (
     eyebrow="Legal"
     icon={Shield}
     title="Privacy Policy"
-    subtitle="How Prayaan Capital collects, uses and protects your information."
     intro={intro}
     sections={sections}
   />
