@@ -52,7 +52,7 @@ const investors = [
 ];
 
 const focus = [
-  { label: "Why We Exist", title: "Closing India's MSME credit gap", desc: "Small businesses power our economy, yet most cannot access the formal credit they need to grow. We help underserved entrepreneurs unlock the value of the property they own to fund their business — fairly, transparently, and on terms that respect their cashflow.", tint: "bg-gradient-coral" },
+  { label: "Our Vision", title: "Serving the unmet needs of small business", desc: "To meet the vast unmet needs of micro & small businesses through highly digitized channels of sourcing, accepting and deeper engagement. We help underserved entrepreneurs unlock the value of the property they own to fund their business — fairly, transparently, and on terms that respect their cashflow.", tint: "bg-gradient-coral" },
   { label: "What We Do", title: "Secured business loans, done fairly", desc: "We lend to manufacturing, trading and services MSMEs, backed by commercial or residential property. A blend of ground-level property valuation and modern credit tools decides the right loan for each enterprise — with doorstep service across South India.", tint: "bg-gradient-mint" },
 ];
 
