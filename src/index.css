@@ -37,16 +37,16 @@
     --primary-foreground: 0 0% 100%;
     --primary-glow: 42 100% 47%;
 
-    /* Soft lavender secondary */
-    --secondary: 260 60% 92%;
-    --secondary-foreground: 260 30% 25%;
+    /* Soft blue secondary */
+    --secondary: 208 55% 92%;
+    --secondary-foreground: 208 45% 28%;
 
     --muted: 30 30% 92%;
     --muted-foreground: 250 12% 45%;
 
-    /* Mint accent */
-    --accent: 165 60% 70%;
-    --accent-foreground: 165 50% 18%;
+    /* Gold accent (Prayaan Capital logo) */
+    --accent: 40 100% 45%;
+    --accent-foreground: 30 35% 15%;
 
     --destructive: 358 80% 68%;
     --destructive-foreground: 0 0% 100%;
@@ -60,33 +60,33 @@
 
     --sidebar-background: 30 45% 96%;
     --sidebar-foreground: 250 25% 22%;
-    --sidebar-primary: 14 88% 66%;
+    --sidebar-primary: 208 90% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 260 60% 92%;
     --sidebar-accent-foreground: 260 30% 25%;
     --sidebar-border: 30 30% 88%;
-    --sidebar-ring: 14 88% 66%;
+    --sidebar-ring: 208 90% 50%;
 
-    /* Clay palette — pastel, candy-like */
-    --clay-coral: 14 88% 72%;
-    --clay-peach: 24 95% 78%;
+    /* Clay palette — blue & gold (logo) */
+    --clay-coral: 42 92% 76%;
+    --clay-peach: 42 95% 82%;
     --clay-yellow: 45 95% 75%;
-    --clay-mint: 160 65% 75%;
-    --clay-sky: 200 80% 78%;
-    --clay-lavender: 260 70% 80%;
-    --clay-pink: 335 80% 82%;
+    --clay-mint: 200 80% 80%;
+    --clay-sky: 205 85% 80%;
+    --clay-lavender: 210 72% 82%;
+    --clay-pink: 38 88% 82%;
 
     /* Aliases used by template/legacy pages */
-    --color-lavender: 260 70% 78%;
-    --color-coral: 14 88% 70%;
-    --color-indigo: 250 60% 60%;
+    --color-lavender: 205 90% 55%;
+    --color-coral: 42 100% 50%;
+    --color-indigo: 208 100% 31%;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(160deg, hsl(208 40% 96%) 0%, hsl(210 38% 94%) 45%, hsl(280 22% 95%) 100%);
-    --gradient-coral: linear-gradient(135deg, hsl(208 100% 31%), hsl(200 92% 42%));
-    --gradient-mint: linear-gradient(135deg, hsl(160 65% 70%), hsl(190 70% 75%));
-    --gradient-lavender: linear-gradient(135deg, hsl(260 70% 78%), hsl(290 60% 80%));
-    --gradient-sunset: linear-gradient(135deg, hsl(208 90% 45%), hsl(42 100% 50%));
+    /* Gradients — blue & gold */
+    --gradient-hero: linear-gradient(160deg, hsl(208 45% 96%) 0%, hsl(42 55% 95%) 50%, hsl(208 42% 95%) 100%);
+    --gradient-coral: linear-gradient(135deg, hsl(208 100% 31%), hsl(202 92% 42%));
+    --gradient-mint: linear-gradient(135deg, hsl(42 100% 50%), hsl(36 96% 55%));
+    --gradient-lavender: linear-gradient(135deg, hsl(205 92% 50%), hsl(196 88% 58%));
+    --gradient-sunset: linear-gradient(135deg, hsl(208 92% 45%), hsl(42 100% 52%));
     --gradient-card: linear-gradient(180deg, hsl(30 60% 99%) 0%, hsl(30 40% 95%) 100%);
     --gradient-section: linear-gradient(180deg, hsl(30 45% 95%) 0%, hsl(30 50% 97%) 100%);
 
@@ -137,19 +137,19 @@
     --popover-foreground: 30 30% 94%;
     --primary: 208 90% 60%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 260 30% 22%;
+    --secondary: 208 30% 24%;
     --secondary-foreground: 30 30% 94%;
     --muted: 250 18% 20%;
     --muted-foreground: 250 10% 65%;
-    --accent: 165 55% 55%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 42 95% 55%;
+    --accent-foreground: 30 35% 12%;
     --destructive: 358 70% 55%;
     --destructive-foreground: 0 0% 100%;
     --border: 250 18% 22%;
     --input: 250 18% 22%;
     --ring: 208 90% 50%;
 
-    --gradient-hero: linear-gradient(160deg, hsl(250 30% 14%) 0%, hsl(260 28% 16%) 50%, hsl(280 25% 18%) 100%);
+    --gradient-hero: linear-gradient(160deg, hsl(208 35% 13%) 0%, hsl(210 30% 15%) 50%, hsl(42 22% 15%) 100%);
 
     --shadow-clay:
       6px 6px 16px hsl(250 40% 4% / 0.6),
