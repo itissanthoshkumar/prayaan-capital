@@ -212,6 +212,15 @@
   }
 
   /* Backgrounds */
+  /* Deep, readable gold for headline accents on light backgrounds */
+  .text-gold-deep {
+    background: linear-gradient(90deg, hsl(40 96% 42%), hsl(32 92% 36%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
   .bg-hero { background: var(--gradient-hero); }
   .bg-section { background: var(--gradient-section); }
   .bg-clay-card { background: var(--gradient-card); }

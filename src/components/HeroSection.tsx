@@ -121,8 +121,8 @@ const HeroSection = () => {
           variants={fadeUp}
           className="font-display text-4xl md:text-6xl leading-[1.15] font-extrabold text-foreground mb-6 max-w-2xl"
         >
-          Capital that respects the <span className="text-gradient-coral italic">hands</span> that{" "}
-          <span className="text-gradient-coral">built India.</span>
+          Capital that respects the <span className="text-gold-deep italic">hands</span> that{" "}
+          <span className="text-gold-deep">built India.</span>
         </motion.h1>
 
         <motion.p custom={2} initial="hidden" animate="visible" variants={fadeUp}
@@ -158,6 +158,18 @@ const HeroSection = () => {
             </div>
           ))}
         </motion.div>
+
+        {/* Social proof */}
+        <motion.div custom={5} initial="hidden" animate="visible" variants={fadeUp} className="flex items-center gap-3 mt-8">
+          <div className="flex -space-x-2.5">
+            {[hero1, hero5, hero9, hero13].map((src, i) => (
+              <img key={i} src={src} alt="" className="w-8 h-8 rounded-full object-cover ring-2 ring-card shadow-sm" loading="lazy" />
+            ))}
+          </div>
+          <p className="text-xs md:text-sm text-muted-foreground font-body">
+            <span className="font-bold text-foreground">10,000+ businesses</span> funded across South India
+          </p>
+        </motion.div>
       </div>
 
       {/* ── Right — dynamic rotating collage (desktop only) ── */}
@@ -170,6 +182,17 @@ const HeroSection = () => {
             <Tile idx={slots[3]} className="col-span-2 row-span-2" />
             <Tile idx={slots[4]} className="col-span-2 row-span-2" />
           </div>
+
+          {/* Cumulative disbursal badge (top-left) */}
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1 }}
+            className="absolute -top-5 -left-6 clay-surface px-4 py-2.5 rounded-2xl shadow-xl border border-foreground/5"
+          >
+            <p className="font-mono tabular-nums text-base font-bold text-primary leading-none">₹500 Cr+</p>
+            <p className="font-body text-[9px] text-muted-foreground mt-1 uppercase tracking-[0.12em]">Disbursed</p>
+          </motion.div>
 
           {/* Disbursement badge */}
           <motion.div
