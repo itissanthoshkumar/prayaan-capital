@@ -43,6 +43,7 @@ const management: Person[] = [
   {
     name: "Mr. Apparswamy Subramanian",
     role: "Chief Financial Officer",
+    photo: "/team/sathya-ganesh.webp",
     bio: "Apparswamy Subramanian (Appar) is the Co-Founder and Chief Financial Officer of Prayaan Capital, bringing over 25 years of diverse experience across corporate banking, treasury, and capital markets. Prior to his current role, he headed the Group Treasury function at the Sanmar Group, a large diversified conglomerate, where he managed a borrowing book of approximately USD 1.5 billion and led strategic initiatives across fundraising, cross-border financing, and private credit, in addition to executing debt capital market transactions.\n\nAppar began his career in corporate banking and went on to hold senior leadership roles at global and domestic financial institutions including Deutsche Bank, HSBC, RBL Bank and HDFC Bank, where he built and scaled corporate banking franchises, led high-impact deal origination and executed several marquee financing transactions. He has also been an entrepreneur and independent financial advisor, working closely with promoters and management teams across sectors, serving in advisory and board roles. A Chartered Accountant by qualification, Appar is deeply passionate about capital markets and structured finance, with a strong track record in building long-term institutional relationships and delivering innovative financing solutions. Outside of work, he is an avid motorcycle enthusiast and actively follows emerging areas such as digital assets and financial technologies.",
   },
   {
@@ -78,6 +79,7 @@ const management: Person[] = [
   {
     name: "Mr. Atul Prakash",
     role: "Chief Risk Officer",
+    photo: "/team/venkatesh-b.webp",
     bio: "Atul is the Chief Risk Officer of the Company. He is responsible for overall risk management, including credit policy, underwriting, portfolio strategy, risk analytics, and governance. He has 23+ years of experience across retail and commercial lending in banks, NBFCs, and fintech ventures. He holds a post-graduate degree in management from Chetana's R.K. Institute of Management & Research, Mumbai. Previously, he was associated with Vastu Housing Finance as Head of Retail Lending and Digital & Alternate Channels. Earlier, he worked with Standard Chartered Bank and ICICI Bank, and founded Skill Junction and ValuCircles, India's first mortgage marketplace.",
   },
   {
