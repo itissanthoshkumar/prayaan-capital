@@ -1,232 +1,167 @@
 import HeroIllustration from "@/components/HeroIllustration";
 import Layout from "@/components/Layout";
-import { motion, useInView, animate } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-import { Brain, Eye, Shield, Users, Zap, Sparkles, HeartHandshake, TrendingUp, Landmark, Banknote } from "lucide-react";
+import { motion } from "framer-motion";
+import { Sparkles } from "lucide-react";
 import AIFloatingElements from "@/components/AIFloatingElements";
 
-/* Counts up from 0 to `to` the first time it scrolls into view */
-const CountUp = ({ to, prefix = "", suffix = "" }: { to: number; prefix?: string; suffix?: string }) => {
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-40px" });
-  const [val, setVal] = useState(0);
-  useEffect(() => {
-    if (!inView) return;
-    const controls = animate(0, to, {
-      duration: 1.4,
-      ease: [0.25, 0.46, 0.45, 0.94],
-      onUpdate: (v) => setVal(Math.round(v)),
-    });
-    return () => controls.stop();
-  }, [inView, to]);
-  return <span ref={ref}>{prefix}{val}{suffix}</span>;
-};
+type Person = { name: string; role: string; bio: string; photo?: string };
 
-const values = [
-  { icon: Users, title: "MSME First", desc: "Secured business loans purpose-built for the manufacturers, traders and service providers who form the backbone of India's economy.", tint: "bg-gradient-coral" },
-  { icon: HeartHandshake, title: "Serving the Underserved", desc: "Fewer than 1 in 5 small businesses get the formal credit they need. We back the entrepreneurs mainstream banks routinely overlook.", tint: "bg-gradient-mint" },
-  { icon: Brain, title: "Technology Driven", desc: "AI-assisted underwriting blends property value, banking and bureau data to deliver fast, fair credit decisions.", tint: "bg-gradient-lavender" },
-  { icon: Zap, title: "Quick Turn-around", desc: "Minimal paperwork, doorstep service and decisions in 48 hours so businesses reach their funds sooner.", tint: "bg-gradient-sunset" },
-  { icon: Eye, title: "Fair & Transparent", desc: "Ground-level market understanding plus modern credit tools — full rate-card clarity and no hidden charges.", tint: "bg-gradient-coral" },
-  { icon: Shield, title: "Regulatory Excellence", desc: "An RBI-registered NBFC committed to compliance, sound governance and customer protection.", tint: "bg-gradient-mint" },
+const board: Person[] = [
+  {
+    name: "Rangarajan Krishnan",
+    role: "Managing Director",
+    photo: "/team/rangarajan-krishnan.png",
+    bio: "Rangarajan Krishnan is a finance professional with over 20 years of experience spanning reputed large corporates such as Five Star Business Finance, Standard Chartered Bank, HDFC Bank, International Finance Corporation and Spark Capital. His last assignment was in Five Star Business Finance as their joint Managing Director and CEO. His expertise spans across core operations of the non-bank financial institution including business, collections, technology, operations, credit and legal. Over his years of experience, he has managed portfolios across Corporate Banking, mid-market segment, South East Asia Infrastructure Financing and as an Investment Banker for a variety of deals across fund raising, mergers & acquisitions.",
+  },
+  {
+    name: "Jayalakshmi Rangarajan",
+    role: "Director",
+    photo: "/team/jayalakshmi-rangarajan.png",
+    bio: "Jayalakshmi Rangarajan is a Technology professional with a wide range of experience across software development and consultancy. She brings in key insights into various technology models to enhance productivity and build robust systems. Her experience spans across various companies including Wipro Technologies and Ahaguru Education Technology where she has been instrumental in delivering a variety of global software development projects successfully.",
+  },
+  {
+    name: "G. Madhan Mohan",
+    role: "Chief Credit Officer",
+    photo: "/team/madhan-mohan.png",
+    bio: "Madhan Mohan has over 21 years of extensive work in the MSME markets, having ably managed various roles in Credit Policy, Credit Under-Writing, Collections, Fraud Control, Operations, Sales, P&L, Strategy and invitee member on boards. His true passion lies in lending to improve the lives of individuals and businesses by providing the financial support required at the right time. He has been part of the set up, and built the MSME vertical for RBL Bank. He created the success at Swadhaar Finserve Pvt. Ltd. having driven both business and extensive expansion to build the company as a bench mark model of dedicated Business Correspondent. He has always been at the heart of the Indian MSME market with NBFCs and Banks like Fullerton India Credit Company Ltd., Sahayata Microfinance Pvt. Ltd., Vistaar Financial Services Pvt. Ltd., and successfully transformed businesses to meet new market demand & sustain a profitable trajectory.",
+  },
+  {
+    name: "Mr. Ravi Shankar Venkataraman Ganapathy Agraharam (Mr. GV)",
+    role: "Nominee Director representing Peak XV Partners Investments VIII",
+    photo: "/team/gv.png",
+    bio: "At Peak XV, Mr. GV advises on technology and non-technology investments. He's deeply interested in technology's role in helping drive efficiencies, reduce costs, and improve access in consumer and healthcare markets. He currently serves on the boards of portfolio companies such as Alaan, Huspy, Lean Technologies, Eruditus Learning, Finova Capital, HomeLane, K12 Techno Services, Rebel Foods, Rupeek and Plum Benefits. He has also served as board member/observer of companies like Equitas (NSE: EQUITAS), Indigo Paints (NSE: INDIGOPNTS), India Shelter Finance Corporation (NSE: INDIASHLTR), Manappuram (NSE: MANAPPURAM), Prataap Snacks (NSE: DIAMONDYD), and Via (sold to NASDAQ: EBIX). Mr. GV also worked at McKinsey & Company, where he advised senior management of top Indian companies on a variety of issues including business building, channel management and leadership development. He also had a prior stint with Wipro Technologies in their Embedded and Internet Access division.\n\nGV is the recipient of the Midas Touch award by Economic Times Startup Awards 2020 and IIM Ahmedabad's Young Alumni Achiever's Award, 2019-20 in the Corporate Leadership category. He has an MBA from IIM A and holds a BE in Computer Science and Engineering from NIT Trichy.",
+  },
 ];
 
-const timeline = [
-  { year: "2018", event: "Prayaan Capital Private Limited incorporated on 10 December 2018 in Chennai, with a mission to fund India's underserved small businesses.", tint: "bg-gradient-coral" },
-  { year: "2019", event: "Granted the NBFC Certificate of Registration by RBI on 6 June 2019 (non-deposit taking).", tint: "bg-gradient-mint" },
-  { year: "2020", event: "Raised a US$1.2M seed round led by Accion Venture Lab and scaled secured lending to micro and small enterprises.", tint: "bg-gradient-lavender" },
-  { year: "2023", event: "Deepened property-backed business lending to manufacturing, trading and services MSMEs across Tamil Nadu, Andhra Pradesh and Telangana.", tint: "bg-gradient-sunset" },
-  { year: "2026", event: "Rangarajan Krishnan, former MD & CEO of Five Star Business Finance, acquired a controlling stake and became Managing Director; raised a ₹110 Cr Series A led by Peak XV Partners to deepen MSME lending.", tint: "bg-gradient-coral" },
+const management: Person[] = [
+  {
+    name: "Mr. Sathya Ganesh T",
+    role: "Chief Executive Officer",
+    photo: "/team/sathya-ganesh.webp",
+    bio: "Mr. Sathya Ganesh T (Sathya) is a dynamic and visionary leader with over 23 years of experience in the BFSI sector and an overall experience of 28 yrs, having led transformational initiatives across banking and NBFCs. He has a proven track record of scaling businesses, driving digital innovation, enhancing profitability, managing large field forces, and consistently delivering strong ROA and ROE performance.\n\nHe possesses deep expertise in Housing Finance, Loan Against Property (LAP), and Affordable Housing, with hands-on experience across key functions including Operations, Credit, Audit, Business Development, and Collections.\n\nPrior to joining Prayaan Capital, Sathya served as the Chief Business Officer at Five Star Business Finance for a decade, where he played a pivotal role in scaling the organization's business and strengthening its market position. Over the course of his career, he has been associated with leading financial institutions such as ICICI Bank, Cholamandalam Finance, Equitas, and Shriram Housing Finance.\n\nHe holds a Postgraduate degree in Commerce from the University of Madras and an MBA in Banking & Finance from Symbiosis, Pune.",
+  },
+  {
+    name: "Mr. Apparswamy Subramanian",
+    role: "Chief Financial Officer",
+    bio: "Apparswamy Subramanian (Appar) is the Co-Founder and Chief Financial Officer of Prayaan Capital, bringing over 25 years of diverse experience across corporate banking, treasury, and capital markets. Prior to his current role, he headed the Group Treasury function at the Sanmar Group, a large diversified conglomerate, where he managed a borrowing book of approximately USD 1.5 billion and led strategic initiatives across fundraising, cross-border financing, and private credit, in addition to executing debt capital market transactions.\n\nAppar began his career in corporate banking and went on to hold senior leadership roles at global and domestic financial institutions including Deutsche Bank, HSBC, RBL Bank and HDFC Bank, where he built and scaled corporate banking franchises, led high-impact deal origination and executed several marquee financing transactions. He has also been an entrepreneur and independent financial advisor, working closely with promoters and management teams across sectors, serving in advisory and board roles. A Chartered Accountant by qualification, Appar is deeply passionate about capital markets and structured finance, with a strong track record in building long-term institutional relationships and delivering innovative financing solutions. Outside of work, he is an avid motorcycle enthusiast and actively follows emerging areas such as digital assets and financial technologies.",
+  },
+  {
+    name: "Mr. Ramprashanth Ganesan",
+    role: "Chief Operating Officer",
+    photo: "/team/ramprashanth-ganesan.webp",
+    bio: "Ramprashanth Ganesan (Ram) is the Co-Founder and Chief Operating Officer of Prayaan Capital, bringing over 16 years of diverse experience across investment banking, fintech, and financial services. Prior to his current role, he was the Chief Strategy Officer at IppoPay, a venture-backed fintech focused on providing payments and lending solutions to small businesses, where he was responsible for building a high-velocity, high-quality lending book through the Loan Service Provider (LSP) model, designing the lending product construct, onboarding NBFC partners, and scaling distribution across the merchant base.\n\nRam began his career in financial research and went on to spend over a decade at Spark Capital, where he served as Director leading the Fintech and Financial Services investment banking practice. In this role, he was instrumental in raising over USD 1.5 billion of growth equity across financial services, fintech, and other sectors, working with founders and institutional investors through IPOs, pre-IPO rounds, and growth-stage capital transactions. A Chartered Accountant by qualification, Ram is deeply passionate about lending, technology, and the application of AI in financial services, with a strong track record in building institutional businesses and bridging strategy with execution. Outside of work, he is an avid reader of history and philosophy.",
+  },
+  {
+    name: "Mr. Akash S Chelvam",
+    role: "Chief Human Resource Officer",
+    photo: "/team/akash-chelvam.png",
+    bio: "Akash Chelvam has an extensive experience of over 21 years in the Banking and Insurance space with a domain expertise in Human Resources and Learning & Development. He has been part of the core teams to setup new geographies and business lines. In his last assignment with RBL Bank he was initially responsible for the Talent Acquisition & Business Partnering for the Agri & Inclusive Banking, taking care of Pan India hiring strategy and execution, also setup Small Business Banking vertical. He has also worked in the Organization Development team, primarily heading the Future Leadership Hiring initiatives for the Bank, along with various other projects spanning Pan India, post which he was seconded to RBL Finserve (erstwhile Swadhaar Finserve) as Head - Human Resources to grow the organization and to develop a robust structure in terms of governance. Having a comprehensive and strategic understanding of Human Resources, business requirements and organizational change he devised and implement coherent HR strategies along with improving internal process & procedures within a demanding environment. For Prayaan, Akash is leading Human Resources, Learning & Development, Administration, Operations, Tele calling and IT Infrastructure.",
+  },
+  {
+    name: "Mr. M B Srinivasa Rao",
+    role: "Chief Strategy Officer",
+    photo: "/team/srinivasa-rao.webp",
+    bio: "Mr. M. B. Srinivasa Rao is a seasoned investment banking and corporate finance professional with over 22 years of experience across leading financial institutions. He has a strong track record in managing client relationships, executing complex financial transactions, and driving strategic growth initiatives. Prior to joining PCPL, he served as Executive Director - Investment Banking at Spark Capital Advisors, India. In the past he has been associated with prominent institutions such as Standard Chartered Bank (Director - Corporate & Institutional Banking) and HDFC Bank Limited. Mr. Srinivasa Rao is a gold medalist and batch topper in MBA (Finance), reflecting his strong academic foundation in the field.",
+  },
+  {
+    name: "Mr. Venkatesh B",
+    role: "Deputy CFO",
+    photo: "/team/venkatesh-b.webp",
+    bio: "CA Venkatesh Badrinarayanan is a seasoned strategic finance leader with over 13 years of experience in the NBFC sector, with deep expertise in Financial Reporting, Treasury, Regulatory Compliance, and Due Diligence.\n\nHe previously served as Head of Treasury at Five Star Business Finance Ltd., where he led debt fundraising, liquidity management, and regulatory compliance. Prior to this, he headed the Financial Reporting function for over six years, playing a pivotal role in managing regulatory audits, multiple private equity diligences, building high-performing teams, and establishing robust processes and systems, significantly contributing to its IPO journey. Earlier in his career, he was part of the Treasury team at Equitas and worked in the Deals (Due Diligence) practice at PricewaterhouseCoopers.\n\nA qualified Chartered Accountant and Company Secretary, and an alumnus of INSEAD's Blue Ocean Strategy program, Venkatesh is recognized for his strategic acumen, execution excellence, and ability to build and lead high-performing teams.",
+  },
+  {
+    name: "Mr. Harish R",
+    role: "Chief Technology Officer",
+    photo: "/team/harish-r.webp",
+    bio: "Mr. Harish R is a seasoned technology leader with extensive experience across banking, lending, and insurance ecosystems. He specializes in driving large-scale digital transformation, modernizing core platforms, and building scalable, secure, and API-first technology architectures that support business growth and operational resilience. He has led modernization initiatives across core systems, digital channels, and enterprise platforms, with a consistent focus on measurable business outcomes.\n\nWith deep expertise in core banking, lending platforms, open banking, AI/ML adoption, and enterprise integration, Harish has successfully delivered initiatives that enhance customer experience, streamline operations, reduce technology debt, and enable data-driven innovation. He is known for aligning technology strategy with business objectives, regulatory requirements, and long-term scalability.\n\nA strong advocate of engineering excellence and governance, Harish has built and led high-performing teams while delivering practical, sustainable technology roadmaps. At Prayaan Capital, he leads the technology vision with a focus on innovation, execution, governance, and sustainable growth.",
+  },
+  {
+    name: "Mr. Atul Prakash",
+    role: "Chief Risk Officer",
+    bio: "Atul is the Chief Risk Officer of the Company. He is responsible for overall risk management, including credit policy, underwriting, portfolio strategy, risk analytics, and governance. He has 23+ years of experience across retail and commercial lending in banks, NBFCs, and fintech ventures. He holds a post-graduate degree in management from Chetana's R.K. Institute of Management & Research, Mumbai. Previously, he was associated with Vastu Housing Finance as Head of Retail Lending and Digital & Alternate Channels. Earlier, he worked with Standard Chartered Bank and ICICI Bank, and founded Skill Junction and ValuCircles, India's first mortgage marketplace.",
+  },
+  {
+    name: "Mr. R.S.Bharath",
+    role: "Head Legal",
+    photo: "/team/rs-bharath.webp",
+    bio: "Bharath is a law graduate and accomplished banking professional with over 15 years of extensive experience across the banking and NBFC sector, specializing in Business Legal, legal strategy, compliance, risk management, and recovery frameworks. Prior to joining Prayaan, he held key leadership roles with reputed institutions including Five Star Business Finance, Equitas Small Finance Bank, Axis Bank, HDFC Bank, and IndusInd Bank.",
+  },
 ];
 
-const stats = [
-  { to: 63, prefix: "", suffix: "M+", label: "MSMEs in India", sub: "the engine of jobs and GDP" },
-  { to: 19, prefix: "~", suffix: "%", label: "credit demand formally met", sub: "the gap we exist to close" },
-  { to: 100, prefix: "", suffix: "%", label: "secured & transparent", sub: "property-backed, fair pricing" },
-];
-
-const investors = [
-  { name: "Peak XV Partners", note: "Series A · ₹110 Cr · 2026", sub: "Formerly Sequoia Capital India", icon: TrendingUp, tint: "bg-gradient-coral" },
-  { name: "Accion Venture Lab", note: "Seed · US$1.2M · 2020", sub: "Global financial-inclusion investor", icon: Landmark, tint: "bg-gradient-mint" },
-  { name: "Built to scale", note: "Capital to deepen MSME lending", sub: "Backing the underserved across India", icon: Banknote, tint: "bg-gradient-lavender" },
-];
-
-const focus = [
-  { label: "Our Vision", title: "Serving the unmet needs of small business", desc: "To meet the vast unmet needs of micro & small businesses through highly digitized channels of sourcing, accepting and deeper engagement. We help underserved entrepreneurs unlock the value of the property they own to fund their business — fairly, transparently, and on terms that respect their cashflow.", tint: "bg-gradient-coral" },
-  { label: "What We Do", title: "Secured business loans, done fairly", desc: "We lend to manufacturing, trading and services MSMEs, backed by commercial or residential property. A blend of ground-level property valuation and modern credit tools decides the right loan for each enterprise — with doorstep service across South India.", tint: "bg-gradient-mint" },
-];
+const tints = ["bg-gradient-coral", "bg-gradient-mint", "bg-gradient-lavender", "bg-gradient-sunset"];
+const initials = (name: string) =>
+  name.replace(/^Mr\.\s*/, "").replace(/\(.*\)/, "").trim().split(/\s+/).map((n) => n[0]).slice(0, 2).join("");
 
 const container = { hidden: {}, visible: { transition: { staggerChildren: 0.08 } } };
 const cardAnim = {
   hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as const } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] as const } },
 };
+
+const PersonCard = ({ p, i }: { p: Person; i: number }) => (
+  <motion.div variants={cardAnim} className="clay-surface p-6 md:p-8 flex flex-col sm:flex-row gap-5 md:gap-6">
+    {p.photo ? (
+      <img src={p.photo} alt={p.name} loading="lazy" className="w-20 h-20 rounded-2xl object-cover shadow-clay-sm shrink-0" />
+    ) : (
+      <div className={`w-20 h-20 rounded-2xl ${tints[i % tints.length]} shadow-clay-sm flex items-center justify-center shrink-0`}>
+        <span className="font-display font-bold text-xl text-white">{initials(p.name)}</span>
+      </div>
+    )}
+    <div className="flex-1">
+      <h3 className="font-display text-lg md:text-xl font-bold text-foreground">{p.name}</h3>
+      <p className="text-sm font-semibold text-primary mb-3">{p.role}</p>
+      <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">{p.bio}</p>
+    </div>
+  </motion.div>
+);
 
 const About = () => {
   return (
     <Layout>
-      <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-hero relative overflow-hidden">
+      <section className="pt-24 pb-12 md:pt-32 md:pb-16 bg-hero relative overflow-hidden">
         <AIFloatingElements />
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-[1fr_340px] gap-8 items-center">
-            <div>
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-4">
-                  <Sparkles size={12} /> About Prayaan Capital
-                </span>
-                <h1 className="font-display text-3xl md:text-6xl font-bold text-foreground mt-3 mb-5 leading-tight">
-                  Capital for the small businesses that <span className="text-gradient-coral">power India's growth</span>
-                </h1>
-                <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-                  Prayaan Capital Private Limited is an RBI-registered NBFC incorporated in Chennai in December 2018. We provide secured business loans to India's micro, small and medium enterprises — the manufacturers, traders and service providers who create jobs and drive growth, yet remain underserved by mainstream banks. The word <em>Prayaan</em>, meaning "Journey", reflects our intent to co-travel with every entrepreneur on their growth journey.
-                </p>
-              </motion.div>
-            </div>
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-4">
+                <Sparkles size={12} /> About Prayaan Capital
+              </span>
+              <h1 className="font-display text-3xl md:text-5xl font-bold text-foreground mt-3 mb-5 leading-tight">
+                Board & <span className="text-gold-deep">Leadership</span>
+              </h1>
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                Prayaan Capital Private Limited was incorporated on 10 December 2018 and granted the NBFC Certificate of Registration by RBI on 6 June 2019, with its Registered and Corporate Office in Chennai, Tamil Nadu. The name <em>Prayaan</em> means "Journey" — we extend credit to micro and small enterprises, co-travelling with them on their entrepreneurial journey.
+              </p>
+            </motion.div>
             <HeroIllustration variant="about" />
           </div>
         </div>
       </section>
 
-      {/* Mission & Focus — editorial two-column, no boxes */}
-      <section className="py-16 md:py-24 bg-background relative overflow-hidden">
+      {/* Board of Directors */}
+      <section className="py-14 md:py-20 bg-background relative overflow-hidden">
         <AIFloatingElements />
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid md:grid-cols-2 gap-10 md:gap-0 md:divide-x divide-border/50 max-w-5xl mx-auto">
-            {focus.map((item, i) => (
-              <motion.div
-                key={item.label}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.12, duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as const }}
-                className={i === 1 ? "md:pl-12 lg:pl-16" : "md:pr-12 lg:pr-16"}
-              >
-                <div className="flex items-center gap-2.5 mb-4">
-                  <span className={`w-2.5 h-2.5 rounded-full ${item.tint}`} />
-                  <span className="text-xs font-bold text-primary uppercase tracking-widest">{item.label}</span>
-                </div>
-                <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">{item.title}</h2>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* MSME impact — single stat band */}
-      <section className="py-12 md:py-16 bg-section relative overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="clay-surface max-w-5xl mx-auto px-6 md:px-12 py-8 md:py-10 grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-0 sm:divide-x divide-border/50"
-          >
-            {stats.map((s) => (
-              <div key={s.label} className="text-center px-4">
-                <p className="font-display text-4xl md:text-5xl font-extrabold text-gradient-coral leading-none">
-                  <CountUp to={s.to} prefix={s.prefix} suffix={s.suffix} />
-                </p>
-                <p className="font-body text-sm md:text-base font-semibold text-foreground mt-3">{s.label}</p>
-                <p className="font-body text-xs text-muted-foreground mt-1">{s.sub}</p>
-              </div>
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8 md:mb-10 max-w-4xl mx-auto">
+            Board of Directors
+          </motion.h2>
+          <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true }} className="space-y-5 max-w-4xl mx-auto">
+            {board.map((p, i) => (
+              <PersonCard key={p.name} p={p} i={i} />
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* Values — clean icon list, no boxes */}
-      <section className="py-16 md:py-24 bg-background relative overflow-hidden">
+      {/* Management Team */}
+      <section className="py-14 md:py-20 bg-section relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12 md:mb-16">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-accent-foreground uppercase tracking-[0.12em] font-body mb-5">
-              <Brain size={12} /> Our Values
-            </span>
-            <h2 className="font-display text-2xl md:text-5xl font-bold text-foreground mt-3">What Drives Us</h2>
-          </motion.div>
-          <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid sm:grid-cols-2 gap-x-10 lg:gap-x-16 max-w-4xl mx-auto">
-            {values.map((v, i) => (
-              <motion.div
-                key={v.title}
-                variants={cardAnim}
-                className={`flex gap-4 py-5 ${i < values.length - 2 ? "border-b border-border/40" : "sm:border-b-0 border-b border-border/40 last:border-b-0"}`}
-              >
-                <span className={`w-11 h-11 rounded-xl ${v.tint} shadow-clay-sm flex items-center justify-center shrink-0`}>
-                  <v.icon size={20} className="text-white" />
-                </span>
-                <div>
-                  <h3 className="font-display text-base md:text-lg font-semibold text-foreground mb-1">{v.title}</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{v.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Timeline */}
-      <section className="py-16 md:py-24 bg-section relative overflow-hidden">
-        <AIFloatingElements />
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14 md:mb-20">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-5">
-              <Zap size={12} /> Our Journey
-            </span>
-            <h2 className="font-display text-2xl md:text-5xl font-bold text-foreground mt-3">
-              Funding India's <span className="text-gradient-coral">MSME backbone</span>
-            </h2>
-          </motion.div>
-          <div className="max-w-2xl mx-auto relative">
-            {timeline.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -16 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08, duration: 0.5 }}
-                className="relative flex gap-5 md:gap-8 pb-6 last:pb-0"
-              >
-                <div className={`w-12 h-12 md:w-14 md:h-14 rounded-2xl ${item.tint} shadow-clay-sm flex items-center justify-center shrink-0 relative z-10`}>
-                  <span className="text-[11px] md:text-sm font-bold text-white">'{item.year.slice(2)}</span>
-                </div>
-                <div className="pt-1 md:pt-2 flex-1 clay-surface-sm p-4">
-                  <span className="text-xs font-semibold text-primary">{item.year}</span>
-                  <p className="text-sm md:text-base text-foreground mt-0.5">{item.event}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Backed by — inline investor strip */}
-      <section className="py-16 md:py-24 bg-background relative overflow-hidden">
-        <AIFloatingElements />
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 md:mb-14">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-5">
-              <Sparkles size={12} /> Backed By
-            </span>
-            <h2 className="font-display text-2xl md:text-5xl font-bold text-foreground mt-3">
-              Capital from <span className="text-gradient-coral">mission-aligned</span> investors
-            </h2>
-            <p className="text-sm md:text-base text-muted-foreground mt-3 max-w-2xl mx-auto">
-              Investors who share our belief that India's underserved entrepreneurs deserve fair, formal credit.
-            </p>
-          </motion.div>
-          <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true }} className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center justify-center gap-x-12 gap-y-8 max-w-4xl mx-auto">
-            {investors.map((inv) => (
-              <motion.div key={inv.name} variants={cardAnim} className="flex items-center gap-3.5">
-                <span className={`w-12 h-12 rounded-2xl ${inv.tint} shadow-clay-sm flex items-center justify-center shrink-0`}>
-                  <inv.icon size={22} className="text-white" />
-                </span>
-                <div className="text-left">
-                  <p className="font-display text-base font-bold text-foreground leading-tight">{inv.name}</p>
-                  <p className="font-mono text-xs font-semibold text-primary mt-0.5">{inv.note}</p>
-                  <p className="font-body text-xs text-muted-foreground">{inv.sub}</p>
-                </div>
-              </motion.div>
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8 md:mb-10 max-w-4xl mx-auto">
+            Management Team
+          </motion.h2>
+          <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true }} className="space-y-5 max-w-4xl mx-auto">
+            {management.map((p, i) => (
+              <PersonCard key={p.name} p={p} i={i} />
             ))}
           </motion.div>
         </div>
