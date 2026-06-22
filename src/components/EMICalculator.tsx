@@ -10,8 +10,8 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 /* ─── Chart colours (hardcoded — SVG doesn't support CSS vars) ─── */
-const C_PRINCIPAL = "hsl(24, 85%, 52%)";
-const C_INTEREST  = "hsl(160, 65%, 50%)";
+const C_PRINCIPAL = "hsl(208, 100%, 31%)";
+const C_INTEREST  = "hsl(42, 100%, 47%)";
 
 /* ─── Formatters ─── */
 const fmtFull = (v: number): string => {
@@ -248,10 +248,10 @@ const EMICalculator = () => {
                 <div className="space-y-2.5">
                   <div className="flex items-center justify-between">
                     <label className="font-body text-sm font-medium text-muted-foreground flex items-center gap-1.5">
-                      <Calendar size={13} className="text-[hsl(260,65%,58%)]" />
+                      <Calendar size={13} className="text-[hsl(208,90%,45%)]" />
                       Loan Tenure
                     </label>
-                    <div className="flex items-center gap-0.5 px-3 py-1.5 rounded-2xl bg-[hsl(260,65%,58%)]/10 shadow-clay-sm min-w-[88px] justify-end">
+                    <div className="flex items-center gap-0.5 px-3 py-1.5 rounded-2xl bg-[hsl(208,90%,45%)]/10 shadow-clay-sm min-w-[88px] justify-end">
                       <input
                         type="number" min={1} max={20} step={0.5}
                         value={tenure / 12}
@@ -261,9 +261,9 @@ const EMICalculator = () => {
                             setTenure(Math.round(yrs * 12 / 6) * 6);
                           }
                         }}
-                        className={`${numInputCls} text-[hsl(260,65%,55%)] w-10`}
+                        className={`${numInputCls} text-[hsl(208,90%,45%)] w-10`}
                       />
-                      <span className="font-body text-[11px] text-[hsl(260,65%,55%)] font-semibold ml-0.5">
+                      <span className="font-body text-[11px] text-[hsl(208,90%,45%)] font-semibold ml-0.5">
                         {tenure === 12 ? "Yr" : "Yrs"}
                       </span>
                     </div>

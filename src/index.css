@@ -32,10 +32,10 @@
     --popover: 30 50% 98%;
     --popover-foreground: 250 25% 18%;
 
-    /* Brand blue (Prayaan Capital logo) — AA contrast on white text */
-    --primary: 208 100% 31%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 42 100% 47%;
+    /* Brand gold (Prayaan Capital logo) — dark text for AA contrast */
+    --primary: 38 100% 40%;
+    --primary-foreground: 30 40% 12%;
+    --primary-glow: 208 100% 40%;
 
     /* Soft blue secondary */
     --secondary: 208 55% 92%;
@@ -44,8 +44,8 @@
     --muted: 30 30% 92%;
     --muted-foreground: 250 12% 45%;
 
-    /* Gold accent (Prayaan Capital logo) */
-    --accent: 40 100% 45%;
+    /* Blue accent (Prayaan Capital logo) */
+    --accent: 208 100% 31%;
     --accent-foreground: 30 35% 15%;
 
     --destructive: 358 80% 68%;
@@ -53,7 +53,7 @@
 
     --border: 30 30% 88%;
     --input: 30 30% 90%;
-    --ring: 208 90% 50%;
+    --ring: 42 100% 47%;
 
     /* Big, clay-style radius */
     --radius: 1.5rem;
@@ -83,10 +83,10 @@
 
     /* Gradients — blue & gold */
     --gradient-hero: linear-gradient(160deg, hsl(208 45% 96%) 0%, hsl(42 55% 95%) 50%, hsl(208 42% 95%) 100%);
-    --gradient-coral: linear-gradient(135deg, hsl(208 100% 31%), hsl(202 92% 42%));
-    --gradient-mint: linear-gradient(135deg, hsl(42 100% 50%), hsl(36 96% 55%));
+    --gradient-coral: linear-gradient(135deg, hsl(42 100% 48%), hsl(38 96% 44%));
+    --gradient-mint: linear-gradient(135deg, hsl(208 100% 31%), hsl(202 92% 42%));
     --gradient-lavender: linear-gradient(135deg, hsl(205 92% 50%), hsl(196 88% 58%));
-    --gradient-sunset: linear-gradient(135deg, hsl(208 92% 45%), hsl(42 100% 52%));
+    --gradient-sunset: linear-gradient(135deg, hsl(42 100% 52%), hsl(208 92% 45%));
     --gradient-card: linear-gradient(180deg, hsl(30 60% 99%) 0%, hsl(30 40% 95%) 100%);
     --gradient-section: linear-gradient(180deg, hsl(30 45% 95%) 0%, hsl(30 50% 97%) 100%);
 
@@ -135,19 +135,19 @@
     --card-foreground: 30 30% 94%;
     --popover: 250 22% 16%;
     --popover-foreground: 30 30% 94%;
-    --primary: 208 90% 60%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 42 95% 55%;
+    --primary-foreground: 30 40% 12%;
     --secondary: 208 30% 24%;
     --secondary-foreground: 30 30% 94%;
     --muted: 250 18% 20%;
     --muted-foreground: 250 10% 65%;
-    --accent: 42 95% 55%;
-    --accent-foreground: 30 35% 12%;
+    --accent: 208 85% 62%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 358 70% 55%;
     --destructive-foreground: 0 0% 100%;
     --border: 250 18% 22%;
     --input: 250 18% 22%;
-    --ring: 208 90% 50%;
+    --ring: 42 100% 47%;
 
     --gradient-hero: linear-gradient(160deg, hsl(208 35% 13%) 0%, hsl(210 30% 15%) 50%, hsl(42 22% 15%) 100%);
 

@@ -104,7 +104,7 @@ const ProcessSteps = ({
                   {/* Icon box */}
                   <div className="relative mb-6 z-10">
                     <div
-                      className={`w-28 h-28 rounded-[2rem] bg-gradient-to-br ${step.accent} shadow-clay flex items-center justify-center`}
+                      className={`w-28 h-28 rounded-[2rem] ${step.accent} shadow-clay flex items-center justify-center`}
                     >
                       <step.icon size={34} className="text-white" strokeWidth={1.6} />
                     </div>
@@ -177,7 +177,7 @@ const ProcessSteps = ({
                 className="relative flex gap-4 items-start"
               >
                 <div className="shrink-0 relative z-10">
-                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${step.accent} shadow-clay-sm flex items-center justify-center`}>
+                  <div className={`w-14 h-14 rounded-2xl ${step.accent} shadow-clay-sm flex items-center justify-center`}>
                     <step.icon size={22} className="text-white" strokeWidth={1.6} />
                   </div>
                 </div>

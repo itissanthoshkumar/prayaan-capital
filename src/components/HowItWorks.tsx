@@ -7,7 +7,7 @@ const steps = [
     title: "Provide Details",
     desc: "Share business info, KYC & financials through our digital form. No branch visits needed.",
     time: "15 Min",
-    accent: "from-primary to-[hsl(36_90%_58%)]",
+    accent: "bg-[hsl(208_100%_31%)]",
     num: "01",
   },
   {
@@ -15,7 +15,7 @@ const steps = [
     title: "Get Approval",
     desc: "AI underwriting evaluates 200+ data points and delivers a sanction letter — often same day.",
     time: "Same Day",
-    accent: "from-accent to-[hsl(200_55%_50%)]",
+    accent: "bg-[hsl(42_100%_47%)]",
     num: "02",
   },
   {
@@ -23,7 +23,7 @@ const steps = [
     title: "Submit Collateral",
     desc: "Provide property or asset documents. We handle valuation & legal verification swiftly.",
     time: "Day 1–2",
-    accent: "from-[hsl(var(--color-lavender))] to-[hsl(var(--color-indigo))]",
+    accent: "bg-[hsl(205_90%_45%)]",
     num: "03",
   },
   {
@@ -31,7 +31,7 @@ const steps = [
     title: "Get Your Loan",
     desc: "Funds disbursed directly to your bank account. Own. Unlock. Grow.",
     time: "Day 2",
-    accent: "from-[hsl(var(--color-coral))] to-primary",
+    accent: "bg-[hsl(38_95%_45%)]",
     num: "04",
   },
 ];
@@ -104,7 +104,7 @@ const HowItWorks = () => {
                   {/* Icon box */}
                   <div className="relative mb-6 z-10">
                     <div
-                      className={`w-28 h-28 rounded-[2rem] bg-gradient-to-br ${step.accent} shadow-clay flex items-center justify-center`}
+                      className={`w-28 h-28 rounded-[2rem] ${step.accent} shadow-clay flex items-center justify-center`}
                     >
                       <step.icon size={34} className="text-white" strokeWidth={1.6} />
                     </div>
@@ -178,7 +178,7 @@ const HowItWorks = () => {
               >
                 {/* Icon */}
                 <div className="shrink-0 relative z-10">
-                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${step.accent} shadow-clay-sm flex items-center justify-center`}>
+                  <div className={`w-14 h-14 rounded-2xl ${step.accent} shadow-clay-sm flex items-center justify-center`}>
                     <step.icon size={22} className="text-white" strokeWidth={1.6} />
                   </div>
                 </div>

@@ -15,7 +15,7 @@ const steps: ProcessStep[] = [
     desc: "Fill our digital form with KYC, property information and bank statements. No branch visit required — takes under 15 minutes.",
     badge: "15 Min",
     num: "01",
-    accent: "from-primary to-[hsl(36_90%_58%)]",
+    accent: "bg-[hsl(208_100%_31%)]",
   },
   {
     icon: CheckCircle,
@@ -23,7 +23,7 @@ const steps: ProcessStep[] = [
     desc: "Our underwriting model evaluates 200+ data points — property value, bank flow, GST filings — and issues a sanction letter, often same day.",
     badge: "Same Day",
     num: "02",
-    accent: "from-accent to-[hsl(200_55%_50%)]",
+    accent: "bg-[hsl(42_100%_47%)]",
   },
   {
     icon: FileCheck,
@@ -31,7 +31,7 @@ const steps: ProcessStep[] = [
     desc: "Submit your title deed and property documents. Our field team handles legal and technical valuation within 24–48 hours.",
     badge: "Day 1–2",
     num: "03",
-    accent: "from-[hsl(var(--color-lavender))] to-[hsl(var(--color-indigo))]",
+    accent: "bg-[hsl(205_90%_45%)]",
   },
   {
     icon: Banknote,
@@ -39,7 +39,7 @@ const steps: ProcessStep[] = [
     desc: "Sign digitally via Aadhaar e-sign. Funds are credited directly to your bank account. Own. Unlock. Grow.",
     badge: "Day 2",
     num: "04",
-    accent: "from-[hsl(var(--color-coral))] to-primary",
+    accent: "bg-[hsl(38_95%_45%)]",
   },
 ];
 
