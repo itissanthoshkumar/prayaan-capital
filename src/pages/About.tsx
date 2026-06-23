@@ -1,7 +1,8 @@
 import HeroIllustration from "@/components/HeroIllustration";
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
+import { useState } from "react";
+import { Sparkles, Landmark, Users2 } from "lucide-react";
 import AIFloatingElements from "@/components/AIFloatingElements";
 
 type Person = { name: string; role: string; bio: string; photo?: string };
@@ -43,7 +44,7 @@ const management: Person[] = [
   {
     name: "Mr. Apparswamy Subramanian",
     role: "Chief Financial Officer",
-    photo: "/team/sathya-ganesh.webp",
+    photo: "/team/apparswamy-subramanian.webp",
     bio: "Apparswamy Subramanian (Appar) is the Co-Founder and Chief Financial Officer of Prayaan Capital, bringing over 25 years of diverse experience across corporate banking, treasury, and capital markets. Prior to his current role, he headed the Group Treasury function at the Sanmar Group, a large diversified conglomerate, where he managed a borrowing book of approximately USD 1.5 billion and led strategic initiatives across fundraising, cross-border financing, and private credit, in addition to executing debt capital market transactions.\n\nAppar began his career in corporate banking and went on to hold senior leadership roles at global and domestic financial institutions including Deutsche Bank, HSBC, RBL Bank and HDFC Bank, where he built and scaled corporate banking franchises, led high-impact deal origination and executed several marquee financing transactions. He has also been an entrepreneur and independent financial advisor, working closely with promoters and management teams across sectors, serving in advisory and board roles. A Chartered Accountant by qualification, Appar is deeply passionate about capital markets and structured finance, with a strong track record in building long-term institutional relationships and delivering innovative financing solutions. Outside of work, he is an avid motorcycle enthusiast and actively follows emerging areas such as digital assets and financial technologies.",
   },
   {
@@ -79,7 +80,7 @@ const management: Person[] = [
   {
     name: "Mr. Atul Prakash",
     role: "Chief Risk Officer",
-    photo: "/team/venkatesh-b.webp",
+    photo: "/team/atul-prakash.webp",
     bio: "Atul is the Chief Risk Officer of the Company. He is responsible for overall risk management, including credit policy, underwriting, portfolio strategy, risk analytics, and governance. He has 23+ years of experience across retail and commercial lending in banks, NBFCs, and fintech ventures. He holds a post-graduate degree in management from Chetana's R.K. Institute of Management & Research, Mumbai. Previously, he was associated with Vastu Housing Finance as Head of Retail Lending and Digital & Alternate Channels. Earlier, he worked with Standard Chartered Bank and ICICI Bank, and founded Skill Junction and ValuCircles, India's first mortgage marketplace.",
   },
   {
@@ -90,37 +91,59 @@ const management: Person[] = [
   },
 ];
 
-const tints = ["bg-gradient-coral", "bg-gradient-mint", "bg-gradient-lavender", "bg-gradient-sunset"];
+const accents = ["bg-gradient-coral", "bg-gradient-mint", "bg-gradient-lavender", "bg-gradient-sunset"];
 const initials = (name: string) =>
   name.replace(/^Mr\.\s*/, "").replace(/\(.*\)/, "").trim().split(/\s+/).map((n) => n[0]).slice(0, 2).join("");
 
-const container = { hidden: {}, visible: { transition: { staggerChildren: 0.08 } } };
+const container = { hidden: {}, visible: { transition: { staggerChildren: 0.07 } } };
 const cardAnim = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] as const } },
 };
 
-const PersonCard = ({ p, i }: { p: Person; i: number }) => (
-  <motion.div variants={cardAnim} className="clay-surface p-6 md:p-8 flex flex-col sm:flex-row gap-5 md:gap-6">
-    {p.photo ? (
-      <img src={p.photo} alt={p.name} loading="lazy" className="w-20 h-20 rounded-2xl object-cover shadow-clay-sm shrink-0" />
-    ) : (
-      <div className={`w-20 h-20 rounded-2xl ${tints[i % tints.length]} shadow-clay-sm flex items-center justify-center shrink-0`}>
-        <span className="font-display font-bold text-xl text-white">{initials(p.name)}</span>
+const LeaderCard = ({ p, i, compact }: { p: Person; i: number; compact?: boolean }) => {
+  const [open, setOpen] = useState(false);
+  const accent = accents[i % accents.length];
+  const avatar = compact ? "w-14 h-14" : "w-[72px] h-[72px]";
+  return (
+    <motion.div
+      variants={cardAnim}
+      whileHover={{ y: -5, transition: { duration: 0.25 } }}
+      className="group relative clay-surface p-6 md:p-7 clay-press flex flex-col h-full overflow-hidden"
+    >
+      <div className={`absolute top-0 left-6 right-6 h-[3px] rounded-full ${accent} opacity-80`} />
+      <div className="flex items-center gap-4 mb-4">
+        <div className={`shrink-0 rounded-full p-[2.5px] ${accent} shadow-clay-sm`}>
+          {p.photo ? (
+            <img src={p.photo} alt={p.name} loading="lazy" className={`${avatar} rounded-full object-cover ring-2 ring-card`} />
+          ) : (
+            <div className={`${avatar} rounded-full bg-card flex items-center justify-center`}>
+              <span className="font-display font-bold text-base text-foreground">{initials(p.name)}</span>
+            </div>
+          )}
+        </div>
+        <div className="min-w-0">
+          <h3 className="font-display text-base md:text-lg font-bold text-foreground leading-snug">{p.name}</h3>
+          <span className="inline-block text-[11px] font-semibold text-secondary-foreground bg-secondary px-2.5 py-0.5 rounded-full mt-1.5 leading-tight">
+            {p.role}
+          </span>
+        </div>
       </div>
-    )}
-    <div className="flex-1">
-      <h3 className="font-display text-lg md:text-xl font-bold text-foreground">{p.name}</h3>
-      <p className="text-sm font-semibold text-primary mb-3">{p.role}</p>
-      <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">{p.bio}</p>
-    </div>
-  </motion.div>
-);
+      <p className={`text-sm text-muted-foreground leading-relaxed whitespace-pre-line ${open ? "" : compact ? "line-clamp-3" : "line-clamp-4"}`}>
+        {p.bio}
+      </p>
+      <button onClick={() => setOpen((o) => !o)} className="self-start mt-3 text-xs font-bold text-primary hover:underline underline-offset-2">
+        {open ? "Show less ↑" : "Read more →"}
+      </button>
+    </motion.div>
+  );
+};
 
 const About = () => {
   return (
     <Layout>
-      <section className="pt-24 pb-12 md:pt-32 md:pb-16 bg-hero relative overflow-hidden">
+      {/* Hero */}
+      <section className="pt-24 pb-14 md:pt-32 md:pb-20 bg-hero relative overflow-hidden">
         <AIFloatingElements />
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-[1fr_340px] gap-8 items-center">
@@ -129,11 +152,23 @@ const About = () => {
                 <Sparkles size={12} /> About Prayaan Capital
               </span>
               <h1 className="font-display text-3xl md:text-5xl font-bold text-foreground mt-3 mb-5 leading-tight">
-                Board & <span className="text-gold-deep">Leadership</span>
+                The people behind the <span className="text-gold-deep">journey</span>
               </h1>
-              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6">
                 Prayaan Capital Private Limited was incorporated on 10 December 2018 and granted the NBFC Certificate of Registration by RBI on 6 June 2019, with its Registered and Corporate Office in Chennai, Tamil Nadu. The name <em>Prayaan</em> means "Journey" — we extend credit to micro and small enterprises, co-travelling with them on their entrepreneurial journey.
               </p>
+              <div className="flex flex-wrap gap-3">
+                {[
+                  { n: `${board.length}`, l: "Board members" },
+                  { n: `${management.length}`, l: "Leadership team" },
+                  { n: "100+ yrs", l: "Combined BFSI experience" },
+                ].map((s) => (
+                  <div key={s.l} className="clay-surface-sm px-4 py-2.5 rounded-2xl">
+                    <p className="font-display text-lg font-extrabold text-gold-deep leading-none">{s.n}</p>
+                    <p className="font-body text-[11px] text-muted-foreground mt-1">{s.l}</p>
+                  </div>
+                ))}
+              </div>
             </motion.div>
             <HeroIllustration variant="about" />
           </div>
@@ -144,12 +179,15 @@ const About = () => {
       <section className="py-14 md:py-20 bg-background relative overflow-hidden">
         <AIFloatingElements />
         <div className="container mx-auto px-4 relative z-10">
-          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8 md:mb-10 max-w-4xl mx-auto">
-            Board of Directors
-          </motion.h2>
-          <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true }} className="space-y-5 max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 md:mb-14">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-4">
+              <Landmark size={12} /> Governance
+            </span>
+            <h2 className="font-display text-2xl md:text-4xl font-bold text-foreground">Board of Directors</h2>
+          </motion.div>
+          <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid md:grid-cols-2 gap-5 md:gap-6 max-w-5xl mx-auto">
             {board.map((p, i) => (
-              <PersonCard key={p.name} p={p} i={i} />
+              <LeaderCard key={p.name} p={p} i={i} />
             ))}
           </motion.div>
         </div>
@@ -158,12 +196,15 @@ const About = () => {
       {/* Management Team */}
       <section className="py-14 md:py-20 bg-section relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
-          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8 md:mb-10 max-w-4xl mx-auto">
-            Management Team
-          </motion.h2>
-          <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true }} className="space-y-5 max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 md:mb-14">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-accent-foreground uppercase tracking-[0.12em] font-body mb-4">
+              <Users2 size={12} /> Leadership
+            </span>
+            <h2 className="font-display text-2xl md:text-4xl font-bold text-foreground">Management Team</h2>
+          </motion.div>
+          <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 max-w-6xl mx-auto">
             {management.map((p, i) => (
-              <PersonCard key={p.name} p={p} i={i} />
+              <LeaderCard key={p.name} p={p} i={i} compact />
             ))}
           </motion.div>
         </div>

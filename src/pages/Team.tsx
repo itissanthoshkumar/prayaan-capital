@@ -24,13 +24,13 @@ const management: Person[] = [
   { name: "Sujatha M", role: "Head - Collections", photo: "/team/sujatha-m.png" },
   { name: "Sindhuja A M", role: "Company Secretary & Compliance Officer", photo: "/team/sindhuja-am.png" },
   { name: "Sathya Ganesh T", role: "Chief Executive Officer", photo: "/team/sathya-ganesh.webp" },
-  { name: "Apparswamy Subramanian", role: "Chief Financial Officer", photo: "/team/sathya-ganesh.webp" },
+  { name: "Apparswamy Subramanian", role: "Chief Financial Officer", photo: "/team/apparswamy-subramanian.webp" },
   { name: "Ramprashanth Ganesan", role: "Chief Operating Officer", photo: "/team/ramprashanth-ganesan.webp" },
   { name: "Akash S. Chelvam", role: "Chief Human Resource Officer", photo: "/team/akash-chelvam.png" },
   { name: "M. B. Srinivasa Rao", role: "Chief Strategy Officer", photo: "/team/srinivasa-rao.webp" },
   { name: "Venkatesh B", role: "Deputy CFO", photo: "/team/venkatesh-b.webp" },
   { name: "Harish R", role: "Chief Technology Officer", photo: "/team/harish-r.webp" },
-  { name: "Atul Prakash", role: "Chief Risk Officer", photo: "/team/venkatesh-b.webp" },
+  { name: "Atul Prakash", role: "Chief Risk Officer", photo: "/team/atul-prakash.webp" },
   { name: "R. S. Bharath", role: "Head - Legal", photo: "/team/rs-bharath.webp" },
 ];
 
