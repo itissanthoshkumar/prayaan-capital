@@ -6,20 +6,23 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "Products", href: "/products" },
-  { label: "About", href: "/why-prayaan" },
+  { label: "Home", href: "/" },
   {
-    label: "Company",
+    label: "About Us",
     children: [
+      { label: "About Prayaan", href: "/why-prayaan" },
       { label: "Team", href: "/about" },
-      { label: "Leadership", href: "/leadership" },
-      { label: "Technology", href: "/technology" },
-      { label: "Careers", href: "/careers" },
-      { label: "News", href: "/news" },
     ],
   },
-  { label: "Customer", href: "/customer" },
-  { label: "Contact", href: "/contact" },
+  {
+    label: "Customer",
+    children: [
+      { label: "EMI Calculator", href: "/calculators/emi" },
+      { label: "Grievance Redressal", href: "/grievance-redressal" },
+      { label: "Branch Location", href: "/branch-locator" },
+    ],
+  },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 const Navbar = () => {
