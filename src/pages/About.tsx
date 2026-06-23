@@ -230,11 +230,10 @@ const About = () => {
             <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-gradient-coral opacity-10 blur-3xl pointer-events-none" />
             <p className="font-body text-[11px] font-bold text-muted-foreground uppercase tracking-[0.2em] mb-5">Lead Investor</p>
             <img
-              src="/peak-xv-logo.svg"
+              src="/peak-xv-logo.jpg"
               alt="Peak XV Partners"
-              className="h-12 md:h-16 w-auto mx-auto"
+              className="h-14 md:h-20 w-auto mx-auto"
             />
-            <p className="font-body text-sm text-muted-foreground mt-4">Formerly Sequoia Capital India &amp; SEA</p>
             <div className="flex flex-wrap items-center justify-center gap-3 mt-7">
               <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold font-mono">Series A · ₹110 Cr</span>
               <span className="px-4 py-2 rounded-full bg-secondary text-secondary-foreground text-sm font-semibold">2026</span>
