@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 250" fill="none" role="img" aria-label="Peak XV Partners">
+  <!-- Brand mark: two interlocking rounded-square links forming an infinity -->
+  <g>
+    <!-- bottom-left link (hollow ring) -->
+    <path fill="#7C4DD1" fill-rule="evenodd" d="M24 138c0-24.3 19.7-44 44-44h18c24.3 0 44 19.7 44 44v18c0 24.3-19.7 44-44 44H68c-24.3 0-44-19.7-44-44v-18Zm44-4c-12.2 0-22 9.8-22 22v2c0 12.2 9.8 22 22 22h10c12.2 0 22-9.8 22-22v-2c0-12.2-9.8-22-22-22H68Z"/>
+    <!-- top-right link (solid rounded square) -->
+    <path fill="#7C4DD1" d="M118 56c0-24.3 19.7-44 44-44h18c24.3 0 44 19.7 44 44v18c0 24.3-19.7 44-44 44h-18c-24.3 0-44-19.7-44-44V56Z"/>
+    <!-- interlock notch carved from the top link's lower-left corner -->
+    <path fill="#FFFFFF" d="M126 86c0-8.8 7.2-16 16-16h10c8.8 0 16 7.2 16 16v10c0 8.8-7.2 16-16 16h-10c-8.8 0-16-7.2-16-16V86Z"/>
+  </g>
+
+  <!-- wordmark -->
+  <text x="262" y="160" font-family="Arial, Helvetica, sans-serif" font-size="135" font-weight="700" letter-spacing="-3" fill="#111111">peak xv</text>
+  <text x="792" y="212" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="700" letter-spacing="7" fill="#111111">PARTNERS</text>
+</svg>

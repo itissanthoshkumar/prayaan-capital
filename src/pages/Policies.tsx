@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import AIFloatingElements from "@/components/AIFloatingElements";
 import HeroIllustration from "@/components/HeroIllustration";
 import { motion } from "framer-motion";
-import { ScrollText, Recycle, Percent, Scale, Languages, Fingerprint, Users, Megaphone, LucideIcon } from "lucide-react";
+import { ScrollText, Recycle, Percent, Scale, Languages, Fingerprint, ShieldCheck, Megaphone, LucideIcon } from "lucide-react";
 
 const BASE = "https://prayaancapital.com/assets/images/downloads";
 
@@ -13,7 +13,7 @@ const policies: { label: string; href: string; icon: LucideIcon }[] = [
   { label: "Fair Practice Code - Tamil", href: `${BASE}/Fair%20Practice%20Code_V2.0%20Tamil.pdf`, icon: Languages },
   { label: "Fair Practice Code - Telugu", href: `${BASE}/Fair%20Practice%20Code_V2.0%20Telugu.pdf`, icon: Languages },
   { label: "Group KYC & AML Policy", href: `${BASE}/Group%20AML%20&%20KYC%20Policy_V6.0_.pdf`, icon: Fingerprint },
-  { label: "POSH Policy", href: `${BASE}/POSH%20Policy_V4.pdf`, icon: Users },
+  { label: "POSH Policy", href: `${BASE}/POSH%20Policy_V4.pdf`, icon: ShieldCheck },
   { label: "Whistle Blower Policy", href: `${BASE}/Whistle%20Blower%20Policy%20V3.0.pdf`, icon: Megaphone },
 ];
 
@@ -64,17 +64,16 @@ const Policies = () => (
               href={p.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative clay-surface p-6 clay-press flex items-start gap-4 overflow-hidden"
+              className="group clay-surface p-5 clay-press flex items-center gap-4"
             >
-              <div className="absolute top-0 left-6 right-6 h-[3px] rounded-full bg-gradient-sunset opacity-80" />
-              <span className="w-12 h-12 rounded-2xl bg-gradient-sunset shadow-clay-sm flex items-center justify-center shrink-0">
-                <p.icon size={22} className="text-white" />
+              <span className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                <p.icon size={20} className="text-primary" />
               </span>
               <div className="flex-1 min-w-0">
                 <h3 className="font-display text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors leading-snug">
                   {p.label}
                 </h3>
-                <span className="inline-block text-xs font-bold text-primary uppercase tracking-wide mt-2">View Policy</span>
+                <span className="inline-block text-xs font-bold text-primary uppercase tracking-wide mt-1">View Policy</span>
               </div>
             </motion.a>
           ))}

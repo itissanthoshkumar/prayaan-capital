@@ -67,7 +67,7 @@ const officeDetails = [
     secondary: "Santhome High Road, Chennai – 600028",
     action: {
       label: "Get directions →",
-      href: "https://maps.google.com/?q=Minerva+Building,+Santhome+High+Road,+Chennai+600028",
+      href: "https://www.google.com/maps/place/Prayaan+Capital+Pvt+Ltd/data=!4m2!3m1!1s0x0:0xae70c3e221dd1501",
       external: true,
     },
   },
@@ -339,7 +339,7 @@ const Contact = () => (
               <div className="rounded-[1.25rem] overflow-hidden">
                 <iframe
                   title="Prayaan Capital — Minerva Building, Santhome High Road, Chennai"
-                  src="https://maps.google.com/maps?q=Minerva+Building,+Santhome+High+Road,+Chennai+600028,+Tamil+Nadu,+India&output=embed&z=16"
+                  src="https://maps.google.com/maps?q=Prayaan+Capital+Pvt+Ltd,+Minerva+Building,+Santhome+High+Road,+Chennai+600028&output=embed&z=16"
                   width="100%"
                   height="270"
                   style={{ border: 0, display: "block" }}

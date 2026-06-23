@@ -228,11 +228,13 @@ const About = () => {
           >
             <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-sunset" />
             <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-gradient-coral opacity-10 blur-3xl pointer-events-none" />
-            <p className="font-body text-[11px] font-bold text-muted-foreground uppercase tracking-[0.2em] mb-4">Lead Investor</p>
-            <p className="font-display text-4xl md:text-6xl font-extrabold leading-none tracking-tight">
-              <span className="text-gold-deep">Peak XV</span> <span className="text-foreground">Partners</span>
-            </p>
-            <p className="font-body text-sm text-muted-foreground mt-3">Formerly Sequoia Capital India &amp; SEA</p>
+            <p className="font-body text-[11px] font-bold text-muted-foreground uppercase tracking-[0.2em] mb-5">Lead Investor</p>
+            <img
+              src="/peak-xv-logo.svg"
+              alt="Peak XV Partners"
+              className="h-12 md:h-16 w-auto mx-auto"
+            />
+            <p className="font-body text-sm text-muted-foreground mt-4">Formerly Sequoia Capital India &amp; SEA</p>
             <div className="flex flex-wrap items-center justify-center gap-3 mt-7">
               <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold font-mono">Series A · ₹110 Cr</span>
               <span className="px-4 py-2 rounded-full bg-secondary text-secondary-foreground text-sm font-semibold">2026</span>

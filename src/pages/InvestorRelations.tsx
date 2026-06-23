@@ -80,8 +80,8 @@ const DocGroup = ({ g }: { g: Group }) => {
   return (
     <div>
       <div className="flex items-center gap-3 mb-5">
-        <span className="w-11 h-11 rounded-2xl bg-gradient-sunset shadow-clay-sm flex items-center justify-center shrink-0">
-          <g.icon size={20} className="text-white" />
+        <span className="w-11 h-11 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
+          <g.icon size={20} className="text-primary" />
         </span>
         <div>
           <h2 className="font-display text-lg md:text-2xl font-bold text-foreground leading-tight">

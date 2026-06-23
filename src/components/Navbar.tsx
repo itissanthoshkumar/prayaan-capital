@@ -7,24 +7,15 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { label: "Products", href: "/products" },
-  { label: "Why Prayaan", href: "/why-prayaan" },
+  { label: "About", href: "/why-prayaan" },
   {
     label: "Company",
     children: [
-      { label: "About Us", href: "/about" },
+      { label: "Team", href: "/about" },
       { label: "Leadership", href: "/leadership" },
       { label: "Technology", href: "/technology" },
       { label: "Careers", href: "/careers" },
       { label: "News", href: "/news" },
-    ],
-  },
-  {
-    label: "Resources",
-    children: [
-      { label: "How It Works", href: "/#how-it-works" },
-      { label: "Check Eligibility", href: "/eligibility" },
-      { label: "Calculators", href: "/calculators/emi" },
-      { label: "Policies", href: "/policies" },
     ],
   },
   { label: "Customer", href: "/customer" },
