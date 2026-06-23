@@ -5,32 +5,32 @@ const steps = [
   {
     icon: FileText,
     title: "Provide Details",
-    desc: "Share business info, KYC & financials through our digital form. No branch visits needed.",
-    time: "15 Min",
+    desc: "Share business info, KYC & property details through our digital form. No branch visits needed.",
+    time: "Step 1",
     accent: "bg-[hsl(208_100%_31%)]",
     num: "01",
   },
   {
     icon: CheckCircle,
-    title: "Get Approval",
-    desc: "AI underwriting evaluates 200+ data points and delivers a sanction letter — often same day.",
-    time: "Same Day",
+    title: "Credit Evaluation",
+    desc: "Our credit team evaluates your profile, property value, and repayment capacity — and issues a sanction letter.",
+    time: "Step 2",
     accent: "bg-[hsl(42_100%_47%)]",
     num: "02",
   },
   {
     icon: FileCheck,
     title: "Submit Collateral",
-    desc: "Provide property or asset documents. We handle valuation & legal verification swiftly.",
-    time: "Day 1–2",
+    desc: "Provide property documents. We handle valuation & legal verification with our empanelled team.",
+    time: "Step 3",
     accent: "bg-[hsl(205_90%_45%)]",
     num: "03",
   },
   {
     icon: Banknote,
     title: "Get Your Loan",
-    desc: "Funds disbursed directly to your bank account. Own. Unlock. Grow.",
-    time: "Day 2",
+    desc: "Funds disbursed directly to your bank account after signing the loan agreement.",
+    time: "Step 4",
     accent: "bg-[hsl(38_95%_45%)]",
     num: "04",
   },
@@ -66,15 +66,15 @@ const HowItWorks = () => {
           className="text-center mb-16 md:mb-24"
         >
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-6">
-<Zap size={12} /> 48-Hour Process
+<Zap size={12} /> Our Process
           </span>
           <h2 className="font-display text-3xl md:text-5xl lg:text-[3.5rem] font-extrabold text-foreground tracking-tight leading-[1.1] mb-5">
-            Application to Disbursal
+            A Clear, Customer-First
             <br />
-            <span className="text-gradient-coral">in Just 2 Days</span>
+            <span className="text-gradient-coral">Loan Journey</span>
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-lg mx-auto font-body leading-relaxed">
-            A streamlined 4-step journey powered by AI — no weeks of waiting, no endless paperwork.
+            A transparent 4-step process built around your needs — no hidden steps, no endless paperwork.
           </p>
         </motion.div>
 
@@ -107,12 +107,6 @@ const HowItWorks = () => {
                       className={`w-28 h-28 rounded-[2rem] ${step.accent} shadow-clay flex items-center justify-center`}
                     >
                       <step.icon size={34} className="text-white" strokeWidth={1.6} />
-                    </div>
-                    {/* Time badge — below icon, centred */}
-                    <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-card shadow-clay-sm whitespace-nowrap">
-                      <span className="font-body text-[10px] font-black text-foreground uppercase tracking-[0.12em]">
-                        {step.time}
-                      </span>
                     </div>
                   </div>
 
@@ -192,9 +186,6 @@ const HowItWorks = () => {
                       </span>
                       <h3 className="font-display text-sm font-bold text-foreground">{step.title}</h3>
                     </div>
-                    <span className="shrink-0 px-2.5 py-0.5 rounded-full bg-card shadow-clay-sm font-body text-[9px] font-black text-foreground uppercase tracking-wide">
-                      {step.time}
-                    </span>
                   </div>
                   <p className="font-body text-xs text-muted-foreground leading-relaxed">{step.desc}</p>
                 </div>

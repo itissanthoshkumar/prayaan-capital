@@ -25,8 +25,8 @@ const groups = [
     icon: Home as LucideIcon,
     items: [
       { q: "What loan amounts can I get?", a: "We offer Loan Against Property and housing loans from ₹5L to ₹50L, depending on the property value and your repayment capacity." },
-      { q: "Do I need to mortgage my property?", a: "Yes — our loans are secured against your property. This is what allows us to offer you competitive interest rates starting from 16% p.a." },
-      { q: "What is the minimum CIBIL score?", a: "We look beyond CIBIL. Our AI model evaluates property value, bank flow, and repayment history — a score of 680+ improves your pricing." },
+      { q: "Do I need to mortgage my property?", a: "Yes — our loans are secured against your property. This is what allows us to offer you competitive interest rates starting from 18% p.a." },
+      { q: "What is the minimum CIBIL score?", a: "We look beyond CIBIL. Our team evaluates property value, bank flow, and repayment history — a score of 680+ improves your pricing." },
       { q: "What types of property are accepted?", a: "Residential, commercial and industrial properties with clear, marketable title. The property should be self-occupied or rented and registered in your name." },
     ],
   },
@@ -193,7 +193,7 @@ const FAQs = () => {
                 <Link to="/contact"><LinkIcon size={14} /> Write to us</Link>
               </Button>
               <Button variant="outline" asChild>
-                <a href="tel:+916380589898"><Phone size={14} /> Call us</a>
+                <a href="tel:+916380589898"><Phone size={14} /> +91-6380589898</a>
               </Button>
             </div>
           </motion.div>

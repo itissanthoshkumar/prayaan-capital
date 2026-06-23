@@ -6,18 +6,17 @@ import { Button } from "@/components/ui/button";
 import AIFloatingElements, { AIPulse } from "@/components/AIFloatingElements";
 
 const perks = [
-  { icon: Sparkles, title: "Cutting-Edge AI", desc: "Work on production ML systems processing millions of data points daily.", tint: "bg-gradient-coral" },
-  { icon: Heart, title: "Health & Wellness", desc: "Comprehensive health insurance, mental wellness programs, and fitness benefits.", tint: "bg-gradient-mint" },
-  { icon: TrendingUp, title: "Growth Path", desc: "ESOPs, learning budgets, conference sponsorships, and rapid career progression.", tint: "bg-gradient-lavender" },
-  { icon: Code, title: "Engineering Culture", desc: "Ship fast, iterate often. Modern stack, open-source contributions, and tech talks.", tint: "bg-gradient-sunset" },
+  { icon: Sparkles, title: "Meaningful Work", desc: "Help real Indian small businesses access fair credit — your work directly impacts entrepreneurs who need it most.", tint: "bg-gradient-coral" },
+  { icon: Heart, title: "Health & Wellness", desc: "Comprehensive health insurance, mental wellness programs, and fitness benefits for you and your family.", tint: "bg-gradient-mint" },
+  { icon: TrendingUp, title: "Growth & Learning", desc: "Learning budgets, conference sponsorships, mentorship, and rapid career progression at a growing NBFC.", tint: "bg-gradient-lavender" },
+  { icon: Code, title: "Collaborative Culture", desc: "A team of credit professionals, fintech practitioners, and technology builders working toward a shared mission.", tint: "bg-gradient-sunset" },
 ];
 
 const openings = [
-  { title: "Senior ML Engineer", team: "AI/ML", location: "Bangalore / Remote", type: "Full-time", hot: true },
-  { title: "Backend Engineer (Rust/Go)", team: "Platform", location: "Bangalore / Remote", type: "Full-time", hot: false },
-  { title: "Product Designer", team: "Product", location: "Bangalore", type: "Full-time", hot: false },
-  { title: "Credit Analyst", team: "Risk", location: "Chennai", type: "Full-time", hot: false },
-  { title: "DevOps Engineer", team: "Infrastructure", location: "Remote", type: "Full-time", hot: true },
+  { title: "Product Designer", team: "Product", location: "Bangalore", type: "Full-time", hot: true },
+  { title: "Credit Analyst", team: "Risk & Credit", location: "Chennai", type: "Full-time", hot: true },
+  { title: "Branch Relationship Manager", team: "Sales", location: "Chennai / Bangalore", type: "Full-time", hot: false },
+  { title: "Credit Operations Executive", team: "Operations", location: "Chennai", type: "Full-time", hot: false },
   { title: "Growth Marketing Manager", team: "Marketing", location: "Bangalore", type: "Full-time", hot: false },
 ];
 
@@ -43,7 +42,7 @@ const Careers = () => {
               Build the Future of <span className="text-gradient-coral">Property Finance</span>
             </h1>
             <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              Join a team of fintech veterans and AI researchers reimagining how millions of Indian small businesses access fair credit.
+              Join a team of credit professionals, fintech practitioners, and technology builders reimagining how Indian small businesses access fair credit.
             </p>
           </motion.div>
             </div>
@@ -58,9 +57,9 @@ const Careers = () => {
           <div className="clay-surface max-w-3xl mx-auto px-6 py-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-center">
             <span className="font-body text-xs md:text-sm font-semibold text-foreground">Chennai · Bangalore · Remote</span>
             <span className="hidden sm:block w-px h-4 bg-border" />
-            <span className="font-body text-xs md:text-sm font-semibold text-foreground">Weekly shipping</span>
+            <span className="font-body text-xs md:text-sm font-semibold text-foreground">Mission-driven team</span>
             <span className="hidden sm:block w-px h-4 bg-border" />
-            <span className="font-body text-xs md:text-sm font-semibold text-foreground">ESOPs for all</span>
+            <span className="font-body text-xs md:text-sm font-semibold text-foreground">RBI-regulated NBFC</span>
           </div>
         </div>
       </section>

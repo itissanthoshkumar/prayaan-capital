@@ -1,8 +1,7 @@
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
-import { ArrowRight, Shield, Zap, IndianRupee, Home, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 
 import hero1 from "@/assets/pexels-pexels-user-1476227307-26861411.jpg";
 import hero2 from "@/assets/pexels-ravikant-5807481.jpg";
@@ -19,8 +18,6 @@ import hero12 from "@/assets/pexels-saman-films-703617-6060893.jpg";
 import hero13 from "@/assets/pexels-henry-benjamin-2149128840-30443336.jpg";
 import hero14 from "@/assets/pexels-ragu-raja-61455736-11612188.jpg";
 
-/* Dynamic collage — rotating image pool from user-provided photos.
-   Pool rotates 3 tiles every ~1.6s. Photos sourced from Pexels. See /credits.txt. */
 const pool = [
   { img: hero1, alt: "Entrepreneur at work", amount: "₹5.5 Lakhs", product: "Secured Business Loan", place: "Tamil Nadu" },
   { img: hero2, alt: "Business professional", amount: "₹6.5 Lakhs", product: "Secured Business Loan", place: "Telangana" },
@@ -47,173 +44,181 @@ const fadeUp = {
   }),
 };
 
-const Tile = ({ idx, className }: { idx: number; className: string }) => {
-  const item = pool[idx];
-  return (
-    <div className={`relative overflow-hidden rounded-3xl shadow-2xl ring-1 ring-foreground/10 ${className}`}>
-      <AnimatePresence initial={false} mode="popLayout">
-        <motion.img
-          key={idx}
-          src={item.img}
-          alt={item.alt}
-          initial={{ opacity: 0, scale: 1.08 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.95 }}
-          transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="absolute inset-0 w-full h-full object-cover"
-          loading="eager"
-        />
-      </AnimatePresence>
-      <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 via-foreground/10 to-transparent" />
-      <div className="absolute inset-0 bg-primary/8 mix-blend-multiply" />
-    </div>
-  );
-};
-
 const HeroSection = () => {
-  const [slots, setSlots] = useState([0, 1, 2, 3, 4, 5]);
+  const [slots, setSlots] = useState([0, 1, 2]);
 
   useEffect(() => {
     const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
     if (reduce) return;
     let tick = 0;
     const t = setInterval(() => {
-      const slot = tick % 6;
       setSlots((prev) => {
         const next = [...prev];
-        next[slot] = (next[slot] + 6) % pool.length;
+        next[tick % 3] = (next[tick % 3] + 3) % pool.length;
         return next;
       });
       tick++;
-    }, 1800);
+    }, 2200);
     return () => clearInterval(t);
   }, []);
 
-  const featured = pool[slots[0]];
-
   return (
-    <section className="relative lg:min-h-[88vh] flex items-stretch overflow-hidden bg-hero">
-      {/* Soft blobs */}
+    <section
+      className="relative lg:min-h-[90vh] flex items-stretch overflow-hidden"
+      style={{ background: "#0b1828" }}
+    >
+      {/* Ambient glow blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-24 -left-24 w-[420px] h-[420px] rounded-full bg-gradient-coral opacity-30 blur-3xl" />
-        <div className="absolute bottom-0 right-1/3 w-[440px] h-[440px] rounded-full bg-gradient-lavender opacity-25 blur-3xl" />
+        <div
+          className="absolute -top-40 -left-20 w-[560px] h-[560px] rounded-full blur-[140px] opacity-[0.18]"
+          style={{ background: "#00549c" }}
+        />
+        <div
+          className="absolute -bottom-20 right-[5%] w-[440px] h-[440px] rounded-full blur-[120px] opacity-[0.12]"
+          style={{ background: "#f0a800" }}
+        />
       </div>
 
-      {/* ── Left content (tightened) ── */}
-      <div className="flex-1 pl-5 md:pl-[max(1.25rem,calc((100vw-1280px)/2+1.25rem))] pr-5 md:pr-12 pt-28 pb-16 md:py-32 flex flex-col lg:justify-center relative z-10">
-        <motion.div custom={0} initial="hidden" animate="visible" variants={fadeUp} className="mb-8">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-card shadow-clay-sm">
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-60" />
-              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-primary" />
-            </span>
-            <span className="text-[10px] md:text-[11px] font-semibold tracking-[0.14em] uppercase font-body">
-              <span className="text-gold-glitter font-bold">PRAYAAN CAPITAL</span>
-              <span className="text-muted-foreground"> · RBI REGISTERED NBFC · EST. 2018</span>
+      {/* ── Left content ── */}
+      <div className="flex-1 pl-5 md:pl-[max(1.25rem,calc((100vw-1280px)/2+1.25rem))] pr-5 md:pr-16 pt-28 pb-16 md:py-32 flex flex-col lg:justify-center relative z-10">
+        {/* Top badge */}
+        <motion.div custom={0} initial="hidden" animate="visible" variants={fadeUp} className="mb-7">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/15 bg-white/[0.06]">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_#34d399]" />
+            <span className="text-[10px] font-semibold tracking-[0.15em] uppercase text-white/55 font-body">
+              RBI REGISTERED NBFC · EST. 2018
             </span>
           </div>
         </motion.div>
 
+        {/* Headline */}
         <motion.h1
           custom={1}
           initial="hidden"
           animate="visible"
           variants={fadeUp}
-          className="font-display text-4xl md:text-6xl leading-[1.15] font-extrabold text-foreground mb-6 max-w-2xl"
+          className="font-display text-[2.75rem] md:text-[3.75rem] leading-[1.1] font-extrabold text-white mb-7 max-w-2xl"
         >
-          Capital that respects the <span className="text-gold-deep italic">hands</span> that{" "}
-          <span className="text-gold-deep">built India.</span>
+          Capital that respects the{" "}
+          <span className="text-[#f0a800] italic">hands</span> that{" "}
+          <span className="text-[#f0a800] italic">built India.</span>
         </motion.h1>
 
-        <motion.p custom={2} initial="hidden" animate="visible" variants={fadeUp}
-          className="text-base md:text-lg text-muted-foreground max-w-xl mb-10 font-body leading-[1.8]">
-          Secured business loans for the small and medium enterprises — the manufacturers, traders and shopkeepers — who form the backbone of our economy. Decisions in 48 hours.
+        {/* Body */}
+        <motion.p
+          custom={2}
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+          className="text-base md:text-lg text-white/55 max-w-[480px] mb-10 font-body leading-[1.8]"
+        >
+          Secured business loans for the small and medium enterprises — the manufacturers, traders and
+          shopkeepers who form the backbone of our economy. Decisions in 48 hours.
         </motion.p>
 
-        <motion.div custom={3} initial="hidden" animate="visible" variants={fadeUp}
-          className="flex items-center gap-5 mb-10">
-          <Button variant="hero" size="lg" className="text-sm animate-cta-glow relative overflow-hidden" asChild>
-            <Link to="/eligibility">
-              <span className="animate-cta-shimmer absolute inset-0 rounded-[inherit]" />
-              <span className="relative z-10 flex items-center gap-2">Apply for a Loan <ArrowRight size={15} /></span>
-            </Link>
-          </Button>
-          <a href="/#emi-calculator" className="font-body text-sm font-semibold text-foreground/80 hover:text-primary transition-colors inline-flex items-center gap-1.5">
-            Calculate EMI <ArrowRight size={14} />
+        {/* CTAs */}
+        <motion.div custom={3} initial="hidden" animate="visible" variants={fadeUp} className="flex items-center gap-4 mb-11">
+          <Link
+            to="/eligibility"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#f0a800] text-[#0b1828] font-bold text-sm shadow-[0_0_28px_rgba(240,168,0,0.40)] hover:shadow-[0_0_40px_rgba(240,168,0,0.60)] hover:bg-[#fbb500] transition-all font-body"
+          >
+            Apply for a Loan <ArrowRight size={15} />
+          </Link>
+          <a
+            href="/#emi-calculator"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-white/20 text-white/80 font-semibold text-sm hover:bg-white/10 transition-all font-body"
+          >
+            Calculate EMI <ArrowRight size={15} />
           </a>
         </motion.div>
 
-        <motion.div custom={4} initial="hidden" animate="visible" variants={fadeUp}
-          className="flex flex-wrap gap-3">
-          {[
-            { icon: IndianRupee, label: "From 16% p.a.", tint: "bg-gradient-mint" },
-            { icon: Shield, label: "RBI Registered NBFC", tint: "bg-gradient-coral" },
-            { icon: Zap, label: "48-hr decisions", tint: "bg-gradient-sunset" },
-          ].map((item) => (
-            <div key={item.label} className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-full bg-card/80 shadow-clay border border-foreground/5">
-              <span className={`flex items-center justify-center w-5 h-5 rounded-full ${item.tint} text-white shadow-sm`}>
-                <item.icon size={11} />
-              </span>
-              <span className="text-xs font-semibold text-foreground font-body">{item.label}</span>
-            </div>
-          ))}
-        </motion.div>
-
-        {/* Social proof */}
-        <motion.div custom={5} initial="hidden" animate="visible" variants={fadeUp} className="flex items-center gap-3 mt-8">
-          <div className="flex -space-x-2.5">
-            {[hero1, hero5, hero9, hero13].map((src, i) => (
-              <img key={i} src={src} alt="" className="w-8 h-8 rounded-full object-cover ring-2 ring-card shadow-sm" loading="lazy" />
-            ))}
+        {/* Stat pills */}
+        <motion.div custom={4} initial="hidden" animate="visible" variants={fadeUp} className="flex flex-wrap gap-3">
+          <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-full border border-white/10 bg-white/[0.06]">
+            <span className="font-mono font-bold text-[#f0a800] text-sm leading-none">18% p.a.</span>
+            <span className="text-[10px] font-semibold text-white/45 uppercase tracking-[0.13em] font-body">Starting Rate</span>
           </div>
-          <p className="text-xs md:text-sm text-muted-foreground font-body">
-            <span className="font-bold text-foreground">1,000+ families</span> funded across South India
-          </p>
+          <div className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/10 bg-white/[0.06]">
+            <CheckCircle size={13} className="text-[#f0a800] shrink-0" />
+            <span className="text-[10px] font-semibold text-white/65 uppercase tracking-[0.1em] font-body">RBI Registered NBFC</span>
+          </div>
+          <div className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/10 bg-white/[0.06]">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
+            <span className="text-[10px] font-semibold text-white/65 uppercase tracking-[0.1em] font-body">48-hr Decisions</span>
+          </div>
         </motion.div>
       </div>
 
-      {/* ── Right — dynamic rotating collage (desktop only) ── */}
-      <div className="hidden lg:flex items-center justify-center w-[48%] shrink-0 self-stretch pl-4 pr-10 xl:pr-16 py-20 relative z-10">
-        <div className="relative w-full max-w-[520px]">
-          <div className="grid grid-cols-4 grid-rows-5 gap-3.5 h-[580px]">
-            <Tile idx={slots[0]} className="col-span-2 row-span-3" />
-            <Tile idx={slots[1]} className="col-span-1 row-span-3" />
-            <Tile idx={slots[2]} className="col-span-1 row-span-3" />
-            <Tile idx={slots[3]} className="col-span-2 row-span-2" />
-            <Tile idx={slots[4]} className="col-span-2 row-span-2" />
+      {/* ── Right collage (desktop only) ── */}
+      <div className="hidden lg:flex items-stretch w-[46%] shrink-0 pr-10 xl:pr-16 py-16 gap-4 relative z-10">
+
+        {/* Phone mockup */}
+        <div className="relative flex-[1.5] rounded-[2.8rem] overflow-hidden shadow-2xl ring-1 ring-white/10">
+          <AnimatePresence mode="popLayout" initial={false}>
+            <motion.img
+              key={slots[0]}
+              src={pool[slots[0]].img}
+              alt={pool[slots[0]].alt}
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="eager"
+            />
+          </AnimatePresence>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/15 pointer-events-none" />
+
+          {/* Verified badge (top inside phone) */}
+          <div className="absolute top-5 left-5 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/45 backdrop-blur-sm border border-white/10">
+            <CheckCircle size={11} className="text-[#f0a800]" />
+            <span className="text-[11px] font-bold text-white font-body">Prayaan ✓</span>
           </div>
 
-          {/* Cumulative disbursal badge (top-left) */}
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1 }}
-            className="absolute -top-5 -left-6 clay-surface px-4 py-2.5 rounded-2xl shadow-xl border border-foreground/5"
-          >
-            <p className="font-mono tabular-nums text-base font-bold text-primary leading-none">₹100 Cr+</p>
-            <p className="font-body text-[9px] text-muted-foreground mt-1 uppercase tracking-[0.12em]">Disbursed</p>
-          </motion.div>
+        </div>
 
-          {/* Disbursement badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.7, delay: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="absolute -bottom-12 -left-8 clay-surface p-4.5 rounded-2xl shadow-2xl max-w-sm border border-foreground/5"
-          >
-            <p className="font-body text-[8px] text-muted-foreground mb-1 uppercase tracking-widest font-semibold">Live Disbursement</p>
-            <AnimatePresence mode="wait">
-              <motion.div key={slots[0]} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} transition={{ duration: 0.5 }}>
-                <p className="font-mono tabular-nums text-lg font-bold text-foreground">{featured.amount}</p>
-                <p className="font-body text-[10px] text-muted-foreground mt-0.5">{featured.product} · {featured.place}</p>
-              </motion.div>
+        {/* Right photo stack */}
+        <div className="flex flex-col flex-1 gap-4">
+          {/* Top photo — ₹100 Cr+ overlay */}
+          <div className="relative flex-1 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-xl">
+            <AnimatePresence mode="popLayout" initial={false}>
+              <motion.img
+                key={slots[1]}
+                src={pool[slots[1]].img}
+                alt={pool[slots[1]].alt}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1.2 }}
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="eager"
+              />
             </AnimatePresence>
-          </motion.div>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent pointer-events-none" />
+            <div className="absolute top-3.5 left-3.5 right-3.5 rounded-xl p-3 bg-black/50 backdrop-blur-sm border border-white/10">
+              <p className="font-mono font-bold text-[#f0a800] text-lg leading-none">₹50 Cr+</p>
+              <p className="text-[9px] font-semibold text-white/55 uppercase tracking-[0.15em] mt-0.5 font-body">
+                Disbursed to date
+              </p>
+            </div>
+          </div>
 
-          {/* Verified badge */}
-          <div className="absolute -top-3 -right-2 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-mint shadow-clay-sm">
-            <CheckCircle size={11} className="text-white" />
-            <span className="font-body text-[10px] font-bold text-white tracking-wide">Prayaan ✓</span>
+          {/* Bottom photo */}
+          <div className="relative flex-1 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-xl">
+            <AnimatePresence mode="popLayout" initial={false}>
+              <motion.img
+                key={slots[2]}
+                src={pool[slots[2]].img}
+                alt={pool[slots[2]].alt}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1.2 }}
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="eager"
+              />
+            </AnimatePresence>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent pointer-events-none" />
           </div>
         </div>
       </div>

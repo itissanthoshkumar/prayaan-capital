@@ -9,8 +9,8 @@ const products = [
     title: "Loan Against Property",
     range: "₹5L – ₹50L",
     tenure: "Up to 10 years",
-    desc: "Unlock the value of your residential, commercial or industrial property. Use the funds for any need — with long tenures and rates starting from 16% p.a.",
-    features: ["Up to 60% LTV", "Any end-use", "Flexi tenure"],
+    desc: "Unlock the value of your residential, commercial or industrial property to fund your business growth — with long tenures and rates starting from 18% p.a.",
+    features: ["Up to 50% LTV", "Fund Your Ambition", "Flexi tenure"],
     tint: "bg-gradient-coral",
     href: "/products",
   },
@@ -20,7 +20,7 @@ const products = [
     range: "₹5L – ₹50L",
     tenure: "Up to 10 years",
     desc: "Buy, build or renovate your home with affordable EMIs, minimal paperwork and doorstep service in the communities that need it most.",
-    features: ["From 16% p.a.", "Long tenure", "Doorstep service"],
+    features: ["From 18% p.a.", "Long tenure", "Doorstep service"],
     tint: "bg-gradient-mint",
     href: "/products",
   },
@@ -47,10 +47,10 @@ const ProductsSection = () => {
             Our Products
           </span>
           <h2 className="font-display text-2xl md:text-5xl font-extrabold text-foreground mt-3 mb-3 md:mb-4 tracking-tight">
-            Secured business loans for <span className="text-gradient-coral">India's SMEs</span>
+            Secured business loans for <span className="text-gradient-coral">India's MSMEs</span>
           </h2>
           <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto font-body">
-            Prayaan Capital is an SME-first NBFC — secured business loans backed by the property you own, built for the entrepreneurs banks overlook.
+            Prayaan Capital is an MSME-first NBFC — Micro, Small and Medium Enterprises are the backbone of our portfolio. Secured loans backed by the property you own, built for entrepreneurs banks overlook.
           </p>
         </motion.div>
 

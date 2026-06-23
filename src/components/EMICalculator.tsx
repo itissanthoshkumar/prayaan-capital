@@ -68,8 +68,8 @@ const ChartTooltip = ({ active, payload }: { active?: boolean; payload?: Array<{
    ════════════════════════════════════════════════════════ */
 const EMICalculator = () => {
   const [loanAmount, setLoanAmount] = useState(15);  // Lakhs (3–50)
-  const [rate,       setRate]       = useState(16);  // % p.a. (16–30)
-  const [tenure,     setTenure]     = useState(36);  // months (12–120, step 6)
+  const [rate,       setRate]       = useState(18);  // % p.a. (18–30)
+  const [tenure,     setTenure]     = useState(60);  // months: 60 | 84 | 120
   const [showTable,  setShowTable]  = useState(false);
 
   /* ── Core maths ── */
@@ -222,7 +222,7 @@ const EMICalculator = () => {
                         value={rate}
                         onChange={(e) => {
                           const v = Number(e.target.value);
-                          if (v >= 16 && v <= 30) setRate(v);
+                          if (v >= 18 && v <= 30) setRate(v);
                         }}
                         className={numInputCls}
                         style={{ color: C_INTEREST }}
@@ -236,46 +236,35 @@ const EMICalculator = () => {
                   <Slider
                     aria-label="Interest rate percent"
                     value={[rate]} onValueChange={(v) => setRate(v[0])}
-                    min={16} max={30} step={0.5} className="w-full"
+                    min={18} max={30} step={0.5} className="w-full"
                   />
                   <div className="flex justify-between">
-                    <span className="font-body text-[10px] text-muted-foreground">16%</span>
+                    <span className="font-body text-[10px] text-muted-foreground">18%</span>
                     <span className="font-body text-[10px] text-muted-foreground">30%</span>
                   </div>
                 </div>
 
                 {/* ── Loan Tenure ── */}
                 <div className="space-y-2.5">
-                  <div className="flex items-center justify-between">
-                    <label className="font-body text-sm font-medium text-muted-foreground flex items-center gap-1.5">
-                      <Calendar size={13} className="text-[hsl(208,90%,45%)]" />
-                      Loan Tenure
-                    </label>
-                    <div className="flex items-center gap-0.5 px-3 py-1.5 rounded-2xl bg-[hsl(208,90%,45%)]/10 shadow-clay-sm min-w-[88px] justify-end">
-                      <input
-                        type="number" min={1} max={20} step={0.5}
-                        value={tenure / 12}
-                        onChange={(e) => {
-                          const yrs = Number(e.target.value);
-                          if (yrs >= 1 && yrs <= 20) {
-                            setTenure(Math.round(yrs * 12 / 6) * 6);
-                          }
-                        }}
-                        className={`${numInputCls} text-[hsl(208,90%,45%)] w-10`}
-                      />
-                      <span className="font-body text-[11px] text-[hsl(208,90%,45%)] font-semibold ml-0.5">
-                        {tenure === 12 ? "Yr" : "Yrs"}
-                      </span>
-                    </div>
-                  </div>
-                  <Slider
-                    aria-label="Loan tenure in months"
-                    value={[tenure]} onValueChange={(v) => setTenure(v[0])}
-                    min={12} max={120} step={6} className="w-full"
-                  />
-                  <div className="flex justify-between">
-                    <span className="font-body text-[10px] text-muted-foreground">1 Yr</span>
-                    <span className="font-body text-[10px] text-muted-foreground">10 Yrs</span>
+                  <label className="font-body text-sm font-medium text-muted-foreground flex items-center gap-1.5">
+                    <Calendar size={13} className="text-[hsl(208,90%,45%)]" />
+                    Loan Tenure
+                  </label>
+                  <div className="flex gap-2">
+                    {[{ label: "5 Yrs", months: 60 }, { label: "7 Yrs", months: 84 }, { label: "10 Yrs", months: 120 }].map((opt) => (
+                      <button
+                        key={opt.months}
+                        type="button"
+                        onClick={() => setTenure(opt.months)}
+                        className={`flex-1 py-2.5 rounded-2xl font-body text-sm font-bold transition-all shadow-clay-sm ${
+                          tenure === opt.months
+                            ? "bg-[hsl(208,90%,45%)] text-white shadow-clay"
+                            : "bg-card text-muted-foreground hover:text-foreground"
+                        }`}
+                      >
+                        {opt.label}
+                      </button>
+                    ))}
                   </div>
                 </div>
 
@@ -527,7 +516,7 @@ const EMICalculator = () => {
               </Link>
             </Button>
             <p className="font-body text-xs text-muted-foreground mt-3 max-w-lg mx-auto">
-              Indicative figures only · Subject to credit assessment · Rates starting from 16% p.a. · RBI-registered NBFC
+              Indicative figures only · Subject to credit assessment · Rates starting from 18% p.a. · RBI-registered NBFC
             </p>
           </motion.div>
 

@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 import { Brain, TrendingUp, ShieldCheck, Clock, Eye, Fingerprint, Zap } from "lucide-react";
 
 const features = [
-  { icon: Brain, title: "Smart Underwriting", desc: "ML models analyse 200+ data points — property value, bank statements, bureau scores — to assess risk in minutes.", tint: "bg-gradient-coral", stat: "200+", statLabel: "Data points" },
-  { icon: TrendingUp, title: "Dynamic Pricing", desc: "AI-driven rates tailored to your property value and profile. Stronger collateral means better rates — transparent and fair.", tint: "bg-gradient-mint", stat: "Real-time", statLabel: "Optimization" },
-  { icon: ShieldCheck, title: "Fraud Detection", desc: "Real-time anomaly detection powered by deep learning protects every transaction and document submission.", tint: "bg-gradient-lavender", stat: "99.9%", statLabel: "Accuracy" },
-  { icon: Clock, title: "Instant Decisioning", desc: "Automated workflows cut processing from weeks to hours. Get your sanction letter the same day.", tint: "bg-gradient-sunset", stat: "<24h", statLabel: "Decision time" },
-  { icon: Eye, title: "Document Intelligence", desc: "OCR and NLP-powered processing extracts and verifies KYC, financials, and property documents automatically.", tint: "bg-gradient-mint", stat: "Auto", statLabel: "Extraction" },
+  { icon: Brain, title: "Bureau-Led Underwriting", desc: "We use bureau credit data and property valuations, combined with our field team's assessment, to make informed credit decisions. Technology aids; our officers decide.", tint: "bg-gradient-coral", stat: "Human", statLabel: "Review" },
+  { icon: ShieldCheck, title: "PII Security", desc: "All personal and financial data is encrypted end-to-end. Your information is never sold or shared with third parties without your explicit consent.", tint: "bg-gradient-lavender", stat: "Encrypted", statLabel: "Always" },
+  { icon: TrendingUp, title: "Consent-Led Data Use", desc: "We collect only what you share, for the purpose you authorise. Our data governance is built to RBI's digital lending guidelines — no surprise usage.", tint: "bg-gradient-mint", stat: "RBI", statLabel: "Compliant" },
+  { icon: Clock, title: "Digital Journey", desc: "From application to disbursal — submit documents online, track your status, and receive communications digitally. No branch visit required.", tint: "bg-gradient-sunset", stat: "Online", statLabel: "End-to-end" },
+  { icon: Eye, title: "Document Verification", desc: "Our team uses technology-assisted tools to verify KYC, identity, and property documents more accurately — reducing delays and manual errors.", tint: "bg-gradient-mint", stat: "Assisted", statLabel: "Verification" },
   { icon: Fingerprint, title: "Digital KYC", desc: "Aadhaar e-KYC, Video KYC, and PAN verification — complete identity verification without visiting a branch.", tint: "bg-gradient-coral", stat: "Zero", statLabel: "Branch visits" },
 ];
 
@@ -39,15 +39,15 @@ const AISection = () => {
           className="text-center mb-14 md:mb-20"
         >
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-5">
-            <Zap size={12} /> AI-Native Platform
+            <Zap size={12} /> Technology & Data
           </span>
           <h2 className="font-display text-3xl md:text-5xl lg:text-[3.5rem] font-extrabold text-foreground tracking-tight leading-[1.1] mb-4">
-            Every Decision,
+            Responsible Technology,
             <br />
-            <span className="text-gradient-coral">Powered by AI</span>
+            <span className="text-gradient-coral">Trusted Lending</span>
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-lg mx-auto font-body leading-relaxed">
-            Every layer of Prayaan Capital is infused with intelligence — from onboarding to disbursement.
+            We use technology to serve you better — not to replace human judgment. Every credit decision has a human in the loop.
           </p>
         </motion.div>
 

@@ -1,18 +1,14 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Home, TrendingUp, Plug, Users, ArrowRight } from "lucide-react";
+import { Home, TrendingUp, Users, ArrowRight } from "lucide-react";
 
-/**
- * Audience pathways — one clear entry + conversion route per persona,
- * so the homepage serves borrowers, investors, partners and job-seekers.
- */
 const audiences = [
   {
     icon: Home,
     tint: "bg-gradient-coral",
     label: "For Borrowers",
     title: "Unlock your property",
-    desc: "Secured business loans from ₹5L to ₹50L, with AI-assisted decisions in 48 hours.",
+    desc: "Secured business loans from ₹5L to ₹50L, with decisions within 48 hours of complete documentation.",
     cta: "Apply for a Loan",
     to: "/eligibility",
   },
@@ -21,25 +17,16 @@ const audiences = [
     tint: "bg-gradient-mint",
     label: "For Investors & Lenders",
     title: "Partner with a growing NBFC",
-    desc: "Reports, governance and RBI disclosures for investors and co-lenders backing our journey.",
+    desc: "Reports, governance and RBI disclosures for investors backing our journey.",
     cta: "Investor Relations",
-    to: "/investors",
-  },
-  {
-    icon: Plug,
-    tint: "bg-gradient-lavender",
-    label: "For Tech & Biz Partners",
-    title: "Build & co-lend with us",
-    desc: "Integrate with our AI-native platform or partner on origination, data and co-lending.",
-    cta: "Explore Partnerships",
-    to: "/partner-with-us",
+    to: "/investor-relations",
   },
   {
     icon: Users,
     tint: "bg-gradient-sunset",
     label: "For Job Seekers",
     title: "Grow your career here",
-    desc: "NBFC and technology roles for people who want to build consequential fintech for Bharat.",
+    desc: "Credit, operations, sales, compliance and technology roles for people who want to build consequential fintech for Bharat.",
     cta: "View Openings",
     to: "/careers",
   },
@@ -78,7 +65,7 @@ const AudienceSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 max-w-6xl mx-auto"
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 max-w-5xl mx-auto"
         >
           {audiences.map((a) => (
             <motion.div key={a.label} variants={cardAnim}>
