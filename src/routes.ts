@@ -10,32 +10,33 @@ import Eligibility from "./pages/Eligibility";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 import GrievanceRedressal from "./pages/GrievanceRedressal";
-import FairPracticeCode from "./pages/FairPracticeCode";
-import ProductDetail from "./pages/products/ProductDetail";
+import Policies from "./pages/Policies";
+// import FairPracticeCode from "./pages/FairPracticeCode";   // disabled — kept for reference
+// import ProductDetail from "./pages/products/ProductDetail"; // disabled — only /products listing kept
 import EMICalc from "./pages/calculators/EMICalc";
-import EligibilityCalc from "./pages/calculators/EligibilityCalc";
-import ForeclosureCalc from "./pages/calculators/ForeclosureCalc";
-import HowToApply from "./pages/HowToApply";
+// import EligibilityCalc from "./pages/calculators/EligibilityCalc"; // disabled
+// import ForeclosureCalc from "./pages/calculators/ForeclosureCalc"; // disabled
+// import HowToApply from "./pages/HowToApply";   // disabled
 import DocumentChecklist from "./pages/DocumentChecklist";
 import InterestRatesAndCharges from "./pages/InterestRatesAndCharges";
 import FAQs from "./pages/FAQs";
-import Downloads from "./pages/Downloads";
-import CustomerLogin from "./pages/CustomerLogin";
-import InterestRatePolicy from "./pages/regulatory/InterestRatePolicy";
-import KYCAMLPolicy from "./pages/regulatory/KYCAMLPolicy";
-import CodeOfConductRecovery from "./pages/regulatory/CodeOfConductRecovery";
-import WhistleblowerPolicy from "./pages/regulatory/WhistleblowerPolicy";
-import CSRPolicy from "./pages/regulatory/CSRPolicy";
-import CitizensCharter from "./pages/regulatory/CitizensCharter";
-import MITC from "./pages/regulatory/MITC";
-import NoticesDisclosures from "./pages/regulatory/NoticesDisclosures";
-import CookiePolicy from "./pages/regulatory/CookiePolicy";
-import Disclaimer from "./pages/regulatory/Disclaimer";
-import OmbudsmanScheme from "./pages/regulatory/OmbudsmanScheme";
+// import Downloads from "./pages/Downloads";   // disabled
+// import CustomerLogin from "./pages/CustomerLogin";   // disabled
+// import InterestRatePolicy from "./pages/regulatory/InterestRatePolicy";   // disabled
+// import KYCAMLPolicy from "./pages/regulatory/KYCAMLPolicy";   // disabled
+// import CodeOfConductRecovery from "./pages/regulatory/CodeOfConductRecovery";   // disabled
+// import WhistleblowerPolicy from "./pages/regulatory/WhistleblowerPolicy";   // disabled
+// import CSRPolicy from "./pages/regulatory/CSRPolicy";   // disabled
+// import CitizensCharter from "./pages/regulatory/CitizensCharter";   // disabled
+// import MITC from "./pages/regulatory/MITC";   // disabled
+// import NoticesDisclosures from "./pages/regulatory/NoticesDisclosures";   // disabled
+// import CookiePolicy from "./pages/regulatory/CookiePolicy";   // disabled
+// import Disclaimer from "./pages/regulatory/Disclaimer";   // disabled
+// import OmbudsmanScheme from "./pages/regulatory/OmbudsmanScheme";   // disabled
 import InvestorRelations from "./pages/InvestorRelations";
-import Blog from "./pages/Blog";
+// import Blog from "./pages/Blog";   // disabled
 import CaseStudies from "./pages/CaseStudies";
-import PartnerWithUs from "./pages/PartnerWithUs";
+// import PartnerWithUs from "./pages/PartnerWithUs";   // disabled
 import BranchLocator from "./pages/BranchLocator";
 import Sitemap from "./pages/Sitemap";
 import NACHInstructions from "./pages/NACHInstructions";
@@ -45,7 +46,7 @@ import Customer from "./pages/Customer";
 import CustomerPayments from "./pages/CustomerPayments";
 import RBIDisclosures from "./pages/RBIDisclosures";
 import ThankYou from "./pages/ThankYou";
-import { productData } from "./data/products";
+// import { productData } from "./data/products"; // used only by the disabled /products/:slug route
 
 export interface AppRoute {
   path: string;
@@ -62,42 +63,44 @@ export const appRoutes: AppRoute[] = [
   { path: "/news", component: News },
   { path: "/contact", component: Contact },
   { path: "/products", component: Products },
-  {
-    path: "/products/:slug",
-    component: ProductDetail,
-    sampleParams: Object.keys(productData).map((s) => `/products/${s}`),
-  },
+  // Disabled — only the /products listing is kept, no per-product detail pages
+  // {
+  //   path: "/products/:slug",
+  //   component: ProductDetail,
+  //   sampleParams: Object.keys(productData).map((s) => `/products/${s}`),
+  // },
   { path: "/eligibility", component: Eligibility },
   { path: "/calculators/emi", component: EMICalc },
-  { path: "/calculators/eligibility", component: EligibilityCalc },
-  { path: "/calculators/foreclosure", component: ForeclosureCalc },
-  { path: "/how-to-apply", component: HowToApply },
+  // { path: "/calculators/eligibility", component: EligibilityCalc },   // disabled
+  // { path: "/calculators/foreclosure", component: ForeclosureCalc },   // disabled
+  // { path: "/how-to-apply", component: HowToApply },   // disabled
   { path: "/document-checklist", component: DocumentChecklist },
   { path: "/interest-rates-and-charges", component: InterestRatesAndCharges },
   { path: "/faqs", component: FAQs },
-  { path: "/downloads", component: Downloads },
-  { path: "/customer-login", component: CustomerLogin },
-  { path: "/blog", component: Blog },
+  // { path: "/downloads", component: Downloads },   // disabled
+  // { path: "/customer-login", component: CustomerLogin },   // disabled
+  // { path: "/blog", component: Blog },   // disabled
   { path: "/case-studies", component: CaseStudies },
   { path: "/investor-relations", component: InvestorRelations },
-  { path: "/partner-with-us", component: PartnerWithUs },
+  // { path: "/partner-with-us", component: PartnerWithUs },   // disabled
   { path: "/branch-locator", component: BranchLocator },
   { path: "/sitemap", component: Sitemap },
+  { path: "/policies", component: Policies },
   { path: "/privacy-policy", component: PrivacyPolicy },
   { path: "/terms", component: Terms },
   { path: "/grievance-redressal", component: GrievanceRedressal },
-  { path: "/fair-practice-code", component: FairPracticeCode },
-  { path: "/interest-rate-policy", component: InterestRatePolicy },
-  { path: "/kyc-aml-policy", component: KYCAMLPolicy },
-  { path: "/code-of-conduct-recovery", component: CodeOfConductRecovery },
-  { path: "/whistleblower-policy", component: WhistleblowerPolicy },
-  { path: "/csr-policy", component: CSRPolicy },
-  { path: "/citizens-charter", component: CitizensCharter },
-  { path: "/most-important-terms", component: MITC },
-  { path: "/notices-disclosures", component: NoticesDisclosures },
-  { path: "/cookie-policy", component: CookiePolicy },
-  { path: "/disclaimer", component: Disclaimer },
-  { path: "/ombudsman-scheme", component: OmbudsmanScheme },
+  // { path: "/fair-practice-code", component: FairPracticeCode },   // disabled
+  // { path: "/interest-rate-policy", component: InterestRatePolicy },   // disabled
+  // { path: "/kyc-aml-policy", component: KYCAMLPolicy },   // disabled
+  // { path: "/code-of-conduct-recovery", component: CodeOfConductRecovery },   // disabled
+  // { path: "/whistleblower-policy", component: WhistleblowerPolicy },   // disabled
+  // { path: "/csr-policy", component: CSRPolicy },   // disabled
+  // { path: "/citizens-charter", component: CitizensCharter },   // disabled
+  // { path: "/most-important-terms", component: MITC },   // disabled
+  // { path: "/notices-disclosures", component: NoticesDisclosures },   // disabled
+  // { path: "/cookie-policy", component: CookiePolicy },   // disabled
+  // { path: "/disclaimer", component: Disclaimer },   // disabled
+  // { path: "/ombudsman-scheme", component: OmbudsmanScheme },   // disabled
   { path: "/nach-instructions", component: NACHInstructions },
 
   // New pages
@@ -109,15 +112,15 @@ export const appRoutes: AppRoute[] = [
   { path: "/thank-you", component: ThankYou },
 
   // Route aliases (spec URLs → existing components)
-  { path: "/investors", component: InvestorRelations },
+  // { path: "/investors", component: InvestorRelations },   // disabled
   { path: "/leadership", component: Team },
   { path: "/branches", component: BranchLocator },
   { path: "/grievance", component: GrievanceRedressal },
   { path: "/customer/grievance", component: GrievanceRedressal },
   { path: "/customer/calculators", component: EMICalc },
   { path: "/apply", component: Eligibility },
-  { path: "/success-stories", component: CaseStudies },
-  { path: "/partnerships", component: PartnerWithUs },
+  // { path: "/success-stories", component: CaseStudies },   // disabled
+  // { path: "/partnerships", component: PartnerWithUs },   // disabled
   { path: "/faq", component: FAQs },
   // Note: /404 and any unknown path are handled by the catch-all route in App.tsx
 ];

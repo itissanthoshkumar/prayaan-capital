@@ -19,34 +19,19 @@ const customerInfo: FooterLink[] = [
 ];
 
 const policiesGuidelines: FooterLink[] = [
-  { label: "Fair Practice Code", href: "/fair-practice-code" },
-  { label: "Interest Rate Policy", href: "/interest-rate-policy" },
-  { label: "KYC & AML Policy", href: "/kyc-aml-policy" },
-  { label: "Code of Conduct – Recovery", href: "/code-of-conduct-recovery" },
-  { label: "Whistleblower Policy", href: "/whistleblower-policy" },
-  { label: "CSR Policy", href: "/csr-policy" },
-  { label: "Cookie Policy", href: "/cookie-policy" },
+  { label: "Policies", href: "/policies" },
 ];
 
 const compliances: FooterLink[] = [
   { label: "RBI Disclosures", href: "/rbi-disclosures" },
-  { label: "Citizens Charter", href: "/citizens-charter" },
-  { label: "Most Important Terms & Conditions", href: "/most-important-terms" },
-  { label: "Notices & Disclosures", href: "/notices-disclosures" },
-  { label: "Ombudsman Scheme", href: "/ombudsman-scheme" },
   { label: "Interest Rates & Charges", href: "/interest-rates-and-charges" },
-  { label: "Disclaimer", href: "/disclaimer" },
   { label: "Terms of Service", href: "/terms" },
 ];
 
 const customerEducation: FooterLink[] = [
-  { label: "How to Apply", href: "/how-to-apply" },
   { label: "Document Checklist", href: "/document-checklist" },
   { label: "FAQs", href: "/faqs" },
   { label: "EMI Calculator", href: "/calculators/emi" },
-  { label: "Eligibility Calculator", href: "/calculators/eligibility" },
-  { label: "Foreclosure Calculator", href: "/calculators/foreclosure" },
-  { label: "Downloads", href: "/downloads" },
   { label: "Sitemap", href: "/sitemap" },
 ];
 

@@ -12,7 +12,7 @@ const products = [
     desc: "Unlock the value of your residential, commercial or industrial property. Use the funds for any need — with long tenures and rates starting from 16% p.a.",
     features: ["Up to 60% LTV", "Any end-use", "Flexi tenure"],
     tint: "bg-gradient-coral",
-    href: "/products/loan-against-property",
+    href: "/products",
   },
   {
     icon: Home,
@@ -22,7 +22,7 @@ const products = [
     desc: "Buy, build or renovate your home with affordable EMIs, minimal paperwork and doorstep service in the communities that need it most.",
     features: ["From 16% p.a.", "Long tenure", "Doorstep service"],
     tint: "bg-gradient-mint",
-    href: "/products/housing-loan",
+    href: "/products",
   },
 ];
 

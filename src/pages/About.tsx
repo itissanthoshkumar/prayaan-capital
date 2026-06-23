@@ -92,11 +92,6 @@ const management: Person[] = [
   },
 ];
 
-const investors = [
-  { name: "Peak XV Partners", note: "Series A · ₹110 Cr", sub: "Formerly Sequoia Capital India", icon: TrendingUp },
-  { name: "Accion Venture Lab", note: "Seed · US$1.2M", sub: "Global financial-inclusion investor", icon: Landmark },
-];
-
 const facts = [
   { icon: ShieldCheck, label: "RBI-registered NBFC", sub: "CoR granted 6 June 2019" },
   { icon: Banknote, label: "Incorporated 2018", sub: "Chennai, Tamil Nadu" },
@@ -219,24 +214,29 @@ const About = () => {
               <Sparkles size={12} /> Backed By
             </span>
             <h2 className="font-display text-2xl md:text-4xl font-bold text-foreground">
-              Capital from <span className="text-gold-deep">mission-aligned</span> investors
+              Backed by a <span className="text-gold-deep">mission-aligned</span> partner
             </h2>
           </motion.div>
 
-          {/* Investor cards */}
-          <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid sm:grid-cols-2 gap-5 md:gap-6 max-w-3xl mx-auto mb-8">
-            {investors.map((inv) => (
-              <motion.div key={inv.name} variants={cardAnim} className="clay-surface p-6 flex items-center gap-4">
-                <span className="w-12 h-12 rounded-2xl bg-gradient-sunset shadow-clay-sm flex items-center justify-center shrink-0">
-                  <inv.icon size={22} className="text-white" />
-                </span>
-                <div>
-                  <p className="font-display text-base font-bold text-foreground leading-tight">{inv.name}</p>
-                  <p className="font-mono text-xs font-semibold text-primary mt-0.5">{inv.note}</p>
-                  <p className="font-body text-xs text-muted-foreground">{inv.sub}</p>
-                </div>
-              </motion.div>
-            ))}
+          {/* Lead investor — Peak XV Partners (standout) */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative max-w-2xl mx-auto clay-surface p-8 md:p-12 text-center overflow-hidden mb-8"
+          >
+            <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-sunset" />
+            <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-gradient-coral opacity-10 blur-3xl pointer-events-none" />
+            <p className="font-body text-[11px] font-bold text-muted-foreground uppercase tracking-[0.2em] mb-4">Lead Investor</p>
+            <p className="font-display text-4xl md:text-6xl font-extrabold leading-none tracking-tight">
+              <span className="text-gold-deep">Peak XV</span> <span className="text-foreground">Partners</span>
+            </p>
+            <p className="font-body text-sm text-muted-foreground mt-3">Formerly Sequoia Capital India &amp; SEA</p>
+            <div className="flex flex-wrap items-center justify-center gap-3 mt-7">
+              <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold font-mono">Series A · ₹110 Cr</span>
+              <span className="px-4 py-2 rounded-full bg-secondary text-secondary-foreground text-sm font-semibold">2026</span>
+            </div>
           </motion.div>
 
           {/* Company facts strip */}
