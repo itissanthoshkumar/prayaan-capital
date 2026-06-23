@@ -27,7 +27,7 @@ const EligibilityCalc = () => {
 
   return (
     <Layout>
-      <section className="pt-24 pb-8 md:pt-32 md:pb-12 bg-hero relative overflow-hidden">
+      <section className="pt-24 pb-8 md:pt-32 md:pb-10 bg-hero relative overflow-hidden">
         <AIFloatingElements />
         <div className="container mx-auto px-5 relative z-10">
           <div className="grid lg:grid-cols-[1fr_340px] gap-8 items-center">

@@ -230,7 +230,7 @@ const TestimonialsSection = () => {
             ))}
           </div>
           <div className="ml-2">
-            <p className="text-xs font-display font-bold text-foreground">10,000+ families</p>
+            <p className="text-xs font-display font-bold text-foreground">1,000+ families</p>
             <p className="text-[10px] text-muted-foreground font-body">trust Prayaan Capital</p>
           </div>
         </motion.div>

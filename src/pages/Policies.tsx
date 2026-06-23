@@ -26,7 +26,7 @@ const itemAnim = {
 const Policies = () => (
   <Layout>
     {/* Hero */}
-    <section className="pt-24 pb-10 md:pt-32 md:pb-14 bg-hero relative overflow-hidden">
+    <section className="pt-24 pb-8 md:pt-32 md:pb-10 bg-hero relative overflow-hidden">
       <AIFloatingElements />
       <div className="container mx-auto px-5 relative z-10">
         <div className="grid lg:grid-cols-[1fr_320px] gap-8 items-center">
@@ -54,26 +54,28 @@ const Policies = () => (
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="max-w-3xl mx-auto clay-surface p-2 md:p-3 divide-y divide-border/50"
+          className="grid sm:grid-cols-2 gap-4 md:gap-5 max-w-4xl mx-auto"
         >
           {policies.map((p) => (
             <motion.a
               key={p.label}
               variants={itemAnim}
+              whileHover={{ y: -4, transition: { duration: 0.2 } }}
               href={p.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-4 px-4 md:px-5 py-4 md:py-5 rounded-2xl hover:bg-muted/60 transition-colors"
+              className="group relative clay-surface p-6 clay-press flex items-start gap-4 overflow-hidden"
             >
-              <span className="w-10 h-10 rounded-xl bg-gradient-sunset shadow-clay-sm flex items-center justify-center shrink-0">
-                <p.icon size={18} className="text-white" />
+              <div className="absolute top-0 left-6 right-6 h-[3px] rounded-full bg-gradient-sunset opacity-80" />
+              <span className="w-12 h-12 rounded-2xl bg-gradient-sunset shadow-clay-sm flex items-center justify-center shrink-0">
+                <p.icon size={22} className="text-white" />
               </span>
-              <span className="flex-1 font-display text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors">
-                {p.label}
-              </span>
-              <span className="text-xs font-bold text-primary uppercase tracking-wide shrink-0">
-                View Policy
-              </span>
+              <div className="flex-1 min-w-0">
+                <h3 className="font-display text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors leading-snug">
+                  {p.label}
+                </h3>
+                <span className="inline-block text-xs font-bold text-primary uppercase tracking-wide mt-2">View Policy</span>
+              </div>
             </motion.a>
           ))}
         </motion.div>

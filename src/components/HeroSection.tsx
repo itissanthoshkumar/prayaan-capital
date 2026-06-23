@@ -167,7 +167,7 @@ const HeroSection = () => {
             ))}
           </div>
           <p className="text-xs md:text-sm text-muted-foreground font-body">
-            <span className="font-bold text-foreground">10,000+ businesses</span> funded across South India
+            <span className="font-bold text-foreground">1,000+ businesses</span> funded across South India
           </p>
         </motion.div>
       </div>
@@ -190,7 +190,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 1 }}
             className="absolute -top-5 -left-6 clay-surface px-4 py-2.5 rounded-2xl shadow-xl border border-foreground/5"
           >
-            <p className="font-mono tabular-nums text-base font-bold text-primary leading-none">₹500 Cr+</p>
+            <p className="font-mono tabular-nums text-base font-bold text-primary leading-none">₹100 Cr+</p>
             <p className="font-body text-[9px] text-muted-foreground mt-1 uppercase tracking-[0.12em]">Disbursed</p>
           </motion.div>
 

@@ -22,8 +22,8 @@ const CountUp = ({ to, prefix = "", suffix = "" }: { to: number; prefix?: string
 };
 
 const impact = [
-  { to: 10000, prefix: "", suffix: "+", label: "Businesses funded" },
-  { to: 500, prefix: "₹", suffix: " Cr+", label: "Disbursed" },
+  { to: 1000, prefix: "", suffix: "+", label: "Businesses funded" },
+  { to: 100, prefix: "₹", suffix: " Cr+", label: "Disbursed" },
   { to: 3, prefix: "", suffix: "", label: "States served", sub: "TN · AP · Telangana" },
 ];
 
@@ -37,7 +37,7 @@ const cases = [
 
 const CaseStudies = () => (
   <Layout>
-    <section className="pt-24 pb-8 md:pt-32 md:pb-12 bg-hero relative overflow-hidden">
+    <section className="pt-24 pb-8 md:pt-32 md:pb-10 bg-hero relative overflow-hidden">
       <AIFloatingElements />
       <div className="container mx-auto px-5 relative z-10">
         <div className="grid lg:grid-cols-[1fr_340px] gap-8 items-center">

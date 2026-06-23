@@ -17,7 +17,7 @@ const ThankYou = () => {
 
   return (
     <Layout>
-      <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-hero relative overflow-hidden min-h-[60vh] flex items-center">
+      <section className="pt-24 pb-8 md:pt-32 md:pb-10 bg-hero relative overflow-hidden min-h-[60vh] flex items-center">
         <AIFloatingElements />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div

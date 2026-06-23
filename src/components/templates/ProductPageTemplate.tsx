@@ -33,7 +33,7 @@ const ProductPageTemplate = ({ data }: { data: ProductPageData }) => {
   const Icon = data.icon;
   return (
     <Layout>
-      <section className="pt-24 pb-12 md:pt-32 md:pb-20 bg-hero relative overflow-hidden">
+      <section className="pt-24 pb-8 md:pt-32 md:pb-10 bg-hero relative overflow-hidden">
         <AIFloatingElements />
         <div className="container mx-auto px-5 relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">

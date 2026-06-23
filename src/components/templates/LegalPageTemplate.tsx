@@ -28,7 +28,7 @@ const LegalPageTemplate = ({ eyebrow = "Regulatory", title, subtitle, icon: Icon
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-24 pb-10 md:pt-32 md:pb-14 bg-hero relative overflow-hidden">
+      <section className="pt-24 pb-8 md:pt-32 md:pb-10 bg-hero relative overflow-hidden">
         <AIFloatingElements />
         <div className="container mx-auto px-5 relative z-10">
           <div className="grid lg:grid-cols-[1fr_320px] gap-8 items-center">

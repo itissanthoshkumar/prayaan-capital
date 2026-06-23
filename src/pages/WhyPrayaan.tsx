@@ -111,7 +111,7 @@ const SectionCard = ({ item, index }: { item: typeof approach[0]; index: number 
 const WhyPrayaan = () => {
   return (
     <Layout>
-      <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-hero relative overflow-hidden">
+      <section className="pt-24 pb-8 md:pt-32 md:pb-10 bg-hero relative overflow-hidden">
         <AIFloatingElements />
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-[1fr_340px] gap-8 items-center">
@@ -311,8 +311,8 @@ const WhyPrayaan = () => {
           >
             {[
               { stat: "RBI Registered", desc: "NBFC-ICC since June 2019", icon: "✓" },
-              { stat: "10,000+", desc: "families funded", icon: "👥" },
-              { stat: "₹500+ Crore", desc: "in disbursals", icon: "💰" },
+              { stat: "1,000+", desc: "families funded", icon: "👥" },
+              { stat: "₹100+ Crore", desc: "in disbursals", icon: "💰" },
             ].map((s, i) => (
               <motion.div
                 key={s.stat}

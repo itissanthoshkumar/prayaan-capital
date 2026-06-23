@@ -150,7 +150,7 @@ const About = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-24 pb-14 md:pt-32 md:pb-20 bg-hero relative overflow-hidden">
+      <section className="pt-24 pb-8 md:pt-32 md:pb-10 bg-hero relative overflow-hidden">
         <AIFloatingElements />
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-[1fr_340px] gap-8 items-center">
