@@ -55,6 +55,13 @@ const groups: { title: string; links: SitemapLink[] }[] = [
       { label: "Interest Rates & Charges", href: PDF_RATES, external: true },
     ],
   },
+  {
+    title: "Utility",
+    links: [
+      { label: "Thank You", href: "/thank-you" },
+      { label: "Sitemap", href: "/sitemap" },
+    ],
+  },
 ];
 
 const Sitemap = () => (
