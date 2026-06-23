@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { Fragment } from "react";
 import {
   Users, MapPin, HeartHandshake, FileCheck, RefreshCw,
-  ShieldCheck, BadgeDollarSign, Brain, Sparkles, CheckCircle2, Check, X, Scale,
+  ShieldCheck, BadgeDollarSign, Brain, Info, CheckCircle2, Check, X, Scale,
   Landmark, Banknote,
 } from "lucide-react";
 
@@ -117,7 +117,7 @@ const WhyPrayaan = () => {
           <div className="grid lg:grid-cols-[1fr_340px] gap-8 items-center">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
               <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-4">
-                <Sparkles size={12} /> Why Prayaan Capital
+                <Info size={12} /> About Prayaan
               </span>
               <h1 className="font-display text-3xl md:text-6xl font-bold text-foreground mt-3 mb-5 leading-tight">
                 Built for the <span className="text-gradient-coral">borrowers banks overlook</span>

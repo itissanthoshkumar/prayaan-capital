@@ -22,7 +22,7 @@ const CountUp = ({ to, prefix = "", suffix = "" }: { to: number; prefix?: string
 };
 
 const impact = [
-  { to: 1000, prefix: "", suffix: "+", label: "Businesses funded" },
+  { to: 1000, prefix: "", suffix: "+", label: "Families funded" },
   { to: 100, prefix: "₹", suffix: " Cr+", label: "Disbursed" },
   { to: 3, prefix: "", suffix: "", label: "States served", sub: "TN · AP · Telangana" },
 ];

@@ -73,8 +73,8 @@ const itemAnim = {
 const DocGroup = ({ g }: { g: Group }) => (
   <div>
     <div className="flex items-center gap-3 mb-5">
-      <span className="w-11 h-11 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
-        <g.icon size={20} className="text-primary" />
+      <span className="w-11 h-11 rounded-2xl bg-accent/10 flex items-center justify-center shrink-0">
+        <g.icon size={20} className="text-accent" />
       </span>
       <div>
         <h2 className="font-display text-lg md:text-2xl font-bold text-foreground leading-tight">
@@ -100,7 +100,7 @@ const DocGroup = ({ g }: { g: Group }) => (
           rel="noopener noreferrer"
           className="group clay-surface clay-press flex items-center gap-3 px-4 py-3.5"
         >
-          <span className="w-9 h-9 rounded-xl bg-secondary flex items-center justify-center shrink-0">
+          <span className="w-9 h-9 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
             <FileText size={16} className="text-accent" />
           </span>
           <div className="flex-1 min-w-0">

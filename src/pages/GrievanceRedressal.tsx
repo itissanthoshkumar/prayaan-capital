@@ -38,7 +38,7 @@ const levels = [
   },
   {
     level: "Level 3",
-    label: "Principal Nodal Officer",
+    label: "Nodal Officer",
     heading: "Principal Nodal Officer",
     intro:
       "If you are not satisfied with the resolution provided by the Grievance Redressal Officer, or if your query remains unaddressed for over 15 days, you can contact the Principal Nodal Officer.",

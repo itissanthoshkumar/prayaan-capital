@@ -167,7 +167,7 @@ const HeroSection = () => {
             ))}
           </div>
           <p className="text-xs md:text-sm text-muted-foreground font-body">
-            <span className="font-bold text-foreground">1,000+ businesses</span> funded across South India
+            <span className="font-bold text-foreground">1,000+ families</span> funded across South India
           </p>
         </motion.div>
       </div>

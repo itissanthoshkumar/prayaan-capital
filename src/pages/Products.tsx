@@ -1,7 +1,7 @@
 import HeroIllustration from "@/components/HeroIllustration";
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
-import { Building2, Landmark, Home, Wallet, CheckCircle, ArrowRight, Brain } from "lucide-react";
+import { Building2, Landmark, Home, Wallet, CheckCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import AIFloatingElements, { AIPulse } from "@/components/AIFloatingElements";
@@ -74,7 +74,7 @@ const Products = () => {
             <div>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-4">
-              <Brain size={12} /> AI-Underwritten Products
+              <Building2 size={12} /> Our Products
             </span>
             <h1 className="font-display text-3xl md:text-6xl font-bold text-foreground mt-3 mb-5 leading-tight">
               Secured business loans for <span className="text-gradient-coral">India's SMEs</span>

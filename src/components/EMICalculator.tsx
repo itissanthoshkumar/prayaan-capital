@@ -151,7 +151,7 @@ const EMICalculator = () => {
             <Calculator size={12} /> EMI Calculator
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-extrabold text-foreground tracking-tight leading-[1.1] mb-4">
-            Plan Your <span className="text-gradient-coral">Repayment</span>
+            Plan Your <br className="sm:hidden" /><span className="text-gradient-coral">Repayment</span>
           </h2>
           <p className="font-body text-base md:text-lg text-muted-foreground max-w-lg mx-auto">
             Move the sliders or type a value to see your monthly EMI and full cost breakdown instantly.

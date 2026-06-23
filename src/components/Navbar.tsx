@@ -32,6 +32,7 @@ const Navbar = () => {
   const location = useLocation();
 
   const isActive = (href: string) => location.pathname === href;
+  const isChildActive = (children: { href: string }[]) => children.some((c) => location.pathname === c.href);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -60,7 +61,7 @@ const Navbar = () => {
                 onMouseEnter={() => setOpenDropdown(link.label)}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                <button className="flex items-center gap-1 text-[13px] font-medium text-foreground/75 hover:text-foreground transition-colors px-3 py-2 rounded-md font-body">
+                <button className={`flex items-center gap-1 text-[13px] font-medium transition-colors px-3 py-2 rounded-md font-body ${isChildActive(link.children) ? "text-foreground underline underline-offset-4 decoration-primary decoration-2" : "text-foreground/75 hover:text-foreground"}`}>
                   {link.label}
                   <ChevronDown size={12} className={`transition-transform ${openDropdown === link.label ? "rotate-180" : ""}`} />
                 </button>

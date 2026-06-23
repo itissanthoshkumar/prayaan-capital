@@ -11,28 +11,28 @@ const services = [
     title: "Payments",
     desc: "Pay your EMI online, via NEFT/RTGS, or set up auto-debit for hassle-free repayment.",
     href: "/customer/payments",
-    tint: "bg-gradient-coral",
+    tint: "bg-accent",
   },
   {
     icon: MessageCircle,
     title: "Grievance Redressal",
     desc: "Submit a complaint, track its status, and escalate if needed. We resolve in 30 days.",
     href: "/grievance-redressal",
-    tint: "bg-gradient-mint",
+    tint: "bg-accent",
   },
   {
     icon: Calculator,
     title: "Calculators",
     desc: "Estimate your EMI, check eligibility, or calculate foreclosure amounts before you call.",
     href: "/calculators/emi",
-    tint: "bg-gradient-lavender",
+    tint: "bg-accent",
   },
   {
     icon: ClipboardList,
     title: "Apply Now",
-    desc: "Start a new loan application in minutes. AI pre-qualification with no credit score impact.",
+    desc: "Start a new loan application in minutes. Apply online and get a decision in 48 hours.",
     href: "/eligibility",
-    tint: "bg-gradient-sunset",
+    tint: "bg-accent",
   },
 ];
 

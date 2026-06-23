@@ -114,7 +114,8 @@ const sections = [
     content: (
       <>
         <p>{`In accordance with Information Technology Act, 2000 and rules made thereunder, the contact details of the Company's grievance officer are provided below, in the event the User has any questions or complaints regarding the Company's Privacy Policy or practices:`}</p>
-        <p>{`Grievance Officer Contact Number: +91 9820186402`}</p>
+        <p>{`Grievance Redressal Officer: Harish Kumar E`}</p>
+        <p>{`Phone: +91-9600133756 | Email: gro@prayaancapital.com`}</p>
       </>
     ),
   },

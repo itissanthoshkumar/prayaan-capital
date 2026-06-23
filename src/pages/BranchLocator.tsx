@@ -358,7 +358,7 @@ const BranchLocator = () => {
               className="clay-surface p-5 md:p-6 lg:sticky lg:top-24"
             >
               <div className="flex items-center justify-between mb-5">
-                <h2 className="font-display text-sm font-bold text-foreground">Filter Branches</h2>
+                <h2 className="font-display text-sm font-bold text-foreground">Filter by District</h2>
                 <button
                   onClick={reset}
                   className="inline-flex items-center gap-1 font-body text-[11px] font-semibold text-primary hover:underline"
@@ -367,45 +367,20 @@ const BranchLocator = () => {
                 </button>
               </div>
 
-              <div className="space-y-4">
-                <div>
-                  <label className="font-body text-[11px] font-bold text-muted-foreground uppercase tracking-wide block mb-1.5">
-                    State
-                  </label>
-                  <Select value={stateFilter} onValueChange={setStateAndReset}>
-                    <SelectTrigger className="rounded-2xl border-0 bg-muted shadow-clay-sm font-body text-sm">
-                      <SelectValue placeholder="Select state" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="all">All States</SelectItem>
-                      {states.map((s) => (
-                        <SelectItem key={s} value={s}>{s}</SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div>
-                  <label className="font-body text-[11px] font-bold text-muted-foreground uppercase tracking-wide block mb-1.5">
-                    District
-                  </label>
-                  <Select
-                    value={districtFilter}
-                    onValueChange={(v) => { setDistrictFilter(v); setVisible(BATCH_SIZE); }}
-                  >
-                    <SelectTrigger className="rounded-2xl border-0 bg-muted shadow-clay-sm font-body text-sm">
-                      <SelectValue placeholder="Select district" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="all">All Districts</SelectItem>
-                      {districts.map((d) => (
-                        <SelectItem key={d} value={d}>{d}</SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
-
-              </div>
+              <Select
+                value={districtFilter}
+                onValueChange={(v) => { setDistrictFilter(v); setVisible(BATCH_SIZE); }}
+              >
+                <SelectTrigger className="rounded-2xl border-0 bg-muted shadow-clay-sm font-body text-sm">
+                  <SelectValue placeholder="Select district" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All Districts</SelectItem>
+                  {districts.map((d) => (
+                    <SelectItem key={d} value={d}>{d}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
 
               {/* Help strip */}
               <div className="mt-6 pt-5 border-t border-border/60">

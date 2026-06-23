@@ -99,7 +99,7 @@ const facts = [
 ];
 
 /* Consistent brand accent on every card (kept in sync: same bar + ring) */
-const ACCENT = "bg-gradient-sunset";
+const ACCENT = "bg-primary/25";
 const initials = (name: string) =>
   name.replace(/\(.*\)/, "").trim().split(/\s+/).map((n) => n[0]).slice(0, 2).join("");
 

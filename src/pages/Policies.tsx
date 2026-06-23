@@ -47,7 +47,7 @@ const Policies = () => (
     </section>
 
     {/* Policy list */}
-    <section className="py-12 md:py-16 bg-background relative">
+    <section className="py-8 md:py-10 bg-background relative">
       <div className="container mx-auto px-5 relative z-10">
         <motion.div
           variants={container}
