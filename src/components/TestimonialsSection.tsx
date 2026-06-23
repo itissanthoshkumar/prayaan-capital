@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Quote, Star, ArrowLeft, ArrowRight, Brain, Sparkles } from "lucide-react";
+import { Quote, Star, ArrowLeft, ArrowRight, Users } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
 
 import testimonialRajesh from "@/assets/pexels-ravikant-5807481.jpg";
@@ -92,7 +92,7 @@ const TestimonialsSection = () => {
           className="text-center mb-14 md:mb-20"
         >
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-5">
-            <Brain size={12} /> Customer Stories
+            <Users size={12} /> Customer Stories
           </span>
           <h2 className="font-display text-3xl md:text-5xl lg:text-[3.5rem] font-extrabold text-foreground tracking-tight leading-[1.1] mb-4">
             Businesses we helped
@@ -129,10 +129,6 @@ const TestimonialsSection = () => {
                           alt={`${t.name} - ${t.business}, Prayaan Capital customer`}
                           className="w-full h-full object-cover"
                         />
-                        {/* AI verified badge */}
-                        <div className="absolute -bottom-1 -right-1 w-7 h-7 rounded-full bg-gradient-coral shadow-clay-sm flex items-center justify-center">
-                          <Sparkles size={11} className="text-white" />
-                        </div>
                       </div>
                     </div>
 
