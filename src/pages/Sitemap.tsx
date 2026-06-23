@@ -1,77 +1,58 @@
 import Layout from "@/components/Layout";
 import { Link } from "react-router-dom";
-import AIFloatingElements, { AIBadge } from "@/components/AIFloatingElements";
+import { ScrollText } from "lucide-react";
 
-const groups = [
+const PDF_RATES = "https://prayaancapital.com/assets/images/downloads/Interest%20Rates%20and%20Gradation%20of%20Risk%20Policy%20V4.0.pdf";
+
+type SitemapLink = { label: string; href: string; external?: boolean };
+
+const groups: { title: string; links: SitemapLink[] }[] = [
   {
-    title: "Main Pages",
+    title: "Company",
     links: [
-      ["Home", "/"],
-      ["About Us", "/about"],
-      ["Why Prayaan", "/why-prayaan"],
-      ["Leadership", "/leadership"],
-      ["Technology", "/technology"],
-      ["Careers", "/careers"],
-      ["Contact Us", "/contact"],
-      ["Apply Now", "/eligibility"],
-      ["Thank You", "/thank-you"],
+      { label: "Home", href: "/" },
+      { label: "About Prayaan", href: "/why-prayaan" },
+      { label: "Team", href: "/about" },
+      { label: "Technology", href: "/technology" },
+      { label: "Careers", href: "/careers" },
+      { label: "News", href: "/news" },
+      { label: "Contact Us", href: "/contact" },
     ],
   },
   {
-    title: "Products",
+    title: "Products & Apply",
     links: [
-      ["All Products", "/products"],
+      { label: "Our Products", href: "/products" },
+      { label: "Apply Now", href: "/eligibility" },
+      { label: "EMI Calculator", href: "/calculators/emi" },
+      { label: "Branch Locator", href: "/branch-locator" },
+      { label: "Case Studies", href: "/case-studies" },
     ],
   },
   {
     title: "Customer",
     links: [
-      ["Customer Hub", "/customer"],
-      ["Payments", "/customer/payments"],
-      ["Grievance", "/grievance-redressal"],
-      ["Calculators", "/calculators/emi"],
-      ["NACH Instructions", "/nach-instructions"],
+      { label: "Customer Hub", href: "/customer" },
+      { label: "Payments", href: "/customer/payments" },
+      { label: "Grievance Redressal", href: "/grievance-redressal" },
+      { label: "NACH Instructions", href: "/nach-instructions" },
+      { label: "Document Checklist", href: "/document-checklist" },
+      { label: "FAQs", href: "/faqs" },
     ],
   },
   {
-    title: "Calculators & Tools",
+    title: "Investor Relations",
     links: [
-      ["EMI Calculator", "/calculators/emi"],
-      ["Check Eligibility", "/eligibility"],
-      ["Branch Locator", "/branches"],
+      { label: "Investor Relations", href: "/investor-relations" },
+      { label: "RBI Disclosures", href: "/rbi-disclosures" },
     ],
   },
   {
-    title: "Resources",
+    title: "Compliance",
     links: [
-      ["FAQ", "/faqs"],
-      ["Document Checklist", "/document-checklist"],
-      ["Interest Rates & Charges", "/interest-rates-and-charges"],
-      ["News", "/news"],
-      ["Case Studies", "/case-studies"],
-    ],
-  },
-  {
-    title: "Investors",
-    links: [
-      ["Investor Relations", "/investor-relations"],
-    ],
-  },
-  {
-    title: "Compliance & Regulatory",
-    links: [
-      ["RBI Disclosures", "/rbi-disclosures"],
-      ["Policies", "/policies"],
-      ["Privacy Policy", "/privacy-policy"],
-      ["Terms & Conditions", "/terms"],
-      ["Grievance Redressal", "/grievance"],
-    ],
-  },
-  {
-    title: "Utility",
-    links: [
-      ["Sitemap", "/sitemap"],
-      ["404 Page", "/404-example-broken-link"],
+      { label: "Policies", href: "/policies" },
+      { label: "Privacy Policy", href: "/privacy-policy" },
+      { label: "Interest Rates & Charges", href: PDF_RATES, external: true },
     ],
   },
 ];
@@ -79,10 +60,11 @@ const groups = [
 const Sitemap = () => (
   <Layout>
     <section className="pt-24 pb-8 md:pt-32 md:pb-10 bg-hero relative overflow-hidden">
-      <AIFloatingElements />
       <div className="container mx-auto px-5 relative z-10">
-        <AIBadge label="Sitemap" />
-        <h1 className="font-display text-3xl md:text-6xl font-bold text-foreground mt-4 mb-3">
+        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-4">
+          <ScrollText size={12} /> Sitemap
+        </span>
+        <h1 className="font-display text-3xl md:text-5xl font-bold text-foreground mt-3 mb-3">
           Sitemap
         </h1>
         <p className="text-sm md:text-base text-muted-foreground max-w-xl">
@@ -90,22 +72,33 @@ const Sitemap = () => (
         </p>
       </div>
     </section>
-    <section className="py-16 md:py-24 bg-background">
-      <div className="container mx-auto px-5 max-w-6xl grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <section className="py-12 md:py-16 bg-background">
+      <div className="container mx-auto px-5 max-w-5xl grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {groups.map((g) => (
           <div key={g.title} className="clay-surface p-6">
-            <h2 className="font-display text-sm font-bold text-foreground uppercase tracking-wider mb-4">
+            <h2 className="font-display text-xs font-bold text-foreground uppercase tracking-wider mb-4 text-primary">
               {g.title}
             </h2>
             <ul className="space-y-2.5">
-              {g.links.map(([l, h]) => (
-                <li key={h}>
-                  <Link
-                    to={h}
-                    className="text-sm text-muted-foreground hover:text-primary transition font-body"
-                  >
-                    {l}
-                  </Link>
+              {g.links.map((l) => (
+                <li key={l.href}>
+                  {l.external ? (
+                    <a
+                      href={l.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-muted-foreground hover:text-primary transition font-body"
+                    >
+                      {l.label} ↗
+                    </a>
+                  ) : (
+                    <Link
+                      to={l.href}
+                      className="text-sm text-muted-foreground hover:text-primary transition font-body"
+                    >
+                      {l.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

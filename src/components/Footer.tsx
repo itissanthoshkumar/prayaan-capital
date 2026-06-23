@@ -13,7 +13,6 @@ const company: FooterLink[] = [
 ];
 
 const customerInfo: FooterLink[] = [
-  { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "NACH Instructions", href: "/nach-instructions" },
   { label: "Customer Grievance Redressal", href: "/grievance-redressal" },
 ];
@@ -24,8 +23,7 @@ const policiesGuidelines: FooterLink[] = [
 
 const compliances: FooterLink[] = [
   { label: "RBI Disclosures", href: "/rbi-disclosures" },
-  { label: "Interest Rates & Charges", href: "/interest-rates-and-charges" },
-  { label: "Terms of Service", href: "/terms" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
 ];
 
 const customerEducation: FooterLink[] = [
