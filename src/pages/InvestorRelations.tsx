@@ -1,11 +1,8 @@
-import { useState } from "react";
 import Layout from "@/components/Layout";
 import AIFloatingElements from "@/components/AIFloatingElements";
 import HeroIllustration from "@/components/HeroIllustration";
 import { motion } from "framer-motion";
-import { TrendingUp, FileText, CalendarCheck, Vote, ChevronDown, LucideIcon } from "lucide-react";
-
-const VISIBLE = 5;
+import { TrendingUp, FileText, CalendarCheck, Vote, LucideIcon } from "lucide-react";
 
 const BASE = "https://prayaancapital.com/assets/images/downloads";
 
@@ -73,69 +70,51 @@ const itemAnim = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] as const } },
 };
 
-const DocGroup = ({ g }: { g: Group }) => {
-  const [expanded, setExpanded] = useState(false);
-  const shown = expanded ? g.docs : g.docs.slice(0, VISIBLE);
-  const remaining = g.docs.length - VISIBLE;
-  return (
-    <div>
-      <div className="flex items-center gap-3 mb-5">
-        <span className="w-11 h-11 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
-          <g.icon size={20} className="text-primary" />
-        </span>
-        <div>
-          <h2 className="font-display text-lg md:text-2xl font-bold text-foreground leading-tight">
-            {g.title}{" "}
-            <span className="text-xs font-semibold text-muted-foreground align-middle">({g.docs.length})</span>
-          </h2>
-          <p className="text-xs md:text-sm text-muted-foreground">{g.blurb}</p>
-        </div>
+const DocGroup = ({ g }: { g: Group }) => (
+  <div>
+    <div className="flex items-center gap-3 mb-5">
+      <span className="w-11 h-11 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
+        <g.icon size={20} className="text-primary" />
+      </span>
+      <div>
+        <h2 className="font-display text-lg md:text-2xl font-bold text-foreground leading-tight">
+          {g.title}
+        </h2>
+        <p className="text-xs md:text-sm text-muted-foreground">{g.blurb}</p>
       </div>
-      <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-40px" }}
-        className="grid sm:grid-cols-2 gap-3"
-      >
-        {shown.map((d) => (
-          <motion.a
-            key={d.label}
-            variants={itemAnim}
-            whileHover={{ y: -3, transition: { duration: 0.2 } }}
-            href={d.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group clay-surface clay-press flex items-center gap-3 px-4 py-3.5"
-          >
-            <span className="w-9 h-9 rounded-xl bg-secondary flex items-center justify-center shrink-0">
-              <FileText size={16} className="text-primary" />
-            </span>
-            <div className="flex-1 min-w-0">
-              <h3 className="font-body text-sm font-semibold text-foreground group-hover:text-primary transition-colors truncate">
-                {d.label}
-              </h3>
-              <span className="text-[11px] text-muted-foreground">PDF · {d.size}</span>
-            </div>
-            <span className="text-xs font-bold text-primary uppercase tracking-wide shrink-0">View</span>
-          </motion.a>
-        ))}
-      </motion.div>
-      {remaining > 0 && (
-        <div className="mt-4">
-          <button
-            type="button"
-            onClick={() => setExpanded((v) => !v)}
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
-          >
-            {expanded ? "Show less" : `View more (${remaining})`}
-            <ChevronDown size={15} className={`transition-transform ${expanded ? "rotate-180" : ""}`} />
-          </button>
-        </div>
-      )}
     </div>
-  );
-};
+    <motion.div
+      variants={container}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-40px" }}
+      className="grid sm:grid-cols-2 gap-3"
+    >
+      {g.docs.map((d) => (
+        <motion.a
+          key={d.label}
+          variants={itemAnim}
+          whileHover={{ y: -3, transition: { duration: 0.2 } }}
+          href={d.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group clay-surface clay-press flex items-center gap-3 px-4 py-3.5"
+        >
+          <span className="w-9 h-9 rounded-xl bg-secondary flex items-center justify-center shrink-0">
+            <FileText size={16} className="text-accent" />
+          </span>
+          <div className="flex-1 min-w-0">
+            <h3 className="font-body text-sm font-semibold text-foreground group-hover:text-accent transition-colors truncate">
+              {d.label}
+            </h3>
+            <span className="text-[11px] text-muted-foreground">PDF · {d.size}</span>
+          </div>
+          <span className="text-xs font-bold text-accent uppercase tracking-wide shrink-0">View</span>
+        </motion.a>
+      ))}
+    </motion.div>
+  </div>
+);
 
 const InvestorRelations = () => (
   <Layout>
