@@ -3,7 +3,7 @@ import Layout from "@/components/Layout";
 import AIFloatingElements, { AIPulse } from "@/components/AIFloatingElements";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { CreditCard, MessageCircle, Calculator, ClipboardList, Phone, HelpCircle, Sparkles } from "lucide-react";
+import { CreditCard, MessageCircle, Calculator, ClipboardList, Phone, HelpCircle, Sparkles, GraduationCap, FileText, BookOpen, Languages } from "lucide-react";
 
 const services = [
   {
@@ -39,8 +39,20 @@ const services = [
 const quickLinks = [
   { label: "FAQ", href: "/faqs", icon: HelpCircle },
   { label: "Contact Support", href: "/contact", icon: Phone },
-  { label: "Downloads", href: "/downloads", icon: ClipboardList },
+  { label: "Policies", href: "/policies", icon: ClipboardList },
   { label: "NACH Instructions", href: "/nach-instructions", icon: CreditCard },
+];
+
+const education = [
+  { label: "Procedure for return of property documents", href: "https://prayaancapital.com/assets/images/downloads/Procedure-for-release-of-Property-Documents-in-case-of-Demise-of-Borrower.pdf", icon: FileText },
+  { label: "Customer Education Literature - SMA-NPA Classification - English", href: "https://prayaancapital.com/assets/images/downloads/customer-education-literature-sma-npa-classification-english.pdf", icon: BookOpen },
+  { label: "Customer Education Literature - SMA-NPA Classification - Tamil", href: "https://prayaancapital.com/assets/images/downloads/Customer%20Education%20Literature%20-%20SMA-NPA%20Classification%20Tamil.pdf", icon: Languages },
+  { label: "Customer Education Literature - SMA-NPA Classification - Telugu", href: "https://prayaancapital.com/assets/images/downloads/Customer%20Education%20Literature%20-%20SMA-NPA%20Classification%20Telugu.pdf", icon: Languages },
+];
+
+const videos = [
+  { title: "CKYC Identifier", src: "https://prayaancapital.com/assets/images/CentralKYCRecordsRegistryCustomerAwarenessVideo.webm", type: "video/webm" },
+  { title: "Registration Process and Modes of Registration in CKYCRR", src: "https://www.ckycindia.in/ckyc/assets/images/CKYCvideoforReportingEntities.mp4", type: "video/mp4" },
 ];
 
 const container = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } };
@@ -134,6 +146,57 @@ const Customer = () => {
               ))}
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Customer Education & Awareness */}
+      <section className="py-16 md:py-24 bg-section relative overflow-hidden">
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 md:mb-14">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-4">
+              <GraduationCap size={12} /> Awareness
+            </span>
+            <h2 className="font-display text-2xl md:text-4xl font-bold text-foreground">Customer Education &amp; Awareness</h2>
+          </motion.div>
+
+          {/* Documents */}
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto clay-surface p-2 md:p-3 divide-y divide-border/50 mb-10"
+          >
+            {education.map((d) => (
+              <motion.a
+                key={d.label}
+                variants={cardAnim}
+                href={d.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-4 px-4 md:px-5 py-4 rounded-2xl hover:bg-muted/60 transition-colors"
+              >
+                <span className="w-10 h-10 rounded-xl bg-gradient-sunset shadow-clay-sm flex items-center justify-center shrink-0">
+                  <d.icon size={18} className="text-white" />
+                </span>
+                <span className="flex-1 font-display text-sm md:text-base font-semibold text-foreground group-hover:text-primary transition-colors">{d.label}</span>
+                <span className="text-xs font-bold text-primary uppercase tracking-wide shrink-0">View</span>
+              </motion.a>
+            ))}
+          </motion.div>
+
+          {/* Videos — controls only, never autoplay (load on demand) */}
+          <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {videos.map((v) => (
+              <div key={v.title} className="clay-surface p-4">
+                <video controls preload="none" playsInline className="w-full aspect-video rounded-xl bg-black">
+                  <source src={v.src} type={v.type} />
+                  Your browser does not support the video tag.
+                </video>
+                <p className="font-display text-sm font-semibold text-foreground mt-3 leading-snug">{v.title}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </Layout>
