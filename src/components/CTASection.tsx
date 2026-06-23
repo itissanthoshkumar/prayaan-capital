@@ -27,7 +27,7 @@ const CTASection = () => {
               <span className="text-gradient-coral">property</span>?
             </h2>
             <p className="text-sm md:text-lg text-muted-foreground mb-3 font-body">
-              Join 1,000+ families who trust Prayaan Capital for fast, transparent property-backed finance.
+              Join the entrepreneurs across South India who trust Prayaan Capital for transparent, property-backed finance.
             </p>
             <p className="text-xs md:text-sm text-muted-foreground mb-8 md:mb-10 max-w-lg mx-auto font-body">
               Own a home, shop or land? Put it to work — secured business loans from ₹5L to ₹50L.

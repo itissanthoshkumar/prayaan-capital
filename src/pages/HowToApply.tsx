@@ -19,9 +19,9 @@ const steps: ProcessStep[] = [
   },
   {
     icon: CheckCircle,
-    title: "AI Evaluation",
-    desc: "Our underwriting model evaluates 200+ data points — property value, bank flow, GST filings — and issues a sanction letter, often same day.",
-    badge: "Same Day",
+    title: "Credit Evaluation",
+    desc: "Our credit team evaluates your profile — bureau score, property value, and repayment capacity — and issues a sanction letter, typically within 48 hours of complete documentation.",
+    badge: "Step 2",
     num: "02",
     accent: "bg-[hsl(42_100%_47%)]",
   },

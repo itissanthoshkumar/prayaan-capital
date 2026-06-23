@@ -11,8 +11,8 @@ import {
 const pillars = [
   {
     icon: Brain,
-    title: "AI-native platform",
-    desc: "Decisioning models trained on Indian property and credit data combining bureau, banking and valuation signals.",
+    title: "Bureau-led credit platform",
+    desc: "Credit decisions built on bureau data, property valuations, and bank statement analysis — combining multiple signals with human review.",
     tint: "bg-gradient-coral",
   },
   {
@@ -30,7 +30,7 @@ const pillars = [
   {
     icon: Plug,
     title: "Partner integrations",
-    desc: "APIs for co-lending partners, DSAs, and data providers. Programmable integrations on roadmap.",
+    desc: "APIs for DSAs and data providers. Programmable integrations on roadmap.",
     tint: "bg-gradient-sunset",
   },
   {
@@ -135,7 +135,7 @@ const Technology = () => {
               Build <span className="text-gradient-coral">with us</span>
             </h2>
             <p className="text-sm md:text-base text-muted-foreground mb-8 font-body">
-              Partner on integrations, data and co-lending — or join the team building it.
+              Partner on integrations and data — or join the team building it.
               Small team, big impact, weekly shipping.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">

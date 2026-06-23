@@ -6,17 +6,17 @@ import AIFloatingElements, { AIPulse } from "@/components/AIFloatingElements";
 
 const featured = {
   tag: "Press Release",
-  title: "Prayaan Capital Crosses ₹100Cr in Disbursals",
-  excerpt: "Prayaan Capital, an AI-native NBFC, announced today that it has crossed ₹100 crore in cumulative secured business loan disbursals across South India, powered by its AI underwriting engine.",
+  title: "Prayaan Capital Crosses ₹50 Cr in Disbursals",
+  excerpt: "Prayaan Capital, an RBI-registered NBFC, announced today that it has crossed ₹50 crore in cumulative secured business loan disbursals across South India, with bureau-assisted underwriting and human credit review at every step.",
   date: "March 10, 2026",
 };
 
 const news = [
-  { tag: "Product Update", title: "Launching Instant Pre-Approved Loans for Repeat Borrowers", excerpt: "Our AI now pre-scores existing borrowers, enabling instant top-up loans with zero additional documentation.", date: "Feb 28, 2026", tint: "bg-gradient-coral" },
+  { tag: "Product Update", title: "Top-Up Loans Now Available for Existing Borrowers", excerpt: "Eligible repeat borrowers can apply for a top-up against their existing collateral. Subject to fresh documentation and credit review.", date: "Feb 28, 2026", tint: "bg-gradient-coral" },
   { tag: "Partnership", title: "Prayaan Capital Partners with NHB for Affordable Housing", excerpt: "Strategic partnership with NHB to offer credit guarantee-backed housing loans, reducing collateral requirements.", date: "Feb 15, 2026", tint: "bg-gradient-mint" },
-  { tag: "Engineering", title: "How Our AI Processes 200+ Data Points in Under 30 Seconds", excerpt: "A deep dive into the machine learning pipeline that powers our real-time credit decisioning engine.", date: "Jan 30, 2026", tint: "bg-gradient-lavender" },
-  { tag: "Industry", title: "RBI's Digital Lending Guidelines: What They Mean for Borrowers", excerpt: "Our take on the latest regulatory framework and how compliant AI-native NBFCs are better positioned.", date: "Jan 15, 2026", tint: "bg-gradient-sunset" },
-  { tag: "Company", title: "Named in India's Top 10 AI-Native Fintech Startups", excerpt: "Recognized by FinTech Global for our innovative approach to AI-driven secured lending.", date: "Dec 20, 2025", tint: "bg-gradient-coral" },
+  { tag: "Technology", title: "How Bureau Data and Property Valuations Drive Our Credit Decisions", excerpt: "A look at how our credit team uses bureau scores, field valuations, and bank statement analysis to assess MSME loan applications.", date: "Jan 30, 2026", tint: "bg-gradient-lavender" },
+  { tag: "Industry", title: "RBI's Digital Lending Guidelines: What They Mean for Borrowers", excerpt: "Our take on the latest regulatory framework and how compliant NBFCs are better positioned to serve underserved MSMEs.", date: "Jan 15, 2026", tint: "bg-gradient-sunset" },
+  { tag: "Company", title: "Recognised for Responsible MSME Lending in South India", excerpt: "Prayaan Capital acknowledged for transparent, human-reviewed credit practices that serve entrepreneurs banks often overlook.", date: "Dec 20, 2025", tint: "bg-gradient-coral" },
   { tag: "Milestone", title: "1,000 Families Funded — Here's What We Learned", excerpt: "Reflections from our founding team on reaching this milestone and our roadmap ahead.", date: "Nov 10, 2025", tint: "bg-gradient-mint" },
 ];
 

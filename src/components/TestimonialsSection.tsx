@@ -100,7 +100,7 @@ const TestimonialsSection = () => {
             <span className="text-gradient-coral">grow</span>
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-lg mx-auto font-body leading-relaxed">
-            Real entrepreneurs, real outcomes — powered by Prayaan Capital's AI-driven SME lending.
+            Real entrepreneurs, real outcomes — secured business loans built for India's MSMEs.
           </p>
         </motion.div>
 
@@ -226,7 +226,7 @@ const TestimonialsSection = () => {
             ))}
           </div>
           <div className="ml-2">
-            <p className="text-xs font-display font-bold text-foreground">1,000+ families</p>
+            <p className="text-xs font-display font-bold text-foreground">1,000+ MSMEs</p>
             <p className="text-[10px] text-muted-foreground font-body">trust Prayaan Capital</p>
           </div>
         </motion.div>

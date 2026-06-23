@@ -8,7 +8,7 @@ const sections = [
   { title: "5. Interest Rate and Charges", content: "The rate of interest and the approach for gradation of risks is made available on our website. We do not charge interest for periods when the loan amount has not been disbursed." },
   { title: "6. Recovery", content: "We follow fair practices in recovery of loans. We do not resort to undue harassment, intimidation, or unnecessary interference. Recovery agents are trained to follow ethical practices." },
   { title: "7. General Principles", content: "We train staff adequately on Fair Practices Code. We ensure transparency in all dealings with customers and do not discriminate on grounds of religion, caste, gender, or marital status." },
-  { title: "8. AI and Automated Processes", content: "Our AI-powered underwriting processes are designed to be fair and non-discriminatory. Algorithmic decisions are subject to human oversight and review. We regularly audit our AI systems for bias." },
+  { title: "8. Technology and Automated Processes", content: "Our bureau-assisted underwriting uses technology to support — not replace — human credit decisions. All credit decisions are subject to review and final approval by an authorised officer. We regularly review our processes for fairness and accuracy." },
   { title: "9. Regulatory Compliance", content: "This Fair Practice Code is in compliance with RBI Master Direction DNBR.PD.008/03.10.119/2016-17 and all subsequent amendments." },
 ];
 

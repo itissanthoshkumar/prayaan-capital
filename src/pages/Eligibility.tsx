@@ -145,13 +145,13 @@ const Eligibility = () => {
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full clay-surface-sm text-xs font-medium text-foreground mb-5 font-body">
               <Sparkles size={14} className="text-primary" />
-              AI-powered instant check
+              Preliminary eligibility check
             </div>
             <h1 className="font-display font-bold text-4xl md:text-5xl text-foreground tracking-tight mb-4">
               Check your loan eligibility
             </h1>
             <p className="font-body text-base md:text-lg text-muted-foreground">
-              Tell us a little about your business and we'll generate your application ID instantly. No paperwork, no impact on your credit score.
+              Tell us a little about your business for a preliminary eligibility indication. No paperwork, no impact on your credit score.
             </p>
           </motion.div>
 
@@ -402,8 +402,8 @@ const Eligibility = () => {
               <InfoCard
                 icon={<Sparkles className="w-5 h-5 text-white" />}
                 iconBg="bg-gradient-lavender"
-                title="AI Underwriting"
-                desc="Our model uses 200+ signals to give you a fair, fast decision."
+                title="Bureau-Assisted Review"
+                desc="Our credit team uses bureau data and property valuations for a fair assessment."
               />
 
               <div className="clay-surface-sm p-5">

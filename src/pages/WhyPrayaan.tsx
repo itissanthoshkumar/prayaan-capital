@@ -312,7 +312,7 @@ const WhyPrayaan = () => {
             {[
               { stat: "RBI Registered", desc: "NBFC-ICC since June 2019", icon: "✓" },
               { stat: "1,000+", desc: "families funded", icon: "👥" },
-              { stat: "₹100+ Crore", desc: "in disbursals", icon: "💰" },
+              { stat: "₹50 Cr+", desc: "in disbursals", icon: "💰" },
             ].map((s, i) => (
               <motion.div
                 key={s.stat}

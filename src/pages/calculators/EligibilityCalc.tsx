@@ -18,8 +18,8 @@ const EligibilityCalc = () => {
     if (propertyValue >= 20) s += 25; if (propertyValue >= 50) s += 10;
     if (income >= 40) s += 25; if (income >= 100) s += 10;
     if (cibil >= 700) s += 20; if (cibil >= 750) s += 10;
-    // Lower of 60% LTV on property and an income-based capacity
-    const ltvCap = propertyValue * 0.6;
+    // Lower of 50% LTV on property and an income-based capacity
+    const ltvCap = propertyValue * 0.5;
     const incomeCap = income * 0.7;
     const eligibleAmt = Math.min(50, Math.max(5, Math.round(Math.min(ltvCap, incomeCap))));
     return { eligible: s >= 60, amount: eligibleAmt, score: Math.min(100, s) };
@@ -35,7 +35,7 @@ const EligibilityCalc = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <AIBadge label="Eligibility Check" />
             <h1 className="font-display text-3xl md:text-6xl font-bold text-foreground mt-4 mb-3">Loan Eligibility Calculator</h1>
-            <p className="text-sm md:text-base text-muted-foreground max-w-xl">AI-driven instant eligibility — no impact on your credit score.</p>
+            <p className="text-sm md:text-base text-muted-foreground max-w-xl">Preliminary eligibility check — no impact on your credit score.</p>
           </motion.div>
             </div>
             <HeroIllustration variant="calculator" />
