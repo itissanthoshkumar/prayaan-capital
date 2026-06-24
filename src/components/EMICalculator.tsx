@@ -13,6 +13,18 @@ import { Link } from "react-router-dom";
 const C_PRINCIPAL = "hsl(208, 100%, 31%)";
 const C_INTEREST  = "hsl(42, 100%, 47%)";
 
+/* ─── Amount in words (3–50 lakhs) ─── */
+const ONES = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine',
+              'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen',
+              'Seventeen', 'Eighteen', 'Nineteen'];
+const TENS = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty'];
+const lakhsToWords = (n: number): string => {
+  if (n <= 0) return '';
+  if (n <= 19) return `${ONES[n]} Lakh${n !== 1 ? 's' : ''}`;
+  const t = Math.floor(n / 10), o = n % 10;
+  return `${o === 0 ? TENS[t] : `${TENS[t]} ${ONES[o]}`} Lakhs`;
+};
+
 /* ─── Formatters ─── */
 const fmtFull = (v: number): string => {
   const n = Math.round(v);
@@ -186,11 +198,11 @@ const EMICalculator = () => {
                     <div className="flex items-center gap-0.5 px-3 py-1.5 rounded-2xl bg-primary/8 shadow-clay-sm min-w-[88px] justify-end">
                       <span className="font-body text-[11px] text-primary font-semibold">₹</span>
                       <input
-                        type="number" min={5} max={100} step={1}
+                        type="number" min={3} max={50} step={1}
                         value={loanAmount}
                         onChange={(e) => {
                           const v = Math.round(Number(e.target.value));
-                          if (v >= 5 && v <= 100) setLoanAmount(v);
+                          if (v >= 3 && v <= 50) setLoanAmount(v);
                         }}
                         className={`${numInputCls} text-primary`}
                       />
@@ -206,6 +218,9 @@ const EMICalculator = () => {
                     <span className="font-body text-[10px] text-muted-foreground">₹3L</span>
                     <span className="font-body text-[10px] text-muted-foreground">₹50L</span>
                   </div>
+                  <p className="font-body text-[11px] text-primary/70 text-center leading-snug">
+                    ₹{(loanAmount * 1_00_000).toLocaleString("en-IN")}&nbsp;·&nbsp;{lakhsToWords(loanAmount)}
+                  </p>
                 </div>
 
                 {/* ── Interest Rate ── */}
