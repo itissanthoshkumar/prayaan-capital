@@ -13,16 +13,20 @@ import { Link } from "react-router-dom";
 const C_PRINCIPAL = "hsl(208, 100%, 31%)";
 const C_INTEREST  = "hsl(42, 100%, 47%)";
 
-/* ─── Amount in words (3–50 lakhs) ─── */
+/* ─── Amount in words ─── */
 const ONES = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine',
               'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen',
               'Seventeen', 'Eighteen', 'Nineteen'];
 const TENS = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty'];
-const lakhsToWords = (n: number): string => {
-  if (n <= 0) return '';
-  if (n <= 19) return `${ONES[n]} Lakh${n !== 1 ? 's' : ''}`;
-  const t = Math.floor(n / 10), o = n % 10;
-  return `${o === 0 ? TENS[t] : `${TENS[t]} ${ONES[o]}`} Lakhs`;
+const amountWords = (rupees: number): string => {
+  const lakhs = rupees / 1_00_000;
+  const whole = Math.floor(lakhs);
+  const frac  = lakhs - whole;
+  const base  = whole <= 0 ? '' : whole <= 19
+    ? `${ONES[whole]} Lakh${whole !== 1 ? 's' : ''}`
+    : `${frac === 0 ? TENS[Math.floor(whole / 10)] : `${TENS[Math.floor(whole / 10)]} ${ONES[whole % 10]}`} Lakhs`;
+  if (frac === 0) return base;
+  return `${lakhs.toFixed(2).replace(/\.?0+$/, '')} Lakhs`;
 };
 
 /* ─── Formatters ─── */
@@ -50,17 +54,16 @@ const ChartTooltip = ({ active, payload }: { active?: boolean; payload?: Array<{
    MAIN COMPONENT
    ════════════════════════════════════════════════════════ */
 const EMICalculator = () => {
-  const [loanAmount, setLoanAmount] = useState(15);  // Lakhs (3–50)
+  const [loanAmount, setLoanAmount] = useState(1_500_000);  // Rupees (3L–50L)
   const [loanInputVal, setLoanInputVal] = useState("15,00,000");
   const [rate,       setRate]       = useState(18);  // % p.a. (18–30)
   const [tenure,     setTenure]     = useState(60);  // months: 60 | 84 | 120
 
   const handleSliderAmount = (v: number) => {
     setLoanAmount(v);
-    setLoanInputVal((v * 1_00_000).toLocaleString("en-IN"));
+    setLoanInputVal(v.toLocaleString("en-IN"));
   };
 
-  // Only update state on blur — avoids mismatch between input text and display while typing
   const handleInputAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
     setLoanInputVal(e.target.value);
   };
@@ -68,11 +71,11 @@ const EMICalculator = () => {
   const handleBlurAmount = () => {
     const raw = parseInt(loanInputVal.replace(/,/g, ""), 10);
     if (!isNaN(raw) && raw > 0) {
-      const lakhs = Math.max(3, Math.min(50, Math.round(raw / 1_00_000)));
-      setLoanAmount(lakhs);
-      setLoanInputVal((lakhs * 1_00_000).toLocaleString("en-IN"));
+      const clamped = Math.max(3_00_000, Math.min(50_00_000, raw));
+      setLoanAmount(clamped);
+      setLoanInputVal(clamped.toLocaleString("en-IN"));
     } else {
-      setLoanInputVal((loanAmount * 1_00_000).toLocaleString("en-IN"));
+      setLoanInputVal(loanAmount.toLocaleString("en-IN"));
     }
   };
 
@@ -101,7 +104,7 @@ const EMICalculator = () => {
 
   /* ── Core maths ── */
   const { emi, totalInterest, totalPayment, principalPct } = useMemo(() => {
-    const P = loanAmount * 1_00_000;
+    const P = loanAmount;
     const r = rate / 12 / 100;
     const n = tenure;
     const emiVal = r > 0
@@ -120,12 +123,12 @@ const EMICalculator = () => {
 
   /* ── Donut data ── */
   const chartData = [
-    { name: "Principal", value: loanAmount * 1_00_000 },
+    { name: "Principal", value: loanAmount },
     { name: "Interest",  value: totalInterest },
   ];
 
   /* ── Interest multiplier insight ── */
-  const multiplier = (totalPayment / (loanAmount * 1_00_000)).toFixed(2);
+  const multiplier = (totalPayment / loanAmount).toFixed(2);
 
   /* ─── Slider input style ─── */
   const numInputCls =
@@ -198,16 +201,16 @@ const EMICalculator = () => {
                     </div>
                   </div>
                   <Slider
-                    aria-label="Loan amount in lakhs"
+                    aria-label="Loan amount"
                     value={[loanAmount]} onValueChange={(v) => handleSliderAmount(v[0])}
-                    min={3} max={50} step={1} className="w-full"
+                    min={3_00_000} max={50_00_000} step={10_000} className="w-full"
                   />
                   <div className="flex justify-between">
                     <span className="font-body text-[10px] text-muted-foreground">₹3,00,000</span>
                     <span className="font-body text-[10px] text-muted-foreground">₹50,00,000</span>
                   </div>
                   <p className="font-body text-[11px] text-primary/70 text-center leading-snug">
-                    ₹{(loanAmount * 1_00_000).toLocaleString("en-IN")}&nbsp;·&nbsp;{lakhsToWords(loanAmount)}
+                    {amountWords(loanAmount)}
                   </p>
                 </div>
 
@@ -348,7 +351,7 @@ const EMICalculator = () => {
                   {[
                     {
                       label: "Principal",
-                      value: fmtFull(loanAmount * 1_00_000),
+                      value: fmtFull(loanAmount),
                       pct: `${principalPct}%`,
                       bg: `${C_PRINCIPAL}15`,
                       border: C_PRINCIPAL,
