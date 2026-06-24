@@ -9,37 +9,6 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import AIFloatingElements from "@/components/AIFloatingElements";
 
-/* ─── Shared animation variants (matches About / WhyPrayaan) ─── */
-const container = { hidden: {}, visible: { transition: { staggerChildren: 0.12 } } };
-const cardAnim = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as const } },
-};
-
-/* ─── Channel cards data ─── */
-const channels = [
-  {
-    icon: Phone,
-    tint: "bg-gradient-coral",
-    label: "Get in Touch",
-    body: "Reach our customer care team for loan enquiries, product queries, account support, or repayment assistance. Monday – Friday, 9:30 AM – 6:30 PM.",
-    ctaLabel: "+91-6380589898",
-    ctaTo: undefined as string | undefined,
-    ctaHref: "tel:+916380589898",
-    secondary: { label: "customercare@prayaancapital.com", href: "mailto:customercare@prayaancapital.com" },
-  },
-  {
-    icon: Users,
-    tint: "bg-gradient-lavender",
-    label: "Raise a Complaint",
-    body: "Every grievance is resolved fairly and on time, per the RBI Fair Practice Code. Four-level escalation path available.",
-    ctaLabel: "View Escalation Path",
-    ctaTo: "/grievance-redressal",
-    ctaHref: undefined as string | undefined,
-    secondary: undefined as { label: string; href: string } | undefined,
-  },
-];
-
 /* ─── Office detail rows ─── */
 const officeDetails = [
   {
@@ -119,65 +88,6 @@ const Contact = () => (
           <span className="hidden sm:block w-px h-4 bg-border" />
           <span className="font-body text-xs md:text-sm font-semibold text-foreground">Toll-free 14448</span>
         </div>
-      </div>
-    </section>
-
-    {/* ────────── THREE CHANNELS ────────── */}
-    <section className="py-16 md:py-24 bg-section">
-      <div className="container mx-auto px-4">
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
-          className="grid md:grid-cols-2 gap-5 md:gap-6 max-w-3xl mx-auto"
-        >
-          {channels.map((ch, i) => (
-            <motion.div
-              key={ch.label}
-              variants={cardAnim}
-              whileHover={{ y: -4, transition: { duration: 0.22 } }}
-              className="group relative clay-surface p-6 md:p-8 clay-press flex flex-col"
-            >
-              {/* Icon */}
-              <div className={`w-12 h-12 rounded-2xl ${ch.tint} shadow-clay-sm flex items-center justify-center mb-5`}>
-                <ch.icon size={22} className="text-white" />
-              </div>
-
-              {/* Text */}
-              <h2 className="font-display text-lg md:text-xl font-bold text-foreground mb-2">
-                {ch.label}
-              </h2>
-              <p className="font-body text-sm text-muted-foreground leading-relaxed flex-1 mb-5">
-                {ch.body}
-              </p>
-
-              {/* CTAs */}
-              <div className="space-y-2">
-                {ch.ctaTo ? (
-                  <Button variant="secondary" size="sm" className="w-full font-body" asChild>
-                    <Link to={ch.ctaTo}>{ch.ctaLabel} <ArrowRight size={13} /></Link>
-                  </Button>
-                ) : ch.ctaHref ? (
-                  <>
-                    <Button variant="default" size="sm" className="w-full font-body" asChild>
-                      <a href={ch.ctaHref}>
-                        <Phone size={13} /> {ch.ctaLabel}
-                      </a>
-                    </Button>
-                    {ch.secondary && (
-                      <Button variant="secondary" size="sm" className="w-full font-body" asChild>
-                        <a href={ch.secondary.href}>
-                          <Mail size={13} /> {ch.secondary.label}
-                        </a>
-                      </Button>
-                    )}
-                  </>
-                ) : null}
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
     </section>
 
