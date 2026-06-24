@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useMemo } from "react";
 import {
   Calculator, TrendingUp, IndianRupee, Calendar,
-  ArrowRight, Lightbulb,
+  ArrowRight,
 } from "lucide-react";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import { Slider } from "@/components/ui/slider";
@@ -155,9 +155,6 @@ const EMICalculator = () => {
     { name: "Principal", value: loanAmount },
     { name: "Interest",  value: totalInterest },
   ];
-
-  /* ── Interest multiplier insight ── */
-  const multiplier = (totalPayment / loanAmount).toFixed(2);
 
   /* ─── Slider input style ─── */
   const numInputCls =
@@ -459,13 +456,19 @@ const EMICalculator = () => {
                   </div>
                 </div>
 
-                {/* Insight callout */}
-                <div className="mt-5 flex items-start gap-2.5 rounded-2xl bg-primary/5 border border-primary/10 p-3.5">
-                  <Lightbulb size={15} className="text-[#f0a800] shrink-0 mt-0.5" />
-                  <p className="font-body text-[11px] text-muted-foreground leading-relaxed">
-                    Over {tenureStr(tenure)}, you repay <span className="font-semibold text-foreground">{fmtFull(totalPayment)}</span> in total — about <span className="font-semibold text-foreground">{multiplier}×</span> the amount you borrow.
-                  </p>
-                </div>
+                {/* CTA callout */}
+                <Link
+                  to="/contact"
+                  className="group mt-5 flex items-center justify-between gap-3 rounded-2xl bg-primary/5 border border-primary/10 p-3.5 hover:bg-primary/10 hover:border-primary/20 transition-colors"
+                >
+                  <span className="font-body text-[12px] font-semibold text-foreground leading-snug">
+                    Like these numbers?<br className="hidden sm:block" /> Talk to our team to get started.
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 text-[12px] font-bold text-primary shrink-0">
+                    Get in Touch
+                    <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
+                  </span>
+                </Link>
                 </div>
 
               </div>
