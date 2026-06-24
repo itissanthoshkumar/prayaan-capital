@@ -8,21 +8,21 @@ import { motion, AnimatePresence } from "framer-motion";
 const navLinks = [
   { label: "Home", href: "/" },
   {
-    label: "About Us",
+    label: "Company",
     children: [
-      { label: "About Prayaan", href: "/why-prayaan" },
-      { label: "Team", href: "/team" },
+      { label: "About Us", href: "/why-prayaan" },
+      { label: "Our Team", href: "/team" },
     ],
   },
   {
     label: "Customer",
     children: [
-      { label: "EMI Calculator", href: "/calculators/emi" },
+      { label: "Loan Calculator", href: "/calculators/emi" },
       { label: "Grievance Redressal", href: "/grievance-redressal" },
-      { label: "Branch Location", href: "/branch-locator" },
+      { label: "Branch Locator", href: "/branch-locator" },
     ],
   },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const Navbar = () => {
@@ -120,7 +120,7 @@ const Navbar = () => {
           )}
           <Link to="/contact">
             <Button size="sm" variant="hero" className="ml-4 rounded-full text-xs px-5 font-body animate-cta-glow">
-              Contact Us
+              Get in Touch
             </Button>
           </Link>
         </div>
@@ -189,7 +189,7 @@ const Navbar = () => {
               )}
               <Link to="/contact" onClick={() => setIsOpen(false)}>
                 <Button size="sm" variant="hero" className="w-full mt-3 rounded-full text-xs font-body">
-                  Contact Us
+                  Get in Touch
                 </Button>
               </Link>
             </div>
