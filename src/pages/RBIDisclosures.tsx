@@ -2,20 +2,24 @@ import LegalPageTemplate from "@/components/templates/LegalPageTemplate";
 import { Link } from "react-router-dom";
 import { ShieldCheck } from "lucide-react";
 
-const regulatoryLinks = [
-  { label: "Interest Rate Policy", href: "/interest-rate-policy" },
-  { label: "Fair Practice Code", href: "/fair-practice-code" },
+const BASE = "https://prayaancapital.com/assets/images/downloads";
+
+const regulatoryLinks: { label: string; href: string; external?: boolean }[] = [
+  { label: "Interest Rate Policy", href: `${BASE}/Interest%20Rates%20and%20Gradation%20of%20Risk%20Policy%20V4.0.pdf`, external: true },
+  { label: "Fair Practice Code (English)", href: `${BASE}/Fair%20Practice%20Code_English_v2.pdf`, external: true },
+  { label: "Fair Practice Code (Tamil)", href: `${BASE}/Fair%20Practice%20Code_V2.0%20Tamil.pdf`, external: true },
+  { label: "Fair Practice Code (Telugu)", href: `${BASE}/Fair%20Practice%20Code_V2.0%20Telugu.pdf`, external: true },
   { label: "Grievance Redressal Policy", href: "/grievance-redressal" },
-  { label: "KYC / AML Policy", href: "/kyc-aml-policy" },
-  { label: "Code of Conduct for Recovery", href: "/code-of-conduct-recovery" },
-  { label: "Whistleblower Policy", href: "/whistleblower-policy" },
-  { label: "CSR Policy", href: "/csr-policy" },
-  { label: "Citizens Charter", href: "/citizens-charter" },
-  { label: "Most Important Terms & Conditions (MITC)", href: "/most-important-terms" },
-  { label: "Notices & Disclosures", href: "/notices-disclosures" },
-  { label: "Ombudsman Scheme", href: "/ombudsman-scheme" },
-  { label: "Cookie Policy", href: "/cookie-policy" },
-  { label: "Disclaimer", href: "/disclaimer" },
+  { label: "KYC / AML Policy", href: `${BASE}/Group%20AML%20%26%20KYC%20Policy_V6.0_.pdf`, external: true },
+  { label: "Whistleblower Policy", href: `${BASE}/Whistle%20Blower%20Policy%20V3.0.pdf`, external: true },
+  { label: "Code of Conduct for Recovery", href: "/policies" },
+  { label: "CSR Policy", href: "/policies" },
+  { label: "Citizens Charter", href: "/policies" },
+  { label: "Most Important Terms & Conditions (MITC)", href: "/policies" },
+  { label: "Notices & Disclosures", href: "/policies" },
+  { label: "Ombudsman Scheme", href: "/grievance-redressal" },
+  { label: "Cookie Policy", href: "/privacy-policy" },
+  { label: "Disclaimer", href: "/policies" },
 ];
 
 const RBIDisclosures = () => (
@@ -50,12 +54,20 @@ const RBIDisclosures = () => (
           <ul className="space-y-2">
             {regulatoryLinks.map((link) => (
               <li key={link.href}>
-                <Link
-                  to={link.href}
-                  className="text-primary hover:underline font-medium"
-                >
-                  {link.label}
-                </Link>
+                {link.external ? (
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline font-medium"
+                  >
+                    {link.label} ↗
+                  </a>
+                ) : (
+                  <Link to={link.href} className="text-primary hover:underline font-medium">
+                    {link.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>

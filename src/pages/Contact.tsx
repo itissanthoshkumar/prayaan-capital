@@ -27,9 +27,9 @@ const channels = [
     tint: "bg-gradient-coral",
     label: "Get in Touch",
     body: "Secured business loans from ₹5L to ₹50L, backed by the property you own. Decisions typically within 48 hours of complete documentation.",
-    ctaLabel: "Get in Touch",
-    ctaTo: "/contact",
-    ctaHref: undefined as string | undefined,
+    ctaLabel: "Send us a message",
+    ctaTo: undefined as string | undefined,
+    ctaHref: "#contact-form",
     secondary: undefined as { label: string; href: string } | undefined,
   },
   {
@@ -183,8 +183,8 @@ const Contact = () => (
                     </Link>
                   </Button>
                 ) : ch.ctaHref ? (
-                  <Button variant="secondary" size="sm" className="w-full font-body" asChild>
-                    <a href={ch.ctaHref}>{ch.ctaLabel}</a>
+                  <Button variant={i === 0 ? "default" : "secondary"} size="sm" className="w-full font-body" asChild>
+                    <a href={ch.ctaHref}>{ch.ctaLabel} <ArrowRight size={13} /></a>
                   </Button>
                 ) : null}
 
@@ -205,7 +205,7 @@ const Contact = () => (
     </section>
 
     {/* ────────── FORM + LOCATION ────────── */}
-    <section className="py-16 md:py-24 bg-background relative overflow-hidden">
+    <section id="contact-form" className="py-16 md:py-24 bg-background relative overflow-hidden">
       <AIFloatingElements />
       <div className="container mx-auto px-4 relative z-10">
 
