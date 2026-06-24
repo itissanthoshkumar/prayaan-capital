@@ -12,6 +12,9 @@ import { Link } from "react-router-dom";
 /* ─── Chart colours (hardcoded — SVG doesn't support CSS vars) ─── */
 const C_PRINCIPAL = "hsl(208, 100%, 31%)";
 const C_INTEREST  = "hsl(42, 100%, 47%)";
+/* Brand gold #f0a800 is too light as TEXT on light surfaces (~1.8:1).
+   Use this deeper amber for gold-coloured value text → ~5:1 (passes AA). */
+const C_GOLD_TEXT = "hsl(42, 100%, 27%)";
 
 /* ─── Full Indian number words ─── */
 const W1 = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine',
@@ -215,14 +218,15 @@ const EMICalculator = () => {
                       Loan Amount
                     </label>
                     <div className="flex items-center gap-0.5 px-3 py-1.5 rounded-2xl bg-primary/8 shadow-clay-sm justify-end">
-                      <span className="font-body text-[11px] text-primary font-semibold">₹</span>
+                      <span className="font-body text-[11px] font-semibold" style={{ color: C_GOLD_TEXT }}>₹</span>
                       <input
                         type="text"
                         inputMode="numeric"
                         value={loanInputVal}
                         onChange={handleInputAmount}
                         onBlur={handleBlurAmount}
-                        className="w-24 bg-transparent font-display text-sm font-bold outline-none text-right text-primary"
+                        className="w-24 bg-transparent font-display text-sm font-bold outline-none text-right"
+                        style={{ color: C_GOLD_TEXT }}
                       />
                     </div>
                   </div>
@@ -240,7 +244,7 @@ const EMICalculator = () => {
                       ⚠ {amountWarning}
                     </p>
                   ) : (
-                    <p className="font-body text-[11px] text-primary/70 text-center leading-snug">
+                    <p className="font-body text-[11px] font-medium text-center leading-snug" style={{ color: C_GOLD_TEXT }}>
                       {amountWords(loanAmount)}
                     </p>
                   )}
@@ -262,10 +266,10 @@ const EMICalculator = () => {
                         onChange={handleInputRate}
                         onBlur={handleBlurRate}
                         className="w-10 bg-transparent font-display text-sm font-bold outline-none text-right"
-                        style={{ color: C_INTEREST }}
+                        style={{ color: C_GOLD_TEXT }}
                       />
                       <span className="font-body text-[11px] font-semibold ml-0.5"
-                        style={{ color: C_INTEREST }}>
+                        style={{ color: C_GOLD_TEXT }}>
                         %
                       </span>
                     </div>
@@ -397,7 +401,7 @@ const EMICalculator = () => {
                       value: fmtFull(totalInterest),
                       bg: `${C_INTEREST}15`,
                       border: C_INTEREST,
-                      color: C_INTEREST,
+                      color: C_GOLD_TEXT,
                     },
                     {
                       label: "Total Payable",
