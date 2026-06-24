@@ -13,10 +13,10 @@ const techStack = [
 ];
 
 const perks = [
-  { icon: Sparkles, title: "Meaningful Work", desc: "Help real Indian small businesses access fair credit — your work directly impacts entrepreneurs who need it most.", tint: "bg-gradient-coral" },
-  { icon: Heart, title: "Health & Wellness", desc: "Comprehensive health insurance, mental wellness programs, and fitness benefits for you and your family.", tint: "bg-gradient-mint" },
-  { icon: TrendingUp, title: "Growth & Learning", desc: "Learning budgets, conference sponsorships, mentorship, and rapid career progression at a growing NBFC.", tint: "bg-gradient-lavender" },
-  { icon: Code, title: "Collaborative Culture", desc: "A team of credit professionals, fintech practitioners, and technology builders working toward a shared mission.", tint: "bg-gradient-sunset" },
+  { icon: Sparkles, title: "Purposeful Work", desc: "Every role here has a direct impact on real businesses and the families behind them. You'll see the difference your work makes.", tint: "bg-gradient-coral" },
+  { icon: Heart, title: "People First", desc: "We take care of the people who take care of our customers. Your wellbeing matters here, both in and out of the office.", tint: "bg-gradient-mint" },
+  { icon: TrendingUp, title: "Room to Grow", desc: "Whether you're deepening your expertise or stepping into new territory, we support your growth every step of the way.", tint: "bg-gradient-lavender" },
+  { icon: Code, title: "Collaborative Culture", desc: "Credit professionals, technologists, and operators — all working together with shared values and a common mission.", tint: "bg-gradient-sunset" },
 ];
 
 const container = { hidden: {}, visible: { transition: { staggerChildren: 0.08 } } };
