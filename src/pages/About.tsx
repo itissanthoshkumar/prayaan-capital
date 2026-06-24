@@ -235,7 +235,7 @@ const About = () => {
               className="h-14 md:h-20 w-auto mx-auto"
             />
             <div className="flex flex-wrap items-center justify-center gap-3 mt-7">
-              <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold font-mono">Series A · ₹110 Cr</span>
+              <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold font-body">Series A · ₹110 Cr</span>
               <span className="px-4 py-2 rounded-full bg-secondary text-secondary-foreground text-sm font-semibold">2026</span>
             </div>
           </motion.div>
