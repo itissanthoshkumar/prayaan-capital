@@ -15,7 +15,6 @@ const groups: { title: string; links: SitemapLink[] }[] = [
       { label: "Team", href: "/team" },
       { label: "Technology", href: "/technology" },
       { label: "Careers", href: "/careers" },
-      { label: "News", href: "/news" },
       { label: "Contact Us", href: "/contact" },
     ],
   },

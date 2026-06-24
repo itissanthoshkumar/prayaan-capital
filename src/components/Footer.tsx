@@ -8,7 +8,6 @@ const company: FooterLink[] = [
   { label: "About Us", href: "/why-prayaan" },
   { label: "Our Team", href: "/team" },
   { label: "Technology", href: "/technology" },
-  { label: "News", href: "/news" },
   { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];

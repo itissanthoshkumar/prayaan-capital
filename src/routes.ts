@@ -3,7 +3,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Team from "./pages/Team";
 import Careers from "./pages/Careers";
-import News from "./pages/News";
+// import News from "./pages/News";   // disabled
 import Contact from "./pages/Contact";
 import Products from "./pages/Products";
 import Eligibility from "./pages/Eligibility";
@@ -61,7 +61,7 @@ export const appRoutes: AppRoute[] = [
   { path: "/team", component: About },
   { path: "/about", component: About },
   { path: "/careers", component: Careers },
-  { path: "/news", component: News },
+  // { path: "/news", component: News },   // disabled — 404
   { path: "/contact", component: Contact },
   { path: "/products", component: Products },
   // Disabled — only the /products listing is kept, no per-product detail pages
