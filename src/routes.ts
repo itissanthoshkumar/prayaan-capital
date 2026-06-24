@@ -19,7 +19,7 @@ import EMICalc from "./pages/calculators/EMICalc";
 // import HowToApply from "./pages/HowToApply";   // disabled
 import DocumentChecklist from "./pages/DocumentChecklist";
 import InterestRatesAndCharges from "./pages/InterestRatesAndCharges";
-import FAQs from "./pages/FAQs";
+// import FAQs from "./pages/FAQs";   // disabled
 // import Downloads from "./pages/Downloads";   // disabled
 // import CustomerLogin from "./pages/CustomerLogin";   // disabled
 // import InterestRatePolicy from "./pages/regulatory/InterestRatePolicy";   // disabled
@@ -77,7 +77,7 @@ export const appRoutes: AppRoute[] = [
   // { path: "/how-to-apply", component: HowToApply },   // disabled
   // { path: "/document-checklist", component: DocumentChecklist },   // disabled — 404
   { path: "/interest-rates-and-charges", component: InterestRatesAndCharges },
-  { path: "/faqs", component: FAQs },
+  // { path: "/faqs", component: FAQs },   // disabled — 404
   // { path: "/downloads", component: Downloads },   // disabled
   // { path: "/customer-login", component: CustomerLogin },   // disabled
   // { path: "/blog", component: Blog },   // disabled
@@ -123,7 +123,7 @@ export const appRoutes: AppRoute[] = [
   // { path: "/apply", component: Eligibility },   // disabled — 404
   // { path: "/success-stories", component: CaseStudies },   // disabled
   // { path: "/partnerships", component: PartnerWithUs },   // disabled
-  { path: "/faq", component: FAQs },
+  // { path: "/faq", component: FAQs },   // disabled — 404
   // Note: /404 and any unknown path are handled by the catch-all route in App.tsx
 ];
 

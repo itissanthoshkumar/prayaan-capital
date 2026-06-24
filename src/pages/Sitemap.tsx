@@ -34,8 +34,6 @@ const groups: { title: string; links: SitemapLink[] }[] = [
       { label: "Customer Hub", href: "/customer" },
       { label: "Grievance Redressal", href: "/grievance-redressal" },
       { label: "NACH Instructions", href: "/nach-instructions" },
-      { label: "Document Checklist", href: "/document-checklist" },
-      { label: "FAQs", href: "/faqs" },
     ],
   },
   {

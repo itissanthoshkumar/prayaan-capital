@@ -30,7 +30,6 @@ const services = [
 ];
 
 const quickLinks = [
-  { label: "FAQ", href: "/faqs", icon: HelpCircle },
   { label: "Contact Support", href: "/contact", icon: Phone },
   { label: "Policies", href: "/policies", icon: ClipboardList },
   { label: "NACH Instructions", href: "/nach-instructions", icon: CreditCard },
