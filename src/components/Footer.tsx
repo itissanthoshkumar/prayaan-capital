@@ -9,7 +9,6 @@ const company: FooterLink[] = [
   { label: "Our Team", href: "/team" },
   { label: "Technology", href: "/technology" },
   { label: "News", href: "/news" },
-  { label: "Case Studies", href: "/case-studies" },
   { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];
@@ -40,7 +39,6 @@ const legal: FooterLink[] = [
   { label: "Policies", href: "/policies" },
   { label: "RBI Disclosures", href: "/rbi-disclosures" },
   { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Terms & Conditions", href: "/terms" },
   { label: "Sitemap", href: "/sitemap" },
 ];
 
