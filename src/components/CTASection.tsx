@@ -40,7 +40,7 @@ const CTASection = () => {
               className="flex flex-col sm:flex-row gap-3 justify-center"
             >
               <Button size="lg" variant="default" className="text-sm px-8 font-body" asChild>
-                <Link to="/eligibility">Apply for a Loan <ArrowRight size={15} /></Link>
+                <Link to="/contact">Get in Touch <ArrowRight size={15} /></Link>
               </Button>
               <Button variant="secondary" size="lg" className="text-sm px-8 font-body" asChild>
                 <Link to="/contact"><Phone size={15} /> Talk to an Advisor</Link>

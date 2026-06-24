@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { CheckCircle, FileStack, Sparkles, ArrowUpRight } from "lucide-react";
 
 const eligibility = [
@@ -94,9 +95,9 @@ const EligibilitySection = () => {
             </motion.ul>
 
             <div className="mt-6 pt-5 border-t border-border/40">
-              <div className="flex items-center gap-2 text-xs text-primary font-semibold font-body cursor-pointer group/link hover:gap-3 transition-all">
-                Check your eligibility <ArrowUpRight size={14} className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
-              </div>
+              <Link to="/contact" className="flex items-center gap-2 text-xs text-primary font-semibold font-body group/link hover:gap-3 transition-all">
+                Contact us to apply <ArrowUpRight size={14} className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+              </Link>
             </div>
           </motion.div>
 

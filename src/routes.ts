@@ -46,6 +46,7 @@ import Customer from "./pages/Customer";
 import CustomerPayments from "./pages/CustomerPayments";
 import RBIDisclosures from "./pages/RBIDisclosures";
 import ThankYou from "./pages/ThankYou";
+import HeroPreview from "./pages/HeroPreview";
 // import { productData } from "./data/products"; // used only by the disabled /products/:slug route
 
 export interface AppRoute {
@@ -69,7 +70,7 @@ export const appRoutes: AppRoute[] = [
   //   component: ProductDetail,
   //   sampleParams: Object.keys(productData).map((s) => `/products/${s}`),
   // },
-  { path: "/eligibility", component: Eligibility },
+  // { path: "/eligibility", component: Eligibility },   // disabled — apply flow removed
   { path: "/calculators/emi", component: EMICalc },
   // { path: "/calculators/eligibility", component: EligibilityCalc },   // disabled
   // { path: "/calculators/foreclosure", component: ForeclosureCalc },   // disabled
@@ -109,7 +110,8 @@ export const appRoutes: AppRoute[] = [
   { path: "/customer", component: Customer },
   { path: "/customer/payments", component: CustomerPayments },
   { path: "/rbi-disclosures", component: RBIDisclosures },
-  { path: "/thank-you", component: ThankYou },
+  // { path: "/thank-you", component: ThankYou },   // disabled — apply flow removed
+  { path: "/hero-preview", component: HeroPreview },
 
   // Route aliases (spec URLs → existing components)
   // { path: "/investors", component: InvestorRelations },   // disabled

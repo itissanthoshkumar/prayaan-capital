@@ -50,7 +50,7 @@ const ProductPageTemplate = ({ data }: { data: ProductPageData }) => {
               </div>
             </div>
             <div className="flex flex-wrap gap-3 mt-7">
-              <Link to="/eligibility"><Button className="rounded-full px-6">Apply Now <ArrowRight size={14} className="ml-1" /></Button></Link>
+              <Link to="/contact"><Button className="rounded-full px-6">Contact Us <ArrowRight size={14} className="ml-1" /></Button></Link>
               <Link to="/calculators/emi"><Button variant="outline" className="rounded-full px-6">Calculate EMI</Button></Link>
             </div>
           </motion.div>

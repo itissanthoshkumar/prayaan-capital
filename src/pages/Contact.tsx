@@ -238,27 +238,6 @@ const Contact = () => (
             transition={{ duration: 0.6 }}
             className="group relative clay-surface p-6 md:p-10"
           >
-            {/* Loan nudge */}
-            <Link
-              to="/eligibility"
-              className="flex items-center gap-3 p-3 rounded-2xl bg-muted hover:bg-primary/8 transition-colors mb-6 group/nudge"
-            >
-              <div className="w-8 h-8 rounded-xl bg-gradient-coral shadow-clay-sm flex items-center justify-center shrink-0">
-                <CheckCircle size={14} className="text-white" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="font-body text-xs font-semibold text-foreground">
-                  Looking for a property loan?
-                </p>
-                <p className="font-body text-[11px] text-muted-foreground">
-                  Use our eligibility check — get a decision faster
-                </p>
-              </div>
-              <ChevronRight
-                size={14}
-                className="text-primary shrink-0 group-hover/nudge:translate-x-0.5 transition-transform"
-              />
-            </Link>
 
             <form className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-4">

@@ -511,8 +511,8 @@ const EMICalculator = () => {
             className="mt-8 text-center"
           >
             <Button variant="default" size="lg" className="font-body" asChild>
-              <Link to="/eligibility">
-                Apply for a Loan <ArrowRight size={15} />
+              <Link to="/contact">
+                Get in Touch <ArrowRight size={15} />
               </Link>
             </Button>
             <p className="font-body text-xs text-muted-foreground mt-3 max-w-lg mx-auto">

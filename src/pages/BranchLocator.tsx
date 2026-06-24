@@ -253,8 +253,8 @@ const BranchLocator = () => {
                   {branches.length} branches · {states.length} states · {new Set(branches.map((b) => b.district)).size} districts
                 </p>
                 <Button variant="default" className="rounded-2xl font-body" asChild>
-                  <Link to="/eligibility">
-                    Apply Online <ArrowRight size={15} />
+                  <Link to="/contact">
+                    Contact Us <ArrowRight size={15} />
                   </Link>
                 </Button>
               </motion.div>

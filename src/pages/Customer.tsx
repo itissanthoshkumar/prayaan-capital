@@ -29,9 +29,9 @@ const services = [
   },
   {
     icon: ClipboardList,
-    title: "Apply Now",
-    desc: "Start a new loan application in minutes. Apply online and get a decision in 48 hours.",
-    href: "/eligibility",
+    title: "Get in Touch",
+    desc: "Speak to our team about a new loan or existing account. We're here Monday–Friday, 9:30 AM – 6:30 PM.",
+    href: "/contact",
     tint: "bg-accent",
   },
 ];

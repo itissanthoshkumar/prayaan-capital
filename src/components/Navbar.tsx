@@ -105,9 +105,9 @@ const Navbar = () => {
               </Link>
             )
           )}
-          <Link to="/eligibility">
+          <Link to="/contact">
             <Button size="sm" variant="hero" className="ml-4 rounded-full text-xs px-5 font-body animate-cta-glow">
-              Apply Now
+              Contact Us
             </Button>
           </Link>
         </div>
@@ -173,9 +173,9 @@ const Navbar = () => {
                   </Link>
                 )
               )}
-              <Link to="/eligibility" onClick={() => setIsOpen(false)}>
+              <Link to="/contact" onClick={() => setIsOpen(false)}>
                 <Button size="sm" variant="hero" className="w-full mt-3 rounded-full text-xs font-body">
-                  Apply Now
+                  Contact Us
                 </Button>
               </Link>
             </div>

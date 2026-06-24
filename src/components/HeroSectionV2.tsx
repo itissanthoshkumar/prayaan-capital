@@ -126,7 +126,7 @@ const HeroSectionV2 = () => {
         <motion.div custom={3} initial="hidden" animate="visible" variants={fadeUp}
           className="flex items-center gap-5 mb-10">
           <Button variant="hero" size="lg" className="text-sm animate-cta-glow" asChild>
-            <Link to="/eligibility">Apply for a Loan <ArrowRight size={15} /></Link>
+            <Link to="/contact">Get in Touch <ArrowRight size={15} /></Link>
           </Button>
           <a href="/#emi-calculator" className="font-body text-sm font-semibold text-foreground/80 hover:text-primary transition-colors inline-flex items-center gap-1.5">
             Calculate EMI <ArrowRight size={14} />

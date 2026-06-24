@@ -119,10 +119,10 @@ const HeroSection = () => {
         {/* CTAs */}
         <motion.div custom={3} initial="hidden" animate="visible" variants={fadeUp} className="flex items-center gap-4 mb-11">
           <Link
-            to="/eligibility"
+            to="/contact"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#f0a800] text-[#0d2137] font-bold text-sm shadow-[0_0_28px_rgba(240,168,0,0.35)] hover:shadow-[0_0_40px_rgba(240,168,0,0.55)] hover:bg-[#fbb500] transition-all font-body"
           >
-            Apply for a Loan <ArrowRight size={15} />
+            Get in Touch <ArrowRight size={15} />
           </Link>
           <a
             href="/#emi-calculator"

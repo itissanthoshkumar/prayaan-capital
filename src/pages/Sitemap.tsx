@@ -20,10 +20,9 @@ const groups: { title: string; links: SitemapLink[] }[] = [
     ],
   },
   {
-    title: "Products & Apply",
+    title: "Products",
     links: [
       { label: "Our Products", href: "/products" },
-      { label: "Apply Now", href: "/eligibility" },
       { label: "EMI Calculator", href: "/calculators/emi" },
       { label: "Branch Locator", href: "/branch-locator" },
       { label: "Case Studies", href: "/case-studies" },
@@ -58,7 +57,6 @@ const groups: { title: string; links: SitemapLink[] }[] = [
   {
     title: "Utility",
     links: [
-      { label: "Thank You", href: "/thank-you" },
       { label: "Sitemap", href: "/sitemap" },
     ],
   },

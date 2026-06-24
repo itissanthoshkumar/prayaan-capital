@@ -160,9 +160,9 @@ const Products = () => {
                         </li>
                       ))}
                     </ul>
-                    <Link to="/eligibility">
+                    <Link to="/contact">
                       <Button variant="default" size="sm" className="w-full">
-                        Apply Now <ArrowRight size={14} />
+                        Contact Us <ArrowRight size={14} />
                       </Button>
                     </Link>
                   </div>
