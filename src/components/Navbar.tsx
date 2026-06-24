@@ -86,17 +86,16 @@ const Navbar = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 4 }}
                       transition={{ duration: 0.12 }}
-                      className="absolute top-full left-0 mt-2 w-48 rounded-2xl py-2 overflow-hidden shadow-lg border border-white/10"
-                      style={{ background: NAV_BG_DARK }}
+                      className="absolute top-full left-0 mt-2 w-52 rounded-2xl p-1.5 overflow-hidden bg-white ring-1 ring-black/5 shadow-[0_12px_32px_rgba(13,33,55,0.22)]"
                     >
                       {link.children.map((child) => (
                         <Link
                           key={child.label}
                           to={child.href}
-                          className={`block px-3.5 py-2 text-[13px] font-body transition-colors ${
+                          className={`block px-3 py-2 rounded-xl text-[13px] font-medium font-body transition-colors ${
                             isActive(child.href)
-                              ? "text-white bg-white/15"
-                              : "text-white/75 hover:text-white hover:bg-white/10"
+                              ? "text-primary bg-primary/10"
+                              : "text-foreground/75 hover:text-primary hover:bg-primary/5"
                           }`}
                         >
                           {child.label}

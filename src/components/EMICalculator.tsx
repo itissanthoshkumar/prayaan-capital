@@ -333,11 +333,13 @@ const EMICalculator = () => {
               </div>
 
               {/* ════════ RIGHT — Results ════════ */}
-              <div className="p-7 md:p-10 flex flex-col bg-gradient-to-br from-card to-muted/40">
+              <div className="p-7 md:p-10 flex flex-col justify-between gap-6 bg-gradient-to-br from-card to-muted/40">
 
+                {/* ── Top group: donut + legend ── */}
+                <div>
                 {/* Donut chart */}
                 <div className="relative mb-2">
-                  <ResponsiveContainer width="100%" height={200}>
+                  <ResponsiveContainer width="100%" height={230}>
                     <PieChart>
                       <Pie
                         key={`${loanAmount}-${rate}-${tenure}`}
@@ -369,7 +371,7 @@ const EMICalculator = () => {
                 </div>
 
                 {/* Legend */}
-                <div className="flex items-center justify-center gap-5 mb-6">
+                <div className="flex items-center justify-center gap-5 mt-1">
                   <div className="flex items-center gap-1.5">
                     <div className="w-2.5 h-2.5 rounded-full" style={{ background: C_PRINCIPAL }} />
                     <span className="font-body text-xs text-muted-foreground">Principal</span>
@@ -379,7 +381,10 @@ const EMICalculator = () => {
                     <span className="font-body text-xs text-muted-foreground">Interest</span>
                   </div>
                 </div>
+                </div>
 
+                {/* ── Bottom group: breakdown ── */}
+                <div>
                 {/* Three stat cards */}
                 <div className="grid grid-cols-3 gap-3">
                   {[
@@ -452,6 +457,15 @@ const EMICalculator = () => {
                       transition={{ duration: 0.4, delay: 0.2 }}
                     />
                   </div>
+                </div>
+
+                {/* Insight callout */}
+                <div className="mt-5 flex items-start gap-2.5 rounded-2xl bg-primary/5 border border-primary/10 p-3.5">
+                  <Lightbulb size={15} className="text-[#f0a800] shrink-0 mt-0.5" />
+                  <p className="font-body text-[11px] text-muted-foreground leading-relaxed">
+                    Over {tenureStr(tenure)}, you repay <span className="font-semibold text-foreground">{fmtFull(totalPayment)}</span> in total — about <span className="font-semibold text-foreground">{multiplier}×</span> the amount you borrow.
+                  </p>
+                </div>
                 </div>
 
               </div>
