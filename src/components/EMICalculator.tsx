@@ -268,21 +268,6 @@ const EMICalculator = () => {
                   </div>
                 </div>
 
-                {/* ── Dynamic insight ── */}
-                <motion.div
-                  key={`${loanAmount}-${rate}-${tenure}`}
-                  initial={{ opacity: 0, y: 4 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.35 }}
-                  className="flex items-start gap-3 p-4 rounded-2xl bg-muted/60 border border-border/30"
-                >
-                  <Lightbulb size={14} className="text-primary shrink-0 mt-0.5" />
-                  <p className="font-body text-xs text-muted-foreground leading-relaxed">
-                    At {rate}% p.a. over {tenureStr(tenure)}, you'll pay{" "}
-                    <span className="text-foreground font-semibold">{multiplier}× your borrowed amount</span>{" "}
-                    in total — {fmtFull(totalInterest)} in interest on a {fmtFull(loanAmount * 1_00_000)} loan.
-                  </p>
-                </motion.div>
 
               </div>
 
