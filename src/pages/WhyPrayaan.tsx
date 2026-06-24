@@ -136,7 +136,7 @@ const WhyPrayaan = () => {
               >
                 <div className="flex items-start gap-3">
                   <CheckCircle2 size={20} className="text-primary shrink-0 mt-0.5" />
-                  <span className="text-sm md:text-base text-foreground"><span className="font-semibold">The problem:</span> 63M MSMEs, yet only 1 in 5 access formal credit.</span>
+                  <span className="text-sm md:text-base text-foreground"><span className="font-semibold">The problem:</span> Over 8.76 Cr MSMEs on Udyam, yet fewer than 1 in 5 access formal credit.</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 size={20} className="text-primary shrink-0 mt-0.5" />
