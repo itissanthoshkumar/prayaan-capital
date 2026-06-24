@@ -7,7 +7,6 @@ type FooterLink = { label: string; href: string };
 const company: FooterLink[] = [
   { label: "About Us", href: "/why-prayaan" },
   { label: "Our Team", href: "/team" },
-  { label: "Technology", href: "/technology" },
   { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];

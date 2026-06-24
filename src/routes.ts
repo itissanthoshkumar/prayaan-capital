@@ -41,7 +41,7 @@ import BranchLocator from "./pages/BranchLocator";
 import Sitemap from "./pages/Sitemap";
 import NACHInstructions from "./pages/NACHInstructions";
 import WhyPrayaan from "./pages/WhyPrayaan";
-import Technology from "./pages/Technology";
+// import Technology from "./pages/Technology";   // disabled
 import Customer from "./pages/Customer";
 // import CustomerPayments from "./pages/CustomerPayments";   // disabled
 import RBIDisclosures from "./pages/RBIDisclosures";
@@ -106,7 +106,7 @@ export const appRoutes: AppRoute[] = [
 
   // New pages
   { path: "/why-prayaan", component: WhyPrayaan },
-  { path: "/technology", component: Technology },
+  // { path: "/technology", component: Technology },   // disabled — 404
   { path: "/customer", component: Customer },
   // { path: "/customer/payments", component: CustomerPayments },   // disabled — 404
   { path: "/rbi-disclosures", component: RBIDisclosures },

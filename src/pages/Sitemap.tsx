@@ -13,7 +13,6 @@ const groups: { title: string; links: SitemapLink[] }[] = [
       { label: "Home", href: "/" },
       { label: "About Prayaan", href: "/why-prayaan" },
       { label: "Team", href: "/team" },
-      { label: "Technology", href: "/technology" },
       { label: "Careers", href: "/careers" },
       { label: "Contact Us", href: "/contact" },
     ],
