@@ -3,7 +3,7 @@ import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
 import {
   Mail, Phone, MapPin, Clock, MessageSquare,
-  Users, ArrowRight, CheckCircle, ChevronRight,
+  Users, ArrowRight, ChevronRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -19,27 +19,14 @@ const cardAnim = {
 /* ─── Channel cards data ─── */
 const channels = [
   {
-    icon: CheckCircle,
+    icon: Phone,
     tint: "bg-gradient-coral",
     label: "Get in Touch",
-    body: "Secured business loans from ₹5L to ₹50L, backed by the property you own. Decisions typically within 48 hours of complete documentation.",
+    body: "Reach our customer care team for loan enquiries, product queries, account support, or repayment assistance. Monday – Friday, 9:30 AM – 6:30 PM.",
     ctaLabel: "+91-6380589898",
     ctaTo: undefined as string | undefined,
     ctaHref: "tel:+916380589898",
     secondary: { label: "customercare@prayaancapital.com", href: "mailto:customercare@prayaancapital.com" },
-  },
-  {
-    icon: Phone,
-    tint: "bg-gradient-mint",
-    label: "Talk to Us",
-    body: "Reach our customer care team for queries on products, accounts and repayments. Monday – Friday, 9:30 AM – 6:30 PM.",
-    ctaLabel: "+91-6380589898",
-    ctaTo: undefined as string | undefined,
-    ctaHref: "tel:+916380589898",
-    secondary: {
-      label: "customercare@prayaancapital.com",
-      href: "mailto:customercare@prayaancapital.com",
-    },
   },
   {
     icon: Users,
@@ -143,7 +130,7 @@ const Contact = () => (
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
-          className="grid md:grid-cols-3 gap-5 md:gap-6 max-w-5xl mx-auto"
+          className="grid md:grid-cols-2 gap-5 md:gap-6 max-w-3xl mx-auto"
         >
           {channels.map((ch, i) => (
             <motion.div
