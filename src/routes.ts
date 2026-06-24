@@ -43,7 +43,7 @@ import NACHInstructions from "./pages/NACHInstructions";
 import WhyPrayaan from "./pages/WhyPrayaan";
 import Technology from "./pages/Technology";
 import Customer from "./pages/Customer";
-import CustomerPayments from "./pages/CustomerPayments";
+// import CustomerPayments from "./pages/CustomerPayments";   // disabled
 import RBIDisclosures from "./pages/RBIDisclosures";
 import ThankYou from "./pages/ThankYou";
 import HeroPreview from "./pages/HeroPreview";
@@ -108,7 +108,7 @@ export const appRoutes: AppRoute[] = [
   { path: "/why-prayaan", component: WhyPrayaan },
   { path: "/technology", component: Technology },
   { path: "/customer", component: Customer },
-  { path: "/customer/payments", component: CustomerPayments },
+  // { path: "/customer/payments", component: CustomerPayments },   // disabled — 404
   { path: "/rbi-disclosures", component: RBIDisclosures },
   // { path: "/thank-you", component: ThankYou },   // disabled — apply flow removed
   { path: "/hero-preview", component: HeroPreview },

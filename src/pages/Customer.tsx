@@ -7,13 +7,6 @@ import { CreditCard, MessageCircle, Calculator, ClipboardList, Phone, HelpCircle
 
 const services = [
   {
-    icon: CreditCard,
-    title: "Payments",
-    desc: "Pay your EMI online, via NEFT/RTGS, or set up auto-debit for hassle-free repayment.",
-    href: "/customer/payments",
-    tint: "bg-accent",
-  },
-  {
     icon: MessageCircle,
     title: "Grievance Redressal",
     desc: "Submit a complaint, track its status, and escalate if needed. We resolve in 30 days.",

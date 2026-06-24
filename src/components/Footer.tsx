@@ -22,7 +22,6 @@ const productsTools: FooterLink[] = [
 
 const customerSupport: FooterLink[] = [
   { label: "Customer", href: "/customer" },
-  { label: "Customer Payments", href: "/customer/payments" },
   { label: "NACH Instructions", href: "/nach-instructions" },
   { label: "FAQs", href: "/faqs" },
   { label: "Grievance Redressal", href: "/grievance-redressal" },
