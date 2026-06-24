@@ -23,7 +23,6 @@ const groups: { title: string; links: SitemapLink[] }[] = [
       { label: "Our Products", href: "/products" },
       { label: "EMI Calculator", href: "/calculators/emi" },
       { label: "Branch Locator", href: "/branch-locator" },
-      { label: "Case Studies", href: "/case-studies" },
     ],
   },
   {
