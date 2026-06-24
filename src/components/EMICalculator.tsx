@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useMemo } from "react";
 import {
   Calculator, TrendingUp, IndianRupee, Calendar,
-  ChevronDown, ChevronUp, ArrowRight, Lightbulb,
+  ArrowRight, Lightbulb,
 } from "lucide-react";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import { Slider } from "@/components/ui/slider";
@@ -55,15 +55,6 @@ const tenureStr = (months: number): string => {
   return `${yrs.toFixed(1)} Yrs`;
 };
 
-/* ─── Amortisation row ─── */
-type AmorRow = {
-  year: number;
-  openingBalance: number;
-  principal: number;
-  interest: number;
-  closingBalance: number;
-};
-
 /* ─── Custom recharts tooltip ─── */
 const ChartTooltip = ({ active, payload }: { active?: boolean; payload?: Array<{ name: string; value: number }> }) => {
   if (!active || !payload?.length) return null;
@@ -82,10 +73,10 @@ const EMICalculator = () => {
   const [loanAmount, setLoanAmount] = useState(15);  // Lakhs (3–50)
   const [rate,       setRate]       = useState(18);  // % p.a. (18–30)
   const [tenure,     setTenure]     = useState(60);  // months: 60 | 84 | 120
-  const [showTable,  setShowTable]  = useState(false);
+
 
   /* ── Core maths ── */
-  const { emi, totalInterest, totalPayment, principalPct, amortization } = useMemo(() => {
+  const { emi, totalInterest, totalPayment, principalPct } = useMemo(() => {
     const P = loanAmount * 1_00_000;
     const r = rate / 12 / 100;
     const n = tenure;
@@ -95,36 +86,11 @@ const EMICalculator = () => {
     const totalPay = emiVal * n;
     const totalInt = totalPay - P;
 
-    /* Yearly amortisation */
-    let balance = P;
-    const rows: AmorRow[] = [];
-    for (let yr = 1; yr <= Math.ceil(n / 12); yr++) {
-      const months = Math.min(12, n - (yr - 1) * 12);
-      const openBal = balance;
-      let yPrin = 0, yInt = 0;
-      for (let m = 0; m < months; m++) {
-        if (balance < 0.01) break;
-        const iAmt = balance * r;
-        const pAmt = Math.min(emiVal - iAmt, balance);
-        yInt  += iAmt;
-        yPrin += pAmt;
-        balance = Math.max(0, balance - pAmt);
-      }
-      rows.push({
-        year: yr,
-        openingBalance: Math.round(openBal),
-        principal:      Math.round(yPrin),
-        interest:       Math.round(yInt),
-        closingBalance: Math.round(balance),
-      });
-    }
-
     return {
       emi:           Math.round(emiVal),
       totalInterest: Math.round(totalInt),
       totalPayment:  Math.round(totalPay),
       principalPct:  Math.round((P / totalPay) * 100),
-      amortization:  rows,
     };
   }, [loanAmount, rate, tenure]);
 
@@ -434,73 +400,6 @@ const EMICalculator = () => {
             </div>
           </div>
 
-          {/* ── Amortisation toggle ── */}
-          <div className="mt-5 flex items-center justify-center gap-3">
-            <button
-              onClick={() => setShowTable((v) => !v)}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-card shadow-clay-sm hover:shadow-clay text-sm font-semibold text-foreground font-body transition-all"
-            >
-              {showTable ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
-              {showTable ? "Hide" : "View"} Yearly Amortisation Schedule
-            </button>
-          </div>
-
-          {/* ── Amortisation table ── */}
-          <AnimatePresence>
-            {showTable && (
-              <motion.div
-                key="amortisation"
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="overflow-hidden mt-4"
-              >
-                <div className="clay-surface overflow-x-auto">
-                  {/* Header */}
-                  <div className="grid grid-cols-5 min-w-[560px] px-6 py-3.5 bg-muted/50 border-b border-border/30">
-                    {["Year", "Opening Bal.", "Principal Paid", "Interest Paid", "Closing Bal."].map((h, i) => (
-                      <span key={h} className={`font-body text-[11px] font-semibold text-muted-foreground ${i > 0 ? "text-right" : ""}`}>
-                        {h}
-                      </span>
-                    ))}
-                  </div>
-                  {/* Rows */}
-                  {amortization.map((row, i) => (
-                    <motion.div
-                      key={row.year}
-                      initial={{ opacity: 0, x: -8 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: i * 0.02, duration: 0.25 }}
-                      className="grid grid-cols-5 min-w-[560px] px-6 py-3.5 border-b border-border/15 last:border-0 hover:bg-muted/20 transition-colors"
-                    >
-                      <span className="font-body text-xs font-semibold text-foreground">Year {row.year}</span>
-                      <span className="font-body text-xs text-muted-foreground text-right">{fmtFull(row.openingBalance)}</span>
-                      <span className="font-body text-xs font-medium text-right" style={{ color: C_PRINCIPAL }}>
-                        {fmtFull(row.principal)}
-                      </span>
-                      <span className="font-body text-xs font-medium text-right" style={{ color: C_INTEREST }}>
-                        {fmtFull(row.interest)}
-                      </span>
-                      <span className="font-body text-xs text-foreground text-right">{fmtFull(row.closingBalance)}</span>
-                    </motion.div>
-                  ))}
-                  {/* Totals footer */}
-                  <div className="grid grid-cols-5 min-w-[560px] px-6 py-3.5 bg-muted/40 border-t border-border/40">
-                    <span className="font-body text-xs font-bold text-foreground">Total</span>
-                    <span className="font-body text-xs text-muted-foreground text-right">—</span>
-                    <span className="font-body text-xs font-bold text-right" style={{ color: C_PRINCIPAL }}>
-                      {fmtFull(loanAmount * 1_00_000)}
-                    </span>
-                    <span className="font-body text-xs font-bold text-right" style={{ color: C_INTEREST }}>
-                      {fmtFull(totalInterest)}
-                    </span>
-                    <span className="font-body text-xs font-bold text-foreground text-right">—</span>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
 
           {/* ── CTA ── */}
           <motion.div
