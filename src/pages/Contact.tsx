@@ -25,7 +25,7 @@ const channels = [
   {
     icon: CheckCircle,
     tint: "bg-gradient-coral",
-    label: "Apply for a Loan",
+    label: "Get in Touch",
     body: "Secured business loans from ₹5L to ₹50L, backed by the property you own. Decisions typically within 48 hours of complete documentation.",
     ctaLabel: "Get in Touch",
     ctaTo: "/contact",

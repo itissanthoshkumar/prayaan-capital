@@ -128,6 +128,7 @@ const TestimonialsSection = () => {
                           src={t.image}
                           alt={`${t.name} - ${t.business}, Prayaan Capital customer`}
                           className="w-full h-full object-cover"
+                          loading="lazy"
                         />
                       </div>
                     </div>
