@@ -5,9 +5,8 @@ import BrandLogo from "@/components/BrandLogo";
 type FooterLink = { label: string; href: string };
 
 const company: FooterLink[] = [
-  { label: "About Us", href: "/team" },
-  { label: "Why Prayaan", href: "/why-prayaan" },
-  { label: "Leadership Team", href: "/team" },
+  { label: "About Prayaan", href: "/why-prayaan" },
+  { label: "Leadership", href: "/team" },
   { label: "Technology", href: "/technology" },
   { label: "News", href: "/news" },
   { label: "Case Studies", href: "/case-studies" },
@@ -19,7 +18,6 @@ const productsTools: FooterLink[] = [
   { label: "Products", href: "/products" },
   { label: "EMI Calculator", href: "/calculators/emi" },
   { label: "Interest Rates & Charges", href: "/interest-rates-and-charges" },
-  { label: "Document Checklist", href: "/document-checklist" },
   { label: "Branch Locator", href: "/branch-locator" },
 ];
 

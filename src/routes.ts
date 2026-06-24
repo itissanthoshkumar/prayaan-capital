@@ -75,7 +75,7 @@ export const appRoutes: AppRoute[] = [
   // { path: "/calculators/eligibility", component: EligibilityCalc },   // disabled
   // { path: "/calculators/foreclosure", component: ForeclosureCalc },   // disabled
   // { path: "/how-to-apply", component: HowToApply },   // disabled
-  { path: "/document-checklist", component: DocumentChecklist },
+  // { path: "/document-checklist", component: DocumentChecklist },   // disabled — 404
   { path: "/interest-rates-and-charges", component: InterestRatesAndCharges },
   { path: "/faqs", component: FAQs },
   // { path: "/downloads", component: Downloads },   // disabled
