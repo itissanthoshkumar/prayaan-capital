@@ -58,8 +58,8 @@ export interface AppRoute {
 
 export const appRoutes: AppRoute[] = [
   { path: "/", component: Index },
+  { path: "/team", component: About },
   { path: "/about", component: About },
-  // { path: "/team", component: Team },   // disabled — use /about
   { path: "/careers", component: Careers },
   { path: "/news", component: News },
   { path: "/contact", component: Contact },

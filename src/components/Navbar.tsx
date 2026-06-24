@@ -11,7 +11,7 @@ const navLinks = [
     label: "About Us",
     children: [
       { label: "About Prayaan", href: "/why-prayaan" },
-      { label: "Team", href: "/about" },
+      { label: "Team", href: "/team" },
     ],
   },
   {
