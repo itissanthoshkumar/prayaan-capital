@@ -65,7 +65,7 @@ const HeroSection = () => {
   return (
     <section
       className="relative lg:min-h-[90vh] flex items-stretch overflow-hidden"
-      style={{ background: "#e8f2fb" }}
+      style={{ background: "linear-gradient(135deg, #c8dff2 0%, #d8eaf8 60%, #cce3f5 100%)" }}
     >
       {/* Ambient glow blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
