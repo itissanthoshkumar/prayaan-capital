@@ -60,17 +60,20 @@ const EMICalculator = () => {
     setLoanInputVal((v * 1_00_000).toLocaleString("en-IN"));
   };
 
+  // Only update state on blur — avoids mismatch between input text and display while typing
   const handleInputAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
     setLoanInputVal(e.target.value);
-    const raw = parseInt(e.target.value.replace(/,/g, ""), 10);
-    if (!isNaN(raw)) {
-      const lakhs = Math.round(raw / 1_00_000);
-      if (lakhs >= 3 && lakhs <= 50) setLoanAmount(lakhs);
-    }
   };
 
   const handleBlurAmount = () => {
-    setLoanInputVal((loanAmount * 1_00_000).toLocaleString("en-IN"));
+    const raw = parseInt(loanInputVal.replace(/,/g, ""), 10);
+    if (!isNaN(raw) && raw > 0) {
+      const lakhs = Math.max(3, Math.min(50, Math.round(raw / 1_00_000)));
+      setLoanAmount(lakhs);
+      setLoanInputVal((lakhs * 1_00_000).toLocaleString("en-IN"));
+    } else {
+      setLoanInputVal((loanAmount * 1_00_000).toLocaleString("en-IN"));
+    }
   };
 
   const [rateInputVal, setRateInputVal] = useState("18");
@@ -82,12 +85,17 @@ const EMICalculator = () => {
 
   const handleInputRate = (e: React.ChangeEvent<HTMLInputElement>) => {
     setRateInputVal(e.target.value);
-    const v = parseFloat(e.target.value);
-    if (!isNaN(v) && v >= 18 && v <= 30) setRate(Math.round(v * 2) / 2);
   };
 
   const handleBlurRate = () => {
-    setRateInputVal(String(rate));
+    const v = parseFloat(rateInputVal);
+    if (!isNaN(v)) {
+      const clamped = Math.max(18, Math.min(30, Math.round(v * 2) / 2));
+      setRate(clamped);
+      setRateInputVal(String(clamped));
+    } else {
+      setRateInputVal(String(rate));
+    }
   };
 
 
