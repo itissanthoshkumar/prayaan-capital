@@ -152,34 +152,28 @@ const Contact = () => (
                 {ch.body}
               </p>
 
-              {/* Primary CTA */}
+              {/* CTAs */}
               <div className="space-y-2">
                 {ch.ctaTo ? (
-                  <Button
-                    variant={i === 0 ? "default" : "secondary"}
-                    size="sm"
-                    className="w-full font-body"
-                    asChild
-                  >
-                    <Link to={ch.ctaTo}>
-                      {ch.ctaLabel} <ArrowRight size={13} />
-                    </Link>
+                  <Button variant="secondary" size="sm" className="w-full font-body" asChild>
+                    <Link to={ch.ctaTo}>{ch.ctaLabel} <ArrowRight size={13} /></Link>
                   </Button>
                 ) : ch.ctaHref ? (
-                  <Button variant={i === 0 ? "default" : "secondary"} size="sm" className="w-full font-body" asChild>
-                    <a href={ch.ctaHref}>{ch.ctaLabel} <ArrowRight size={13} /></a>
-                  </Button>
+                  <>
+                    <Button variant="default" size="sm" className="w-full font-body" asChild>
+                      <a href={ch.ctaHref}>
+                        <Phone size={13} /> {ch.ctaLabel}
+                      </a>
+                    </Button>
+                    {ch.secondary && (
+                      <Button variant="secondary" size="sm" className="w-full font-body" asChild>
+                        <a href={ch.secondary.href}>
+                          <Mail size={13} /> {ch.secondary.label}
+                        </a>
+                      </Button>
+                    )}
+                  </>
                 ) : null}
-
-                {/* Secondary link (email under phone) */}
-                {ch.secondary && (
-                  <a
-                    href={ch.secondary.href}
-                    className="block text-center font-body text-xs text-muted-foreground hover:text-primary transition-colors truncate px-2 py-1"
-                  >
-                    {ch.secondary.label}
-                  </a>
-                )}
               </div>
             </motion.div>
           ))}
