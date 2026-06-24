@@ -26,28 +26,8 @@ const lakhsToWords = (n: number): string => {
 };
 
 /* ─── Formatters ─── */
-const fmtFull = (v: number): string => {
-  const n = Math.round(v);
-  if (n >= 1_00_00_000) {
-    const cr = n / 1_00_00_000;
-    return `₹${cr === Math.floor(cr) ? cr.toFixed(0) : cr.toFixed(2)} Cr`;
-  }
-  if (n >= 1_00_000) {
-    const l = n / 1_00_000;
-    return `₹${l === Math.floor(l) ? l.toFixed(0) : l.toFixed(2)}L`;
-  }
-  return `₹${n.toLocaleString("en-IN")}`;
-};
-
-const fmtHero = (v: number): string => {
-  const n = Math.round(v);
-  if (n >= 1_00_00_000) return `₹${(n / 1_00_00_000).toFixed(1)}Cr`;
-  if (n >= 10_00_000)   return `₹${(n / 1_00_000).toFixed(0)}L`;
-  if (n >= 1_00_000)    return `₹${(n / 1_00_000).toFixed(1)}L`;
-  if (n >= 10_000)      return `₹${Math.round(n / 1_000)}K`;
-  if (n >= 1_000)       return `₹${(n / 1_000).toFixed(1)}K`;
-  return `₹${n}`;
-};
+const fmtFull = (v: number): string => `₹${Math.round(v).toLocaleString("en-IN")}`;
+const fmtHero = (v: number): string => `₹${Math.round(v).toLocaleString("en-IN")}`;
 
 const tenureStr = (months: number): string => {
   const yrs = months / 12;
@@ -71,8 +51,27 @@ const ChartTooltip = ({ active, payload }: { active?: boolean; payload?: Array<{
    ════════════════════════════════════════════════════════ */
 const EMICalculator = () => {
   const [loanAmount, setLoanAmount] = useState(15);  // Lakhs (3–50)
+  const [loanInputVal, setLoanInputVal] = useState("15,00,000");
   const [rate,       setRate]       = useState(18);  // % p.a. (18–30)
   const [tenure,     setTenure]     = useState(60);  // months: 60 | 84 | 120
+
+  const handleSliderAmount = (v: number) => {
+    setLoanAmount(v);
+    setLoanInputVal((v * 1_00_000).toLocaleString("en-IN"));
+  };
+
+  const handleInputAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setLoanInputVal(e.target.value);
+    const raw = parseInt(e.target.value.replace(/,/g, ""), 10);
+    if (!isNaN(raw)) {
+      const lakhs = Math.round(raw / 1_00_000);
+      if (lakhs >= 3 && lakhs <= 50) setLoanAmount(lakhs);
+    }
+  };
+
+  const handleBlurAmount = () => {
+    setLoanInputVal((loanAmount * 1_00_000).toLocaleString("en-IN"));
+  };
 
 
   /* ── Core maths ── */
@@ -161,28 +160,26 @@ const EMICalculator = () => {
                       <IndianRupee size={13} className="text-primary" />
                       Loan Amount
                     </label>
-                    <div className="flex items-center gap-0.5 px-3 py-1.5 rounded-2xl bg-primary/8 shadow-clay-sm min-w-[88px] justify-end">
+                    <div className="flex items-center gap-0.5 px-3 py-1.5 rounded-2xl bg-primary/8 shadow-clay-sm justify-end">
                       <span className="font-body text-[11px] text-primary font-semibold">₹</span>
                       <input
-                        type="number" min={3} max={50} step={1}
-                        value={loanAmount}
-                        onChange={(e) => {
-                          const v = Math.round(Number(e.target.value));
-                          if (v >= 3 && v <= 50) setLoanAmount(v);
-                        }}
-                        className={`${numInputCls} text-primary`}
+                        type="text"
+                        inputMode="numeric"
+                        value={loanInputVal}
+                        onChange={handleInputAmount}
+                        onBlur={handleBlurAmount}
+                        className="w-24 bg-transparent font-display text-sm font-bold outline-none text-right text-primary"
                       />
-                      <span className="font-body text-[11px] text-primary font-semibold ml-0.5">L</span>
                     </div>
                   </div>
                   <Slider
                     aria-label="Loan amount in lakhs"
-                    value={[loanAmount]} onValueChange={(v) => setLoanAmount(v[0])}
+                    value={[loanAmount]} onValueChange={(v) => handleSliderAmount(v[0])}
                     min={3} max={50} step={1} className="w-full"
                   />
                   <div className="flex justify-between">
-                    <span className="font-body text-[10px] text-muted-foreground">₹3L</span>
-                    <span className="font-body text-[10px] text-muted-foreground">₹50L</span>
+                    <span className="font-body text-[10px] text-muted-foreground">₹3,00,000</span>
+                    <span className="font-body text-[10px] text-muted-foreground">₹50,00,000</span>
                   </div>
                   <p className="font-body text-[11px] text-primary/70 text-center leading-snug">
                     ₹{(loanAmount * 1_00_000).toLocaleString("en-IN")}&nbsp;·&nbsp;{lakhsToWords(loanAmount)}
