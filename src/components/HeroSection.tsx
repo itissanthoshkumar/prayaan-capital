@@ -11,7 +11,7 @@ import hero5 from "@/assets/pexels-prithiv-raj-1074343528-28371334.jpg";
 import hero7 from "@/assets/pexels-varan-6472534.jpg";
 import hero8 from "@/assets/pexels-himanshu817-14707127.jpg";
 import hero10 from "@/assets/pexels-rk-preetham-2001609-3622671.jpg";
-import hero11 from "@/assets/pexels-rk-preetham-2001609-3622670.jpg";
+
 import hero12 from "@/assets/pexels-saman-films-703617-6060893.jpg";
 import hero13 from "@/assets/pexels-henry-benjamin-2149128840-30443336.jpg";
 import hero14 from "@/assets/pexels-ragu-raja-61455736-11612188.jpg";
@@ -25,7 +25,7 @@ const pool = [
   { img: hero7, alt: "Business operator", amount: "₹8 Lakhs", product: "Loan Against Property", place: "Telangana" },
   { img: hero8, alt: "Vendor or merchant", amount: "₹4.5 Lakhs", product: "Secured Business Loan", place: "Karnataka" },
   { img: hero10, alt: "Service provider", amount: "₹5.5 Lakhs", product: "Secured Business Loan", place: "Telangana" },
-  { img: hero11, alt: "Skilled tradesperson", amount: "₹6.5 Lakhs", product: "Secured Business Loan", place: "Andhra Pradesh" },
+
   { img: hero12, alt: "Business owner", amount: "₹8.5 Lakhs", product: "Loan Against Property", place: "Karnataka" },
   { img: hero13, alt: "Professional worker", amount: "₹5 Lakhs", product: "Secured Business Loan", place: "Tamil Nadu" },
   { img: hero14, alt: "Entrepreneur", amount: "₹7.5 Lakhs", product: "Loan Against Property", place: "Telangana" },
