@@ -388,7 +388,6 @@ const EMICalculator = () => {
                     {
                       label: "Principal",
                       value: fmtFull(loanAmount),
-                      pct: `${principalPct}%`,
                       bg: `${C_PRINCIPAL}15`,
                       border: C_PRINCIPAL,
                       color: C_PRINCIPAL,
@@ -396,7 +395,6 @@ const EMICalculator = () => {
                     {
                       label: "Interest",
                       value: fmtFull(totalInterest),
-                      pct: `${100 - principalPct}%`,
                       bg: `${C_INTEREST}15`,
                       border: C_INTEREST,
                       color: C_INTEREST,
@@ -404,7 +402,6 @@ const EMICalculator = () => {
                     {
                       label: "Total Payable",
                       value: fmtFull(totalPayment),
-                      pct: "",
                       bg: "hsl(var(--muted)/0.5)",
                       border: "hsl(var(--border))",
                       color: "hsl(var(--foreground))",
@@ -427,11 +424,6 @@ const EMICalculator = () => {
                       >
                         {s.value}
                       </motion.p>
-                      {s.pct && (
-                        <p className="font-body text-[10px] mt-0.5" style={{ color: `${s.color}bb` }}>
-                          {s.pct} of total
-                        </p>
-                      )}
                     </motion.div>
                   ))}
                 </div>
@@ -456,43 +448,24 @@ const EMICalculator = () => {
                   </div>
                 </div>
 
-                {/* CTA callout */}
-                <Link
-                  to="/contact"
-                  className="group mt-5 flex items-center justify-between gap-3 rounded-2xl bg-primary/5 border border-primary/10 p-3.5 hover:bg-primary/10 hover:border-primary/20 transition-colors"
-                >
-                  <span className="font-body text-[12px] font-semibold text-foreground leading-snug">
-                    Like these numbers?<br className="hidden sm:block" /> Talk to our team to get started.
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 text-[12px] font-bold text-primary shrink-0">
-                    Get in Touch
-                    <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
-                  </span>
-                </Link>
+                {/* CTA */}
+                <Button variant="default" size="lg" className="mt-5 w-full font-body" asChild>
+                  <Link to="/contact">
+                    Get in Touch <ArrowRight size={15} />
+                  </Link>
+                </Button>
                 </div>
 
               </div>
             </div>
+
+            {/* Disclaimer — inside the calculator frame */}
+            <div className="border-t border-border/40 px-7 md:px-10 py-3.5">
+              <p className="font-body text-[11px] text-muted-foreground text-center leading-relaxed">
+                Indicative figures only · Subject to credit assessment · Rates starting from 18% p.a. · RBI-registered NBFC
+              </p>
+            </div>
           </div>
-
-
-          {/* ── CTA ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.15, duration: 0.5 }}
-            className="mt-8 text-center"
-          >
-            <Button variant="default" size="lg" className="font-body" asChild>
-              <Link to="/contact">
-                Get in Touch <ArrowRight size={15} />
-              </Link>
-            </Button>
-            <p className="font-body text-xs text-muted-foreground mt-3 max-w-lg mx-auto">
-              Indicative figures only · Subject to credit assessment · Rates starting from 18% p.a. · RBI-registered NBFC
-            </p>
-          </motion.div>
 
         </motion.div>
       </div>
