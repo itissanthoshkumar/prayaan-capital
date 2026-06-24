@@ -1,23 +1,15 @@
 import HeroIllustration from "@/components/HeroIllustration";
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
-import { MapPin, Clock, ArrowRight, Sparkles, Heart, TrendingUp, Code, Brain, Zap } from "lucide-react";
+import { Sparkles, Heart, TrendingUp, Code, Brain, Zap, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import AIFloatingElements, { AIPulse } from "@/components/AIFloatingElements";
+import AIFloatingElements from "@/components/AIFloatingElements";
 
 const perks = [
   { icon: Sparkles, title: "Meaningful Work", desc: "Help real Indian small businesses access fair credit — your work directly impacts entrepreneurs who need it most.", tint: "bg-gradient-coral" },
   { icon: Heart, title: "Health & Wellness", desc: "Comprehensive health insurance, mental wellness programs, and fitness benefits for you and your family.", tint: "bg-gradient-mint" },
   { icon: TrendingUp, title: "Growth & Learning", desc: "Learning budgets, conference sponsorships, mentorship, and rapid career progression at a growing NBFC.", tint: "bg-gradient-lavender" },
   { icon: Code, title: "Collaborative Culture", desc: "A team of credit professionals, fintech practitioners, and technology builders working toward a shared mission.", tint: "bg-gradient-sunset" },
-];
-
-const openings = [
-  { title: "Product Designer", team: "Product", location: "Bangalore", type: "Full-time", hot: true },
-  { title: "Credit Analyst", team: "Risk & Credit", location: "Chennai", type: "Full-time", hot: true },
-  { title: "Branch Relationship Manager", team: "Sales", location: "Chennai / Bangalore", type: "Full-time", hot: false },
-  { title: "Credit Operations Executive", team: "Operations", location: "Chennai", type: "Full-time", hot: false },
-  { title: "Growth Marketing Manager", team: "Marketing", location: "Bangalore", type: "Full-time", hot: false },
 ];
 
 const container = { hidden: {}, visible: { transition: { staggerChildren: 0.08 } } };
@@ -95,44 +87,26 @@ const Careers = () => {
 
       <section className="py-16 md:py-24 bg-section relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14 md:mb-20">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-5">
-              <Sparkles size={12} /> Open Positions
-            </span>
-            <h2 className="font-display text-2xl md:text-4xl font-bold text-foreground">Join the Team</h2>
-          </motion.div>
-          <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true }} className="space-y-4 max-w-3xl mx-auto">
-            {openings.map((job) => (
-              <motion.div
-                key={job.title}
-                variants={cardAnim}
-                whileHover={{ x: 4, transition: { duration: 0.2 } }}
-                className="clay-surface-sm p-5 md:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 clay-press group"
-              >
-                <div>
-                  <div className="flex items-center gap-2">
-                    <h3 className="font-display text-sm md:text-base font-semibold text-foreground">{job.title}</h3>
-                    {job.hot && (
-                      <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-gradient-coral text-[9px] font-bold text-white uppercase shadow-clay-sm">
-                        <AIPulse className="!h-1.5 !w-1.5" /> Hot
-                      </span>
-                    )}
-                  </div>
-                  <div className="flex flex-wrap items-center gap-2 mt-1.5">
-                    <span className="text-[10px] md:text-xs px-2.5 py-0.5 rounded-full bg-secondary text-secondary-foreground font-medium">{job.team}</span>
-                    <span className="flex items-center gap-1 text-[10px] md:text-xs text-muted-foreground">
-                      <MapPin size={10} /> {job.location}
-                    </span>
-                    <span className="flex items-center gap-1 text-[10px] md:text-xs text-muted-foreground">
-                      <Clock size={10} /> {job.type}
-                    </span>
-                  </div>
-                </div>
-                <Button variant="default" size="sm" className="text-xs self-start sm:self-center">
-                  Apply <ArrowRight size={14} />
-                </Button>
-              </motion.div>
-            ))}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-xl mx-auto text-center clay-surface p-10 md:p-14"
+          >
+            <div className="w-14 h-14 rounded-2xl bg-gradient-coral shadow-clay flex items-center justify-center mx-auto mb-6">
+              <Mail size={26} className="text-white" />
+            </div>
+            <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">
+              Interested in working with us?
+            </h2>
+            <p className="font-body text-sm md:text-base text-muted-foreground leading-relaxed mb-8">
+              Drop us an email with your latest resume. We'd love to hear from you.
+            </p>
+            <Button variant="default" size="lg" className="font-body" asChild>
+              <a href="mailto:careers@prayaancapital.com">
+                <Mail size={15} /> careers@prayaancapital.com
+              </a>
+            </Button>
           </motion.div>
         </div>
       </section>
