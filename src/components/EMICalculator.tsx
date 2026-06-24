@@ -73,6 +73,23 @@ const EMICalculator = () => {
     setLoanInputVal((loanAmount * 1_00_000).toLocaleString("en-IN"));
   };
 
+  const [rateInputVal, setRateInputVal] = useState("18");
+
+  const handleSliderRate = (v: number) => {
+    setRate(v);
+    setRateInputVal(String(v));
+  };
+
+  const handleInputRate = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setRateInputVal(e.target.value);
+    const v = parseFloat(e.target.value);
+    if (!isNaN(v) && v >= 18 && v <= 30) setRate(Math.round(v * 2) / 2);
+  };
+
+  const handleBlurRate = () => {
+    setRateInputVal(String(rate));
+  };
+
 
   /* ── Core maths ── */
   const { emi, totalInterest, totalPayment, principalPct } = useMemo(() => {
@@ -193,16 +210,15 @@ const EMICalculator = () => {
                       <TrendingUp size={13} style={{ color: C_INTEREST }} />
                       Interest Rate
                     </label>
-                    <div className="flex items-center gap-0.5 px-3 py-1.5 rounded-2xl shadow-clay-sm min-w-[88px] justify-end"
+                    <div className="flex items-center gap-0.5 px-3 py-1.5 rounded-2xl shadow-clay-sm justify-end"
                       style={{ background: `${C_INTEREST}18` }}>
                       <input
-                        type="number" min={16} max={30} step={0.5}
-                        value={rate}
-                        onChange={(e) => {
-                          const v = Number(e.target.value);
-                          if (v >= 18 && v <= 30) setRate(v);
-                        }}
-                        className={numInputCls}
+                        type="text"
+                        inputMode="decimal"
+                        value={rateInputVal}
+                        onChange={handleInputRate}
+                        onBlur={handleBlurRate}
+                        className="w-10 bg-transparent font-display text-sm font-bold outline-none text-right"
                         style={{ color: C_INTEREST }}
                       />
                       <span className="font-body text-[11px] font-semibold ml-0.5"
@@ -213,7 +229,7 @@ const EMICalculator = () => {
                   </div>
                   <Slider
                     aria-label="Interest rate percent"
-                    value={[rate]} onValueChange={(v) => setRate(v[0])}
+                    value={[rate]} onValueChange={(v) => handleSliderRate(v[0])}
                     min={18} max={30} step={0.5} className="w-full"
                   />
                   <div className="flex justify-between">
