@@ -120,7 +120,7 @@ export const appRoutes: AppRoute[] = [
   { path: "/grievance", component: GrievanceRedressal },
   { path: "/customer/grievance", component: GrievanceRedressal },
   { path: "/customer/calculators", component: EMICalc },
-  { path: "/apply", component: Eligibility },
+  // { path: "/apply", component: Eligibility },   // disabled — 404
   // { path: "/success-stories", component: CaseStudies },   // disabled
   // { path: "/partnerships", component: PartnerWithUs },   // disabled
   { path: "/faq", component: FAQs },
