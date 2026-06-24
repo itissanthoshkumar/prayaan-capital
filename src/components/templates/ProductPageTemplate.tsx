@@ -117,8 +117,8 @@ const ProductPageTemplate = ({ data }: { data: ProductPageData }) => {
               Final interest rate depends on your risk grade and property. The annualised rate and all
               charges are disclosed in your sanction letter and Key Fact Statement (KFS) before disbursal, per RBI guidelines.
               See our{" "}
-              <Link to="/interest-rate-policy" className="text-primary hover:underline">Interest Rate Policy</Link>,{" "}
-              <Link to="/fair-practice-code" className="text-primary hover:underline">Fair Practice Code</Link> and{" "}
+              <Link to="/policies" className="text-primary hover:underline">Interest Rate Policy</Link>,{" "}
+              <Link to="/policies" className="text-primary hover:underline">Fair Practice Code</Link> and{" "}
               <Link to="/grievance-redressal" className="text-primary hover:underline">Grievance Redressal</Link>.
             </p>
           </motion.div>
