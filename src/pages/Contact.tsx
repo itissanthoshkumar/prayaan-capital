@@ -16,10 +16,6 @@ const cardAnim = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as const } },
 };
 
-/* ─── Clay input style ─── */
-const input =
-  "w-full px-4 py-3 rounded-2xl bg-background text-sm text-foreground placeholder:text-muted-foreground focus:outline-none transition-all shadow-clay-inset border-0 font-body";
-
 /* ─── Channel cards data ─── */
 const channels = [
   {
@@ -27,10 +23,10 @@ const channels = [
     tint: "bg-gradient-coral",
     label: "Get in Touch",
     body: "Secured business loans from ₹5L to ₹50L, backed by the property you own. Decisions typically within 48 hours of complete documentation.",
-    ctaLabel: "Send us a message",
+    ctaLabel: "+91-6380589898",
     ctaTo: undefined as string | undefined,
-    ctaHref: "#contact-form",
-    secondary: undefined as { label: string; href: string } | undefined,
+    ctaHref: "tel:+916380589898",
+    secondary: { label: "customercare@prayaancapital.com", href: "mailto:customercare@prayaancapital.com" },
   },
   {
     icon: Phone,
@@ -204,108 +200,74 @@ const Contact = () => (
       </div>
     </section>
 
-    {/* ────────── FORM + LOCATION ────────── */}
-    <section id="contact-form" className="py-16 md:py-24 bg-background relative overflow-hidden">
+    {/* ────────── REACH OUT + LOCATION ────────── */}
+    <section className="py-16 md:py-24 bg-background relative overflow-hidden">
       <AIFloatingElements />
       <div className="container mx-auto px-4 relative z-10">
 
-        {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.55 }}
-          className="text-center mb-12"
-        >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-4">
-<Mail size={12} /> Send a Message
-          </span>
-          <h2 className="font-display text-2xl md:text-4xl font-bold text-foreground">
-            Or write to us directly
-          </h2>
-          <p className="font-body text-sm text-muted-foreground mt-3 max-w-md mx-auto">
-            For partnerships, investor enquiries, media or anything else — we respond within one business day.
-          </p>
-        </motion.div>
-
         <div className="grid lg:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
 
-          {/* Left — Form */}
+          {/* Left — Reach out card */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="group relative clay-surface p-6 md:p-10"
+            className="clay-surface p-8 md:p-10 flex flex-col gap-8"
           >
-
-            <form className="space-y-4">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="font-body text-xs font-medium text-foreground mb-1.5 block">
-                    Full Name
-                  </label>
-                  <input type="text" className={input} placeholder="Your name" />
-                </div>
-                <div>
-                  <label className="font-body text-xs font-medium text-foreground mb-1.5 block">
-                    Phone Number
-                  </label>
-                  <input type="tel" className={input} placeholder="+91 XXXXX XXXXX" />
-                </div>
-              </div>
-
-              <div>
-                <label className="font-body text-xs font-medium text-foreground mb-1.5 block">
-                  Reason for Contact
-                </label>
-                <select className={input}>
-                  <option value="">Select a topic</option>
-                  <option>Partnership / Co-lending</option>
-                  <option>Investor Enquiry</option>
-                  <option>General Question</option>
-                  <option>Media / Press</option>
-                  <option>Other</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="font-body text-xs font-medium text-foreground mb-1.5 block">
-                  Message
-                </label>
-                <textarea
-                  rows={5}
-                  className={`${input} resize-none`}
-                  placeholder="Tell us what you'd like to discuss..."
-                />
-              </div>
-
-              {/* DPDP Act 2023 — explicit, purpose-specific consent */}
-              <label className="flex items-start gap-2.5 cursor-pointer">
-                <input
-                  type="checkbox"
-                  required
-                  className="mt-0.5 h-4 w-4 shrink-0 rounded border-border accent-primary"
-                />
-                <span className="font-body text-[11px] text-muted-foreground leading-relaxed">
-                  I consent to Prayaan Capital collecting and processing the personal details I've shared
-                  to respond to my enquiry, in line with its{" "}
-                  <Link to="/privacy-policy" className="text-primary hover:underline">Privacy Policy</Link>{" "}
-                  and the Digital Personal Data Protection Act, 2023.
-                </span>
-              </label>
-
-              <Button variant="default" size="lg" className="w-full font-body">
-                Send Message
-              </Button>
-
-              <p className="font-body text-[11px] text-muted-foreground text-center">
-                100% confidential · RBI-registered NBFC · No spam, ever
+            <div>
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">Reach us directly</h2>
+              <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                Call or email us — our team responds within one business day. No forms, no wait.
               </p>
-            </form>
+            </div>
+
+            {/* Phone */}
+            <a href="tel:+916380589898" className="group flex items-center gap-4 p-5 rounded-2xl bg-gradient-coral shadow-clay-sm hover:shadow-clay transition-all clay-press">
+              <span className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
+                <Phone size={22} className="text-white" />
+              </span>
+              <div>
+                <p className="font-body text-[10px] font-semibold text-white/70 uppercase tracking-wider mb-0.5">Call us</p>
+                <p className="font-display text-lg font-bold text-white">+91-6380589898</p>
+                <p className="font-body text-xs text-white/70 mt-0.5">Mon–Fri · 9:30 AM – 6:30 PM</p>
+              </div>
+              <ArrowRight size={16} className="text-white/60 ml-auto group-hover:translate-x-1 transition-transform" />
+            </a>
+
+            {/* Email */}
+            <a href="mailto:customercare@prayaancapital.com" className="group flex items-center gap-4 p-5 rounded-2xl bg-gradient-mint shadow-clay-sm hover:shadow-clay transition-all clay-press">
+              <span className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
+                <Mail size={22} className="text-white" />
+              </span>
+              <div className="min-w-0">
+                <p className="font-body text-[10px] font-semibold text-white/70 uppercase tracking-wider mb-0.5">Email us</p>
+                <p className="font-display text-base font-bold text-white truncate">customercare@prayaancapital.com</p>
+                <p className="font-body text-xs text-white/70 mt-0.5">Reply within 1 business day</p>
+              </div>
+              <ArrowRight size={16} className="text-white/60 ml-auto shrink-0 group-hover:translate-x-1 transition-transform" />
+            </a>
+
+            {/* GRO */}
+            <div className="border-t border-border/40 pt-6 flex items-start gap-3">
+              <div className="w-10 h-10 rounded-xl bg-gradient-lavender shadow-clay-sm flex items-center justify-center shrink-0">
+                <Users size={16} className="text-white" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="font-body text-[11px] font-medium text-muted-foreground mb-0.5">Grievance Redressal Officer</p>
+                <p className="font-body text-sm font-semibold text-foreground">Mr. Harish Kumar E, AVP – HR</p>
+                <div className="flex flex-wrap gap-x-4 gap-y-0.5 mt-1">
+                  <a href="mailto:gro@prayaancapital.com" className="font-body text-xs text-primary hover:underline">gro@prayaancapital.com</a>
+                  <a href="tel:+919600133756" className="font-body text-xs text-primary hover:underline">+91-9600133756</a>
+                </div>
+                <Link to="/grievance-redressal" className="inline-flex items-center gap-1 mt-1.5 font-body text-xs text-muted-foreground hover:text-primary transition-colors">
+                  Full escalation path <ChevronRight size={11} />
+                </Link>
+              </div>
+            </div>
           </motion.div>
 
-          {/* Right — Map + details */}
+          {/* Right — Map + office details */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -330,31 +292,21 @@ const Contact = () => (
             </div>
 
             {/* Office details */}
-            <div className="group relative clay-surface p-6 md:p-7">
+            <div className="clay-surface p-6 md:p-7">
               <div className="space-y-5">
                 {officeDetails.map((item) => (
                   <div key={item.label} className="flex items-start gap-3">
-                    <div
-                      className={`w-12 h-12 rounded-2xl ${item.tint} shadow-clay-sm flex items-center justify-center shrink-0 mt-0.5`}
-                    >
+                    <div className={`w-12 h-12 rounded-2xl ${item.tint} shadow-clay-sm flex items-center justify-center shrink-0 mt-0.5`}>
                       <item.icon size={18} className="text-white" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="font-body text-[11px] font-medium text-muted-foreground mb-0.5">
-                        {item.label}
-                      </p>
-                      <p className="font-body text-sm font-semibold text-foreground">
-                        {item.primary}
-                      </p>
-                      <p className="font-body text-xs text-muted-foreground break-all">
-                        {item.secondary}
-                      </p>
+                      <p className="font-body text-[11px] font-medium text-muted-foreground mb-0.5">{item.label}</p>
+                      <p className="font-body text-sm font-semibold text-foreground">{item.primary}</p>
+                      <p className="font-body text-xs text-muted-foreground break-all">{item.secondary}</p>
                       {item.action && (
                         <a
                           href={item.action.href}
-                          {...(item.action.external
-                            ? { target: "_blank", rel: "noopener noreferrer" }
-                            : {})}
+                          {...(item.action.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                           className="font-body text-xs font-semibold text-primary hover:underline mt-1 inline-block"
                         >
                           {item.action.label}
@@ -363,43 +315,6 @@ const Contact = () => (
                     </div>
                   </div>
                 ))}
-              </div>
-
-              {/* Divider */}
-              <div className="border-t border-border/40 mt-5 pt-5">
-                <div className="flex items-start gap-3">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-lavender shadow-clay-sm flex items-center justify-center shrink-0">
-                    <Users size={18} className="text-white" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="font-body text-[11px] font-medium text-muted-foreground mb-0.5">
-                      Grievance Redressal Officer
-                    </p>
-                    <p className="font-body text-sm font-semibold text-foreground">
-                      Mr. Harish Kumar E, AVP – HR
-                    </p>
-                    <div className="flex flex-wrap gap-x-4 gap-y-0.5 mt-1">
-                      <a
-                        href="mailto:gro@prayaancapital.com"
-                        className="font-body text-xs text-primary hover:underline"
-                      >
-                        gro@prayaancapital.com
-                      </a>
-                      <a
-                        href="tel:+919600133756"
-                        className="font-body text-xs text-primary hover:underline"
-                      >
-                        +91-9600133756
-                      </a>
-                    </div>
-                    <Link
-                      to="/grievance-redressal"
-                      className="inline-flex items-center gap-1 mt-2 font-body text-xs text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      Full escalation path <ChevronRight size={11} />
-                    </Link>
-                  </div>
-                </div>
               </div>
             </div>
           </motion.div>

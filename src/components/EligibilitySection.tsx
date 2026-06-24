@@ -133,7 +133,7 @@ const EligibilitySection = () => {
                     {doc.items.map((item) => (
                       <span
                         key={item}
-                        className="inline-flex px-3 py-1.5 rounded-full bg-card shadow-clay-sm text-xs text-foreground font-body cursor-default"
+                        className="text-xs text-muted-foreground font-body"
                       >
                         {item}
                       </span>

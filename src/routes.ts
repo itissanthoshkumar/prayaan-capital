@@ -8,7 +8,7 @@ import Contact from "./pages/Contact";
 import Products from "./pages/Products";
 import Eligibility from "./pages/Eligibility";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
-import Terms from "./pages/Terms";
+// import Terms from "./pages/Terms";   // disabled
 import GrievanceRedressal from "./pages/GrievanceRedressal";
 import Policies from "./pages/Policies";
 // import FairPracticeCode from "./pages/FairPracticeCode";   // disabled — kept for reference
@@ -35,7 +35,7 @@ import FAQs from "./pages/FAQs";
 // import OmbudsmanScheme from "./pages/regulatory/OmbudsmanScheme";   // disabled
 import InvestorRelations from "./pages/InvestorRelations";
 // import Blog from "./pages/Blog";   // disabled
-import CaseStudies from "./pages/CaseStudies";
+// import CaseStudies from "./pages/CaseStudies";   // disabled
 // import PartnerWithUs from "./pages/PartnerWithUs";   // disabled
 import BranchLocator from "./pages/BranchLocator";
 import Sitemap from "./pages/Sitemap";
@@ -59,7 +59,7 @@ export interface AppRoute {
 export const appRoutes: AppRoute[] = [
   { path: "/", component: Index },
   { path: "/about", component: About },
-  { path: "/team", component: Team },
+  // { path: "/team", component: Team },   // disabled — use /about
   { path: "/careers", component: Careers },
   { path: "/news", component: News },
   { path: "/contact", component: Contact },
@@ -81,14 +81,14 @@ export const appRoutes: AppRoute[] = [
   // { path: "/downloads", component: Downloads },   // disabled
   // { path: "/customer-login", component: CustomerLogin },   // disabled
   // { path: "/blog", component: Blog },   // disabled
-  { path: "/case-studies", component: CaseStudies },
+  // { path: "/case-studies", component: CaseStudies },   // disabled
   { path: "/investor-relations", component: InvestorRelations },
   // { path: "/partner-with-us", component: PartnerWithUs },   // disabled
   { path: "/branch-locator", component: BranchLocator },
   { path: "/sitemap", component: Sitemap },
   { path: "/policies", component: Policies },
   { path: "/privacy-policy", component: PrivacyPolicy },
-  { path: "/terms", component: Terms },
+  // { path: "/terms", component: Terms },   // disabled
   { path: "/grievance-redressal", component: GrievanceRedressal },
   // { path: "/fair-practice-code", component: FairPracticeCode },   // disabled
   // { path: "/interest-rate-policy", component: InterestRatePolicy },   // disabled
@@ -115,7 +115,7 @@ export const appRoutes: AppRoute[] = [
 
   // Route aliases (spec URLs → existing components)
   // { path: "/investors", component: InvestorRelations },   // disabled
-  { path: "/leadership", component: Team },
+  // { path: "/leadership", component: Team },   // disabled — use /about
   { path: "/branches", component: BranchLocator },
   { path: "/grievance", component: GrievanceRedressal },
   { path: "/customer/grievance", component: GrievanceRedressal },
