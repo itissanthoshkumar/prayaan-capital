@@ -7,7 +7,7 @@ import { Fragment } from "react";
 import {
   Users, MapPin, HeartHandshake, FileCheck, RefreshCw,
   ShieldCheck, BadgeDollarSign, Brain, Info, CheckCircle2, Check, X, Scale,
-  Landmark, Banknote,
+  Landmark, Banknote, Sparkles,
 } from "lucide-react";
 
 const compCols = [
