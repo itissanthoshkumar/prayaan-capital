@@ -1,76 +1,58 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState, useMemo } from "react";
-import {
-  Calculator, TrendingUp, IndianRupee, Calendar,
-  ChevronDown, ChevronUp, ArrowRight, Lightbulb,
-} from "lucide-react";
+import { Calculator, TrendingUp, IndianRupee, Calendar, ArrowRight } from "lucide-react";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
-/* ─── Chart colours (hardcoded — SVG doesn't support CSS vars) ─── */
-const C_PRINCIPAL = "hsl(208, 100%, 31%)";
-const C_INTEREST  = "hsl(42, 100%, 47%)";
+/* ─── Brand colours ─── */
+const BLUE   = "hsl(208, 100%, 31%)";
+const GOLD   = "hsl(42, 100%, 50%)";
+const GOLD_L = "hsl(42, 100%, 62%)";
 
-/* ─── Amount in words (3–50 lakhs) ─── */
-const ONES = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine',
-              'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen',
-              'Seventeen', 'Eighteen', 'Nineteen'];
-const TENS = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty'];
-const lakhsToWords = (n: number): string => {
-  if (n <= 0) return '';
-  if (n <= 19) return `${ONES[n]} Lakh${n !== 1 ? 's' : ''}`;
-  const t = Math.floor(n / 10), o = n % 10;
-  return `${o === 0 ? TENS[t] : `${TENS[t]} ${ONES[o]}`} Lakhs`;
+/* ─── Amount in words ─── */
+const ONES = ['','One','Two','Three','Four','Five','Six','Seven','Eight','Nine',
+              'Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen',
+              'Seventeen','Eighteen','Nineteen'];
+const TENS = ['','','Twenty','Thirty','Forty','Fifty','Sixty','Seventy','Eighty','Ninety'];
+const twoDigit   = (x: number) => x < 20 ? ONES[x] : TENS[Math.floor(x/10)] + (x%10 ? ' '+ONES[x%10] : '');
+const threeDigit = (x: number) => { const h=Math.floor(x/100), r=x%100; const p=[]; if(h) p.push(`${ONES[h]} Hundred`); if(r) p.push(twoDigit(r)); return p.join(' '); };
+const rupeesToWords = (n: number): string => {
+  if (n<=0) return '';
+  const lakh=Math.floor(n/1_00_000), thou=Math.floor((n%1_00_000)/1_000), rem=n%1_000;
+  const p: string[]=[];
+  if (lakh) p.push(`${twoDigit(lakh)} Lakh${lakh>1?'s':''}`);
+  if (thou)  p.push(`${twoDigit(thou)} Thousand`);
+  if (rem)   p.push(threeDigit(rem));
+  return p.join(' ');
 };
 
 /* ─── Formatters ─── */
 const fmtFull = (v: number): string => {
   const n = Math.round(v);
-  if (n >= 1_00_00_000) {
-    const cr = n / 1_00_00_000;
-    return `₹${cr === Math.floor(cr) ? cr.toFixed(0) : cr.toFixed(2)} Cr`;
-  }
-  if (n >= 1_00_000) {
-    const l = n / 1_00_000;
-    return `₹${l === Math.floor(l) ? l.toFixed(0) : l.toFixed(2)}L`;
-  }
-  return `₹${n.toLocaleString("en-IN")}`;
+  if (n >= 1_00_00_000) { const c=n/1_00_00_000; return `₹${c===Math.floor(c)?c.toFixed(0):c.toFixed(2)} Cr`; }
+  if (n >= 1_00_000)    { const l=n/1_00_000;    return `₹${l===Math.floor(l)?l.toFixed(0):l.toFixed(2)}L`; }
+  return `₹${n.toLocaleString('en-IN')}`;
 };
-
 const fmtHero = (v: number): string => {
   const n = Math.round(v);
-  if (n >= 1_00_00_000) return `₹${(n / 1_00_00_000).toFixed(1)}Cr`;
-  if (n >= 10_00_000)   return `₹${(n / 1_00_000).toFixed(0)}L`;
-  if (n >= 1_00_000)    return `₹${(n / 1_00_000).toFixed(1)}L`;
-  if (n >= 10_000)      return `₹${Math.round(n / 1_000)}K`;
-  if (n >= 1_000)       return `₹${(n / 1_000).toFixed(1)}K`;
+  if (n>=1_00_00_000) return `₹${(n/1_00_00_000).toFixed(1)}Cr`;
+  if (n>=10_00_000)   return `₹${(n/1_00_000).toFixed(0)}L`;
+  if (n>=1_00_000)    return `₹${(n/1_00_000).toFixed(1)}L`;
+  if (n>=10_000)      return `₹${Math.round(n/1_000)}K`;
+  if (n>=1_000)       return `₹${(n/1_000).toFixed(1)}K`;
   return `₹${n}`;
 };
+const tenureStr = (m: number) => { const y=m/12; return Number.isInteger(y)?`${y} Yr${y>1?'s':''}`:` ${y.toFixed(1)} Yrs`; };
 
-const tenureStr = (months: number): string => {
-  const yrs = months / 12;
-  if (Number.isInteger(yrs)) return `${yrs} Yr${yrs > 1 ? "s" : ""}`;
-  return `${yrs.toFixed(1)} Yrs`;
-};
-
-/* ─── Amortisation row ─── */
-type AmorRow = {
-  year: number;
-  openingBalance: number;
-  principal: number;
-  interest: number;
-  closingBalance: number;
-};
-
-/* ─── Custom recharts tooltip ─── */
+/* ─── Recharts tooltip ─── */
 const ChartTooltip = ({ active, payload }: { active?: boolean; payload?: Array<{ name: string; value: number }> }) => {
   if (!active || !payload?.length) return null;
   return (
-    <div className="rounded-2xl bg-white shadow-clay px-4 py-2.5 text-xs font-body">
-      <p className="font-semibold text-foreground mb-0.5">{payload[0].name}</p>
-      <p className="text-muted-foreground">{fmtFull(payload[0].value)}</p>
+    <div className="rounded-2xl px-4 py-2.5 text-xs font-body" style={{ background: "hsl(208 100% 18%)", border: "1px solid rgba(255,255,255,0.15)", color: "white" }}>
+      <p className="font-semibold mb-0.5">{payload[0].name}</p>
+      <p style={{ color: GOLD_L }}>{fmtFull(payload[0].value)}</p>
     </div>
   );
 };
@@ -79,203 +61,163 @@ const ChartTooltip = ({ active, payload }: { active?: boolean; payload?: Array<{
    MAIN COMPONENT
    ════════════════════════════════════════════════════════ */
 const EMICalculator = () => {
-  const [loanAmount, setLoanAmount] = useState(15);  // Lakhs (3–50)
-  const [rate,       setRate]       = useState(18);  // % p.a. (18–30)
-  const [tenure,     setTenure]     = useState(60);  // months: 60 | 84 | 120
-  const [showTable,  setShowTable]  = useState(false);
+  const [loanAmount, setLoanAmount] = useState(1500000);
+  const [loanInput,  setLoanInput]  = useState('15,00,000');
+  const [rate,       setRate]       = useState(18);
+  const [rateInput,  setRateInput]  = useState('18');
+  const [tenure,     setTenure]     = useState(60);
 
-  /* ── Core maths ── */
-  const { emi, totalInterest, totalPayment, principalPct, amortization } = useMemo(() => {
-    const P = loanAmount * 1_00_000;
-    const r = rate / 12 / 100;
-    const n = tenure;
-    const emiVal = r > 0
-      ? (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1)
-      : P / n;
-    const totalPay = emiVal * n;
-    const totalInt = totalPay - P;
-
-    /* Yearly amortisation */
-    let balance = P;
-    const rows: AmorRow[] = [];
-    for (let yr = 1; yr <= Math.ceil(n / 12); yr++) {
-      const months = Math.min(12, n - (yr - 1) * 12);
-      const openBal = balance;
-      let yPrin = 0, yInt = 0;
-      for (let m = 0; m < months; m++) {
-        if (balance < 0.01) break;
-        const iAmt = balance * r;
-        const pAmt = Math.min(emiVal - iAmt, balance);
-        yInt  += iAmt;
-        yPrin += pAmt;
-        balance = Math.max(0, balance - pAmt);
-      }
-      rows.push({
-        year: yr,
-        openingBalance: Math.round(openBal),
-        principal:      Math.round(yPrin),
-        interest:       Math.round(yInt),
-        closingBalance: Math.round(balance),
-      });
-    }
-
-    return {
-      emi:           Math.round(emiVal),
-      totalInterest: Math.round(totalInt),
-      totalPayment:  Math.round(totalPay),
-      principalPct:  Math.round((P / totalPay) * 100),
-      amortization:  rows,
-    };
+  const { emi, totalInterest, totalPayment, principalPct } = useMemo(() => {
+    const P=loanAmount, r=rate/12/100, n=tenure;
+    const emiVal = r>0 ? (P*r*Math.pow(1+r,n))/(Math.pow(1+r,n)-1) : P/n;
+    const totalPay=emiVal*n, totalInt=totalPay-P;
+    return { emi: Math.round(emiVal), totalInterest: Math.round(totalInt), totalPayment: Math.round(totalPay), principalPct: Math.round((P/totalPay)*100) };
   }, [loanAmount, rate, tenure]);
 
-  /* ── Donut data ── */
-  const chartData = [
-    { name: "Principal", value: loanAmount * 1_00_000 },
-    { name: "Interest",  value: totalInterest },
-  ];
+  const chartData = [{ name: "Principal", value: loanAmount }, { name: "Interest", value: totalInterest }];
 
-  /* ── Interest multiplier insight ── */
-  const multiplier = (totalPayment / (loanAmount * 1_00_000)).toFixed(2);
-
-  /* ─── Slider input style ─── */
-  const numInputCls =
-    "w-12 bg-transparent font-display text-sm font-bold outline-none text-right [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none";
+  /* ── inline style helpers ── */
+  const glass    = { background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.1)" } as const;
+  const glassSm  = { background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.08)" } as const;
+  const dimText  = { color: "rgba(255,255,255,0.55)" } as const;
+  const faintTxt = { color: "rgba(255,255,255,0.35)" } as const;
 
   return (
-    <section id="emi-calculator" className="py-16 md:py-24 bg-background relative overflow-hidden">
-      {/* Ambient blobs */}
+    <section id="emi-calculator" className="py-16 md:py-24 relative overflow-hidden"
+      style={{ background: "hsl(208 100% 16%)" }}>
+
+      {/* Ambient glows */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -top-24 left-1/3 w-[600px] h-[500px] bg-gradient-coral opacity-[0.06] rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[400px] bg-gradient-mint   opacity-[0.06] rounded-full blur-3xl" />
+        <div className="absolute -top-40 left-1/4 w-[600px] h-[500px] rounded-full blur-[130px]"
+          style={{ background: "hsl(208 100% 38%)", opacity: 0.18 }} />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[400px] rounded-full blur-[110px]"
+          style={{ background: GOLD, opacity: 0.10 }} />
       </div>
 
       <div className="container mx-auto px-5 relative z-10">
 
         {/* ── Section header ── */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-5">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-[0.12em] font-body mb-5"
+            style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.1)", color: GOLD_L }}>
             <Calculator size={12} /> EMI Calculator
           </span>
-          <h2 className="font-display text-3xl md:text-5xl font-extrabold text-foreground tracking-tight leading-[1.1] mb-4">
-            Plan Your <br className="sm:hidden" /><span className="text-gradient-coral">Repayment</span>
+          <h2 className="font-display text-3xl md:text-5xl font-extrabold tracking-tight leading-[1.1] mb-4 text-white">
+            Plan Your{" "}
+            <span style={{ color: GOLD }}>Repayment</span>
           </h2>
-          <p className="font-body text-base md:text-lg text-muted-foreground max-w-lg mx-auto">
+          <p className="font-body text-base md:text-lg max-w-lg mx-auto" style={dimText}>
             Move the sliders or type a value to see your monthly EMI and full cost breakdown instantly.
           </p>
         </motion.div>
 
         {/* ── Main card ── */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.65 }}
+          initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }} transition={{ duration: 0.65 }}
           className="max-w-5xl mx-auto"
         >
-          <div className="clay-surface shadow-clay-lg overflow-hidden">
+          <div className="rounded-3xl overflow-hidden"
+            style={{ boxShadow: "0 32px 72px hsl(208 100% 6% / 0.7), 0 8px 24px hsl(208 100% 6% / 0.5), inset 0 1px 0 rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.08)" }}>
             <div className="grid md:grid-cols-[5fr_6fr]">
 
-              {/* ════════ LEFT — Sliders ════════ */}
-              <div className="p-7 md:p-10 space-y-7 border-b md:border-b-0 md:border-r border-border/40">
+              {/* ════════ LEFT ════════ */}
+              <div className="p-7 md:p-10 flex flex-col gap-7"
+                style={{ background: "hsl(208 100% 20%)", borderRight: "1px solid rgba(255,255,255,0.08)" }}>
 
-                <h3 className="font-display text-base font-bold text-foreground">
-                  Loan Details
-                </h3>
+                <h3 className="font-display text-base font-bold text-white">Loan Details</h3>
 
-                {/* ── Loan Amount ── */}
+                {/* Loan Amount */}
                 <div className="space-y-2.5">
                   <div className="flex items-center justify-between">
-                    <label className="font-body text-sm font-medium text-muted-foreground flex items-center gap-1.5">
-                      <IndianRupee size={13} className="text-primary" />
-                      Loan Amount
+                    <label className="font-body text-sm font-medium flex items-center gap-1.5" style={dimText}>
+                      <IndianRupee size={13} style={{ color: GOLD_L }} /> Loan Amount
                     </label>
-                    <div className="flex items-center gap-0.5 px-3 py-1.5 rounded-2xl bg-primary/8 shadow-clay-sm min-w-[88px] justify-end">
-                      <span className="font-body text-[11px] text-primary font-semibold">₹</span>
-                      <input
-                        type="number" min={3} max={50} step={1}
-                        value={loanAmount}
+                    <div className="flex items-center gap-0.5 px-3 py-1.5 rounded-2xl min-w-[130px] justify-end" style={glass}>
+                      <span className="font-body text-[11px] font-semibold" style={{ color: GOLD_L }}>₹</span>
+                      <input type="text" inputMode="numeric" value={loanInput}
+                        onFocus={(e) => e.target.select()}
                         onChange={(e) => {
-                          const v = Math.round(Number(e.target.value));
-                          if (v >= 3 && v <= 50) setLoanAmount(v);
+                          const raw = e.target.value.replace(/[^0-9]/g, '');
+                          if (!raw) { setLoanInput(''); return; }
+                          const v = parseInt(raw);
+                          setLoanInput(v.toLocaleString('en-IN'));
+                          setLoanAmount(Math.max(3_00_000, Math.min(50_00_000, v)));
                         }}
-                        className={`${numInputCls} text-primary`}
+                        onBlur={() => {
+                          const v = parseInt(loanInput.replace(/[^0-9]/g, '')) || 3_00_000;
+                          const c = Math.max(3_00_000, Math.min(50_00_000, v));
+                          setLoanAmount(c); setLoanInput(c.toLocaleString('en-IN'));
+                        }}
+                        className="w-24 bg-transparent font-display text-sm font-bold outline-none text-right"
+                        style={{ color: GOLD_L }}
                       />
-                      <span className="font-body text-[11px] text-primary font-semibold ml-0.5">L</span>
                     </div>
                   </div>
-                  <Slider
-                    aria-label="Loan amount in lakhs"
-                    value={[loanAmount]} onValueChange={(v) => setLoanAmount(v[0])}
-                    min={3} max={50} step={1} className="w-full"
-                  />
+                  <Slider aria-label="Loan amount" value={[loanAmount]}
+                    onValueChange={(v) => { setLoanAmount(v[0]); setLoanInput(v[0].toLocaleString('en-IN')); }}
+                    min={300000} max={5000000} step={100000} className="w-full" />
                   <div className="flex justify-between">
-                    <span className="font-body text-[10px] text-muted-foreground">₹3L</span>
-                    <span className="font-body text-[10px] text-muted-foreground">₹50L</span>
+                    <span className="font-body text-[10px]" style={faintTxt}>₹3L</span>
+                    <span className="font-body text-[10px]" style={faintTxt}>₹50L</span>
                   </div>
-                  <p className="font-body text-[11px] text-primary/70 text-center leading-snug">
-                    ₹{(loanAmount * 1_00_000).toLocaleString("en-IN")}&nbsp;·&nbsp;{lakhsToWords(loanAmount)}
+                  <p className="font-body text-[11px] text-center leading-snug" style={{ color: GOLD_L }}>
+                    {rupeesToWords(loanAmount)}
                   </p>
                 </div>
 
-                {/* ── Interest Rate ── */}
+                {/* Interest Rate */}
                 <div className="space-y-2.5">
                   <div className="flex items-center justify-between">
-                    <label className="font-body text-sm font-medium text-muted-foreground flex items-center gap-1.5">
-                      <TrendingUp size={13} style={{ color: C_INTEREST }} />
-                      Interest Rate
+                    <label className="font-body text-sm font-medium flex items-center gap-1.5" style={dimText}>
+                      <TrendingUp size={13} style={{ color: GOLD_L }} /> Interest Rate
                     </label>
-                    <div className="flex items-center gap-0.5 px-3 py-1.5 rounded-2xl shadow-clay-sm min-w-[88px] justify-end"
-                      style={{ background: `${C_INTEREST}18` }}>
-                      <input
-                        type="number" min={16} max={30} step={0.5}
-                        value={rate}
+                    <div className="flex items-center gap-0.5 px-3 py-1.5 rounded-2xl min-w-[88px] justify-end" style={glass}>
+                      <input type="text" inputMode="decimal" value={rateInput}
+                        onFocus={(e) => e.target.select()}
                         onChange={(e) => {
-                          const v = Number(e.target.value);
-                          if (v >= 18 && v <= 30) setRate(v);
+                          const raw = e.target.value.replace(/[^0-9.]/g, '');
+                          setRateInput(raw);
+                          const v = parseFloat(raw);
+                          if (!isNaN(v) && v >= 18 && v <= 30) setRate(v);
                         }}
-                        className={numInputCls}
-                        style={{ color: C_INTEREST }}
+                        onBlur={() => {
+                          const v = parseFloat(rateInput);
+                          const c = isNaN(v) ? 18 : Math.max(18, Math.min(30, v));
+                          setRate(c); setRateInput(String(c));
+                        }}
+                        className="w-12 bg-transparent font-display text-sm font-bold outline-none text-right [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none"
+                        style={{ color: GOLD_L }}
                       />
-                      <span className="font-body text-[11px] font-semibold ml-0.5"
-                        style={{ color: C_INTEREST }}>
-                        %
-                      </span>
+                      <span className="font-body text-[11px] font-semibold ml-0.5" style={{ color: GOLD_L }}>%</span>
                     </div>
                   </div>
-                  <Slider
-                    aria-label="Interest rate percent"
-                    value={[rate]} onValueChange={(v) => setRate(v[0])}
-                    min={18} max={30} step={0.5} className="w-full"
-                  />
+                  <Slider aria-label="Interest rate" value={[rate]}
+                    onValueChange={(v) => { setRate(v[0]); setRateInput(String(v[0])); }}
+                    min={18} max={30} step={0.5} className="w-full" />
                   <div className="flex justify-between">
-                    <span className="font-body text-[10px] text-muted-foreground">18%</span>
-                    <span className="font-body text-[10px] text-muted-foreground">30%</span>
+                    <span className="font-body text-[10px]" style={faintTxt}>18%</span>
+                    <span className="font-body text-[10px]" style={faintTxt}>30%</span>
                   </div>
                 </div>
 
-                {/* ── Loan Tenure ── */}
+                {/* Tenure */}
                 <div className="space-y-2.5">
-                  <label className="font-body text-sm font-medium text-muted-foreground flex items-center gap-1.5">
-                    <Calendar size={13} className="text-[hsl(208,90%,45%)]" />
-                    Loan Tenure
+                  <label className="font-body text-sm font-medium flex items-center gap-1.5" style={dimText}>
+                    <Calendar size={13} style={{ color: GOLD_L }} /> Loan Tenure
                   </label>
                   <div className="flex gap-2">
                     {[{ label: "5 Yrs", months: 60 }, { label: "7 Yrs", months: 84 }, { label: "10 Yrs", months: 120 }].map((opt) => (
-                      <button
-                        key={opt.months}
-                        type="button"
-                        onClick={() => setTenure(opt.months)}
-                        className={`flex-1 py-2.5 rounded-2xl font-body text-sm font-bold transition-all shadow-clay-sm ${
-                          tenure === opt.months
-                            ? "bg-[hsl(208,90%,45%)] text-white shadow-clay"
-                            : "bg-card text-muted-foreground hover:text-foreground"
-                        }`}
+                      <button key={opt.months} type="button" onClick={() => setTenure(opt.months)}
+                        className="flex-1 py-2.5 rounded-2xl font-body text-sm font-bold transition-all"
+                        style={tenure === opt.months
+                          ? { background: GOLD, color: "hsl(208 100% 14%)" }
+                          : { ...glass, color: "rgba(255,255,255,0.65)" }
+                        }
                       >
                         {opt.label}
                       </button>
@@ -283,150 +225,92 @@ const EMICalculator = () => {
                   </div>
                 </div>
 
+                {/* Stat cards at bottom */}
+                <div className="mt-auto space-y-3">
+                  <div className="grid grid-cols-3 gap-2">
+                    {[
+                      { label: "Principal",     value: fmtFull(loanAmount),    pct: `${principalPct}%`,         color: "hsl(208,90%,70%)" },
+                      { label: "Interest",      value: fmtFull(totalInterest), pct: `${100-principalPct}%`,     color: GOLD_L },
+                      { label: "Total Payable", value: fmtFull(totalPayment),  pct: "",                         color: "white" },
+                    ].map((s) => (
+                      <motion.div key={s.label} layout className="rounded-2xl p-3" style={glassSm}>
+                        <p className="font-body text-[10px] mb-1" style={faintTxt}>{s.label}</p>
+                        <motion.p key={s.value} initial={{ opacity: 0.5 }} animate={{ opacity: 1 }}
+                          transition={{ duration: 0.25 }} className="font-display text-sm font-bold leading-tight"
+                          style={{ color: s.color }}>
+                          {s.value}
+                        </motion.p>
+                        {s.pct && <p className="font-body text-[10px] mt-0.5" style={{ color: "rgba(255,255,255,0.35)" }}>{s.pct} of total</p>}
+                      </motion.div>
+                    ))}
+                  </div>
+                  {/* Stacked bar */}
+                  <div className="h-2 rounded-full overflow-hidden flex" style={{ background: "rgba(255,255,255,0.1)" }}>
+                    <motion.div className="h-full" style={{ background: BLUE }}
+                      initial={{ width: 0 }} animate={{ width: `${principalPct}%` }}
+                      transition={{ duration: 0.6, ease: "easeOut" }} />
+                    <motion.div className="h-full flex-1" style={{ background: GOLD }}
+                      initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+                      transition={{ duration: 0.4, delay: 0.2 }} />
+                  </div>
+                </div>
 
               </div>
 
-              {/* ════════ RIGHT — Results ════════ */}
-              <div className="p-7 md:p-10 flex flex-col bg-gradient-to-br from-card to-muted/40">
+              {/* ════════ RIGHT ════════ */}
+              <div className="p-7 md:p-10 flex flex-col" style={{ background: "hsl(208 100% 24%)" }}>
 
                 {/* Hero EMI */}
-                <div className="mb-7 pb-6 border-b border-border/30">
-                  <p className="font-body text-xs font-semibold text-muted-foreground uppercase tracking-[0.12em] mb-2">
+                <div className="mb-7 pb-6" style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
+                  <p className="font-body text-xs font-semibold uppercase tracking-[0.12em] mb-2" style={dimText}>
                     Monthly EMI
                   </p>
                   <div className="flex items-end gap-2 flex-wrap">
-                    <motion.span
-                      key={emi}
-                      initial={{ opacity: 0.4, y: 8 }}
-                      animate={{ opacity: 1, y: 0 }}
+                    <motion.span key={emi}
+                      initial={{ opacity: 0.4, y: 8 }} animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3, ease: "easeOut" }}
-                      className="font-mono tabular-nums text-5xl md:text-6xl font-bold text-gradient-coral leading-none tracking-tight"
-                    >
+                      className="font-mono tabular-nums text-5xl md:text-6xl font-bold leading-none tracking-tight"
+                      style={{ color: GOLD }}>
                       {fmtHero(emi)}
                     </motion.span>
-                    <span className="font-body text-sm text-muted-foreground pb-1">/month</span>
+                    <span className="font-body text-sm pb-1" style={dimText}>/month</span>
                   </div>
-                  <p className="font-body text-xs text-muted-foreground mt-2">
+                  <p className="font-body text-xs mt-2" style={faintTxt}>
                     {tenureStr(tenure)} · {rate}% p.a. · {tenure} EMIs
                   </p>
                 </div>
 
                 {/* Donut chart */}
-                <div className="relative mb-2">
+                <div className="relative mb-2 flex-1 min-h-[180px]">
                   <ResponsiveContainer width="100%" height={200}>
                     <PieChart>
-                      <Pie
-                        key={`${loanAmount}-${rate}-${tenure}`}
-                        data={chartData}
-                        cx="50%" cy="50%"
-                        startAngle={90} endAngle={-270}
-                        innerRadius="58%" outerRadius="78%"
-                        dataKey="value"
-                        strokeWidth={3}
-                        stroke="hsl(var(--card))"
-                        isAnimationActive
-                        animationBegin={0}
-                        animationDuration={600}
-                        animationEasing="ease-out"
-                      >
-                        <Cell fill={C_PRINCIPAL} />
-                        <Cell fill={C_INTEREST} />
+                      <Pie key={`${loanAmount}-${rate}-${tenure}`} data={chartData}
+                        cx="50%" cy="50%" startAngle={90} endAngle={-270}
+                        innerRadius="58%" outerRadius="78%" dataKey="value"
+                        strokeWidth={3} stroke="hsl(208 100% 24%)"
+                        isAnimationActive animationBegin={0} animationDuration={600} animationEasing="ease-out">
+                        <Cell fill={BLUE} />
+                        <Cell fill={GOLD} />
                       </Pie>
                       <Tooltip content={<ChartTooltip />} />
                     </PieChart>
                   </ResponsiveContainer>
-
-                  {/* Donut centre — breakdown */}
                   <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none gap-0.5">
-                    <p className="font-body text-[10px] text-muted-foreground uppercase tracking-wide">Principal</p>
-                    <p className="font-display text-xl font-extrabold text-foreground leading-none">{principalPct}%</p>
-                    <p className="font-body text-[10px] text-muted-foreground">of total</p>
+                    <p className="font-body text-[10px] uppercase tracking-wide" style={faintTxt}>Principal</p>
+                    <p className="font-display text-xl font-extrabold leading-none text-white">{principalPct}%</p>
+                    <p className="font-body text-[10px]" style={faintTxt}>of total</p>
                   </div>
                 </div>
 
                 {/* Legend */}
-                <div className="flex items-center justify-center gap-5 mb-6">
+                <div className="flex items-center justify-center gap-5 mt-2">
                   <div className="flex items-center gap-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full" style={{ background: C_PRINCIPAL }} />
-                    <span className="font-body text-xs text-muted-foreground">Principal</span>
+                    <div className="w-2.5 h-2.5 rounded-full" style={{ background: BLUE }} />
+                    <span className="font-body text-xs" style={dimText}>Principal</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full" style={{ background: C_INTEREST }} />
-                    <span className="font-body text-xs text-muted-foreground">Interest</span>
-                  </div>
-                </div>
-
-                {/* Three stat cards */}
-                <div className="grid grid-cols-3 gap-3">
-                  {[
-                    {
-                      label: "Principal",
-                      value: fmtFull(loanAmount * 1_00_000),
-                      pct: `${principalPct}%`,
-                      bg: `${C_PRINCIPAL}15`,
-                      border: C_PRINCIPAL,
-                      color: C_PRINCIPAL,
-                    },
-                    {
-                      label: "Interest",
-                      value: fmtFull(totalInterest),
-                      pct: `${100 - principalPct}%`,
-                      bg: `${C_INTEREST}15`,
-                      border: C_INTEREST,
-                      color: C_INTEREST,
-                    },
-                    {
-                      label: "Total Payable",
-                      value: fmtFull(totalPayment),
-                      pct: "",
-                      bg: "hsl(var(--muted)/0.5)",
-                      border: "hsl(var(--border))",
-                      color: "hsl(var(--foreground))",
-                    },
-                  ].map((s) => (
-                    <motion.div
-                      key={s.label}
-                      layout
-                      className="rounded-2xl p-3 border"
-                      style={{ background: s.bg, borderColor: `${s.border}35` }}
-                    >
-                      <p className="font-body text-[10px] text-muted-foreground mb-1">{s.label}</p>
-                      <motion.p
-                        key={s.value}
-                        initial={{ opacity: 0.5 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.25 }}
-                        className="font-display text-sm font-bold leading-tight"
-                        style={{ color: s.color }}
-                      >
-                        {s.value}
-                      </motion.p>
-                      {s.pct && (
-                        <p className="font-body text-[10px] mt-0.5" style={{ color: `${s.color}bb` }}>
-                          {s.pct} of total
-                        </p>
-                      )}
-                    </motion.div>
-                  ))}
-                </div>
-
-                {/* Stacked bar */}
-                <div className="mt-5">
-                  <div className="h-2 rounded-full overflow-hidden flex">
-                    <motion.div
-                      className="h-full rounded-l-full"
-                      style={{ background: C_PRINCIPAL }}
-                      initial={{ width: 0 }}
-                      animate={{ width: `${principalPct}%` }}
-                      transition={{ duration: 0.6, ease: "easeOut" }}
-                    />
-                    <motion.div
-                      className="h-full rounded-r-full flex-1"
-                      style={{ background: C_INTEREST }}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.4, delay: 0.2 }}
-                    />
+                    <div className="w-2.5 h-2.5 rounded-full" style={{ background: GOLD }} />
+                    <span className="font-body text-xs" style={dimText}>Interest</span>
                   </div>
                 </div>
 
@@ -434,88 +318,16 @@ const EMICalculator = () => {
             </div>
           </div>
 
-          {/* ── Amortisation toggle ── */}
-          <div className="mt-5 flex items-center justify-center gap-3">
-            <button
-              onClick={() => setShowTable((v) => !v)}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-card shadow-clay-sm hover:shadow-clay text-sm font-semibold text-foreground font-body transition-all"
-            >
-              {showTable ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
-              {showTable ? "Hide" : "View"} Yearly Amortisation Schedule
-            </button>
-          </div>
-
-          {/* ── Amortisation table ── */}
-          <AnimatePresence>
-            {showTable && (
-              <motion.div
-                key="amortisation"
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="overflow-hidden mt-4"
-              >
-                <div className="clay-surface overflow-x-auto">
-                  {/* Header */}
-                  <div className="grid grid-cols-5 min-w-[560px] px-6 py-3.5 bg-muted/50 border-b border-border/30">
-                    {["Year", "Opening Bal.", "Principal Paid", "Interest Paid", "Closing Bal."].map((h, i) => (
-                      <span key={h} className={`font-body text-[11px] font-semibold text-muted-foreground ${i > 0 ? "text-right" : ""}`}>
-                        {h}
-                      </span>
-                    ))}
-                  </div>
-                  {/* Rows */}
-                  {amortization.map((row, i) => (
-                    <motion.div
-                      key={row.year}
-                      initial={{ opacity: 0, x: -8 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: i * 0.02, duration: 0.25 }}
-                      className="grid grid-cols-5 min-w-[560px] px-6 py-3.5 border-b border-border/15 last:border-0 hover:bg-muted/20 transition-colors"
-                    >
-                      <span className="font-body text-xs font-semibold text-foreground">Year {row.year}</span>
-                      <span className="font-body text-xs text-muted-foreground text-right">{fmtFull(row.openingBalance)}</span>
-                      <span className="font-body text-xs font-medium text-right" style={{ color: C_PRINCIPAL }}>
-                        {fmtFull(row.principal)}
-                      </span>
-                      <span className="font-body text-xs font-medium text-right" style={{ color: C_INTEREST }}>
-                        {fmtFull(row.interest)}
-                      </span>
-                      <span className="font-body text-xs text-foreground text-right">{fmtFull(row.closingBalance)}</span>
-                    </motion.div>
-                  ))}
-                  {/* Totals footer */}
-                  <div className="grid grid-cols-5 min-w-[560px] px-6 py-3.5 bg-muted/40 border-t border-border/40">
-                    <span className="font-body text-xs font-bold text-foreground">Total</span>
-                    <span className="font-body text-xs text-muted-foreground text-right">—</span>
-                    <span className="font-body text-xs font-bold text-right" style={{ color: C_PRINCIPAL }}>
-                      {fmtFull(loanAmount * 1_00_000)}
-                    </span>
-                    <span className="font-body text-xs font-bold text-right" style={{ color: C_INTEREST }}>
-                      {fmtFull(totalInterest)}
-                    </span>
-                    <span className="font-body text-xs font-bold text-foreground text-right">—</span>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-
           {/* ── CTA ── */}
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.15, duration: 0.5 }}
+            initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ delay: 0.15, duration: 0.5 }}
             className="mt-8 text-center"
           >
             <Button variant="default" size="lg" className="font-body" asChild>
-              <Link to="/contact">
-                Get in Touch <ArrowRight size={15} />
-              </Link>
+              <Link to="/contact">Get in Touch <ArrowRight size={15} /></Link>
             </Button>
-            <p className="font-body text-xs text-muted-foreground mt-3 max-w-lg mx-auto">
+            <p className="font-body text-xs mt-3 max-w-lg mx-auto" style={{ color: "rgba(255,255,255,0.3)" }}>
               Indicative figures only · Subject to credit assessment · Rates starting from 18% p.a. · RBI-registered NBFC
             </p>
           </motion.div>

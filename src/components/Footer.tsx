@@ -5,41 +5,59 @@ import BrandLogo from "@/components/BrandLogo";
 type FooterLink = { label: string; href: string };
 
 const company: FooterLink[] = [
-  { label: "About", href: "/about" },
-  { label: "Products", href: "/products" },
-  { label: "Branch Locator", href: "/branch-locator" },
-  { label: "Work @ Prayaan", href: "/careers" },
+  { label: "About Us", href: "/about" },
+  { label: "Why Prayaan", href: "/why-prayaan" },
+  { label: "Leadership Team", href: "/team" },
+  { label: "Technology", href: "/technology" },
+  { label: "News", href: "/news" },
+  { label: "Case Studies", href: "/case-studies" },
+  { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];
 
-const customerInfo: FooterLink[] = [
+const productsTools: FooterLink[] = [
+  { label: "Products", href: "/products" },
+  { label: "EMI Calculator", href: "/calculators/emi" },
+  { label: "Interest Rates & Charges", href: "/interest-rates-and-charges" },
+  { label: "Document Checklist", href: "/document-checklist" },
+  { label: "Branch Locator", href: "/branch-locator" },
+];
+
+const customerSupport: FooterLink[] = [
+  { label: "Customer", href: "/customer" },
+  { label: "Customer Payments", href: "/customer/payments" },
   { label: "NACH Instructions", href: "/nach-instructions" },
-  { label: "Customer Grievance Redressal", href: "/grievance-redressal" },
+  { label: "FAQs", href: "/faqs" },
+  { label: "Grievance Redressal", href: "/grievance-redressal" },
 ];
 
-const policiesGuidelines: FooterLink[] = [
+const investors: FooterLink[] = [
+  { label: "Investor Relations", href: "/investor-relations" },
+  { label: "Annual Returns", href: "/investor-relations" },
+  { label: "AGM Notices", href: "/investor-relations" },
+  { label: "EGM Notices", href: "/investor-relations" },
+];
+
+const legal: FooterLink[] = [
   { label: "Policies", href: "/policies" },
-];
-
-const compliances: FooterLink[] = [
   { label: "RBI Disclosures", href: "/rbi-disclosures" },
   { label: "Privacy Policy", href: "/privacy-policy" },
-];
-
-const customerEducation: FooterLink[] = [
-  { label: "Document Checklist", href: "/document-checklist" },
-  { label: "FAQs", href: "/faqs" },
-  { label: "EMI Calculator", href: "/calculators/emi" },
+  { label: "Terms & Conditions", href: "/terms" },
   { label: "Sitemap", href: "/sitemap" },
 ];
 
-const Column = ({ title, links }: { title: string; links: FooterLink[] }) => (
+const Column = ({ title, links, accent }: { title: string; links: FooterLink[]; accent?: boolean }) => (
   <div>
-    <h4 className="font-display font-semibold text-xs text-foreground uppercase tracking-[0.1em] mb-4">{title}</h4>
+    <h4 className={`font-display font-semibold text-xs uppercase tracking-[0.1em] mb-4 ${accent ? "text-[hsl(42,100%,47%)]" : "text-foreground"}`}>
+      {title}
+    </h4>
     <ul className="space-y-2.5">
       {links.map((link) => (
-        <li key={link.href}>
-          <Link to={link.href} className="text-xs text-muted-foreground hover:text-primary transition-colors font-body">
+        <li key={`${link.label}-${link.href}`}>
+          <Link
+            to={link.href}
+            className="text-xs text-muted-foreground hover:text-primary transition-colors font-body"
+          >
             {link.label}
           </Link>
         </li>
@@ -51,11 +69,16 @@ const Column = ({ title, links }: { title: string; links: FooterLink[] }) => (
 const Footer = () => {
   return (
     <footer className="bg-section pt-16 md:pt-24 pb-8 relative overflow-hidden">
-      <div className="absolute -top-20 -left-20 w-[400px] h-[400px] rounded-full bg-gradient-coral opacity-10 blur-[100px] pointer-events-none" />
-      <div className="absolute -bottom-20 -right-20 w-[400px] h-[400px] rounded-full bg-gradient-mint opacity-10 blur-[100px] pointer-events-none" />
+      {/* Blue ambient blob */}
+      <div className="absolute -top-20 -left-20 w-[400px] h-[400px] rounded-full opacity-10 blur-[100px] pointer-events-none"
+        style={{ background: "hsl(208,100%,31%)" }} />
+      {/* Gold ambient blob */}
+      <div className="absolute -bottom-20 -right-20 w-[400px] h-[400px] rounded-full opacity-10 blur-[100px] pointer-events-none"
+        style={{ background: "hsl(42,100%,47%)" }} />
 
       <div className="container mx-auto px-5 relative z-10">
         <div className="clay-surface p-8 md:p-12">
+
           {/* Brand strip */}
           <div className="grid lg:grid-cols-[1.4fr_1fr] gap-8 md:gap-10 mb-10 pb-10 border-b border-border/40">
             <div>
@@ -87,12 +110,13 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* Nav columns — 5 columns on lg, 3 on md, 2 on sm */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-10 mb-10 md:mb-12">
             <Column title="Company" links={company} />
-            <Column title="Customer Info" links={customerInfo} />
-            <Column title="Policies & Guidelines" links={policiesGuidelines} />
-            <Column title="Compliances" links={compliances} />
-            <Column title="Customer Education" links={customerEducation} />
+            <Column title="Products & Tools" links={productsTools} />
+            <Column title="Customer Support" links={customerSupport} />
+            <Column title="Investor Relations" links={investors} accent />
+            <Column title="Legal & Compliance" links={legal} />
           </div>
 
           {/* RBI grievance / ombudsman compliance strip */}
@@ -121,6 +145,7 @@ const Footer = () => {
               </p>
             </div>
           </div>
+
         </div>
       </div>
     </footer>

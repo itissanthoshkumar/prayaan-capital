@@ -25,11 +25,11 @@
     --background: 30 45% 95%;
     --foreground: 250 25% 18%;
 
-    /* Clay surfaces — slightly lifted off the canvas */
-    --card: 30 50% 97%;
+    /* Clay surfaces — pure white so they pop off the warm beige canvas */
+    --card: 0 0% 100%;
     --card-foreground: 250 25% 18%;
 
-    --popover: 30 50% 98%;
+    --popover: 0 0% 100%;
     --popover-foreground: 250 25% 18%;
 
     /* Brand gold (Prayaan Capital logo) — dark text for AA contrast */
@@ -87,29 +87,29 @@
     --gradient-mint: linear-gradient(135deg, hsl(208 100% 31%), hsl(202 92% 42%));
     --gradient-lavender: linear-gradient(135deg, hsl(205 92% 50%), hsl(196 88% 58%));
     --gradient-sunset: linear-gradient(135deg, hsl(42 100% 52%), hsl(208 92% 45%));
-    --gradient-card: linear-gradient(180deg, hsl(30 60% 99%) 0%, hsl(30 40% 95%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(30 50% 98%) 100%);
     --gradient-section: linear-gradient(180deg, hsl(30 45% 95%) 0%, hsl(30 50% 97%) 100%);
 
     /* CLAY SHADOWS — the heart of claymorphism
        Combines: outer drop shadow + inner top highlight + inner bottom darken
        Creates a 3D extruded, puffy plasticine look. */
     --shadow-clay:
-      6px 6px 16px hsl(20 30% 70% / 0.30),
-      -6px -6px 16px hsl(0 0% 100% / 0.85),
-      inset 2px 2px 4px hsl(0 0% 100% / 0.6),
-      inset -2px -2px 6px hsl(20 30% 70% / 0.18);
+      14px 16px 36px hsl(20 50% 40% / 0.60),
+      -8px -8px 20px hsl(0 0% 100% / 1.0),
+      inset 2px 2px 6px hsl(0 0% 100% / 0.9),
+      inset -2px -2px 8px hsl(20 45% 52% / 0.30);
 
     --shadow-clay-sm:
-      4px 4px 10px hsl(20 30% 70% / 0.25),
-      -3px -3px 8px hsl(0 0% 100% / 0.8),
-      inset 1px 1px 2px hsl(0 0% 100% / 0.6),
-      inset -1px -1px 3px hsl(20 30% 70% / 0.15);
+      7px 8px 18px hsl(20 50% 40% / 0.45),
+      -5px -5px 12px hsl(0 0% 100% / 1.0),
+      inset 1px 1px 3px hsl(0 0% 100% / 0.85),
+      inset -1px -1px 4px hsl(20 45% 52% / 0.20);
 
     --shadow-clay-lg:
-      12px 12px 28px hsl(20 30% 65% / 0.32),
-      -10px -10px 24px hsl(0 0% 100% / 0.9),
-      inset 3px 3px 6px hsl(0 0% 100% / 0.7),
-      inset -3px -3px 8px hsl(20 30% 70% / 0.2);
+      18px 20px 44px hsl(20 50% 38% / 0.65),
+      -12px -12px 28px hsl(0 0% 100% / 1.0),
+      inset 3px 3px 8px hsl(0 0% 100% / 0.92),
+      inset -3px -3px 10px hsl(20 45% 50% / 0.32);
 
     --shadow-clay-inset:
       inset 4px 4px 10px hsl(20 30% 65% / 0.25),
@@ -249,12 +249,14 @@
     background: var(--gradient-card);
     border-radius: var(--radius);
     box-shadow: var(--shadow-clay);
+    border: 1px solid hsl(30 30% 88% / 0.55);
   }
 
   .clay-surface-sm {
     background: var(--gradient-card);
     border-radius: 1rem;
     box-shadow: var(--shadow-clay-sm);
+    border: 1px solid hsl(30 30% 88% / 0.55);
   }
 
   /* Clay-styled input — soft inset look */

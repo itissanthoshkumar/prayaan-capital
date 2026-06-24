@@ -6,60 +6,66 @@ import { TrendingUp, FileText, CalendarCheck, Vote, LucideIcon } from "lucide-re
 
 const BASE = "https://prayaancapital.com/assets/images/downloads";
 
+const BLUE  = "hsl(208,100%,31%)";
+const GOLD  = "hsl(42,100%,47%)";
+
 type Doc = { label: string; size: string; href: string };
-type Group = { title: string; blurb: string; icon: LucideIcon; docs: Doc[] };
+type Group = { title: string; blurb: string; icon: LucideIcon; color: string; docs: Doc[] };
 
 const groups: Group[] = [
   {
     title: "AGM Notices",
     blurb: "Notices of Annual General Meetings",
     icon: CalendarCheck,
+    color: BLUE,
     docs: [
-      { label: "7th AGM Notice", size: "1.49 MB", href: `${BASE}/7th%20AGM%20Notice.pdf` },
-      { label: "6th AGM Notice", size: "1.34 MB", href: `${BASE}/6th-AGM-Notice.pdf` },
-      { label: "5th AGM Notice", size: "2.44 MB", href: `${BASE}/agm/5-agm-notice.pdf` },
-      { label: "4th AGM Notice", size: "1.61 MB", href: `${BASE}/agm/4-agm-notice.pdf` },
-      { label: "Adjourned 4th AGM Notice", size: "428.82 KB", href: `${BASE}/agm/notice-adjourned-4th-agm.pdf` },
-      { label: "3rd AGM Notice", size: "495.7 KB", href: `${BASE}/agm/3-agm-notice.pdf` },
-      { label: "2nd AGM Notice", size: "4.09 MB", href: `${BASE}/agm/2-agm-notice.pdf` },
-      { label: "1st AGM Notice", size: "1.34 MB", href: `${BASE}/agm/1-agm-notice.pdf` },
+      { label: "7th AGM Notice",           size: "1.49 MB",    href: `${BASE}/7th%20AGM%20Notice.pdf` },
+      { label: "6th AGM Notice",           size: "1.34 MB",    href: `${BASE}/6th-AGM-Notice.pdf` },
+      { label: "5th AGM Notice",           size: "2.44 MB",    href: `${BASE}/agm/5-agm-notice.pdf` },
+      { label: "4th AGM Notice",           size: "1.61 MB",    href: `${BASE}/agm/4-agm-notice.pdf` },
+      { label: "Adjourned 4th AGM Notice", size: "428.82 KB",  href: `${BASE}/agm/notice-adjourned-4th-agm.pdf` },
+      { label: "3rd AGM Notice",           size: "495.7 KB",   href: `${BASE}/agm/3-agm-notice.pdf` },
+      { label: "2nd AGM Notice",           size: "4.09 MB",    href: `${BASE}/agm/2-agm-notice.pdf` },
+      { label: "1st AGM Notice",           size: "1.34 MB",    href: `${BASE}/agm/1-agm-notice.pdf` },
     ],
   },
   {
     title: "Annual Return",
     blurb: "Annual returns and Form MGT-7 filings",
     icon: FileText,
+    color: GOLD,
     docs: [
-      { label: "Annual Return FY 2024-25", size: "1.94 MB", href: `${BASE}/Updated-Annual%20Return%202024-25.pdf` },
-      { label: "Annual Return FY 2023-24", size: "1.76 MB", href: `${BASE}/Annual-Return-for-FY-2023-24.pdf` },
-      { label: "Annual Return FY 2022-23", size: "1.34 MB", href: `${BASE}/ar/Annual-Return-for-FY-2022-23.pdf` },
+      { label: "Annual Return FY 2024-25", size: "1.94 MB",   href: `${BASE}/Updated-Annual%20Return%202024-25.pdf` },
+      { label: "Annual Return FY 2023-24", size: "1.76 MB",   href: `${BASE}/Annual-Return-for-FY-2023-24.pdf` },
+      { label: "Annual Return FY 2022-23", size: "1.34 MB",   href: `${BASE}/ar/Annual-Return-for-FY-2022-23.pdf` },
       { label: "Annual Return FY 2021-22", size: "986.23 KB", href: `${BASE}/annual-return2022.pdf` },
-      { label: "Form MGT-7 FY 2021-22", size: "114.32 KB", href: `${BASE}/ar/Form-MGT-7-for-FY-2021-22.pdf` },
-      { label: "Form MGT-7 FY 2020-21", size: "112.56 KB", href: `${BASE}/ar/Form-MGT-7-for-FY-2020-21.pdf` },
+      { label: "Form MGT-7 FY 2021-22",   size: "114.32 KB", href: `${BASE}/ar/Form-MGT-7-for-FY-2021-22.pdf` },
+      { label: "Form MGT-7 FY 2020-21",   size: "112.56 KB", href: `${BASE}/ar/Form-MGT-7-for-FY-2020-21.pdf` },
     ],
   },
   {
     title: "EGM Notices",
     blurb: "Notices of Extraordinary General Meetings",
     icon: Vote,
+    color: BLUE,
     docs: [
-      { label: "18th EGM Notice", size: "3.84 MB", href: `${BASE}/18th%20EGM%20Notice_25.03.2026.pdf` },
-      { label: "17th EGM Notice", size: "1.85 MB", href: `${BASE}/17th%20EGM%20Notice_19.02.2026.pdf` },
-      { label: "16th EGM Notice", size: "4.70 MB", href: `${BASE}/16th%20EGM%20Notice_04.02.2026.pdf` },
-      { label: "15th EGM Notice", size: "1.22 MB", href: `${BASE}/15th%20EGM%20Notice_03.02.2026.pdf` },
-      { label: "13th EGM Notice", size: "2.10 MB", href: `${BASE}/13th%20EGM%20Notice_02-Jan-2026.pdf` },
-      { label: "12th EGM Notice", size: "2.25 MB", href: `${BASE}/Notice%20of%20the%2012th%20EGM.pdf` },
-      { label: "11th EGM Notice", size: "1.34 MB", href: `${BASE}/egm/11-EGM-Notice.pdf` },
-      { label: "10th EGM Notice", size: "2.18 MB", href: `${BASE}/egm/10-EGM-Notice.pdf` },
-      { label: "9th EGM Notice", size: "3.87 MB", href: `${BASE}/egm/9-EGM-Notice.pdf` },
-      { label: "8th EGM Notice", size: "1.81 MB", href: `${BASE}/egm/8-EGM-Notice.pdf` },
-      { label: "7th EGM Notice", size: "9.03 MB", href: `${BASE}/egm/7-EGM-Notice.pdf` },
-      { label: "6th EGM Notice", size: "3.5 MB", href: `${BASE}/egm/6-EGM-Notice.pdf` },
-      { label: "5th EGM Notice", size: "728.82 KB", href: `${BASE}/egm/5-EGM-Notice.pdf` },
-      { label: "4th EGM Notice", size: "2.51 MB", href: `${BASE}/egm/4-EGM-Notice.pdf` },
-      { label: "3rd EGM Notice", size: "884.78 KB", href: `${BASE}/egm/3-EGM-Notice.pdf` },
-      { label: "2nd EGM Notice", size: "4.17 MB", href: `${BASE}/egm/2-EGM-Notice.pdf` },
-      { label: "1st EGM Notice", size: "1.44 MB", href: `${BASE}/egm/1-EGM-Notice.pdf` },
+      { label: "18th EGM Notice", size: "3.84 MB",  href: `${BASE}/18th%20EGM%20Notice_25.03.2026.pdf` },
+      { label: "17th EGM Notice", size: "1.85 MB",  href: `${BASE}/17th%20EGM%20Notice_19.02.2026.pdf` },
+      { label: "16th EGM Notice", size: "4.70 MB",  href: `${BASE}/16th%20EGM%20Notice_04.02.2026.pdf` },
+      { label: "15th EGM Notice", size: "1.22 MB",  href: `${BASE}/15th%20EGM%20Notice_03.02.2026.pdf` },
+      { label: "13th EGM Notice", size: "2.10 MB",  href: `${BASE}/13th%20EGM%20Notice_02-Jan-2026.pdf` },
+      { label: "12th EGM Notice", size: "2.25 MB",  href: `${BASE}/Notice%20of%20the%2012th%20EGM.pdf` },
+      { label: "11th EGM Notice", size: "1.34 MB",  href: `${BASE}/egm/11-EGM-Notice.pdf` },
+      { label: "10th EGM Notice", size: "2.18 MB",  href: `${BASE}/egm/10-EGM-Notice.pdf` },
+      { label: "9th EGM Notice",  size: "3.87 MB",  href: `${BASE}/egm/9-EGM-Notice.pdf` },
+      { label: "8th EGM Notice",  size: "1.81 MB",  href: `${BASE}/egm/8-EGM-Notice.pdf` },
+      { label: "7th EGM Notice",  size: "9.03 MB",  href: `${BASE}/egm/7-EGM-Notice.pdf` },
+      { label: "6th EGM Notice",  size: "3.5 MB",   href: `${BASE}/egm/6-EGM-Notice.pdf` },
+      { label: "5th EGM Notice",  size: "728.82 KB",href: `${BASE}/egm/5-EGM-Notice.pdf` },
+      { label: "4th EGM Notice",  size: "2.51 MB",  href: `${BASE}/egm/4-EGM-Notice.pdf` },
+      { label: "3rd EGM Notice",  size: "884.78 KB",href: `${BASE}/egm/3-EGM-Notice.pdf` },
+      { label: "2nd EGM Notice",  size: "4.17 MB",  href: `${BASE}/egm/2-EGM-Notice.pdf` },
+      { label: "1st EGM Notice",  size: "1.44 MB",  href: `${BASE}/egm/1-EGM-Notice.pdf` },
     ],
   },
 ];
@@ -72,9 +78,13 @@ const itemAnim = {
 
 const DocGroup = ({ g }: { g: Group }) => (
   <div>
+    {/* Group header */}
     <div className="flex items-center gap-3 mb-5">
-      <span className="w-11 h-11 rounded-2xl bg-accent/10 flex items-center justify-center shrink-0">
-        <g.icon size={20} className="text-accent" />
+      <span
+        className="w-11 h-11 rounded-2xl flex items-center justify-center shrink-0"
+        style={{ background: `${g.color}18` }}
+      >
+        <g.icon size={20} style={{ color: g.color }} />
       </span>
       <div>
         <h2 className="font-display text-lg md:text-2xl font-bold text-foreground leading-tight">
@@ -83,6 +93,8 @@ const DocGroup = ({ g }: { g: Group }) => (
         <p className="text-xs md:text-sm text-muted-foreground">{g.blurb}</p>
       </div>
     </div>
+
+    {/* Document cards */}
     <motion.div
       variants={container}
       initial="hidden"
@@ -100,16 +112,24 @@ const DocGroup = ({ g }: { g: Group }) => (
           rel="noopener noreferrer"
           className="group clay-surface clay-press flex items-center gap-3 px-4 py-3.5"
         >
-          <span className="w-9 h-9 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
-            <FileText size={16} className="text-accent" />
+          <span
+            className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
+            style={{ background: `${g.color}15` }}
+          >
+            <FileText size={16} style={{ color: g.color }} />
           </span>
           <div className="flex-1 min-w-0">
-            <h3 className="font-body text-sm font-semibold text-foreground group-hover:text-accent transition-colors truncate">
-              {d.label}
+            <h3
+              className="font-body text-sm font-semibold text-foreground truncate transition-colors"
+              style={{ ["--hover-color" as string]: g.color }}
+            >
+              <span className="group-hover:opacity-80 transition-opacity">{d.label}</span>
             </h3>
             <span className="text-[11px] text-muted-foreground">PDF · {d.size}</span>
           </div>
-          <span className="text-xs font-bold text-accent uppercase tracking-wide shrink-0">View</span>
+          <span className="text-xs font-bold uppercase tracking-wide shrink-0" style={{ color: g.color }}>
+            View ↗
+          </span>
         </motion.a>
       ))}
     </motion.div>
@@ -118,35 +138,70 @@ const DocGroup = ({ g }: { g: Group }) => (
 
 const InvestorRelations = () => (
   <Layout>
-    {/* Hero */}
+    {/* ── Hero ── */}
     <section className="pt-24 pb-8 md:pt-32 md:pb-10 bg-hero relative overflow-hidden">
       <AIFloatingElements />
+      {/* Blue + gold ambient blobs */}
+      <div className="absolute top-0 right-0 w-[500px] h-[400px] rounded-full opacity-[0.07] blur-[120px] pointer-events-none"
+        style={{ background: BLUE }} />
+      <div className="absolute bottom-0 left-1/4 w-[300px] h-[300px] rounded-full opacity-[0.07] blur-[80px] pointer-events-none"
+        style={{ background: GOLD }} />
+
       <div className="container mx-auto px-5 relative z-10">
         <div className="grid lg:grid-cols-[1fr_320px] gap-8 items-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-4">
+            <span
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold uppercase tracking-[0.12em] font-body mb-4"
+              style={{ color: BLUE }}
+            >
               <TrendingUp size={12} /> Investor Relations
             </span>
             <h1 className="font-display text-3xl md:text-5xl font-bold text-foreground mt-3 mb-3 leading-tight">
-              Investor <span className="text-gold-deep">Relations</span>
+              Investor{" "}
+              <span style={{ color: GOLD }}>Relations</span>
             </h1>
             <p className="text-sm md:text-base text-muted-foreground max-w-2xl">
-              Statutory notices and annual filings. Click any document to open the official PDF.
+              Statutory notices and annual filings for Prayaan Capital Private Limited. Click any document to open the official PDF.
             </p>
+
+            {/* Blue + gold stat chips */}
+            <div className="flex flex-wrap gap-3 mt-6">
+              {[
+                { label: "RBI Registered", sub: "NBFC-ICC since 2019", color: BLUE },
+                { label: "AGM & EGM Notices", sub: "All statutory filings", color: GOLD },
+                { label: "Annual Returns", sub: "FY 2020–25", color: BLUE },
+              ].map((chip) => (
+                <div
+                  key={chip.label}
+                  className="px-4 py-2 rounded-2xl clay-surface shadow-clay-sm"
+                >
+                  <p className="font-body text-xs font-bold" style={{ color: chip.color }}>{chip.label}</p>
+                  <p className="font-body text-[10px] text-muted-foreground">{chip.sub}</p>
+                </div>
+              ))}
+            </div>
           </motion.div>
           <HeroIllustration variant="legal" />
         </div>
       </div>
     </section>
 
-    {/* Document sections */}
+    {/* ── Divider bar — blue to gold gradient ── */}
+    <div className="h-1 w-full" style={{ background: `linear-gradient(90deg, ${BLUE}, ${GOLD})` }} />
+
+    {/* ── Document sections ── */}
     <section className="py-12 md:py-16 bg-background relative">
+      {/* Subtle blue tint on left */}
+      <div className="absolute top-0 left-0 w-[300px] h-full opacity-[0.03] pointer-events-none"
+        style={{ background: `linear-gradient(90deg, ${BLUE}, transparent)` }} />
+
       <div className="container mx-auto px-5 relative z-10 max-w-4xl space-y-12 md:space-y-14">
         {groups.map((g) => (
           <DocGroup key={g.title} g={g} />
         ))}
+
         <p className="text-center text-xs text-muted-foreground">
-          PDFs open in a new tab. Documents are hosted on prayaancapital.com.
+          PDFs open in a new tab · Documents hosted on prayaancapital.com
         </p>
       </div>
     </section>

@@ -65,16 +65,16 @@ const HeroSection = () => {
   return (
     <section
       className="relative lg:min-h-[90vh] flex items-stretch overflow-hidden"
-      style={{ background: "linear-gradient(135deg, #c8dff2 0%, #d8eaf8 60%, #cce3f5 100%)" }}
+      style={{ background: "linear-gradient(160deg, hsl(208,100%,18%) 0%, hsl(208,100%,14%) 60%, hsl(208,100%,10%) 100%)" }}
     >
       {/* Ambient glow blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
-          className="absolute -top-40 -left-20 w-[560px] h-[560px] rounded-full blur-[140px] opacity-[0.22]"
-          style={{ background: "#00549c" }}
+          className="absolute -top-40 -left-20 w-[560px] h-[560px] rounded-full blur-[160px] opacity-[0.35]"
+          style={{ background: "hsl(208,100%,40%)" }}
         />
         <div
-          className="absolute -bottom-20 right-[5%] w-[440px] h-[440px] rounded-full blur-[120px] opacity-[0.14]"
+          className="absolute -bottom-20 right-[5%] w-[440px] h-[440px] rounded-full blur-[120px] opacity-[0.20]"
           style={{ background: "#f0a800" }}
         />
       </div>
@@ -83,9 +83,9 @@ const HeroSection = () => {
       <div className="flex-1 pl-5 md:pl-[max(1.25rem,calc((100vw-1280px)/2+1.25rem))] pr-5 md:pr-16 pt-28 pb-16 md:py-32 flex flex-col lg:justify-center relative z-10">
         {/* Top badge */}
         <motion.div custom={0} initial="hidden" animate="visible" variants={fadeUp} className="mb-7">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#00549c]/20 bg-white/60 shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_6px_#22c55e]" />
-            <span className="text-[10px] font-semibold tracking-[0.15em] uppercase text-[#00549c] font-body">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/15 bg-white/10 backdrop-blur-sm shadow-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_#4ade80]" />
+            <span className="text-[10px] font-semibold tracking-[0.15em] uppercase text-white/80 font-body">
               RBI REGISTERED NBFC · EST. 2018
             </span>
           </div>
@@ -97,7 +97,7 @@ const HeroSection = () => {
           initial="hidden"
           animate="visible"
           variants={fadeUp}
-          className="font-display text-[2.75rem] md:text-[3.75rem] leading-[1.1] font-extrabold text-[#0d2137] mb-7 max-w-2xl"
+          className="font-display text-[2.75rem] md:text-[3.75rem] leading-[1.1] font-extrabold text-white mb-7 max-w-2xl"
         >
           Capital that respects the{" "}
           <span className="text-[#f0a800] italic">hands</span> that{" "}
@@ -110,7 +110,7 @@ const HeroSection = () => {
           initial="hidden"
           animate="visible"
           variants={fadeUp}
-          className="text-base md:text-lg text-[#0d2137]/60 max-w-[480px] mb-10 font-body leading-[1.8]"
+          className="text-base md:text-lg text-white/65 max-w-[480px] mb-10 font-body leading-[1.8]"
         >
           Secured business loans for the small and medium enterprises — the manufacturers, traders and
           shopkeepers who form the backbone of our economy. Decisions in 48 hours.
@@ -120,13 +120,13 @@ const HeroSection = () => {
         <motion.div custom={3} initial="hidden" animate="visible" variants={fadeUp} className="flex items-center gap-4 mb-11">
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#f0a800] text-[#0d2137] font-bold text-sm shadow-[0_0_28px_rgba(240,168,0,0.35)] hover:shadow-[0_0_40px_rgba(240,168,0,0.55)] hover:bg-[#fbb500] transition-all font-body"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#f0a800] text-[#0d2137] font-bold text-sm shadow-[0_0_28px_rgba(240,168,0,0.4)] hover:shadow-[0_0_44px_rgba(240,168,0,0.65)] hover:bg-[#fbb500] transition-all font-body"
           >
             Get in Touch <ArrowRight size={15} />
           </Link>
           <a
             href="/#emi-calculator"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-[#00549c]/30 text-[#00549c] font-semibold text-sm hover:bg-[#00549c]/10 transition-all font-body"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-white/25 text-white/85 font-semibold text-sm hover:bg-white/10 hover:border-white/40 transition-all font-body"
           >
             Calculate EMI <ArrowRight size={15} />
           </a>
@@ -134,17 +134,17 @@ const HeroSection = () => {
 
         {/* Stat pills */}
         <motion.div custom={4} initial="hidden" animate="visible" variants={fadeUp} className="flex flex-wrap gap-3">
-          <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-full border border-[#00549c]/15 bg-white/70 shadow-sm">
+          <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-full border border-white/15 bg-white/8">
             <span className="font-mono font-bold text-[#f0a800] text-sm leading-none">18% p.a.</span>
-            <span className="text-[10px] font-semibold text-[#0d2137]/50 uppercase tracking-[0.13em] font-body">Starting Rate</span>
+            <span className="text-[10px] font-semibold text-white/55 uppercase tracking-[0.13em] font-body">Starting Rate</span>
           </div>
-          <div className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-[#00549c]/15 bg-white/70 shadow-sm">
-            <CheckCircle size={13} className="text-[#00549c] shrink-0" />
-            <span className="text-[10px] font-semibold text-[#0d2137]/60 uppercase tracking-[0.1em] font-body">RBI Registered NBFC</span>
+          <div className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/15 bg-white/8">
+            <CheckCircle size={13} className="text-[#f0a800] shrink-0" />
+            <span className="text-[10px] font-semibold text-white/60 uppercase tracking-[0.1em] font-body">RBI Registered NBFC</span>
           </div>
-          <div className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-[#00549c]/15 bg-white/70 shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
-            <span className="text-[10px] font-semibold text-[#0d2137]/60 uppercase tracking-[0.1em] font-body">48-hr Decisions</span>
+          <div className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/15 bg-white/8">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
+            <span className="text-[10px] font-semibold text-white/60 uppercase tracking-[0.1em] font-body">48-hr Decisions</span>
           </div>
         </motion.div>
       </div>

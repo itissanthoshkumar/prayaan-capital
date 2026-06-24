@@ -41,15 +41,23 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const NAV_BG = "hsl(208 100% 24%)";
+  const NAV_BG_DARK = "hsl(208 100% 18%)";
+
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl transition-shadow duration-300 ${
-        scrolled ? "border-b border-border/60 shadow-clay-sm" : "border-b border-transparent"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-shadow duration-300"
+      style={{
+        background: NAV_BG,
+        boxShadow: scrolled ? "0 2px 16px hsl(208 100% 10% / 0.35)" : "none",
+      }}
     >
       <div className="container mx-auto flex items-center justify-between h-14 md:h-16 px-5">
+        {/* Logo in white pill so blue mark + wordmark stay legible */}
         <Link to="/" className="flex items-center">
-          <BrandLogo size={36} />
+          <span className="bg-white/95 rounded-xl px-3 py-1 inline-flex items-center shadow-sm">
+            <BrandLogo size={30} />
+          </span>
         </Link>
 
         <div className="hidden md:flex items-center gap-0.5">
@@ -61,7 +69,13 @@ const Navbar = () => {
                 onMouseEnter={() => setOpenDropdown(link.label)}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                <button className={`flex items-center gap-1 text-[13px] font-medium transition-colors px-3 py-2 rounded-md font-body ${isChildActive(link.children) ? "text-foreground underline underline-offset-4 decoration-primary decoration-2" : "text-foreground/75 hover:text-foreground"}`}>
+                <button
+                  className={`flex items-center gap-1 text-[13px] font-medium transition-colors px-3 py-2 rounded-md font-body ${
+                    isChildActive(link.children)
+                      ? "text-white underline underline-offset-4 decoration-[hsl(42,100%,60%)] decoration-2"
+                      : "text-white/80 hover:text-white"
+                  }`}
+                >
                   {link.label}
                   <ChevronDown size={12} className={`transition-transform ${openDropdown === link.label ? "rotate-180" : ""}`} />
                 </button>
@@ -72,7 +86,8 @@ const Navbar = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 4 }}
                       transition={{ duration: 0.12 }}
-                      className="absolute top-full left-0 mt-2 w-48 clay-surface-sm py-2 overflow-hidden"
+                      className="absolute top-full left-0 mt-2 w-48 rounded-2xl py-2 overflow-hidden shadow-lg border border-white/10"
+                      style={{ background: NAV_BG_DARK }}
                     >
                       {link.children.map((child) => (
                         <Link
@@ -80,8 +95,8 @@ const Navbar = () => {
                           to={child.href}
                           className={`block px-3.5 py-2 text-[13px] font-body transition-colors ${
                             isActive(child.href)
-                              ? "text-foreground bg-muted"
-                              : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                              ? "text-white bg-white/15"
+                              : "text-white/75 hover:text-white hover:bg-white/10"
                           }`}
                         >
                           {child.label}
@@ -96,9 +111,7 @@ const Navbar = () => {
                 key={link.label}
                 to={link.href}
                 className={`text-[13px] font-medium px-3 py-2 rounded-md transition-colors font-body ${
-                  isActive(link.href)
-                    ? "text-foreground"
-                    : "text-foreground/75 hover:text-foreground"
+                  isActive(link.href) ? "text-white" : "text-white/80 hover:text-white"
                 }`}
               >
                 {link.label}
@@ -113,7 +126,7 @@ const Navbar = () => {
         </div>
 
         <button
-          className="md:hidden text-foreground p-1"
+          className="md:hidden text-white/90 p-1"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
@@ -127,14 +140,15 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-b border-border overflow-hidden"
+            className="md:hidden overflow-hidden border-t border-white/10"
+            style={{ background: NAV_BG_DARK }}
           >
             <div className="px-5 py-4 flex flex-col gap-0.5">
               {navLinks.map((link) =>
                 link.children ? (
                   <div key={link.label}>
                     <button
-                      className="flex items-center justify-between w-full text-[13px] font-medium text-muted-foreground py-2.5 px-3 rounded-lg hover:bg-muted transition-colors font-body"
+                      className="flex items-center justify-between w-full text-[13px] font-medium text-white/75 py-2.5 px-3 rounded-lg hover:bg-white/10 hover:text-white transition-colors font-body"
                       onClick={() => setOpenDropdown(openDropdown === link.label ? null : link.label)}
                     >
                       {link.label}
@@ -152,7 +166,7 @@ const Navbar = () => {
                             <Link
                               key={child.label}
                               to={child.href}
-                              className="block text-[13px] text-muted-foreground hover:text-foreground py-2 px-3 rounded-lg hover:bg-muted transition-colors font-body"
+                              className="block text-[13px] text-white/65 hover:text-white py-2 px-3 rounded-lg hover:bg-white/10 transition-colors font-body"
                               onClick={() => setIsOpen(false)}
                             >
                               {child.label}
@@ -166,7 +180,7 @@ const Navbar = () => {
                   <Link
                     key={link.label}
                     to={link.href}
-                    className="text-[13px] font-medium text-muted-foreground hover:text-foreground py-2.5 px-3 rounded-lg hover:bg-muted transition-colors font-body"
+                    className="text-[13px] font-medium text-white/75 hover:text-white py-2.5 px-3 rounded-lg hover:bg-white/10 transition-colors font-body"
                     onClick={() => setIsOpen(false)}
                   >
                     {link.label}
