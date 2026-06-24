@@ -146,6 +146,10 @@ const HeroSection = () => {
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
             <span className="text-[10px] font-semibold text-white/60 uppercase tracking-[0.1em] font-body">48-hr Decisions</span>
           </div>
+          <div className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/15 bg-white/8">
+            <span className="font-mono font-bold text-[#f0a800] text-sm leading-none">1,000+</span>
+            <span className="text-[10px] font-semibold text-white/55 uppercase tracking-[0.13em] font-body">Families Funded</span>
+          </div>
         </motion.div>
       </div>
 

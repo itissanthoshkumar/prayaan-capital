@@ -77,10 +77,10 @@ const Products = () => {
               <Building2 size={12} /> Our Products
             </span>
             <h1 className="font-display text-3xl md:text-6xl font-bold text-foreground mt-3 mb-5 leading-tight">
-              Secured business loans for <span className="text-gradient-coral">India's SMEs</span>
+              Secured business loans for <span className="text-gradient-coral">India's MSMEs</span>
             </h1>
             <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              Secured business loans from ₹5L to ₹50L, backed by the property you own — for working capital, expansion, machinery or any business need. Transparent pricing, 48-hour decisions, tenures up to 10 years, and doorstep service. Specialised lines include MSME term loans (from ₹3L) and supply-chain finance (from ₹1L).
+              Micro, Small and Medium Enterprises are the backbone of India's economy. Secured business loans from ₹5L to ₹50L, backed by the property you own — for working capital, expansion, machinery or any business need. Transparent pricing, 48-hour decisions, tenures up to 10 years, and doorstep service.
             </p>
           </motion.div>
             </div>
