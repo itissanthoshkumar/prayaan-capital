@@ -38,9 +38,9 @@ const legal: FooterLink[] = [
   { label: "Sitemap", href: "/sitemap" },
 ];
 
-const Column = ({ title, links, accent }: { title: string; links: FooterLink[]; accent?: boolean }) => (
+const Column = ({ title, links }: { title: string; links: FooterLink[] }) => (
   <div>
-    <h4 className={`font-display font-semibold text-xs uppercase tracking-[0.1em] mb-4 ${accent ? "text-[hsl(38,100%,27%)]" : "text-foreground"}`}>
+    <h4 className="font-display font-semibold text-xs uppercase tracking-[0.1em] mb-4 text-foreground">
       {title}
     </h4>
     <ul className="space-y-2.5">
@@ -107,7 +107,7 @@ const Footer = () => {
             <Column title="Company" links={company} />
             <Column title="Products & Tools" links={productsTools} />
             <Column title="Customer Support" links={customerSupport} />
-            <Column title="Investor Relations" links={investors} accent />
+            <Column title="Investor Relations" links={investors} />
             <Column title="Legal & Compliance" links={legal} />
           </div>
 

@@ -39,6 +39,8 @@ const branches: Branch[] = [
   { name: "Gudiyatham", address: "No.5, 1st Floor, R S Road, Polytechnic Koot Road, Vinayagapuram", district: "Gudiyatham", state: "Tamil Nadu", pin: "632602" },
   { name: "Polur", address: "No.80/1, 1st Floor, CC Road, Near Reliance Petrol Bunk, Polur, Polur Taluk", district: "Tiruvannamalai", state: "Tamil Nadu", pin: "606803" },
   { name: "Dindigul", address: "No.75/1, Ground Floor, Rama Meena Building, Thadicombu Road, Dindigul", district: "Dindigul", state: "Tamil Nadu", pin: "624001" },
+  { name: "Tenkasi", address: "No.141/13/J, 1st Floor, Rasi Complex, Madurai Road, IT Corner, K K Valasai, Tenkasi", district: "Tenkasi", state: "Tamil Nadu", pin: "627811" },
+  { name: "Kovilpatti", address: "No.33C/2, 1st Floor, Krishna Complex, Vakkil Street, Pasuvanthanai Road, Kovilpatti", district: "Thoothukudi", state: "Tamil Nadu", pin: "628501" },
   // Andhra Pradesh
   { name: "Ramachandrapuram", address: "D.No.28-2-2, 1st Floor, Vaibhav Complex, Draksharamam Road, Ramachandrapuram", district: "Konaseema", state: "Andhra Pradesh", pin: "533255" },
   { name: "Rajahmundry", address: "E & S Reddy Complex, Tilak Road, Opp. Sai Baba Temple", district: "East Godavari", state: "Andhra Pradesh", pin: "533103" },
@@ -53,11 +55,14 @@ const branches: Branch[] = [
   { name: "Nandyal", address: "D.No.25/419-5B-1, 1st Floor, Padmavathi Nagar Main Road, Saleem Nagar, Nandyal", district: "Nandyal", state: "Andhra Pradesh", pin: "518501" },
   { name: "Dhone", address: "Plot No.3, 1st Floor, BVR Complex, KVS Colony, Beside Mahalakshmi Hospital, Dhone", district: "Nandyal", state: "Andhra Pradesh", pin: "518222" },
   { name: "Guntakal", address: "D.No.20/51 ABC, 1st Floor, Opp. Vijeytha Hospital Main Road, Guntakal", district: "Anantapur", state: "Andhra Pradesh", pin: "515801" },
+  { name: "Machilipatnam", address: "Door No.24/235, 236, 1st Floor, Ramanaidu Peta, Machilipatnam", district: "Krishna", state: "Andhra Pradesh", pin: "521001" },
   // Telangana
   { name: "Peddapalli", address: "No.4-5-122, 1st Floor, Subash Nagar, Peddapalli", district: "Peddapalli", state: "Telangana", pin: "505172" },
   { name: "Jagtial", address: "No.1-5-KA0011, 3rd Floor, Karimnagar Main Road, Near Hero Showroom, Jagtial", district: "Jagtial", state: "Telangana", pin: "505327" },
   { name: "Karimnagar", address: "No.334, 1st Floor, Ganesh Nagar, Karimnagar", district: "Karimnagar", state: "Telangana", pin: "505001" },
   { name: "Kothagudem", address: "D.No.6-8-98, 2nd Floor, Ganesh Basthi, Kothagudem", district: "Bhadradri Kothagudem", state: "Telangana", pin: "507101" },
+  { name: "Devarakonda", address: "No.1-19-GA0001, 1st Floor, Opp. Kodanda Ramalayam Temple, Gandhi Nagar, Devarakonda", district: "Nalgonda", state: "Telangana", pin: "508248" },
+  { name: "Sathupally", address: "D.No.6-175, 1st Floor, Near Post Office, Opp. RK Hospital, Sathupally", district: "Khammam", state: "Telangana", pin: "507303" },
 ];
 
 const states = ["Tamil Nadu", "Andhra Pradesh", "Telangana"];
@@ -245,12 +250,9 @@ const BranchLocator = () => {
                 <h1 className="font-display text-2xl md:text-4xl font-extrabold text-foreground mb-3 leading-tight">
                   Locate a <span className="text-gradient-coral">Branch</span>
                 </h1>
-                <p className="text-sm md:text-base text-muted-foreground max-w-xl font-body leading-relaxed mb-1.5">
+                <p className="text-sm md:text-base text-muted-foreground max-w-xl font-body leading-relaxed mb-5">
                   Step into your nearest Prayaan Capital branch. Want to skip the branch visit?
                   Apply online and our doorstep team comes to you.
-                </p>
-                <p className="font-body text-xs text-muted-foreground/70 mb-5">
-                  {branches.length} branches · {states.length} states · {new Set(branches.map((b) => b.district)).size} districts
                 </p>
                 <Button variant="default" className="rounded-2xl font-body" asChild>
                   <Link to="/contact">
@@ -277,17 +279,15 @@ const BranchLocator = () => {
                   className="absolute inset-0 rounded-3xl bg-card shadow-clay-lg overflow-hidden"
                   style={{ transform: "rotateX(52deg) rotateZ(-10deg)" }}
                 >
-                  {/* land patches */}
-                  <div className="absolute top-4 left-5 w-16 h-11 rounded-xl bg-gradient-mint opacity-50" />
-                  <div className="absolute top-6 right-6 w-20 h-14 rounded-xl bg-gradient-lavender opacity-40" />
-                  <div className="absolute bottom-4 left-8 w-14 h-10 rounded-xl bg-gradient-sunset opacity-40" />
-                  <div className="absolute bottom-6 right-9 w-16 h-11 rounded-xl bg-gradient-mint opacity-30" />
+                  {/* land patches — warm, neutral tones (no blue cast) */}
+                  <div className="absolute top-4 left-5 w-16 h-11 rounded-xl bg-primary/10" />
+                  <div className="absolute top-6 right-6 w-20 h-14 rounded-xl bg-foreground/[0.06]" />
+                  <div className="absolute bottom-4 left-8 w-14 h-10 rounded-xl bg-foreground/[0.06]" />
+                  <div className="absolute bottom-6 right-9 w-16 h-11 rounded-xl bg-primary/[0.08]" />
                   {/* roads */}
                   <div className="absolute inset-y-0 left-1/3 w-3.5 bg-background/95" />
                   <div className="absolute inset-y-0 right-1/4 w-3 bg-background/85" />
                   <div className="absolute inset-x-0 top-1/2 h-3.5 bg-background/95" />
-                  {/* river */}
-                  <div className="absolute -inset-x-3 bottom-[18%] h-5 bg-accent/25 rounded-full blur-[1px] rotate-[-4deg]" />
                 </div>
               </div>
 
@@ -326,7 +326,7 @@ const BranchLocator = () => {
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
               >
                 <div
-                  className="w-6 h-6 bg-gradient-mint shadow-clay-sm"
+                  className="w-6 h-6 bg-gradient-coral shadow-clay-sm"
                   style={{ borderRadius: "50% 50% 50% 0", transform: "rotate(-45deg)" }}
                 />
               </motion.div>
@@ -336,7 +336,7 @@ const BranchLocator = () => {
                 transition={{ duration: 3.4, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
               >
                 <div
-                  className="w-5 h-5 bg-gradient-lavender shadow-clay-sm"
+                  className="w-5 h-5 bg-gradient-coral shadow-clay-sm"
                   style={{ borderRadius: "50% 50% 50% 0", transform: "rotate(-45deg)" }}
                 />
               </motion.div>
