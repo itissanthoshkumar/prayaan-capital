@@ -7,7 +7,7 @@ import { TrendingUp, FileText, CalendarCheck, Vote, LucideIcon } from "lucide-re
 const BASE = "https://prayaancapital.com/assets/images/downloads";
 
 const BLUE  = "hsl(208,100%,31%)";
-const GOLD  = "hsl(42,100%,47%)";
+const GOLD  = "hsl(38,100%,28%)";  // deepened from 42/47 so gold text & links read on light (~4.8:1)
 
 type Doc = { label: string; size: string; href: string };
 type Group = { title: string; blurb: string; icon: LucideIcon; color: string; docs: Doc[] };

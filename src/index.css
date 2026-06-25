@@ -182,7 +182,9 @@
   /* Text gradients */
   .text-gradient-saffron,
   .text-gradient-coral {
-    background: var(--gradient-coral);
+    /* Deepened from --gradient-coral so heading accents read on light bg
+       (~4.6:1). bg-gradient-coral icon tiles still use the bright gradient. */
+    background: linear-gradient(135deg, hsl(40 100% 29%), hsl(33 100% 23%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -214,7 +216,7 @@
   /* Backgrounds */
   /* Deep, readable gold for headline accents on light backgrounds */
   .text-gold-deep {
-    background: linear-gradient(90deg, hsl(40 96% 42%), hsl(32 92% 36%));
+    background: linear-gradient(90deg, hsl(40 100% 29%), hsl(33 100% 23%));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -344,3 +346,12 @@
   .animate-cta-shimmer { animation: none; }
   .text-gold-glitter { animation: none; }
 }
+
+/* ─── Accessibility: gold as TEXT ───
+   --primary is bright gold, which is great as a FILL (bg-primary buttons,
+   badges) but only ~3:1 as text on light surfaces. Deepen the text utility
+   to ~5:1 so eyebrow pills, links and labels are readable; fills stay bright.
+   Unlayered rule → wins over Tailwind's @layer utilities. Dark mode keeps a
+   light gold so it stays readable on dark surfaces. */
+.text-primary { color: hsl(38 100% 27%) !important; }
+.dark .text-primary { color: hsl(42 95% 62%) !important; }

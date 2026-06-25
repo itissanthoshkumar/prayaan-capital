@@ -40,7 +40,7 @@ const legal: FooterLink[] = [
 
 const Column = ({ title, links, accent }: { title: string; links: FooterLink[]; accent?: boolean }) => (
   <div>
-    <h4 className={`font-display font-semibold text-xs uppercase tracking-[0.1em] mb-4 ${accent ? "text-[hsl(42,100%,47%)]" : "text-foreground"}`}>
+    <h4 className={`font-display font-semibold text-xs uppercase tracking-[0.1em] mb-4 ${accent ? "text-[hsl(38,100%,27%)]" : "text-foreground"}`}>
       {title}
     </h4>
     <ul className="space-y-2.5">
