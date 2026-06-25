@@ -67,6 +67,12 @@ const management: Person[] = [
     bio: "Atul is the Chief Risk Officer of the Company. He is responsible for overall risk management, including credit policy, underwriting, portfolio strategy, risk analytics, and governance. He has 23+ years of experience across retail and commercial lending in banks, NBFCs, and fintech ventures. He holds a post-graduate degree in management from Chetana's R.K. Institute of Management & Research, Mumbai. Previously, he was associated with Vastu Housing Finance as Head of Retail Lending and Digital & Alternate Channels. Earlier, he worked with Standard Chartered Bank and ICICI Bank, and founded Skill Junction and ValuCircles, India's first mortgage marketplace.",
   },
   {
+    name: "Harish R",
+    role: "Chief Technology Officer",
+    photo: "/team/harish-r.webp",
+    bio: "Harish R is a seasoned technology leader with extensive experience across banking, lending, and insurance ecosystems. He specializes in driving large-scale digital transformation, modernizing core platforms, and building scalable, secure, and API-first technology architectures that support business growth and operational resilience. He has led modernization initiatives across core systems, digital channels, and enterprise platforms, with a consistent focus on measurable business outcomes.\n\nWith deep expertise in core banking, lending platforms, open banking, AI/ML adoption, and enterprise integration, Harish has successfully delivered initiatives that enhance customer experience, streamline operations, reduce technology debt, and enable data-driven innovation. He is known for aligning technology strategy with business objectives, regulatory requirements, and long-term scalability.\n\nA strong advocate of engineering excellence and governance, Harish has built and led high-performing teams while delivering practical, sustainable technology roadmaps. At Prayaan Capital, he leads the technology vision with a focus on innovation, execution, governance, and sustainable growth.",
+  },
+  {
     name: "M B Srinivasa Rao",
     role: "Chief Strategy Officer",
     photo: "/team/srinivasa-rao.webp",
@@ -77,12 +83,6 @@ const management: Person[] = [
     role: "Deputy CFO",
     photo: "/team/venkatesh-b.webp",
     bio: "CA Venkatesh Badrinarayanan is a seasoned strategic finance leader with over 13 years of experience in the NBFC sector, with deep expertise in Financial Reporting, Treasury, Regulatory Compliance, and Due Diligence.\n\nHe previously served as Head of Treasury at Five Star Business Finance Ltd., where he led debt fundraising, liquidity management, and regulatory compliance. Prior to this, he headed the Financial Reporting function for over six years, playing a pivotal role in managing regulatory audits, multiple private equity diligences, building high-performing teams, and establishing robust processes and systems, significantly contributing to its IPO journey. Earlier in his career, he was part of the Treasury team at Equitas and worked in the Deals (Due Diligence) practice at PricewaterhouseCoopers.\n\nA qualified Chartered Accountant and Company Secretary, and an alumnus of INSEAD's Blue Ocean Strategy program, Venkatesh is recognized for his strategic acumen, execution excellence, and ability to build and lead high-performing teams.",
-  },
-  {
-    name: "Harish R",
-    role: "Chief Technology Officer",
-    photo: "/team/harish-r.webp",
-    bio: "Harish R is a seasoned technology leader with extensive experience across banking, lending, and insurance ecosystems. He specializes in driving large-scale digital transformation, modernizing core platforms, and building scalable, secure, and API-first technology architectures that support business growth and operational resilience. He has led modernization initiatives across core systems, digital channels, and enterprise platforms, with a consistent focus on measurable business outcomes.\n\nWith deep expertise in core banking, lending platforms, open banking, AI/ML adoption, and enterprise integration, Harish has successfully delivered initiatives that enhance customer experience, streamline operations, reduce technology debt, and enable data-driven innovation. He is known for aligning technology strategy with business objectives, regulatory requirements, and long-term scalability.\n\nA strong advocate of engineering excellence and governance, Harish has built and led high-performing teams while delivering practical, sustainable technology roadmaps. At Prayaan Capital, he leads the technology vision with a focus on innovation, execution, governance, and sustainable growth.",
   },
   {
     name: "R.S.Bharath",
@@ -162,10 +162,10 @@ const About = () => {
                 The people behind the <span className="text-gold-deep">journey</span>
               </h1>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                Prayaan Capital Private Limited was incorporated on 10 December 2018 and granted the NBFC Certificate of Registration by RBI on 6 June 2019, with its Registered and Corporate Office in Chennai, Tamil Nadu. The name <em>Prayaan</em> means "Journey" — we extend credit to micro and small enterprises, co-travelling with them on their entrepreneurial journey.
+                <em>Prayaan</em> means "Journey" — and ours is steered by a team of seasoned credit, finance and technology professionals. From our Board of Directors to our management team, decades of combined experience across leading NBFCs and banks shape how we extend fair, secured credit to India's micro and small enterprises. Meet the people behind it.
               </p>
             </motion.div>
-            <HeroIllustration variant="about" />
+            <HeroIllustration variant="team" />
           </div>
         </div>
       </section>
