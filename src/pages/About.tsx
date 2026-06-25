@@ -1,4 +1,4 @@
-import HeroIllustration from "@/components/HeroIllustration";
+import TeamGrowthArt from "@/components/TeamGrowthArt";
 import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
 import { motion } from "framer-motion";
@@ -165,7 +165,7 @@ const About = () => {
                 <em>Prayaan</em> means "Journey" — and ours is steered by a team of seasoned credit, finance and technology professionals. From our Board of Directors to our management team, decades of combined experience across leading NBFCs and banks shape how we extend fair, secured credit to India's micro and small enterprises. Meet the people behind it.
               </p>
             </motion.div>
-            <HeroIllustration variant="team" />
+            <TeamGrowthArt />
           </div>
         </div>
       </section>
