@@ -38,19 +38,19 @@ const board: Person[] = [
 const management: Person[] = [
   {
     name: "Sathya Ganesh T",
-    role: "Chief Executive Officer",
+    role: "Co-Founder & Chief Executive Officer",
     photo: "/team/sathya-ganesh.webp",
     bio: "Sathya Ganesh T (Sathya) is a dynamic and visionary leader with over 23 years of experience in the BFSI sector and an overall experience of 28 yrs, having led transformational initiatives across banking and NBFCs. He has a proven track record of scaling businesses, driving digital innovation, enhancing profitability, managing large field forces, and consistently delivering strong ROA and ROE performance.\n\nHe possesses deep expertise in Housing Finance, Loan Against Property (LAP), and Affordable Housing, with hands-on experience across key functions including Operations, Credit, Audit, Business Development, and Collections.\n\nPrior to joining Prayaan Capital, Sathya served as the Chief Business Officer at Five Star Business Finance for a decade, where he played a pivotal role in scaling the organization's business and strengthening its market position. Over the course of his career, he has been associated with leading financial institutions such as ICICI Bank, Cholamandalam Finance, Equitas, and Shriram Housing Finance.\n\nHe holds a Postgraduate degree in Commerce from the University of Madras and an MBA in Banking & Finance from Symbiosis, Pune.",
   },
   {
     name: "Apparswamy Subramanian",
-    role: "Chief Financial Officer",
+    role: "Co-Founder & Chief Financial Officer",
     photo: "/team/apparswamy-subramanian.webp",
     bio: "Apparswamy Subramanian (Appar) is the Co-Founder and Chief Financial Officer of Prayaan Capital, bringing over 25 years of diverse experience across corporate banking, treasury, and capital markets. Prior to his current role, he headed the Group Treasury function at the Sanmar Group, a large diversified conglomerate, where he managed a borrowing book of approximately USD 1.5 billion and led strategic initiatives across fundraising, cross-border financing, and private credit, in addition to executing debt capital market transactions.\n\nAppar began his career in corporate banking and went on to hold senior leadership roles at global and domestic financial institutions including Deutsche Bank, HSBC, RBL Bank and HDFC Bank, where he built and scaled corporate banking franchises, led high-impact deal origination and executed several marquee financing transactions. He has also been an entrepreneur and independent financial advisor, working closely with promoters and management teams across sectors, serving in advisory and board roles. A Chartered Accountant by qualification, Appar is deeply passionate about capital markets and structured finance, with a strong track record in building long-term institutional relationships and delivering innovative financing solutions. Outside of work, he is an avid motorcycle enthusiast and actively follows emerging areas such as digital assets and financial technologies.",
   },
   {
     name: "Ramprashanth Ganesan",
-    role: "Chief Operating Officer",
+    role: "Co-Founder & Chief Operating Officer",
     photo: "/team/ramprashanth-ganesan.webp",
     bio: "Ramprashanth Ganesan (Ram) is the Co-Founder and Chief Operating Officer of Prayaan Capital, bringing over 16 years of diverse experience across investment banking, fintech, and financial services. Prior to his current role, he was the Chief Strategy Officer at IppoPay, a venture-backed fintech focused on providing payments and lending solutions to small businesses, where he was responsible for building a high-velocity, high-quality lending book through the Loan Service Provider (LSP) model, designing the lending product construct, onboarding NBFC partners, and scaling distribution across the merchant base.\n\nRam began his career in financial research and went on to spend over a decade at Spark Capital, where he served as Director leading the Fintech and Financial Services investment banking practice. In this role, he was instrumental in raising over USD 1.5 billion of growth equity across financial services, fintech, and other sectors, working with founders and institutional investors through IPOs, pre-IPO rounds, and growth-stage capital transactions. A Chartered Accountant by qualification, Ram is deeply passionate about lending, technology, and the application of AI in financial services, with a strong track record in building institutional businesses and bridging strategy with execution. Outside of work, he is an avid reader of history and philosophy.",
   },
@@ -177,7 +177,7 @@ const FounderCard = ({ f }: { f: (typeof founders)[number] }) => (
       <img src={f.photo} alt={f.name} loading="lazy" className="w-24 h-24 rounded-full object-cover ring-2 ring-card" />
     </div>
     <h3 className="font-display text-lg font-bold text-foreground leading-snug">{f.name}</h3>
-    <span className="inline-block text-[11px] font-semibold text-primary-foreground bg-primary px-3 py-0.5 rounded-full mt-2 leading-tight">
+    <span className="inline-block text-[11px] font-semibold text-white bg-accent px-3 py-0.5 rounded-full mt-2 leading-tight">
       {f.role}
     </span>
     <p className="text-sm text-muted-foreground leading-relaxed mt-3">{f.note}</p>
@@ -214,7 +214,7 @@ const About = () => {
           {/* The people who built Prayaan — within the story */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mt-8 md:mt-10 mb-7 md:mb-8">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body">
-              <Users2 size={12} /> The people who built Prayaan
+              <Users2 size={12} /> Founders &amp; promoter
             </span>
           </motion.div>
           <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid sm:grid-cols-3 gap-5 md:gap-6 max-w-4xl mx-auto">

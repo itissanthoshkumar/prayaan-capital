@@ -1,50 +1,27 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Quote, Star, ArrowLeft, ArrowRight, Users } from "lucide-react";
+import { Quote, Star, Users, Briefcase, TrendingUp } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
-
-import testimonialRajesh from "@/assets/pexels-ravikant-5807481.jpg";
-import testimonialMeera from "@/assets/pexels-himanshu817-14707127.jpg";
-import testimonialAmit from "@/assets/pexels-aslam-shah-938590627-20794317.jpg";
 
 const testimonials = [
   {
     name: "Perumal",
-    business: "Self-employed",
+    business: "Sri Vaari Auto Spares",
     location: "Salem, Tamil Nadu",
-    amount: "₹28 Lakhs",
-    product: "Loan Against Property",
-    quote: "I mortgaged my shop and got the funds in two days. The process was simple and the team explained every charge upfront. I used it to expand my family business.",
+    product: "Secured Business Loan",
+    quote: "I am happy with the response from Prayaan Capital. The loan helped me in expanding my shop & increasing business.",
     rating: 5,
-    accent: "from-primary to-[hsl(36_90%_58%)]",
-    borderAccent: "border-l-primary",
-    growth: "Funds in 2 days",
-    image: testimonialRajesh,
+    growth: "Expanded his shop",
+    image: "/testimonials/perumal.jpg",
   },
   {
     name: "Kannan",
-    business: "Home owner",
-    location: "Salem, Tamil Nadu",
-    amount: "₹18 Lakhs",
-    product: "Housing Loan",
-    quote: "We had been saving to build our own house for 22 years. Prayaan's housing loan made it happen with an EMI we could comfortably manage. We thank them for helping us.",
+    business: "Powerloom weaving",
+    location: "KR Thoppu, Salem",
+    product: "Secured Business Loan",
+    quote: "Our family has been into weaving business for the last 22 years & we were running with 5 powerlooms. With the help of Prayaan we added one more loom. We thank them for their effort to help us with our livelihood.",
     rating: 5,
-    accent: "from-accent to-[hsl(200_55%_50%)]",
-    borderAccent: "border-l-accent",
-    growth: "Built their home",
-    image: testimonialAmit,
-  },
-  {
-    name: "Meera Krishnan",
-    business: "Property owner",
-    location: "Kochi, Kerala",
-    amount: "₹45 Lakhs",
-    product: "Loan Against Property",
-    quote: "I unlocked the value of my commercial property without selling it. Prayaan understood my needs and structured the right repayment plan with door-step service.",
-    rating: 5,
-    accent: "from-[hsl(var(--color-lavender))] to-[hsl(var(--color-indigo))]",
-    borderAccent: "border-l-[hsl(var(--color-lavender))]",
-    growth: "Kept her property",
-    image: testimonialMeera,
+    growth: "Added a powerloom",
+    image: "/testimonials/kannan.jpg",
   },
 ];
 
@@ -57,13 +34,8 @@ const TestimonialsSection = () => {
     setCurrent((prev) => (prev + 1) % testimonials.length);
   }, []);
 
-  const prev = useCallback(() => {
-    setDirection(-1);
-    setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  }, []);
-
   useEffect(() => {
-    const timer = setInterval(next, 6000);
+    const timer = setInterval(next, 3000);
     return () => clearInterval(timer);
   }, [next]);
 
@@ -155,18 +127,24 @@ const TestimonialsSection = () => {
                   </div>
 
                   {/* Stats sidebar */}
-                  <div className="md:w-48 shrink-0 flex md:flex-col gap-3">
-                    <div className="flex-1 bg-gradient-coral shadow-clay-sm rounded-2xl p-4 text-center">
-                      <div className="text-2xl font-display font-bold text-white">{t.amount}</div>
-                      <div className="text-[10px] text-white/85 uppercase tracking-wider font-body mt-1">Loan Amount</div>
+                  <div className="md:w-52 shrink-0 flex md:flex-col gap-3 md:justify-center">
+                    <div className="flex-1 md:flex-none flex items-center gap-3 rounded-2xl bg-secondary/60 p-3.5">
+                      <span className="w-9 h-9 rounded-xl bg-accent/15 flex items-center justify-center shrink-0">
+                        <Briefcase size={16} className="text-accent" />
+                      </span>
+                      <div className="min-w-0 text-left">
+                        <div className="text-[10px] text-muted-foreground uppercase tracking-wider font-body">Product</div>
+                        <div className="text-[13px] font-display font-bold text-foreground leading-tight">{t.product}</div>
+                      </div>
                     </div>
-                    <div className="flex-1 bg-gradient-mint shadow-clay-sm rounded-2xl p-4 text-center">
-                      <div className="text-xs font-display font-bold text-white">{t.product}</div>
-                      <div className="text-[10px] text-white/85 uppercase tracking-wider font-body mt-1">Product</div>
-                    </div>
-                    <div className="flex-1 bg-gradient-lavender shadow-clay-sm rounded-2xl p-4 text-center">
-                      <div className="text-xs font-display font-bold text-white">{t.growth}</div>
-                      <div className="text-[10px] text-white/85 uppercase tracking-wider font-body mt-1">Impact</div>
+                    <div className="flex-1 md:flex-none flex items-center gap-3 rounded-2xl bg-secondary/60 p-3.5">
+                      <span className="w-9 h-9 rounded-xl bg-primary/15 flex items-center justify-center shrink-0">
+                        <TrendingUp size={16} className="text-[hsl(38_100%_30%)]" />
+                      </span>
+                      <div className="min-w-0 text-left">
+                        <div className="text-[10px] text-muted-foreground uppercase tracking-wider font-body">Impact</div>
+                        <div className="text-[13px] font-display font-bold text-foreground leading-tight">{t.growth}</div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -174,36 +152,18 @@ const TestimonialsSection = () => {
             </AnimatePresence>
           </div>
 
-          {/* Navigation */}
-          <div className="flex items-center justify-center gap-4 mt-8">
-            <button
-              onClick={prev}
-              className="w-11 h-11 rounded-2xl clay-surface-sm clay-press flex items-center justify-center"
-              aria-label="Previous"
-            >
-              <ArrowLeft size={16} className="text-foreground" />
-            </button>
-
-            <div className="flex gap-2">
-              {testimonials.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => { setDirection(i > current ? 1 : -1); setCurrent(i); }}
-                  aria-label={`Go to testimonial ${i + 1}`}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    i === current ? "w-8 bg-gradient-coral shadow-clay-sm" : "w-2 bg-muted hover:bg-muted-foreground/30"
-                  }`}
-                />
-              ))}
-            </div>
-
-            <button
-              onClick={next}
-              className="w-11 h-11 rounded-2xl clay-surface-sm clay-press flex items-center justify-center"
-              aria-label="Next"
-            >
-              <ArrowRight size={16} className="text-foreground" />
-            </button>
+          {/* Dot indicators */}
+          <div className="flex items-center justify-center gap-2 mt-8">
+            {testimonials.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => { setDirection(i > current ? 1 : -1); setCurrent(i); }}
+                aria-label={`Go to testimonial ${i + 1}`}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  i === current ? "w-8 bg-gradient-coral shadow-clay-sm" : "w-2 bg-muted hover:bg-muted-foreground/30"
+                }`}
+              />
+            ))}
           </div>
         </div>
 

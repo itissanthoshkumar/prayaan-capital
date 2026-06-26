@@ -10,7 +10,6 @@ import hero4 from "@/assets/pexels-aslam-shah-938590627-20794317.jpg";
 import hero5 from "@/assets/pexels-prithiv-raj-1074343528-28371334.jpg";
 import hero7 from "@/assets/pexels-varan-6472534.jpg";
 import hero8 from "@/assets/pexels-himanshu817-14707127.jpg";
-import hero10 from "@/assets/pexels-rk-preetham-2001609-3622671.jpg";
 
 import hero12 from "@/assets/pexels-saman-films-703617-6060893.jpg";
 import hero13 from "@/assets/pexels-henry-benjamin-2149128840-30443336.jpg";
@@ -24,7 +23,6 @@ const pool = [
   { img: hero5, alt: "Artisan craftsman", amount: "₹5 Lakhs", product: "Secured Business Loan", place: "Tamil Nadu" },
   { img: hero7, alt: "Business operator", amount: "₹8 Lakhs", product: "Loan Against Property", place: "Telangana" },
   { img: hero8, alt: "Vendor or merchant", amount: "₹4.5 Lakhs", product: "Secured Business Loan", place: "Karnataka" },
-  { img: hero10, alt: "Service provider", amount: "₹5.5 Lakhs", product: "Secured Business Loan", place: "Telangana" },
 
   { img: hero12, alt: "Business owner", amount: "₹8.5 Lakhs", product: "Loan Against Property", place: "Karnataka" },
   { img: hero13, alt: "Professional worker", amount: "₹5 Lakhs", product: "Secured Business Loan", place: "Tamil Nadu" },
@@ -49,8 +47,14 @@ const HeroSection = () => {
     let tick = 0;
     const t = setInterval(() => {
       setSlots((prev) => {
+        const i = tick % 3;
+        const others = prev.filter((_, idx) => idx !== i);
+        // advance, then skip any index already shown in another slot (de-dupe)
+        let cand = (prev[i] + 3) % pool.length;
+        let guard = 0;
+        while (others.includes(cand) && guard++ < pool.length) cand = (cand + 1) % pool.length;
         const next = [...prev];
-        next[tick % 3] = (next[tick % 3] + 3) % pool.length;
+        next[i] = cand;
         return next;
       });
       tick++;
