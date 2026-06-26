@@ -40,6 +40,7 @@ import InvestorRelations from "./pages/InvestorRelations";
 import BranchLocator from "./pages/BranchLocator";
 import Sitemap from "./pages/Sitemap";
 import NACHInstructions from "./pages/NACHInstructions";
+import NachMandate from "./pages/NachMandate";
 import WhyPrayaan from "./pages/WhyPrayaan";
 // import Technology from "./pages/Technology";   // disabled
 import Customer from "./pages/Customer";
@@ -103,6 +104,7 @@ export const appRoutes: AppRoute[] = [
   // { path: "/disclaimer", component: Disclaimer },   // disabled
   // { path: "/ombudsman-scheme", component: OmbudsmanScheme },   // disabled
   { path: "/nach-instructions", component: NACHInstructions },
+  { path: "/nach-mandate-instructions", component: NachMandate },
 
   // New pages
   { path: "/why-prayaan", component: WhyPrayaan },

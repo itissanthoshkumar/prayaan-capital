@@ -2,6 +2,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Quote, Star, Users, Briefcase, TrendingUp } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
 
+import face1 from "@/assets/pexels-ravikant-5807481.jpg";
+import face2 from "@/assets/pexels-himanshu817-14707127.jpg";
+import face3 from "@/assets/pexels-saman-films-703617-6060893.jpg";
+import face4 from "@/assets/pexels-henry-benjamin-2149128840-30443336.jpg";
+
+// Generic customer faces for the "1,000+ MSMEs" collage — distinct from the testimonial photos
+const trustFaces = [face1, face2, face3, face4];
+
 const testimonials = [
   {
     name: "Perumal",
@@ -176,13 +184,13 @@ const TestimonialsSection = () => {
           className="mt-16 flex items-center justify-center gap-3"
         >
           <div className="flex -space-x-3">
-            {testimonials.map((t, i) => (
+            {trustFaces.map((src, i) => (
               <motion.div
                 key={i}
                 className="w-10 h-10 rounded-full overflow-hidden border-2 border-background shadow-md"
                 whileHover={{ scale: 1.2, zIndex: 10 }}
               >
-                <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
+                <img src={src} alt="" className="w-full h-full object-cover" loading="lazy" />
               </motion.div>
             ))}
           </div>
