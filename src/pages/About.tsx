@@ -146,27 +146,89 @@ const LeaderCard = ({ p, compact }: { p: Person; compact?: boolean }) => {
   );
 };
 
+const founders: { name: string; role: string; photo: string; note: string }[] = [
+  {
+    name: "Rangarajan Krishnan",
+    role: "Promoter & Managing Director",
+    photo: "/team/rangarajan-krishnan.png",
+    note: "20+ years across leading NBFCs and financial institutions, with deep expertise in scaling lenders to profitability.",
+  },
+  {
+    name: "G. Madhan Mohan",
+    role: "Founder",
+    photo: "/team/madhan-mohan.png",
+    note: "21+ years in the MSME market across credit policy, underwriting, collections and operations.",
+  },
+  {
+    name: "Akash S Chelvam",
+    role: "Founder",
+    photo: "/team/akash-chelvam.png",
+    note: "21+ years across banking and insurance — building teams, geographies and HR institutions.",
+  },
+];
+
+const FounderCard = ({ f }: { f: (typeof founders)[number] }) => (
+  <motion.div
+    variants={cardAnim}
+    whileHover={{ y: -5, transition: { duration: 0.25 } }}
+    className="clay-surface p-7 clay-press flex flex-col items-center text-center h-full"
+  >
+    <div className={`rounded-full p-[3px] ${ACCENT} shadow-clay-sm mb-4`}>
+      <img src={f.photo} alt={f.name} loading="lazy" className="w-24 h-24 rounded-full object-cover ring-2 ring-card" />
+    </div>
+    <h3 className="font-display text-lg font-bold text-foreground leading-snug">{f.name}</h3>
+    <span className="inline-block text-[11px] font-semibold text-primary-foreground bg-primary px-3 py-0.5 rounded-full mt-2 leading-tight">
+      {f.role}
+    </span>
+    <p className="text-sm text-muted-foreground leading-relaxed mt-3">{f.note}</p>
+  </motion.div>
+);
+
 const About = () => {
   return (
     <Layout>
-      {/* Hero */}
-      <section className="pt-24 pb-8 md:pt-32 md:pb-10 bg-hero relative overflow-hidden">
+      {/* Hero — about, story & founders in one section */}
+      <section className="pt-24 pb-16 md:pt-32 md:pb-20 bg-hero relative overflow-hidden">
         <AIFloatingElements />
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-[1fr_340px] gap-8 items-center">
+          <div className="grid lg:grid-cols-[1fr_340px] gap-8 lg:gap-12 items-start">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
               <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-4">
                 <Sparkles size={12} /> About Prayaan Capital
               </span>
-              <h1 className="font-display text-3xl md:text-5xl font-bold text-foreground mt-3 mb-5 leading-tight">
+              <h1 className="font-display text-3xl md:text-5xl font-bold text-foreground mt-3 mb-6 leading-tight">
                 The people behind the <span className="text-gold-deep">journey</span>
               </h1>
-              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                <em>Prayaan</em> means "Journey" — and ours is steered by a team of seasoned credit, finance and technology professionals. From our Board of Directors to our management team, decades of combined experience across leading NBFCs and banks shape how we extend fair, secured credit to India's micro and small enterprises. Meet the people behind it.
-              </p>
+              <div className="space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed">
+                <p>
+                  The word <em>Prayaan</em> meaning Journey was conceptualised by the founders intending to service the complete business needs of its customers and thereby co-travelling with them on their entrepreneurial &ldquo;Journey&rdquo;. The Company is engaged in the business of extending credit to micro and small enterprises, typically the self-employed businesses.
+                </p>
+                <p>
+                  Prayaan Capital Private Limited was incorporated on December 10th 2018, and was granted the NBFC Certificate of Registration on 6th June 2019 for conducting business as a non-deposit taking NBFC with their Registered and Corporate Office in Chennai, Tamil Nadu.
+                </p>
+              </div>
             </motion.div>
             <TeamGrowthArt />
           </div>
+
+          {/* The people who built Prayaan — within the story */}
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mt-8 md:mt-10 mb-7 md:mb-8">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body">
+              <Users2 size={12} /> The people who built Prayaan
+            </span>
+          </motion.div>
+          <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid sm:grid-cols-3 gap-5 md:gap-6 max-w-4xl mx-auto">
+            {founders.map((f) => (
+              <FounderCard key={f.name} f={f} />
+            ))}
+          </motion.div>
+
+          {/* leadership transition note */}
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-4xl mx-auto mt-10 md:mt-12 text-sm md:text-base text-muted-foreground leading-relaxed">
+            <p>
+              The Company has now transitioned into a high potential institution with <span className="font-semibold text-foreground">Mr. Rangarajan Krishnan</span> taking up the leadership role as the Promoter and Managing Director of the Company, with the existing founders, <span className="font-semibold text-foreground">Madhan Mohan</span> and <span className="font-semibold text-foreground">Akash Chelvam</span> continuing to work as part of the core team. Mr. Rangarajan brings with him a rich experience of leading NBFCs and other Financial Institutions to scale and profitability. This transition brings with it both infusion of capital and fresh expertise that will see the Company through to new heights.
+            </p>
+          </motion.div>
         </div>
       </section>
 
