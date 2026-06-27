@@ -56,9 +56,9 @@ const Policies = () => (
           viewport={{ once: true }}
           className="grid sm:grid-cols-2 gap-4 md:gap-5 max-w-4xl mx-auto"
         >
-          {policies.map((p) => (
+          {policies.map((p, i) => (
             <motion.a
-              key={p.label}
+              key={`${p.label}-${i}`}
               variants={itemAnim}
               whileHover={{ y: -4, transition: { duration: 0.2 } }}
               href={p.href}

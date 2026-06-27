@@ -232,9 +232,9 @@ const GrievanceRedressal = () => {
 
                   {/* Contact cards — same size/style for all */}
                   <div className="grid sm:grid-cols-2 gap-3 mb-6">
-                    {level.contacts.map((c) => (
+                    {level.contacts.map((c, i) => (
                       <a
-                        key={c.label}
+                        key={`${c.label}-${i}`}
                         href={c.href}
                         className="group flex items-center gap-3 p-4 rounded-2xl bg-muted hover:bg-primary/8 border border-transparent hover:border-primary/20 transition-all"
                       >
