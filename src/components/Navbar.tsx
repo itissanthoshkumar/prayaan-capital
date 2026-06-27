@@ -12,6 +12,7 @@ const navLinks = [
     children: [
       { label: "About Us", href: "/why-prayaan" },
       { label: "Our Team", href: "/team" },
+      { label: "Our Presence", href: "/branch-locator" },
     ],
   },
   {
@@ -19,7 +20,6 @@ const navLinks = [
     children: [
       { label: "Loan Calculator", href: "/calculators/emi" },
       { label: "Grievance Redressal", href: "/grievance-redressal" },
-      { label: "Branch Locator", href: "/branch-locator" },
     ],
   },
   { label: "Contact", href: "/contact" },

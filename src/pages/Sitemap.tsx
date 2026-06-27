@@ -2,55 +2,49 @@ import Layout from "@/components/Layout";
 import { Link } from "react-router-dom";
 import { ScrollText } from "lucide-react";
 
-const PDF_RATES = "https://prayaancapital.com/assets/images/downloads/Interest%20Rates%20and%20Gradation%20of%20Risk%20Policy%20V4.0.pdf";
-
 type SitemapLink = { label: string; href: string; external?: boolean };
 
+// Mirrors the footer; covers every live (routed) page on the site.
 const groups: { title: string; links: SitemapLink[] }[] = [
   {
     title: "Company",
     links: [
       { label: "Home", href: "/" },
-      { label: "About Prayaan", href: "/why-prayaan" },
-      { label: "Team", href: "/team" },
+      { label: "About Us", href: "/why-prayaan" },
+      { label: "Our Team", href: "/team" },
+      { label: "Our Presence", href: "/branch-locator" },
       { label: "Careers", href: "/careers" },
-      { label: "Contact Us", href: "/contact" },
+      { label: "Contact", href: "/contact" },
     ],
   },
   {
-    title: "Products",
+    title: "Products & Tools",
     links: [
-      { label: "Our Products", href: "/products" },
-      { label: "EMI Calculator", href: "/calculators/emi" },
-      { label: "Branch Locator", href: "/branch-locator" },
+      { label: "Products", href: "/products" },
+      { label: "Loan Calculator", href: "/calculators/emi" },
+      { label: "Interest Rates & Charges", href: "/interest-rates-and-charges" },
     ],
   },
   {
-    title: "Customer",
+    title: "Customer Support",
     links: [
-      { label: "Customer Hub", href: "/customer" },
+      { label: "Customer", href: "/customer" },
+      { label: "NACH Mandate Instructions", href: "/nach-mandate-instructions" },
       { label: "Grievance Redressal", href: "/grievance-redressal" },
-      { label: "NACH Instructions", href: "/nach-instructions" },
     ],
   },
   {
     title: "Investor Relations",
     links: [
       { label: "Investor Relations", href: "/investor-relations" },
-      { label: "RBI Disclosures", href: "/rbi-disclosures" },
     ],
   },
   {
-    title: "Compliance",
+    title: "Legal & Compliance",
     links: [
       { label: "Policies", href: "/policies" },
+      { label: "RBI Disclosures", href: "/rbi-disclosures" },
       { label: "Privacy Policy", href: "/privacy-policy" },
-      { label: "Interest Rates & Charges", href: PDF_RATES, external: true },
-    ],
-  },
-  {
-    title: "Utility",
-    links: [
       { label: "Sitemap", href: "/sitemap" },
     ],
   },

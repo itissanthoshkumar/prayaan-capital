@@ -7,6 +7,7 @@ type FooterLink = { label: string; href: string };
 const company: FooterLink[] = [
   { label: "About Us", href: "/why-prayaan" },
   { label: "Our Team", href: "/team" },
+  { label: "Our Presence", href: "/branch-locator" },
   { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];
@@ -15,7 +16,6 @@ const productsTools: FooterLink[] = [
   { label: "Products", href: "/products" },
   { label: "Loan Calculator", href: "/calculators/emi" },
   { label: "Interest Rates & Charges", href: "/interest-rates-and-charges" },
-  { label: "Branch Locator", href: "/branch-locator" },
 ];
 
 const customerSupport: FooterLink[] = [
