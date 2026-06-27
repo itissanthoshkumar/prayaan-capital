@@ -18,7 +18,7 @@ const compCols = [
 
 const comparison = {
   rows: [
-    { feature: "Credit decision in 48 hours", values: [true, false, true] },
+    { feature: "Faster credit decisions", values: [true, false, true] },
     { feature: "Serves thin-file & underserved borrowers", values: [true, false, true] },
     { feature: "Transparent, regulated pricing", values: [true, true, false] },
     { feature: "Doorstep service in local language", values: [true, false, true] },
@@ -52,7 +52,7 @@ const capabilities = [
   {
     icon: Brain,
     title: "AI-Powered Decisions",
-    desc: "Tech-enabled underwriting combining property value, bureau and banking data for fast, fair credit decisions in 48 hours.",
+    desc: "Tech-enabled underwriting combining property value, bureau and banking data for fast, fair credit decisions.",
     tint: "bg-gradient-sunset",
   },
   {

@@ -21,7 +21,7 @@ const EligibilityCalc = () => {
     // Lower of 50% LTV on property and an income-based capacity
     const ltvCap = propertyValue * 0.5;
     const incomeCap = income * 0.7;
-    const eligibleAmt = Math.min(50, Math.max(5, Math.round(Math.min(ltvCap, incomeCap))));
+    const eligibleAmt = Math.min(30, Math.max(5, Math.round(Math.min(ltvCap, incomeCap))));
     return { eligible: s >= 60, amount: eligibleAmt, score: Math.min(100, s) };
   }, [propertyValue, income, cibil]);
 

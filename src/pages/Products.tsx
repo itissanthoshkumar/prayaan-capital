@@ -1,7 +1,7 @@
 import HeroIllustration from "@/components/HeroIllustration";
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
-import { Building2, Landmark, Home, Wallet, CheckCircle, ArrowRight } from "lucide-react";
+import { Building2, Briefcase, Home, Wallet, CheckCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import AIFloatingElements, { AIPulse } from "@/components/AIFloatingElements";
@@ -9,47 +9,47 @@ import EMICalculator from "@/components/EMICalculator";
 
 const products = [
   {
-    icon: Landmark,
-    title: "Loan Against Property",
-    range: "₹5L – ₹50L",
+    icon: Briefcase,
+    title: "Secured Business Loan",
+    range: "₹5L – ₹30L",
     tenure: "Up to 10 years",
-    rate: "From 18% p.a.",
-    desc: "Unlock the value of your residential, commercial or industrial property for any need — without selling it. Higher amounts, longer tenures, competitive rates.",
-    features: ["Up to 50% LTV", "Fund Your Ambition", "Residential & commercial", "Long tenure", "No prepayment penalty after 6 months"],
-    ideal: "Businesses that need a larger, longer-tenure loan against property they already own.",
+    rate: "Attractive rates",
+    desc: "A secured term loan for your business — working capital, expansion, machinery or any need — backed by residential, commercial or industrial property you already own. Higher amounts, longer tenures, attractive rates.",
+    features: ["Fund your ambition", "Residential & commercial", "Long tenure", "No prepayment penalty after 6 months"],
+    ideal: "Business owners who need a larger, longer-tenure loan secured against property they already own.",
     tint: "bg-gradient-coral",
     aiTag: "AI valuation assist",
   },
   {
     icon: Home,
     title: "Housing Loan",
-    range: "₹5L – ₹50L",
+    range: "₹5L – ₹30L",
     tenure: "Up to 10 years",
-    rate: "From 18% p.a.",
-    desc: "Buy a ready home, or fund construction on land you own. Affordable EMIs, minimal paperwork and doorstep service in the communities that need it most.",
-    features: ["Up to 80% funding", "Salaried & self-employed", "Doorstep service", "Digital documentation", "48-hour decisions"],
+    rate: "Attractive rates",
+    desc: "Buy a ready home, or fund construction on a property you own. Affordable EMIs, minimal paperwork and doorstep service in the communities that need it most.",
+    features: ["Salaried & self-employed", "Doorstep service", "Digital documentation", "Faster decisions"],
     ideal: "Families buying or building their own home, including first-time buyers in smaller towns.",
     tint: "bg-gradient-mint",
-    aiTag: "AI-scored in 48 hrs",
+    aiTag: "Faster AI scoring",
   },
   {
     icon: Building2,
     title: "Property Construction Loan",
-    range: "₹5L – ₹50L",
+    range: "₹5L – ₹30L",
     tenure: "Up to 10 years",
-    rate: "From 18% p.a.",
-    desc: "Finance the construction, extension or renovation of a residential or commercial property on a plot you already own, with staged disbursal.",
-    features: ["Staged disbursal", "Renovation & extension", "Plot-owner friendly", "Flexible EMIs", "Quick valuation"],
-    ideal: "Owners building or improving property on land already in their name.",
+    rate: "Attractive rates",
+    desc: "Finance the construction, extension or renovation of a residential or commercial property you already own, with staged disbursal.",
+    features: ["Staged disbursal", "Renovation & extension", "Property-owner friendly", "Flexible EMIs", "Quick valuation"],
+    ideal: "Owners building or improving property already in their name.",
     tint: "bg-gradient-lavender",
     aiTag: "Stage-linked underwriting",
   },
   {
     icon: Wallet,
     title: "Balance Transfer & Top-up",
-    range: "₹5L – ₹50L",
+    range: "₹5L – ₹30L",
     tenure: "Up to 10 years",
-    rate: "From 18% p.a.",
+    rate: "Attractive rates",
     desc: "Move your existing property loan to Prayaan for a lower rate, and unlock an additional top-up against the same property in one go.",
     features: ["Lower your EMI", "Extra top-up", "Minimal docs", "Fast switch", "Transparent charges"],
     ideal: "Borrowers paying a high rate elsewhere who want to save and borrow a little more.",
@@ -80,7 +80,7 @@ const Products = () => {
               Secured business loans for <span className="text-gradient-coral">India's MSMEs</span>
             </h1>
             <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              Micro, Small and Medium Enterprises are the backbone of India's economy. Secured business loans from ₹5L to ₹50L, backed by the property you own — for working capital, expansion, machinery or any business need. Transparent pricing, 48-hour decisions, tenures up to 10 years, and doorstep service.
+              Micro, Small and Medium Enterprises are the backbone of India's economy. Secured business loans from ₹5L to ₹30L, backed by the property you own — for working capital, expansion, machinery or any business need. Transparent pricing, faster decisions, tenures up to 10 years, and doorstep service.
             </p>
           </motion.div>
             </div>
@@ -100,9 +100,9 @@ const Products = () => {
             className="clay-surface max-w-5xl mx-auto px-6 md:px-10 py-6 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x divide-border/50"
           >
             {[
-              { v: "₹5L – ₹50L", l: "Loan amount" },
-              { v: "From 18% p.a.", l: "Interest rate" },
-              { v: "48 hours", l: "Decisions" },
+              { v: "₹5L – ₹30L", l: "Loan amount" },
+              { v: "Attractive", l: "Interest rate" },
+              { v: "Faster", l: "Decisions" },
               { v: "Up to 10 yrs", l: "Tenure" },
             ].map((s) => (
               <div key={s.l} className="text-center px-2 md:px-4">

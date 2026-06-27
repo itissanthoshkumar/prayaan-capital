@@ -188,7 +188,7 @@ const HeroVariantSection = ({ v, index }: { v: VariantStyle; index: number }) =>
       {/* Body */}
       <p className="text-base md:text-lg max-w-[480px] mb-10 font-body leading-[1.8]" style={{ color: v.body }}>
         Secured business loans for the small and medium enterprises — the manufacturers,
-        traders and shopkeepers who form the backbone of our economy. Decisions in 48 hours.
+        traders and shopkeepers who form the backbone of our economy. Faster decisions.
       </p>
 
       {/* CTAs */}
@@ -211,9 +211,9 @@ const HeroVariantSection = ({ v, index }: { v: VariantStyle; index: number }) =>
 
       {/* Stat pills */}
       <div className="flex flex-wrap gap-3">
-        <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-full" style={{ border: `1px solid ${v.pillBorder}`, background: v.pillBg }}>
-          <span className="font-mono font-bold text-sm leading-none" style={{ color: v.pillAccent }}>18% p.a.</span>
-          <span className="text-[10px] font-semibold uppercase tracking-[0.13em] font-body" style={{ color: v.pillText }}>Starting Rate</span>
+        <div className="flex items-center gap-2 px-4 py-2.5 rounded-full" style={{ border: `1px solid ${v.pillBorder}`, background: v.pillBg }}>
+          <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: v.pillAccent }} />
+          <span className="text-[10px] font-semibold uppercase tracking-[0.1em] font-body" style={{ color: v.pillText }}>Attractive Rates</span>
         </div>
         <div className="flex items-center gap-2 px-4 py-2.5 rounded-full" style={{ border: `1px solid ${v.pillBorder}`, background: v.pillBg }}>
           <CheckCircle size={13} style={{ color: v.pillAccent }} className="shrink-0" />
@@ -221,7 +221,7 @@ const HeroVariantSection = ({ v, index }: { v: VariantStyle; index: number }) =>
         </div>
         <div className="flex items-center gap-2 px-4 py-2.5 rounded-full" style={{ border: `1px solid ${v.pillBorder}`, background: v.pillBg }}>
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
-          <span className="text-[10px] font-semibold uppercase tracking-[0.1em] font-body" style={{ color: v.pillText }}>48-hr Decisions</span>
+          <span className="text-[10px] font-semibold uppercase tracking-[0.1em] font-body" style={{ color: v.pillText }}>Faster Decisions</span>
         </div>
       </div>
     </div>

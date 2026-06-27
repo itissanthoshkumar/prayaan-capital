@@ -8,7 +8,7 @@ const audiences = [
     tint: "bg-gradient-coral",
     label: "For Borrowers",
     title: "Unlock your property",
-    desc: "Secured business loans from ₹5L to ₹50L, with decisions within 48 hours of complete documentation.",
+    desc: "Secured business loans from ₹5L to ₹30L, with faster decisions on complete documentation.",
     cta: "Contact Us",
     to: "/contact",
   },

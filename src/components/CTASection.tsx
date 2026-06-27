@@ -23,14 +23,14 @@ const CTASection = () => {
         >
           <div className="clay-surface p-8 md:p-14 text-center">
             <h2 className="font-display text-2xl md:text-5xl font-extrabold text-foreground mb-4 tracking-tight">
-              Ready to unlock your{" "}
-              <span className="text-gradient-coral">property</span>?
+              Ready to{" "}
+              <span className="text-gradient-coral">expand your business</span>?
             </h2>
             <p className="text-sm md:text-lg text-muted-foreground mb-3 font-body">
-              Join the entrepreneurs across South India who trust Prayaan Capital for transparent, property-backed finance.
+              Join the businesses that trust Prayaan Capital to power their next move.
             </p>
             <p className="text-xs md:text-sm text-muted-foreground mb-8 md:mb-10 max-w-lg mx-auto font-body">
-              Own a home, shop or land? Put it to work — secured business loans from ₹5L to ₹50L.
+              Working capital, expansion, machinery or a new outlet — secured business loans from ₹5L to ₹30L, backed by the property you own.
             </p>
             <motion.div
               initial={{ opacity: 0, y: 15 }}

@@ -24,8 +24,8 @@ const groups = [
     title: "Loans & Eligibility",
     icon: Home as LucideIcon,
     items: [
-      { q: "What loan amounts can I get?", a: "We offer Loan Against Property and housing loans from ₹5L to ₹50L, depending on the property value and your repayment capacity." },
-      { q: "Do I need to mortgage my property?", a: "Yes — our loans are secured against your property. This is what allows us to offer you competitive interest rates starting from 18% p.a." },
+      { q: "What loan amounts can I get?", a: "We offer secured business loans (and housing loans) from ₹5L to ₹30L, depending on the property value and your repayment capacity." },
+      { q: "Do I need to mortgage my property?", a: "Yes — our loans are secured against your property. This is what allows us to offer you attractive interest rates." },
       { q: "What is the minimum CIBIL score?", a: "We look beyond CIBIL. Our team evaluates property value, bank flow, and repayment history — a score of 680+ improves your pricing." },
       { q: "What types of property are accepted?", a: "Residential, commercial and industrial properties with clear, marketable title. The property should be self-occupied or rented and registered in your name." },
     ],
@@ -35,7 +35,7 @@ const groups = [
     title: "Application & Disbursal",
     icon: Zap as LucideIcon,
     items: [
-      { q: "How long does approval take?", a: "Most decisions are issued within 24–48 hours of complete documentation. Property verification adds 1–2 days." },
+      { q: "How long does approval take?", a: "We aim to issue decisions quickly once your documentation is complete. Property verification adds 1–2 days." },
       { q: "Do I need to visit a branch?", a: "No. Everything — application, document upload, and signing — is done digitally. Our field team visits you for property verification." },
       { q: "Where are funds disbursed?", a: "Directly to your registered bank account within 2 working days of signing the loan agreement." },
     ],

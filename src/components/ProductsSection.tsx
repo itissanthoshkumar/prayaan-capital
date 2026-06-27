@@ -1,26 +1,26 @@
 import { motion } from "framer-motion";
-import { Landmark, Home, ArrowRight } from "lucide-react";
+import { Briefcase, Home, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const products = [
   {
-    icon: Landmark,
-    title: "Loan Against Property",
-    range: "₹5L – ₹50L",
+    icon: Briefcase,
+    title: "Secured Business Loans",
+    range: "₹5L – ₹30L",
     tenure: "Up to 10 years",
-    desc: "Unlock the value of your residential, commercial or industrial property to fund your business growth — with long tenures and rates starting from 18% p.a.",
-    features: ["Up to 50% LTV", "Fund Your Ambition", "Flexi tenure"],
+    desc: "Fuel your business — working capital, expansion, machinery or any need — with a secured term loan backed by property you already own. Higher amounts, longer tenures, attractive rates.",
+    features: ["Fund your ambition", "Flexi tenure", "Doorstep service"],
     tint: "bg-gradient-coral",
     href: "/products",
   },
   {
     icon: Home,
     title: "Housing Loans",
-    range: "₹5L – ₹50L",
+    range: "₹5L – ₹30L",
     tenure: "Up to 10 years",
     desc: "Buy, build or renovate your home with affordable EMIs, minimal paperwork and doorstep service in the communities that need it most.",
-    features: ["From 18% p.a.", "Long tenure", "Doorstep service"],
+    features: ["Attractive rates", "Long tenure", "Doorstep service"],
     tint: "bg-gradient-mint",
     href: "/products",
   },

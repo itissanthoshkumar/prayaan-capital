@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const stats = [
   { value: "₹50Cr+", label: "Loans Disbursed", color: "from-[hsl(24_85%_52%)] to-[hsl(36_90%_58%)]" },
   { value: "1,000+", label: "Families Funded", color: "from-[hsl(170_50%_42%)] to-[hsl(200_55%_50%)]" },
-  { value: "48 Hrs", label: "Avg. Decision", color: "from-[hsl(260_40%_55%)] to-[hsl(280_45%_65%)]" },
+  { value: "Faster", label: "Decisions", color: "from-[hsl(260_40%_55%)] to-[hsl(280_45%_65%)]" },
   { value: "99.2%", label: "Satisfaction", color: "from-[hsl(12_80%_55%)] to-[hsl(24_85%_52%)]" },
 ];
 

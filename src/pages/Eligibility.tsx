@@ -48,8 +48,8 @@ const eligibilitySchema = z.object({
     .string()
     .trim()
     .regex(/^\d+$/, { message: "Enter a valid amount in ₹" })
-    .refine((v) => Number(v) >= 500000 && Number(v) <= 5000000, {
-      message: "Loan amount must be between ₹5L and ₹50L",
+    .refine((v) => Number(v) >= 500000 && Number(v) <= 3000000, {
+      message: "Loan amount must be between ₹5L and ₹30L",
     }),
   city: z.string().trim().min(2, { message: "City is required" }).max(80),
 });
@@ -161,7 +161,7 @@ const Eligibility = () => {
             transition={{ duration: 0.5, delay: 0.15 }}
             className="flex flex-wrap items-center justify-center gap-3 mb-10"
           >
-            {["48-hour decisions", "No credit-score impact", "100% confidential"].map((t) => (
+            {["Faster decisions", "No credit-score impact", "100% confidential"].map((t) => (
               <span key={t} className="inline-flex items-center gap-2 px-4 py-2 rounded-full clay-surface-sm text-xs font-semibold text-foreground font-body">
                 <CheckCircle2 size={13} className="text-primary" /> {t}
               </span>
@@ -413,7 +413,7 @@ const Eligibility = () => {
                 <ul className="space-y-2 text-sm font-body text-muted-foreground">
                   <li className="flex gap-2"><span className="text-primary">•</span> Business vintage 1+ years</li>
                   <li className="flex gap-2"><span className="text-primary">•</span> Monthly revenue ≥ ₹50,000</li>
-                  <li className="flex gap-2"><span className="text-primary">•</span> Loan range ₹5L – ₹50L</li>
+                  <li className="flex gap-2"><span className="text-primary">•</span> Loan range ₹5L – ₹30L</li>
                   <li className="flex gap-2"><span className="text-primary">•</span> Property owner with valid KYC</li>
                 </ul>
               </div>

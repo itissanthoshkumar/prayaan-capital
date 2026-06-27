@@ -113,7 +113,7 @@ const HeroSection = () => {
           className="text-base md:text-lg text-white/65 max-w-[480px] mb-10 font-body leading-[1.8]"
         >
           Secured business loans for the small and medium enterprises — the manufacturers, traders and
-          shopkeepers who form the backbone of our economy. Decisions in 48 hours.
+          shopkeepers who form the backbone of our economy. Faster decisions.
         </motion.p>
 
         {/* CTAs */}
@@ -134,9 +134,9 @@ const HeroSection = () => {
 
         {/* Stat pills */}
         <motion.div custom={4} initial="hidden" animate="visible" variants={fadeUp} className="flex flex-wrap gap-3">
-          <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-full border border-white/15 bg-white/8">
-            <span className="font-mono font-bold text-[#f0a800] text-sm leading-none">18% p.a.</span>
-            <span className="text-[10px] font-semibold text-white/55 uppercase tracking-[0.13em] font-body">Starting Rate</span>
+          <div className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/15 bg-white/8">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#f0a800] shrink-0" />
+            <span className="text-[10px] font-semibold text-white/60 uppercase tracking-[0.1em] font-body">Attractive Rates</span>
           </div>
           <div className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/15 bg-white/8">
             <CheckCircle size={13} className="text-[#f0a800] shrink-0" />
@@ -144,7 +144,7 @@ const HeroSection = () => {
           </div>
           <div className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/15 bg-white/8">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
-            <span className="text-[10px] font-semibold text-white/60 uppercase tracking-[0.1em] font-body">48-hr Decisions</span>
+            <span className="text-[10px] font-semibold text-white/60 uppercase tracking-[0.1em] font-body">Faster Decisions</span>
           </div>
           <div className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/15 bg-white/8">
             <span className="font-mono font-bold text-[#f0a800] text-sm leading-none">1,000+</span>

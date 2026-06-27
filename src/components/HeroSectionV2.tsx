@@ -120,7 +120,7 @@ const HeroSectionV2 = () => {
         <motion.p custom={2} initial="hidden" animate="visible" variants={fadeUp}
           className="text-base md:text-lg text-muted-foreground max-w-md mb-8 font-body leading-[1.7]">
           <span className="font-display font-bold text-foreground/80">Own. Unlock. Grow.</span>{" "}
-          Loan Against Property &amp; housing loans up to ₹50L, decisions in 48 hours, doorstep service across South India.
+          Loan Against Property &amp; housing loans up to ₹30L, faster decisions, doorstep service across South India.
         </motion.p>
 
         <motion.div custom={3} initial="hidden" animate="visible" variants={fadeUp}
@@ -137,9 +137,9 @@ const HeroSectionV2 = () => {
         <motion.div custom={4} initial="hidden" animate="visible" variants={fadeUp}
           className="flex flex-wrap gap-3">
           {[
-            { icon: IndianRupee, label: "From 18% p.a.", tint: "bg-gradient-mint" },
+            { icon: IndianRupee, label: "Attractive rates", tint: "bg-gradient-mint" },
             { icon: Shield, label: "RBI Registered NBFC", tint: "bg-gradient-coral" },
-            { icon: Zap, label: "48-hr decisions", tint: "bg-gradient-sunset" },
+            { icon: Zap, label: "Faster decisions", tint: "bg-gradient-sunset" },
           ].map((item) => (
             <div key={item.label} className="flex items-center gap-2 px-3 py-2 rounded-full bg-card shadow-clay-sm">
               <span className={`flex items-center justify-center w-6 h-6 rounded-full ${item.tint} text-white shadow-clay-sm`}>

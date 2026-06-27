@@ -11,7 +11,7 @@ type Person = { name: string; role: string; bio: string; photo?: string };
 const board: Person[] = [
   {
     name: "Rangarajan Krishnan",
-    role: "Managing Director",
+    role: "Promoter & Managing Director",
     photo: "/team/rangarajan-krishnan.png",
     bio: "Rangarajan Krishnan is a finance professional with over 20 years of experience spanning reputed large corporates such as Five Star Business Finance, Standard Chartered Bank, HDFC Bank, International Finance Corporation and Spark Capital. His last assignment was in Five Star Business Finance as their joint Managing Director and CEO. His expertise spans across core operations of the non-bank financial institution including business, collections, technology, operations, credit and legal. Over his years of experience, he has managed portfolios across Corporate Banking, mid-market segment, South East Asia Infrastructure Financing and as an Investment Banker for a variety of deals across fund raising, mergers & acquisitions.",
   },
@@ -23,7 +23,7 @@ const board: Person[] = [
   },
   {
     name: "G. Madhan Mohan",
-    role: "Chief Credit Officer",
+    role: "Founder & Chief Credit Officer",
     photo: "/team/madhan-mohan.png",
     bio: "Madhan Mohan has over 21 years of extensive work in the MSME markets, having ably managed various roles in Credit Policy, Credit Under-Writing, Collections, Fraud Control, Operations, Sales, P&L, Strategy and invitee member on boards. His true passion lies in lending to improve the lives of individuals and businesses by providing the financial support required at the right time. He has been part of the set up, and built the MSME vertical for RBL Bank. He created the success at Swadhaar Finserve Pvt. Ltd. having driven both business and extensive expansion to build the company as a bench mark model of dedicated Business Correspondent. He has always been at the heart of the Indian MSME market with NBFCs and Banks like Fullerton India Credit Company Ltd., Sahayata Microfinance Pvt. Ltd., Vistaar Financial Services Pvt. Ltd., and successfully transformed businesses to meet new market demand & sustain a profitable trajectory.",
   },
@@ -56,7 +56,7 @@ const management: Person[] = [
   },
   {
     name: "Akash S Chelvam",
-    role: "Chief Human Resource Officer",
+    role: "Founder & Chief Human Resource Officer",
     photo: "/team/akash-chelvam.png",
     bio: "Akash Chelvam has an extensive experience of over 21 years in the Banking and Insurance space with a domain expertise in Human Resources and Learning & Development. He has been part of the core teams to setup new geographies and business lines. In his last assignment with RBL Bank he was initially responsible for the Talent Acquisition & Business Partnering for the Agri & Inclusive Banking, taking care of Pan India hiring strategy and execution, also setup Small Business Banking vertical. He has also worked in the Organization Development team, primarily heading the Future Leadership Hiring initiatives for the Bank, along with various other projects spanning Pan India, post which he was seconded to RBL Finserve (erstwhile Swadhaar Finserve) as Head - Human Resources to grow the organization and to develop a robust structure in terms of governance. Having a comprehensive and strategic understanding of Human Resources, business requirements and organizational change he devised and implement coherent HR strategies along with improving internal process & procedures within a demanding environment. For Prayaan, Akash is leading Human Resources, Learning & Development, Administration, Operations, Tele calling and IT Infrastructure.",
   },
@@ -146,48 +146,10 @@ const LeaderCard = ({ p, compact }: { p: Person; compact?: boolean }) => {
   );
 };
 
-const founders: { name: string; role: string; photo: string; note: string }[] = [
-  {
-    name: "Rangarajan Krishnan",
-    role: "Promoter & Managing Director",
-    photo: "/team/rangarajan-krishnan.png",
-    note: "20+ years across leading NBFCs and financial institutions, with deep expertise in scaling lenders to profitability.",
-  },
-  {
-    name: "G. Madhan Mohan",
-    role: "Founder",
-    photo: "/team/madhan-mohan.png",
-    note: "21+ years in the MSME market across credit policy, underwriting, collections and operations.",
-  },
-  {
-    name: "Akash S Chelvam",
-    role: "Founder",
-    photo: "/team/akash-chelvam.png",
-    note: "21+ years across banking and insurance — building teams, geographies and HR institutions.",
-  },
-];
-
-const FounderCard = ({ f }: { f: (typeof founders)[number] }) => (
-  <motion.div
-    variants={cardAnim}
-    whileHover={{ y: -5, transition: { duration: 0.25 } }}
-    className="clay-surface p-7 clay-press flex flex-col items-center text-center h-full"
-  >
-    <div className={`rounded-full p-[3px] ${ACCENT} shadow-clay-sm mb-4`}>
-      <img src={f.photo} alt={f.name} loading="lazy" className="w-24 h-24 rounded-full object-cover ring-2 ring-card" />
-    </div>
-    <h3 className="font-display text-lg font-bold text-foreground leading-snug">{f.name}</h3>
-    <span className="inline-block text-[11px] font-semibold text-white bg-accent px-3 py-0.5 rounded-full mt-2 leading-tight">
-      {f.role}
-    </span>
-    <p className="text-sm text-muted-foreground leading-relaxed mt-3">{f.note}</p>
-  </motion.div>
-);
-
 const About = () => {
   return (
     <Layout>
-      {/* Hero — about, story & founders in one section */}
+      {/* Hero — about & story */}
       <section className="pt-24 pb-16 md:pt-32 md:pb-20 bg-hero relative overflow-hidden">
         <AIFloatingElements />
         <div className="container mx-auto px-4 relative z-10">
@@ -210,25 +172,6 @@ const About = () => {
             </motion.div>
             <TeamGrowthArt />
           </div>
-
-          {/* The people who built Prayaan — within the story */}
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mt-8 md:mt-10 mb-7 md:mb-8">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body">
-              <Users2 size={12} /> Founders &amp; promoter
-            </span>
-          </motion.div>
-          <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid sm:grid-cols-3 gap-5 md:gap-6 max-w-4xl mx-auto">
-            {founders.map((f) => (
-              <FounderCard key={f.name} f={f} />
-            ))}
-          </motion.div>
-
-          {/* leadership transition note */}
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-4xl mx-auto mt-10 md:mt-12 text-sm md:text-base text-muted-foreground leading-relaxed">
-            <p>
-              The Company has now transitioned into a high potential institution with <span className="font-semibold text-foreground">Mr. Rangarajan Krishnan</span> taking up the leadership role as the Promoter and Managing Director of the Company, with the existing founders, <span className="font-semibold text-foreground">Madhan Mohan</span> and <span className="font-semibold text-foreground">Akash Chelvam</span> continuing to work as part of the core team. Mr. Rangarajan brings with him a rich experience of leading NBFCs and other Financial Institutions to scale and profitability. This transition brings with it both infusion of capital and fresh expertise that will see the Company through to new heights.
-            </p>
-          </motion.div>
         </div>
       </section>
 

@@ -20,7 +20,7 @@ const steps: ProcessStep[] = [
   {
     icon: CheckCircle,
     title: "Credit Evaluation",
-    desc: "Our credit team evaluates your profile — bureau score, property value, and repayment capacity — and issues a sanction letter, typically within 48 hours of complete documentation.",
+    desc: "Our credit team evaluates your profile — bureau score, property value, and repayment capacity — and issues a sanction letter, with faster decisions once documentation is complete.",
     badge: "Step 2",
     num: "02",
     accent: "bg-[hsl(42_100%_47%)]",

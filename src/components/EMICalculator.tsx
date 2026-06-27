@@ -73,7 +73,7 @@ const ChartTooltip = ({ active, payload }: { active?: boolean; payload?: Array<{
    MAIN COMPONENT
    ════════════════════════════════════════════════════════ */
 const EMICalculator = () => {
-  const [loanAmount, setLoanAmount] = useState(1_500_000);  // Rupees (3L–50L)
+  const [loanAmount, setLoanAmount] = useState(1_500_000);  // Rupees (3L–30L)
   const [loanInputVal, setLoanInputVal] = useState("15,00,000");
   const [amountWarning, setAmountWarning] = useState("");
   const [rate,       setRate]       = useState(18);  // % p.a. (18–30)
@@ -96,10 +96,10 @@ const EMICalculator = () => {
         setAmountWarning("Minimum loan amount is ₹3,00,000. Setting to minimum.");
         setLoanAmount(3_00_000);
         setLoanInputVal("3,00,000");
-      } else if (raw > 50_00_000) {
-        setAmountWarning("Maximum loan amount is ₹50,00,000. Setting to maximum.");
-        setLoanAmount(50_00_000);
-        setLoanInputVal("50,00,000");
+      } else if (raw > 30_00_000) {
+        setAmountWarning("Maximum loan amount is ₹30,00,000. Setting to maximum.");
+        setLoanAmount(30_00_000);
+        setLoanInputVal("30,00,000");
       } else {
         setAmountWarning("");
         setLoanAmount(raw);
@@ -233,11 +233,11 @@ const EMICalculator = () => {
                   <Slider
                     aria-label="Loan amount"
                     value={[loanAmount]} onValueChange={(v) => handleSliderAmount(v[0])}
-                    min={3_00_000} max={50_00_000} step={10_000} className="w-full"
+                    min={3_00_000} max={30_00_000} step={10_000} className="w-full"
                   />
                   <div className="flex justify-between">
                     <span className="font-body text-[10px] text-muted-foreground">₹3,00,000</span>
-                    <span className="font-body text-[10px] text-muted-foreground">₹50,00,000</span>
+                    <span className="font-body text-[10px] text-muted-foreground">₹30,00,000</span>
                   </div>
                   {amountWarning ? (
                     <p className="font-body text-[11px] text-amber-600 text-center leading-snug flex items-center justify-center gap-1">
@@ -466,7 +466,7 @@ const EMICalculator = () => {
             {/* Disclaimer — inside the calculator frame */}
             <div className="border-t border-border/40 px-7 md:px-10 py-3.5">
               <p className="font-body text-[11px] text-muted-foreground text-center leading-relaxed">
-                Indicative figures only · Subject to credit assessment · Rates starting from 18% p.a. · RBI-registered NBFC
+                Indicative figures only · Subject to credit assessment · Attractive rates · RBI-registered NBFC
               </p>
             </div>
           </div>
