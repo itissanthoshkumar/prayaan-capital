@@ -50,8 +50,8 @@ const WhyPrayaan = () => {
                 Built for the <span className="text-gradient-coral">borrowers banks overlook</span>
               </h1>
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mb-8">
-                We combine deep local understanding with AI-led underwriting to help small business owners unlock
-                the value of the property they already own — fairly, transparently, and fast.
+                We combine deep local understanding with AI-led underwriting to give small business owners the
+                secured business loans they need to grow — fairly, transparently, and fast.
               </p>
             </motion.div>
 

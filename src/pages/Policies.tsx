@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import AIFloatingElements from "@/components/AIFloatingElements";
 import HeroIllustration from "@/components/HeroIllustration";
 import { motion } from "framer-motion";
-import { ScrollText, Recycle, Percent, Scale, Languages, Fingerprint, ShieldCheck, Megaphone, LucideIcon } from "lucide-react";
+import { ScrollText, Recycle, Percent, Scale, Languages, Fingerprint, ShieldCheck, Megaphone, Banknote, LucideIcon } from "lucide-react";
 
 const BASE = "https://prayaancapital.com/assets/images/downloads";
 
@@ -15,6 +15,7 @@ const policies: { label: string; href: string; icon: LucideIcon }[] = [
   { label: "Group KYC & AML Policy", href: `${BASE}/Group%20AML%20&%20KYC%20Policy_V6.0_.pdf`, icon: Fingerprint },
   { label: "POSH Policy", href: `${BASE}/POSH%20Policy_V4.pdf`, icon: ShieldCheck },
   { label: "Whistle Blower Policy", href: `${BASE}/Whistle%20Blower%20Policy%20V3.0.pdf`, icon: Megaphone },
+  { label: "Policy on Penal Charges v2", href: `${BASE}/Policy%20on%20penal%20charges%20v2.pdf`, icon: Banknote },
 ];
 
 const container = { hidden: {}, visible: { transition: { staggerChildren: 0.05 } } };
