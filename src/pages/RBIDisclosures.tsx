@@ -12,14 +12,8 @@ const regulatoryLinks: { label: string; href: string; external?: boolean }[] = [
   { label: "Grievance Redressal Policy", href: "/grievance-redressal" },
   { label: "KYC / AML Policy", href: `${BASE}/Group%20AML%20%26%20KYC%20Policy_V6.0_.pdf`, external: true },
   { label: "Whistleblower Policy", href: `${BASE}/Whistle%20Blower%20Policy%20V3.0.pdf`, external: true },
-  { label: "Code of Conduct for Recovery", href: "/policies" },
-  { label: "CSR Policy", href: "/policies" },
-  { label: "Citizens Charter", href: "/policies" },
-  { label: "Most Important Terms & Conditions (MITC)", href: "/policies" },
   { label: "Notices & Disclosures", href: "/policies" },
-  { label: "Ombudsman Scheme", href: "/grievance-redressal" },
   { label: "Cookie Policy", href: "/privacy-policy" },
-  { label: "Disclaimer", href: "/policies" },
 ];
 
 const RBIDisclosures = () => (

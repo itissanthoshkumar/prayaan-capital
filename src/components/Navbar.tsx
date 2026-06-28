@@ -18,6 +18,7 @@ const navLinks = [
   {
     label: "Customer",
     children: [
+      { label: "Support & Awareness", href: "/customer" },
       { label: "Loan Calculator", href: "/calculators/emi" },
       { label: "Grievance Redressal", href: "/grievance-redressal" },
     ],
@@ -88,19 +89,31 @@ const Navbar = () => {
                       transition={{ duration: 0.12 }}
                       className="absolute top-full left-0 mt-2 w-52 rounded-2xl p-1.5 overflow-hidden bg-white ring-1 ring-black/5 shadow-[0_12px_32px_rgba(13,33,55,0.22)]"
                     >
-                      {link.children.map((child) => (
-                        <Link
-                          key={child.label}
-                          to={child.href}
-                          className={`block px-3 py-2 rounded-xl text-[13px] font-medium font-body transition-colors ${
-                            isActive(child.href)
-                              ? "text-primary bg-primary/10"
-                              : "text-foreground/75 hover:text-primary hover:bg-primary/5"
-                          }`}
-                        >
-                          {child.label}
-                        </Link>
-                      ))}
+                      {link.children.map((child) =>
+                        child.href.startsWith("http") ? (
+                          <a
+                            key={child.label}
+                            href={child.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block px-3 py-2 rounded-xl text-[13px] font-medium font-body transition-colors text-foreground/75 hover:text-primary hover:bg-primary/5"
+                          >
+                            {child.label}
+                          </a>
+                        ) : (
+                          <Link
+                            key={child.label}
+                            to={child.href}
+                            className={`block px-3 py-2 rounded-xl text-[13px] font-medium font-body transition-colors ${
+                              isActive(child.href)
+                                ? "text-primary bg-primary/10"
+                                : "text-foreground/75 hover:text-primary hover:bg-primary/5"
+                            }`}
+                          >
+                            {child.label}
+                          </Link>
+                        )
+                      )}
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -161,16 +174,29 @@ const Navbar = () => {
                           exit={{ opacity: 0, height: 0 }}
                           className="pl-3 overflow-hidden"
                         >
-                          {link.children.map((child) => (
-                            <Link
-                              key={child.label}
-                              to={child.href}
-                              className="block text-[13px] text-white/65 hover:text-white py-2 px-3 rounded-lg hover:bg-white/10 transition-colors font-body"
-                              onClick={() => setIsOpen(false)}
-                            >
-                              {child.label}
-                            </Link>
-                          ))}
+                          {link.children.map((child) =>
+                            child.href.startsWith("http") ? (
+                              <a
+                                key={child.label}
+                                href={child.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block text-[13px] text-white/65 hover:text-white py-2 px-3 rounded-lg hover:bg-white/10 transition-colors font-body"
+                                onClick={() => setIsOpen(false)}
+                              >
+                                {child.label}
+                              </a>
+                            ) : (
+                              <Link
+                                key={child.label}
+                                to={child.href}
+                                className="block text-[13px] text-white/65 hover:text-white py-2 px-3 rounded-lg hover:bg-white/10 transition-colors font-body"
+                                onClick={() => setIsOpen(false)}
+                              >
+                                {child.label}
+                              </Link>
+                            )
+                          )}
                         </motion.div>
                       )}
                     </AnimatePresence>

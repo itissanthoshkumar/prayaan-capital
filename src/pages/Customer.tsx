@@ -63,30 +63,17 @@ const Customer = () => {
             <div>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-2xl">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-4">
-              <Sparkles size={12} /> Customer Support
+              <Sparkles size={12} /> For Our Customers
             </span>
             <h1 className="font-display text-3xl md:text-5xl font-bold text-foreground mt-3 mb-5 leading-tight">
-              How can we <span className="text-gradient-coral">help you</span> today?
+              Welcome to your <span className="text-gradient-coral">customer hub</span>
             </h1>
             <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-              Everything you need to manage your loan, make payments, or get support — all in one place.
+              Manage your loan, raise a request, get support, or learn how it all works — everything for Prayaan customers, in one place.
             </p>
           </motion.div>
             </div>
             <HeroIllustration variant="customer" />
-          </div>
-        </div>
-      </section>
-
-      {/* quick facts */}
-      <section className="py-6 md:py-8 bg-section">
-        <div className="container mx-auto px-5">
-          <div className="clay-surface max-w-3xl mx-auto px-6 py-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-center">
-            <span className="font-body text-xs md:text-sm font-semibold text-foreground">Reply in 1 business day</span>
-            <span className="hidden sm:block w-px h-4 bg-border" />
-            <span className="font-body text-xs md:text-sm font-semibold text-foreground">Toll-free 14448</span>
-            <span className="hidden sm:block w-px h-4 bg-border" />
-            <span className="font-body text-xs md:text-sm font-semibold text-foreground">Doorstep service</span>
           </div>
         </div>
       </section>
