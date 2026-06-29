@@ -346,6 +346,7 @@ const EMICalculator = () => {
                     <PieChart>
                       <Pie
                         key={`${loanAmount}-${rate}-${tenure}`}
+                        rootTabIndex={-1}
                         data={chartData}
                         cx="50%" cy="50%"
                         startAngle={90} endAngle={-270}
