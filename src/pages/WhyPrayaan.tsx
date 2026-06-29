@@ -49,9 +49,10 @@ const WhyPrayaan = () => {
               <h1 className="font-display text-3xl md:text-6xl font-bold text-foreground mt-3 mb-5 leading-tight">
                 Built for India's <span className="text-gradient-coral">underserved businesses</span>
               </h1>
-              <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mb-8">
-                We combine deep local understanding with AI-led underwriting to give small business owners the
-                secured business loans they need to grow — fairly, transparently, and fast.
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-2xl mb-8">
+                We help India's small businesses grow — manufacturers, traders, shopkeepers — with
+                secured loans backed by the property they already own, delivered by local teams who
+                understand their market.
               </p>
             </motion.div>
 

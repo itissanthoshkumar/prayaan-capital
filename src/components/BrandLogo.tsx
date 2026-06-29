@@ -1,6 +1,6 @@
 /**
  * Official Prayaan Capital logo assets (in /public):
- * - prayaan-logo-full.png — horizontal lockup: mark + PRAYAAN CAPITAL wordmark
+ * - prayaan-logo-full.webp / .png — horizontal lockup: mark + PRAYAAN CAPITAL wordmark
  * - prayaan-mark.png — round mark only, for square/tight contexts
  */
 const BrandLogo = ({
@@ -12,13 +12,16 @@ const BrandLogo = ({
   variant?: "full" | "mark";
 }) =>
   variant === "full" ? (
-    <img
-      src="/prayaan-logo-full.png"
-      alt="Prayaan Capital"
-      width={Math.round(size * (250 / 45))}
-      height={size}
-      className="shrink-0"
-    />
+    <picture>
+      <source srcSet="/prayaan-logo-full.webp" type="image/webp" />
+      <img
+        src="/prayaan-logo-full.png"
+        alt="Prayaan Capital"
+        width={Math.round(size * (250 / 45))}
+        height={size}
+        className="shrink-0"
+      />
+    </picture>
   ) : (
     <img
       src="/prayaan-mark.png"

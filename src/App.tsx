@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -19,7 +20,15 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           {appRoutes.map(({ path, component: Component }) => (
-            <Route key={path} path={path} element={<Component />} />
+            <Route
+              key={path}
+              path={path}
+              element={
+                <Suspense fallback={<div className="min-h-screen bg-background" />}>
+                  <Component />
+                </Suspense>
+              }
+            />
           ))}
           <Route path="*" element={<NotFound />} />
         </Routes>

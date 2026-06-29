@@ -1,54 +1,55 @@
-import type { ComponentType } from "react";
+import { lazy, type ComponentType } from "react";
 import Index from "./pages/Index";
-import About from "./pages/About";
-import Team from "./pages/Team";
-import Careers from "./pages/Careers";
-// import News from "./pages/News";   // disabled
-import Contact from "./pages/Contact";
-import Products from "./pages/Products";
-import Eligibility from "./pages/Eligibility";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-// import Terms from "./pages/Terms";   // disabled
-import GrievanceRedressal from "./pages/GrievanceRedressal";
-import Policies from "./pages/Policies";
-// import FairPracticeCode from "./pages/FairPracticeCode";   // disabled — kept for reference
-// import ProductDetail from "./pages/products/ProductDetail"; // disabled — only /products listing kept
-import EMICalc from "./pages/calculators/EMICalc";
-// import EligibilityCalc from "./pages/calculators/EligibilityCalc"; // disabled
-// import ForeclosureCalc from "./pages/calculators/ForeclosureCalc"; // disabled
-// import HowToApply from "./pages/HowToApply";   // disabled
-import DocumentChecklist from "./pages/DocumentChecklist";
-import InterestRatesAndCharges from "./pages/InterestRatesAndCharges";
-// import FAQs from "./pages/FAQs";   // disabled
-// import Downloads from "./pages/Downloads";   // disabled
-// import CustomerLogin from "./pages/CustomerLogin";   // disabled
-// import InterestRatePolicy from "./pages/regulatory/InterestRatePolicy";   // disabled
-// import KYCAMLPolicy from "./pages/regulatory/KYCAMLPolicy";   // disabled
-// import CodeOfConductRecovery from "./pages/regulatory/CodeOfConductRecovery";   // disabled
-// import WhistleblowerPolicy from "./pages/regulatory/WhistleblowerPolicy";   // disabled
-// import CSRPolicy from "./pages/regulatory/CSRPolicy";   // disabled
-// import CitizensCharter from "./pages/regulatory/CitizensCharter";   // disabled
-// import MITC from "./pages/regulatory/MITC";   // disabled
-// import NoticesDisclosures from "./pages/regulatory/NoticesDisclosures";   // disabled
-// import CookiePolicy from "./pages/regulatory/CookiePolicy";   // disabled
-// import Disclaimer from "./pages/regulatory/Disclaimer";   // disabled
-// import OmbudsmanScheme from "./pages/regulatory/OmbudsmanScheme";   // disabled
-import InvestorRelations from "./pages/InvestorRelations";
-// import Blog from "./pages/Blog";   // disabled
-// import CaseStudies from "./pages/CaseStudies";   // disabled
-// import PartnerWithUs from "./pages/PartnerWithUs";   // disabled
-import BranchLocator from "./pages/BranchLocator";
-import Sitemap from "./pages/Sitemap";
-import NACHInstructions from "./pages/NACHInstructions";
-import NachMandate from "./pages/NachMandate";
-import WhyPrayaan from "./pages/WhyPrayaan";
-// import Technology from "./pages/Technology";   // disabled
-import Customer from "./pages/Customer";
-// import CustomerPayments from "./pages/CustomerPayments";   // disabled
-import RBIDisclosures from "./pages/RBIDisclosures";
-import ThankYou from "./pages/ThankYou";
-import HeroPreview from "./pages/HeroPreview";
-// import { productData } from "./data/products"; // used only by the disabled /products/:slug route
+
+// All non-home pages are lazy-loaded — each becomes its own JS chunk,
+// removing ~120 KB from the initial bundle and cutting the LCP render delay.
+const About = lazy(() => import("./pages/About")) as ComponentType;
+const Careers = lazy(() => import("./pages/Careers")) as ComponentType;
+// const News = lazy(() => import("./pages/News")) as ComponentType;   // disabled
+const Contact = lazy(() => import("./pages/Contact")) as ComponentType;
+const Products = lazy(() => import("./pages/Products")) as ComponentType;
+// const Eligibility = lazy(() => import("./pages/Eligibility")) as ComponentType;   // disabled
+const EMICalc = lazy(() => import("./pages/calculators/EMICalc")) as ComponentType;
+// const EligibilityCalc = lazy(() => import("./pages/calculators/EligibilityCalc")) as ComponentType;   // disabled
+// const ForeclosureCalc = lazy(() => import("./pages/calculators/ForeclosureCalc")) as ComponentType;   // disabled
+// const HowToApply = lazy(() => import("./pages/HowToApply")) as ComponentType;   // disabled
+// const DocumentChecklist = lazy(() => import("./pages/DocumentChecklist")) as ComponentType;   // disabled
+const InterestRatesAndCharges = lazy(() => import("./pages/InterestRatesAndCharges")) as ComponentType;
+// const FAQs = lazy(() => import("./pages/FAQs")) as ComponentType;   // disabled
+// const Downloads = lazy(() => import("./pages/Downloads")) as ComponentType;   // disabled
+// const CustomerLogin = lazy(() => import("./pages/CustomerLogin")) as ComponentType;   // disabled
+// const InterestRatePolicy = lazy(() => import("./pages/regulatory/InterestRatePolicy")) as ComponentType;   // disabled
+// const KYCAMLPolicy = lazy(() => import("./pages/regulatory/KYCAMLPolicy")) as ComponentType;   // disabled
+// const CodeOfConductRecovery = lazy(() => import("./pages/regulatory/CodeOfConductRecovery")) as ComponentType;   // disabled
+// const WhistleblowerPolicy = lazy(() => import("./pages/regulatory/WhistleblowerPolicy")) as ComponentType;   // disabled
+// const CSRPolicy = lazy(() => import("./pages/regulatory/CSRPolicy")) as ComponentType;   // disabled
+// const CitizensCharter = lazy(() => import("./pages/regulatory/CitizensCharter")) as ComponentType;   // disabled
+// const MITC = lazy(() => import("./pages/regulatory/MITC")) as ComponentType;   // disabled
+// const NoticesDisclosures = lazy(() => import("./pages/regulatory/NoticesDisclosures")) as ComponentType;   // disabled
+// const CookiePolicy = lazy(() => import("./pages/regulatory/CookiePolicy")) as ComponentType;   // disabled
+// const Disclaimer = lazy(() => import("./pages/regulatory/Disclaimer")) as ComponentType;   // disabled
+// const OmbudsmanScheme = lazy(() => import("./pages/regulatory/OmbudsmanScheme")) as ComponentType;   // disabled
+const InvestorRelations = lazy(() => import("./pages/InvestorRelations")) as ComponentType;
+// const Blog = lazy(() => import("./pages/Blog")) as ComponentType;   // disabled
+// const CaseStudies = lazy(() => import("./pages/CaseStudies")) as ComponentType;   // disabled
+// const PartnerWithUs = lazy(() => import("./pages/PartnerWithUs")) as ComponentType;   // disabled
+const BranchLocator = lazy(() => import("./pages/BranchLocator")) as ComponentType;
+const Sitemap = lazy(() => import("./pages/Sitemap")) as ComponentType;
+const NACHInstructions = lazy(() => import("./pages/NACHInstructions")) as ComponentType;
+const NachMandate = lazy(() => import("./pages/NachMandate")) as ComponentType;
+const WhyPrayaan = lazy(() => import("./pages/WhyPrayaan")) as ComponentType;
+// const Technology = lazy(() => import("./pages/Technology")) as ComponentType;   // disabled
+const Customer = lazy(() => import("./pages/Customer")) as ComponentType;
+// const CustomerPayments = lazy(() => import("./pages/CustomerPayments")) as ComponentType;   // disabled
+const RBIDisclosures = lazy(() => import("./pages/RBIDisclosures")) as ComponentType;
+// const ThankYou = lazy(() => import("./pages/ThankYou")) as ComponentType;   // disabled
+const HeroPreview = lazy(() => import("./pages/HeroPreview")) as ComponentType;
+const Policies = lazy(() => import("./pages/Policies")) as ComponentType;
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy")) as ComponentType;
+// const Terms = lazy(() => import("./pages/Terms")) as ComponentType;   // disabled
+const GrievanceRedressal = lazy(() => import("./pages/GrievanceRedressal")) as ComponentType;
+// const FairPracticeCode = lazy(() => import("./pages/FairPracticeCode")) as ComponentType;   // disabled
+// const ProductDetail = lazy(() => import("./pages/products/ProductDetail")) as ComponentType;   // disabled
 
 export interface AppRoute {
   path: string;

@@ -4,15 +4,25 @@ import CTASection from "@/components/CTASection";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Sparkles, Landmark, Users2, TrendingUp, Banknote, ShieldCheck } from "lucide-react";
+
+const LinkedInIcon = ({ size = 18 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path
+      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+      fill="#0A66C2"
+    />
+  </svg>
+);
 import AIFloatingElements from "@/components/AIFloatingElements";
 
-type Person = { name: string; role: string; bio: string; photo?: string };
+type Person = { name: string; role: string; bio: string; photo?: string; linkedin?: string };
 
 const board: Person[] = [
   {
     name: "Rangarajan Krishnan",
     role: "Promoter & Managing Director",
     photo: "/team/rangarajan-krishnan.png",
+    linkedin: "https://www.linkedin.com/in/rangarajan-krishnan-9079b06/",
     bio: "Rangarajan Krishnan is a finance professional with over 20 years of experience spanning reputed large corporates such as Five Star Business Finance, Standard Chartered Bank, HDFC Bank, International Finance Corporation and Spark Capital. His last assignment was in Five Star Business Finance as their joint Managing Director and CEO. His expertise spans across core operations of the non-bank financial institution including business, collections, technology, operations, credit and legal. Over his years of experience, he has managed portfolios across Corporate Banking, mid-market segment, South East Asia Infrastructure Financing and as an Investment Banker for a variety of deals across fund raising, mergers & acquisitions.",
   },
   {
@@ -25,12 +35,14 @@ const board: Person[] = [
     name: "G. Madhan Mohan",
     role: "Founder & Chief Credit Officer",
     photo: "/team/madhan-mohan.png",
+    linkedin: "https://www.linkedin.com/in/madhan-mohan-b787421a/",
     bio: "Madhan Mohan brings over 30 years of experience, including 21 years of extensive work in the MSME markets, having ably managed various roles in Credit Policy, Credit Under-Writing, Collections, Fraud Control, Operations, Sales, P&L, Strategy and invitee member on boards. His true passion lies in lending to improve the lives of individuals and businesses by providing the financial support required at the right time. He has been part of the set up, and built the MSME vertical for RBL Bank. He created the success at Swadhaar Finserve Pvt. Ltd. having driven both business and extensive expansion to build the company as a bench mark model of dedicated Business Correspondent. He has always been at the heart of the Indian MSME market with NBFCs and Banks like Fullerton India Credit Company Ltd., Sahayata Microfinance Pvt. Ltd., Vistaar Financial Services Pvt. Ltd., and successfully transformed businesses to meet new market demand & sustain a profitable trajectory.",
   },
   {
     name: "Ravi Shankar Venkataraman Ganapathy Agraharam (GV)",
     role: "Nominee Director representing Peak XV Partners Investments VIII",
     photo: "/team/gv.png",
+    linkedin: "https://www.linkedin.com/in/ravishankar-gv-423436223/",
     bio: "At Peak XV, GV advises on technology and non-technology investments. He's deeply interested in technology's role in helping drive efficiencies, reduce costs, and improve access in consumer and healthcare markets. He currently serves on the boards of portfolio companies such as Alaan, Huspy, Lean Technologies, Eruditus Learning, Finova Capital, HomeLane, K12 Techno Services, Rebel Foods, Rupeek and Plum Benefits. He has also served as board member/observer of companies like Equitas (NSE: EQUITAS), Indigo Paints (NSE: INDIGOPNTS), India Shelter Finance Corporation (NSE: INDIASHLTR), Manappuram (NSE: MANAPPURAM), Prataap Snacks (NSE: DIAMONDYD), and Via (sold to NASDAQ: EBIX). GV also worked at McKinsey & Company, where he advised senior management of top Indian companies on a variety of issues including business building, channel management and leadership development. He also had a prior stint with Wipro Technologies in their Embedded and Internet Access division.\n\nGV is the recipient of the Midas Touch award by Economic Times Startup Awards 2020 and IIM Ahmedabad's Young Alumni Achiever's Award, 2019-20 in the Corporate Leadership category. He has an MBA from IIM A and holds a BE in Computer Science and Engineering from NIT Trichy.",
   },
 ];
@@ -40,54 +52,63 @@ const management: Person[] = [
     name: "Sathya Ganesh T",
     role: "Co-Founder & Chief Executive Officer",
     photo: "/team/sathya-ganesh.webp",
+    linkedin: "https://www.linkedin.com/in/sathya-ganesh-t-5a343232/",
     bio: "Sathya Ganesh T (Sathya) is a dynamic and visionary leader with over 23 years of experience in the BFSI sector and an overall experience of 28 yrs, having led transformational initiatives across banking and NBFCs. He has a proven track record of scaling businesses, driving digital innovation, enhancing profitability, managing large field forces, and consistently delivering strong ROA and ROE performance.\n\nHe possesses deep expertise in Housing Finance, Loan Against Property (LAP), and Affordable Housing, with hands-on experience across key functions including Operations, Credit, Audit, Business Development, and Collections.\n\nPrior to joining Prayaan Capital, Sathya served as the Chief Business Officer at Five Star Business Finance for a decade, where he played a pivotal role in scaling the organization's business and strengthening its market position. Over the course of his career, he has been associated with leading financial institutions such as ICICI Bank, Cholamandalam Finance, Equitas, and Shriram Housing Finance.\n\nHe holds a Postgraduate degree in Commerce from the University of Madras and an MBA in Banking & Finance from Symbiosis, Pune.",
   },
   {
     name: "Apparswamy Subramanian",
     role: "Co-Founder & Chief Financial Officer",
     photo: "/team/apparswamy-subramanian.webp",
+    linkedin: "https://www.linkedin.com/in/apparswamysubramanian/",
     bio: "Apparswamy Subramanian (Appar) is the Co-Founder and Chief Financial Officer of Prayaan Capital, bringing over 25 years of diverse experience across corporate banking, treasury, and capital markets. Prior to his current role, he headed the Group Treasury function at the Sanmar Group, a large diversified conglomerate, where he managed a borrowing book of approximately USD 1.5 billion and led strategic initiatives across fundraising, cross-border financing, and private credit, in addition to executing debt capital market transactions.\n\nAppar began his career in corporate banking and went on to hold senior leadership roles at global and domestic financial institutions including Deutsche Bank, HSBC, RBL Bank and HDFC Bank, where he built and scaled corporate banking franchises, led high-impact deal origination and executed several marquee financing transactions. He has also been an entrepreneur and independent financial advisor, working closely with promoters and management teams across sectors, serving in advisory and board roles. A Chartered Accountant by qualification, Appar is deeply passionate about capital markets and structured finance, with a strong track record in building long-term institutional relationships and delivering innovative financing solutions. Outside of work, he is an avid motorcycle enthusiast and actively follows emerging areas such as digital assets and financial technologies.",
   },
   {
     name: "Ramprashanth Ganesan",
     role: "Co-Founder & Chief Operating Officer",
     photo: "/team/ramprashanth-ganesan.webp",
+    linkedin: "https://www.linkedin.com/in/ramprashanthganesan/",
     bio: "Ramprashanth Ganesan (Ram) is the Co-Founder and Chief Operating Officer of Prayaan Capital, bringing over 16 years of diverse experience across investment banking, fintech, and financial services. Prior to his current role, he was the Chief Strategy Officer at IppoPay, a venture-backed fintech focused on providing payments and lending solutions to small businesses, where he was responsible for building a high-velocity, high-quality lending book through the Loan Service Provider (LSP) model, designing the lending product construct, onboarding NBFC partners, and scaling distribution across the merchant base.\n\nRam began his career in financial research and went on to spend over a decade at Spark Capital, where he served as Director leading the Fintech and Financial Services investment banking practice. In this role, he was instrumental in raising over USD 1.5 billion of growth equity across financial services, fintech, and other sectors, working with founders and institutional investors through IPOs, pre-IPO rounds, and growth-stage capital transactions. A Chartered Accountant by qualification, Ram is deeply passionate about lending, technology, and the application of AI in financial services, with a strong track record in building institutional businesses and bridging strategy with execution. Outside of work, he is an avid reader of history and philosophy.",
   },
   {
     name: "Akash S Chelvam",
     role: "Founder & Chief Human Resource Officer",
     photo: "/team/akash-chelvam.png",
+    linkedin: "https://www.linkedin.com/in/akash-chelvam-04099419/",
     bio: "Akash Chelvam has an extensive experience of over 21 years in the Banking and Insurance space with a domain expertise in Human Resources and Learning & Development. He has been part of the core teams to setup new geographies and business lines. In his last assignment with RBL Bank he was initially responsible for the Talent Acquisition & Business Partnering for the Agri & Inclusive Banking, taking care of Pan India hiring strategy and execution, also setup Small Business Banking vertical. He has also worked in the Organization Development team, primarily heading the Future Leadership Hiring initiatives for the Bank, along with various other projects spanning Pan India, post which he was seconded to RBL Finserve (erstwhile Swadhaar Finserve) as Head - Human Resources to grow the organization and to develop a robust structure in terms of governance. Having a comprehensive and strategic understanding of Human Resources, business requirements and organizational change he devised and implement coherent HR strategies along with improving internal process & procedures within a demanding environment. For Prayaan, Akash is leading Human Resources, Learning & Development, Administration, Operations, Tele calling and IT Infrastructure.",
   },
   {
     name: "Atul Prakash",
     role: "Chief Risk Officer",
     photo: "/team/atul-prakash.webp",
+    linkedin: "https://www.linkedin.com/in/atulprakashp/",
     bio: "Atul is the Chief Risk Officer of the Company. He is responsible for overall risk management, including credit policy, underwriting, portfolio strategy, risk analytics, and governance. He has 23+ years of experience across retail and commercial lending in banks, NBFCs, and fintech ventures. He holds a post-graduate degree in management from Chetana's R.K. Institute of Management & Research, Mumbai. Previously, he was associated with Vastu Housing Finance as Head of Retail Lending and Digital & Alternate Channels. Earlier, he worked with Standard Chartered Bank and ICICI Bank, and founded Skill Junction and ValuCircles, India's first mortgage marketplace.",
   },
   {
     name: "Harish R",
     role: "Chief Technology Officer",
     photo: "/team/harish-r.webp",
+    linkedin: "https://www.linkedin.com/in/harish-r-48296581/",
     bio: "Harish R is a seasoned technology leader with extensive experience across banking, lending, and insurance ecosystems. He specializes in driving large-scale digital transformation, modernizing core platforms, and building scalable, secure, and API-first technology architectures that support business growth and operational resilience. He has led modernization initiatives across core systems, digital channels, and enterprise platforms, with a consistent focus on measurable business outcomes.\n\nWith deep expertise in core banking, lending platforms, open banking, AI/ML adoption, and enterprise integration, Harish has successfully delivered initiatives that enhance customer experience, streamline operations, reduce technology debt, and enable data-driven innovation. He is known for aligning technology strategy with business objectives, regulatory requirements, and long-term scalability.\n\nA strong advocate of engineering excellence and governance, Harish has built and led high-performing teams while delivering practical, sustainable technology roadmaps. At Prayaan Capital, he leads the technology vision with a focus on innovation, execution, governance, and sustainable growth.",
   },
   {
     name: "M B Srinivasa Rao",
     role: "Chief Strategy Officer",
     photo: "/team/srinivasa-rao.webp",
+    linkedin: "https://www.linkedin.com/in/mb-srinivas-rao-89a66020/",
     bio: "M. B. Srinivasa Rao is a seasoned investment banking and corporate finance professional with over 22 years of experience across leading financial institutions. He has a strong track record in managing client relationships, executing complex financial transactions, and driving strategic growth initiatives. Prior to joining PCPL, he served as Executive Director - Investment Banking at Spark Capital Advisors, India. In the past he has been associated with prominent institutions such as Standard Chartered Bank (Director - Corporate & Institutional Banking) and HDFC Bank Limited. Srinivasa Rao is a gold medalist and batch topper in MBA (Finance), reflecting his strong academic foundation in the field.",
   },
   {
     name: "Venkatesh B",
     role: "Deputy CFO",
     photo: "/team/venkatesh-b.webp",
+    linkedin: "https://www.linkedin.com/in/venkatesh-b-62581861/",
     bio: "CA Venkatesh Badrinarayanan is a seasoned strategic finance leader with over 13 years of experience in the NBFC sector, with deep expertise in Financial Reporting, Treasury, Regulatory Compliance, and Due Diligence.\n\nHe previously served as Head of Treasury at Five Star Business Finance Ltd., where he led debt fundraising, liquidity management, and regulatory compliance. Prior to this, he headed the Financial Reporting function for over six years, playing a pivotal role in managing regulatory audits, multiple private equity diligences, building high-performing teams, and establishing robust processes and systems, significantly contributing to its IPO journey. Earlier in his career, he was part of the Treasury team at Equitas and worked in the Deals (Due Diligence) practice at PricewaterhouseCoopers.\n\nA qualified Chartered Accountant and Company Secretary, and an alumnus of INSEAD's Blue Ocean Strategy program, Venkatesh is recognized for his strategic acumen, execution excellence, and ability to build and lead high-performing teams.",
   },
   {
     name: "R.S.Bharath",
     role: "Head Legal",
     photo: "/team/rs-bharath.webp",
+    linkedin: "https://www.linkedin.com/in/bharathrs88/",
     bio: "Bharath is a law graduate and accomplished banking professional with over 15 years of extensive experience across the banking and NBFC sector, specializing in Business Legal, legal strategy, compliance, risk management, and recovery frameworks. Prior to joining Prayaan, he held key leadership roles with reputed institutions including Five Star Business Finance, Equitas Small Finance Bank, Axis Bank, HDFC Bank, and IndusInd Bank.",
   },
 ];
@@ -129,8 +150,21 @@ const LeaderCard = ({ p, compact }: { p: Person; compact?: boolean }) => {
             </div>
           )}
         </div>
-        <div className="min-w-0">
-          <h3 className="font-display text-base md:text-lg font-bold text-foreground leading-snug">{p.name}</h3>
+        <div className="min-w-0 flex-1">
+          <div className="flex items-start gap-2">
+            <h3 className="font-display text-base md:text-lg font-bold text-foreground leading-snug flex-1">{p.name}</h3>
+            {p.linkedin && (
+              <a
+                href={p.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${p.name} on LinkedIn`}
+                className="shrink-0 mt-1 hover:opacity-70 transition-opacity"
+              >
+                <LinkedInIcon size={18} />
+              </a>
+            )}
+          </div>
           <span className="inline-block text-[11px] font-semibold text-secondary-foreground bg-secondary px-2.5 py-0.5 rounded-full mt-1.5 leading-tight">
             {p.role}
           </span>

@@ -167,8 +167,8 @@ const TestimonialsSection = () => {
                 key={i}
                 onClick={() => { setDirection(i > current ? 1 : -1); setCurrent(i); }}
                 aria-label={`Go to testimonial ${i + 1}`}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  i === current ? "w-8 bg-gradient-coral shadow-clay-sm" : "w-2 bg-muted hover:bg-muted-foreground/30"
+                className={`h-2 rounded-full transition-[background-color,opacity] duration-300 ${
+                  i === current ? "w-8 bg-gradient-coral" : "w-2 bg-muted hover:bg-muted-foreground/30"
                 }`}
               />
             ))}
