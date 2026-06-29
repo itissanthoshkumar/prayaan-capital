@@ -15,8 +15,9 @@ const BrandLogo = ({
     <img
       src="/prayaan-logo-full.png"
       alt="Prayaan Capital"
-      style={{ height: size }}
-      className="w-auto shrink-0"
+      width={Math.round(size * (250 / 45))}
+      height={size}
+      className="shrink-0"
     />
   ) : (
     <img

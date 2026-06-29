@@ -1,0 +1,33 @@
+# Prayaan Capital
+
+> Prayaan Capital Private Limited is an RBI-registered, non-deposit-taking NBFC (NBFC-ICC) offering secured business loans of ₹5L–₹30L to India's underserved micro, small and medium enterprises (MSMEs), backed by property the borrower already owns. Headquartered in Chennai, it serves Tamil Nadu, Andhra Pradesh and Telangana with local teams and doorstep service.
+
+Prayaan Capital combines deep local understanding with AI-led, bureau-assisted underwriting and human credit review. CIN: U65900TN2018PTC126232. RBI Certificate of Registration granted on 6 June 2019. The company does not accept public deposits.
+
+## Core pages
+
+- [Home](https://prayaan-capital.vercel.app/): Secured business loans for India's MSMEs — overview and EMI calculator.
+- [Why Prayaan](https://prayaan-capital.vercel.app/why-prayaan): The MSME credit gap and how Prayaan's property-plus-cashflow approach addresses it.
+- [Products](https://prayaan-capital.vercel.app/products): Secured business loan, housing loan, property construction loan, and balance transfer & top-up.
+- [Loan Calculator](https://prayaan-capital.vercel.app/calculators/emi): EMI calculator for planning repayments.
+- [Our Team](https://prayaan-capital.vercel.app/team): Board of directors and management.
+- [Our Presence](https://prayaan-capital.vercel.app/branch-locator): States served — Tamil Nadu, Andhra Pradesh and Telangana.
+- [Careers](https://prayaan-capital.vercel.app/careers): Roles across credit, operations, sales, compliance and technology.
+- [Contact](https://prayaan-capital.vercel.app/contact): Phone, email and corporate office address.
+
+## Customer & compliance
+
+- [Customer Hub](https://prayaan-capital.vercel.app/customer): Support, calculators and customer-education resources.
+- [Grievance Redressal](https://prayaan-capital.vercel.app/grievance-redressal): Complaint handling and the four-level escalation path.
+- [NACH Mandate Instructions](https://prayaan-capital.vercel.app/nach-mandate-instructions): E-NACH registration, benefits and cancellation.
+- [Interest Rates & Charges](https://prayaan-capital.vercel.app/interest-rates-and-charges): Pricing and fees.
+- [Policies](https://prayaan-capital.vercel.app/policies): Published policies and codes (Fair Practice Code, KYC/AML, POSH, etc.).
+- [RBI Disclosures](https://prayaan-capital.vercel.app/rbi-disclosures): Mandatory regulatory disclosures for the NBFC.
+- [Privacy Policy](https://prayaan-capital.vercel.app/privacy-policy): How customer data is collected and used.
+
+## Contact
+
+- Registered & corporate office: No. 97, Minerva Building, 2nd Floor, Santhome High Road, Chennai 600028, Tamil Nadu
+- Phone: +91-6380589898
+- Email: customercare@prayaancapital.com
+- Grievance Redressal Officer: Mr. Harish Kumar E — gro@prayaancapital.com, +91-9600133756

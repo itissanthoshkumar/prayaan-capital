@@ -130,11 +130,9 @@ const Navbar = () => {
               </Link>
             )
           )}
-          <Link to="/contact">
-            <Button size="sm" variant="hero" className="ml-4 rounded-full text-sm px-5 font-body animate-cta-glow">
-              Get in Touch
-            </Button>
-          </Link>
+          <Button asChild size="sm" variant="hero" className="ml-4 rounded-full text-sm px-5 font-body animate-cta-glow">
+            <Link to="/contact">Get in Touch</Link>
+          </Button>
         </div>
 
         <button
@@ -212,11 +210,9 @@ const Navbar = () => {
                   </Link>
                 )
               )}
-              <Link to="/contact" onClick={() => setIsOpen(false)}>
-                <Button size="sm" variant="hero" className="w-full mt-3 rounded-full text-xs font-body">
-                  Get in Touch
-                </Button>
-              </Link>
+              <Button asChild size="sm" variant="hero" className="w-full mt-3 rounded-full text-xs font-body">
+                <Link to="/contact" onClick={() => setIsOpen(false)}>Get in Touch</Link>
+              </Button>
             </div>
           </motion.div>
         )}

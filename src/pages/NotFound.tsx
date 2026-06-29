@@ -86,12 +86,12 @@ const NotFound = () => {
             </p>
 
             <div className="flex flex-wrap justify-center gap-3 mb-8">
-              <Link to="/">
-                <Button size="lg"><Home size={16} /> Home</Button>
-              </Link>
-              <Link to="/sitemap">
-                <Button size="lg" variant="outline"><Search size={16} /> Browse sitemap</Button>
-              </Link>
+              <Button asChild size="lg">
+                <Link to="/"><Home size={16} /> Home</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline">
+                <Link to="/sitemap"><Search size={16} /> Browse sitemap</Link>
+              </Button>
             </div>
           </div>
 

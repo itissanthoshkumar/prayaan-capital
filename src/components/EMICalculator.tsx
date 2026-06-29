@@ -222,6 +222,7 @@ const EMICalculator = () => {
                       <input
                         type="text"
                         inputMode="numeric"
+                        aria-label="Loan amount in rupees"
                         value={loanInputVal}
                         onChange={handleInputAmount}
                         onBlur={handleBlurAmount}
@@ -262,6 +263,7 @@ const EMICalculator = () => {
                       <input
                         type="text"
                         inputMode="decimal"
+                        aria-label="Interest rate percent per annum"
                         value={rateInputVal}
                         onChange={handleInputRate}
                         onBlur={handleBlurRate}
@@ -338,8 +340,8 @@ const EMICalculator = () => {
 
                 {/* ── Top group: donut + legend ── */}
                 <div>
-                {/* Donut chart */}
-                <div className="relative mb-2">
+                {/* Donut chart — decorative; principal/interest are shown as text below */}
+                <div className="relative mb-2" aria-hidden="true">
                   <ResponsiveContainer width="100%" height={230}>
                     <PieChart>
                       <Pie

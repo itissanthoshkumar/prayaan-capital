@@ -160,11 +160,9 @@ const Products = () => {
                         </li>
                       ))}
                     </ul>
-                    <Link to="/contact">
-                      <Button variant="default" size="sm" className="w-full">
-                        Contact Us <ArrowRight size={14} />
-                      </Button>
-                    </Link>
+                    <Button asChild variant="default" size="sm" className="w-full">
+                      <Link to="/contact">Contact Us <ArrowRight size={14} /></Link>
+                    </Button>
                   </div>
                 </div>
               </motion.div>

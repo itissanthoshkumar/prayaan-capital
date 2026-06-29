@@ -90,11 +90,9 @@ const ProductsSection = () => {
                 </div>
               </div>
               <div className="mt-5 md:mt-6 flex justify-end">
-                <Link to={product.href}>
-                  <Button variant="ghost" size="sm" className="text-primary hover:text-primary text-xs md:text-sm font-body">
-                    Read More <ArrowRight size={14} />
-                  </Button>
-                </Link>
+                <Button asChild variant="ghost" size="sm" className="text-primary hover:text-primary text-xs md:text-sm font-body">
+                  <Link to={product.href} aria-label={`Read more about ${product.title}`}>Read More <ArrowRight size={14} /></Link>
+                </Button>
               </div>
             </motion.div>
           ))}
