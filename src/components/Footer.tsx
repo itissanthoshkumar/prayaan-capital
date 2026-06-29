@@ -40,9 +40,9 @@ const legal: FooterLink[] = [
 
 const Column = ({ title, links }: { title: string; links: FooterLink[] }) => (
   <div>
-    <h4 className="font-display font-semibold text-xs uppercase tracking-[0.1em] mb-4 text-foreground">
+    <h3 className="font-display font-semibold text-xs uppercase tracking-[0.1em] mb-4 text-foreground">
       {title}
-    </h4>
+    </h3>
     <ul className="space-y-2.5">
       {links.map((link) => (
         <li key={`${link.label}-${link.href}`}>

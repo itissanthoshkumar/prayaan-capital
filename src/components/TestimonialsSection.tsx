@@ -128,7 +128,7 @@ const TestimonialsSection = () => {
                       </div>
 
                       <div>
-                        <h4 className="font-display text-base font-bold text-foreground">{t.name}</h4>
+                        <h3 className="font-display text-base font-bold text-foreground">{t.name}</h3>
                         <p className="text-xs text-muted-foreground font-body">{t.business} • {t.location}</p>
                       </div>
                     </div>
