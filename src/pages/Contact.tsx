@@ -16,7 +16,7 @@ const officeDetails = [
     icon: MapPin,
     tint: "bg-gradient-lavender",
     label: "Corporate Office",
-    primary: "No. 40/97, Minerva Building, 2nd Floor",
+    primary: "No. 97, Minerva Building, 2nd Floor",
     secondary: "Santhome High Road, Chennai – 600028",
     action: {
       label: "Get directions →",

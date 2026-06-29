@@ -128,7 +128,7 @@ const sections = [
     content: (
       <>
         <p>{`Corporate Office:`}</p>
-        <p>{`Prayaan Capital private limited`}<br />{`No. 40/97, Minerva Building, 2nd Floor`}<br />{`Santhome high road`}<br />{`Chennai-600028`}<br />{`Phone: +91-6380589898`}<br />{`Email: info@prayaancapital.com`}</p>
+        <p>{`Prayaan Capital private limited`}<br />{`No. 97, Minerva Building, 2nd Floor`}<br />{`Santhome high road`}<br />{`Chennai-600028`}<br />{`Phone: +91-6380589898`}<br />{`Email: info@prayaancapital.com`}</p>
         <p>{`Customer Care Email: customercare@prayaancapital.com`}</p>
         <p>{`CIN: U65900TN2018PTC126232`}</p>
       </>

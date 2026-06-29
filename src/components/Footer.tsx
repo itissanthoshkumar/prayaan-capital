@@ -89,7 +89,7 @@ const Footer = () => {
             <ul className="space-y-3 text-xs text-muted-foreground font-body">
               <li className="flex items-start gap-2.5">
                 <MapPin size={14} className="text-primary shrink-0 mt-0.5" />
-                <span>No. 40/97, Minerva Building, 2nd Floor, Santhome High Road, Chennai 600028</span>
+                <span>No. 97, Minerva Building, 2nd Floor, Santhome High Road, Chennai 600028</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone size={14} className="text-primary shrink-0" />

@@ -76,8 +76,8 @@ const EMICalculator = () => {
   const [loanAmount, setLoanAmount] = useState(1_500_000);  // Rupees (5L–50L)
   const [loanInputVal, setLoanInputVal] = useState("15,00,000");
   const [amountWarning, setAmountWarning] = useState("");
-  const [rate,       setRate]       = useState(18);  // % p.a. (18–30)
-  const [tenure,     setTenure]     = useState(60);  // months: 60 | 84 | 120
+  const [rate,       setRate]       = useState(21);  // % p.a. (18–30)
+  const [tenure,     setTenure]     = useState(84);  // months: 60 | 84 | 120
 
   const handleSliderAmount = (v: number) => {
     setLoanAmount(v);
@@ -111,7 +111,7 @@ const EMICalculator = () => {
     }
   };
 
-  const [rateInputVal, setRateInputVal] = useState("18");
+  const [rateInputVal, setRateInputVal] = useState("21");
 
   const handleSliderRate = (v: number) => {
     setRate(v);

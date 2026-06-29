@@ -27,7 +27,7 @@ const RBIDisclosures = () => (
         <p><strong>Company:</strong> Prayaan Capital Private Limited</p>
         <p><strong>CIN:</strong> U65900TN2018PTC126232</p>
         <p><strong>RBI Certificate of Registration:</strong> Granted on 6 June 2019 (Non-deposit taking NBFC-ICC)</p>
-        <p><strong>Registered & Corporate Office:</strong> No. 40/97, Minerva Building, 2nd Floor, Santhome High Road, Chennai – 600028, Tamil Nadu</p>
+        <p><strong>Registered & Corporate Office:</strong> No. 97, Minerva Building, 2nd Floor, Santhome High Road, Chennai – 600028, Tamil Nadu</p>
         <p className="text-xs text-muted-foreground pt-1">Prayaan Capital is registered with the Reserve Bank of India as a Non-Banking Financial Company – Investment and Credit Company (NBFC-ICC) and is authorised to carry on the business of non-banking financial institution without accepting public deposits.</p>
       </div>
     }
@@ -93,7 +93,7 @@ const RBIDisclosures = () => (
           <div className="space-y-1">
             <p><strong>Email:</strong> customercare@prayaancapital.com</p>
             <p><strong>Phone:</strong> +91-6380589898</p>
-            <p><strong>Address:</strong> No. 40/97, Minerva Building, 2nd Floor, Santhome High Road, Chennai – 600028</p>
+            <p><strong>Address:</strong> No. 97, Minerva Building, 2nd Floor, Santhome High Road, Chennai – 600028</p>
             <p><strong>Hours:</strong> Mon – Sat, 9:00 AM – 7:00 PM IST</p>
           </div>
         ),

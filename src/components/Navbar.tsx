@@ -71,7 +71,7 @@ const Navbar = () => {
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 <button
-                  className={`flex items-center gap-1 text-[13px] font-medium transition-colors px-3 py-2 rounded-md font-body ${
+                  className={`flex items-center gap-1 text-[15px] font-medium transition-colors px-3 py-2 rounded-md font-body ${
                     isChildActive(link.children)
                       ? "text-white underline underline-offset-4 decoration-[hsl(42,100%,60%)] decoration-2"
                       : "text-white/80 hover:text-white"
@@ -122,7 +122,7 @@ const Navbar = () => {
               <Link
                 key={link.label}
                 to={link.href}
-                className={`text-[13px] font-medium px-3 py-2 rounded-md transition-colors font-body ${
+                className={`text-[15px] font-medium px-3 py-2 rounded-md transition-colors font-body ${
                   isActive(link.href) ? "text-white" : "text-white/80 hover:text-white"
                 }`}
               >
@@ -131,7 +131,7 @@ const Navbar = () => {
             )
           )}
           <Link to="/contact">
-            <Button size="sm" variant="hero" className="ml-4 rounded-full text-xs px-5 font-body animate-cta-glow">
+            <Button size="sm" variant="hero" className="ml-4 rounded-full text-sm px-5 font-body animate-cta-glow">
               Get in Touch
             </Button>
           </Link>
