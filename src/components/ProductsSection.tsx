@@ -50,7 +50,7 @@ const ProductsSection = () => {
             Secured business loans for <span className="text-gradient-coral">India's MSMEs</span>
           </h2>
           <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto font-body">
-            Prayaan Capital is an MSME-first NBFC — Micro, Small and Medium Enterprises are the backbone of our portfolio. Secured loans backed by the property you own, built for entrepreneurs banks overlook.
+            Prayaan Capital is an MSME-first NBFC — Micro, Small and Medium Enterprises are the backbone of our portfolio. Secured loans backed by the property you own, built for India's underbanked entrepreneurs.
           </p>
         </motion.div>
 

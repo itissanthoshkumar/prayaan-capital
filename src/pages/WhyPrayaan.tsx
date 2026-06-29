@@ -7,9 +7,9 @@ import { Fragment } from "react";
 import { ShieldCheck, Info, Check, X, Scale, Landmark, Banknote } from "lucide-react";
 
 const compCols = [
-  { name: "Prayaan Capital", sub: "That's us", icon: ShieldCheck, highlight: true },
-  { name: "Traditional Banks", sub: "Slow & selective", icon: Landmark, highlight: false },
-  { name: "Informal Lenders", sub: "Costly & risky", icon: Banknote, highlight: false },
+  { name: "Prayaan Capital", sub: "Fast & fair", icon: ShieldCheck, highlight: true },
+  { name: "Traditional Banks", sub: "Too slow & rigid", icon: Landmark, highlight: false },
+  { name: "Informal Lenders", sub: "Unfair & expensive", icon: Banknote, highlight: false },
 ];
 
 const comparison = {
@@ -47,7 +47,7 @@ const WhyPrayaan = () => {
                 <Info size={12} /> About Prayaan
               </span>
               <h1 className="font-display text-3xl md:text-6xl font-bold text-foreground mt-3 mb-5 leading-tight">
-                Built for the <span className="text-gradient-coral">borrowers banks overlook</span>
+                Built for India's <span className="text-gradient-coral">underserved businesses</span>
               </h1>
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mb-8">
                 We combine deep local understanding with AI-led underwriting to give small business owners the
@@ -140,8 +140,8 @@ const WhyPrayaan = () => {
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-accent-foreground uppercase tracking-[0.12em] font-body mb-4">
               <Scale size={12} /> How We Compare
             </span>
-            <h2 className="font-display text-2xl md:text-4xl font-bold text-foreground">The fair middle ground</h2>
-            <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">Banks are too slow for the underserved. Informal lenders are too costly and unregulated. We bring the best of both — fast and fair.</p>
+            <h2 className="font-display text-2xl md:text-4xl font-bold text-foreground">The Prayaan difference</h2>
+            <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">We bring the best of both — the trust and regulation of a bank, with the speed and fairness of a local lender.</p>
           </motion.div>
 
           <motion.div

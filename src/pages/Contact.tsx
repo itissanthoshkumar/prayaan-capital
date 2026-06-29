@@ -1,5 +1,6 @@
 import HeroIllustration from "@/components/HeroIllustration";
 import Layout from "@/components/Layout";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import {
   Mail, Phone, MapPin, Clock, MessageSquare,
@@ -45,6 +46,37 @@ const officeDetails = [
   },
 ];
 
+const GOOGLE_MAP_SRC =
+  "https://maps.google.com/maps?q=Prayaan+Capital+Pvt+Ltd,+Minerva+Building,+Santhome+High+Road,+Chennai+600028&output=embed&z=16";
+const OSM_MAP_SRC =
+  "https://www.openstreetmap.org/export/embed.html?bbox=80.2705%2C13.0240%2C80.2865%2C13.0390&layer=mapnik&marker=13.0316%2C80.2785";
+
+/* Prefer Google Maps; fall back to OpenStreetMap only if Google fails to load. */
+const LocationMap = () => {
+  const [provider, setProvider] = useState<"google" | "osm">("google");
+  const loadedRef = useRef(false);
+
+  useEffect(() => {
+    if (provider !== "google") return;
+    const t = setTimeout(() => {
+      if (!loadedRef.current) setProvider("osm");
+    }, 3000);
+    return () => clearTimeout(t);
+  }, [provider]);
+
+  return (
+    <iframe
+      key={provider}
+      title="Prayaan Capital — Minerva Building, Santhome High Road, Chennai"
+      src={provider === "google" ? GOOGLE_MAP_SRC : OSM_MAP_SRC}
+      onLoad={() => { loadedRef.current = true; }}
+      className="block w-full h-[220px] sm:h-[260px] md:h-[270px]"
+      style={{ border: 0 }}
+      referrerPolicy="no-referrer-when-downgrade"
+    />
+  );
+};
+
 const Contact = () => (
   <Layout>
 
@@ -74,19 +106,6 @@ const Contact = () => (
         </motion.div>
           </div>
           <HeroIllustration variant="contact" />
-        </div>
-      </div>
-    </section>
-
-    {/* quick facts */}
-    <section className="py-6 md:py-8 bg-section">
-      <div className="container mx-auto px-4">
-        <div className="clay-surface max-w-3xl mx-auto px-6 py-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-center">
-          <span className="font-body text-xs md:text-sm font-semibold text-foreground">Reply in 1 business day</span>
-          <span className="hidden sm:block w-px h-4 bg-border" />
-          <span className="font-body text-xs md:text-sm font-semibold text-foreground">Mon–Fri · 9:30 AM – 6:30 PM</span>
-          <span className="hidden sm:block w-px h-4 bg-border" />
-          <span className="font-body text-xs md:text-sm font-semibold text-foreground">Toll-free 14448</span>
         </div>
       </div>
     </section>
@@ -166,20 +185,19 @@ const Contact = () => (
             transition={{ delay: 0.12, duration: 0.6 }}
             className="space-y-5"
           >
-            {/* Google Maps */}
+            {/* Map */}
             <div className="clay-surface p-2">
               <div className="rounded-[1.25rem] overflow-hidden">
-                <iframe
-                  title="Prayaan Capital — Minerva Building, Santhome High Road, Chennai"
-                  src="https://maps.google.com/maps?q=Prayaan+Capital+Pvt+Ltd,+Minerva+Building,+Santhome+High+Road,+Chennai+600028&output=embed&z=16"
-                  width="100%"
-                  height="270"
-                  style={{ border: 0, display: "block" }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
+                <LocationMap />
               </div>
+              <a
+                href="https://www.google.com/maps/place/Prayaan+Capital+Pvt+Ltd/data=!4m2!3m1!1s0x0:0xae70c3e221dd1501"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-1.5 py-2.5 font-body text-xs font-semibold text-primary hover:underline"
+              >
+                <MapPin size={13} /> Open in Google Maps
+              </a>
             </div>
 
             {/* Office details */}

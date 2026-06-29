@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Home, TrendingUp, Users, ArrowRight } from "lucide-react";
+import { Home, LifeBuoy, Users, ArrowRight } from "lucide-react";
 
 const audiences = [
   {
@@ -13,13 +13,13 @@ const audiences = [
     to: "/contact",
   },
   {
-    icon: TrendingUp,
+    icon: LifeBuoy,
     tint: "bg-gradient-mint",
-    label: "For Investors & Lenders",
-    title: "Partner with a growing NBFC",
-    desc: "Reports, governance and RBI disclosures for investors backing our journey.",
-    cta: "Investor Relations",
-    to: "/investor-relations",
+    label: "For Customers",
+    title: "Support & resources",
+    desc: "Manage your loan, raise a request, and find calculators, policies and customer education — all in one place.",
+    cta: "Visit Customer Hub",
+    to: "/customer",
   },
   {
     icon: Users,
@@ -50,13 +50,13 @@ const AudienceSection = () => {
           className="text-center mb-12 md:mb-16"
         >
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-5">
-            Who are you here for?
+            Who We Serve
           </span>
           <h2 className="font-display text-2xl md:text-5xl font-bold text-foreground tracking-tight">
             One platform, <span className="text-gradient-coral">every journey</span>
           </h2>
           <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto mt-3 font-body">
-            Whether you want to borrow, invest, partner or build with us — start in the right place.
+            Whether you're here to borrow, get support or build a career with us — start in the right place.
           </p>
         </motion.div>
 

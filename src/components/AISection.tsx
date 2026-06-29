@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
-import { Brain, TrendingUp, ShieldCheck, Clock, Eye, Fingerprint, Zap } from "lucide-react";
+import { Brain, TrendingUp, ShieldCheck, Clock, Eye, Home, Zap } from "lucide-react";
 
 const features = [
   { icon: Brain, title: "Bureau-Led Underwriting", desc: "We use bureau credit data and property valuations, combined with our field team's assessment, to make informed credit decisions. Technology aids; our officers decide.", tint: "bg-gradient-coral", stat: "Human", statLabel: "Review" },
   { icon: ShieldCheck, title: "PII Security", desc: "All personal and financial data is encrypted end-to-end. Your information is never sold or shared with third parties without your explicit consent.", tint: "bg-gradient-lavender", stat: "Encrypted", statLabel: "Always" },
   { icon: TrendingUp, title: "Consent-Led Data Use", desc: "We collect only what you share, for the purpose you authorise. Our data governance is built to RBI's digital lending guidelines — no surprise usage.", tint: "bg-gradient-mint", stat: "RBI", statLabel: "Compliant" },
-  { icon: Clock, title: "Digital Journey", desc: "From application to disbursal — submit documents online, track your status, and receive communications digitally. No branch visit required.", tint: "bg-gradient-sunset", stat: "Online", statLabel: "End-to-end" },
+  { icon: Clock, title: "Digital Journey", desc: "From application to disbursal — submit documents online, complete Aadhaar e-KYC, AA and PAN verification, and track everything digitally.", tint: "bg-gradient-sunset", stat: "Digital-first", statLabel: "Process" },
   { icon: Eye, title: "Document Verification", desc: "Our team uses technology-assisted tools to verify KYC, identity, and property documents more accurately — reducing delays and manual errors.", tint: "bg-gradient-mint", stat: "Assisted", statLabel: "Verification" },
-  { icon: Fingerprint, title: "Digital KYC", desc: "Aadhaar e-KYC, Video KYC, and PAN verification — complete identity verification without visiting a branch.", tint: "bg-gradient-coral", stat: "Zero", statLabel: "Branch visits" },
+  { icon: Home, title: "Doorstep Service", desc: "Our field team visits your home or shop to collect documents and assess your property — finance that comes to you.", tint: "bg-gradient-coral", stat: "Doorstep", statLabel: "Service" },
 ];
 
 const container = {

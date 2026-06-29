@@ -36,7 +36,7 @@ const steps: ProcessStep[] = [
   {
     icon: Banknote,
     title: "Get Your Loan",
-    desc: "Sign digitally via Aadhaar e-sign. Funds are credited directly to your bank account. Own. Unlock. Grow.",
+    desc: "After final documentation is complete, funds are credited directly to your bank account.",
     badge: "Day 2",
     num: "04",
     accent: "bg-[hsl(38_95%_45%)]",

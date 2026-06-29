@@ -29,7 +29,7 @@ const steps = [
   {
     icon: Banknote,
     title: "Get Your Loan",
-    desc: "Funds disbursed directly to your bank account after signing the loan agreement.",
+    desc: "After final documentation is complete, funds are credited directly to your bank account.",
     time: "Step 4",
     accent: "bg-[hsl(38_95%_45%)]",
     num: "04",

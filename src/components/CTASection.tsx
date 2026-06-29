@@ -46,15 +46,6 @@ const CTASection = () => {
                 <Link to="/contact"><Phone size={15} /> Talk to an Advisor</Link>
               </Button>
             </motion.div>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4, duration: 0.5 }}
-              className="text-[10px] md:text-xs text-muted-foreground mt-6 font-body"
-            >
-              No credit score impact · 100% digital · RBI registered NBFC
-            </motion.p>
           </div>
         </motion.div>
       </div>

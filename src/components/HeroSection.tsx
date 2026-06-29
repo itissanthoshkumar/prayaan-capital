@@ -101,7 +101,7 @@ const HeroSection = () => {
         >
           Capital that respects the{" "}
           <span className="text-[#f0a800] italic">hands</span> that{" "}
-          <span className="text-[#f0a800] italic">built India.</span>
+          <span className="text-[#f0a800] italic">build India.</span>
         </motion.h1>
 
         {/* Body */}
