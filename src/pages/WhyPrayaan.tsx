@@ -217,12 +217,11 @@ const WhyPrayaan = () => {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 max-w-2xl mx-auto"
           >
             {[
               { stat: "RBI Registered", desc: "NBFC-ICC since June 2019", icon: "✓" },
               { stat: "1,000+", desc: "families funded", icon: "👥" },
-              { stat: "₹50 Cr+", desc: "in disbursals", icon: "💰" },
             ].map((s, i) => (
               <motion.div
                 key={s.stat}

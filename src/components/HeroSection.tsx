@@ -199,12 +199,6 @@ const HeroSection = () => {
               />
             </AnimatePresence>
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent pointer-events-none" />
-            <div className="absolute top-3.5 left-3.5 right-3.5 rounded-xl p-3 bg-black/50 backdrop-blur-sm border border-white/10">
-              <p className="font-mono font-bold text-[#f0a800] text-lg leading-none">₹50 Cr+</p>
-              <p className="text-[9px] font-semibold text-white/55 uppercase tracking-[0.15em] mt-0.5 font-body">
-                Disbursed to date
-              </p>
-            </div>
           </div>
 
           {/* Bottom photo */}
