@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import AIFloatingElements from "@/components/AIFloatingElements";
 import HeroIllustration from "@/components/HeroIllustration";
 import { motion } from "framer-motion";
-import { TrendingUp, FileText, CalendarCheck, Vote, LucideIcon } from "lucide-react";
+import { TrendingUp, FileText, LucideIcon } from "lucide-react";
 
 const BASE = "https://prayaancapital.com/assets/images/downloads";
 
@@ -13,22 +13,6 @@ type Doc = { label: string; size: string; href: string };
 type Group = { title: string; blurb: string; icon: LucideIcon; color: string; docs: Doc[] };
 
 const groups: Group[] = [
-  {
-    title: "AGM Notices",
-    blurb: "Notices of Annual General Meetings",
-    icon: CalendarCheck,
-    color: BLUE,
-    docs: [
-      { label: "7th AGM Notice",           size: "1.49 MB",    href: `${BASE}/7th%20AGM%20Notice.pdf` },
-      { label: "6th AGM Notice",           size: "1.34 MB",    href: `${BASE}/6th-AGM-Notice.pdf` },
-      { label: "5th AGM Notice",           size: "2.44 MB",    href: `${BASE}/agm/5-agm-notice.pdf` },
-      { label: "4th AGM Notice",           size: "1.61 MB",    href: `${BASE}/agm/4-agm-notice.pdf` },
-      { label: "Adjourned 4th AGM Notice", size: "428.82 KB",  href: `${BASE}/agm/notice-adjourned-4th-agm.pdf` },
-      { label: "3rd AGM Notice",           size: "495.7 KB",   href: `${BASE}/agm/3-agm-notice.pdf` },
-      { label: "2nd AGM Notice",           size: "4.09 MB",    href: `${BASE}/agm/2-agm-notice.pdf` },
-      { label: "1st AGM Notice",           size: "1.34 MB",    href: `${BASE}/agm/1-agm-notice.pdf` },
-    ],
-  },
   {
     title: "Annual Return",
     blurb: "Annual returns and Form MGT-7 filings",
@@ -43,37 +27,18 @@ const groups: Group[] = [
       { label: "Form MGT-7 FY 2020-21",   size: "112.56 KB", href: `${BASE}/ar/Form-MGT-7-for-FY-2020-21.pdf` },
     ],
   },
-  {
-    title: "EGM Notices",
-    blurb: "Notices of Extraordinary General Meetings",
-    icon: Vote,
-    color: BLUE,
-    docs: [
-      { label: "18th EGM Notice", size: "3.84 MB",  href: `${BASE}/18th%20EGM%20Notice_25.03.2026.pdf` },
-      { label: "17th EGM Notice", size: "1.85 MB",  href: `${BASE}/17th%20EGM%20Notice_19.02.2026.pdf` },
-      { label: "16th EGM Notice", size: "4.70 MB",  href: `${BASE}/16th%20EGM%20Notice_04.02.2026.pdf` },
-      { label: "15th EGM Notice", size: "1.22 MB",  href: `${BASE}/15th%20EGM%20Notice_03.02.2026.pdf` },
-      { label: "13th EGM Notice", size: "2.10 MB",  href: `${BASE}/13th%20EGM%20Notice_02-Jan-2026.pdf` },
-      { label: "12th EGM Notice", size: "2.25 MB",  href: `${BASE}/Notice%20of%20the%2012th%20EGM.pdf` },
-      { label: "11th EGM Notice", size: "1.34 MB",  href: `${BASE}/egm/11-EGM-Notice.pdf` },
-      { label: "10th EGM Notice", size: "2.18 MB",  href: `${BASE}/egm/10-EGM-Notice.pdf` },
-      { label: "9th EGM Notice",  size: "3.87 MB",  href: `${BASE}/egm/9-EGM-Notice.pdf` },
-      { label: "8th EGM Notice",  size: "1.81 MB",  href: `${BASE}/egm/8-EGM-Notice.pdf` },
-      { label: "7th EGM Notice",  size: "9.03 MB",  href: `${BASE}/egm/7-EGM-Notice.pdf` },
-      { label: "6th EGM Notice",  size: "3.5 MB",   href: `${BASE}/egm/6-EGM-Notice.pdf` },
-      { label: "5th EGM Notice",  size: "728.82 KB",href: `${BASE}/egm/5-EGM-Notice.pdf` },
-      { label: "4th EGM Notice",  size: "2.51 MB",  href: `${BASE}/egm/4-EGM-Notice.pdf` },
-      { label: "3rd EGM Notice",  size: "884.78 KB",href: `${BASE}/egm/3-EGM-Notice.pdf` },
-      { label: "2nd EGM Notice",  size: "4.17 MB",  href: `${BASE}/egm/2-EGM-Notice.pdf` },
-      { label: "1st EGM Notice",  size: "1.44 MB",  href: `${BASE}/egm/1-EGM-Notice.pdf` },
-    ],
-  },
 ];
 
 const container = { hidden: {}, visible: { transition: { staggerChildren: 0.04 } } };
 const itemAnim = {
   hidden: { opacity: 0, y: 12 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] as const } },
+};
+
+// Parse the starting financial year from a label like "Annual Return FY 2024-25" → 2024
+const fyYear = (label: string): number => {
+  const m = label.match(/FY\s*(\d{4})/);
+  return m ? parseInt(m[1], 10) : 0;
 };
 
 const DocGroup = ({ g }: { g: Group }) => (
@@ -102,7 +67,7 @@ const DocGroup = ({ g }: { g: Group }) => (
       viewport={{ once: true, margin: "-40px" }}
       className="grid sm:grid-cols-2 gap-3"
     >
-      {g.docs.map((d) => (
+      {[...g.docs].sort((a, b) => fyYear(b.label) - fyYear(a.label)).map((d) => (
         <motion.a
           key={d.label}
           variants={itemAnim}
@@ -120,7 +85,7 @@ const DocGroup = ({ g }: { g: Group }) => (
           </span>
           <div className="flex-1 min-w-0">
             <h3
-              className="font-body text-sm font-semibold text-foreground truncate transition-colors"
+              className="font-body text-sm font-semibold text-foreground leading-snug transition-colors"
               style={{ ["--hover-color" as string]: g.color }}
             >
               <span className="group-hover:opacity-80 transition-opacity">{d.label}</span>
@@ -168,8 +133,6 @@ const InvestorRelations = () => (
             <div className="flex flex-wrap gap-3 mt-6">
               {[
                 { label: "RBI Registered", sub: "NBFC-ICC since 2019", color: BLUE },
-                { label: "AGM & EGM Notices", sub: "All statutory filings", color: GOLD },
-                { label: "Annual Returns", sub: "FY 2020–25", color: BLUE },
               ].map((chip) => (
                 <div
                   key={chip.label}

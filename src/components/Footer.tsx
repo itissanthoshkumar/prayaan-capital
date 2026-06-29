@@ -27,8 +27,6 @@ const customerSupport: FooterLink[] = [
 const investors: FooterLink[] = [
   { label: "Investor Relations", href: "/investor-relations" },
   { label: "Annual Returns", href: "/investor-relations" },
-  { label: "AGM Notices", href: "/investor-relations" },
-  { label: "EGM Notices", href: "/investor-relations" },
 ];
 
 const legal: FooterLink[] = [
