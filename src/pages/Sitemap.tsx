@@ -21,7 +21,8 @@ const groups: { title: string; links: SitemapLink[] }[] = [
     title: "Products & Tools",
     links: [
       { label: "Products", href: "/products" },
-      { label: "Loan Calculator", href: "/calculators/emi" },
+      { label: "EMI Calculator", href: "/calculators/emi" },
+      // { label: "Balance Transfer Calculator", href: "/calculators/bt" },   // disabled for now
       { label: "Interest Rates & Charges", href: "/interest-rates-and-charges" },
     ],
   },
@@ -29,6 +30,7 @@ const groups: { title: string; links: SitemapLink[] }[] = [
     title: "Customer Support",
     links: [
       { label: "Customer", href: "/customer" },
+      { label: "NACH Instructions", href: "/nach-instructions" },
       { label: "NACH Mandate Instructions", href: "/nach-mandate-instructions" },
       { label: "Grievance Redressal", href: "/grievance-redressal" },
     ],

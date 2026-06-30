@@ -20,7 +20,7 @@ const navLinks = [
     children: [
       { label: "Support & Awareness", href: "/customer" },
       { label: "EMI Calculator", href: "/calculators/emi" },
-      { label: "Balance Transfer Calculator", href: "/calculators/bt" },
+      // { label: "Balance Transfer Calculator", href: "/calculators/bt" },   // disabled for now
       { label: "Grievance Redressal", href: "/grievance-redressal" },
     ],
   },

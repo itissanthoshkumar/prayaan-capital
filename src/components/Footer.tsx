@@ -33,7 +33,6 @@ const legal: FooterLink[] = [
   { label: "Policies", href: "/policies" },
   { label: "RBI Disclosures", href: "/rbi-disclosures" },
   { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Sitemap", href: "/sitemap" },
 ];
 
 const Column = ({ title, links }: { title: string; links: FooterLink[] }) => (

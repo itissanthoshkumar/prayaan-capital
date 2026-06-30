@@ -10,7 +10,7 @@ const Contact = lazy(() => import("./pages/Contact")) as ComponentType;
 const Products = lazy(() => import("./pages/Products")) as ComponentType;
 // const Eligibility = lazy(() => import("./pages/Eligibility")) as ComponentType;   // disabled
 const EMICalc = lazy(() => import("./pages/calculators/EMICalc")) as ComponentType;
-const BTCalc = lazy(() => import("./pages/calculators/BTCalc")) as ComponentType;
+// const BTCalc = lazy(() => import("./pages/calculators/BTCalc")) as ComponentType;   // disabled — page kept, not routed
 // const EligibilityCalc = lazy(() => import("./pages/calculators/EligibilityCalc")) as ComponentType;   // disabled
 // const ForeclosureCalc = lazy(() => import("./pages/calculators/ForeclosureCalc")) as ComponentType;   // disabled
 // const HowToApply = lazy(() => import("./pages/HowToApply")) as ComponentType;   // disabled
@@ -75,7 +75,7 @@ export const appRoutes: AppRoute[] = [
   // },
   // { path: "/eligibility", component: Eligibility },   // disabled — apply flow removed
   { path: "/calculators/emi", component: EMICalc },
-  { path: "/calculators/bt", component: BTCalc },
+  // { path: "/calculators/bt", component: BTCalc },   // disabled — Balance Transfer calculator hidden for now
   // { path: "/calculators/eligibility", component: EligibilityCalc },   // disabled
   // { path: "/calculators/foreclosure", component: ForeclosureCalc },   // disabled
   // { path: "/how-to-apply", component: HowToApply },   // disabled
