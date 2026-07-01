@@ -4,7 +4,6 @@ import {
   Calculator, TrendingUp, IndianRupee, Calendar,
   ArrowRight,
 } from "lucide-react";
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -56,17 +55,6 @@ const tenureStr = (months: number): string => {
   const yrs = months / 12;
   if (Number.isInteger(yrs)) return `${yrs} Yr${yrs > 1 ? "s" : ""}`;
   return `${yrs.toFixed(1)} Yrs`;
-};
-
-/* ─── Custom recharts tooltip ─── */
-const ChartTooltip = ({ active, payload }: { active?: boolean; payload?: Array<{ name: string; value: number }> }) => {
-  if (!active || !payload?.length) return null;
-  return (
-    <div className="rounded-2xl bg-white shadow-clay px-4 py-2.5 text-xs font-body">
-      <p className="font-semibold text-foreground mb-0.5">{payload[0].name}</p>
-      <p className="text-muted-foreground">{fmtFull(payload[0].value)}</p>
-    </div>
-  );
 };
 
 /* ════════════════════════════════════════════════════════
@@ -152,12 +140,6 @@ const EMICalculator = () => {
       principalPct:  Math.round((P / totalPay) * 100),
     };
   }, [loanAmount, rate, tenure]);
-
-  /* ── Donut data ── */
-  const chartData = [
-    { name: "Principal", value: loanAmount },
-    { name: "Interest",  value: totalInterest },
-  ];
 
   /* ─── Slider input style ─── */
   const numInputCls =
@@ -342,29 +324,20 @@ const EMICalculator = () => {
                 <div>
                 {/* Donut chart — decorative; principal/interest are shown as text below */}
                 <div className="relative mb-2" aria-hidden="true">
-                  <ResponsiveContainer width="100%" height={230}>
-                    <PieChart>
-                      <Pie
-                        key={`${loanAmount}-${rate}-${tenure}`}
-                        rootTabIndex={-1}
-                        data={chartData}
-                        cx="50%" cy="50%"
-                        startAngle={90} endAngle={-270}
-                        innerRadius="58%" outerRadius="78%"
-                        dataKey="value"
-                        strokeWidth={3}
-                        stroke="hsl(var(--card))"
-                        isAnimationActive
-                        animationBegin={0}
-                        animationDuration={600}
-                        animationEasing="ease-out"
-                      >
-                        <Cell fill={C_PRINCIPAL} />
-                        <Cell fill={C_INTEREST} />
-                      </Pie>
-                      <Tooltip content={<ChartTooltip />} />
-                    </PieChart>
-                  </ResponsiveContainer>
+                  {/* Lightweight SVG donut — r chosen so circumference = 100, so
+                      stroke-dasharray maps 1:1 to percentages. No chart library. */}
+                  <svg viewBox="0 0 42 42" className="mx-auto block h-[230px] -rotate-90">
+                    {/* full ring = interest (gold) */}
+                    <circle cx="21" cy="21" r="15.91549431" fill="none" stroke={C_INTEREST} strokeWidth="5" />
+                    {/* principal arc (blue) over the top */}
+                    <motion.circle
+                      cx="21" cy="21" r="15.91549431" fill="none"
+                      stroke={C_PRINCIPAL} strokeWidth="5" strokeLinecap="round"
+                      initial={{ strokeDasharray: "0 100" }}
+                      animate={{ strokeDasharray: `${principalPct} ${100 - principalPct}` }}
+                      transition={{ duration: 0.6, ease: "easeOut" }}
+                    />
+                  </svg>
 
                   {/* Donut centre — breakdown */}
                   <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none gap-0.5">

@@ -168,7 +168,8 @@ const HeroSection = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
               className="absolute inset-0 w-full h-full object-cover"
-              loading="lazy"
+              loading="eager"
+              decoding="async"
             />
           </AnimatePresence>
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/15 pointer-events-none" />
@@ -195,7 +196,7 @@ const HeroSection = () => {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 1.2 }}
                 className="absolute inset-0 w-full h-full object-cover"
-                loading="lazy"
+                loading="eager"
               />
             </AnimatePresence>
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent pointer-events-none" />
@@ -213,7 +214,7 @@ const HeroSection = () => {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 1.2 }}
                 className="absolute inset-0 w-full h-full object-cover"
-                loading="lazy"
+                loading="eager"
               />
             </AnimatePresence>
             <div className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent pointer-events-none" />
