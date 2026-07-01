@@ -14,7 +14,7 @@ const eligibility = [
 const documents = [
   { category: "Identity & KYC", items: ["PAN Card (mandatory)", "Aadhaar Card", "Passport / Voter ID"], accent: "from-primary to-[hsl(36_90%_58%)]", dot: "bg-primary" },
   { category: "Property Documents", items: ["Title deed & chain of title", "Encumbrance certificate", "Approved building plan", "Property tax receipt"], accent: "from-accent to-[hsl(200_55%_50%)]", dot: "bg-accent" },
-  { category: "Income Documents", items: ["Bank statements (6 months)", "IT Returns (2 years)", "Salary slips / business proof"], accent: "from-[hsl(var(--color-lavender))] to-[hsl(var(--color-indigo))]", dot: "bg-[hsl(var(--color-lavender))]" },
+  { category: "Income Documents", items: ["Bank statements (6 months)", "Salary slips / business proof"], accent: "from-[hsl(var(--color-lavender))] to-[hsl(var(--color-indigo))]", dot: "bg-[hsl(var(--color-lavender))]" },
   { category: "For Self-Employed", items: ["GST / Udyam (if applicable)", "P&L and Balance Sheet", "Business continuity proof"], accent: "from-[hsl(var(--color-coral))] to-primary", dot: "bg-[hsl(var(--color-coral))]" },
 ];
 

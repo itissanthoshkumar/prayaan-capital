@@ -8,8 +8,18 @@ import {
   Info, Check, X, ArrowRight, TrendingUp, Home, Sparkles,
   ShieldAlert, Search, MapPin, Lightbulb, Banknote, Clock,
   FileWarning, WifiOff, CalendarX, HelpCircle, Repeat, Percent,
-  Handshake, Eye, Cpu,
+  Handshake, Eye, Cpu, Receipt,
 } from "lucide-react";
+
+/* ── Colour rotation for icon cards — coral / blue / teal / gold, all already
+   used elsewhere in the design system (error-red, accent, shadow-clay-accent,
+   primary). Cycling them across each 4-up grid keeps every row varied. ── */
+const TONES = [
+  { bg: "bg-[hsl(8_75%_55%/0.14)]", icon: "text-[hsl(8_72%_48%)]" },
+  { bg: "bg-accent/12", icon: "text-accent" },
+  { bg: "bg-[hsl(165_55%_45%/0.16)]", icon: "text-[hsl(165_55%_28%)]" },
+  { bg: "bg-primary/14", icon: "text-primary" },
+];
 
 /* ── Section 4: Why the gap persists ── */
 const gapReasons = [
@@ -94,8 +104,10 @@ function StatCard({ children, delay = 0, className = "" }: { children: React.Rea
   );
 }
 
-/* ── Reusable animated icon-card row (4-up grid) ── */
-function IconCard({ icon: Icon, title, desc, delay = 0, gold = false }: { icon: React.ComponentType<{ size?: number; className?: string }>; title: string; desc: string; delay?: number; gold?: boolean }) {
+/* ── Reusable animated icon-card row (4-up grid) — tone cycles by position,
+   titleGold reserved for the one item the source deck explicitly emphasises. ── */
+function IconCard({ icon: Icon, title, desc, delay = 0, toneIndex = 0, titleGold = false }: { icon: React.ComponentType<{ size?: number; className?: string }>; title: string; desc: string; delay?: number; toneIndex?: number; titleGold?: boolean }) {
+  const tone = TONES[toneIndex % TONES.length];
   return (
     <motion.div
       initial={{ opacity: 0, y: 22 }}
@@ -103,20 +115,86 @@ function IconCard({ icon: Icon, title, desc, delay = 0, gold = false }: { icon: 
       viewport={{ once: true, amount: 0.35 }}
       transition={{ delay, duration: 0.45, ease: "easeOut" }}
       whileHover={{ y: -5 }}
-      className={`clay-surface p-6 transition-shadow hover:shadow-clay-lg ${gold ? "ring-1 ring-primary/30" : ""}`}
+      className="clay-surface p-6 transition-shadow hover:shadow-clay-lg"
     >
       <motion.span
         initial={{ scale: 0.5, opacity: 0, rotate: -8 }}
         whileInView={{ scale: 1, opacity: 1, rotate: 0 }}
         viewport={{ once: true, amount: 0.35 }}
         transition={{ delay: delay + 0.12, type: "spring", stiffness: 260, damping: 16 }}
-        className="w-11 h-11 rounded-2xl flex items-center justify-center shadow-clay-sm mb-4 bg-primary/10"
+        className={`w-11 h-11 rounded-2xl flex items-center justify-center shadow-clay-sm mb-4 ${tone.bg}`}
       >
-        <Icon size={19} className="text-primary" />
+        <Icon size={19} className={tone.icon} />
       </motion.span>
-      <h3 className={`font-display text-sm md:text-base font-bold mb-1.5 leading-snug ${gold ? "text-primary" : "text-foreground"}`}>{title}</h3>
+      <h3 className={`font-display text-sm md:text-base font-bold mb-1.5 leading-snug ${titleGold ? "text-primary" : "text-foreground"}`}>{title}</h3>
       <p className="font-body text-xs md:text-sm text-muted-foreground leading-relaxed">{desc}</p>
     </motion.div>
+  );
+}
+
+/* ── "Hidden invoice" receipt card — a themed alternative to the 4-up grid for
+   "What it costs you": these costs never appear on a real invoice, so we render
+   them as one, dashed dividers and all, to make that point visually. ── */
+function CostReceipt() {
+  const vp = { once: true, amount: 0.25 } as const;
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30, rotate: -1.2 }}
+      whileInView={{ opacity: 1, y: 0, rotate: -0.8 }}
+      viewport={vp}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      whileHover={{ rotate: 0 }}
+      className="max-w-xl mx-auto bg-card rounded-3xl shadow-clay-lg p-6 md:p-9"
+    >
+      <div className="flex items-center justify-between pb-4 mb-1 border-b-2 border-dashed border-border">
+        <span className="inline-flex items-center gap-2 font-display text-xs md:text-sm font-bold uppercase tracking-wider text-foreground">
+          <Receipt size={16} className="text-primary" /> The Hidden Invoice
+        </span>
+        <span className="text-[9px] md:text-[10px] font-semibold uppercase tracking-wider text-muted-foreground/70">Never itemised</span>
+      </div>
+
+      {costs.map((c, i) => {
+        const tone = TONES[i % TONES.length];
+        return (
+          <motion.div
+            key={c.title}
+            initial={{ opacity: 0, x: -14 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={vp}
+            transition={{ delay: i * 0.12, duration: 0.45, ease: "easeOut" }}
+            className={`flex items-start gap-3.5 md:gap-4 py-4 md:py-5 ${i < costs.length - 1 ? "border-b border-dashed border-border/70" : ""}`}
+          >
+            <motion.span
+              initial={{ scale: 0.6, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={vp}
+              transition={{ delay: i * 0.12 + 0.1, type: "spring", stiffness: 280, damping: 16 }}
+              className={`w-9 h-9 md:w-10 md:h-10 rounded-xl flex items-center justify-center shrink-0 ${tone.bg}`}
+            >
+              <c.icon size={17} className={tone.icon} />
+            </motion.span>
+            <div className="min-w-0">
+              <h3 className="font-display text-sm md:text-base font-bold text-foreground leading-snug">{c.title}</h3>
+              <p className="font-body text-xs md:text-sm text-muted-foreground leading-relaxed mt-0.5">{c.desc}</p>
+            </div>
+          </motion.div>
+        );
+      })}
+    </motion.div>
+  );
+}
+
+/* ── Soft ambient colour blobs behind a section — adds a bit of colour to
+   otherwise flat backgrounds without competing with the foreground content. ── */
+function ColorBlobs({ variant = "blueGold" }: { variant?: "blueGold" | "coralTeal" }) {
+  const [c1, c2] = variant === "blueGold"
+    ? ["hsl(208,100%,31%)", "hsl(42,100%,47%)"]
+    : ["hsl(8,75%,55%)", "hsl(165,55%,45%)"];
+  return (
+    <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden>
+      <div className="absolute -top-24 -left-16 w-[380px] h-[380px] rounded-full opacity-[0.09] blur-[100px]" style={{ background: c1 }} />
+      <div className="absolute -bottom-24 -right-16 w-[380px] h-[380px] rounded-full opacity-[0.09] blur-[100px]" style={{ background: c2 }} />
+    </div>
   );
 }
 
@@ -233,13 +311,22 @@ function PrayaanAnswer() {
     <div className="max-w-2xl mx-auto">
       {/* Column legend, mirrors the source deck's before/after framing */}
       <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0, y: -6 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={vp}
-        className="flex items-center justify-between px-1 mb-3 text-[10px] font-bold uppercase tracking-[0.14em] font-body"
+        className="flex items-center justify-between mb-5 px-0.5"
       >
-        <span className="text-muted-foreground">The usual way</span>
-        <span className="text-primary">The Prayaan way</span>
+        <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-muted text-[11px] font-bold uppercase tracking-wider text-muted-foreground font-body">
+          <X size={11} strokeWidth={3} /> The usual way
+        </span>
+        <motion.span
+          animate={{ boxShadow: ["0 0 0 0 hsl(var(--primary)/0.35)", "0 0 0 5px hsl(var(--primary)/0)", "0 0 0 0 hsl(var(--primary)/0.35)"] }}
+          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider text-white font-body shadow-clay-sm"
+          style={{ background: "linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)))" }}
+        >
+          <Sparkles size={11} /> The Prayaan way
+        </motion.span>
       </motion.div>
 
       <div className="space-y-4">
@@ -255,11 +342,11 @@ function PrayaanAnswer() {
               whileHover={{ y: -3 }}
               className="clay-surface p-5 md:p-6 transition-shadow hover:shadow-clay-lg"
             >
-              <div className="flex items-center gap-2.5 mb-3">
-                <span className="w-6 h-6 rounded-lg flex items-center justify-center shrink-0" style={{ background: "hsl(8 75% 55% / 0.12)" }}>
-                  <X size={13} className="text-[hsl(8_72%_48%)]" strokeWidth={2.5} />
+              <div className="flex items-center gap-2 mb-3 opacity-70">
+                <span className="w-5 h-5 rounded-lg flex items-center justify-center shrink-0" style={{ background: "hsl(8 75% 55% / 0.12)" }}>
+                  <X size={11} className="text-[hsl(8_72%_48%)]" strokeWidth={2.5} />
                 </span>
-                <span className="relative inline-block font-body text-sm font-medium text-muted-foreground">
+                <span className="relative inline-block font-body text-xs font-medium text-muted-foreground">
                   {row.usual}
                   <motion.span
                     className="absolute left-0 top-1/2 -translate-y-1/2 h-[2px] rounded-full"
@@ -277,28 +364,34 @@ function PrayaanAnswer() {
                   transition={{ delay: d + 0.55, duration: 0.3 }}
                   className="text-primary/70"
                 >
-                  <ArrowRight size={14} />
+                  <ArrowRight size={12} />
                 </motion.span>
               </div>
 
               <motion.div
-                initial={{ opacity: 0, y: 8 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 8, scale: 0.97 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={vp}
-                transition={{ delay: d + 0.6, duration: 0.4, ease: "easeOut" }}
-                className="flex items-start gap-2.5"
+                transition={{ delay: d + 0.6, duration: 0.45, ease: "easeOut" }}
+                className="relative flex items-start gap-3 rounded-2xl p-4 md:p-4.5 overflow-hidden"
+                style={{ background: "linear-gradient(135deg, hsl(var(--primary)/0.14), hsl(var(--accent)/0.08))" }}
               >
+                <motion.div
+                  className="absolute inset-0 rounded-2xl pointer-events-none"
+                  animate={{ boxShadow: ["0 0 0 0 hsl(var(--primary)/0.32)", "0 0 0 5px hsl(var(--primary)/0)", "0 0 0 0 hsl(var(--primary)/0.32)"] }}
+                  transition={{ duration: 2.6, repeat: Infinity, ease: "easeInOut", delay: d + 1.1 }}
+                />
                 <motion.span
-                  className="w-6 h-6 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
-                  style={{ background: "hsl(var(--accent) / 0.12)" }}
+                  className="relative z-10 w-8 h-8 rounded-xl flex items-center justify-center shrink-0 mt-0.5 shadow-clay-sm"
+                  style={{ background: "hsl(var(--accent))" }}
                   initial={{ scale: 0.3, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
                   viewport={vp}
                   transition={{ delay: d + 0.65, type: "spring", stiffness: 340, damping: 16 }}
                 >
-                  <Check size={14} className="text-accent" strokeWidth={3} />
+                  <Check size={16} className="text-white" strokeWidth={3} />
                 </motion.span>
-                <div className="min-w-0">
+                <div className="relative z-10 min-w-0">
                   <h3 className="font-display text-base md:text-lg font-bold text-foreground leading-tight">{row.prayaan}</h3>
                   <p className="font-body text-sm text-muted-foreground leading-relaxed mt-0.5">{row.prayaanDesc}</p>
                 </div>
@@ -362,17 +455,21 @@ const WhyPrayaan = () => {
 
           <div className="grid sm:grid-cols-2 gap-5 md:gap-6 max-w-4xl">
             <StatCard>
-              <p className="font-display text-5xl md:text-6xl font-extrabold leading-none text-gradient-coral">
-                <CountUp target={22} prefix="~₹" />
-              </p>
-              <p className="font-display text-base md:text-lg font-bold text-foreground mt-2 mb-3">lakh crore <span className="text-muted-foreground font-medium">(~₹22 trillion)</span></p>
+              <div className="flex items-baseline gap-2 flex-wrap mb-3">
+                <span className="font-display text-5xl md:text-6xl font-extrabold leading-none text-gradient-coral">
+                  <CountUp target={22} prefix="~₹" />
+                </span>
+                <span className="font-display text-base md:text-lg font-bold text-foreground">lakh crore <span className="text-muted-foreground font-medium">(~₹22 trillion)</span></span>
+              </div>
               <p className="font-body text-sm text-muted-foreground leading-relaxed">Addressable market for secured small-business loans against a self-occupied home, at small ticket sizes.</p>
             </StatCard>
             <StatCard delay={0.1}>
-              <p className="font-display text-5xl md:text-6xl font-extrabold leading-none text-foreground">
-                <CountUp target={44} prefix="~" />
-              </p>
-              <p className="font-display text-base md:text-lg font-bold text-foreground mt-2 mb-3">million households</p>
+              <div className="flex items-baseline gap-2 flex-wrap mb-3">
+                <span className="font-display text-5xl md:text-6xl font-extrabold leading-none text-accent">
+                  <CountUp target={44} prefix="~" />
+                </span>
+                <span className="font-display text-base md:text-lg font-bold text-foreground">million households</span>
+              </div>
               <p className="font-body text-sm text-muted-foreground leading-relaxed">Self-employed households that own such a home — the foundation of this market.</p>
             </StatCard>
           </div>
@@ -401,13 +498,13 @@ const WhyPrayaan = () => {
               <p className="font-body text-sm text-muted-foreground leading-relaxed">of India's ~70 million MSMEs access formal credit of any kind.</p>
             </StatCard>
             <StatCard delay={0.08}>
-              <p className="font-display text-4xl md:text-5xl font-extrabold leading-none mb-4 text-foreground">
+              <p className="font-display text-4xl md:text-5xl font-extrabold leading-none mb-4 text-accent">
                 <CountUp target={7} prefix="~" suffix="%" />
               </p>
               <p className="font-body text-sm text-muted-foreground leading-relaxed">of the smaller businesses' financing needs are met from formal sources.</p>
             </StatCard>
             <StatCard delay={0.16}>
-              <p className="font-display text-4xl md:text-5xl font-extrabold leading-none mb-4 text-foreground">
+              <p className="font-display text-4xl md:text-5xl font-extrabold leading-none mb-4 text-[hsl(165_55%_32%)]">
                 <CountUp target={29} prefix="~" suffix="%" />
               </p>
               <p className="font-body text-sm text-muted-foreground leading-relaxed">the share for larger businesses — the gap widens as firms get smaller.</p>
@@ -427,6 +524,7 @@ const WhyPrayaan = () => {
       {/* ═══ 4. WHY THE GAP PERSISTS ═══ */}
       <section className="py-16 md:py-24 bg-background relative overflow-hidden">
         <AIFloatingElements />
+        <ColorBlobs variant="coralTeal" />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mb-10 md:mb-14">
             <Eyebrow>Why The Gap Persists</Eyebrow>
@@ -440,7 +538,7 @@ const WhyPrayaan = () => {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
             {gapReasons.map((r, i) => (
-              <IconCard key={r.title} icon={r.icon} title={r.title} desc={r.desc} delay={i * 0.1} gold={r.highlight} />
+              <IconCard key={r.title} icon={r.icon} title={r.title} desc={r.desc} delay={i * 0.1} toneIndex={i} titleGold={r.highlight} />
             ))}
           </div>
           <p className="text-[10px] text-muted-foreground/70 font-body mt-6">Industry data: CRISIL (MSME / small-business-loan industry reports, FY21–FY24).</p>
@@ -459,7 +557,7 @@ const WhyPrayaan = () => {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
             {broken.map((b, i) => (
-              <IconCard key={b.title} icon={b.icon} title={b.title} desc={b.desc} delay={i * 0.1} />
+              <IconCard key={b.title} icon={b.icon} title={b.title} desc={b.desc} delay={i * 0.1} toneIndex={i} />
             ))}
           </div>
         </div>
@@ -468,19 +566,16 @@ const WhyPrayaan = () => {
       {/* ═══ 6. WHAT IT COSTS YOU ═══ */}
       <section className="py-16 md:py-24 bg-background relative overflow-hidden">
         <AIFloatingElements />
+        <ColorBlobs variant="blueGold" />
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl mb-10 md:mb-14">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center max-w-2xl mx-auto mb-10 md:mb-14">
             <h2 className="font-display text-2xl md:text-4xl font-bold text-foreground leading-tight">What it costs you</h2>
-            <p className="text-muted-foreground mt-3 max-w-2xl text-sm md:text-base leading-relaxed">
+            <p className="text-muted-foreground mt-3 text-sm md:text-base leading-relaxed">
               None of this appears on the loan agreement. But the borrower pays for all of it — in time, in stress, and in money he never gets back.
             </p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
-            {costs.map((c, i) => (
-              <IconCard key={c.title} icon={c.icon} title={c.title} desc={c.desc} delay={i * 0.1} />
-            ))}
-          </div>
+          <CostReceipt />
         </div>
       </section>
 
@@ -511,7 +606,7 @@ const WhyPrayaan = () => {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
             {commitments.map((c, i) => (
-              <IconCard key={c.title} icon={c.icon} title={c.title} desc={c.desc} delay={i * 0.1} />
+              <IconCard key={c.title} icon={c.icon} title={c.title} desc={c.desc} delay={i * 0.1} toneIndex={i} />
             ))}
           </div>
         </div>
@@ -520,6 +615,7 @@ const WhyPrayaan = () => {
       {/* ═══ 9. OUR PROMISE ═══ */}
       <section className="py-20 md:py-28 bg-hero relative overflow-hidden">
         <AIFloatingElements />
+        <ColorBlobs variant="blueGold" />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center max-w-2xl mx-auto">
             <Eyebrow>Our Promise</Eyebrow>
@@ -546,9 +642,9 @@ const WhyPrayaan = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="font-display text-lg md:text-2xl font-bold text-gradient-coral mt-3 leading-snug"
+              className="font-display text-lg md:text-2xl font-bold text-foreground mt-3 leading-snug"
             >
-              And a rate that never punishes you for being underserved.
+              And a rate that never punishes you for being <span className="text-gradient-coral">underserved</span>.
             </motion.p>
             <motion.p
               initial={{ opacity: 0 }}
@@ -557,7 +653,7 @@ const WhyPrayaan = () => {
               transition={{ delay: 0.45 }}
               className="text-sm text-muted-foreground mt-6 font-body"
             >
-              High-quality, AI-native lending — built for South India's MSMEs.
+              High-quality, AI-native lending — built for India's MSMEs.
             </motion.p>
           </motion.div>
         </div>

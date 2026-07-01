@@ -100,7 +100,7 @@ const NachMandate = () => {
             <motion.div variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true }} className="mt-12 md:mt-16">
               <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">Loan NACH mandate cancellation</h2>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                To initiate the deactivation process for your NACH, we kindly request you to reach out to your source bank. Alternatively, you can connect with us during our service hours through:
+                To initiate the deactivation process for your NACH, we kindly request you to reach out to your source branch. Alternatively, you can connect with us during our service hours through:
               </p>
               <div className="mt-5 clay-surface p-5 md:p-6 flex flex-col sm:flex-row gap-5 sm:gap-10">
                 <div className="flex items-center gap-3">
