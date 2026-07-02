@@ -1,5 +1,6 @@
 import HeroIllustration from "@/components/HeroIllustration";
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import AIFloatingElements, { AIPulse } from "@/components/AIFloatingElements";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -56,6 +57,7 @@ const cardAnim = {
 const Customer = () => {
   return (
     <Layout>
+      <Seo title="Customer Support" description="Everything existing Prayaan Capital customers need — EMI calculators, NACH instructions, grievance redressal and support contacts." path="/customer" />
       <section className="pt-24 pb-8 md:pt-32 md:pb-10 bg-hero relative overflow-hidden">
         <AIFloatingElements />
         <div className="container mx-auto px-4 relative z-10">

@@ -1,5 +1,6 @@
 import HeroIllustration from "@/components/HeroIllustration";
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import {
@@ -80,6 +81,7 @@ const LocationMap = () => {
 const Contact = () => (
   <Layout>
 
+      <Seo title="Contact Us" description="Get in touch with Prayaan Capital — call, email, or write to us about a secured business loan for your enterprise." path="/contact" />
     {/* ────────── HERO ────────── */}
     <section className="pt-24 pb-8 md:pt-32 md:pb-10 bg-hero relative overflow-hidden">
       <AIFloatingElements />

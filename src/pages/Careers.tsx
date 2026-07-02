@@ -1,5 +1,6 @@
 import HeroIllustration from "@/components/HeroIllustration";
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import { motion } from "framer-motion";
 import { Sparkles, Heart, TrendingUp, Code, Brain, Zap, Mail, Workflow, Database, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -28,6 +29,7 @@ const cardAnim = {
 const Careers = () => {
   return (
     <Layout>
+      <Seo title="Careers" description="Join Prayaan Capital and help build the future of property-backed business lending for India's small and medium enterprises." path="/careers" />
       <section className="pt-24 pb-8 md:pt-32 md:pb-10 bg-hero relative overflow-hidden">
         <AIFloatingElements />
         <div className="container mx-auto px-4 relative z-10">

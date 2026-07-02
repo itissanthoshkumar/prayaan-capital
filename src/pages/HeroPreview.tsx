@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle } from "lucide-react";
+import Seo from "@/components/Seo";
 
 import hero1 from "@/assets/pexels-pexels-user-1476227307-26861411.jpg";
 import hero2 from "@/assets/pexels-ravikant-5807481.jpg";
@@ -256,6 +257,7 @@ const HeroVariantSection = ({ v, index }: { v: VariantStyle; index: number }) =>
 
 const HeroPreview = () => (
   <div>
+    <Seo title="Hero Preview (Internal)" description="Internal design preview page — not for public search." path="/hero-preview" noindex />
     {/* Sticky jump nav */}
     <div className="sticky top-0 z-50 flex items-center justify-center gap-2 py-2.5 px-4 bg-black/85 backdrop-blur-sm border-b border-white/10">
       <span className="text-[11px] text-white/50 font-semibold uppercase tracking-widest mr-2">Hero Variants</span>

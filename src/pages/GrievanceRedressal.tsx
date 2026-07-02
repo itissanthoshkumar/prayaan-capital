@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import AIFloatingElements, { AIPulse } from "@/components/AIFloatingElements";
 import HeroIllustration from "@/components/HeroIllustration";
 import { motion, AnimatePresence } from "framer-motion";
@@ -82,6 +83,7 @@ const GrievanceRedressal = () => {
 
   return (
     <Layout>
+      <Seo title="Customer Grievance Redressal" description="How to raise a complaint with Prayaan Capital's Grievance Redressal Officer, and escalate to the RBI Ombudsman if it remains unresolved." path="/grievance-redressal" />
       {/* Hero */}
       <section className="pt-24 pb-8 md:pt-32 md:pb-10 bg-hero relative overflow-hidden">
         <AIFloatingElements />

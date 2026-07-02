@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import { Link } from "react-router-dom";
 import { ScrollText } from "lucide-react";
 
@@ -54,6 +55,7 @@ const groups: { title: string; links: SitemapLink[] }[] = [
 
 const Sitemap = () => (
   <Layout>
+      <Seo title="Sitemap" description="Browse every page on the Prayaan Capital website, neatly organised." path="/sitemap" />
     <section className="pt-24 pb-8 md:pt-32 md:pb-10 bg-hero relative overflow-hidden">
       <div className="container mx-auto px-5 relative z-10">
         <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card shadow-clay-sm text-xs font-semibold text-primary uppercase tracking-[0.12em] font-body mb-4">

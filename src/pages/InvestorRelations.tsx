@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import AIFloatingElements from "@/components/AIFloatingElements";
 import HeroIllustration from "@/components/HeroIllustration";
 import { motion } from "framer-motion";
@@ -103,6 +104,7 @@ const DocGroup = ({ g }: { g: Group }) => (
 
 const InvestorRelations = () => (
   <Layout>
+      <Seo title="Investor Relations" description="Investor relations information, annual returns and regulatory filings for Prayaan Capital Private Limited, an RBI-registered NBFC." path="/investor-relations" />
     {/* ── Hero ── */}
     <section className="pt-24 pb-8 md:pt-32 md:pb-10 bg-hero relative overflow-hidden">
       <AIFloatingElements />

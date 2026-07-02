@@ -1,5 +1,6 @@
 import { Shield } from "lucide-react";
 import LegalPageTemplate from "@/components/templates/LegalPageTemplate";
+import Seo from "@/components/Seo";
 
 const intro = (
   <div className="space-y-4">
@@ -150,13 +151,16 @@ const sections = [
 ];
 
 const PrivacyPolicy = () => (
-  <LegalPageTemplate
-    eyebrow="Legal"
-    icon={Shield}
-    title="Privacy Policy"
-    intro={intro}
-    sections={sections}
-  />
+  <>
+    <Seo title="Privacy Policy" description="Read Prayaan Capital's Privacy Policy — how we collect, use and protect your personal information on our website." path="/privacy-policy" />
+    <LegalPageTemplate
+      eyebrow="Legal"
+      icon={Shield}
+      title="Privacy Policy"
+      intro={intro}
+      sections={sections}
+    />
+  </>
 );
 
 export default PrivacyPolicy;

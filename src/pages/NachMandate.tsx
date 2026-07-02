@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import { motion } from "framer-motion";
 import { Repeat, Check, Phone, Mail } from "lucide-react";
 import AIFloatingElements from "@/components/AIFloatingElements";
@@ -30,6 +31,7 @@ const fadeIn = {
 const NachMandate = () => {
   return (
     <Layout>
+      <Seo title="NACH Mandate Instructions" description="Instructions for managing or cancelling your NACH mandate for Prayaan Capital loan repayments." path="/nach-mandate-instructions" />
       {/* Hero */}
       <section className="pt-24 pb-8 md:pt-32 md:pb-10 bg-hero relative overflow-hidden">
         <AIFloatingElements />

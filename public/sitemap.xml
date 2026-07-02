@@ -2,38 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Core -->
   <url><loc>https://prayaan-capital.vercel.app/</loc><priority>1.0</priority></url>
-  <url><loc>https://prayaan-capital.vercel.app/about</loc><priority>0.8</priority></url>
   <url><loc>https://prayaan-capital.vercel.app/why-prayaan</loc><priority>0.8</priority></url>
-  <url><loc>https://prayaan-capital.vercel.app/technology</loc><priority>0.7</priority></url>
-  <url><loc>https://prayaan-capital.vercel.app/team</loc><priority>0.7</priority></url>
-  <url><loc>https://prayaan-capital.vercel.app/investor-relations</loc><priority>0.7</priority></url>
+  <url><loc>https://prayaan-capital.vercel.app/about</loc><priority>0.8</priority></url>
   <url><loc>https://prayaan-capital.vercel.app/careers</loc><priority>0.6</priority></url>
-  <url><loc>https://prayaan-capital.vercel.app/news</loc><priority>0.5</priority></url>
-  <url><loc>https://prayaan-capital.vercel.app/case-studies</loc><priority>0.6</priority></url>
   <url><loc>https://prayaan-capital.vercel.app/contact</loc><priority>0.8</priority></url>
   <url><loc>https://prayaan-capital.vercel.app/branch-locator</loc><priority>0.7</priority></url>
+  <url><loc>https://prayaan-capital.vercel.app/investor-relations</loc><priority>0.7</priority></url>
 
-  <!-- Products -->
+  <!-- Products & tools -->
   <url><loc>https://prayaan-capital.vercel.app/products</loc><priority>0.9</priority></url>
-
-  <!-- Apply & tools -->
-  <url><loc>https://prayaan-capital.vercel.app/eligibility</loc><priority>0.9</priority></url>
-  <url><loc>https://prayaan-capital.vercel.app/document-checklist</loc><priority>0.5</priority></url>
-  <url><loc>https://prayaan-capital.vercel.app/interest-rates-and-charges</loc><priority>0.6</priority></url>
   <url><loc>https://prayaan-capital.vercel.app/calculators/emi</loc><priority>0.7</priority></url>
+  <url><loc>https://prayaan-capital.vercel.app/interest-rates-and-charges</loc><priority>0.6</priority></url>
 
-  <!-- Customer -->
+  <!-- Customer support -->
   <url><loc>https://prayaan-capital.vercel.app/customer</loc><priority>0.6</priority></url>
-  <url><loc>https://prayaan-capital.vercel.app/customer/payments</loc><priority>0.6</priority></url>
-  <url><loc>https://prayaan-capital.vercel.app/faqs</loc><priority>0.6</priority></url>
   <url><loc>https://prayaan-capital.vercel.app/nach-instructions</loc><priority>0.5</priority></url>
-
-  <!-- Regulatory & compliance -->
-  <url><loc>https://prayaan-capital.vercel.app/rbi-disclosures</loc><priority>0.8</priority></url>
+  <url><loc>https://prayaan-capital.vercel.app/nach-mandate-instructions</loc><priority>0.5</priority></url>
   <url><loc>https://prayaan-capital.vercel.app/grievance-redressal</loc><priority>0.7</priority></url>
+
+  <!-- Regulatory & legal -->
+  <url><loc>https://prayaan-capital.vercel.app/rbi-disclosures</loc><priority>0.8</priority></url>
   <url><loc>https://prayaan-capital.vercel.app/policies</loc><priority>0.6</priority></url>
   <url><loc>https://prayaan-capital.vercel.app/privacy-policy</loc><priority>0.5</priority></url>
-  <url><loc>https://prayaan-capital.vercel.app/terms</loc><priority>0.5</priority></url>
 
   <!-- Navigation -->
   <url><loc>https://prayaan-capital.vercel.app/sitemap</loc><priority>0.3</priority></url>

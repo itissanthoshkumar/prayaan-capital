@@ -1,5 +1,6 @@
 import TeamGrowthArt from "@/components/TeamGrowthArt";
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import CTASection from "@/components/CTASection";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -183,6 +184,7 @@ const LeaderCard = ({ p, compact }: { p: Person; compact?: boolean }) => {
 const About = () => {
   return (
     <Layout>
+      <Seo title="About Us & Our Team" description="Meet the team behind Prayaan Capital — the people building fast, fair and transparent secured business loans for India's small and medium enterprises." path="/about" />
       {/* Hero — about & story */}
       <section className="pt-24 pb-16 md:pt-32 md:pb-20 bg-hero relative overflow-hidden">
         <AIFloatingElements />

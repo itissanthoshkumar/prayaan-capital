@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import AIFloatingElements from "@/components/AIFloatingElements";
 import IndiaMap from "@/components/IndiaMap";
 import { motion } from "framer-motion";
@@ -23,6 +24,7 @@ const cardAnim = {
 const BranchLocator = () => {
   return (
     <Layout>
+      <Seo title="Branch Locator" description="Find Prayaan Capital's branches across South India — locate your nearest office for secured business loan services." path="/branch-locator" />
       {/* Hero — breadcrumb + headline */}
       <section className="pt-20 pb-8 md:pt-28 md:pb-10 bg-hero relative overflow-hidden">
         <AIFloatingElements />

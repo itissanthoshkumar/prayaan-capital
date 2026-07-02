@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import AIFloatingElements from "@/components/AIFloatingElements";
 import HeroIllustration from "@/components/HeroIllustration";
 import { motion } from "framer-motion";
@@ -26,6 +27,7 @@ const itemAnim = {
 
 const Policies = () => (
   <Layout>
+      <Seo title="Policies & Disclosures" description="Prayaan Capital's regulatory policies and disclosures as an RBI-registered NBFC, including our Fair Practice Code, KYC/AML and Interest Rate policies." path="/policies" />
     {/* Hero */}
     <section className="pt-24 pb-8 md:pt-32 md:pb-10 bg-hero relative overflow-hidden">
       <AIFloatingElements />

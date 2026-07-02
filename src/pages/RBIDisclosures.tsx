@@ -1,4 +1,5 @@
 import LegalPageTemplate from "@/components/templates/LegalPageTemplate";
+import Seo from "@/components/Seo";
 import { Link } from "react-router-dom";
 import { ShieldCheck } from "lucide-react";
 
@@ -17,6 +18,8 @@ const regulatoryLinks: { label: string; href: string; external?: boolean }[] = [
 ];
 
 const RBIDisclosures = () => (
+  <>
+  <Seo title="RBI Disclosures" description="Regulatory disclosures required under RBI guidelines for Prayaan Capital Private Limited, an RBI-registered NBFC-ICC." path="/rbi-disclosures" />
   <LegalPageTemplate
     eyebrow="Regulatory"
     title="RBI Disclosures"
@@ -100,6 +103,7 @@ const RBIDisclosures = () => (
       },
     ]}
   />
+  </>
 );
 
 export default RBIDisclosures;

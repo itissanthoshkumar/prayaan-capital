@@ -1,11 +1,13 @@
 import HeroIllustration from "@/components/HeroIllustration";
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import EMICalculator from "@/components/EMICalculator";
 import AIFloatingElements, { AIBadge } from "@/components/AIFloatingElements";
 import { motion } from "framer-motion";
 
 const EMICalc = () => (
   <Layout>
+    <Seo title="EMI Calculator" description="Estimate your monthly EMI for a Prayaan Capital secured business loan in seconds — enter the loan amount, interest rate and tenure." path="/calculators/emi" />
     <section className="pt-24 pb-6 md:pt-32 md:pb-10 bg-hero relative overflow-hidden">
       <AIFloatingElements />
       <div className="container mx-auto px-5 relative z-10">

@@ -1,5 +1,6 @@
 import HeroIllustration from "@/components/HeroIllustration";
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import { motion } from "framer-motion";
 import { FileText } from "lucide-react";
 import AIFloatingElements from "@/components/AIFloatingElements";
@@ -23,6 +24,7 @@ const itemAnim = {
 const NACHInstructions = () => {
   return (
     <Layout>
+      <Seo title="NACH Instructions" description="Instructions for setting up and managing NACH mandates for your Prayaan Capital loan repayments." path="/nach-instructions" />
       <section className="pt-24 pb-8 md:pt-32 md:pb-10 bg-hero relative overflow-hidden">
         <AIFloatingElements />
         <div className="container mx-auto px-4 relative z-10">

@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import HeroSection from "@/components/HeroSection";
 import ProductsSection from "@/components/ProductsSection";
 import HowItWorks from "@/components/HowItWorks";
@@ -16,6 +17,7 @@ const EMICalculator = lazy(() => import("@/components/EMICalculator"));
 const Index = () => {
   return (
     <Layout>
+      <Seo title="Secured Business Loans for India's SMEs" description="Prayaan Capital is an RBI-registered NBFC offering secured business loans from ₹5L to ₹50L to India's small and medium enterprises — property-backed, with AI-assisted decisions in 48 hours and doorstep service." path="/" />
       <HeroSection />
 
       <ProductsSection />

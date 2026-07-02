@@ -1,5 +1,6 @@
 import HeroIllustration from "@/components/HeroIllustration";
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import { motion } from "framer-motion";
 import { Building2, Briefcase, Home, Wallet, CheckCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -67,6 +68,7 @@ const cardAnim = {
 const Products = () => {
   return (
     <Layout>
+      <Seo title="Our Loan Products" description="Explore Prayaan Capital's secured business loan products — property-backed loans from ₹5L to ₹30L for India's small and medium enterprises." path="/products" />
       <section className="pt-24 pb-8 md:pt-32 md:pb-10 bg-hero relative overflow-hidden">
         <AIFloatingElements />
         <div className="container mx-auto px-4 relative z-10">

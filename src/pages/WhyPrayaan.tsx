@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import CTASection from "@/components/CTASection";
 import AIFloatingElements from "@/components/AIFloatingElements";
 import { motion, useInView } from "framer-motion";
@@ -407,6 +408,7 @@ function PrayaanAnswer() {
 const WhyPrayaan = () => {
   return (
     <Layout>
+      <Seo title="Why Prayaan" description="The credit isn't the problem — everything around it is. See why Prayaan Capital is rebuilding secured business lending to be fast, fair and transparent." path="/why-prayaan" />
       {/* ═══ 1. HERO — "Why Prayaan" ═══ */}
       <section className="pt-24 pb-8 md:pt-32 md:pb-10 bg-hero relative overflow-hidden">
         <AIFloatingElements />
