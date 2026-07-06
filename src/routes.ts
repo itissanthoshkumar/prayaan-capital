@@ -44,7 +44,7 @@ const Customer = lazy(() => import("./pages/Customer")) as ComponentType;
 // const CustomerPayments = lazy(() => import("./pages/CustomerPayments")) as ComponentType;   // disabled
 const RBIDisclosures = lazy(() => import("./pages/RBIDisclosures")) as ComponentType;
 // const ThankYou = lazy(() => import("./pages/ThankYou")) as ComponentType;   // disabled
-const HeroPreview = lazy(() => import("./pages/HeroPreview")) as ComponentType;
+// const HeroPreview = lazy(() => import("./pages/HeroPreview")) as ComponentType;   // disabled — internal design preview, not for production
 const Policies = lazy(() => import("./pages/Policies")) as ComponentType;
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy")) as ComponentType;
 // const Terms = lazy(() => import("./pages/Terms")) as ComponentType;   // disabled
@@ -116,7 +116,7 @@ export const appRoutes: AppRoute[] = [
   // { path: "/customer/payments", component: CustomerPayments },   // disabled — 404
   { path: "/rbi-disclosures", component: RBIDisclosures },
   // { path: "/thank-you", component: ThankYou },   // disabled — apply flow removed
-  { path: "/hero-preview", component: HeroPreview },
+  // { path: "/hero-preview", component: HeroPreview },   // disabled — internal design preview, not for production
 
   // Route aliases (spec URLs → existing components)
   // { path: "/investors", component: InvestorRelations },   // disabled

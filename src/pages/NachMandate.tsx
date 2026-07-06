@@ -6,17 +6,16 @@ import AIFloatingElements from "@/components/AIFloatingElements";
 import HeroIllustration from "@/components/HeroIllustration";
 
 const benefits = [
-  "No need for PDCs while availing of loan facilities.",
+  "No need for PDCs (for EMI repayments) while availing of loan facilities.",
   "Simple and hassle-free process for collecting recurring payments.",
   "Enhanced user experience as a result of error-free registration and payment automation.",
   "Avoidance of late fees and penalties due to timely auto-debit of the transaction amount.",
 ];
 
 const steps = [
-  "Connect with the Customer Support team on +91-6380589898, or raise a request through email at customercare@prayaancapital.com.",
-  "The Customer Support team will share the eNACH registration link.",
+  "Connect with Source Branch to obtain E-NACH registration link.",
   "Once you click on the link, you will be taken to the E-NACH registration page which shows the details of the loan and the mandate.",
-  "Proceed by selecting your bank with either a Debit Card, Net Banking, or Aadhaar mandate to register the mandate.",
+  "Proceed by selecting your bank with either a Debit Card or Net Banking to register the mandate.",
   "Once you select the option, your bank page will open up where you will need to enter the details required.",
   "The bank may require you to enter an OTP to complete the registration.",
   "Once you have completed the required steps, your bank will show a confirmation page on successfully registering the mandate.",

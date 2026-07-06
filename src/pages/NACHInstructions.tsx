@@ -6,7 +6,7 @@ import { FileText } from "lucide-react";
 import AIFloatingElements from "@/components/AIFloatingElements";
 
 const steps = [
-  { title: "1. Mandate Registration", content: "Customers are required to register a NACH (National Automated Clearing House) e-mandate with their bank to authorise Prayaan Capital to debit EMIs on the due date each month." },
+  { title: "1. Mandate Registration", content: "Customers are required to register an E-NACH (electronic National Automated Clearing House) mandate with their bank to authorise Prayaan Capital to debit EMIs on the due date each month." },
   { title: "2. Bank Account Details", content: "Provide accurate bank account number, IFSC, account type and account holder name. Mismatch in any of these may lead to mandate rejection by the sponsor bank." },
   { title: "3. Maximum Amount", content: "The mandate amount should be equal to or higher than your monthly EMI. The buffer protects you against bounce charges in case of any future restructuring of the EMI." },
   { title: "4. Mandate Validity", content: "The validity of the mandate must cover the entire loan tenure including a margin of 30 days post the scheduled last EMI date." },
@@ -35,7 +35,7 @@ const NACHInstructions = () => {
               <FileText size={12} /> Customer Education
             </span>
             <h1 className="font-display text-3xl md:text-5xl font-bold text-foreground mt-3 mb-4">NACH Instructions</h1>
-            <p className="text-xs md:text-sm text-muted-foreground">Guidelines for setting up and managing your e-mandate with Prayaan Capital.</p>
+            <p className="text-xs md:text-sm text-muted-foreground">Guidelines for setting up and managing your E-NACH mandate with Prayaan Capital.</p>
           </motion.div>
             </div>
             <HeroIllustration variant="payments" />
