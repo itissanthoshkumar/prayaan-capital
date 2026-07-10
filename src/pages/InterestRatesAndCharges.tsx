@@ -3,7 +3,7 @@ import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
 
 const PDF_URL =
-  "https://prayaancapital.com/assets/images/downloads/Interest%20Rates%20and%20Gradation%20of%20Risk%20Policy%20V4.0.pdf";
+  "/assets/images/downloads/Interest%20Rates%20and%20Gradation%20of%20Risk%20Policy%20V4.0.pdf";
 
 const InterestRatesAndCharges = () => {
   useEffect(() => {

@@ -17,7 +17,7 @@ const EMICalculator = lazy(() => import("@/components/EMICalculator"));
 const Index = () => {
   return (
     <Layout>
-      <Seo title="Secured Business Loans for India's SMEs" description="Prayaan Capital is an RBI-registered NBFC offering secured business loans from ₹5L to ₹50L to India's small and medium enterprises — property-backed, with AI-assisted decisions in 48 hours and doorstep service." path="/" />
+      <Seo title="Secured Business Loans for India's SMEs" description="Prayaan Capital is an RBI-registered NBFC offering secured business loans from ₹5L to ₹30L to India's small and medium enterprises — property-backed, with faster decisions and doorstep service." path="/" />
       <HeroSection />
 
       <ProductsSection />

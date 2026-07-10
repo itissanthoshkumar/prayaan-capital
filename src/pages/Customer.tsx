@@ -37,14 +37,14 @@ const quickLinks = [
 ];
 
 const education = [
-  { label: "Procedure for return of property documents", href: "https://prayaancapital.com/assets/images/downloads/Procedure-for-release-of-Property-Documents-in-case-of-Demise-of-Borrower.pdf", icon: FileText },
-  { label: "Customer Education Literature - SMA-NPA Classification - English", href: "https://prayaancapital.com/assets/images/downloads/customer-education-literature-sma-npa-classification-english.pdf", icon: BookOpen },
-  { label: "Customer Education Literature - SMA-NPA Classification - Tamil", href: "https://prayaancapital.com/assets/images/downloads/Customer%20Education%20Literature%20-%20SMA-NPA%20Classification%20Tamil.pdf", icon: Languages },
-  { label: "Customer Education Literature - SMA-NPA Classification - Telugu", href: "https://prayaancapital.com/assets/images/downloads/Customer%20Education%20Literature%20-%20SMA-NPA%20Classification%20Telugu.pdf", icon: Languages },
+  { label: "Procedure for return of property documents", href: "/assets/images/downloads/Procedure-for-release-of-Property-Documents-in-case-of-Demise-of-Borrower.pdf", icon: FileText },
+  { label: "Customer Education Literature - SMA-NPA Classification - English", href: "/assets/images/downloads/customer-education-literature-sma-npa-classification-english.pdf", icon: BookOpen },
+  { label: "Customer Education Literature - SMA-NPA Classification - Tamil", href: "/assets/images/downloads/Customer%20Education%20Literature%20-%20SMA-NPA%20Classification%20Tamil.pdf", icon: Languages },
+  { label: "Customer Education Literature - SMA-NPA Classification - Telugu", href: "/assets/images/downloads/Customer%20Education%20Literature%20-%20SMA-NPA%20Classification%20Telugu.pdf", icon: Languages },
 ];
 
 const videos = [
-  { title: "CKYC Identifier", src: "https://prayaancapital.com/assets/images/CentralKYCRecordsRegistryCustomerAwarenessVideo.webm", type: "video/webm" },
+  { title: "CKYC Identifier", src: "/assets/images/CentralKYCRecordsRegistryCustomerAwarenessVideo.webm", type: "video/webm" },
   { title: "Registration Process and Modes of Registration in CKYCRR", src: "https://www.ckycindia.in/ckyc/assets/images/CKYCvideoforReportingEntities.mp4", type: "video/mp4" },
 ];
 

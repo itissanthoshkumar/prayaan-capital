@@ -5,7 +5,7 @@ import HeroIllustration from "@/components/HeroIllustration";
 import { motion } from "framer-motion";
 import { TrendingUp, FileText, LucideIcon } from "lucide-react";
 
-const BASE = "https://prayaancapital.com/assets/images/downloads";
+const BASE = "/assets/images/downloads";
 
 const BLUE  = "hsl(208,100%,31%)";
 const GOLD  = "hsl(38,100%,28%)";  // deepened from 42/47 so gold text & links read on light (~4.8:1)
@@ -166,7 +166,7 @@ const InvestorRelations = () => (
         ))}
 
         <p className="text-center text-xs text-muted-foreground">
-          PDFs open in a new tab · Documents hosted on prayaancapital.com
+          PDFs open in a new tab.
         </p>
       </div>
     </section>

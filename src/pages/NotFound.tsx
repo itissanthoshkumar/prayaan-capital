@@ -1,7 +1,7 @@
 import { useLocation, Link } from "react-router-dom";
 import { useEffect, useMemo } from "react";
 import { Button } from "@/components/ui/button";
-import { Home, Search, ArrowRight } from "lucide-react";
+import { Home, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import { concretePaths } from "@/routes";
 
@@ -60,7 +60,8 @@ const NotFound = () => {
   }, [location.pathname]);
 
   const suggestions = useMemo(
-    () => suggestPaths(location.pathname, Array.from(concretePaths)),
+    // /sitemap stays reachable by URL but is intentionally never suggested in the UI.
+    () => suggestPaths(location.pathname, Array.from(concretePaths).filter((p) => p !== "/sitemap")),
     [location.pathname],
   );
 
@@ -88,9 +89,6 @@ const NotFound = () => {
             <div className="flex flex-wrap justify-center gap-3 mb-8">
               <Button asChild size="lg">
                 <Link to="/"><Home size={16} /> Home</Link>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link to="/sitemap"><Search size={16} /> Browse sitemap</Link>
               </Button>
             </div>
           </div>

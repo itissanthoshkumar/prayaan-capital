@@ -3,7 +3,7 @@ import Seo from "@/components/Seo";
 import { Link } from "react-router-dom";
 import { ShieldCheck } from "lucide-react";
 
-const BASE = "https://prayaancapital.com/assets/images/downloads";
+const BASE = "/assets/images/downloads";
 
 const regulatoryLinks: { label: string; href: string; external?: boolean }[] = [
   { label: "Interest Rate Policy", href: `${BASE}/Interest%20Rates%20and%20Gradation%20of%20Risk%20Policy%20V4.0.pdf`, external: true },
@@ -11,7 +11,7 @@ const regulatoryLinks: { label: string; href: string; external?: boolean }[] = [
   { label: "Fair Practice Code (Tamil)", href: `${BASE}/Fair%20Practice%20Code_V2.0%20Tamil.pdf`, external: true },
   { label: "Fair Practice Code (Telugu)", href: `${BASE}/Fair%20Practice%20Code_V2.0%20Telugu.pdf`, external: true },
   { label: "Grievance Redressal Policy", href: "/grievance-redressal" },
-  { label: "KYC / AML Policy", href: `${BASE}/Group%20AML%20%26%20KYC%20Policy_V6.0_.pdf`, external: true },
+  { label: "KYC / AML Policy", href: `${BASE}/Group%20AML%20&%20KYC%20Policy_V6.0_.pdf`, external: true },
   { label: "Whistleblower Policy", href: `${BASE}/Whistle%20Blower%20Policy%20V3.0.pdf`, external: true },
   { label: "Notices & Disclosures", href: "/policies" },
   { label: "Cookie Policy", href: "/privacy-policy" },

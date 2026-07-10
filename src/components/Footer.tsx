@@ -2,7 +2,10 @@ import { Link } from "react-router-dom";
 import { Sparkles, Mail, Phone, MapPin } from "lucide-react";
 import BrandLogo from "@/components/BrandLogo";
 
-type FooterLink = { label: string; href: string };
+type FooterLink = { label: string; href: string; external?: boolean };
+
+// Interest Rates & Charges is a direct PDF — open it in a new tab like the other documents.
+const INTEREST_RATES_PDF = "/assets/images/downloads/Interest%20Rates%20and%20Gradation%20of%20Risk%20Policy%20V4.0.pdf";
 
 const company: FooterLink[] = [
   { label: "About Us", href: "/why-prayaan" },
@@ -15,7 +18,7 @@ const company: FooterLink[] = [
 const productsTools: FooterLink[] = [
   { label: "Products", href: "/products" },
   { label: "Loan Calculator", href: "/calculators/emi" },
-  { label: "Interest Rates & Charges", href: "/interest-rates-and-charges" },
+  { label: "Interest Rates & Charges", href: INTEREST_RATES_PDF, external: true },
 ];
 
 const customerSupport: FooterLink[] = [
@@ -43,12 +46,23 @@ const Column = ({ title, links }: { title: string; links: FooterLink[] }) => (
     <ul className="space-y-2.5">
       {links.map((link) => (
         <li key={`${link.label}-${link.href}`}>
-          <Link
-            to={link.href}
-            className="text-xs text-muted-foreground hover:text-primary transition-colors font-body"
-          >
-            {link.label}
-          </Link>
+          {link.external ? (
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-muted-foreground hover:text-primary transition-colors font-body"
+            >
+              {link.label}
+            </a>
+          ) : (
+            <Link
+              to={link.href}
+              className="text-xs text-muted-foreground hover:text-primary transition-colors font-body"
+            >
+              {link.label}
+            </Link>
+          )}
         </li>
       ))}
     </ul>

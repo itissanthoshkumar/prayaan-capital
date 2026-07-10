@@ -24,7 +24,7 @@ const groups: { title: string; links: SitemapLink[] }[] = [
       { label: "Products", href: "/products" },
       { label: "EMI Calculator", href: "/calculators/emi" },
       // { label: "Balance Transfer Calculator", href: "/calculators/bt" },   // disabled for now
-      { label: "Interest Rates & Charges", href: "/interest-rates-and-charges" },
+      { label: "Interest Rates & Charges", href: "/assets/images/downloads/Interest%20Rates%20and%20Gradation%20of%20Risk%20Policy%20V4.0.pdf", external: true },
     ],
   },
   {
@@ -48,7 +48,7 @@ const groups: { title: string; links: SitemapLink[] }[] = [
       { label: "Policies", href: "/policies" },
       { label: "RBI Disclosures", href: "/rbi-disclosures" },
       { label: "Privacy Policy", href: "/privacy-policy" },
-      { label: "Sitemap", href: "/sitemap" },
+      // { label: "Sitemap", href: "/sitemap" },   // de-linked — URL stays active, no UI buttons to it
     ],
   },
 ];

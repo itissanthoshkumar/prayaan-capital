@@ -5,7 +5,7 @@ import HeroIllustration from "@/components/HeroIllustration";
 import { motion } from "framer-motion";
 import { ScrollText, Recycle, Percent, Scale, Languages, Fingerprint, ShieldCheck, Megaphone, Banknote, LucideIcon } from "lucide-react";
 
-const BASE = "https://prayaancapital.com/assets/images/downloads";
+const BASE = "/assets/images/downloads";
 
 const policies: { label: string; href: string; icon: LucideIcon }[] = [
   { label: "E-Waste Management Policy", href: `${BASE}/E-waste%20Management%20policy.pdf`, icon: Recycle },
