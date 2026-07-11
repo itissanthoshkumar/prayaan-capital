@@ -24,8 +24,8 @@ const groups: Group[] = [
       { label: "Annual Return FY 2023-24", size: "1.76 MB",   href: `${BASE}/Annual-Return-for-FY-2023-24.pdf` },
       { label: "Annual Return FY 2022-23", size: "1.34 MB",   href: `${BASE}/ar/Annual-Return-for-FY-2022-23.pdf` },
       { label: "Annual Return FY 2021-22", size: "986.23 KB", href: `${BASE}/annual-return2022.pdf` },
-      { label: "Form MGT-7 FY 2021-22",   size: "114.32 KB", href: `${BASE}/ar/Form-MGT-7-for-FY-2021-22.pdf` },
       { label: "Form MGT-7 FY 2020-21",   size: "112.56 KB", href: `${BASE}/ar/Form-MGT-7-for-FY-2020-21.pdf` },
+      { label: "Form MGT-7 FY 2019-20",   size: "0.98 MB",   href: `${BASE}/ar/Form-MGT-7-for-FY-2019-20.pdf` },
     ],
   },
 ];
