@@ -4,6 +4,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import NotFound from "./pages/NotFound";
 import { appRoutes } from "./routes";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -37,6 +39,10 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      {/* Vercel Web Analytics + Speed Insights — cookieless, no consent banner needed.
+          Auto-tracks SPA route changes via the History API. Only reports on Vercel. */}
+      <Analytics />
+      <SpeedInsights />
     </TooltipProvider>
   </QueryClientProvider>
 );
