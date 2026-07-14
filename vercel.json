@@ -1,3 +1,7 @@
 {
+  "redirects": [
+    { "source": "/policies.html", "destination": "/policies", "permanent": true },
+    { "source": "/nach-instructions.php", "destination": "/nach-mandate-instructions", "permanent": true }
+  ],
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
