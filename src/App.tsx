@@ -9,6 +9,7 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 import NotFound from "./pages/NotFound";
 import { appRoutes } from "./routes";
 import ScrollToTop from "@/components/ScrollToTop";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,9 @@ const App = () => (
           <Route path="/nach-instructions.php" element={<Navigate to="/nach-mandate-instructions" replace />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        {/* GA4 SPA page-view tracking — inside the router (needs useLocation),
+            after Routes so <Seo> has set document.title first. */}
+        <GoogleAnalytics />
       </BrowserRouter>
       {/* Vercel Web Analytics + Speed Insights — cookieless, no consent banner needed.
           Auto-tracks SPA route changes via the History API. Only reports on Vercel. */}

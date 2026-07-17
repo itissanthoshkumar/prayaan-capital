@@ -32,6 +32,32 @@
   <meta name="twitter:title" content="Prayaan Capital — Secured Business Loans for India's SMEs">
   <meta property="og:description" content="RBI-registered NBFC offering secured business loans from ₹5L to ₹30L for India's SMEs — property-backed, faster decisions, doorstep service.">
   <meta name="twitter:description" content="RBI-registered NBFC offering secured business loans from ₹5L to ₹30L for India's SMEs — property-backed, faster decisions, doorstep service.">
+
+  <!-- Google Analytics (GA4).
+       - Live prayaancapital.com  → loads gtag.js and sends to GA for real.
+       - localhost                → keeps a no-network shim (events queue in dataLayer only,
+                                     nothing reaches Google) so tracking is verifiable in dev.
+       - Vercel previews / other  → nothing at all.
+       page_view + ui_interaction are sent from React (src/components/GoogleAnalytics.tsx)
+       because this is a single-page app; the auto page_view is disabled to avoid double-counting. -->
+  <script>
+    (function () {
+      var host = location.hostname;
+      var live = /(^|\.)prayaancapital\.com$/.test(host);
+      var localhost = host === 'localhost' || host === '127.0.0.1';
+      if (!live && !localhost) return;                 // previews & anything else: no GA
+      if (live) {                                      // only the real domain loads gtag.js (sends data)
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-D5GDZVG2P9';
+        document.head.appendChild(s);
+      }
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', 'G-D5GDZVG2P9', { send_page_view: false });
+    })();
+  </script>
 </head>
 
   <body>
