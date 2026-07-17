@@ -62,16 +62,31 @@ const GoogleAnalytics = () => {
           interaction_type = "outbound_link";
       }
 
+      const label =
+        clean(el.getAttribute("aria-label")) ||
+        clean(el.textContent) ||
+        clean(el.getAttribute("title")) ||
+        "(no label)";
+
       window.gtag!("event", "ui_interaction", {
         interaction_type,
-        label:
-          clean(el.getAttribute("aria-label")) ||
-          clean(el.textContent) ||
-          clean(el.getAttribute("title")) ||
-          "(no label)",
+        label,
         link_url,
         page_path: window.location.pathname,
       });
+
+      // A phone or email tap is a lead. Fire GA4's recommended `generate_lead`
+      // event (mark it as a Key event in GA4 to count it as a conversion). It
+      // reuses the existing interaction_type / label custom dimensions, so the
+      // phone-vs-email split is visible with no extra setup.
+      if (interaction_type === "phone_click" || interaction_type === "email_click") {
+        window.gtag!("event", "generate_lead", {
+          method: interaction_type === "phone_click" ? "phone" : "email",
+          interaction_type,
+          label,
+          page_path: window.location.pathname,
+        });
+      }
     };
 
     const onSubmit = (e: SubmitEvent) => {
