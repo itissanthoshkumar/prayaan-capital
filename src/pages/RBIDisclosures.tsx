@@ -7,6 +7,7 @@ const BASE = "/assets/images/downloads";
 
 const regulatoryLinks: { label: string; href: string; external?: boolean }[] = [
   { label: "Interest Rate Policy", href: `${BASE}/Interest%20Rates%20and%20Gradation%20of%20Risk%20Policy%20V4.0.pdf`, external: true },
+  { label: "Liquidity Risk Management Policy", href: `${BASE}/Liquidity%20Risk%20Management%20Policy.pdf`, external: true },
   { label: "Fair Practice Code (English)", href: `${BASE}/Fair%20Practice%20Code_English_v2.pdf`, external: true },
   { label: "Fair Practice Code (Tamil)", href: `${BASE}/Fair%20Practice%20Code_V2.0%20Tamil.pdf`, external: true },
   { label: "Fair Practice Code (Telugu)", href: `${BASE}/Fair%20Practice%20Code_V2.0%20Telugu.pdf`, external: true },
