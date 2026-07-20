@@ -3,7 +3,7 @@ import Seo from "@/components/Seo";
 import AIFloatingElements from "@/components/AIFloatingElements";
 import HeroIllustration from "@/components/HeroIllustration";
 import { motion } from "framer-motion";
-import { ScrollText, Recycle, Percent, Scale, Languages, Fingerprint, ShieldCheck, Megaphone, Banknote, LucideIcon } from "lucide-react";
+import { ScrollText, Recycle, Percent, Scale, Languages, Fingerprint, ShieldCheck, Megaphone, Banknote, Droplets, LucideIcon } from "lucide-react";
 
 const BASE = "/assets/images/downloads";
 
@@ -17,6 +17,7 @@ const policies: { label: string; href: string; icon: LucideIcon }[] = [
   { label: "POSH Policy", href: `${BASE}/POSH%20Policy_V4.pdf`, icon: ShieldCheck },
   { label: "Whistle Blower Policy", href: `${BASE}/Whistle%20Blower%20Policy%20V3.0.pdf`, icon: Megaphone },
   { label: "Policy on Penal Charges v2", href: `${BASE}/Policy%20on%20penal%20charges%20v2.pdf`, icon: Banknote },
+  { label: "Liquidity Risk Management Policy", href: `${BASE}/Liquidity%20Risk%20Management%20Policy.pdf`, icon: Droplets },
 ];
 
 const container = { hidden: {}, visible: { transition: { staggerChildren: 0.05 } } };
