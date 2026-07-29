@@ -11,7 +11,7 @@ const regulatoryLinks: { label: string; href: string; external?: boolean }[] = [
   { label: "Fair Practice Code (English)", href: `${BASE}/Fair%20Practice%20Code_English_v2.pdf`, external: true },
   { label: "Fair Practice Code (Tamil)", href: `${BASE}/Fair%20Practice%20Code_V2.0%20Tamil.pdf`, external: true },
   { label: "Fair Practice Code (Telugu)", href: `${BASE}/Fair%20Practice%20Code_V2.0%20Telugu.pdf`, external: true },
-  { label: "Grievance Redressal Policy", href: "/grievance-redressal" },
+  { label: "Customer Grievance Redressal Policy", href: `${BASE}/Customer%20Grievance%20Redressal%20Policy_v3.pdf`, external: true },
   { label: "KYC / AML Policy", href: `${BASE}/Group%20AML%20&%20KYC%20Policy_V6.0_.pdf`, external: true },
   { label: "Whistleblower Policy", href: `${BASE}/Whistle%20Blower%20Policy%20V3.0.pdf`, external: true },
   { label: "Notices & Disclosures", href: "/policies" },
