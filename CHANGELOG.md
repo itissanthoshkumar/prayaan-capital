@@ -7,6 +7,8 @@ Format follows [Keep a Changelog](https://keepachangelog.com/); dates are IST (Y
 
 ### Added
 - **Customer Grievance Redressal Policy** — self-hosted PDF, now listed on the Policies page (as a card) and on the RBI Disclosures page (regulatory-documents list).
+- **Madhya Pradesh** highlighted on the branch-locator map, matching the existing operating states (with AP and MP pin positions centred).
+- **Regression test** (`npm run regression`) — Playwright loads every live page in a real browser, screenshots each, and asserts it renders correctly. Now **mandatory before every push** (see CLAUDE.md); route list auto-derives from `src/routes.ts`.
 
 ### Changed
 - **RBI Disclosures** — removed the internal "Grievance Redressal Policy" list item (which pointed to the `/grievance-redressal` page). The site-wide footer "Grievance Redressal" link is unchanged.

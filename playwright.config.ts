@@ -11,14 +11,18 @@ export default defineConfig({
     trace: "on-first-retry",
   },
   projects: [
-    { name: "chromium", use: { ...devices["Desktop Chrome"] } },
+    // Uses the system-installed Google Chrome (channel: "chrome") so the suite
+    // runs without downloading Playwright's bundled browser.
+    { name: "chromium", use: { ...devices["Desktop Chrome"], channel: "chrome" } },
   ],
+  // Regression runs against the PRODUCTION build (what actually deploys) served by
+  // `vite preview` — pre-compiled, so page loads are fast (no dev on-demand compile).
   webServer: process.env.PLAYWRIGHT_BASE_URL
     ? undefined
     : {
-        command: "npm run dev",
+        command: "npm run build && npm run preview -- --port 8080 --strictPort",
         url: "http://localhost:8080",
         reuseExistingServer: !process.env.CI,
-        timeout: 120_000,
+        timeout: 180_000,
       },
 });

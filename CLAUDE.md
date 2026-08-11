@@ -6,6 +6,26 @@ Keep the Claude context window small by re-hydrating from the DB instead of re-r
 - DB: `/Users/santhoshp/Documents/Claude/context/prayaan_context.duckdb`
 - Loader: `/Users/santhoshp/Documents/Claude/context/load_context.py`
 
+## ⛔ MANDATORY: run the regression check before EVERY `git push`
+
+Before pushing ANY change to git, run:
+
+```
+npm run regression
+```
+
+It builds the production bundle and loads **every live page** in a real browser
+(Playwright + the system Chrome), screenshots each, and asserts it actually works:
+HTTP < 400, not the 404 page, a visible non-empty `<h1>`, no broken images, and no
+unexpected console errors — plus a 404-recovery check and the interest-rates→PDF
+redirect. The route list auto-derives from `src/routes.ts`, so it never goes stale.
+
+- **Every test must pass. If any page fails, DO NOT push — fix it first.**
+- This is in addition to `npx tsc --noEmit` + `npm run build` staying clean.
+- Screenshots land in `e2e/screenshots/`; full report via `npx playwright show-report`.
+- Test file: `e2e/smoke.spec.ts` (runs against the prod build via `vite preview`).
+- Warm run ≈ 20s; cold (with build) ≈ 1 min.
+
 ## At the start of a session
 Read the compact digest (~2 KB) and work from it:
 ```
@@ -33,7 +53,7 @@ python3 -c "import duckdb; c=duckdb.connect('/Users/santhoshp/Documents/Claude/c
 
 ## Quick facts (also in DB)
 - Stack: React + Vite + TS + Tailwind + shadcn + framer-motion. Repo: github.com/itissanthoshkumar/prayaan-capital (branch main).
-- Verify changes: `npx tsc --noEmit` + `npm run build` (must stay clean).
+- Verify changes: `npx tsc --noEmit` + `npm run build` (must stay clean) + **`npm run regression` before any push** (see the mandate at the top).
 - Preview: managed dev server on :5174 (name `prayaan-capital`; restart between sessions).
 - Theme: gold #f0a800 primary (dark text), blue #00549c accent.
 - Open item: 11 commits unpushed (push deploys to Vercel).

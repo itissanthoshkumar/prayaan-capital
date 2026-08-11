@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Playwright / regression test artifacts
+/test-results/
+/playwright-report/
+/playwright/.cache/
+/e2e/screenshots/

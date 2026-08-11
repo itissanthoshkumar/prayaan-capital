@@ -1,62 +1,104 @@
 import { test, expect } from "@playwright/test";
+import { readFileSync } from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /**
- * Smoke tests: navigate to each top-level page and confirm
- * the expected H1 / page heading renders.
+ * Regression: load every live page, screenshot it, and assert it actually works.
+ *
+ * The route list is derived at runtime from src/routes.ts (uncommented `path:`
+ * entries, minus parameterised routes), so it never goes stale when routes are
+ * added/disabled. For each page we check: HTTP < 400, it is NOT the 404 page,
+ * an <h1> renders with text, no broken images, and no unexpected console errors.
+ * A full-page screenshot of each is saved to e2e/screenshots/ AND attached to
+ * the Playwright HTML report (npx playwright show-report).
+ *
+ * This is the MANDATORY pre-push check — see CLAUDE.md.
  */
-const pages: { path: string; heading: RegExp }[] = [
-  { path: "/", heading: /AI[- ]native|Prayaan|MSME/i },
-  { path: "/about", heading: /about/i },
-  { path: "/team", heading: /team/i },
-  { path: "/careers", heading: /careers/i },
-  { path: "/news", heading: /news/i },
-  { path: "/contact", heading: /contact/i },
-  { path: "/products", heading: /product/i },
-  { path: "/products/business-loan", heading: /business/i },
-  { path: "/products/loan-against-property", heading: /property|loan/i },
-  { path: "/products/working-capital", heading: /working capital/i },
-  { path: "/eligibility", heading: /eligibility/i },
-  { path: "/calculators/emi", heading: /emi/i },
-  { path: "/calculators/eligibility", heading: /eligibility/i },
-  { path: "/calculators/foreclosure", heading: /foreclosure/i },
-  { path: "/how-to-apply", heading: /how to apply/i },
-  { path: "/document-checklist", heading: /document/i },
-  { path: "/interest-rates-and-charges", heading: /interest rate|charges/i },
-  { path: "/faqs", heading: /faq/i },
-  { path: "/downloads", heading: /download/i },
-  { path: "/customer-login", heading: /login|customer/i },
-  { path: "/blog", heading: /blog/i },
-  { path: "/case-studies", heading: /case stud/i },
-  { path: "/investor-relations", heading: /investor/i },
-  { path: "/partner-with-us", heading: /partner/i },
-  { path: "/branch-locator", heading: /branch/i },
-  { path: "/sitemap", heading: /sitemap/i },
-  { path: "/privacy-policy", heading: /privacy/i },
-  { path: "/terms", heading: /terms/i },
-  { path: "/grievance-redressal", heading: /grievance/i },
-  { path: "/fair-practice-code", heading: /fair practice/i },
-  { path: "/interest-rate-policy", heading: /interest rate/i },
-  { path: "/kyc-aml-policy", heading: /kyc|aml/i },
-  { path: "/code-of-conduct-recovery", heading: /recovery|conduct/i },
-  { path: "/whistleblower-policy", heading: /whistleblower/i },
-  { path: "/csr-policy", heading: /csr/i },
-  { path: "/citizens-charter", heading: /citizen/i },
-  { path: "/most-important-terms", heading: /terms|mitc/i },
-  { path: "/notices-disclosures", heading: /notice|disclosure/i },
-  { path: "/cookie-policy", heading: /cookie/i },
-  { path: "/disclaimer", heading: /disclaimer/i },
-  { path: "/ombudsman-scheme", heading: /ombudsman/i },
-];
 
-for (const { path, heading } of pages) {
-  test(`smoke: ${path} renders heading`, async ({ page }) => {
-    const res = await page.goto(path, { waitUntil: "domcontentloaded" });
-    expect(res?.status(), `HTTP status for ${path}`).toBeLessThan(400);
-    // SPA — main h1 should match
+// Routes that intentionally redirect to a file/elsewhere instead of rendering
+// an <h1> — tested separately below.
+const REDIRECTS = new Set(["/interest-rates-and-charges"]);
+
+function activeRoutes(): string[] {
+  const src = readFileSync(path.join(__dirname, "../src/routes.ts"), "utf8");
+  const routes = new Set<string>();
+  for (const raw of src.split("\n")) {
+    const line = raw.trim();
+    if (line.startsWith("//")) continue; // skip disabled/commented routes
+    const m = line.match(/\{\s*path:\s*"([^"]+)"/);
+    if (m && !m[1].includes(":") && !REDIRECTS.has(m[1])) routes.add(m[1]); // skip params + redirects
+  }
+  return [...routes];
+}
+
+// console noise that is expected and not a real failure
+const NOISE =
+  /React Router Future Flag|Download the React DevTools|\[vite\]|Vercel (Web Analytics|Speed Insights)|clarity|gtag|favicon/i;
+
+const NOT_FOUND = /couldn't find that page|404 — Page not found/i;
+
+const slugify = (route: string) =>
+  route === "/" ? "home" : route.replace(/[^a-z0-9]+/gi, "_").replace(/^_|_$/g, "");
+
+for (const route of activeRoutes()) {
+  test(`page loads & renders: ${route}`, async ({ page }, testInfo) => {
+    const consoleErrors: string[] = [];
+    page.on("console", (m) => {
+      if (m.type() === "error" && !NOISE.test(m.text())) consoleErrors.push(m.text());
+    });
+    page.on("pageerror", (e) => {
+      if (!NOISE.test(String(e))) consoleErrors.push("pageerror: " + String(e));
+    });
+
+    const res = await page.goto(route, { waitUntil: "domcontentloaded" });
+    expect(res?.status(), `HTTP status for ${route}`).toBeLessThan(400);
+
+    // the SPA must render a real <h1> (auto-retries until visible)
     const h1 = page.locator("h1").first();
-    await expect(h1).toBeVisible();
-    await expect(h1).toHaveText(heading);
-    // Make sure we did not land on the 404 page
-    await expect(page.locator("body")).not.toContainText("404 — Page not found");
+    await expect(h1, `visible <h1> on ${route}`).toBeVisible();
+    expect((await h1.innerText()).trim().length, `<h1> has text on ${route}`).toBeGreaterThan(0);
+
+    // must not have fallen through to the 404 page
+    await expect(page.locator("body"), `${route} should not be the 404 page`).not.toContainText(NOT_FOUND);
+
+    // let images/fonts/animation settle, then screenshot.
+    // networkidle is best-effort + bounded (the Vite HMR socket can keep it from settling).
+    await page.waitForLoadState("networkidle", { timeout: 3000 }).catch(() => {});
+    await page.waitForTimeout(400);
+
+    const slug = slugify(route);
+    const shot = await page.screenshot({
+      path: path.join(__dirname, "screenshots", `${slug}.png`),
+      fullPage: true,
+    });
+    await testInfo.attach(`screenshot-${slug}`, { body: shot, contentType: "image/png" });
+
+    // no broken images
+    const brokenImgs = await page.evaluate(
+      () => [...document.images].filter((i) => i.complete && i.naturalWidth === 0).map((i) => i.src),
+    );
+    expect(brokenImgs, `broken images on ${route}`).toEqual([]);
+
+    // no unexpected console/page errors
+    expect(consoleErrors, `console errors on ${route}`).toEqual([]);
   });
 }
+
+test("interest-rates-and-charges redirects to the PDF", async ({ page }) => {
+  await page.goto("/interest-rates-and-charges");
+  await expect
+    .poll(() => page.url(), { message: "should redirect to the Interest Rates PDF" })
+    .toMatch(/\/assets\/images\/downloads\/Interest.*\.pdf/i);
+});
+
+test("unknown route shows the 404 recovery page", async ({ page }, testInfo) => {
+  await page.goto("/__this_route_should_not_exist__");
+  await expect(page.locator("body")).toContainText(/couldn't find that page/i);
+  await testInfo.attach("screenshot-404", {
+    body: await page.screenshot({ path: path.join(__dirname, "screenshots", "_404.png"), fullPage: true }),
+    contentType: "image/png",
+  });
+});
