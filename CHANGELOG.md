@@ -3,6 +3,14 @@
 All notable changes to the Prayaan Capital website are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/); dates are IST (YYYY-MM-DD).
 
+## 2026-08-13
+
+### Changed
+- **Branch Locator** — replaced "South India" with "India" in the page heading, the "Always expanding" card, and the SEO description, since the branch network is expanding beyond South India.
+
+### Fixed
+- **Regression test** — the pre-push check no longer false-fails on the Vercel Web Analytics and Speed Insights scripts (`/_vercel/insights/script.js`, `/_vercel/speed-insights/script.js`), which 404 only under local `vite preview` but are served in production. Resource 404s are now detected by response status + URL, so genuine broken assets still fail the suite.
+
 ## 2026-07-29
 
 ### Added

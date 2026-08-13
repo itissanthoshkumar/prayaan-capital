@@ -40,17 +40,37 @@ const NOISE =
 
 const NOT_FOUND = /couldn't find that page|404 — Page not found/i;
 
+// Resources that only 404 under local `vite preview`: Vercel Web Analytics and
+// Speed Insights inject these platform scripts, which Vercel serves in production
+// but don't exist on localhost. A local 404 here is expected, not a regression, so
+// it must not fail the suite. URL-scoped on purpose — a real app asset that 404s
+// still fails.
+const IGNORED_RESOURCE = /\/_vercel\/(insights|speed-insights)\/script\.js(\?|$)/;
+
 const slugify = (route: string) =>
   route === "/" ? "home" : route.replace(/[^a-z0-9]+/gi, "_").replace(/^_|_$/g, "");
 
 for (const route of activeRoutes()) {
   test(`page loads & renders: ${route}`, async ({ page }, testInfo) => {
     const consoleErrors: string[] = [];
+    const failedResources: string[] = [];
     page.on("console", (m) => {
-      if (m.type() === "error" && !NOISE.test(m.text())) consoleErrors.push(m.text());
+      if (m.type() !== "error") return;
+      const text = m.text();
+      if (NOISE.test(text)) return;
+      // Resource-load 404s carry no URL in their console text, so they're checked
+      // via the response listener below (which knows the URL). Skip them here.
+      if (/Failed to load resource/i.test(text)) return;
+      consoleErrors.push(text);
     });
     page.on("pageerror", (e) => {
       if (!NOISE.test(String(e))) consoleErrors.push("pageerror: " + String(e));
+    });
+    page.on("response", (resp) => {
+      const url = resp.url();
+      if (resp.status() >= 400 && !IGNORED_RESOURCE.test(url)) {
+        failedResources.push(`${resp.status()} ${url}`);
+      }
     });
 
     const res = await page.goto(route, { waitUntil: "domcontentloaded" });
@@ -81,6 +101,9 @@ for (const route of activeRoutes()) {
       () => [...document.images].filter((i) => i.complete && i.naturalWidth === 0).map((i) => i.src),
     );
     expect(brokenImgs, `broken images on ${route}`).toEqual([]);
+
+    // no failed resource loads (broken assets / 404s), ignoring platform scripts
+    expect(failedResources, `failed resource loads on ${route}`).toEqual([]);
 
     // no unexpected console/page errors
     expect(consoleErrors, `console errors on ${route}`).toEqual([]);
