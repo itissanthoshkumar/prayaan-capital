@@ -12,7 +12,7 @@ const CUSTOMER_CARE = "+91-6380589898";
 const points = [
   { icon: MapPin, tint: "bg-gradient-coral", title: "On the ground", desc: "Local teams who know each market — not a distant call centre." },
   { icon: Briefcase, tint: "bg-gradient-mint", title: "Built for your business", desc: "Secured business loans backed by the property you own — for working capital, expansion or any need." },
-  { icon: TrendingUp, tint: "bg-gradient-lavender", title: "Always expanding", desc: "New areas open up as our network grows across South India." },
+  { icon: TrendingUp, tint: "bg-gradient-lavender", title: "Always expanding", desc: "New areas open up as our network grows across India." },
 ];
 
 const container = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } };
@@ -24,7 +24,7 @@ const cardAnim = {
 const BranchLocator = () => {
   return (
     <Layout>
-      <Seo title="Branch Locator" description="Find Prayaan Capital's branches across South India — locate your nearest office for secured business loan services." path="/branch-locator" />
+      <Seo title="Branch Locator" description="Find Prayaan Capital's branches across India — locate your nearest office for secured business loan services." path="/branch-locator" />
       {/* Hero — breadcrumb + headline */}
       <section className="pt-20 pb-8 md:pt-28 md:pb-10 bg-hero relative overflow-hidden">
         <AIFloatingElements />
@@ -48,7 +48,7 @@ const BranchLocator = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <h1 className="font-display text-2xl md:text-4xl font-extrabold text-foreground mb-3 leading-tight">
-              Our presence across <span className="text-gradient-coral">South India</span>
+              Our presence across <span className="text-gradient-coral">India</span>
             </h1>
             <p className="text-sm md:text-base text-muted-foreground max-w-xl font-body leading-relaxed mb-5">
               Wherever your business is, we come to you — secured business loans delivered by a local
