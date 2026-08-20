@@ -3,6 +3,15 @@
 All notable changes to the Prayaan Capital website are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/); dates are IST (YYYY-MM-DD).
 
+## 2026-08-20
+
+### Added
+- **Fair Practice Code — Hindi (V3.0)** — self-hosted PDF, now listed on the Policies page and the RBI Disclosures regulatory-documents list, alongside the English / Tamil / Telugu versions.
+- **Customer Education Literature — SMA-NPA Classification (Hindi, V1.0)** — self-hosted PDF, added to the Customer Education & Awareness section on the Customer page.
+
+### Changed
+- **Fair Practice Code — English** — upgraded from V2 to V3.0 (amended June 2025) on the Policies and RBI Disclosures pages. The superseded V2 PDF is kept in the repo for reference but is no longer linked from the site.
+
 ## 2026-08-13
 
 ### Changed

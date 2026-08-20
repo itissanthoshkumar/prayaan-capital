@@ -10,7 +10,8 @@ const BASE = "/assets/images/downloads";
 const policies: { label: string; href: string; icon: LucideIcon }[] = [
   { label: "E-Waste Management Policy", href: `${BASE}/E-waste%20Management%20policy.pdf`, icon: Recycle },
   { label: "Interest Gradation Policy", href: `${BASE}/Interest%20Rates%20and%20Gradation%20of%20Risk%20Policy%20V4.0.pdf`, icon: Percent },
-  { label: "Fair Practice Code - English", href: `${BASE}/Fair%20Practice%20Code_English_v2.pdf`, icon: Scale },
+  { label: "Fair Practice Code - English", href: `${BASE}/Fair%20Practice%20Code_English_v3.pdf`, icon: Scale },
+  { label: "Fair Practice Code - Hindi", href: `${BASE}/Fair%20Practice%20Code_Hindi_v3.pdf`, icon: Languages },
   { label: "Fair Practice Code - Tamil", href: `${BASE}/Fair%20Practice%20Code_V2.0%20Tamil.pdf`, icon: Languages },
   { label: "Fair Practice Code - Telugu", href: `${BASE}/Fair%20Practice%20Code_V2.0%20Telugu.pdf`, icon: Languages },
   { label: "Group KYC & AML Policy", href: `${BASE}/Group%20AML%20&%20KYC%20Policy_V6.0_.pdf`, icon: Fingerprint },
