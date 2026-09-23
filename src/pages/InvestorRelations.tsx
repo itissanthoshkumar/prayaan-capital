@@ -20,6 +20,7 @@ const groups: Group[] = [
     icon: FileText,
     color: GOLD,
     docs: [
+      { label: "Annual Return FY 2025-26", size: "2.25 MB",   href: `${BASE}/Annual%20Return%20FY2025-26.pdf` },
       { label: "Annual Return FY 2024-25", size: "1.94 MB",   href: `${BASE}/Updated-Annual%20Return%202024-25.pdf` },
       { label: "Annual Return FY 2023-24", size: "1.76 MB",   href: `${BASE}/Annual-Return-for-FY-2023-24.pdf` },
       { label: "Annual Return FY 2022-23", size: "1.34 MB",   href: `${BASE}/ar/Annual-Return-for-FY-2022-23.pdf` },

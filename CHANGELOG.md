@@ -3,6 +3,11 @@
 All notable changes to the Prayaan Capital website are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/); dates are IST (YYYY-MM-DD).
 
+## 2026-09-23
+
+### Added
+- **Annual Return FY 2025-26** — Form MGT-7 annual return (self-hosted PDF) added to the Investor Relations page; the Annual Return list auto-sorts by financial year, so it appears at the top.
+
 ## 2026-08-20
 
 ### Added
