@@ -3,6 +3,11 @@
 All notable changes to the Prayaan Capital website are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/); dates are IST (YYYY-MM-DD).
 
+## 2026-09-30
+
+### Changed
+- **Team** — updated Harish R's (CTO) headshot; the same image is shared by the Team and About pages.
+
 ## 2026-09-23
 
 ### Added
