@@ -3,6 +3,15 @@
 All notable changes to the Prayaan Capital website are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/); dates are IST (YYYY-MM-DD).
 
+## 2026-10-14
+
+### Added
+- **RBI Integrated Ombudsman Scheme 2026** — the official RBI scheme (self-hosted PDF) added to the Policies and RBI Disclosures pages.
+- **Salient Features of RBI Ombudsman Scheme** — the vernacular summary (English / Hindi / Tamil / Telugu), added to both pages as a single expandable group, each language opening its PDF in a new tab.
+
+### Changed
+- **Fair Practice Code** — the four language versions (English / Hindi / Tamil / Telugu) are now consolidated into one expandable "Fair Practice Code" item on the Policies and RBI Disclosures pages, instead of four separate entries. Clicking it reveals the languages; each opens its PDF in a new tab.
+
 ## 2026-09-30
 
 ### Changed

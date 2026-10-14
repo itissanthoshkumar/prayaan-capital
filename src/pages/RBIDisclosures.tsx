@@ -1,23 +1,102 @@
 import LegalPageTemplate from "@/components/templates/LegalPageTemplate";
 import Seo from "@/components/Seo";
 import { Link } from "react-router-dom";
-import { ShieldCheck } from "lucide-react";
+import { useState } from "react";
+import { ShieldCheck, ChevronDown } from "lucide-react";
 
 const BASE = "/assets/images/downloads";
 
-const regulatoryLinks: { label: string; href: string; external?: boolean }[] = [
+type RegLink = { label: string; href: string; external?: boolean };
+type RegGroup = { label: string; group: { label: string; href: string }[] };
+type RegItem = RegLink | RegGroup;
+
+const regulatoryLinks: RegItem[] = [
   { label: "Interest Rate Policy", href: `${BASE}/Interest%20Rates%20and%20Gradation%20of%20Risk%20Policy%20V4.0.pdf`, external: true },
   { label: "Liquidity Risk Management Policy", href: `${BASE}/Liquidity%20Risk%20Management%20Policy.pdf`, external: true },
-  { label: "Fair Practice Code (English)", href: `${BASE}/Fair%20Practice%20Code_English_v3.pdf`, external: true },
-  { label: "Fair Practice Code (Hindi)", href: `${BASE}/Fair%20Practice%20Code_Hindi_v3.pdf`, external: true },
-  { label: "Fair Practice Code (Tamil)", href: `${BASE}/Fair%20Practice%20Code_V2.0%20Tamil.pdf`, external: true },
-  { label: "Fair Practice Code (Telugu)", href: `${BASE}/Fair%20Practice%20Code_V2.0%20Telugu.pdf`, external: true },
+  {
+    label: "Fair Practice Code",
+    group: [
+      { label: "English", href: `${BASE}/Fair%20Practice%20Code_English_v3.pdf` },
+      { label: "Hindi", href: `${BASE}/Fair%20Practice%20Code_Hindi_v3.pdf` },
+      { label: "Tamil", href: `${BASE}/Fair%20Practice%20Code_V2.0%20Tamil.pdf` },
+      { label: "Telugu", href: `${BASE}/Fair%20Practice%20Code_V2.0%20Telugu.pdf` },
+    ],
+  },
   { label: "Customer Grievance Redressal Policy", href: `${BASE}/Customer%20Grievance%20Redressal%20Policy_v3.pdf`, external: true },
+  { label: "RBI Integrated Ombudsman Scheme 2026", href: `${BASE}/RBI%20Integrated%20Ombudsman%20Scheme%202026.pdf`, external: true },
+  {
+    label: "Salient Features of RBI Ombudsman Scheme",
+    group: [
+      { label: "English", href: `${BASE}/Salient%20features%20of%20RBI%20IOS%20-%20English.pdf` },
+      { label: "Hindi", href: `${BASE}/Salient%20features%20of%20RBI%20IOS%20-%20Hindi.pdf` },
+      { label: "Tamil", href: `${BASE}/Salient%20features%20of%20RBI%20IOS%20-%20Tamil.pdf` },
+      { label: "Telugu", href: `${BASE}/Salient%20features%20of%20RBI%20IOS%20-%20Telugu.pdf` },
+    ],
+  },
   { label: "KYC / AML Policy", href: `${BASE}/Group%20AML%20&%20KYC%20Policy_V6.0_.pdf`, external: true },
   { label: "Whistleblower Policy", href: `${BASE}/Whistle%20Blower%20Policy%20V3.0.pdf`, external: true },
   { label: "Notices & Disclosures", href: "/policies" },
   { label: "Cookie Policy", href: "/privacy-policy" },
 ];
+
+const RegulatoryDocuments = () => {
+  const [openGroup, setOpenGroup] = useState<string | null>(null);
+  return (
+    <ul className="space-y-2">
+      {regulatoryLinks.map((link) =>
+        "group" in link ? (
+          <li key={link.label}>
+            <button
+              type="button"
+              onClick={() => setOpenGroup((cur) => (cur === link.label ? null : link.label))}
+              aria-expanded={openGroup === link.label}
+              className="text-primary hover:underline font-medium inline-flex items-center gap-1"
+            >
+              {link.label}
+              <ChevronDown
+                size={14}
+                className={`transition-transform ${openGroup === link.label ? "rotate-180" : ""}`}
+              />
+            </button>
+            {openGroup === link.label && (
+              <ul className="mt-1.5 ml-1 space-y-1.5 border-l border-border/60 pl-4">
+                {link.group.map((g) => (
+                  <li key={g.href}>
+                    <a
+                      href={g.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline font-medium"
+                    >
+                      {g.label} ↗
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ) : link.external ? (
+          <li key={link.href}>
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline font-medium"
+            >
+              {link.label} ↗
+            </a>
+          </li>
+        ) : (
+          <li key={link.href}>
+            <Link to={link.href} className="text-primary hover:underline font-medium">
+              {link.label}
+            </Link>
+          </li>
+        )
+      )}
+    </ul>
+  );
+};
 
 const RBIDisclosures = () => (
   <>
@@ -49,28 +128,7 @@ const RBIDisclosures = () => (
       },
       {
         title: "Policies & Regulatory Documents",
-        content: (
-          <ul className="space-y-2">
-            {regulatoryLinks.map((link) => (
-              <li key={link.href}>
-                {link.external ? (
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover:underline font-medium"
-                  >
-                    {link.label} ↗
-                  </a>
-                ) : (
-                  <Link to={link.href} className="text-primary hover:underline font-medium">
-                    {link.label}
-                  </Link>
-                )}
-              </li>
-            ))}
-          </ul>
-        ),
+        content: <RegulatoryDocuments />,
       },
       {
         title: "Non-Deposit Taking Status",
