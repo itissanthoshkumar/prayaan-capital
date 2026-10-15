@@ -3,6 +3,11 @@
 All notable changes to the Prayaan Capital website are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/); dates are IST (YYYY-MM-DD).
 
+## 2026-10-15
+
+### Changed
+- **Fair Practice Code (Tamil & Telugu)** — upgraded from V2.0 to V3.0 on the Policies and RBI Disclosures pages, so all four languages are now V3. The superseded V2 PDFs are kept in the repo for reference but are no longer linked.
+
 ## 2026-10-14
 
 ### Added

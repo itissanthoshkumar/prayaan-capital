@@ -21,8 +21,8 @@ const policies: Policy[] = [
     links: [
       { label: "English", href: `${BASE}/Fair%20Practice%20Code_English_v3.pdf` },
       { label: "Hindi", href: `${BASE}/Fair%20Practice%20Code_Hindi_v3.pdf` },
-      { label: "Tamil", href: `${BASE}/Fair%20Practice%20Code_V2.0%20Tamil.pdf` },
-      { label: "Telugu", href: `${BASE}/Fair%20Practice%20Code_V2.0%20Telugu.pdf` },
+      { label: "Tamil", href: `${BASE}/Fair%20Practice%20Code_Tamil_v3.pdf` },
+      { label: "Telugu", href: `${BASE}/Fair%20Practice%20Code_Telugu_v3.pdf` },
     ],
   },
   { label: "Group KYC & AML Policy", href: `${BASE}/Group%20AML%20&%20KYC%20Policy_V6.0_.pdf`, icon: Fingerprint },

@@ -18,8 +18,8 @@ const regulatoryLinks: RegItem[] = [
     group: [
       { label: "English", href: `${BASE}/Fair%20Practice%20Code_English_v3.pdf` },
       { label: "Hindi", href: `${BASE}/Fair%20Practice%20Code_Hindi_v3.pdf` },
-      { label: "Tamil", href: `${BASE}/Fair%20Practice%20Code_V2.0%20Tamil.pdf` },
-      { label: "Telugu", href: `${BASE}/Fair%20Practice%20Code_V2.0%20Telugu.pdf` },
+      { label: "Tamil", href: `${BASE}/Fair%20Practice%20Code_Tamil_v3.pdf` },
+      { label: "Telugu", href: `${BASE}/Fair%20Practice%20Code_Telugu_v3.pdf` },
     ],
   },
   { label: "Customer Grievance Redressal Policy", href: `${BASE}/Customer%20Grievance%20Redressal%20Policy_v3.pdf`, external: true },
