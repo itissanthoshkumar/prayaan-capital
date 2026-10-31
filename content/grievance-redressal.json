@@ -49,6 +49,7 @@
           "officer": null,
           "contacts": [
             { "icon": "Phone", "label": "Customer Care Number", "value": "+91-6380589898", "href": "tel:+916380589898" },
+            { "icon": "Phone", "label": "Customer Care Landline", "value": "044-42303366", "href": "tel:04442303366" },
             { "icon": "Mail", "label": "Customer Care Email", "value": "customercare@prayaancapital.com", "href": "mailto:customercare@prayaancapital.com" }
           ],
           "hours": "Monday – Friday, 9:30 AM – 6:30 PM (except on holidays)"

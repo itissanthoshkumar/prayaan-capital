@@ -167,7 +167,7 @@ const Contact = () => (
               </div>
               <div className="flex-1 min-w-0">
                 <p className="font-body text-[11px] font-medium text-muted-foreground mb-0.5">Grievance Redressal Officer</p>
-                <p className="font-body text-sm font-semibold text-foreground">Mr. Harish Kumar E, AVP – HR</p>
+                <p className="font-body text-sm font-semibold text-foreground">Mr. Harish Kumar E</p>
                 <div className="flex flex-wrap gap-x-4 gap-y-0.5 mt-1">
                   <a href="mailto:gro@prayaancapital.com" className="font-body text-xs text-primary hover:underline">gro@prayaancapital.com</a>
                   <a href="tel:+919600133756" className="font-body text-xs text-primary hover:underline">+91-9600133756</a>

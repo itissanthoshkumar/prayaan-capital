@@ -3,6 +3,14 @@
 All notable changes to the Prayaan Capital website are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/); dates are IST (YYYY-MM-DD).
 
+## 2026-10-31
+
+### Added
+- **Customer care landline (044-42303366)** — added alongside the existing customer care number at Level 1 of the Grievance Redressal escalation path, matching the Customer Grievance Redressal Policy.
+
+### Changed
+- **Contact** — removed the "AVP – HR" designation from Mr. Harish Kumar E in the Grievance Redressal Officer details.
+
 ## 2026-10-15
 
 ### Changed

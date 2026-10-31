@@ -118,7 +118,7 @@
             "icon": "Users",
             "tint": "lavender",
             "label": "Grievance Redressal Officer",
-            "name": "Mr. Harish Kumar E, AVP – HR",
+            "name": "Mr. Harish Kumar E",
             "email": "gro@prayaancapital.com",
             "phone": "+91-9600133756",
             "link": { "label": "Full escalation path", "to": "/grievance-redressal" }
