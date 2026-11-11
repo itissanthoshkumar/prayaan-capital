@@ -3,6 +3,11 @@
 All notable changes to the Prayaan Capital website are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/); dates are IST (YYYY-MM-DD).
 
+## 2026-11-11
+
+### Changed
+- **Interest Rate, Charges and Gradation of Risk Policy** — upgraded from V4.0 to V5.0 (effective 29-10-2026) on the Policies page, RBI Disclosures page, site-wide footer, Sitemap, and the `/interest-rates-and-charges` redirect. The superseded V4.0 PDF is kept in the repo for reference but is no longer linked.
+
 ## 2026-10-31
 
 ### Added

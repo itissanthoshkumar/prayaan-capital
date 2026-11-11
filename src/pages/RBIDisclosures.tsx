@@ -11,7 +11,7 @@ type RegGroup = { label: string; group: { label: string; href: string }[] };
 type RegItem = RegLink | RegGroup;
 
 const regulatoryLinks: RegItem[] = [
-  { label: "Interest Rate Policy", href: `${BASE}/Interest%20Rates%20and%20Gradation%20of%20Risk%20Policy%20V4.0.pdf`, external: true },
+  { label: "Interest Rate Policy", href: `${BASE}/Interest%20Rate%20Charges%20and%20Gradation%20of%20Risk%20Policy%20V5.0.pdf`, external: true },
   { label: "Liquidity Risk Management Policy", href: `${BASE}/Liquidity%20Risk%20Management%20Policy.pdf`, external: true },
   {
     label: "Fair Practice Code",

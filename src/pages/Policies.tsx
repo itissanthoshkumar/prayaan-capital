@@ -14,7 +14,7 @@ type Policy = PolicyLink | PolicyGroup;
 
 const policies: Policy[] = [
   { label: "E-Waste Management Policy", href: `${BASE}/E-waste%20Management%20policy.pdf`, icon: Recycle },
-  { label: "Interest Gradation Policy", href: `${BASE}/Interest%20Rates%20and%20Gradation%20of%20Risk%20Policy%20V4.0.pdf`, icon: Percent },
+  { label: "Interest Gradation Policy", href: `${BASE}/Interest%20Rate%20Charges%20and%20Gradation%20of%20Risk%20Policy%20V5.0.pdf`, icon: Percent },
   {
     label: "Fair Practice Code",
     icon: Scale,

@@ -24,7 +24,7 @@ const groups: { title: string; links: SitemapLink[] }[] = [
       { label: "Products", href: "/products" },
       { label: "EMI Calculator", href: "/calculators/emi" },
       // { label: "Balance Transfer Calculator", href: "/calculators/bt" },   // disabled for now
-      { label: "Interest Rates & Charges", href: "/assets/images/downloads/Interest%20Rates%20and%20Gradation%20of%20Risk%20Policy%20V4.0.pdf", external: true },
+      { label: "Interest Rates & Charges", href: "/assets/images/downloads/Interest%20Rate%20Charges%20and%20Gradation%20of%20Risk%20Policy%20V5.0.pdf", external: true },
     ],
   },
   {

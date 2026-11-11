@@ -5,7 +5,7 @@ import BrandLogo from "@/components/BrandLogo";
 type FooterLink = { label: string; href: string; external?: boolean };
 
 // Interest Rates & Charges is a direct PDF — open it in a new tab like the other documents.
-const INTEREST_RATES_PDF = "/assets/images/downloads/Interest%20Rates%20and%20Gradation%20of%20Risk%20Policy%20V4.0.pdf";
+const INTEREST_RATES_PDF = "/assets/images/downloads/Interest%20Rate%20Charges%20and%20Gradation%20of%20Risk%20Policy%20V5.0.pdf";
 
 const company: FooterLink[] = [
   { label: "About Us", href: "/why-prayaan" },
