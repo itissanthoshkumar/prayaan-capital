@@ -3,6 +3,11 @@
 All notable changes to the Prayaan Capital website are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/); dates are IST (YYYY-MM-DD).
 
+## 2026-11-14
+
+### Changed
+- **Interest Rate, Charges and Gradation of Risk Policy V5.0** — replaced the PDF with the latest revision (same V5.0 file name, so every link picks it up). Annexure-1 now states the prepayment charge separately: 4% of POS for full foreclosure, 4% of the amount prepaid for part prepayment.
+
 ## 2026-11-11
 
 ### Changed
